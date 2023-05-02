@@ -1,0 +1,400 @@
+# MCRealistic-2 Properties:
+#
+# Worlds
+#   Here you define which worlds you enable.
+#
+# WeatherAffectsPlayer
+#   This option defines whether the player should be affected by the weather. Default true.
+#
+# Thirst
+#   This option defines whether thirst is enabled. Default true.
+#
+# DisplayHungerMessage
+#   Whether the hunger message should be shown. Default true.
+#
+# Cosy
+#   DisplayMessage
+#   Whether the cozy message should be shown. Default true.
+#
+#   CallInterval
+#     Must be greater than 0
+#     A value of 1 = 30 seconds, 2 = 60 seconds, ect...
+#
+#   FoodLevelForRegeneration
+#     Minimum food level to regenerate health. 0 - 20
+#
+#   FoodUseToRecoverHealth
+#     Food consumed in recovering heart 0 - 20
+#
+#   TorchRadius
+#     Distance from torch to feel "Cosy"
+#
+#   TorchDuration
+#     1 = 1/2 a heart recovery
+#
+#   FurnaceRadius
+#     Distance from furnace to feel "Cosy"
+#
+#   FurnaceDuration
+#     2 = 1 heart recovery
+#
+#   FurnaceMustBeLit
+#     The furnace has to be lit to feel "Cosy"
+#
+#   InclementWeatherHeatReduction
+#     % of distance to heat to feel "Cosy" in rain/snow. 0.0 - 1.0
+#     0.3 = 30% of TorchRadius/FurnaceRadius
+#
+# DisplayHurtMessage
+#   Whether the hurt message would be shown. Default true.
+#
+# Weight
+#   This option defines whether the player should be affected by weight.
+#
+# Realistic_Building
+#   This option defines whether blocks will fall.
+#
+# Messages.Type
+#   MESSAGE, ACTIONBAR, TITLE
+#
+
+developer:
+  debug: false
+settings:
+  integration:
+    name: WorldGuard
+Worlds:
+- world
+Server:
+  Weather:
+    WeatherAffectsPlayer: true
+  Player:
+    Wind:
+      Enabled: false
+      Minimum Y: 150
+      Push: false
+    DisplayHungerMessage: false
+    Cosy:
+      DisplayMessage: false
+      CallInterval: 1
+      FoodLevelForRegeneration: 19
+      FoodUseToRecoverHealth: 3
+      TorchRadius: 1.75
+      TorchDuration: 1
+      CampfireRadius: 12
+      CampfireDuration: 4
+      CampfireMustBeLit: true
+      FurnaceRadius: 4
+      FurnaceDuration: 2
+      FurnaceMustBeLit: true
+      InclementWeatherHeatReduction: 0.5
+      Holding Torch: true
+    DisplayHurtMessage: true
+    Weight:
+      Enabled: false
+      Netherite: 0
+      Diamond: 0
+      Leather: 0
+      Chainmail: 0
+      Iron: 0
+      Gold: 0
+    Broken_Bones:
+      Enabled: true
+    Trail:
+      Grass_Blocks:
+      - DIRT
+      Sand_Blocks:
+      - SANDSTONE
+      Dirt_Blocks:
+      - DIRT_PATH
+      Path_Blocks:
+      - COBBLESTONE
+      Enabled: false
+    Allow Fatigue: false
+    Max Fatigue: 240
+    Max Thirst: 200
+    Fatigue Tired Range Min: 150
+    Fatigue Tired Range Max: 200
+    Allow Chop Down Trees With Hands: true
+    Chop With Hands Damage: 0
+    Trees have random number of drops: true
+    Allow /fatigue: false
+    Allow /thirst: false
+    Spawn with items: false
+    Allow Enchanted Arrow: true
+    Torch_Burn: false
+    Raw_Food_Illness: true
+    Thirst:
+      Interval: 6000
+      Enabled: false
+      Require_Purify: true
+    Immune_System:
+      Interval: 6000
+      Enabled: false
+      Req_Players: 2
+  World:
+    Falling_Trees: false
+  Stamina:
+    Enabled: false
+  Building:
+    Realistic_Building: false
+    Ignored_Blocks:
+    - TORCH
+    - WALL_TORCH
+    - REDSTONE_WALL_TORCH
+    - REDSTONE_TORCH
+    - MANGROVE_SIGN
+    - BIRCH_WALL_SIGN
+    - WARPED_SIGN
+    - SPRUCE_WALL_SIGN
+    - CRIMSON_WALL_SIGN
+    - OAK_SIGN
+    - CRIMSON_SIGN
+    - MANGROVE_WALL_SIGN
+    - DARK_OAK_SIGN
+    - WARPED_WALL_SIGN
+    - OAK_WALL_SIGN
+    - ACACIA_WALL_SIGN
+    - DARK_OAK_WALL_SIGN
+    - ACACIA_SIGN
+    - JUNGLE_SIGN
+    - SPRUCE_SIGN
+    - JUNGLE_WALL_SIGN
+    - BIRCH_SIGN
+    - JUNGLE_SIGN
+    - BIRCH_SIGN
+    - ACACIA_SIGN
+    - WARPED_SIGN
+    - MANGROVE_SIGN
+    - SPRUCE_SIGN
+    - OAK_SIGN
+    - CRIMSON_SIGN
+    - DARK_OAK_SIGN
+    - JUNGLE_WALL_SIGN
+    - WARPED_WALL_SIGN
+    - OAK_WALL_SIGN
+    - ACACIA_WALL_SIGN
+    - DARK_OAK_WALL_SIGN
+    - BIRCH_WALL_SIGN
+    - SPRUCE_WALL_SIGN
+    - CRIMSON_WALL_SIGN
+    - MANGROVE_WALL_SIGN
+    - POLISHED_BLACKSTONE_BUTTON
+    - MANGROVE_BUTTON
+    - SPRUCE_BUTTON
+    - OAK_BUTTON
+    - BIRCH_BUTTON
+    - STONE_BUTTON
+    - ACACIA_BUTTON
+    - DARK_OAK_BUTTON
+    - CRIMSON_BUTTON
+    - WARPED_BUTTON
+    - JUNGLE_BUTTON
+    - NETHER_BRICK_FENCE
+    - JUNGLE_FENCE
+    - OAK_FENCE
+    - CRIMSON_FENCE
+    - DARK_OAK_FENCE
+    - MANGROVE_FENCE
+    - ACACIA_FENCE
+    - SPRUCE_FENCE
+    - BIRCH_FENCE
+    - WARPED_FENCE
+    - JUNGLE_FENCE_GATE
+    - OAK_FENCE_GATE
+    - ACACIA_FENCE_GATE
+    - DARK_OAK_FENCE_GATE
+    - MANGROVE_FENCE_GATE
+    - WARPED_FENCE_GATE
+    - SPRUCE_FENCE_GATE
+    - CRIMSON_FENCE_GATE
+    - BIRCH_FENCE_GATE
+    - QUARTZ_SLAB
+    - END_STONE_BRICK_SLAB
+    - SANDSTONE_SLAB
+    - WAXED_WEATHERED_CUT_COPPER_SLAB
+    - POLISHED_DEEPSLATE_SLAB
+    - WEATHERED_CUT_COPPER_SLAB
+    - ANDESITE_SLAB
+    - BRICK_SLAB
+    - CUT_SANDSTONE_SLAB
+    - MUD_BRICK_SLAB
+    - PRISMARINE_SLAB
+    - NETHER_BRICK_SLAB
+    - WAXED_OXIDIZED_CUT_COPPER_SLAB
+    - COBBLED_DEEPSLATE_SLAB
+    - PRISMARINE_BRICK_SLAB
+    - WAXED_CUT_COPPER_SLAB
+    - DEEPSLATE_BRICK_SLAB
+    - SMOOTH_RED_SANDSTONE_SLAB
+    - DARK_PRISMARINE_SLAB
+    - STONE_BRICK_SLAB
+    - POLISHED_DIORITE_SLAB
+    - JUNGLE_SLAB
+    - PETRIFIED_OAK_SLAB
+    - CUT_COPPER_SLAB
+    - CUT_RED_SANDSTONE_SLAB
+    - DIORITE_SLAB
+    - RED_SANDSTONE_SLAB
+    - POLISHED_ANDESITE_SLAB
+    - GRANITE_SLAB
+    - SMOOTH_SANDSTONE_SLAB
+    - MOSSY_STONE_BRICK_SLAB
+    - BLACKSTONE_SLAB
+    - OAK_SLAB
+    - POLISHED_BLACKSTONE_SLAB
+    - SMOOTH_QUARTZ_SLAB
+    - SMOOTH_STONE_SLAB
+    - PURPUR_SLAB
+    - COBBLESTONE_SLAB
+    - STONE_SLAB
+    - WAXED_EXPOSED_CUT_COPPER_SLAB
+    - DEEPSLATE_TILE_SLAB
+    - MOSSY_COBBLESTONE_SLAB
+    - OXIDIZED_CUT_COPPER_SLAB
+    - MANGROVE_SLAB
+    - SPRUCE_SLAB
+    - POLISHED_BLACKSTONE_BRICK_SLAB
+    - ACACIA_SLAB
+    - POLISHED_GRANITE_SLAB
+    - RED_NETHER_BRICK_SLAB
+    - DARK_OAK_SLAB
+    - BIRCH_SLAB
+    - WARPED_SLAB
+    - EXPOSED_CUT_COPPER_SLAB
+    - CRIMSON_SLAB
+    - BIRCH_WOOD
+    - WARPED_HYPHAE
+    - ACACIA_WOOD
+    - WARPED_STEM
+    - SPRUCE_WOOD
+    - CRIMSON_STEM
+    - STRIPPED_SPRUCE_LOG
+    - STRIPPED_JUNGLE_LOG
+    - SPRUCE_LOG
+    - OAK_LOG
+    - ACACIA_LOG
+    - STRIPPED_DARK_OAK_WOOD
+    - DARK_OAK_WOOD
+    - STRIPPED_WARPED_STEM
+    - STRIPPED_CRIMSON_STEM
+    - JUNGLE_LOG
+    - STRIPPED_JUNGLE_WOOD
+    - DARK_OAK_LOG
+    - MANGROVE_WOOD
+    - BIRCH_LOG
+    - MANGROVE_LOG
+    - CRIMSON_HYPHAE
+    - STRIPPED_BIRCH_LOG
+    - STRIPPED_OAK_LOG
+    - STRIPPED_ACACIA_WOOD
+    - STRIPPED_OAK_WOOD
+    - STRIPPED_DARK_OAK_LOG
+    - STRIPPED_ACACIA_LOG
+    - STRIPPED_SPRUCE_WOOD
+    - STRIPPED_MANGROVE_LOG
+    - OAK_WOOD
+    - JUNGLE_WOOD
+    - STRIPPED_CRIMSON_HYPHAE
+    - STRIPPED_MANGROVE_WOOD
+    - STRIPPED_WARPED_HYPHAE
+    - STRIPPED_BIRCH_WOOD
+    - CAVE_VINES
+    - SCAFFOLDING
+    - CAVE_VINES_PLANT
+    - TWISTING_VINES_PLANT
+    - WEEPING_VINES_PLANT
+    - LADDER
+    - TWISTING_VINES
+    - WEEPING_VINES
+    - VINE
+  Messages:
+    Type: CHAT
+    Respawn: false
+  GameMode:
+    Type: NORMAL
+    Custom:
+      Ignored_Blocks:
+      - BROWN_MUSHROOM
+      - RED_MUSHROOM
+      - END_ROD
+      - REDSTONE
+      - REPEATER
+      - COMPARATOR
+      - LEVER
+      - SEA_PICKLE
+      - FIRE
+      - REDSTONE_TORCH
+      - REDSTONE_WALL_TORCH
+      - TORCH
+      - WALL_TORCH
+      - GRAVEL
+      - SNOW
+      - SNOW_BLOCK
+      - GRAY_BED
+      - BLUE_BED
+      - LIGHT_GRAY_BED
+      - ORANGE_BED
+      - BROWN_BED
+      - CYAN_BED
+      - GREEN_BED
+      - BLACK_BED
+      - RED_BED
+      - LIME_BED
+      - PURPLE_BED
+      - PINK_BED
+      - WHITE_BED
+      - LIGHT_BLUE_BED
+      - YELLOW_BED
+      - MAGENTA_BED
+      - ACACIA_LEAVES
+      - FLOWERING_AZALEA_LEAVES
+      - BIRCH_LEAVES
+      - DARK_OAK_LEAVES
+      - MANGROVE_LEAVES
+      - AZALEA_LEAVES
+      - OAK_LEAVES
+      - JUNGLE_LEAVES
+      - SPRUCE_LEAVES
+      - PUMPKIN_STEM
+      - MELON_STEM
+      - WHEAT
+      - CARROTS
+      - POTATOES
+      - BEETROOTS
+      - BLUE_CARPET
+      - WHITE_CARPET
+      - BLACK_CARPET
+      - RED_CARPET
+      - GRAY_CARPET
+      - MAGENTA_CARPET
+      - CYAN_CARPET
+      - LIGHT_GRAY_CARPET
+      - PURPLE_CARPET
+      - LIGHT_BLUE_CARPET
+      - ORANGE_CARPET
+      - GREEN_CARPET
+      - YELLOW_CARPET
+      - LIME_CARPET
+      - PINK_CARPET
+      - BROWN_CARPET
+      - FLOWERING_AZALEA_LEAVES
+      - WHITE_TULIP
+      - CORNFLOWER
+      - ORANGE_TULIP
+      - RED_TULIP
+      - PEONY
+      - POPPY
+      - WITHER_ROSE
+      - OXEYE_DAISY
+      - ALLIUM
+      - SUNFLOWER
+      - BLUE_ORCHID
+      - MANGROVE_PROPAGULE
+      - ROSE_BUSH
+      - DANDELION
+      - FLOWERING_AZALEA
+      - AZURE_BLUET
+      - PINK_TULIP
+      - LILAC
+      - LILY_OF_THE_VALLEY

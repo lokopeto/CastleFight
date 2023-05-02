@@ -1,0 +1,159 @@
+command /casasnpcs [<text>] [<number>] [<number>]:
+    executable by: console
+    trigger:
+        set {_numb} to a random integer between 1 and 5
+        wait "%{_numb}% seconds" parsed as timespan
+        #1 = armadureiro 2 = ferreiro 3 = alqumista 4 = necromancer
+        arg-1 is {castelo1nome}:
+            arg-3 is 1:
+                set {_x} to 56
+                set {_y} to 17
+                set {_z} to 28
+                loop arg-2 times:
+                    add 28 to {_x}
+                make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}+26% %{_y}+30% %{_z}+14% 56 148 28"
+                arg-2 is 0:
+                    make console execute command "kill @e[type=minecraft:cow,tag=castelo1]"
+                    loop all entities:
+                        name of loop-entity is "Bordador (%{castelo1nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(68.5, 149, 36.5, world "world")
+                arg-2 is 1:
+                    loop all entities:
+                        name of loop-entity is "Bordador (%{castelo1nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(68.5, 149, 39.5, world "world")
+                arg-2 is 2:
+                    chance of 0.0005%:
+                        loop 5 times:
+                            make console execute command "summon minecraft:cow 63 149 36 {CustomName:'[{""text"":""DinnerBone""}]',Invulnerable:1b,Tags:[castelo1]}"
+                    else:
+                        loop 5 times:
+                            make console execute command "summon minecraft:cow 63 149 36 {Invulnerable:1b,Tags:[castelo1]}"            
+            arg-3 is 2:
+                set {_x} to 56
+                set {_y} to 16
+                set {_z} to 3
+                loop arg-2 times:
+                    add 28 to {_x}
+                make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}+26% %{_y}+30% %{_z}+14% 56 147 3"
+                arg-2 is 0:
+                    loop all entities:
+                        name of loop-entity is "Ferreiro (%{castelo1nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(68.5, 149, 9.5, world "world")                
+                arg-2 is 2:
+                    loop all entities:
+                        name of loop-entity is "Ferreiro (%{castelo1nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(68.5, 149, 8.5, world "world")
+            arg-3 is 3:
+                set {_x} to 54
+                set {_y} to 17
+                set {_z} to 3
+                loop arg-2 times:
+                    add -28 to {_x}
+                arg-2 is 0:
+                    make console execute command "npc create Alquimista (%{castelo1nome}%) --at 42.5:150:9.5:world --type villager"
+                    make console execute command "npc villager --profession cleric" 
+                arg-2 is 0 or 3:
+                    make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}-26% %{_y}+30% %{_z}+16% 28 148 3"
+                else:
+                    make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}-26% %{_y}+30% %{_z}+14% 28 148 3"
+                arg-2 is 3:
+                    loop all entities:
+                        name of loop-entity is "Alquimista (%{castelo1nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(41.5, 152, 8.5, world "world")
+
+            arg-3 is 4:
+                set {_x} to 54
+                set {_y} to 17
+                set {_z} to 28
+                loop arg-2 times:
+                    add -28 to {_x}
+                make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}-26% %{_y}+30% %{_z}+14% 28 148 28"
+                arg-2 is 0:
+                    make console execute command "npc create Necromancer (%{castelo1nome}%) --at 42.5:150:36.5:world --type villager"
+                    make console execute command "npc villager --profession cleric" 
+                    
+
+        arg-1 is {castelo2nome}:
+            arg-3 is 1:
+                set {_x} to -140
+                set {_y} to 55
+                set {_z} to 3
+                loop arg-2 times:
+                    add -28 to {_x}
+                make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}-26% %{_y}+30% %{_z}+14% -166 148 3"
+                arg-2 is 0:
+                    make console execute command "kill @e[type=minecraft:cow,tag=castelo2]"
+                    loop all entities:
+                        name of loop-entity is "Bordador (%{castelo2nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(-151.5, 149.00, 9.5, world "world")
+                arg-2 is 1:
+                    loop all entities:
+                        name of loop-entity is "Bordador (%{castelo2nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(-151.5, 149.00, 6.5, world "world")
+                arg-2 is 2:
+                    chance of 0.0005%:
+                        loop 5 times:
+                            make console execute command "summon minecraft:cow -147.0 149 9.0 {CustomName:'[{""text"":""DinnerBone""}]',Invulnerable:1b,Tags:[castelo2]}"
+                    else:
+                        loop 5 times:
+                            make console execute command "summon minecraft:cow -147.0 149 9.0 {Invulnerable:1b,Tags:[castelo2]}"            
+            arg-3 is 2:
+                set {_x} to -140
+                set {_y} to 54
+                set {_z} to 28
+                loop arg-2 times:
+                    add -28 to {_x}
+                make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}-26% %{_y}+30% %{_z}+14% -166 147 28"
+                arg-2 is 0:
+                    loop all entities:
+                        name of loop-entity is "Ferreiro (%{castelo2nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(-151.5, 149.00, 36.5, world "world")                
+                arg-2 is 2:
+                    loop all entities:
+                        name of loop-entity is "Ferreiro (%{castelo2nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(-151.5, 149.00, 37.5, world "world")
+            arg-3 is 3:
+                set {_x} to -138
+                set {_y} to 55
+                set {_z} to 28
+                loop arg-2 times:
+                    add 28 to {_x}
+                arg-2 is 0:
+                    make console execute command "npc create Alquimista (%{castelo2nome}%) --at -125.5:149:36.5:world --type villager"
+                    make console execute command "npc villager --profession cleric" 
+                arg-2 is 0 or 3:
+                    make console execute command "clone %{_x}% %{_y}% %{_z}-2% %{_x}+26% %{_y}+30% %{_z}+14% -138 148 26"
+                else:
+                    make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}+26% %{_y}+30% %{_z}+14% -138 148 28"
+                arg-2 is 3:
+                    loop all entities:
+                        name of loop-entity is "Alquimista (%{castelo2nome}%)":
+                            set {_id} to citizen id of loop-entity
+                            teleport citizen {_id} to location(-124.5, 152, 37.5, world "world")
+
+            arg-3 is 4:
+                set {_x} to -138
+                set {_y} to 55
+                set {_z} to 3
+                loop arg-2 times:
+                    add 28 to {_x}
+                make console execute command "clone %{_x}% %{_y}% %{_z}% %{_x}+26% %{_y}+30% %{_z}+14% -138 148 3"
+                arg-2 is 0:
+                    make console execute command "npc create Necromancer (%{castelo2nome}%) --at -125.5:149:9.5:world --type villager"
+                    make console execute command "npc villager --profession cleric" 
+
+
+
+
+
+
+

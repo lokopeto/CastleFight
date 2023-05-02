@@ -1,0 +1,17 @@
+command /itemsespeciais:
+    trigger:
+        create a gui with virtual chest inventory with 2 rows named "Vendedor Misterioso (Pré-Compra)":
+            set {slotsitems} to -1
+            loop 18 times:
+                add 1 to {slotsitems}
+                make gui slot {slotsitems} with {itemsespeciaisloja::%{slotsitems}%}
+        open the created gui for player
+
+command /itemsespeciaissetar <number>:
+    trigger:
+        player is op
+        set {itemsespeciaisloja::%arg-1%} to tool of player
+
+on inventory click:
+    if name of event-inventory contains "Vendedor Misterioso (Pré-Compra)":
+        set {itemsespeciais::%player's name%::%index of event-slot%} to event-item

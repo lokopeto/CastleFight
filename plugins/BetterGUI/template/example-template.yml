@@ -1,0 +1,23 @@
+# This is an example of a file containing template buttons used in the example menu
+
+test-xp:
+  id: exp bottle
+  name: "&eGive &f{xp} XP"
+  lore:
+    - ""
+    - "&fThis is a test template button"
+    - "&fLevel: {level}"
+  command: "console: xp {xp} {player}"
+
+test-xp-predicate:
+  type: predicate
+  button:
+    type: template
+    template: test-xp
+    variable:
+      xp: "{xp}"
+  view-requirement:
+    level-check:
+      level:
+        value: "{level}"
+        take: false

@@ -1,0 +1,24 @@
+#every 1 tick:
+#    loop all players:
+#        gamemode of loop-player is spectator:
+#            show smoke particle on the location 0.3 behind the head of loop-player
+#            show witch spell on the location 0.3 behind the head of loop-player
+#            show soul on the location 0.3 behind the head of loop-player
+#            show ash on the location 0.3 behind the head of loop-player
+
+on spawn of an entity:
+    wait 3 ticks
+    event-entity is a citizen:
+        name of entity contains "lv"
+        name of entity contains {castelo1nome} or {castelo2nome}
+        set {_loc} to location of entity
+        make console execute command "pp fixed create %x-coordinate of {_loc}% %y-coordinate of {_loc} + 1% %z-coordinate of {_loc}% world enchant whirl"
+        wait 3 second
+        make console execute command "pp fixed clear 1 %x-coordinate of {_loc}% %y-coordinate of {_loc} + 1% %z-coordinate of {_loc}% world enchant whirl"
+
+on join:
+    make console execute command "ppo %player% add soul beam"
+    wait 1 tick
+    make console execute command "ppo %player% add soul death"
+    wait 5 seconds
+    make console execute command "ppo %player% reset"

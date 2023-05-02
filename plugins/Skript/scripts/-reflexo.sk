@@ -1,0 +1,47 @@
+on join:
+    create a citizen named "Dinnerbone" at location 3 metre under player's head
+    set {skin} to player's name
+    set {citizen} to last created citizen 
+    add {citizen} to {citizenid::%player's uuid%::*}
+    make citizen {citizen} nametag invisible
+    make console execute command "npc sel %{citizenid::%player's uuid%::1}%"
+    make console execute command "npc scoreboard --addtag %{citizenid::%player's uuid%::1}%"
+    make console execute command "npc gravity"
+    make console execute command "npc skin %{skin}%"
+    execute player command "skinset"
+    if name of player is ".Suuhruba":
+        make console execute command "npc sel %{citizenid::%player's uuid%::1}%"
+        make console execute command "npc skin --url https://cdn.discordapp.com/attachments/959571449222414466/998450496786407544/20356789.png"
+
+ 
+on leave:
+    make console execute command "npc sel %{citizenid::%player's uuid%::*}%"
+    make console execute command "npc remove"
+    delete {citizenid::%player's uuid%::*}
+
+every 1 tick:
+    make all players execute command "reflexo"
+
+on sneak toggle:
+    make console execute command "npc sel %{citizenid::%player's uuid%::*}%"
+    make console execute command "npc sneak"
+
+command /skinset:
+    trigger:
+        execute player command "skinsrestorer:skin set %player's name%"
+        if name of player is ".Suuhruba":
+            execute player command "skinsrestorer:skin https://cdn.discordapp.com/attachments/959571449222414466/998450496786407544/20356789.png"
+
+command /reflexo:
+    trigger:
+        {jogo} is 0:
+            set {player1X} to player's x-coordinate
+            set {player1Z} to player's z-coordinate
+            set {player1Y} to player's y-coordinate
+            set {player1Yaw} to player's yaw
+            set {player1YPitch} to player's pitch
+            set {player1YPitch} to {player1YPitch} * -1
+            set {player1YR} to player's y-coordinate
+            set {R2} to mod(-227.9,{player1YR})
+            set {reflexo} to 228 - {R2}
+            make console execute command "execute in minecraft:overworld run tp @e[tag=%{citizenid::%player's uuid%::1}%,limit=1] %{player1X}% %{reflexo}% %{player1Z}% %{player1Yaw}% %{player1YPitch}%"

@@ -1,0 +1,28 @@
+no_permission: '&cNemáš požadované oprávnění {0}'
+not_tired: '&aOdpočinul jsem si.'
+too_tired: '&c&lZačínám usínat!'
+tired: '&6Začínám být unavený!'
+very_tired: '&4&lUsínám... pomalu ale jistě!'
+no_hand_chop: '&4&lCo blázním! Nemůžu mlátit rukou do stromu!'
+not_thirsty: '&aNapil jsem se.'
+little_thirsty: '&cMám žízeň!'
+getting_thirsty: '&6Začínám mít žízeň.'
+really_thirsty: '&4&lUž mám opravdu žízeň, měl bych něco vypít!'
+cosy: '&aCítím se příjemně.'
+cold: '&cJe mi zima, měl bych si něco obléci...'
+hurt: '&4Ah, to bolí!'
+hungry: '&4&lMám hlad, měl bych něco spořádat!'
+should_sleep: '&fMěl bych se prospat...'
+used_bandage: '&aPoužil jsi obvaz.'
+legs_healed: '&aNoha se vyléčila, rány se zacelily.'
+broken_bones: '&4&lSpadl jsi z velké výšky a zlomil jsi si nohu!'
+waypoint_set: '&aBod byl nastaven.'
+items: 'MCRealistic Items'
+respawn:
+  - '&6Type /fatigue to see your fatigue!'
+  - '&6Type /thirst to see your thirst!'
+caught_cold: "&cYou have caught a cold!"
+medicine_tip: "&a&bTIP: &fUse medicine to fight the %0!"
+cold_developed: "&cYour cold developed into a disease!"
+disease_damage: "&cThe disease begins to damage your body..."
+subside: "&aThe %0 beings to subside..."

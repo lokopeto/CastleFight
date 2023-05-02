@@ -1,0 +1,7 @@
+second_jump_force: 0.5
+can_climb_same_wall: false
+slide_wall: true
+holding_time: 2
+excluded_blocks: ''
+wall_run_gravity: 0.03
+wall_run_distance_from_wall: 0.5

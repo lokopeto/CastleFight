@@ -1,0 +1,296 @@
+variables:
+    placalevelmax = 60
+
+
+
+on death:
+    attacker is a player:
+        victim is a player:
+            set {_1} to "%team of victim%"
+            set {_2} to "%team of attacker%"
+            if {_1} is not {_2}: 
+                increase the attacker's level by {xpplayer}
+        victim is a npc:
+            name of victim contains "XP":
+                increase the attacker's level by a random integer between 5 and 10
+            else:
+                name of victim contains {castelo1nome} or {castelo2nome}:
+                    increase the attacker's level by a random integer between 1 and 5
+                else:
+                    increase the attacker's level by a random integer between 13 and 20
+
+            name of victim contains {castelo1nome} or {castelo2nome}:
+                add 0.1 to {vida::%uuid of attacker%}
+
+            add 1 to {vida::%uuid of attacker%}
+
+            if {vida::%uuid of attacker%} >= 10:
+                add 1 to max health of attacker
+                set {vida::%uuid of attacker%} to 0
+                message "&aSua vida aumentou!" to attacker
+    attacker is a npc:
+        name of attacker contains {castelo1nome}:
+            victim is a npc:
+                add a random integer between 3 and 10 to {XPquant1}
+            victim is a player:
+                add {xpplayer} to {XPquant1}     
+
+        name of attacker contains {castelo2nome}:
+            victim is a npc:
+                add a random integer between 3 and 10 to {XPquant2}
+            victim is a player:
+                add {xpplayer} to {XPquant2}
+
+    damage cause is void:
+        name of victim contains {castelo1nome}:
+            victim is a npc:
+                add a random integer between 3 and 10 to {XPquant2}
+            victim is a player:
+                add {xpplayer} to {XPquant2}
+
+        name of victim contains {castelo2nome}:
+            victim is a npc:
+                add a random integer between 3 and 10 to {XPquant1}
+            victim is a player:
+                add {xpplayer} to {XPquant1}
+        
+
+
+
+every 10 ticks:
+    set line 3 of block at location(-170, 150, 26, world "world") to "&9%{XPquant2}%"
+    set line 3 of block at location(86, 150, 19, world "world") to "&9%{XPquant1}%"
+
+on click on sign:
+    loop all players:
+        set {_team} to "%team of loop-player%"
+        replace "castelo" in {_team} with ""
+        {_team} is "1":
+            add 1 to {_max%{_team}%}
+        {_team} is "2":
+            add 1 to {_max%{_team}%}
+
+    set {_team} to "%team of player%"
+    replace "castelo" in {_team} with ""
+
+    line 2 is "&f&o%{castelo%{_team}%nome}%":
+        set {_xp} to player's level
+        line 1 is "&b[Evoluir]":
+            line 3 is not "&cMAXIMO":
+                {_xp} = 0:
+                    message "&9XP insuficiente" to player
+                else:
+                    set {_placalevelmax} to {placalevelmax} * {_max%{_team}%}
+#                    broadcast "%{_placalevelmax}% %{placalevelmax}% %{_max%{_team}%}%"
+                    {_xp} >= 30:
+                        set {_xp} to 30 
+                    reduce player's level by {_xp}
+                    add {_xp} to {lvnpcsquant%{_team}%}
+                    {lvnpcsquant%{_team}%} >= {_placalevelmax}:
+                        set {lvnpcsquant%{_team}%} to 0
+                        add 1 to {lvnpcs%{_team}%}
+                        {lvnpcs%{_team}%} is 5:
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 0 3"
+                        {lvnpcs%{_team}%} is 10:
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 1 2"
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 1 1"
+                        {lvnpcs%{_team}%} is 15:
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 0 4"
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 2 2"
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 2 1"
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 1 3"
+                        {lvnpcs%{_team}%} is 17:
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 1 4"
+                        {lvnpcs%{_team}%} is 18:
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 2 4"  
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 2 3"                      
+                        {lvnpcs%{_team}%} is 20:
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 3 4" 
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 3 2"        
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 3 1"
+                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 3 3"
+                        message "&b&lLevel aumentado para &f&l%{lvnpcs%{_team}%}%"
+                    set line 3 to "&9%{lvnpcsquant%{_team}%}%/%{_placalevelmax}%"
+                    set line 4 to "&9Level %{lvnpcs%{_team}%}%"
+                    {lvnpcs%{_team}%} is 20:
+                        set line 3 to "&cMAXIMO"
+            else:
+                message "&9&lLevel maximo atingido" to player
+
+        line 1 is "&b[XP]":
+            player is sneaking:
+                {XPquant%{_team}%} <= 0:
+                    message "&9XP insuficiente" to player
+                    set {XPquant%{_team}%} to 0
+                else:
+                    {XPquant%{_team}%} <= 30:
+                        increase player's level by {XPquant%{_team}%}
+                        set {XPquant%{_team}%} to 0
+                    else:
+                        increase player's level by 30
+                        add -30 to {XPquant%{_team}%}
+                        
+            else:
+                {_xp} = 0:
+                    message "&9XP insuficiente" to player
+
+                else:
+                    {_xp} >= 30:
+                        set {_xp} to 30 
+                    reduce player's level by {_xp}
+                    add {_xp} to {XPquant%{_team}%}
+            set line 3 to "&9%{XPquant%{_team}%}%"
+    else:
+        message "&cEssa placa não é tua!" to player
+
+every 130 seconds:
+    {levelmobtime} is 0
+    if {jogo} is 1:
+        if {level} < 30:
+            add 1 to {level}
+            message "level dos mobs: %{level}%" to console
+            add 5 to {xpplayer}
+
+every 50 seconds:
+    {levelmobtime} is 1
+    if {jogo} is 1:
+        if {level} < 30:
+            add 1 to {level}
+            message "level dos mobs: %{level}%" to console
+            add 10 to {xpplayer}
+
+command /fogo:
+    executable by: console
+    trigger:
+        make console execute command "fastasyncworldedit:/world world"
+        wait 10 tick
+        make console execute command "fastasyncworldedit:/pos1 -250,272,195"
+        wait 1 tick
+        make console execute command "fastasyncworldedit:/pos2 150,115,-122"
+        wait 1 tick
+        make console execute command "fastasyncworldedit:/replace fire air"
+
+command /jogo [<number>]:
+    executable by: console
+    trigger:
+        set {jogo} to arg-1
+        if arg-1 is 1: 
+            wait 10 ticks
+            make console execute command "spawn"
+            make console execute command "spawnboss"
+            make console execute command "setblock -47 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""[Espectador]"",""clickEvent"":{""action"":""run_command"",""value"":""gamemode spectator @s""},""color"":""aqua""}',Text2:'{""text"":""Clique para"",""clickEvent"":{""action"":""run_command"",""value"":""tp @s -40.50 200.00 23.00""},""bold"":true,""color"":""blue""}',Text3:'{""text"":""Espectar"",""clickEvent"":{""action"":""run_command"",""value"":""team join espectador @s""},""bold"":true,""color"":""blue""}',Text4:'{""text"":""==========="",""color"":""aqua""}'}"
+            #evoluir npcs
+            make console execute command "data merge block 86 150 26 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+            make console execute command "data merge block -170 150 19 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+            #guardar xp
+            make console execute command "data merge block 86 150 19 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"
+            make console execute command "data merge block -170 150 26 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}" 
+            #team nome
+            make console execute command "team modify castelo1 displayName {""text"":""%{castelo1nome}%""}"     
+            make console execute command "team modify castelo2 displayName {""text"":""%{castelo2nome}%""}" 
+            wait 10 ticks
+            make console execute command "kill @e[type=minecraft:item]"    
+        if arg-1 is 0:
+            set {level} to 5
+            set max health of all players to 10.0
+            set {_else} to 1
+            set {lvnpcsquant1} to 0
+            set {lvnpcs1} to 1
+            set {lvnpcsquant2} to 0
+            set {lvnpcs2} to 1
+            delete {Invocador2::*}
+            delete {Invocador1::*}          
+            set {test1::*} to ""      
+            set {test2::*} to ""    
+            set {partidanumb} to 0
+            set {raio1} to 1
+            set {raio2} to 1
+            delete {executaruma::*}
+            delete {partida::*}      
+            delete {partidavotar::*}
+            set {invocadorabrido1} to 0
+            set {invocadorabrido2} to 0
+            set {XPquant1} to 0
+            set {XPquant2} to 0
+            delete {playerbk::*}
+            set {exiladoabrido} to 0
+            set {xpplayer} to 40
+            delete {senhaplayer::*}
+            delete {senha}
+            delete {jogadoresdesistir::*}
+            delete {sacrificio::*}
+            loop all players:
+                set health of loop-players to 20
+                set hunger of loop-players to 20
+            clear all the potion effects of all players
+            make console execute command "kill @e[type=!minecraft:player]"
+            make console execute command "kill @e[type=minecraft:item]"
+            make console execute command "setblock -47 230 -116 air"
+            wait 15 ticks
+            make console execute command "clear @a"
+            make console execute command "xp set @a 0 levels"
+            make console execute command "xp set @a 0 points"
+            wait 1 tick
+            make console execute command "fogo"
+            wait 1 tick
+            make console execute command "team empty castelo1"
+            make console execute command "team empty castelo2"
+            wait 1 second
+            make console execute command "npcs"
+            make console execute command "kill @e[type=!minecraft:player]"
+            #evoluir npcs
+            make console execute command "data merge block 86 150 26 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+            make console execute command "data merge block -170 150 19 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+            #guardar xp
+            make console execute command "data merge block 86 150 19 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"
+            make console execute command "data merge block -170 150 26 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"            
+            make console execute command "setblock -170 149 19 air"
+            make console execute command "setblock -170 149 18 air"
+            make console execute command "setblock -170 149 27 air"
+            make console execute command "setblock -170 149 26 air"
+            make console execute command "setblock 86 149 27 air"
+            make console execute command "setblock 86 149 26 air"
+            make console execute command "setblock 86 149 19 air"
+            make console execute command "setblock 86 149 18 air"
+            wait 1 tick
+            make console execute command "setblock -170 149 19 chest[facing=west,type=left]{CustomName:'[{""text"":""Bau do (%{castelo2nome}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock -170 149 18 chest[facing=west,type=right]{CustomName:'[{""text"":""Bau do (%{castelo2nome}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock -170 149 27 chest[facing=west,type=left]{CustomName:'[{""text"":""Bau do (%{castelo2nome}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock -170 149 26 chest[facing=west,type=right]{CustomName:'[{""text"":""Bau do (%{castelo2nome}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock 86 149 27 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock 86 149 26 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock 86 149 19 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock 86 149 18 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome}%)"",""italic"":false}]'} replace"
+            wait 1 tick
+            make console execute command "casasnpcs %{castelo1nome}% 0 1"
+            wait 1 tick
+            make console execute command "casasnpcs %{castelo1nome}% 0 2"
+            wait 1 tick
+            make console execute command "casasnpcs %{castelo1nome}% 4 3"
+            wait 1 tick
+            make console execute command "casasnpcs %{castelo1nome}% 4 4"
+            wait 1 tick
+            make console execute command "casasnpcs %{castelo2nome}% 0 1"
+            wait 1 tick
+            make console execute command "casasnpcs %{castelo2nome}% 0 2"
+            wait 1 tick
+            make console execute command "casasnpcs %{castelo2nome}% 4 3"
+            wait 1 tick
+            make console execute command "casasnpcs %{castelo2nome}% 4 4"
+            set {XPquant1} to 0
+            set {XPquant2} to 0
+            wait 1 second
+            set {XPquant1} to 0
+            set {XPquant2} to 0
+
+
+on death:
+    victim is a entity
+    name of victim is "%{castelo1nome}%":
+        broadcast "&a%{castelo2nome}% ganhou!"
+        make console execute command "globaldesativar"
+        make console execute command "partidateminar 1"
+    name of victim is "%{castelo2nome}%":
+        broadcast "&a%{castelo1nome}% ganhou!"
+        make console execute command "globaldesativar"
+        make console execute command "partidateminar 2"

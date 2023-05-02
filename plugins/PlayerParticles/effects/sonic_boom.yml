@@ -1,0 +1,11 @@
+# The name the effect will display as
+# Default: sonic_boom
+effect-name: sonic_boom
+
+# If the effect is enabled or not
+# Default: true
+enabled: true
+
+# Default: [WARDEN_SPAWN_EGG]
+gui-icon-material:
+  - WARDEN_SPAWN_EGG

@@ -1,0 +1,9 @@
+creditosnpc:
+    type: world
+    events:
+        on delta time secondly every:10:
+            - walk <server.npcs_named[lokopeto]> <location[-46.5,230.00,-136.5].with_world[world].random_offset[34,0,21]>
+            - walk <server.npcs_named[world_pp]> <location[-46.5,230.00,-136.5].with_world[world].random_offset[34,0,21]>
+            - walk <server.npcs_named[saiph]> <location[-46.5,230.00,-136.5].with_world[world].random_offset[34,0,21]>
+            - walk <server.npcs_named[kendonzin]> <location[-46.5,230.00,-136.5].with_world[world].random_offset[34,0,21]>
+            

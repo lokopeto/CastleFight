@@ -1,0 +1,11 @@
+command /efeito:
+    trigger:
+        set {localparticle} to location of targeted block
+        add 1 to y-coordinate of {localparticle}
+        loop 5 times:
+            wait 1 tick
+            add 0.1 to x-coordinate of {localparticle}
+            show fire at {localparticle}
+on block place:
+    wait 5 second
+    set the block to air

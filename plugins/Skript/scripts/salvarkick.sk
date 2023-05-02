@@ -1,0 +1,28 @@
+on leave:
+    {jogo} is 1
+    set {playerbk::%player's uuid%::inventory::*} to items in inventory of player
+    set {playerbk::%player's uuid%::equip::1} to boot of player
+    set {playerbk::%player's uuid%::equip::2} to leg of player
+    set {playerbk::%player's uuid%::equip::3} to chestplate of player
+    set {playerbk::%player's uuid%::equip::4} to helm of player
+    set {playerbk::%player's uuid%::equip::5} to offhand item of player    
+    remove {playerbk::%player's uuid%::equip::*} from {playerbk::%player's uuid%::inventory::*}
+    set {playerbk::%player's uuid%::xp} to xp of player
+    set {playerbk::%player's uuid%::health} to health of player
+    set {playerbk::%player's uuid%::maxhealth} to maximum health of player
+    if {playerbk::%player's uuid%::health} <= 0:
+        set {playerbk::%player's uuid%::health} to 1
+    wait 1 minute
+    delete {playerbk::%player's uuid%::*}
+
+on join:
+    {jogo} is 1
+    set inventory of player to {playerbk::%player's uuid%::inventory::*}
+    set xp of player to {playerbk::%player's uuid%::xp}
+    set health of player to {playerbk::%player's uuid%::health}
+    set boot of player to {playerbk::%player's uuid%::equip::1}
+    set leg of player to {playerbk::%player's uuid%::equip::2}
+    set chestplate of player to {playerbk::%player's uuid%::equip::3}
+    set helm of player to {playerbk::%player's uuid%::equip::4}
+    set offhand item of player to {playerbk::%player's uuid%::equip::5}   
+    set maximum health of player to {playerbk::%player's uuid%::maxhealth}

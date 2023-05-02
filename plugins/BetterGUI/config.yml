@@ -1,0 +1,16 @@
+default-menu-type: simple
+default-button-type: simple
+metrics: true
+use-modern-click-type: false
+replace-all-variables-each-check: true
+forced-update-inventory: false
+alternative-command-manager:
+  enable: false
+  case-insensitive: true
+  should-ignore: true
+  ignored-commands:
+  - warp test
+use-legacy-button: true
+relative-menu-name: false
+trim-menu-file-extension: false
+include-menu-in-template: false

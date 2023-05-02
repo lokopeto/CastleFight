@@ -1,0 +1,16 @@
+on death of player:
+    add -30 to {deathpartida::%uuid of victim%} and {death::%uuid of victim%}
+    add -30 to {score::%uuid of victim%} and {scorepartida::%uuid of victim%}
+
+
+on death:
+    attacker is a player:
+        add 20 to {killpartida::%uuid of attacker%} and {kill::%uuid of attacker%}
+        add 20 to {score::%uuid of attacker%} and {scorepartida::%uuid of attacker%}
+        victim is a player:
+            add 20 to {killpartida::%uuid of attacker%} and {kill::%uuid of attacker%}
+            add 20 to {score::%uuid of attacker%} and {scorepartida::%uuid of attacker%} 
+        victim is a npc:
+            name of victim contains "BOSS":
+                add 20 to {killpartida::%uuid of attacker%} and {kill::%uuid of attacker%}
+                add 20 to {score::%uuid of attacker%} and {scorepartida::%uuid of attacker%}   

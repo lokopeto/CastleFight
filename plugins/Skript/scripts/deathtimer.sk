@@ -1,0 +1,56 @@
+on death:
+    set {deathloc::%uuid of victim%} to location of victim
+    if name of attacker contains "(BOSS)":
+        if attacker is npc:
+            set {deathtimer::%uuid of victim%} to 30
+
+every 1 second:
+    loop all players:
+        add -1 to {deathtimer::%uuid of loop-player%}
+#        broadcast "%{deathtimer::%uuid of loop-player%}%"
+
+on respawn:
+    {jogo} is 1
+    set gamemode of player to spectator
+    set respawn location to {deathloc::%uuid of player%}
+    set {_tempo} to {deathtimer::%uuid of player%} -1
+    {deathtimer::%uuid of player%} <= 0:
+        set gamemode of player to adventure
+        message "&7&o&lpronto para batalha!"
+    else:
+        message "&c&oVoce Morreu!"
+        loop "%{_tempo}%" parsed as integer times:
+            wait 1 second
+            {deathtimer::%uuid of player%} is 20:
+                message "&7&ofaltam &f&o%{deathtimer::%uuid of player%}%&7&o segundos.."
+            {deathtimer::%uuid of player%} <= 10:
+                message "&7&ofaltam &f&o%{deathtimer::%uuid of player%}%&7&o segundos.."            
+        set gamemode of player to adventure
+        message "&7&o&lpronto para batalha!"
+    "%team of player%" is "castelo1":
+        teleport player to {rei1loc}
+    "%team of player%" is "castelo2":
+        teleport player to {rei2loc}    
+    set {deathtimer::%uuid of player%} to 30
+    set {nodama::%uuid of player%} to 1
+    make console execute command "ppo %player% add soul_fire_flame beam"
+    make console execute command "ppo %player% add soul trail"
+    wait 10 seconds
+    set {nodama::%uuid of player%} to 0
+    make console execute command "ppo %player% remove 1"
+    make console execute command "ppo %player% remove 2"
+
+on damage of player:
+    damage was caused by void:
+        "%team of victim%" is "castelo1":
+            teleport victim to {rei1loc}
+        "%team of victim%" is "castelo2":
+            teleport victim to {rei2loc}
+    {nodama::%uuid of victim%} is 1
+    cancel event
+    push the victim behind at speed 0.5
+    push the attacker behind at speed 0.5    
+
+on skript unload:
+    delete {deathtimer::*}
+    delete {deathloc::*}

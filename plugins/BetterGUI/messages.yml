@@ -1,0 +1,13 @@
+prefix: '&f[&bBetterGUI&f] '
+no-permission: '&cYou don''t have permission to do this'
+player-only: '&cYou should be a player to do this'
+success: '&aSuccess'
+menu-required: '&cYou should specify a menu'
+menu-not-found: '&cThat menu does not exist'
+have-met-requirement-placeholder: 'Yes'
+invalid-number: '&cError converting! {input} is not a valid number'
+invalid-flag: '&cCannot find flag ''{input}''. Inform the staff'
+invalid-enchantment: '&cError parsing enchantment! {input} is not a valid enchantment'
+player-not-found: '&cThe player is not found. Maybe he is offline or didn''t join
+  your server'
+empty-arg-value: /empty/

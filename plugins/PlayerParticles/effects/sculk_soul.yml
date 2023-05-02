@@ -1,0 +1,11 @@
+# The name the effect will display as
+# Default: sculk_soul
+effect-name: sculk_soul
+
+# If the effect is enabled or not
+# Default: true
+enabled: true
+
+# Default: [SCULK_CATALYST]
+gui-icon-material:
+  - SCULK_CATALYST

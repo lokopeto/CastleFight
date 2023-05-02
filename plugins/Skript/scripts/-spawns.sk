@@ -1,0 +1,79 @@
+on spawn of armor stand:
+    if name of entity is "spawn":
+        add 1 to {numb}
+        set {spawnloc} to location of entity
+        set y-coordinate of {spawnloc} to y-coordinate of {spawnloc} + 2
+        add {spawnloc} to {spawns::%{spawnnome}%::*}
+        broadcast "%{numb}% %{spawns::%{spawnnome}%::%{numb}%}%"
+        apply glowing to entity for 99999999 seconds
+        set display name of entity to "spawn%{spawnnome}%%{numb}%"
+
+command /spawnsetar <text> [<number>]:
+    trigger:
+        if arg-2 is set:
+            set {numb} to arg-2
+        set {spawnnome} to arg-1
+        add arg-1 to {spawns::*}
+        message "setado para spawn%{spawnnome}%%{numb}%"
+        message "lista: %{spawns::*}%"
+
+command /spawnlist:
+    trigger:
+        message "lista: %{spawns::*}%"
+
+command /spawndeletar <text> [<number>]:
+    trigger:
+        if arg-2 is set:
+            delete {spawns::%arg-1%::%arg-2%}
+        else:
+            delete {spawns::%arg-1%::*}
+        arg-1 is "todos":
+            delete {spawns::*}
+        message "deletado %arg-1%"
+        kill all entities where [name of entity input is "drop%arg-1%"]
+
+every 1 tick:
+    play campfire cosy smoke on {spawns::caverna1::*}
+    play campfire cosy smoke on {spawns::nether1::*}
+    play campfire cosy smoke on {spawns::pantano1::*}
+    play campfire cosy smoke on {spawns::vila1::*}
+    play campfire cosy smoke on {spawns::nether2::*}
+    play campfire cosy smoke on {spawns::caverna2::*}    
+    play campfire cosy smoke on {spawns::caverna2boss::*}   
+
+command /spawnsaber <text> [<number>]:
+    trigger:
+        message "%{spawns::%arg-1%::%arg-2%}%"
+
+command /spawndeletartodos:
+    trigger:
+        kill all entities where [name of entity input contains "spawn"]
+
+every 5 seconds:
+    loop all entities:
+        apply glowing to loop-entity for 99999999 seconds
+
+on unload:
+    loop all entities:
+        remove glowing from loop-entity
+    kill all entities where [name of entity input contains "spawn"]
+
+#every 1 tick:
+#        add 1 to {numbe}
+#        set {_dropxa} to x-coordinate of {drops::%{numbe}%::1}
+#        set {_dropya} to y-coordinate of {drops::%{numbe}%::1}
+#        set {_dropza} to z-coordinate of {drops::%{numbe}%::1}
+#        set {_dropx} to round({_dropxa})
+#        set {_dropy} to round({_dropya})
+#        set {_dropz} to round({_dropza})
+#        make console execute command "setblock %{_dropx}% %{_dropy}% %{_dropz}% minecraft:redstone_block"
+#        if {numbe} >= {numb}:
+#                set {numbe} to 1
+#        broadcast "%{drops::%{numbe}%::1}%"
+
+command /droparmor:
+    trigger:
+        make player execute command "give @s armor_stand{EntityTag:{Small:1b,CustomName:'{""text"":""spawn""}'}} 1"
+
+#/give @s armor_stand{EntityTag:{Invisible:1b,Invulnerable:1b,Small:1b,CustomName:'{"text":"drop"}'}} 1
+#/give @s armor_stand{EntityTag:{Small:1b,CustomName:'{"text":"drop"}'}} 1

@@ -1,0 +1,11 @@
+# The name the effect will display as
+# Default: sculk_charge
+effect-name: sculk_charge
+
+# If the effect is enabled or not
+# Default: true
+enabled: true
+
+# Default: [SCULK]
+gui-icon-material:
+  - SCULK

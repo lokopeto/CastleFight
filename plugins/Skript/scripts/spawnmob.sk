@@ -1,0 +1,491 @@
+command /spawnmobc [<number>] [<text>] [<text>] [<number>] [<number>] [<number>] [<number>] / [<number>] [<number>] [<number>] : 
+#                 [<castelo>] [<type>] [<lv>]   [<damage>] [<health>] [<armor>] [<speed>] / [<npc speed>] [<accuracy>] [<range>] 
+    executable by: console
+    trigger:
+        set {_random} to a random integer between 1 and 6
+        wait "%{_random}% ticks" parsed as timespan
+        set {_arg2} to arg-2
+        replace all "_" in {_arg2} with " "
+        replace all " ", "lv.", "Lv.", "0", "1", "2","3", "4", "5", "6", "7", "8" and "9" in {_arg2} with ""
+
+        set {_z} to a random number between 25.0 and 21.0
+
+        if arg-1 is 1:
+            set {_x} to 88
+            set {_inim} to 2
+            set {_castelo} to "castelo1"
+        if arg-1 is 2:
+            set {_x} to -172
+            set {_inim} to 1
+            set {_castelo} to "castelo2"
+
+        make console execute command "npc create %{_arg2}% %arg-3% (%{castelo%arg-1%nome}%) --type %{mobs::%{_arg2}%::15}% --trait sentinel --at %{_x}%:149:%{_z}%:world"
+        make console execute command "wp disableteleport"
+        make console execute command "npc scoreboard --addtag %{_castelo}%"
+        make console execute command "sentinel addtarget npc:%{castelo%{_inim}%nome}%"
+        make console execute command "sentinel addtarget sbteam:%{castelo%{_inim}%nome}%"
+        make console execute command "sentinel respawntime -1"
+        make console execute command "sentinel addignore npc:Invocador"
+        make console execute command "sentinel addignore npc:Bordador"
+        make console execute command "sentinel addignore npc:Ferreiro"
+        make console execute command "sentinel addignore npc:Fazendeiro"
+        make console execute command "sentinel addignore npc:Arqueiro"
+        make console execute command "sentinel addignore npc:Alquimista"
+        make console execute command "sentinel addignore npc:Necromancer"  
+        make console execute command "sentinel addignore npc:Misterioso"                
+        make console execute command "sentinel addignore sbteam:castelo%arg-1%"
+        make console execute command "sentinel addtarget players"
+        make console execute command "sentinel damage %arg-4%"
+        make console execute command "sentinel health %arg-5%"
+        make console execute command "sentinel armor %arg-6%"
+        make console execute command "sentinel speed %arg-8%"
+        make console execute command "npc speed %arg-7%"
+        
+        if arg-8 is set:
+            make console execute command "sentinel accuracy %arg-9%"
+        if arg-9 is set:
+            make console execute command "sentinel range %arg-10%"
+        if arg-2 contains "Spider":
+            make console execute command "sentinel attackrate 0.6"
+        if arg-2 contains "blaze" or "bat":
+            make console execute command "npc flyable true"	
+        if arg-2 contains "ravager" or "strider":
+            make console execute command "npc control"
+
+command /spawnmob [<number>] [<text>] [<text>] [<number>] [<number>] [<number>] [<number>] / [<number>] [<number>] [<number>]: 
+#              1[<level>] 2[<location>] 3[<type>] 4[<damage>] 5[<health>] 6[<armor>] 7[<speed>] / 8[<npc speed>] 9[<accuracy>] 10[<range>] 
+    executable by: console
+    trigger:
+        set {_random} to a random integer between 1 and 6
+        set {_arg3} to arg-3
+        replace all "_" in {_arg3} with " "
+        replace all " boss" and " xp" in {_arg3} with ""        
+#        broadcast "%{_arg3}%"
+
+        if arg-3 contains "boss":
+            set {_nome} to "(BOSS)"
+
+        if arg-3 contains "xp":
+            set {_nome} to "(XP)"
+        
+        if arg-3 do not contain "xp" or "boss":
+            set {_nome} to "(natural)"
+
+        make console execute command "npc create %{_arg3}% lv.%arg-1% %{_nome}% --type %{mobs::%{_arg3}%::15}% --trait sentinel --at %arg-2%"
+#        broadcast "npc create %{_arg3}% lv.%arg-1% (natural) --type %arg-3% --trait sentinel --at %arg-2%"
+        make console execute command "wp disableteleport"
+        make console execute command "sentinel respawntime -1"
+        make console execute command "sentinel addtarget players"
+        make console execute command "sentinel damage %arg-4%"
+        make console execute command "sentinel health %arg-5%"
+        make console execute command "sentinel armor %arg-6%"
+        make console execute command "sentinel speed %arg-7%"
+        make console execute command "npc speed %arg-8%"
+        if arg-9 is set:
+            make console execute command "sentinel accuracy %arg-9%"
+        if arg-10 is set:
+            make console execute command "sentinel range %arg-10%"
+        if arg-3 is "Spider":
+            make console execute command "sentinel attackrate 0.6"
+        if arg-3 contains "boss":
+            make console execute command "npc glowing --color red"
+
+every 1 second:
+    {jogo} is 1
+    set {_numb} to 0
+    loop 9 times:
+        add 1 to {_numb}
+        set {_lore1} to line 8 of lore of {Invocador1::%{_numb}%}
+        set {_lore2} to line 2 of lore of {Invocador1::%{_numb}%}
+        replace "&6Respawn = " in {_lore2} with ""
+        replace "Respawn orig. = " in {_lore1} with ""
+        set {_lore1} to uncolored {_lore1}
+        set {_lore1} to "%{_lore1}%" parsed as integer
+        if {_lore1} is set:
+            add -1 to {_lore1}
+        set line 8 of lore of {Invocador1::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
+        if {_lore1} <= 0:
+            set line 8 of lore of {Invocador1::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
+            set {_lorelist::*} to uncolored lore of {Invocador1::%{_numb}%}
+            set {_itemname} to uncolored name of {Invocador1::%{_numb}%}
+            replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = " and "Distancia = " in {_lorelist::*} with ""
+
+            if {_lorelist::11} or {_lorelist::12} is not set:
+                set {_lorelist::11} and {_lorelist::12} to 0
+
+            make console execute command "spawnmobc 1 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}%"
+#        broadcast "%{_lore1}%"
+    set {_numb} to 0
+    wait 1 tick
+    loop 9 times:
+        add 1 to {_numb}
+        set {_lore1} to line 8 of lore of {Invocador2::%{_numb}%}
+        set {_lore2} to line 2 of lore of {Invocador2::%{_numb}%}
+        replace "&6Respawn = " in {_lore2} with ""
+        replace "Respawn orig. = " in {_lore1} with ""
+        set {_lore1} to uncolored {_lore1}
+        set {_lore1} to "%{_lore1}%" parsed as integer
+        if {_lore1} is set:
+            add -1 to {_lore1}
+        set line 8 of lore of {Invocador2::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
+        if {_lore1} <= 0:
+            set line 8 of lore of {Invocador2::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
+            set {_lorelist::*} to uncolored lore of {Invocador2::%{_numb}%}
+            set {_itemname} to uncolored name of {Invocador2::%{_numb}%}
+            replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = " and "Distancia = " in {_lorelist::*} with ""
+
+            if {_lorelist::11} or {_lorelist::12} is not set:
+                set {_lorelist::11} and {_lorelist::12} to 0
+
+            make console execute command "spawnmobc 2 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}%"
+
+
+every 5 minute:
+    make console execute command "spawn"
+
+every 8 minutes:
+    make console execute command "spawncaverna"
+
+every 15 minute:
+    make console execute command "spawnboss"
+
+
+#spawnar os mobs, conjunto com drops.sk
+command /spawn:
+    executable by: console
+    trigger:
+        message "Espere..."
+        loop all entities:
+            if name of loop-entity contains "(natural)":
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"
+            if name of loop-entity contains "(XP)":
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"
+        #zombiecaverna1
+        loop "%30 - {quantmobs}%" parsed as integer times:
+            add 1 to {_numb}
+            chance of "%{chance}%" parsed as integer:
+                set {_health} to 0
+                set {_damage} to 0
+                set {_levelstats} to a random integer between 1 and {level}
+                set {_level} to {_levelstats}
+                if {_levelstats} >= 20:
+                    set {_levelmin} to 20                 
+                if {_levelstats} >= 30:
+                    set {_levelmin} to 30  
+                set {_levelstats} to a random integer between {_levelmin} and {level}
+
+                set {_tipomob} to a random text out of "Skeleton_Horse", "Stray", "Spider" and "Husk"
+
+                loop "%{_level}%" parsed as integer times:
+                    add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}
+                    add a random number between {mobs::%{_tipomob}%::3} and {mobs::%{_tipomob}%::4} to {_damage}
+                set {_armor} to a random number between {mobs::%{_tipomob}%::5} and {mobs::%{_tipomob}%::6}
+                set {_speed} to a random number between {mobs::%{_tipomob}%::7} and {mobs::%{_tipomob}%::8}
+                set {_npcspeed} to a random number between {mobs::%{_tipomob}%::9} and {mobs::%{_tipomob}%::10}
+                set {_accuracy} to a random number between {mobs::%{_tipomob}%::11} and {mobs::%{_tipomob}%::12}
+                set {_range} to a random number between {mobs::%{_tipomob}%::13} and {mobs::%{_tipomob}%::14}
+
+                set {_nomespawn} to "caverna1"
+
+                make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:world %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
+
+        set {_numb} to 0
+        #nether1
+        loop 7 times:
+            add 1 to {_numb}
+            chance of 90%:
+                set {_health} to 0
+                set {_damage} to 0
+                set {_levelstats} to a random integer between 1 and {level}
+                set {_level} to {_levelstats}
+                if {_levelstats} >= 20:
+                    set {_levelmin} to 20                 
+                if {_levelstats} >= 30:
+                    set {_levelmin} to 30  
+                set {_levelstats} to a random integer between {_levelmin} and {level}
+
+                set {_tipomob} to a random text out of "Piglin_Brute", "Hoglin" and "Strider"
+
+                loop "%{_level}%" parsed as integer times:
+                    add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}
+                    add a random number between {mobs::%{_tipomob}%::3} and {mobs::%{_tipomob}%::4} to {_damage}
+                set {_armor} to a random number between {mobs::%{_tipomob}%::5} and {mobs::%{_tipomob}%::6}
+                set {_speed} to a random number between {mobs::%{_tipomob}%::7} and {mobs::%{_tipomob}%::8}
+                set {_npcspeed} to a random number between {mobs::%{_tipomob}%::9} and {mobs::%{_tipomob}%::10}
+                set {_accuracy} to a random number between {mobs::%{_tipomob}%::11} and {mobs::%{_tipomob}%::12}
+                set {_range} to a random number between {mobs::%{_tipomob}%::13} and {mobs::%{_tipomob}%::14}
+
+                set {_nomespawn} to "nether1"
+
+                make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:world %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
+
+        set {_numb} to 0
+        #vila1
+        loop "%23 + 5 - {quantmobs}%" parsed as integer times:
+            add 1 to {_numb}
+            chance of "%{chance}%" parsed as integer:
+                set {_health} to 0
+                set {_damage} to 0
+                set {_levelstats} to a random integer between 1 and {level}
+                set {_level} to {_levelstats}
+                if {_levelstats} >= 20:
+                    set {_levelmin} to 20                 
+                if {_levelstats} >= 30:
+                    set {_levelmin} to 30  
+                set {_levelstats} to a random integer between {_levelmin} and {level}
+
+                set {_tipomob} to a random text out of "Ravager", "Pillager", "Vindicator" and "Evoker"
+
+                {_numb} <= 2:
+                    set {_tipomob} to "Pillager"
+
+                loop "%{_level}%" parsed as integer times:
+                    add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}
+                    add a random number between {mobs::%{_tipomob}%::3} and {mobs::%{_tipomob}%::4} to {_damage}
+                set {_armor} to a random number between {mobs::%{_tipomob}%::5} and {mobs::%{_tipomob}%::6}
+                set {_speed} to a random number between {mobs::%{_tipomob}%::7} and {mobs::%{_tipomob}%::8}
+                set {_npcspeed} to a random number between {mobs::%{_tipomob}%::9} and {mobs::%{_tipomob}%::10}
+                set {_accuracy} to a random number between {mobs::%{_tipomob}%::11} and {mobs::%{_tipomob}%::12}
+                set {_range} to a random number between {mobs::%{_tipomob}%::13} and {mobs::%{_tipomob}%::14}
+
+                set {_nomespawn} to "vila1"
+
+                make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:world %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
+
+        set {_numb} to 0
+        #pantano1
+        loop 7 times:
+            add 1 to {_numb}
+            chance of 90%:
+                set {_health} to 0
+                set {_damage} to 0
+                set {_levelstats} to a random integer between 1 and {level}
+                set {_level} to {_levelstats}
+                if {_levelstats} >= 20:
+                    set {_levelmin} to 20
+                if {_levelstats} >= 30:
+                    set {_levelmin} to 30  
+                set {_levelstats} to a random integer between {_levelmin} and {level}
+
+                set {_tipomob} to a random text out of "Bruxa_Avançada", "Witch" and "Frog"
+
+                loop "%{_level}%" parsed as integer times:
+                    add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}
+                    add a random number between {mobs::%{_tipomob}%::3} and {mobs::%{_tipomob}%::4} to {_damage}
+                set {_armor} to a random number between {mobs::%{_tipomob}%::5} and {mobs::%{_tipomob}%::6}
+                set {_speed} to a random number between {mobs::%{_tipomob}%::7} and {mobs::%{_tipomob}%::8}
+                set {_npcspeed} to a random number between {mobs::%{_tipomob}%::9} and {mobs::%{_tipomob}%::10}
+                set {_accuracy} to a random number between {mobs::%{_tipomob}%::11} and {mobs::%{_tipomob}%::12}
+                set {_range} to a random number between {mobs::%{_tipomob}%::13} and {mobs::%{_tipomob}%::14}
+
+                set {_nomespawn} to "pantano1"
+
+                make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:world %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
+
+        set {_numb} to 0
+
+        #caverna2
+        loop 117 times:
+            add 1 to {_numb}
+            chance of 40%:
+                wait 1 tick
+                set {_health} to 0
+                set {_damage} to 0
+                set {_levelstats} to a random integer between 5 and {level} * 2
+                set {_level} to {_levelstats}
+                if {_levelstats} >= 20:
+                    set {_levelmin} to 30                 
+                else:
+                    set {_levelmin} to 10
+                if {_levelstats} >= 30:
+                    set {_levelmin} to 45
+                
+                set {_level} to a random integer between {_levelmin} and {level}
+
+                set {_tipomob} to a random text out of "Zombie", "Skeleton", "Spider", "Creeper" and "Enderman"
+
+                loop "%{_level}%" parsed as integer times:
+                    add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}
+                    add a random number between {mobs::%{_tipomob}%::3} and {mobs::%{_tipomob}%::4} to {_damage}
+                set {_armor} to a random number between {mobs::%{_tipomob}%::5} and {mobs::%{_tipomob}%::6}
+                set {_speed} to a random number between {mobs::%{_tipomob}%::7} and {mobs::%{_tipomob}%::8}
+                set {_npcspeed} to a random number between {mobs::%{_tipomob}%::9} and {mobs::%{_tipomob}%::10}
+                set {_accuracy} to a random number between {mobs::%{_tipomob}%::11} and {mobs::%{_tipomob}%::12}
+                set {_range} to a random number between {mobs::%{_tipomob}%::13} and {mobs::%{_tipomob}%::14}
+
+                set {_nomespawn} to "caverna2"
+
+                make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:world %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
+
+        message "Spawns feitos!"
+        set {_numb} to 0
+
+command /spawnboss:
+    executable by: console
+    trigger:
+        message "Espere..."
+        loop all entities:
+            if name of loop-entity contains "(BOSS)":
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"
+        loop 3 times:
+            add 1 to {_numb}
+            chance of 80%:
+                set {_health} to 0
+                set {_damage} to 0
+                set {_level} to 100
+                {level} > 20: 
+                    set {_level} to 200
+                {level} > 30: 
+                    set {_level} to 300
+
+                set {_tipomob} to a random text out of "Zombie", "Skeleton", "Spider", "Creeper" and "Enderman"
+
+                loop "%{_level}%" parsed as integer times:
+                    add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}
+                    add a random number between {mobs::%{_tipomob}%::3} and {mobs::%{_tipomob}%::4} to {_damage}
+                set {_armor} to a random number between {mobs::%{_tipomob}%::5} and {mobs::%{_tipomob}%::6}
+                set {_speed} to a random number between {mobs::%{_tipomob}%::7} and {mobs::%{_tipomob}%::8}
+                set {_npcspeed} to a random number between {mobs::%{_tipomob}%::9} and {mobs::%{_tipomob}%::10}
+                set {_accuracy} to a random number between {mobs::%{_tipomob}%::11} and {mobs::%{_tipomob}%::12}
+                set {_range} to a random number between {mobs::%{_tipomob}%::13} and {mobs::%{_tipomob}%::14}
+
+                set {_nomespawn} to "caverna2boss"
+
+                make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:world %{_tipomob}%_boss %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
+
+        message "Spawns feitos!"
+
+#/give @p zombie_spawn_egg{display:{Name:'[{"text":"Zumbi","italic":false,"bold":true,"color":"red"}]',Lore:['[{"text":"Level = 1","italic":false,"color":"yellow"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"status:","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"vida = 5","italic":true,"color":"dark_gray"}]','[{"text":"dano = 2","italic":true,"color":"dark_gray"}]','[{"text":"armadura = 0.1","italic":true,"color":"dark_gray"}]','[{"text":"velocidade = 1 / 1","italic":true,"color":"dark_gray"}]']}} 1
+#/give @p zombie_spawn_egg{display:{Name:'[{"text":"Zombie","italic":false,"bold":true,"color":"red"}]',Lore:['[{"text":"Level = 1","italic":false,"color":"yellow"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Respawn = 30","italic":false,"color":"gold"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Status:","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Vida = 5","italic":true,"color":"dark_gray"},{"text":"","italic":true,"color":"dark_purple"}]','[{"text":"Dano = 2","italic":true,"color":"dark_gray"},{"text":"","italic":true,"color":"dark_purple"}]','[{"text":"Armadura = 0.1","italic":true,"color":"dark_gray"},{"text":"","italic":true,"color":"dark_purple"}]','[{"text":"Velocidade = 1 / 1","italic":true,"color":"dark_gray"}]']}} 1
+        #nether2
+#        loop 91 times:
+#            add 1 to {_numb}
+#            chance of 40%:
+#                set {_health} to 0
+#                set {_damage} to 0
+#                set {_levelstats} to {level} -30
+#                set {_levelstats} to a random integer between {_levelstats} and -5 
+#                set {_level} to abs({_levelstats})
+#                #wither skeleton
+#                loop "%{_level}%" parsed as integer times:
+#                    add a random number between 2 and 3 to {_health}
+#                    add a random number between 2 and 2 to {_damage}
+#                set {_armor} to a random number between 0.00 and 0.30
+#                set {_speed} to a random number between 0.6 and 1.2
+#                set {_npcspeed} to a random number between 0.6 and 1.2
+#                set {_x} to x-coordinate of {spawns::nether2::%{_numb}%}
+#                set {_y} to y-coordinate of {spawns::nether2::%{_numb}%}
+#                set {_z} to z-coordinate of {spawns::nether2::%{_numb}%}
+#                wait 1 tick
+#                make console execute command "spawnmob %{_level}% %{_x}%:%{_y}%:%{_z}%:world Wither_Skeleton_xp %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}%" #4[<damage>] 5[<health>] 6[<armor>] 7[<speed>] / 8[<npc speed>] 9[<accuracy>] 10[<range>]
+#        chance of 90%:
+#            set {_health} to 0
+#            set {_damage} to 0
+#            set {_level} to 100
+#            #wither skeleton
+#            loop "%{_level}%" parsed as integer times:
+#                add a random number between 2 and 3 to {_health}
+#                add a random number between 2 and 2 to {_damage}
+#            set {_armor} to a random number between 0.00 and 0.30
+#            set {_speed} to a random number between 0.6 and 1.2
+#            set {_npcspeed} to a random number between 0.6 and 1.2
+#            wait 1 tick
+#            set {_x} to x-coordinate of {spawns::nether2::%{_numb}%}
+#            set {_y} to y-coordinate of {spawns::nether2::%{_numb}%}
+#            set {_z} to z-coordinate of {spawns::nether2::%{_numb}%}
+#            wait 1 tick
+#            make console execute command "spawnmob %{_level}% -157.5:68:-31.5:world Wither_Skeleton_boss %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}%"
+#every 12 minutes:
+#        loop all entities:
+#            if name of loop-entity contains "(natural)":
+#                kill loop-entity
+#        make console execute command "kill @e[type=minecraft:item]"
+    
+#on npc spawn:
+#    wait 38 ticks
+#    set {_id} to event-integer
+#    set {_nome} to uuid of citizen {_id}
+#    wait 1 tick
+#    name of citizen {_id} contains "Skeleton":
+#        name of citizen {_id} do not contain "Wither":
+#            make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:bow"",Count:1b},{}]}"
+#        else: 
+#            make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:stone_sword"",Count:1b},{}]}" 
+#            chance of 25%:
+#                make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:bow"",Count:1b},{}]}"
+#            chance of 25%:
+#                make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:crossbow"",Count:1b},{}]}"
+#            chance of 25%:
+#                make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:shield"",Count:1b},{}]}"       
+#    name of citizen {_id} contains "Piglin":
+#        chance of 50%:
+#            make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:golden_sword"",Count:1b},{}]}"
+#        else:
+#            make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:golden_axe"",Count:1b},{}]}"            
+#    name of citizen {_id} contains "Strider":
+#        make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:blaze_rod"",Count:1b},{}]}"
+#    name of citizen {_id} contains "Pillager":
+#        make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:crossbow"",Count:1b},{}]}"
+#    name of citizen {_id} contains "Evoker":
+#        make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:book"",Count:1b},{}]}"
+#    name of citizen {_id} contains "Witch":
+#        make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:splash_potion"",tag:{CustomPotionColor:7995401,CustomPotionEffects:[{Id:7}]},Count:1b},{}]}"
+#    name of citizen {_id} contains "Bruxa Avançada":
+#        make console execute command "data merge entity %{_nome}% {HandItems:[{id:""minecraft:blaze_rod"",Count:1b},{}]}"
+#        broadcast "%{_lore1}%"    
+#        broadcast "%{_lorelist::*}%"
+
+#    loop {Invocador1::*}:
+#        set {_lore} to line 2 of lore of loop-variable
+#        replace "Respawn = " in {_lore} with ""
+#        set {_lore} to uncolored {_lore}
+#        set {_lore} to "%{_lore}%" parsed as integer
+#        add -1 to {_lore}
+#        set line 2 of loop-variable's lore to "&6Respawn = %{_lore}%"
+
+#command /checknecro [<number>] [<number>]:
+#    executable by: console
+#    trigger:
+#        if arg-1 is set:
+#            broadcast "checknecro"
+#            if {Invocador%arg-2%::%arg-1%} is set:
+#                if {jogo} is 1:
+#                broadcast "sim %arg-1%"
+#                broadcast "%{Invocador1nome::%arg-1%::*}%" #nome/type
+#                broadcast "%{Invocador1lore::%arg-1%::1}%" #level
+#                broadcast "%{Invocador1lore::%arg-1%::2}%" #respawn
+#                broadcast "%{Invocador1lore::%arg-1%::6}%" #vida
+#                broadcast "%{Invocador1lore::%arg-1%::7}%" #dano
+#                broadcast "%{Invocador1lore::%arg-1%::8}%" #armadura
+#                broadcast "%{Invocador1lore::%arg-1%::9}%" #velocidade
+#                broadcast "%{Invocador1lore::%arg-1%::10}%"
+#                broadcast "%{Invocador1lore::%arg-1%::11}%"
+#                    set {Invocador%arg-2%nome::%arg-1%::*} to {Invocador%arg-2%nome::%arg-1%::*} in lowercase
+#                    replace " " in {Invocador%arg-2%nome::%arg-1%::1} with "_"
+#                    set {Invocador%arg-2%nome::%arg-1%::1} to uncolored {Invocador%arg-2%nome::%arg-1%::1}
+#                    set {Invocador%arg-2%lore::%arg-1%::*} to uncolored {Invocador%arg-2%lore::%arg-1%::*}
+#                    replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira =" and "Distancia =" in {Invocador%arg-2%lore::%arg-1%::*} with ""
+#                    make console execute command "spawnmobc %arg-2% %{Invocador%arg-2%nome::%arg-1%::1}% %{Invocador%arg-2%lore::%arg-1%::1}% %{Invocador%arg-2%lore::%arg-1%::7}% %{Invocador%arg-2%lore::%arg-1%::6}% %{Invocador%arg-2%lore::%arg-1%::8}% %{Invocador%arg-2%lore::%arg-1%::9}%"
+#                    wait "%{Invocador%arg-2%lore::%arg-1%::2}% seconds" parsed as timespan
+#                    make console execute command "checknecro %arg-1% %arg-2%"
+#            else:
+#                wait 10 ticks
+#                if {jogo} is 1:
+#                    make console execute command "checknecro %arg-1% %arg-2%"
+#                    broadcast "não %arg-1%"
+#                    set {test%arg-2%::%arg-1%} to "%arg-1% red wool" parsed as item
+#        else:
+#            set {checknecronumb} to 0
+#            loop 10 times:
+#                wait 32 ticks
+#                add 1 to {checknecronumb}
+#                make console execute command "checknecro %{checknecronumb}% 1"
+#                wait 1 tick
+#                make console execute command "checknecro %{checknecronumb}% 2"
+#                broadcast "%{_1}%"

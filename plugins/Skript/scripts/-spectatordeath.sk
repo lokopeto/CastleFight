@@ -1,0 +1,50 @@
+every 1 second:
+    loop all players:
+        add -1 to {1deathtimer::%uuid of loop-player%}
+#        message "%{1deathtimer::%uuid of loop-player%}%" to loop-player
+
+on death of a player:
+    set {1deathtimer::1loc::%uuid of victim%} to location of victim
+    set death message to ""
+
+on respawn:
+    {jogo} is 1
+    set gamemode of player to spectator
+    teleport player to {1deathtimer::loc::%uuid of player%}
+    remove {1deathtimer::1loc::%uuid of player%}
+    set {_timer} to {1deathtimer::%uuid of player%} - 1
+    {1deathtimer::%uuid of player%} <= 0:
+        set gamemode of player to adventure
+        message "&7&o&lpronto para batalha!"
+    else:
+        message "&c&oVoce Morreu!"
+        loop "%{_timer}%" parsed as integer times:
+            wait 1 second
+            {1deathtimer::%uuid of player%} is 20:
+                message "&7&ofaltam &f&o%{1deathtimer::%uuid of player%}%&7&o segundos.."
+            {1deathtimer::%uuid of player%} <= 10:
+                message "&7&ofaltam &f&o%{1deathtimer::%uuid of player%}%&7&o segundos.."            
+        set gamemode of player to adventure
+        message "&7&o&lpronto para batalha!"
+#    "%team of player%" is "castelo1":
+#        teleport player to {rei1loc}
+#    "%team of player%" is "castelo2":
+#        teleport player to {rei2loc}    
+    set {1deathtimer::%uuid of player%} to 30
+    set {nodama::%uuid of player%} to 1
+    make console execute command "ppo %player% add soul_fire_flame beam"
+    make console execute command "ppo %player% add soul trail"
+    wait 10 seconds
+    set {nodama::%uuid of player%} to 0
+    make console execute command "ppo %player% remove 1"
+    make console execute command "ppo %player% remove 2"
+
+on damage of player:
+    {nodama::%uuid of victim%} is 1
+    cancel event
+    push the victim behind at speed 0.5
+    push the attacker behind at speed 0.5    
+
+
+
+    

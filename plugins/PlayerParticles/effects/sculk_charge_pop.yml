@@ -1,0 +1,11 @@
+# The name the effect will display as
+# Default: sculk_charge_pop
+effect-name: sculk_charge_pop
+
+# If the effect is enabled or not
+# Default: true
+enabled: true
+
+# Default: [SCULK_VEIN]
+gui-icon-material:
+  - SCULK_VEIN

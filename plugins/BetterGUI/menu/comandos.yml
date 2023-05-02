@@ -1,0 +1,52 @@
+menu-settings:
+  name: '&aComandos'
+  rows: 3
+  command: comandos
+  auto-refresh: 500
+
+criarpartida:
+  NAME: '&b/criarpartida'
+  LORE:
+    - '&7Comando para criar uma partida'
+    - '&7customizada.'
+  ID: iron_sword
+  FLAG:
+    - HIDE_ATTRIBUTES
+  POSITION-X: 1
+  POSITION-Y: 1
+
+desistir:
+  NAME: '&b/desistir'
+  LORE:
+    - '&7Caso queira desistir,'
+    - '&7use esse commando e'
+    - '&7ira iniciar uma votação'
+    - '&7de desistencia.'
+  ID: ghast_tear
+  FLAG:
+    - HIDE_ATTRIBUTES
+  POSITION-X: 2
+  POSITION-Y: 1
+
+mudar:
+  NAME: '&b/mudar'
+  LORE:
+    - '&7Use para mudar de castelo.'
+  ID: ender_pearl
+  FLAG:
+    - HIDE_ATTRIBUTES
+  POSITION-X: 3
+  POSITION-Y: 1
+
+global:
+  NAME: '&b/global'
+  LORE:
+    - '&7Caso queira falar com todos'
+    - '&7e não apenas com o seu time,'
+    - '&7use para ativa e desativar'
+    - '&7o chat global.'
+  ID: paper
+  FLAG:
+    - HIDE_ATTRIBUTES
+  POSITION-X: 4
+  POSITION-Y: 1

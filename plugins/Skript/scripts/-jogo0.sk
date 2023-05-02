@@ -1,0 +1,18 @@
+on load:
+    wait 10 seconds
+    make console execute command "jogo 0"
+    make console execute command "team add castelo1"
+    make console execute command "team add castelo2"
+    make console execute command "team modify castelo1 deathMessageVisibility hideForOtherTeams"
+    make console execute command "team modify castelo2 deathMessageVisibility hideForOtherTeams"
+    make console execute command "team modify castelo1 friendlyFire false"
+    make console execute command "team modify castelo2 friendlyFire false"
+    wait 10 seconds
+    make console execute command "jogo 0"
+
+
+
+
+
+
+

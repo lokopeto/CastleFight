@@ -1,0 +1,89 @@
+# Welcome to SkBee
+
+settings:
+  # Enable this if you would like to see more verbose debug messages
+  debug: false
+  
+  # Enable this to automatically check for SkBee updates
+  # Disable this if you do not want to check for updates, or it takes too long/has issues checking
+  update-checker: true
+
+# Disable elements you do not plan to use.
+elements:
+  # Enable NBT elements
+  nbt: true
+  
+  # Enable Scoreboard elements
+  scoreboard: false
+  
+  # Enable Team elements
+  team: false
+  
+  # Enable custom recipe elements
+  recipe: true
+  
+  # Enable bound elements
+  # Bounds are like custom world guard regions
+  bound: true
+  
+  # Enable structure elements
+  structure: true
+  
+  # Enable VirtualFurnace elements
+  # This feature is semi-experimental, please use with caution
+  virtual-furnace: false
+  
+  # Enable Text Component elements
+  text-component: true
+  
+  # Enable pathfinding elements
+  # Note: Only available on Paper
+  pathfinding: true
+  
+  # Enable world creator elements
+  world-creator: true
+  # Whether or not custom worlds should automatically load on server start
+  # If disabled, you will need to load worlds with the load world effect
+  auto-load-custom-worlds: true
+  
+  # Enable Minecraft GameEvent elements
+  game-event: true
+  
+  # Enable boss bar elements
+  boss-bar: true
+  
+  # Enable statistic elements
+  statistic: true
+  
+  # Enable villager/merchant elements
+  villager: true
+  
+  # Enable advancement elements
+  advancement: true
+  
+  # Enable world border elements
+  world-border: true
+  nbt-events:
+    # Whether breaking a block should remove NBT
+    block-break: true
+    # Whether pistons pushing blocks should remove NBT
+    piston-extend: true
+    # Whether an entity changing a block should remove NBT
+    # Examples would be rabbit breaking carrots or enderman picking up blocks
+    entity-change-block: true
+    # Whether a block exploding should remove NBT
+    block-explode: true
+    # Whether an entity exploding should remove NBT from broken blocks
+    entity-explode: true
+  scoreboard-objective: false
+  particle: true
+  minecraft-tag: true
+  raytrace: true
+  fishing: true
+  display-entity: true
+
+recipe:
+  # This is the namespace all recipes will be saved under
+  # You can choose whatever you wish
+  # Example, when using the minecraft recipe command `/minecraft:recipe give playerName skbee:my_custom_recipe`
+  namespace: skbee

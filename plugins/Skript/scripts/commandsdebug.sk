@@ -1,0 +1,122 @@
+command /killc [<number>]:
+    trigger:
+        if arg-1 is 1:
+            make console execute command "kill @e[name=castelo1]"
+        if arg-1 is 2:
+            make console execute command "kill @e[name=castelo2]"
+
+command /loop:
+    trigger:
+        loop all entities in radius 20 around player:
+            add uuid of loop-entities to {asdfoih::*}
+            message "&e%{asdfoih::*}%"
+            delete {asdfoih::*}
+
+command /ferreirolv <number>:
+    trigger:
+        set {ferreiro1lv} to arg-1
+
+command /testxp:
+    trigger:
+        set {_xp} to level of player
+        broadcast "%{_xp}%"
+
+#command /testgui [<number>]:
+#    trigger:
+#        broadcast "%{Invocador1lore::1::%arg-1%}%"
+
+command /aaaaaaaaaaaaaaa <number>:
+    trigger:
+        message "%{Invocador2nome::%arg-1%::*}%"
+
+command /levelII [<integer>]:
+    trigger:
+        if arg-1 is set:
+            add arg-1 to max health of player
+            heal the player            
+        else:
+            set max health of player to 10
+            heal the player
+
+command /veritems:
+    trigger:
+        set {_team} to "%team of player%"
+        replace "castelo" in {_team} with ""
+        create a gui with virtual chest inventory with 1 rows named "test":
+            set {slots1} to -1
+            set {slots2} to 0
+            loop 10 times:
+                add 1 to {slots1}
+                add 1 to {slots2}
+#                broadcast "%{slots1}%"
+                make gui slot "%{slots1}%" parsed as integer with {test%{_team}%::%{slots2}%}
+            open the created gui for player
+
+
+command /tooltest:
+    trigger:
+        enchant the player's tool with sharpness 30
+
+command /limparnpcs:
+    trigger:
+        loop 10000 times:
+            add 1 to {_id} 
+            make console execute command "npc select %{_id}%"
+            make console execute command "npc remove"
+        set {_id} to -1
+
+command /jogoset [<number>]:
+    trigger:
+        set {level} to arg-1
+
+command /nodamareset:
+    trigger:
+        set {nodama::*} to 0
+
+#command /itemframeinvisivel:
+#    trigger:
+#        if targeted entity is a item frame:
+#            set nbt compound of event-entity to nbt compound from "{Invisible:1b}"
+
+#command /testnpc:
+#    trigger:
+#        loop all entities:
+#            if name of loop-entity contains "CIT":
+#                hide loop-entity info
+#            if loop-entity is a citizen:
+#                set {_id} to citizen id of loop-entity
+#                name of citizen {_id} is "aaaaaaaaaaaaaaaaaaaaaaaaa":
+#                    broadcast {_id}
+
+
+command /nightvision:
+    aliases: /nv
+    trigger:
+        if {nightvision::%uuid of player%} is set:
+            apply potion of night vision without particles to player for 999 days
+            delete {nightvision::%uuid of player%}
+            message "&7Night Vision Ativado"
+        else:
+            remove night vision from the player
+            set {nightvision::%uuid of player%} to 1
+            message "&7Night Vision Desativado"
+
+
+command /teamjointest:
+    trigger:
+        set {teamlist} to size of team "castelo1"
+        broadcast {teamlist}
+
+command /debugstick:
+    aliases: /dbs
+    trigger:
+        give player a debug stick
+
+command /jogadoreaeaaewa <integer> <number>:
+    trigger:
+        set {jogadores} to arg-1
+        message "%ceil({jogadores} / arg-2)%"
+
+command /partidatest <integer>:
+    trigger:
+        message {partida::%arg-1%::1}

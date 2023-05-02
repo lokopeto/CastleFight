@@ -1,0 +1,98 @@
+#on load:
+#    set {mobs::Zombie::*} to ""
+#    set {mobs::Skeleton::*} to ""
+
+command /statsmob <text> [<text>] [<integer>] [<integer>]:
+    trigger:
+        if {mobsnomes::*} contains arg-1:
+            if arg-3 and arg-4 is set:
+                if arg-2 is "Vida":
+                    set {mobs::%arg-1%::1} to arg-3
+                    set {mobs::%arg-1%::2} to arg-4
+                if arg-2 is "Dano":
+                    set {mobs::%arg-1%::3} to arg-3
+                    set {mobs::%arg-1%::4} to arg-4
+                if arg-2 is "Armadura":
+                    set {mobs::%arg-1%::5} to arg-3
+                    set {mobs::%arg-1%::6} to arg-4
+                if arg-2 is "Velocidade":
+                    set {mobs::%arg-1%::7} to arg-3
+                    set {mobs::%arg-1%::8} to arg-4
+                if arg-2 is "Velocidade (npc)":
+                    set {mobs::%arg-1%::9} to arg-3
+                    set {mobs::%arg-1%::10} to arg-4
+                if arg-2 is "Mira":
+                    set {mobs::%arg-1%::11} to arg-3
+                    set {mobs::%arg-1%::12} to arg-4
+                if arg-2 is "Alcance":
+                    set {mobs::%arg-1%::13} to arg-3
+                    set {mobs::%arg-1%::14} to arg-4
+
+
+                        
+            message "Nome = %arg-1%:"
+            message ""
+            message "   Vida = %{mobs::%arg-1%::1}%/%{mobs::%arg-1%::2}%"
+            message "   Dano = %{mobs::%arg-1%::3}%/%{mobs::%arg-1%::4}%"
+            message "   Armadura = %{mobs::%arg-1%::5}%/%{mobs::%arg-1%::6}%"
+            message "   Velocidade = %{mobs::%arg-1%::7}%/%{mobs::%arg-1%::8}%"
+            message "   Velocidade (npc) = %{mobs::%arg-1%::9}%/%{mobs::%arg-1%::10}%"
+            message "   Mira = %{mobs::%arg-1%::11}%/%{mobs::%arg-1%::12}%"
+            message "   Alcance = %{mobs::%arg-1%::13}%/%{mobs::%arg-1%::14}%"     
+        else:
+            message "não existe"
+
+on tab complete of "/statsmob":
+    set tab completions for position 1 to {mobsnomes::*}
+    set tab completions for position 2 to "Vida", "Dano", "Armadura", "Velocidade", "Velocidade (npc)", "Mira" and "Alcance"
+
+on tab complete of "/statsmobremover" and "/statsmobcriar":
+    set tab completions for position 1 to {mobsnomes::*}
+
+on tab complete of "/statsmobovo":
+    set tab completions for position 1 to {mobsnomes::*}  
+
+command /statsmobcriar <text>:
+    trigger:
+    
+        set {_mob} to arg-1
+        replace all " " with "_" in {_mob}
+        broadcast "Você adicionou ""%{_mob}%"""
+        if {mobsnomes::*} contains {_mob}:
+            remove all {_mob} from {mobsnomes::*}
+            broadcast """%{_mob}%"" já existe" 
+        else:
+            message "Configurado para o padrão"
+            set {mobs::%{_mob}%::*} to 1, 2, 1, 2, 0.00, 0.1, 0.8, 1.2, 0.8, 1.2, 0.0, 0.1, 10 and 30
+        add {_mob} to {mobsnomes::*}
+
+command /statsmobovo <text> [<text>]:
+    trigger:
+        if arg-2 is set:
+            set {mobs::%arg-1%::15} to arg-2
+            message "Ovo de ""%arg-1%"" configurado para ""%arg-2%"""
+        else:
+            set {mobs::%arg-1%::15} to arg-1
+            message "Configurado para o padrão"            
+
+
+
+
+command /statsmobremover <text>:
+    trigger:
+        remove arg-1 from {mobsnomes::*}
+        remove arg-1 from {mobs::%arg-1%::*}
+        broadcast """%arg-1%"" foi removida" 
+
+
+
+
+
+
+
+
+
+
+
+
+

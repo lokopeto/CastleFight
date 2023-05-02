@@ -1,0 +1,19 @@
+command /castelo1loc:
+    trigger:
+        set {castelo1loc} to location of player
+        message "&b%{castelo1loc}%"
+
+command /castelo2loc:
+    trigger:
+        set {castelo2loc} to location of player
+        message "&e%{castelo2loc}%"
+
+command /rei1loc:
+    trigger:
+        set {rei1loc} to location of player
+        message "&e%{rei1loc}%"
+
+command /rei2loc:
+    trigger:
+        set {rei2loc} to location of player
+        message "&e%{rei2loc}%"

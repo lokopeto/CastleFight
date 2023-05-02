@@ -1,0 +1,195 @@
+on death:
+    name of victim contains "natural" or "BOSS":
+        victim is not a player:
+            set {_health} to 0
+            set {_damage} to 0
+            set {_level} to name of victim
+            replace every "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "Ç", "ç", " ", ".", "(" and ")" in {_level} with ""
+            name of victim contains "BOSS":
+                set {_cento} to 99
+            else:
+                set {_cento} to 30
+            chance of {_cento}%:
+                name of victim contains "Zombie": #zumbi
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 2 and 3 to {_health}
+                        add a random number between 2 and 2 to {_damage}
+                    set {_armor} to a random number between 0.00 and 0.30
+                    set {_speed} to a random number between 0.6 and 1.2
+                    set {_npcspeed} to a random number between 0.6 and 1.2
+                    drop 1 zombie spawn egg named "&4&lZombie Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Skeleton": #esqueleto
+                    name of victim do not contain "Wither":
+                        loop "%{_level}%" parsed as integer times:
+                            add a random number between 2 and 2 to {_health}
+                            add a random number between 1 and 3 to {_damage}
+                        set {_armor} to a random number between 0.00 and 0.1
+                        set {_speed} to a random number between 0.6 and 1.2
+                        set {_npcspeed} to a random number between 0.6 and 1.2
+                        set {_accuracy} to a random number between 0.0 and 0.1
+                        set {_range} to a random number between 10 and 30
+                        drop 1 skeleton spawn egg named "&4&lSkeleton Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim
+                    else:
+                        loop "%{_level}%" parsed as integer times:
+                            add a random number between 2 and 2 to {_health}
+                            add a random number between 1 and 3 to {_damage}
+                        set {_armor} to a random number between 0.00 and 0.1
+                        set {_speed} to a random number between 0.6 and 1.2
+                        set {_npcspeed} to a random number between 0.6 and 1.2
+                        set {_accuracy} to a random number between 0.0 and 0.1
+                        set {_range} to a random number between 10 and 30
+                        drop 1 Wither skeleton spawn egg named "&4&lWither Skeleton Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim
+                name of victim contains "Spider": #aranha
+                    name of victim do not contain "Cave":
+                        loop "%{_level}%" parsed as integer times:
+                            add a random number between 1.5 and 2 to {_health}
+                            add a random number between 1 and 3 to {_damage}
+                        set {_armor} to a random number between 0.00 and 0.1
+                        set {_speed} to a random number between 0.8 and 1.2
+                        set {_npcspeed} to a random number between 0.8 and 1.2
+                        drop 1 spider spawn egg named "&4&lSpider Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 20","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                    else:
+                        loop "%{_level}%" parsed as integer times:
+                            add a random number between 1.5 and 2 to {_health}
+                            add a random number between 1 and 3 to {_damage}
+                        set {_armor} to a random number between 0.00 and 0.1
+                        set {_speed} to a random number between 0.8 and 1.2
+                        set {_npcspeed} to a random number between 0.8 and 1.2
+                        drop 1 cave spider spawn egg named "&4&lCave Spider Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 20","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Creeper": #creeper
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 2 to {_health}
+                        add a random number between 1 and 1 to {_damage}
+                    set {_armor} to 0
+                    set {_speed} to a random number between 1 and 1.2
+                    set {_npcspeed} to a random number between 0.8 and 1.2
+                    drop 1 creeper spawn egg named "&4&lCreeper Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 40","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Piglin Brute": 
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 2 to {_health}
+                        add a random number between 2 and 3 to {_damage}
+                    set {_armor} to a random number between 0.30 and 0.50
+                    set {_speed} to a random number between 0.6 and 1.2
+                    set {_npcspeed} to a random number between 0.6 and 1.2
+                    drop 1 piglin brute spawn egg named "&4&lPiglin Brute Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Hoglin":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 2 and 4 to {_health}
+                        add a random number between 1 and 1 to {_damage}
+                    set {_armor} to a random number between 0.00 and 0.1
+                    set {_speed} to a random number between 0.6 and 1.2
+                    set {_npcspeed} to a random number between 0.6 and 1.2
+                    set {_accuracy} to a random number between 0.0 and 0.1
+                    set {_range} to a random number between 10 and 30
+                    drop 1 hoglin spawn egg named "&4&lHoglin Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 45","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Strider":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 1.5 to {_health}
+                        add a random number between 1 and 4 to {_damage}
+                    set {_armor} to a random number between 0.00 and 0.1
+                    set {_speed} to a random number between 0.8 and 1.2
+                    set {_npcspeed} to a random number between 0.8 and 1.2
+                    set {_accuracy} to a random number between 0.0 and 0.1
+                    set {_range} to a random number between 10 and 30
+                    drop 1 strider spawn egg named "&4&lStrider Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 20","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim
+
+                name of victim contains "Ravager":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 2 and 3 to {_health}
+                        add a random number between 2 and 2 to {_damage}
+                    set {_armor} to a random number between 0.00 and 0.30
+                    set {_speed} to a random number between 0.6 and 1.2
+                    set {_npcspeed} to a random number between 0.6 and 1.2
+                    drop 1 ravager spawn egg named "&4&lRavager Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Pillager":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 2 and 2 to {_health}
+                        add a random number between 1 and 3 to {_damage}
+                    set {_armor} to a random number between 0.00 and 0.1
+                    set {_speed} to a random number between 0.6 and 1.2
+                    set {_npcspeed} to a random number between 0.6 and 1.2
+                    set {_accuracy} to a random number between 0.0 and 0.1
+                    set {_range} to a random number between 10 and 30
+                    drop 1 pillager spawn egg named "&4&lPillager Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim
+                name of victim contains "Vindicator":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1.5 and 2 to {_health}
+                        add a random number between 1 and 3 to {_damage}
+                    set {_armor} to a random number between 0.00 and 0.1
+                    set {_speed} to a random number between 0.8 and 1.2
+                    set {_npcspeed} to a random number between 0.8 and 1.2
+                    drop 1 vindicator spawn egg named "&4&lVindicator Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 20","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Evoker":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 2 to {_health}
+                        add a random number between 1 and 1 to {_damage}
+                    set {_armor} to 0
+                    set {_speed} to a random number between 1 and 1.2
+                    set {_npcspeed} to a random number between 0.8 and 1.2
+                    drop 1 evoker spawn egg named "&4&lEvoker Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 40","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Drowned":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 2 to {_health}
+                        add a random number between 2 and 3 to {_damage}
+                    set {_armor} to a random number between 0.30 and 0.50
+                    set {_speed} to a random number between 0.6 and 1.2
+                    set {_npcspeed} to a random number between 0.6 and 1.2
+                    drop 1 drowned spawn egg named "&4&lDrowned Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Witch":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 2 and 4 to {_health}
+                        add a random number between 1 and 1 to {_damage}
+                    set {_armor} to a random number between 0.00 and 0.1
+                    set {_speed} to a random number between 0.6 and 1.2
+                    set {_npcspeed} to a random number between 0.6 and 1.2
+                    set {_accuracy} to a random number between 0.0 and 0.1
+                    set {_range} to a random number between 10 and 30
+                    drop 1 witch spawn egg named "&4&lWitch Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 45","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim
+                name of victim contains "Bruxa Avançada":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 2 to {_health}
+                        add a random number between 2 and 3 to {_damage}
+                    set {_armor} to a random number between 0.30 and 0.50
+                    set {_speed} to a random number between 0.6 and 1.2
+                    set {_npcspeed} to a random number between 0.6 and 1.2
+                    set {_accuracy} to a random number between 0.0 and 0.1
+                    set {_range} to a random number between 10 and 30
+                    drop 1 witch spawn egg named "&4&lBruxa⠀Avançada Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim
+                name of victim contains "Frog":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 1.5 to {_health}
+                        add a random number between 1 and 4 to {_damage}
+                    set {_armor} to a random number between 0.00 and 0.1
+                    set {_speed} to a random number between 0.8 and 1.5
+                    set {_npcspeed} to a random number between 0.8 and 1.5
+                    drop 1 frog spawn egg named "&4&lFrog Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 20","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Bat":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 2 to {_health}
+                        add a random number between 1 and 2 to {_damage}
+                    set {_armor} to 0
+                    set {_speed} to a random number between 1 and 1.2
+                    set {_npcspeed} to a random number between 0.9 and 1.5
+                    drop 1 bat spawn egg named "&4&lBat Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 20","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Enderman":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 1 to {_health}
+                        add a random number between 2 and 3 to {_damage}
+                    set {_armor} to 0
+                    set {_speed} to a random number between 1 and 1.2
+                    set {_npcspeed} to a random number between 0.9 and 1.2
+                    drop 1 enderman spawn egg named "&4&lEnderman Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 20","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+                name of victim contains "Silverfish":
+                    loop "%{_level}%" parsed as integer times:
+                        add a random number between 1 and 1 to {_health}
+                        add a random number between 2 and 3 to {_damage}
+                    set {_armor} to 0
+                    set {_speed} to a random number between 1 and 1.2
+                    set {_npcspeed} to a random number between 0.9 and 1.2
+                    drop 1 Silverfish spawn egg named "&4&lSilverfish Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 20","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%" and "&8&oVelocidade = %{_speed}% / %{_npcspeed}%" at location of victim
+
+                
+
+
+
+

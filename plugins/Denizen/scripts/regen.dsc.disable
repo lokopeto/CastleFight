@@ -1,0 +1,9 @@
+my_world:
+    type: world
+    events:
+        on player goes afk:
+            - flag player afk
+        on player returns from afk:
+            - flag player afk:!
+        after delta time secondly:
+            - foreach 

@@ -1,0 +1,5 @@
+aliases:
+  icanhasbukkit:
+  - version $1-
+command-block-overrides: []
+ignore-vanilla-permissions: false

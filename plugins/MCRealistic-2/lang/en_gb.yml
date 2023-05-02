@@ -1,0 +1,28 @@
+no_permission: '&cVocê não tem a permissão necessária {0}'
+not_tired: '&aEu não me sinto mais cansado ...'
+too_tired: '&cEstou cansado demais para fazer isso.'
+tired: '&cEstou cansado...'
+very_tired: '&cEstou muito cansado ... eu deveria dormir um pouco.'
+no_hand_chop: '&cVocê não pode cortar árvores com as mãos!'
+not_thirsty: '&aNão estou mais com sede!'
+little_thirsty: 'Estou um pouco com sede ...'
+getting_thirsty: '&cEstou ficando com sede ...'
+really_thirsty: '&c&l&nEstou realmente com sede ... eu deveria beber um pouco de água.'
+cosy: '&2Eu me sinto aconchegante ...'
+cold: '&c&nEstou com frio, devo usar algumas roupas (armadura).'
+hurt: '&c&lEu estou machucado!'
+hungry: '&c&lEstou com fome!Eu realmente deveria comer alguma coisa ...'
+should_sleep: '&cEu deveria dormir naquela cama ...'
+used_bandage: '&aVocê usou um curativo e suas pernas curadas!'
+legs_healed: '&aSuas pernas curaram!'
+broken_bones: '&cVocê caiu de um lugar alto e quebrou seus ossos!'
+waypoint_set: '&aUm waypoint foi definido no seu local atual!'
+items: 'MCRealistic Items'
+respawn:
+  - '&6Type /fatigue to see your fatigue!'
+  - '&6Type /thirst to see your thirst!'
+caught_cold: "&cVocê pegou um resfriado!"
+medicine_tip: ""
+cold_developed: "&cSeu frio se transformou em uma doença!"
+disease_damage: "&cA doença começa a danificar seu corpo ..."
+subside: "&ao %0 seres para diminuir ..."

@@ -1,0 +1,44 @@
+command /historiainfinita <text>:
+    trigger:
+        {jogo} is 0
+        set {_count} to 0
+        {minigamesplayer1} is set:
+            broadcast "a1"
+            {minigamesplayer1} is player
+            broadcast "a2"
+#        {historia::1} is not set
+            if arg-1 is "e acabou a historia":
+                broadcast "Historia INFINITA!:"
+                loop 300 times:
+                    add 1 to {_count}
+                    if {historia::%{_count}%} is set:
+                        broadcast "%{historia::%{_count}%}%"
+                delete {historia::*}
+                delete {minigamesplayer1}
+            else:
+                message "Historia INFINITA!:"
+                add arg-1 to {historia::*}
+                loop 300 times:
+                    add 1 to {_count}
+                    if {historia::%{_count}%} is set:
+                        message "%{historia::%{_count}%}%"
+                set {minigamesplayer1} to random element of all players
+                message "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" to {minigamesplayer1}
+        else:
+            message "Historia INFINITA!:"
+            add arg-1 to {historia::*}
+            loop 300 times:
+                add 1 to {_count}
+                if {historia::%{_count}%} is set:
+                    message "%{historia::%{_count}%}%"
+            set {minigamesplayer1} to random element of all players
+
+command /dm:
+    trigger:
+        delete {minigamesplayer1}
+
+command /random:
+    trigger:
+        set {minigamesplayer1} to random element of all players
+        message "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" to {minigamesplayer1}
+        broadcast "%{minigamesplayer1}%"

@@ -1,0 +1,11 @@
+command /desligarserver:
+    trigger:
+        message "desligando server"
+        wait 5 hours
+        broadcast "desligando o server em 3"
+        wait 1 second
+        broadcast "desligando o server em 2"
+        wait 1 second
+        broadcast "desligando o server em 1"
+        wait 1 second
+        make console execute command "stop"

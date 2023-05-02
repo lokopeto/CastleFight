@@ -1,0 +1,23 @@
+every 20 tick in world "world":  
+    chance of 90%:
+        chance of 50%:
+#            make console execute command "tp @e[x=-17,y=135,z=-137,dy=2] -163 141 -33"
+            loop all players:
+                loop-player's x-coordinate is between -16 and -17:
+                    loop-player's y-coordinate is between 135 and 137:
+                        loop-player's z-coordinate is between -136 and -137:
+                            teleport loop-player to location -162.5, 141, -32.5 in world "World"
+        else:
+#            make console execute command "tp @e[x=-17,y=135,z=-137,dy=2] -63 144 178"
+            loop all players:
+                loop-player's x-coordinate is between -16 and -17:
+                    loop-player's y-coordinate is between 135 and 137:
+                        loop-player's z-coordinate is between -136 and -137:
+                            teleport loop-player to location -63.5, 144, 178.5 in world "World"
+    else:
+#        make console execute command "kill @e[x=-17,y=135,z=-137,dy=2]"
+        loop all players:
+            loop-player's x-coordinate is between -16 and -17:
+                loop-player's y-coordinate is between 135 and 137:
+                    loop-player's z-coordinate is between -136 and -137:
+                        kill loop-player

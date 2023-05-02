@@ -1,0 +1,6 @@
+on death of player:
+    set {_inv::*} to items in inventory of victim
+    loop {_inv::*}:
+        loop-variable is a spawn egg:
+            drop loop-variable at location of victim
+            remove loop-variable from inventory of victim 

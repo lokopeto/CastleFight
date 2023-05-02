@@ -1,0 +1,5 @@
+on death of a player:
+    play sound "block.note_block.bell" for the attacker
+on respawn:
+    wait 1 tick
+    play sound "entity.ender_dragon.growl" for the player

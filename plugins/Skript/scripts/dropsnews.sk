@@ -1,0 +1,27 @@
+on death:
+    name of victim contains "natural" or "BOSS":
+        victim is not a player:
+            set {_health} to 0
+            set {_damage} to 0
+            set {_level} to name of victim
+            set {_nome} to name of victim
+            replace every "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "Ç", "ç", " ", ".", "(" and ")" in {_level} with ""
+            replace all " lv.", " Lv.", "0", "1", "2","3", "4", "5", "6", "7", "8", "9", " (natural)" and " (BOSS)" in {_nome} with ""
+
+            replace all " " in {_nome} with "_"
+
+            name of victim contains "BOSS":
+                set {_cento} to 99
+            else:
+                set {_cento} to 30
+
+            chance of {_cento}%:
+                loop "%{_level}%" parsed as integer times:
+                    add a random number between {mobs::%{_nome}%::1} and {mobs::%{_nome}%::2} to {_health}
+                    add a random number between {mobs::%{_nome}%::3} and {mobs::%{_nome}%::4} to {_damage}
+                set {_armor} to a random number between {mobs::%{_nome}%::5} and {mobs::%{_nome}%::6}
+                set {_speed} to a random number between {mobs::%{_nome}%::7} and {mobs::%{_nome}%::8}
+                set {_npcspeed} to a random number between {mobs::%{_nome}%::9} and {mobs::%{_nome}%::10}
+                set {_accuracy} to a random number between {mobs::%{_nome}%::11} and {mobs::%{_nome}%::12}
+                set {_range} to a random number between {mobs::%{_nome}%::13} and {mobs::%{_nome}%::14}
+                drop "1 %{mobs::%{_nome}%::15}% spawn egg" parsed as item named "&4&l%{_nome}% Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim

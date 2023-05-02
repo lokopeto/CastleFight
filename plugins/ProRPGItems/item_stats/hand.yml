@@ -1,0 +1,9 @@
+ONE:
+  enabled: true
+  name: '&fUma mão'
+  format: '&7Mão: &f%name%'
+
+TWO:
+  enabled: true
+  name: '&eDuas mãos'
+  format: '&7Mão: &f%name%'

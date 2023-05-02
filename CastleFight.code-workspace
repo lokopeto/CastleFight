@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "plugins/Denizen/scripts"
+		},
+		{
+			"path": "plugins/Skript/scripts"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

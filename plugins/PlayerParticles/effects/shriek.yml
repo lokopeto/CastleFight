@@ -1,0 +1,11 @@
+# The name the effect will display as
+# Default: shriek
+effect-name: shriek
+
+# If the effect is enabled or not
+# Default: true
+enabled: true
+
+# Default: [SCULK_SHRIEKER]
+gui-icon-material:
+  - SCULK_SHRIEKER

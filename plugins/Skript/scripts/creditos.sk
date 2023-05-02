@@ -1,0 +1,38 @@
+on script load:
+    loop all entities:
+        loop-entity is a citizen:
+            name of loop-entity contains "lokopeto", "kendonzin", "world_pp", "saiph" or "OvelhaMaria":
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"
+    wait 10 tick
+    make console execute command "npc create lokopeto --at -46.5:229:-157.5:world"
+    
+    make console execute command "npc hologram add Criador"
+    wait 1 tick
+    make console execute command "npc create world_pp --at -45.5:229:-157.5:world"
+    
+    make console execute command "npc hologram add Map Maker"
+    wait 1 tick
+    make console execute command "npc create saiph --at -47.5:229:-157.5:world"
+    
+    make console execute command "npc hologram add Map Maker"
+    wait 1 tick
+    make console execute command "npc create kendonzin --at -48.5:229:-157.5:world"
+    
+    make console execute command "npc hologram add Map Maker"
+    wait 1 tick
+
+    make console execute command "npc create OvelhaMaria --at -49.5:229:-157.5:world"
+    make console execute command "npc hologram add Mentor"
+    make console execute command "npc skin --url http://textures.minecraft.net/texture/1588ab75e7f455c3cad8a47a0141de4c9bc7d195cdaf559b7174963bd811a007"
+
+on script unload:
+    loop all entities:
+        loop-entity is a citizen:
+            name of loop-entity contains "lokopeto", "kendonzin", "world_pp", "saiph" or "OvelhaMaria":
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"
+
+

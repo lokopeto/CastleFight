@@ -1,0 +1,12 @@
+{
+  "player": "440f37ca-af7d-31ca-b414-00c1f75da2e1",
+  "thirst": 0,
+  "fatigue": 0,
+  "waypointX": 0,
+  "waypointY": 0,
+  "waypointZ": 0,
+  "isWarm": true,
+  "nearWarmthSource": false,
+  "hasBrokenBones": false,
+  "burning": false
+}

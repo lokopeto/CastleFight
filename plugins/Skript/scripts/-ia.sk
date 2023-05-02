@@ -1,0 +1,204 @@
+#on spawn of an entity:
+#    wait 3 ticks
+#    event-entity is a citizen:
+#        name of entity contains {castelo1nome} and "lv":
+#            set {_id} to citizen id of event-entity
+#            move citizen {_id} to {castelo2loc}
+#            wait 6 tick
+#            move citizen {_id} to {castelo2loc}
+#        name of entity contains {castelo2nome} and "lv":
+#            set {_id} to citizen id of event-entity
+#            move citizen {_id} to {castelo1loc}
+#            wait 6 tick
+#            move citizen {_id} to {castelo1loc}
+
+every 180 tick:
+    loop all entities:
+        loop-entity is a citizen:
+            name of loop-entity contains {castelo1nome} and "lv":
+                set {_id} to citizen id of loop-entity
+                move citizen {_id} to {rei2loc}
+            name of loop-entity contains {castelo2nome} and "lv":
+                set {_id} to citizen id of loop-entity
+                move citizen {_id} to {rei1loc}
+
+every 80 tick:
+    loop all entities:
+        loop-entity is a citizen:
+            name of loop-entity is {castelo1nome}:
+                set {_id} to citizen id of loop-entity
+                move citizen {_id} to {rei1loc}
+            name of loop-entity is {castelo2nome}:
+                set {_id} to citizen id of loop-entity
+                move citizen {_id} to {rei2loc}
+
+on damage:
+    victim is a citizen:
+        set {_id1} to citizen id of victim
+    attacker is a citizen:
+        set {_id2} to citizen id of attacker
+    cancel pathfinding for npc {_id1}
+    cancel pathfinding for npc {_id2}
+
+#on death:
+#    victim is a citizen:
+#        set {_id} to citizen id of victim
+#        remove citizen {_id}
+
+#tentativas de modificar a ia
+#on death:
+#    wait 1 second
+#    victim is a citizen:
+#        set {_uuid} to uuid of victim
+#        name of victim is "castelo1":
+#            loop all entities in radius 20 around victim:
+#                loop-entities is a citizen:
+#                    name of loop-entities is "castelo2":
+#                        add uuid of loop-entities to {_quant::*}
+#                        if {_quant::1} contains "":
+#                            set {_id} to citizen id of victim
+#                            move citizen {_id} to {castelo2loc}
+#                            wait 6 tick
+#                            move citizen {_id} to {castelo2loc}
+#                        delete {_quant::*}
+#        name of victim is "castelo2":
+#            loop all entities in radius 20 around victim:
+#                loop-entities is a citizen:
+#                    name of loop-entities is "castelo1":
+#                        add uuid of loop-entities to {_quant::*}
+#
+#                        if {_quant::1} contains "":
+#                            set {_id} to citizen id of victim
+#                            move citizen {_id} to {castelo1loc}
+#                            wait 6 tick
+#                            move citizen {_id} to {castelo1loc}
+#    attacker is a citizen:
+#        set {_uuid} to uuid of attacker
+#        name of attacker is "castelo1":
+#            loop all entities in radius 20 around attacker:
+#                loop-entities is a citizen:
+#                    name of loop-entities is "castelo2":
+#                        add uuid of loop-entities to {_quant::*}
+#                        if {_quant::1} contains "":
+#                            set {_id} to citizen id of attacker
+#                            move citizen {_id} to {castelo2loc}
+#                            wait 6 tick
+#                            move citizen {_id} to {castelo2loc}
+#                        delete {_quant::*}
+#        name of attacker is "castelo2":
+#            loop all entities in radius 20 around attacker:
+#                loop-entities is a citizen:
+#                    name of loop-entities is "castelo1":
+#                        add uuid of loop-entities to {_quant::*}
+#                        if {_quant::1} contains "":
+#                            set {_id} to citizen id of attacker
+#                            move citizen {_id} to {castelo1loc}
+#                            wait 6 tick
+#                            move citizen {_id} to {castelo1loc}
+#on damage:
+#    set {_movimentaçao1::%uuid of event-entity%} to position of attacker
+#    wait 2 seconds
+#    set {_movimentaçao2::%uuid of event-entity%} to position of attacker
+#    wait 20 ticks
+#    attacker is a citizen:
+#        name of attacker is "castelo1":
+#            set {_loc1} to location of attacker
+#            wait 5 ticks
+#            set {_loc2} to location of attacker
+#            if {_loc1} = {_loc2}:
+#                set {_id} to citizen id of attacker
+#                move citizen {_id} to location at (-51, 67, 23) in world "world"
+#                wait 6 tick
+#                move citizen {_id} to location at (-51, 67, 23) in world "world"
+#        name of attacker is "castelo2":
+#            set {_loc1} to location of attacker
+#            wait 5 ticks
+#            set {_loc2} to location of attacker
+#            if {_loc1} = {_loc2}:
+#                set {_id} to citizen id of attacker
+#                move citizen {_id} to location at (44, 67, 23) in world "world"
+#                wait 6 tick
+#                move citizen {_id} to location at (44, 66, 23) in world "world"
+#    victim is a citizen:
+#        wait 150 ticks
+#        name of victim is "castelo1":
+#            set {_loc1} to location of victim
+#            wait 5 ticks
+#            set {_loc2} to location of victim
+#            if {_loc1} = {_loc2}:
+#                set {_id} to citizen id of victim
+#                move citizen {_id} to location at (-51, 67, 23) in world "world"
+#                wait 6 tick
+#                move citizen {_id} to location at (-51, 67, 23) in world "world"
+#        name of victim is "castelo2":
+#            set {_loc1} to location of victim
+#            wait 5 ticks
+#            set {_loc2} to location of victim
+#            if {_loc1} = {_loc2}:
+#                set {_id} to citizen id of victim
+#                move citizen {_id} to location at (44, 67, 23) in world "world"
+#                wait 6 tick
+#                move citizen {_id} to location at (44, 66, 23) in world "world"
+
+#every 1 tick:
+#    loop all entities:
+#        set {npcloc1::%uuid of loop-entity%} to location of loop-entity
+#        wait 20 ticks
+#        set {npcloc2::%uuid of loop-entity%} to location of loop-entity
+#        if {npcloc1::%uuid of loop-entity%} = {npcloc2::%uuid of loop-entity%}:
+#            loop-entity is a citizen:
+#                name of loop-entity is "castelo1":
+#                    set {_id} to npc id of loop-entity
+#                    if npc {_id} is navigating: 
+#                    else:
+#                        move citizen {_id} to {castelo2loc}
+#                name of loop-entity is "castelo1":
+#                    set {_id} to npc id of loop-entity
+#                    if npc {_id} is navigating:
+#                    else:
+#                        move citizen {_id} to {castelo1loc}
+#    wait 80 ticks
+
+#    else:
+#        set {_id} to citizen id of attacker
+#    attacker is a citizen:
+#        name of attacker is "castelo1":
+#            move citizen {_id} to {castelo2loc}
+#            loop 10 times:
+#                add 1 to {_quant}
+#                move citizen {pfmorte::%uuid of victim%::%{_quant}%} to {castelo2loc}
+#            remove {_quant}
+#            remove {pfmorte::%uuid of victim%}
+#        name of attacker is "castelo2":
+#            move citizen {_id} to {castelo1loc}
+#            loop 10 times:
+#                add 1 to {_quant}
+#                move citizen {pfmorte::%uuid of victim%::%{_quant}%} to {castelo2loc}
+#                broadcast "{pfmorte::%uuid of victim%::%{_quant}%}"
+#            remove {_quant}
+#            remove {pfmorte::%uuid of victim%}
+
+#every 3 seconds:
+#    loop all entities:
+#        broadcast "1"
+#        loop-entity is a citizen:
+#            set {_id} to citizen id of loop-entity
+#            broadcast "2"
+#            wait 1 second
+#            set {_movimentaçao1::%uuid of loop-entity%::*} to position of loop-entities
+#            wait 2 seconds
+#            set {_movimentaçao2::%uuid of loop-entity%::*} to position of loop-entities
+#            if {_movimentaçao1::%uuid of loop-entity%::*} = {_movimentaçao2::%uuid of loop-entity%::*}:
+#                broadcast "3"
+#                remove {_movimentaçao1} 
+#                remove {_movimentaçao2}
+#                name of loop-entity is "castelo1":
+#                    broadcast "4"
+#                    move citizen {_id} to location at (-51, 67, 23) in world "world"
+#                    wait 36 tick
+#                    move citizen {_id} to location at (-51, 67, 23) in world "world"
+#                name of loop-entity is "castelo2":
+#                    broadcast "4"
+#                    move citizen {_id} to location at (35, 67, 23) in world "world"
+#                    wait 36 tick
+#                    move citizen {_id} to location at (35, 67, 23) in world "world"

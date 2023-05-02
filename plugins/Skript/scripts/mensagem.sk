@@ -1,0 +1,16 @@
+on join:
+    wait 16 ticks
+    message "&b▷   &b&lOPA! &b%player%..."
+    message " "
+    message "     &2Bem vindo a &a&lBatalha entre Castelos&2&l!"
+    {jogo} is 1:
+        message "     &2Há %number of online players% online, atualmente em partida." 
+    {jogo} is 0:
+        message "     &2Há %number of online players% online, criando partida."        
+        message "     &2use &a&l/criarpartida &2para cria uma partida."
+    message "     &2Use &a&l/comandos &2para visualizar os comandos,.."
+
+    message "&aAjude a manter o servidor vivo em https://apoia.se/kotomc!"
+
+every 15 minutes:
+    broadcast "&aAjude a manter o servidor vivo em https://apoia.se/kotomc!"

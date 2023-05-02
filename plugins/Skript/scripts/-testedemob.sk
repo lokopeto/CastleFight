@@ -1,0 +1,105 @@
+command /zombie1:
+    trigger:
+        make console execute command "npc create %{castelo1nome}%lv --type zombie --trait sentinel --at 33:149:23.00:world"
+        make console execute command "sentinel addtarget npc:%{castelo2nome}%"
+        make console execute command "sentinel damage 2"
+        make console execute command "sentinel health 5"
+        make console execute command "sentinel armor 0.1"
+        make console execute command "sentinel speed 1"
+        make console execute command "npc speed 1"
+
+command /zombie2:
+    trigger:
+        make console execute command "npc create %{castelo2nome}%lv --type zombie --trait sentinel --at -118:149:23.00:world"
+        make console execute command "sentinel addtarget npc:%{castelo1nome}%"
+        make console execute command "sentinel damage 2"
+        make console execute command "sentinel health 5"
+        make console execute command "sentinel armor 0.1"
+        make console execute command "sentinel speed 1"
+        make console execute command "npc speed 1"
+
+command /axolot1:
+    trigger:
+        make console execute command "npc create %{castelo1nome}%lv --type axolot --trait sentinel --at 33:149:23.00:world"
+        make console execute command "sentinel addtarget npc:%{castelo2nome}%"
+        make console execute command "sentinel damage 0.5"
+        make console execute command "sentinel health 2"
+        make console execute command "sentinel armor 0.2"
+        make console execute command "sentinel speed 3"
+        make console execute command "npc speed 1.5"
+
+command /axolot2:
+    trigger:
+        make console execute command "npc create %{castelo2nome}%lv --type axolot --trait sentinel --at -118:149:23.00:world"
+        make console execute command "sentinel addtarget npc:%{castelo1nome}%"
+        make console execute command "sentinel damage 0.5"
+        make console execute command "sentinel health 2"
+        make console execute command "sentinel armor 0.2"
+        make console execute command "sentinel speed 3"
+        make console execute command "npc speed 1.5"
+
+
+command /esqueleto1:
+    trigger:
+        make console execute command "npc create %{castelo1nome}%lv(Skeleton) --type skeleton --trait sentinel --at 33:149:23.00:world"
+        make console execute command "sentinel addtarget npc:%{castelo2nome}%"
+        make console execute command "sentinel reach 1"
+        make console execute command "sentinel range 20"
+        make console execute command "sentinel damage 2"
+        make console execute command "sentinel health 3"
+        make console execute command "sentinel armor 0.1"
+        make console execute command "sentinel speed 1"
+        make console execute command "sentinel accuracy 0.2"
+        make console execute command "npc speed 1"
+command /esqueleto2:
+    trigger:
+        make console execute command "npc create %{castelo2nome}%lv (Skeleton) --type skeleton --trait sentinel --at -118:149:23.00:world"
+        make console execute command "sentinel addtarget npc:%{castelo1nome}%"
+        make console execute command "sentinel reach 1"
+        make console execute command "sentinel range 20"
+        make console execute command "sentinel damage 2"
+        make console execute command "sentinel health 3"
+        make console execute command "sentinel armor 0"
+        make console execute command "sentinel speed 1"
+        make console execute command "sentinel accuracy 0.2"
+        make console execute command "npc speed 1"
+
+command /creeper1:
+    trigger:
+        make console execute command "npc create %{castelo1nome}%lv (Creeper) --type creeper --trait sentinel --at 33:149:23.00:world"
+        make console execute command "sentinel addtarget npc:%{castelo2nome}%"
+        make console execute command "sentinel addignore allinone:player"
+        make console execute command "sentinel damage 2"
+        make console execute command "sentinel health 50"
+        make console execute command "sentinel armor 0.1"
+        make console execute command "sentinel speed 1"
+        make console execute command "npc speed 1"
+        make console execute command "sentinel knockback"
+
+
+every 30 second:
+    make console execute command "zombie1"
+    make console execute command "zombie2"
+    make console execute command "creeper1"
+
+every 15 second:
+    make console execute command "axolot1"
+    make console execute command "axolot1"
+    make console execute command "axolot2"
+    make console execute command "axolot2"
+
+every 40 second:
+    make console execute command "esqueleto1"
+    make console execute command "esqueleto2"
+
+command /testedemob:
+    trigger:
+        make console execute command "zombie1"
+        make console execute command "zombie2"
+        make console execute command "esqueleto1"
+        make console execute command "esqueleto2"
+        make console execute command "axolot1"
+        make console execute command "axolot1"
+        make console execute command "axolot2"
+        make console execute command "axolot2"
+

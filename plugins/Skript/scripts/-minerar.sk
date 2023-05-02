@@ -1,0 +1,16 @@
+every 80 ticks:
+    loop all entities:
+        name of loop-entity contains "(%{castelo1nome}%)" and "lv":
+            set {_nome} to name of loop-entity
+            loop all blocks in radius 2 around head of loop-entity:
+                set {_block2::*} to location of loop-blocks
+                set {_block1::*} to loop-blocks
+            broadcast "%{_block2::*}%"
+            {_block1::*} contains red brick block
+            make console execute command "npc sel %{_id}%"
+            set {_numb} to 0
+            loop 20 times:
+                add 1 to {_numb}
+                make console execute command "npc breakblock --location %x-coordinate of {_block2::%{_numb}%} - 0.5%,%y-coordinate of {_block2::%{_numb}%} - 0.5%,%z-coordinate of {_block2::%{_numb}%}%,world --radius 3"
+            broadcast "a"
+
