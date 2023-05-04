@@ -4,16 +4,48 @@
 #             set the lock status of the edited gui to false
 #         open the created gui for arg-1
 
+# command /londamaentrada:
+#     trigger:
+#         #execute title @a actionbar "sou londama, curve-se a mim, pobre mortal"
+#         send title "sou londama, curve-se a mim, pobre mortal" to all players
+
+# on player jump:
+#     send action bar "§b§lsou londama, curve-se a mim, pobre mortal" to all players
+#     wait for 4 seconds
+#     send action bar "§b§lnao me ouviu traste?" to all players
+#     wait for 4 seconds
+#     send action bar "§b§lSE CURVE!!" to all players
+
+
 command /londamaentrada:
     trigger:
-        #execute title @a actionbar "sou londama, curve-se a mim, pobre mortal"
-        send title "sou londama, curve-se a mim, pobre mortal" to all players
+        send "§b§l Então nos encontramos novamente..."
+        wait for 2 seconds
+        send "§b§l Se lembra de mim?"
+        wait for 2 seconds
+        send "<command:/admresp1 1>&6Sim<reset>    §8click     <command:/admresp1 0>&6Não<reset>"
 
-on player jump:
-    send action bar "§b§lsou londama, curve-se a mim, pobre mortal" to all players
-    wait for 4 seconds
-    send action bar "§b§lnao me ouviu traste?" to all players
-    wait for 4 seconds
-    send action bar "§b§lSE CURVE!!" to all players
+
+command /admresp1 <number>:
+    trigger:
+        execute command "/cc"
+
+        if argument is 0:
+            send "&6 Não!" from player
+            wait for 2 seconds
+            send "§b§l Como ousa?!"
+            wait for 2 seconds
+            send "§b§l Vou arrancar seu couro!!"
+            wait for 2 seconds
+            set gamemode of the player to survival
+            loop 12 times:
+                damage player by 1 hearts
+                wait for 1 second
+        if argument is 1:
+            send "&6 Sim!" from player
+            wait for 2 seconds
+            send "§b§l Claro que se lembra..."
+            wait for 2 seconds
+            send "§b§l Como esqueceria de minha beleza?..."
     
     
