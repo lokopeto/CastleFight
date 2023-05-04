@@ -1,4 +1,4 @@
-last-created-npc-id: 6739
+last-created-npc-id: 6744
 npc:
   '3530':
     name: Arqueiro (ReiBarro)
@@ -36,7 +36,7 @@ npc:
         yaw: '-24.2342'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -69,15 +69,15 @@ npc:
       villagertrait:
         level: 1
       location:
-        bodyYaw: -41.046383
+        bodyYaw: 179.3285
         world: world
         x: '81.5'
         y: '149.0'
         z: '8.5'
-        yaw: '-40.9868'
+        yaw: '179.3285'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -118,7 +118,7 @@ npc:
         yaw: '-135.0459'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -151,15 +151,15 @@ npc:
       villagertrait:
         level: 1
       location:
-        bodyYaw: 5.83498
+        bodyYaw: -110.60745
         world: world
         x: '-151.5'
         y: '148.875'
         z: '9.55'
-        yaw: '5.835'
+        yaw: '-130.6075'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -192,15 +192,15 @@ npc:
       villagertrait:
         level: 1
       location:
-        bodyYaw: 175.23712
+        bodyYaw: 107.66121
         world: world
         x: '68.5'
         y: '149.0'
         z: '9.5'
-        yaw: '-164.7629'
+        yaw: '107.6612'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -241,7 +241,7 @@ npc:
         yaw: '-84.532'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -274,15 +274,15 @@ npc:
       villagertrait:
         level: 1
       location:
-        bodyYaw: 74.40288
+        bodyYaw: 105.983505
         world: world
         x: '92.5'
         y: '149.0'
         z: '20.5'
-        yaw: '74.4029'
+        yaw: '105.9835'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -315,15 +315,15 @@ npc:
       villagertrait:
         level: 1
       location:
-        bodyYaw: 107.52992
+        bodyYaw: -134.0067
         world: world
         x: '-175.5'
         y: '148.0'
         z: '25.5'
-        yaw: '107.5299'
+        yaw: '-154.0067'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -356,15 +356,15 @@ npc:
       villagertrait:
         level: 1
       location:
-        bodyYaw: -26.89354
+        bodyYaw: -109.69229
         world: world
         x: '-168.5'
         y: '149.0'
         z: '13.5'
-        yaw: '-6.8935'
+        yaw: '-89.6923'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -405,7 +405,7 @@ npc:
         yaw: '141.1415'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,villagertrait,profession
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -438,15 +438,15 @@ npc:
       villagertrait:
         level: 1
       location:
-        bodyYaw: 60.891033
+        bodyYaw: 13.719967
         world: world
         x: '-175.5'
         y: '147.875'
         z: '20.5'
-        yaw: '60.891'
+        yaw: '13.72'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,villagertrait,profession
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -479,15 +479,15 @@ npc:
       villagertrait:
         level: 1
       location:
-        bodyYaw: -136.62074
+        bodyYaw: -102.06082
         world: world
         x: '92.5'
         y: '149.0'
         z: '25.5'
-        yaw: '-156.6207'
+        yaw: '-122.0608'
         pitch: '0.0'
       type: VILLAGER
-    traitnames: villagertrait,lookclose,spawned,mounttrait,type,profession,rotationtrait,owner,location,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,profession,villagertrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -501,8 +501,8 @@ npc:
     uuid: 7ba8fa57-4c91-4182-b79b-10d789f56ed4
     traits:
       sentinel:
-        stats_ticksSpawned: 198964
-        stats_timesSpawned: 5
+        stats_ticksSpawned: 200365
+        stats_timesSpawned: 6
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -610,16 +610,16 @@ npc:
         tags:
           '0': rei2
       location:
-        bodyYaw: 149.70752
+        bodyYaw: -82.382034
         world: world
-        x: '-175.32'
+        x: '-175.3961'
         y: '148.0'
-        z: '23.0'
-        yaw: '149.7075'
+        z: '23.2113'
+        yaw: '-62.382'
         pitch: '0.0'
-    traitnames: equipment,lookclose,spawned,skintrait,rotationtrait,owner,inventory,bossbar,mounttrait,type,location,sentinel,scoreboardtrait
+    traitnames: skintrait,bossbar,type,mounttrait,rotationtrait,lookclose,owner,location,spawned,inventory,sentinel,scoreboardtrait,equipment
     navigator:
-      pathfindingrange: '5.0'
+      pathfindingrange: '12.013813972473145'
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: true
@@ -632,8 +632,8 @@ npc:
     uuid: 48d050fe-05bb-48f6-8e3a-2561d0418e56
     traits:
       sentinel:
-        stats_ticksSpawned: 198965
-        stats_timesSpawned: 5
+        stats_ticksSpawned: 200366
+        stats_timesSpawned: 6
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -741,16 +741,16 @@ npc:
         tags:
           '0': rei1
       location:
-        bodyYaw: 97.611755
+        bodyYaw: 157.33241
         world: world
-        x: '92.62'
+        x: '92.5463'
         y: '150.0'
-        z: '23.0'
-        yaw: '97.6118'
+        z: '23.2106'
+        yaw: '157.3324'
         pitch: '0.0'
-    traitnames: equipment,lookclose,spawned,skintrait,rotationtrait,owner,inventory,bossbar,mounttrait,type,location,sentinel,scoreboardtrait
+    traitnames: skintrait,bossbar,type,mounttrait,rotationtrait,lookclose,owner,location,spawned,inventory,scoreboardtrait,sentinel,equipment
     navigator:
-      pathfindingrange: '5.0'
+      pathfindingrange: '10.215631484985352'
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: true
@@ -804,7 +804,7 @@ npc:
         yaw: '124.3193'
         pitch: '0.0'
       type: PLAYER
-    traitnames: lookclose,spawned,skintrait,mounttrait,type,rotationtrait,sitting,location,denizen_flags,scoreboardtrait,inventory
+    traitnames: denizen_flags,location,skintrait,spawned,sitting,type,mounttrait,rotationtrait,inventory,lookclose,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -859,7 +859,7 @@ npc:
         yaw: '-107.468'
         pitch: '0.0'
       type: PLAYER
-    traitnames: lookclose,spawned,skintrait,mounttrait,type,rotationtrait,sitting,location,denizen_flags,scoreboardtrait,inventory
+    traitnames: denizen_flags,location,skintrait,sitting,spawned,type,mounttrait,rotationtrait,inventory,lookclose,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -904,7 +904,7 @@ npc:
         yaw: '116.8106'
         pitch: '0.0'
       type: PLAYER
-    traitnames: lookclose,spawned,skintrait,mounttrait,type,rotationtrait,location,denizen_flags,scoreboardtrait,inventory
+    traitnames: denizen_flags,location,skintrait,spawned,type,mounttrait,rotationtrait,inventory,lookclose,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -949,7 +949,7 @@ npc:
         yaw: '23.8085'
         pitch: '0.0'
       type: PLAYER
-    traitnames: lookclose,spawned,skintrait,mounttrait,type,rotationtrait,location,denizen_flags,scoreboardtrait,inventory
+    traitnames: denizen_flags,location,skintrait,spawned,type,mounttrait,rotationtrait,inventory,lookclose,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -993,7 +993,7 @@ npc:
         yaw: '62.7849'
         pitch: '0.0'
       type: PLAYER
-    traitnames: lookclose,spawned,skintrait,mounttrait,type,rotationtrait,location,denizen_flags,inventory,scoreboardtrait
+    traitnames: denizen_flags,location,skintrait,spawned,type,mounttrait,rotationtrait,inventory,lookclose,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -1036,7 +1036,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1098,7 +1098,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.699999988079071'
       avoidwater: false
@@ -1141,7 +1141,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1203,7 +1203,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.0499999523162842'
       avoidwater: false
@@ -1246,7 +1246,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 867
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1308,7 +1308,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8999999761581421'
       avoidwater: false
@@ -1355,7 +1355,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 867
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1417,7 +1417,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '0.8199999928474426'
       avoidwater: false
@@ -1460,7 +1460,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 867
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1522,7 +1522,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.0800000429153442'
       avoidwater: false
@@ -1569,7 +1569,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1631,7 +1631,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '0.9800000190734863'
       avoidwater: false
@@ -1674,7 +1674,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1736,7 +1736,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.1399999856948853'
       avoidwater: false
@@ -1779,7 +1779,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1841,7 +1841,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.0800000429153442'
       avoidwater: false
@@ -1884,7 +1884,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1946,7 +1946,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.1699999570846558'
       avoidwater: false
@@ -1989,7 +1989,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2051,7 +2051,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.9300000071525574'
       avoidwater: false
@@ -2094,7 +2094,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2156,7 +2156,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.0199999809265137'
       avoidwater: false
@@ -2199,7 +2199,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2261,7 +2261,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.9599999785423279'
       avoidwater: false
@@ -2304,7 +2304,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2366,7 +2366,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.149999976158142'
       avoidwater: false
@@ -2409,7 +2409,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2471,7 +2471,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8199999928474426'
       avoidwater: false
@@ -2514,7 +2514,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2576,7 +2576,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8899999856948853'
       avoidwater: false
@@ -2623,7 +2623,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2685,7 +2685,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.0399999618530273'
       avoidwater: false
@@ -2728,7 +2728,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2790,7 +2790,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.9300000071525574'
       avoidwater: false
@@ -2833,7 +2833,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -2895,7 +2895,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8100000023841858'
       avoidwater: false
@@ -2938,7 +2938,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3000,7 +3000,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.8399999737739563'
       avoidwater: false
@@ -3043,7 +3043,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3105,7 +3105,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.8899999856948853'
       avoidwater: false
@@ -3148,7 +3148,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3210,7 +3210,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.9399999976158142'
       avoidwater: false
@@ -3253,7 +3253,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3315,7 +3315,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.6299999952316284'
       avoidwater: false
@@ -3362,7 +3362,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3424,7 +3424,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.1299999952316284'
       avoidwater: false
@@ -3471,7 +3471,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3533,7 +3533,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.0700000524520874'
       avoidwater: false
@@ -3576,7 +3576,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3638,7 +3638,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8399999737739563'
       avoidwater: false
@@ -3681,7 +3681,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3743,7 +3743,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.1699999570846558'
       avoidwater: false
@@ -3786,7 +3786,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3848,7 +3848,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.9200000166893005'
       avoidwater: false
@@ -3891,7 +3891,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -3953,7 +3953,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.0700000524520874'
       avoidwater: false
@@ -3996,7 +3996,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4058,7 +4058,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.059999942779541'
       avoidwater: false
@@ -4101,7 +4101,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4163,7 +4163,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.9900000095367432'
       avoidwater: false
@@ -4207,7 +4207,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4271,7 +4271,7 @@ npc:
             '0': OWNER
       scoreboardtrait:
         color: RED
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.059999942779541'
       avoidwater: false
@@ -4315,7 +4315,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4379,7 +4379,7 @@ npc:
             '0': OWNER
       scoreboardtrait:
         color: RED
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.1200000047683716'
       avoidwater: false
@@ -4422,7 +4422,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 586
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4484,7 +4484,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.0299999713897705'
       avoidwater: false
@@ -4533,7 +4533,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4595,7 +4595,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '0.9800000190734863'
       avoidwater: false
@@ -4638,7 +4638,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 586
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4700,7 +4700,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.0700000524520874'
       avoidwater: false
@@ -4738,16 +4738,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 39.48745
+        bodyYaw: 24.464256
         world: world
         x: '25.5'
         y: '153.0'
         z: '-69.5'
-        yaw: '39.4874'
+        yaw: '24.4643'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 1342
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4809,7 +4809,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '0.949999988079071'
       avoidwater: false
@@ -4847,16 +4847,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 96.30048
+        bodyYaw: 73.10547
         world: world
         x: '16.5'
         y: '153.0'
         z: '-79.5'
-        yaw: '96.3005'
+        yaw: '73.1055'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 1342
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -4918,7 +4918,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '0.8500000238418579'
       avoidwater: false
@@ -4956,16 +4956,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 111.80628
+        bodyYaw: -130.202
         world: world
         x: '16.5'
         y: '157.0'
         z: '-72.5'
-        yaw: '111.8063'
+        yaw: '-141.5065'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 1342
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5027,7 +5027,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '0.8899999856948853'
       avoidwater: false
@@ -5061,16 +5061,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: -55.32943
+        bodyYaw: 4.0052314
         world: world
         x: '18.5'
         y: '153.0'
         z: '-46.5'
-        yaw: '-75.3294'
+        yaw: '4.0052'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5132,7 +5132,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.0800000429153442'
       avoidwater: false
@@ -5170,16 +5170,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 81.81732
+        bodyYaw: 49.93161
         world: world
         x: '-3.5'
         y: '150.0'
         z: '-68.5'
-        yaw: '81.8173'
+        yaw: '49.9316'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 1342
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5241,7 +5241,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '0.8399999737739563'
       avoidwater: false
@@ -5279,16 +5279,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: -124.363434
+        bodyYaw: 120.884834
         world: world
         x: '4.5'
         y: '151.9375'
         z: '-68.5'
-        yaw: '-144.3634'
+        yaw: '120.8848'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 1342
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5350,7 +5350,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.090000033378601'
       avoidwater: false
@@ -5384,16 +5384,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 34.722458
+        bodyYaw: 53.5317
         world: world
         x: '9.5'
         y: '152.9375'
         z: '-69.5'
-        yaw: '34.7225'
+        yaw: '53.5317'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 1342
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5455,7 +5455,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.149999976158142'
       avoidwater: false
@@ -5489,16 +5489,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 40.730618
+        bodyYaw: -85.50716
         world: world
         x: '14.5'
         y: '152.9375'
         z: '-65.5'
-        yaw: '40.7306'
+        yaw: '-65.5072'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5560,7 +5560,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8199999928474426'
       avoidwater: false
@@ -5594,16 +5594,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 81.72866
+        bodyYaw: 77.33334
         world: world
         x: '16.5'
         y: '152.9375'
         z: '-61.5'
-        yaw: '81.7287'
+        yaw: '77.3333'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5665,7 +5665,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.9700000286102295'
       avoidwater: false
@@ -5699,16 +5699,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 130.25398
+        bodyYaw: -77.11183
         world: world
         x: '8.5'
         y: '150.9375'
         z: '-61.5'
-        yaw: '130.254'
+        yaw: '-57.1118'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2781
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3254
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5770,7 +5770,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.9700000286102295'
       avoidwater: false
@@ -5808,16 +5808,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 66.9609
+        bodyYaw: 175.93507
         world: world
         x: '1.5'
         y: '148.9375'
         z: '-59.5'
-        yaw: '66.9609'
+        yaw: '175.9351'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5879,7 +5879,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.0199999809265137'
       avoidwater: false
@@ -5913,16 +5913,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: -55.0338
+        bodyYaw: -109.12137
         world: world
         x: '4.5'
         y: '147.9375'
         z: '-53.5'
-        yaw: '-35.0338'
+        yaw: '-89.1214'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -5984,7 +5984,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.149999976158142'
       avoidwater: false
@@ -6022,16 +6022,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 63.8426
+        bodyYaw: -139.50694
         world: world
         x: '0.5'
         y: '143.0'
         z: '-45.5'
-        yaw: '63.8426'
+        yaw: '-153.5943'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6093,7 +6093,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.1399999856948853'
       avoidwater: false
@@ -6127,16 +6127,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 149.32901
+        bodyYaw: 108.08035
         world: world
         x: '-16.5'
         y: '139.9375'
         z: '-35.5'
-        yaw: '149.329'
+        yaw: '108.0804'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2781
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3254
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6198,7 +6198,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8500000238418579'
       avoidwater: false
@@ -6232,16 +6232,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 12.128265
+        bodyYaw: -114.73836
         world: world
         x: '-8.5'
         y: '140.9375'
         z: '-25.5'
-        yaw: '-7.8717'
+        yaw: '-115.8352'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6303,7 +6303,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.1799999475479126'
       avoidwater: false
@@ -6337,16 +6337,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: -105.83063
+        bodyYaw: -90.798004
         world: world
         x: '-3.5'
         y: '141.9375'
         z: '-35.5'
-        yaw: '-85.8306'
+        yaw: '-70.798'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6408,7 +6408,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.190000057220459'
       avoidwater: false
@@ -6446,16 +6446,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 52.081276
+        bodyYaw: -61.562607
         world: world
         x: '23.5'
         y: '157.0'
         z: '-61.5'
-        yaw: '52.0813'
+        yaw: '-81.5626'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6517,7 +6517,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '0.8299999833106995'
       avoidwater: false
@@ -6551,16 +6551,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 127.284996
+        bodyYaw: 17.691086
         world: world
         x: '23.5'
         y: '153.0'
         z: '-62.5'
-        yaw: '127.285'
+        yaw: '-2.3089'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2781
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3254
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6622,7 +6622,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.1799999475479126'
       avoidwater: false
@@ -6660,16 +6660,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 166.12137
+        bodyYaw: 153.55013
         world: world
         x: '13.5'
         y: '153.0'
         z: '-47.5'
-        yaw: '166.1214'
+        yaw: '153.5501'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6731,7 +6731,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.1299999952316284'
       avoidwater: false
@@ -6765,16 +6765,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 10.261013
+        bodyYaw: -116.4588
         world: world
         x: '-16.5'
         y: '140.0'
         z: '-50.5'
-        yaw: '-9.739'
+        yaw: '-136.4588'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6836,7 +6836,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.949999988079071'
       avoidwater: false
@@ -6870,16 +6870,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 53.648212
+        bodyYaw: 176.54854
         world: world
         x: '2.5'
         y: '144.0'
         z: '-25.5'
-        yaw: '53.6482'
+        yaw: '-163.4515'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3253
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -6941,7 +6941,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.8399999737739563'
       avoidwater: false
@@ -6979,16 +6979,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 42.161404
+        bodyYaw: -79.21025
         world: world
         x: '-9.5'
         y: '150.0'
         z: '-16.5'
-        yaw: '42.1614'
+        yaw: '-99.1441'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2781
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3254
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7050,7 +7050,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '0.8399999737739563'
       avoidwater: false
@@ -7088,16 +7088,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 167.98997
+        bodyYaw: 55.37871
         world: world
         x: '2.5'
         y: '152.0'
         z: '-10.5'
-        yaw: '167.99'
+        yaw: '55.3787'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 2780
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 3250
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7159,7 +7159,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.149999976158142'
       avoidwater: false
@@ -7193,16 +7193,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: -129.32469
+        bodyYaw: 163.36366
         world: world
         x: '-103.5'
         y: '130.0'
         z: '-54.5'
-        yaw: '-113.7285'
+        yaw: '-176.6363'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 1342
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7264,7 +7264,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.1299999952316284'
       avoidwater: false
@@ -7302,16 +7302,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 163.1585
+        bodyYaw: -26.791016
         world: world
         x: '-98.5'
         y: '125.0'
         z: '-40.5'
-        yaw: '163.1585'
+        yaw: '-6.791'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 586
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 917
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7373,7 +7373,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.1299999952316284'
       avoidwater: false
@@ -7411,16 +7411,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: 170.22998
+        bodyYaw: 97.66669
         world: world
         x: '-100.5'
         y: '150.0'
         z: '-74.5'
-        yaw: '-169.77'
+        yaw: '97.6667'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 586
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 917
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7482,7 +7482,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '0.8999999761581421'
       avoidwater: false
@@ -7520,16 +7520,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: -62.073135
+        bodyYaw: -105.42023
         world: world
         x: '-107.5'
         y: '151.0'
         z: '-58.5'
-        yaw: '-42.0731'
+        yaw: '-125.4202'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 586
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 917
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7591,7 +7591,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '0.8999999761581421'
       avoidwater: false
@@ -7629,16 +7629,16 @@ npc:
       owner:
         uuid: ''
       location:
-        bodyYaw: -94.26926
+        bodyYaw: -115.49512
         world: world
         x: '-97.5'
         y: '150.0'
         z: '-41.5'
-        yaw: '-94.236'
+        yaw: '-135.4951'
         pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 586
-        stats_timesSpawned: 1
+        stats_ticksSpawned: 917
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7700,7 +7700,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '0.8199999928474426'
       avoidwater: false
@@ -7743,7 +7743,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7805,7 +7805,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8899999856948853'
       avoidwater: false
@@ -7848,7 +7848,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -7910,7 +7910,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.1699999570846558'
       avoidwater: false
@@ -7953,7 +7953,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8015,7 +8015,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.8600000143051147'
       avoidwater: false
@@ -8058,7 +8058,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8120,7 +8120,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.1100000143051147'
       avoidwater: false
@@ -8163,7 +8163,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8225,7 +8225,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.0199999809265137'
       avoidwater: false
@@ -8272,7 +8272,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8334,7 +8334,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '0.9399999976158142'
       avoidwater: false
@@ -8381,7 +8381,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8443,7 +8443,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.0199999809265137'
       avoidwater: false
@@ -8490,7 +8490,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8552,7 +8552,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '0.8700000047683716'
       avoidwater: false
@@ -8595,7 +8595,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8657,7 +8657,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.1100000143051147'
       avoidwater: false
@@ -8700,7 +8700,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8762,7 +8762,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8199999928474426'
       avoidwater: false
@@ -8805,7 +8805,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8867,7 +8867,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.1799999475479126'
       avoidwater: false
@@ -8910,7 +8910,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -8972,7 +8972,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.0399999618530273'
       avoidwater: false
@@ -9015,7 +9015,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9077,7 +9077,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.100000023841858'
       avoidwater: false
@@ -9120,7 +9120,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9182,7 +9182,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.190000057220459'
       avoidwater: false
@@ -9229,7 +9229,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9291,7 +9291,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.1399999856948853'
       avoidwater: false
@@ -9334,7 +9334,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9396,7 +9396,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8700000047683716'
       avoidwater: false
@@ -9439,7 +9439,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9501,7 +9501,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.1100000143051147'
       avoidwater: false
@@ -9548,7 +9548,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9610,7 +9610,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.0099999904632568'
       avoidwater: false
@@ -9657,7 +9657,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9719,7 +9719,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.1299999952316284'
       avoidwater: false
@@ -9762,7 +9762,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9824,7 +9824,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.8600000143051147'
       avoidwater: false
@@ -9871,7 +9871,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -9933,7 +9933,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '0.9800000190734863'
       avoidwater: false
@@ -9976,7 +9976,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10038,7 +10038,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.8299999833106995'
       avoidwater: false
@@ -10085,7 +10085,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10147,7 +10147,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.090000033378601'
       avoidwater: false
@@ -10190,7 +10190,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10252,7 +10252,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.1100000143051147'
       avoidwater: false
@@ -10299,7 +10299,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10361,7 +10361,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.1799999475479126'
       avoidwater: false
@@ -10404,7 +10404,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 867
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10466,7 +10466,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.6800000071525574'
       avoidwater: false
@@ -10509,7 +10509,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10571,7 +10571,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '1.1100000143051147'
       avoidwater: false
@@ -10614,7 +10614,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 867
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10676,7 +10676,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -10719,7 +10719,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 867
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10781,7 +10781,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '1.1799999475479126'
       avoidwater: false
@@ -10824,7 +10824,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 867
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10886,7 +10886,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.8399999737739563'
       avoidwater: false
@@ -10933,7 +10933,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 868
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -10995,7 +10995,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,sentinel,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.0399999618530273'
       avoidwater: false
@@ -11038,7 +11038,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 867
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -11100,7 +11100,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.9300000071525574'
       avoidwater: false
@@ -11143,7 +11143,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -11205,7 +11205,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,lookclose,owner,sentinel,scoreboardtrait
     navigator:
       speedmodifier: '0.8799999952316284'
       avoidwater: false
@@ -11248,7 +11248,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -11310,7 +11310,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait
+    traitnames: location,spawned,type,mounttrait,rotationtrait,lookclose,owner,scoreboardtrait,sentinel
     navigator:
       speedmodifier: '0.800000011920929'
       avoidwater: false
@@ -11357,7 +11357,7 @@ npc:
         pitch: '0.0'
       sentinel:
         stats_ticksSpawned: 869
-        stats_timesSpawned: 1
+        stats_timesSpawned: 2
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -11419,7 +11419,7 @@ npc:
         allIgnores:
           targets:
             '0': OWNER
-    traitnames: equipment,lookclose,spawned,mounttrait,type,rotationtrait,owner,location,sentinel,scoreboardtrait,inventory
+    traitnames: location,spawned,type,mounttrait,rotationtrait,inventory,lookclose,owner,scoreboardtrait,sentinel,equipment
     navigator:
       speedmodifier: '1.149999976158142'
       avoidwater: false
