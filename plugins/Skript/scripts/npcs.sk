@@ -3,7 +3,7 @@ command /npcs:
     executable by: console
     trigger:
         message "espere..."
-        loop all entities in loop-world:
+        loop all entities:
             loop-entity is a citizen:
                 name of loop-entity contains "Ferreiro", "Bordador", "Invocador", "Fazendeiro", "Mago Misterioso", "Arqueiro", "Alquimista", "Necromancer","Vendedor Misterioso", "%{castelo2nome}%", "%{castelo1nome}%", "%{castelo1nomeantigo}%" or "%{castelo2nomeantigo}%":
                     set {_id} to citizen id of loop-entity
