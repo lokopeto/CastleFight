@@ -1,5 +1,5 @@
 on join:
-    teleport player to location(-46.5, 231.00, -136.5)
+    teleport player to location(-46.5, 231.00, -136.5, "world")
 
 on leave:
     make console execute command "team leave %player%"

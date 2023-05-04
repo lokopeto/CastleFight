@@ -1,5 +1,6 @@
 on leave:
-    {jogo} is 1
+    {jogo::%world of player%} is 1
+    set {playerbk::%player's uuid%::world} to world of player
     set {playerbk::%player's uuid%::inventory::*} to items in inventory of player
     set {playerbk::%player's uuid%::equip::1} to boot of player
     set {playerbk::%player's uuid%::equip::2} to leg of player
@@ -16,7 +17,8 @@ on leave:
     delete {playerbk::%player's uuid%::*}
 
 on join:
-    {jogo} is 1
+    {jogo::%{playerbk::%player's uuid%::world}%} is 1
+    teleport player to location(-46.5, 231.00, -136.5, {playerbk::%player's uuid%::world})
     set inventory of player to {playerbk::%player's uuid%::inventory::*}
     set xp of player to {playerbk::%player's uuid%::xp}
     set health of player to {playerbk::%player's uuid%::health}

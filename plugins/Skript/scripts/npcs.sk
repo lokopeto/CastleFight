@@ -3,103 +3,118 @@ command /npcs:
     executable by: console
     trigger:
         message "espere..."
-        loop all entities:
-            loop-entity is a citizen:
-                name of loop-entity contains "Ferreiro", "Bordador", "Invocador", "Fazendeiro", "Mago Misterioso", "Arqueiro", "Alquimista", "Necromancer","Vendedor Misterioso", "%{castelo2nome}%", "%{castelo1nome}%", "%{castelo1nomeantigo}%" or "%{castelo2nomeantigo}%":
-                    set {_id} to citizen id of loop-entity
-                    make console execute command "npc select %{_id}%"
-                    make console execute command "npc remove"      
-        wait 1 tick
-        make console execute command "npc create %{castelo1nome}% --at 139.5:153:23.00:world --trait sentinel"
-        make console execute command "npc scoreboard --addtag rei1"
-        make console execute command "npc collidable"
-        make console execute command "npc collidable"
-        make console execute command "npc bossbar --track health --title %{castelo1nome}% --range 500"
-        make console execute command "npc glowing --color white"
-        make console execute command "npc pathrange 5"
-#        make console execute command "npc skin" # tem que fazer a skin
-        make console execute command "sentinel knockback"      
-        make console execute command "sentinel health %{reivida}%"
-        make console execute command "sentinel addtarget sbteam:castelo2"
-        make console execute command "sentinel addignore sbteam:castelo1"
-        make console execute command "sentinel chaserange"
-        make console execute command "sentinel damage 6"
-        make console execute command "sentinel attackrate 0.5"
-        wait 1 tick
-        make console execute command "npc create %{castelo2nome}% --at -222.5:153:23.00:world --trait sentinel"
-        make console execute command "npc scoreboard --addtag rei2"
-        make console execute command "npc collidable"
-        make console execute command "npc collidable"
-        make console execute command "npc bossbar --track health --title %{castelo2nome}% --range 500"
-        make console execute command "npc glowing --color white"
-        make console execute command "npc pathrange 5"
-#        make console execute command "npc skin" # tem que fazer a skin
-        make console execute command "sentinel knockback"      
-        make console execute command "sentinel health %{reivida}%"
-        make console execute command "sentinel addtarget sbteam:castelo1"
-        make console execute command "sentinel addignore sbteam:castelo2"
-        make console execute command "sentinel chaserange"
-        make console execute command "sentinel damage 6"
-        make console execute command "sentinel attackrate 0.5"
-        wait 2 tick
-        make console execute command "npc create Invocador (%{castelo1nome}%) --at 139.5:152:25.5:world --type villager"
-        make console execute command "npc villager --profession CLERIC" 
-        wait 2 tick
-        make console execute command "npc create Invocador (%{castelo2nome}%) --at -222.5:152:20.5:world --type villager"
-        make console execute command "npc villager --profession CLERIC" 
-        wait 2 tick
-        make console execute command "npc create Fazendeiro (%{castelo1nome}%) --at 142.5:152:32.5:world --type villager"
-        make console execute command "npc villager --profession farmer" 
-        wait 2 tick
-        make console execute command "npc create Fazendeiro (%{castelo2nome}%) --at -225.5:152:13.5:world --type villager"
-        make console execute command "npc villager --profession farmer" 
-        wait 2 tick
-        make console execute command "npc create Mago Misterioso (%{castelo2nome}%) --at -222.5:152:25.5:world --type villager"
-        make console execute command "npc villager --profession CLERIC" 
-        wait 2 tick
-        make console execute command "npc create Mago Misterioso (%{castelo1nome}%) --at 139.5:152.00:20.5:world --type villager"
-        make console execute command "npc villager --profession CLERIC" 
-        wait 2 tick
-        make console execute command "npc create Ferreiro (%{castelo2nome}%) --at -151.5:152:36.5:world --type villager"
-        make console execute command "npc villager --profession WEAPONSMITH"      
-        wait 2 tick
-        make console execute command "npc create Ferreiro (%{castelo1nome}%) --at 68.5:152:9.5:world --type villager"
-        make console execute command "npc villager --profession WEAPONSMITH"      
-        wait 2 tick
-        make console execute command "npc create Bordador (%{castelo2nome}%) --at -151.5:152:9.55:world --type villager"
-        make console execute command "npc villager --profession LEATHERWORKER"             
-        wait 2 tick
-        make console execute command "npc create Bordador (%{castelo1nome}%) --at 68.5:152:36.5:world --type villager"
-        make console execute command "npc villager --profession LEATHERWORKER"    
-        wait 2 tick
-        make console execute command "npc create Arqueiro (%{castelo1nome}%) --at 81.5:152:8.5:world --type villager"
-        make console execute command "npc villager --profession nitwit" 
-        wait 2 tick
-        make console execute command "npc create Arqueiro (%{castelo2nome}%) --at -164.5:152:37.5:world --type villager"
-        make console execute command "npc villager --profession nitwit" 
-#        wait 2 tick
-#        make console execute command "npc create Alquimista (%{castelo1nome}%) --at 42.5:152:9.5:world --type villager"
-#        make console execute command "npc villager --profession cleric" 
-#        
-#        wait 2 tick
-#        make console execute command "npc create Necromancer (%{castelo1nome}%) --at 42.5:152:36.5:world --type villager"
-#        make console execute command "npc villager --profession cleric" 
-#        
-#        wait 2 tick
-#        make console execute command "npc create Exilado --at -37.5:173:111.5:world --type player"
-#        
+        loop all worlds:
+            loop all entities in loop-world:
+                loop-entity is a citizen:
+                    name of loop-entity contains "Ferreiro", "Bordador", "Invocador", "Fazendeiro", "Mago Misterioso", "Arqueiro", "Alquimista", "Necromancer","Vendedor Misterioso", "%{castelo2nome}%", "%{castelo1nome}%", "%{castelo1nomeantigo}%" or "%{castelo2nomeantigo}%":
+                        set {_id} to citizen id of loop-entity
+                        make console execute command "npc select %{_id}%"
+                        make console execute command "npc remove"      
+            wait 1 tick
+            make console execute command "npc create %{castelo1nome}% --at 139.5:153:23.00:%loop-world% --trait sentinel"
+            make console execute command "npc scoreboard --addtag rei1"
+            make console execute command "npc collidable"
+            make console execute command "npc collidable"
+            make console execute command "npc bossbar --track health --title %{castelo1nome}% --range 500"
+            make console execute command "npc glowing --color white"
+
+            make console execute command "npc pathrange 5"
+    #        make console execute command "npc skin" # tem que fazer a skin
+            make console execute command "sentinel knockback"      
+            make console execute command "sentinel health %{reivida}%"
+            make console execute command "sentinel addtarget sbteam:castelo2"
+            make console execute command "sentinel addignore sbteam:castelo1"
+            make console execute command "sentinel chaserange"
+            make console execute command "sentinel damage 6"
+            make console execute command "sentinel attackrate 0.5"
+            wait 1 tick
+            make console execute command "npc create %{castelo2nome}% --at -222.5:153:23.00:%loop-world% --trait sentinel"
+            make console execute command "npc scoreboard --addtag rei2"
+            make console execute command "npc collidable"
+            make console execute command "npc collidable"
+            make console execute command "npc bossbar --track health --title %{castelo2nome}% --range 500"
+            make console execute command "npc glowing --color white"
+
+            make console execute command "npc pathrange 5"
+    #        make console execute command "npc skin" # tem que fazer a skin
+            make console execute command "sentinel knockback"      
+            make console execute command "sentinel health %{reivida}%"
+            make console execute command "sentinel addtarget sbteam:castelo1"
+            make console execute command "sentinel addignore sbteam:castelo2"
+            make console execute command "sentinel chaserange"
+            make console execute command "sentinel damage 6"
+            make console execute command "sentinel attackrate 0.5"
+            wait 2 tick
+            make console execute command "npc create Invocador (%{castelo1nome}%) --at 139.5:152:25.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession CLERIC" 
+
+            wait 2 tick
+            make console execute command "npc create Invocador (%{castelo2nome}%) --at -222.5:152:20.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession CLERIC" 
+
+            wait 2 tick
+            make console execute command "npc create Fazendeiro (%{castelo1nome}%) --at 142.5:152:32.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession farmer" 
+
+            wait 2 tick
+            make console execute command "npc create Fazendeiro (%{castelo2nome}%) --at -225.5:152:13.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession farmer" 
+
+            wait 2 tick
+            make console execute command "npc create Mago Misterioso (%{castelo2nome}%) --at -222.5:152:25.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession CLERIC" 
+
+            wait 2 tick
+            make console execute command "npc create Mago Misterioso (%{castelo1nome}%) --at 139.5:152.00:20.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession CLERIC" 
+
+            wait 2 tick
+            make console execute command "npc create Ferreiro (%{castelo2nome}%) --at -151.5:152:36.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession WEAPONSMITH"      
+
+            wait 2 tick
+            make console execute command "npc create Ferreiro (%{castelo1nome}%) --at 68.5:152:9.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession WEAPONSMITH"      
+
+            wait 2 tick
+            make console execute command "npc create Bordador (%{castelo2nome}%) --at -151.5:152:9.55:%loop-world% --type villager"
+            make console execute command "npc villager --profession LEATHERWORKER"             
+
+            wait 2 tick
+            make console execute command "npc create Bordador (%{castelo1nome}%) --at 68.5:152:36.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession LEATHERWORKER"    
+
+            wait 2 tick
+            make console execute command "npc create Arqueiro (%{castelo1nome}%) --at 81.5:152:8.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession nitwit" 
+
+            wait 2 tick
+            make console execute command "npc create Arqueiro (%{castelo2nome}%) --at -164.5:152:37.5:%loop-world% --type villager"
+            make console execute command "npc villager --profession nitwit" 
+
+    #        wait 2 tick
+    #        make console execute command "npc create Alquimista (%{castelo1nome}%) --at 42.5:152:9.5:%loop-world% --type villager"
+    #        make console execute command "npc villager --profession cleric" 
+    #        
+    #        wait 2 tick
+    #        make console execute command "npc create Necromancer (%{castelo1nome}%) --at 42.5:152:36.5:%loop-world% --type villager"
+    #        make console execute command "npc villager --profession cleric" 
+    #        
+    #        wait 2 tick
+    #        make console execute command "npc create Exilado --at -37.5:173:111.5:%loop-world% --type player"
+    #        
     #        make console execute command "npc sit"
     #        make console execute command "npc skin --url http://textures.minecraft.net/texture/15da030c532cbbd32f5f93a1feedc595d65cd6a2155552c969f4f6d14a99e01e"
     #        wait 20 tick
-    #        make console execute command "npc create Exilado --at -35.47:172.00:114.43:world --type player"
+    #        make console execute command "npc create Exilado --at -35.47:172.00:114.43:%loop-world% --type player"
     #        
     #        make console execute command "npc skin --url http://textures.minecraft.net/texture/15da030c532cbbd32f5f93a1feedc595d65cd6a2155552c969f4f6d14a99e01e"
     #        wait 20 tick
-    #        make console execute command "npc create Exilado --at -46.69:175.00:113.65:world --type player"
+    #        make console execute command "npc create Exilado --at -46.69:175.00:113.65:%loop-world% --type player"
     #         
     #        make console execute command "npc skin --url http://textures.minecraft.net/texture/15da030c532cbbd32f5f93a1feedc595d65cd6a2155552c969f4f6d14a99e01e"
     #        wait 20 tick
-    #        make console execute command "npc create Exilado --at -25.37:175.00:114.60:world --type player"
+    #        make console execute command "npc create Exilado --at -25.37:175.00:114.60:%loop-world% --type player"
     #        
     #        make console execute command "npc sit"
     #        make console execute command "npc skin --url http://textures.minecraft.net/texture/15da030c532cbbd32f5f93a1feedc595d65cd6a2155552c969f4f6d14a99e01e"
