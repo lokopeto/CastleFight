@@ -17,14 +17,51 @@
 #     send action bar "§b§lSE CURVE!!" to all players
 
 
-command /londamaentrada:
+command /clearchat:
+    description: Clear chat for all players
+    permission: cc.clear
     trigger:
-        send "§b§l Então nos encontramos novamente..."
-        wait for 2 seconds
-        send "§b§l Se lembra de mim?"
-        wait for 2 seconds
-        send "<command:/admresp1 1>&6Sim<reset>    §8click     <command:/admresp1 0>&6Não<reset>"
+        loop 300 times:
+            broadcast " "
 
+command /criarstand:
+    trigger:
+        execute command "/summon armor_stand -38.5 144.00 111.5 {Invisible:1b,Invulnerable:1b,NoBasePlate:1b,NoGravity:1b,ArmorItems:[{},{},{},{id:""minecraft:player_head"",Count:1b,tag:{SkullOwner:{Id:[I;-958985844,1971930286,-1120163427,-962374584],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzNjZTUyZDI5ZmEzZjE0ZGY4OTgwNGU1MTZjNzdjYzhhMjM5ODUzYzlhMGQ4ODE3OWQ4Zjk5NWE0OGRjNDY1MCJ9fX0=""}]}}}}],HandItems:[{},{}]}"
+
+# command /londamaentrada [<integer>]:
+#     trigger:
+        
+
+
+
+on player jump:
+    show wolf hearts on the player
+
+on right click on entity:
+
+    if player is holding a stick:
+        broadcast "foi"
+        set {bicho} to entity
+
+    #if {uuid::entity} is "7c0d7108-8bb6-4c08-a949-5311af78150f":
+        
+    broadcast display name of entity
+    broadcast uuid of entity
+    #if entity is falling soul lantern:
+    if the entity have the scoreboard tag "londamatrigger":
+        set display name of entity to "§4§lPARE!!"
+        send "§b§l Então nos encontramos novamente..." to player
+        wait for 2 seconds
+        send "§b§l Se lembra de mim?" to player
+        wait for 2 seconds
+        send "<command:/admresp1 1>&6Sim<reset>    §8click     <command:/admresp1 0>&6Não<reset>" to player
+        # send "<%set {_var} to 2%>mudar<reset>"
+        # if {_var} is 2:
+        #     send "foi"
+
+command /criatura:
+    trigger:
+        broadcast health of {bicho}
 
 command /admresp1 <number>:
     trigger:
@@ -49,3 +86,24 @@ command /admresp1 <number>:
             send "§b§l Como esqueceria de minha beleza?..."
     
     
+command /sacrificio <player>:
+    trigger:
+        make console execute command "ppo %arg-1% add angry_villager orbit"
+        set {_loc} to location of arg-1
+        loop 100 times:
+            wait 1 tick
+            teleport arg-1 to {_loc}
+            add 0.03 to {_tier}
+            apply potion of speed of tier "%round({_tier})%" parsed as integer without particles to the player for 999 days replacing existing effect
+        make console execute command "ppo %arg-1% reset"
+        remove speed from the arg-1
+        set the arg-1's gamemode to spectator
+        if arg-1 is alive:
+            set {sacrificio::%uuid of arg-1%} to 1
+            message "&c&lVocê foi sacrificado.."
+        else:
+            message "&c&lVocê não foi sacrificado.."       
+on join:
+    {sacrificio::%uuid of player%} is 1
+    set the player's gamemode to spectator
+    send action bar "&c&lVocê foi sacrificado.." to player
