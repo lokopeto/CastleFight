@@ -206,7 +206,7 @@ desistir<none>, long, 0000000000000006
 desistircastelo1, long, 0000000000000009
 effect, long, 0000000000000000
 exiladoabrido, long, 0000000000000000
-exiladotimer, long, FFFFFFFFFFF91046
+exiladotimer, long, FFFFFFFFFFF91000
 historia::1, string, 80026161
 historia::2, string, 80026161
 historia::3, string, 80026161
@@ -643,8 +643,8 @@ nodama::1, long, 0000000000000000
 nodama::3deaa639-bf83-3582-9086-316f419185de, long, 0000000000000000
 nodama::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, 0000000000000000
 numb, long, 0000000000000017
-padeirotimer1, long, FFFFFFFFFFFD1286
-padeirotimer2, long, FFFFFFFFFFFB9CA7
+padeirotimer1, long, FFFFFFFFFFFD1240
+padeirotimer2, long, FFFFFFFFFFFB9C61
 partidanumb, long, 0000000000000000
 placalevelmax, long, 000000000000003C
 player1x, double, C0581F2D0E4BA61B
