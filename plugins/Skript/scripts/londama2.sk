@@ -1,0 +1,22 @@
+command /sacrificio <player>:
+    trigger:
+        make console execute command "ppo %arg-1% add angry_villager orbit"
+        set {_loc} to location of arg-1
+        loop 100 times:
+            wait 1 tick
+            teleport arg-1 to {_loc}
+            add 0.03 to {_tier}
+            apply potion of speed of tier "%round({_tier})%" parsed as integer without particles to the player for 999 days replacing existing effect
+        make console execute command "ppo %arg-1% reset"
+        remove speed from the arg-1
+        set the arg-1's gamemode to spectator
+        if arg-1 is alive:
+            set {sacrificio::%uuid of arg-1%} to 1
+            message "&c&lVocê foi sacrificado.."
+        else:
+            message "&c&lVocê não foi sacrificado.."       
+on join:
+    {sacrificio::%uuid of player%} is 1
+    set the player's gamemode to spectator
+    send action bar "&c&lVocê foi sacrificado.." to player
+

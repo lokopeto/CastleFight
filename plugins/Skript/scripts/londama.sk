@@ -1,0 +1,19 @@
+# command /londama <player>:
+#     trigger:
+#         create a gui with virtual chest inventory with 1 rows named "Invocador":
+#             set the lock status of the edited gui to false
+#         open the created gui for arg-1
+
+command /londamaentrada:
+    trigger:
+        #execute title @a actionbar "sou londama, curve-se a mim, pobre mortal"
+        send title "sou londama, curve-se a mim, pobre mortal" to all players
+
+on player jump:
+    send action bar "§b§lsou londama, curve-se a mim, pobre mortal" to all players
+    wait for 4 seconds
+    send action bar "§b§lnao me ouviu traste?" to all players
+    wait for 4 seconds
+    send action bar "§b§lSE CURVE!!" to all players
+    
+    
