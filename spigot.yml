@@ -173,5 +173,5 @@ world-settings:
     verbose: false
 config-version: 12
 stats:
-  disable-saving: false
+  disable-saving: true
   forced-stats: {}
