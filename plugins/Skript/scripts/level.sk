@@ -167,15 +167,16 @@ command /fogo:
         make console execute command "fastasyncworldedit:/pos2 150,115,-122"
         make console execute command "fastasyncworldedit:/replace fire air"
 
-command /jogo [<number>]:
+command /jogo [<number>] [<world>]:
     executable by: console
     trigger:
-        set {jogo} to arg-1
+        set {jogo::%arg-2%} to arg-1
         if arg-1 is 1: 
             wait 10 ticks
-            make console execute command "spawn"
-            make console execute command "spawnboss"
-            make console execute command "setblock -47 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""[Espectador]"",""clickEvent"":{""action"":""run_command"",""value"":""gamemode spectator @s""},""color"":""aqua""}',Text2:'{""text"":""Clique para"",""clickEvent"":{""action"":""run_command"",""value"":""tp @s -40.50 200.00 23.00""},""bold"":true,""color"":""blue""}',Text3:'{""text"":""Espectar"",""clickEvent"":{""action"":""run_command"",""value"":""team join espectador @s""},""bold"":true,""color"":""blue""}',Text4:'{""text"":""==========="",""color"":""aqua""}'}"
+            make console execute command "spawn %arg-2%"
+            make console execute command "spawnboss %arg-2%"
+            set {_overworld} to "overworld"
+            make console execute command "execute in setblock -47 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""[Espectador]"",""clickEvent"":{""action"":""run_command"",""value"":""gamemode spectator @s""},""color"":""aqua""}',Text2:'{""text"":""Clique para"",""clickEvent"":{""action"":""run_command"",""value"":""tp @s -40.50 200.00 23.00""},""bold"":true,""color"":""blue""}',Text3:'{""text"":""Espectar"",""clickEvent"":{""action"":""run_command"",""value"":""team join espectador @s""},""bold"":true,""color"":""blue""}',Text4:'{""text"":""==========="",""color"":""aqua""}'}"
             #evoluir npcs
             make console execute command "data merge block 86 150 26 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
             make console execute command "data merge block -170 150 19 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"

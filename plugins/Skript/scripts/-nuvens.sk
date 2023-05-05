@@ -1,8 +1,0 @@
-every 5 tick:
-    loop all players:
-        loop-player's y-coordinate > 265:
-            block below loop-players is white wool:
-                apply slow falling and jump boost 20 to the loop-player for 12 seconds replacing existing effect
-            block below loop-players is not white wool, smooth_quartz_slab or air:
-                remove slow falling and jump boost from the loop-player
-            

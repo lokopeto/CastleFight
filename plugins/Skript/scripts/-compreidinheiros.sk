@@ -1,0 +1,4 @@
+command /compreidinheiros:
+    trigger:
+        loop all players:
+            broadcast "aaaaaaaaaaaaaaaaaaaaaaaaa COMPREI DINHEIROSSSSSSSS"
