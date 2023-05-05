@@ -120,3 +120,17 @@ command /jogadoreaeaaewa <integer> <number>:
 command /partidatest <integer>:
     trigger:
         message {partida::%arg-1%::1}
+
+command /block [<integer>]:
+    trigger:
+        if arg-1 is 1:
+            set {blockx1} and {blockx2} to 0
+        else:
+            if {block} is set:
+                delete {block}
+                reduce {blockx1} by 1
+                make console execute command "setblock %{blockx1} - 47% 230 -116 minecraft:redstone_block"
+            else:
+                set {block} to 1
+                increase {blockx2} by 1
+                make console execute command "setblock %{blockx2} - 47% 230 -116 minecraft:redstone_block"

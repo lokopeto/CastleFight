@@ -175,7 +175,6 @@ command /jogo [<number>] [<world>]:
             wait 10 ticks
             make console execute command "spawn %arg-2%"
             make console execute command "spawnboss %arg-2%"
-            set {_overworld} to "overworld"
             make console execute command "execute in setblock -47 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""[Espectador]"",""clickEvent"":{""action"":""run_command"",""value"":""gamemode spectator @s""},""color"":""aqua""}',Text2:'{""text"":""Clique para"",""clickEvent"":{""action"":""run_command"",""value"":""tp @s -40.50 200.00 23.00""},""bold"":true,""color"":""blue""}',Text3:'{""text"":""Espectar"",""clickEvent"":{""action"":""run_command"",""value"":""team join espectador @s""},""bold"":true,""color"":""blue""}',Text4:'{""text"":""==========="",""color"":""aqua""}'}"
             #evoluir npcs
             make console execute command "data merge block 86 150 26 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"

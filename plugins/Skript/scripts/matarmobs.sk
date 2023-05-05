@@ -2,9 +2,6 @@ command /matarmobs [<number>] <world>:
     executable by: console
     trigger:
         set {_world} to arg-2
-        if {_world} is "world":
-            set {_world} to "overworld"
-
         arg-1 is 1:
             set {_x} to 95
             loop 68 times:

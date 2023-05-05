@@ -14,7 +14,7 @@ command /criarpartida [<text>] [<text>] [<text>] [<text>]:
         arg-2 is set
         arg-3 is set 
         message " "
-        set {criarpartida::%player's uuid%::*} to arg-1, arg-2, arg-3 and arg-4
+        set {criarpartida::%player's uuid%::*} to arg-1, arg-2, arg-3, world of player and arg-4
         arg-1 is arg-2:
             set {criarpartida::%player's uuid%::1} to "ReiBarro"
             set {criarpartida::%player's uuid%::2} to "ReiCarvalho"
@@ -27,7 +27,7 @@ command /criarpartida [<text>] [<text>] [<text>] [<text>]:
             message "&eSenha: %{criarpartida::%player's uuid%::4}%"            
         message " "
         add 1 to {partidanumb}
-        set {partida::%{partidanumb}%::1} to "%{criarpartida::%player's uuid%::1}% %{criarpartida::%player's uuid%::2}% %{criarpartida::%player's uuid%::3}% %{criarpartida::%player's uuid%::4}%"
+        set {partida::%{partidanumb}%::1} to "%{criarpartida::%player's uuid%::1}% %{criarpartida::%player's uuid%::2}% %{criarpartida::%player's uuid%::3}% %{criarpartida::%player's uuid%::4}% %{criarpartida::%player's uuid%::5}%"
         set {partida::%{partidanumb}%::2} to {partidanumb}
         make console execute command "tellraw %player% ["""",{""text"":""\u261e\u261e "",""color"":""aqua""},{""text"":""Criar?"",""bold"":true,""color"":""green"",""clickEvent"":{""action"":""run_command"",""value"":""/confirmar %{partidanumb}% %{partida::%{partidanumb}%::1}%""},""hoverEvent"":{""action"":""show_text"",""contents"":{""text"":""Clique para criar"",""color"":""green""}}}]"
         set {criarpartida::%player's uuid%} to 1
@@ -40,6 +40,7 @@ command /criarpartida [<text>] [<text>] [<text>] [<text>]:
 #            message "&aVocê entrou na partida! ()"
 #        else:
 #            message "&cVocê é o criador da partida!"    
+
 
 command /partidavotar <integer>:
     trigger:
@@ -54,9 +55,9 @@ command /partidavotar <integer>:
             set {_votos} to ceil({jogadores} / 1.8)
             {jogadores} >= 2:
                 {partidavotar::%arg-1%} >= {_votos}:
-                    broadcast ""
-                    broadcast "&aPartida %arg-1% ganhou com %{partidavotar::%arg-1%}% votos!"
-                    broadcast ""
+                    message "" to all players in world of player
+                    message "&aPartida %arg-1% ganhou com %{partidavotar::%arg-1%}% votos!" to all players in world of player
+                    message "" to all players in world of player
                     make console execute command "partidapreparar %{partida::%arg-1%::1}%"
         else:
             message "&cVocê já votou, vote em outro!"
@@ -64,17 +65,20 @@ command /partidavotar <integer>:
 command /confirmar <integer> <text> <text> <text> [<text>]:
     trigger:
         {jogo} is 0
-        {criarpartida::%player's uuid%} is 1:
-            message " "
-            make console execute command "tellraw @a ["""",{""text"":""%player% criou uma partida!"",""color"":""aqua""},{""text"":"" (numero %arg-1%)"",""color"":""gray""}]"
-            broadcast "   &eNome do Rei Barro: %{criarpartida::%player's uuid%::1}%"
-            broadcast "   &eNome do Rei Carvalho: %{criarpartida::%player's uuid%::2}%"
-            broadcast "   &eTipo: %{criarpartida::%player's uuid%::3}%"
-            arg-5 is not "<none>":
-                broadcast "   &eContem Senha"
 
-            make console execute command "tellraw @a ["""",{""text"":""Votar?"",""bold"":true,""color"":""green"",""clickEvent"":{""action"":""run_command"",""value"":""/partidavotar %{partidanumb}%""},""hoverEvent"":{""action"":""show_text"",""contents"":{""text"":""Clique para votar"",""color"":""green""}}}]"
-            set {criarpartida::%player's uuid%} to 2
+
+
+        # {criarpartida::%player's uuid%} is 1:
+        #     message " "
+        #     make console execute command "tellraw @a ["""",{""text"":""%player% criou uma partida!"",""color"":""aqua""},{""text"":"" (numero %arg-1%)"",""color"":""gray""}]"
+        #     broadcast "   &eNome do Rei Barro: %{criarpartida::%player's uuid%::1}%"
+        #     broadcast "   &eNome do Rei Carvalho: %{criarpartida::%player's uuid%::2}%"
+        #     broadcast "   &eTipo: %{criarpartida::%player's uuid%::3}%"
+        #     arg-6 is not "<none>":
+        #         broadcast "   &eContem Senha"
+
+        #     make console execute command "tellraw @a ["""",{""text"":""Votar?"",""bold"":true,""color"":""green"",""clickEvent"":{""action"":""run_command"",""value"":""/partidavotar %{partidanumb}%""},""hoverEvent"":{""action"":""show_text"",""contents"":{""text"":""Clique para votar"",""color"":""green""}}}]"
+        #     set {criarpartida::%player's uuid%} to 2
 
 #command /partidacomeçou:
 #    trigger:
