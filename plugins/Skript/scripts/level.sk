@@ -62,6 +62,7 @@ every 10 ticks:
     set line 3 of block at location(86, 150, 19, world "world") to "&9%{XPquant1}%"
 
 on click on sign:
+    {jogo::%world of player%} is 1
     loop all players:
         set {_team} to "%team of loop-player%"
         replace "castelo" in {_team} with ""
@@ -162,10 +163,12 @@ every 50 seconds:
 command /fogo:
     executable by: console
     trigger:
-        make console execute command "fastasyncworldedit:/world world"
-        make console execute command "fastasyncworldedit:/pos1 -250,272,195"
-        make console execute command "fastasyncworldedit:/pos2 150,115,-122"
-        make console execute command "fastasyncworldedit:/replace fire air"
+        loop all worlds:
+            loop-world is "world1", "world2" or "world3"
+            make console execute command "fastasyncworldedit:/world %loop-world%"
+            make console execute command "fastasyncworldedit:/pos1 -250,272,195"
+            make console execute command "fastasyncworldedit:/pos2 150,115,-122"
+            make console execute command "fastasyncworldedit:/replace fire air"
 
 command /jogo [<number>] [<world>]:
     executable by: console

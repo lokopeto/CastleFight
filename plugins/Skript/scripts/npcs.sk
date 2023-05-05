@@ -4,6 +4,7 @@ command /npcs:
     trigger:
         message "espere..."
         loop all worlds:
+            loop-world is "world1", "world2" or "world3"
             loop all entities in loop-world:
                 loop-entity is a citizen:
                     name of loop-entity contains "Ferreiro", "Bordador", "Invocador", "Fazendeiro", "Mago Misterioso", "Arqueiro", "Alquimista", "Necromancer","Vendedor Misterioso", "%{castelo2nome}%", "%{castelo1nome}%", "%{castelo1nomeantigo}%" or "%{castelo2nomeantigo}%":

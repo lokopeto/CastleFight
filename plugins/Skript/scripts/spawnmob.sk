@@ -156,6 +156,7 @@ command /spawn:
     trigger:
         message "Espere..."
         loop all worlds:
+            loop-world is "world1", "world2" or "world3"
             loop all entities in loop-world:
                 if name of loop-entity contains "(natural)":
                     set {_id} to citizen id of loop-entity
@@ -330,6 +331,7 @@ command /spawnboss:
     trigger:
         message "Espere..."
         loop all worlds:
+            loop-world is "world1", "world2" or "world3"
             loop all entities in loop-world:
                 if name of loop-entity contains "(BOSS)":
                     set {_id} to citizen id of loop-entity
