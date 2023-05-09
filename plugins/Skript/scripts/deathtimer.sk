@@ -10,7 +10,7 @@ every 1 second:
 #        broadcast "%{deathtimer::%uuid of loop-player%}%"
 
 on respawn:
-    {jogo} is 1
+    {jogo::%world of player%} is 1
     set gamemode of player to spectator
     set respawn location to {deathloc::%uuid of player%}
     set {_tempo} to {deathtimer::%uuid of player%} -1

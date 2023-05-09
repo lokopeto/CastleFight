@@ -143,9 +143,6 @@ every 1 second:
 every 5 minute:
     make console execute command "spawn"
 
-every 8 minutes:
-    make console execute command "spawncaverna"
-
 every 15 minute:
     make console execute command "spawnboss"
 
@@ -156,6 +153,7 @@ command /spawn:
     trigger:
         message "Espere..."
         loop all worlds:
+            wait 1 minute
             loop-world is "world1", "world2" or "world3"
             loop all entities in loop-world:
                 if name of loop-entity contains "(natural)":
@@ -273,7 +271,7 @@ command /spawn:
                         set {_levelmin} to 30  
                     set {_levelstats} to a random integer between {_levelmin} and {level}
 
-                    set {_tipomob} to a random text out of "Bruxa_Avançada", "Witch" and "Frog"
+                    set {_tipomob} to a random text out of "Witch" and "Frog"
 
                     loop "%{_level}%" parsed as integer times:
                         add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}
@@ -331,6 +329,7 @@ command /spawnboss:
     trigger:
         message "Espere..."
         loop all worlds:
+            wait 1 minute
             loop-world is "world1", "world2" or "world3"
             loop all entities in loop-world:
                 if name of loop-entity contains "(BOSS)":

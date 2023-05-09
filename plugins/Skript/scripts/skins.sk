@@ -1,2 +1,0 @@
-on load:
-    set {skins::1} to "https://cdn.discordapp.com/attachments/1053771601331638273/1053771868311662652/exilado.png" #exilado

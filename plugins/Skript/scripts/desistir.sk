@@ -1,6 +1,6 @@
 command /desistir:
     trigger:
-        {jogo} is 1
+        {jogo::%world of player%} is 1
         if {jogadoresdesistir::*} contains uuid of player:
             remove uuid of player from {jogadoresdesistir::*}
 
