@@ -231,6 +231,7 @@ command /jogo [<number>] [<world>]:
             make console execute command "kill @e[type=!minecraft:player]"
             make console execute command "kill @e[type=minecraft:item]"
             make console execute command "setblock -47 230 -116 air"
+            make console execute command "execute in minecraft:%arg-2% run fill -51 230 -116 -44 230 -116 air"
             wait 15 ticks
             make console execute command "clear @a"
             make console execute command "xp set @a 0 levels"
