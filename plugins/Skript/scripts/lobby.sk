@@ -5,14 +5,15 @@ on leave:
     make console execute command "team leave %player%"
 
 command /criarpartida [<text>] [<text>] [<text>] [<text>]:
-    cooldown: 10 seconds
+    cooldown: 50 seconds
     trigger:
         {jogo::%world of player%} is 0
+
         arg-1, arg-2 or arg-3 is not set:    
             message "&cIncorreto! use /criarpartida <Nome do Rei Barro> <Nome do Rei Carvalho> <Tipo> (senha)"
         arg-1 is set
         arg-2 is set
-        arg-3 is "normal" or "rapido"
+        arg-3 is "Normal" or "Rapido"
         message " "
         set {criarpartida::%player's uuid%::*} to arg-1, arg-2, arg-3, world of player and arg-4
         arg-1 is arg-2:
@@ -34,8 +35,13 @@ command /criarpartida [<text>] [<text>] [<text>] [<text>]:
         set {players::%player's uuid%::1} to player's uuid
 
 on click on sign:
-    if line 4 contains "Votos":
-        set line 4 to ""
+    wait 2 tick
+    if line 4 contains "Voto":
+        if {votaratualizar::%player's uuid%} is 1:
+            set {_s} to ""
+        else:
+            set {_s} to "s"
+        set line 4 to "&7&l%{votaratualizar::%player's uuid%}% Voto%{_s}%"
         
 
 #command /partidaentrar <text>:
@@ -58,6 +64,7 @@ command /partidavotar <integer> <world>:
             loop all players in world arg-2:
                 add 1 to {jogadores}
             set {_votos} to ceil({jogadores} / 1.8)
+            set {votaratualizar::%player's uuid%} to {partidavotar::%arg-1%::%arg-2%}
             {jogadores} >= 2:
                 {partidavotar::%arg-1%::%arg-2%} >= {_votos}:
                     message "" to all players in world of player
@@ -75,22 +82,24 @@ command /confirmar <integer> <text> <text> <text> <world> [<text>]:
             set {_senha} to "/senha"
         else:
             set {_senha} to ""            
-        if {blockx1::%arg-4%} is -10:
-            if {blockx2::%arg-4%} is 10:
-                set {blockx1::%arg-4%} to -10
-                set {blockx2::%arg-4%} to 10
+        if {blockx1::%arg-5%} is -4:
+            if {blockx2::%arg-5%} is 4:
+                set {blockx1::%arg-5%} to 0
+                set {blockx2::%arg-5%} to 0
+                delete {block::%arg-5%}
 
         else:
-            if {block::%arg-4%} is set:
-                delete {block::%arg-4%}
-                reduce {blockx1::%arg-4%} by 1
-                make console execute command "execute in minecraft:%arg-5% run setblock %{blockx1::%arg-4%} - 47% 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""%{criarpartida::%player's uuid%::1}%"",""clickEvent"":{""action"":""run_command"",""value"":""partidavotar %{partidanumb}% %arg-5%""},""italic"":true,""color"":""aqua""}',Text2:'{""text"":""%{criarpartida::%player's uuid%::2}%"",""italic"":true,""color"":""aqua""}',Text3:'{""text"":""%{criarpartida::%player's uuid%::3}%%{_senha}%"",""bold"":true,""italic"":true,""color"":""green""}',Text4:'{""text"":""0 Votos"",""bold"":true,""color"":""gray""}'}"
+            if {block::%arg-5%} is set:
+                delete {block::%arg-5%}
+                reduce {blockx1::%arg-5%} by 1
+                make console execute command "execute in minecraft:%arg-5% run setblock %{blockx1::%arg-5%} - 47% 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""%{criarpartida::%player's uuid%::1}%"",""clickEvent"":{""action"":""run_command"",""value"":""partidavotar %{partidanumb}% %arg-5%""},""italic"":true,""color"":""aqua""}',Text2:'{""text"":""%{criarpartida::%player's uuid%::2}%"",""italic"":true,""color"":""aqua""}',Text3:'{""text"":""%{criarpartida::%player's uuid%::3}%%{_senha}%"",""bold"":true,""italic"":true,""color"":""green""}',Text4:'{""text"":""0 Votos"",""bold"":true,""color"":""gray""}'}"
             else:
-                set {block::%arg-4%} to 1
-                make console execute command "execute in minecraft:%arg-5% run setblock %{blockx2::%arg-4%} - 47% 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""%{criarpartida::%player's uuid%::1}%"",""clickEvent"":{""action"":""run_command"",""value"":""partidavotar %{partidanumb}% %arg-5%""},""italic"":true,""color"":""aqua""}',Text2:'{""text"":""%{criarpartida::%player's uuid%::2}%"",""italic"":true,""color"":""aqua""}',Text3:'{""text"":""%{criarpartida::%player's uuid%::3}%%{_senha}%"",""bold"":true,""italic"":true,""color"":""green""}',Text4:'{""text"":""0 Votos"",""bold"":true,""color"":""gray""}'}"
-                increase {blockx2::%arg-4%} by 1
+                set {block::%arg-5%} to 1
+                make console execute command "execute in minecraft:%arg-5% run setblock %{blockx2::%arg-5%} - 47% 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""%{criarpartida::%player's uuid%::1}%"",""clickEvent"":{""action"":""run_command"",""value"":""partidavotar %{partidanumb}% %arg-5%""},""italic"":true,""color"":""aqua""}',Text2:'{""text"":""%{criarpartida::%player's uuid%::2}%"",""italic"":true,""color"":""aqua""}',Text3:'{""text"":""%{criarpartida::%player's uuid%::3}%%{_senha}%"",""bold"":true,""italic"":true,""color"":""green""}',Text4:'{""text"":""0 Votos"",""bold"":true,""color"":""gray""}'}"
+                increase {blockx2::%arg-5%} by 1
+        message "&ePartida Criada! clique nas placas para votar."
         set {criarpartida::%player's uuid%} to 2
-        
+
 
         # {criarpartida::%player's uuid%} is 1:
         #     message " "
@@ -102,6 +111,16 @@ command /confirmar <integer> <text> <text> <text> <world> [<text>]:
 
         #     make console execute command "tellraw @a ["""",{""text"":""Votar?"",""bold"":true,""color"":""green"",""clickEvent"":{""action"":""run_command"",""value"":""/partidavotar %{partidanumb}%""},""hoverEvent"":{""action"":""show_text"",""contents"":{""text"":""Clique para votar"",""color"":""green""}}}]"
         #     set {criarpartida::%player's uuid%} to 2
+
+every 10 minutes:
+    loop all worlds:
+        loop-world is "world1", "world2" or "world3"
+        {jogo::%loop-world%} is 0
+        number of players in loop-world is 0 or 1
+        set {blockx1::%loop-world%} and {blockx2::%loop-world%} to 0
+        delete {block::%loop-world%}
+        make console execute command "execute in minecraft:%loop-world% run fill -51 230 -116 -44 230 -116 air"
+
 
 #command /partidacomeçou:
 #    trigger:
