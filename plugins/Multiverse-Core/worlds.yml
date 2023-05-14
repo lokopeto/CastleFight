@@ -46,14 +46,14 @@ worlds:
     generator: VoidGen
     playerLimit: '-1'
     allowFlight: 'true'
-  world3:
+  world_the_end:
     ==: MVWorld
     hidden: 'false'
-    alias: world3
+    alias: world_the_end
     color: WHITE
     style: NORMAL
     pvp: 'true'
-    scale: '1.0'
+    scale: '16.0'
     respawnWorld: ''
     allowWeather: 'true'
     difficulty: EASY
@@ -80,17 +80,17 @@ worlds:
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: -41.0
-      y: 147.0
-      z: 23.0
+      x: 0.0
+      y: 62.0
+      z: 0.0
       pitch: 0.0
-      yaw: -180.0
+      yaw: 0.0
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
-    environment: NORMAL
-    seed: '6172343188073036545'
-    generator: VoidGen
+    environment: THE_END
+    seed: '-2606607412248378669'
+    generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
   world:
@@ -140,14 +140,14 @@ worlds:
     generator: VoidGen
     playerLimit: '-1'
     allowFlight: 'true'
-  world_the_end:
+  world3:
     ==: MVWorld
     hidden: 'false'
-    alias: world_the_end
+    alias: world3
     color: WHITE
     style: NORMAL
     pvp: 'true'
-    scale: '16.0'
+    scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'
     difficulty: EASY
@@ -174,17 +174,17 @@ worlds:
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: 0.0
-      y: 62.0
-      z: 0.0
+      x: -41.0
+      y: 147.0
+      z: 23.0
       pitch: 0.0
-      yaw: 0.0
+      yaw: -180.0
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
-    environment: THE_END
-    seed: '-2606607412248378669'
-    generator: 'null'
+    environment: NORMAL
+    seed: '6172343188073036545'
+    generator: VoidGen
     playerLimit: '-1'
     allowFlight: 'true'
   world_nether:
