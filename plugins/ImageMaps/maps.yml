@@ -1,2 +1,20 @@
 storageVersion: 1
-maps: {}
+maps:
+  3:
+    ==: ImageMaps.Map
+    image: praçafinal.png
+    x: 0
+    y: 0
+    scale: 1.0
+  4:
+    ==: ImageMaps.Map
+    image: praçafinal.png
+    x: 1
+    y: 0
+    scale: 1.0
+  5:
+    ==: ImageMaps.Map
+    image: praçafinal.png
+    x: 2
+    y: 0
+    scale: 1.0
