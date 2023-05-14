@@ -19,7 +19,7 @@ on death:
                 else:
                     increase the attacker's level by a random integer between 13 and 20
 
-            name of victim contains {castelo1nome} or {castelo2nome}:
+            name of victim contains {castelo1nome::%world of attacker%} or {castelo2nome::%world of attacker%}:
                 add 0.1 to {vida::%uuid of attacker%}
 
             add 1 to {vida::%uuid of attacker%}
@@ -29,13 +29,13 @@ on death:
                 set {vida::%uuid of attacker%} to 0
                 message "&aSua vida aumentou!" to attacker
     attacker is a npc:
-        name of attacker contains {castelo1nome}:
+        name of attacker contains {castelo1nome::%world of attacker%}:
             victim is a npc:
                 add a random integer between 3 and 10 to {XPquant1}
             victim is a player:
                 add {xpplayer::%world of attacker%} to {XPquant1}     
 
-        name of attacker contains {castelo2nome}:
+        name of attacker contains {castelo2nome::%world of attacker%}:
             victim is a npc:
                 add a random integer between 3 and 10 to {XPquant2}
             victim is a player:
@@ -227,11 +227,11 @@ command /jogo [<number>] [<world>]:
             make console execute command "npcs"
             make console execute command "kill @e[type=!minecraft:player]"
             #evoluir npcs
-            make console execute command "data merge block 86 150 26 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
-            make console execute command "data merge block -170 150 19 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+            make console execute command "data merge block 86 150 26 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+            make console execute command "data merge block -170 150 19 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
             #guardar xp
-            make console execute command "data merge block 86 150 19 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"
-            make console execute command "data merge block -170 150 26 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"            
+            make console execute command "data merge block 86 150 19 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"
+            make console execute command "data merge block -170 150 26 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"            
             make console execute command "setblock -170 149 19 air"
             make console execute command "setblock -170 149 18 air"
             make console execute command "setblock -170 149 27 air"
@@ -241,14 +241,14 @@ command /jogo [<number>] [<world>]:
             make console execute command "setblock 86 149 19 air"
             make console execute command "setblock 86 149 18 air"
             wait 1 tick
-            make console execute command "setblock -170 149 19 chest[facing=west,type=left]{CustomName:'[{""text"":""Bau do (%{castelo2nome}%)"",""italic"":false}]'} replace"
-            make console execute command "setblock -170 149 18 chest[facing=west,type=right]{CustomName:'[{""text"":""Bau do (%{castelo2nome}%)"",""italic"":false}]'} replace"
-            make console execute command "setblock -170 149 27 chest[facing=west,type=left]{CustomName:'[{""text"":""Bau do (%{castelo2nome}%)"",""italic"":false}]'} replace"
-            make console execute command "setblock -170 149 26 chest[facing=west,type=right]{CustomName:'[{""text"":""Bau do (%{castelo2nome}%)"",""italic"":false}]'} replace"
-            make console execute command "setblock 86 149 27 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome}%)"",""italic"":false}]'} replace"
-            make console execute command "setblock 86 149 26 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome}%)"",""italic"":false}]'} replace"
-            make console execute command "setblock 86 149 19 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome}%)"",""italic"":false}]'} replace"
-            make console execute command "setblock 86 149 18 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock -170 149 19 chest[facing=west,type=left]{CustomName:'[{""text"":""Bau do (%{castelo2nome::%arg-2%}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock -170 149 18 chest[facing=west,type=right]{CustomName:'[{""text"":""Bau do (%{castelo2nome::%arg-2%}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock -170 149 27 chest[facing=west,type=left]{CustomName:'[{""text"":""Bau do (%{castelo2nome::%arg-2%}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock -170 149 26 chest[facing=west,type=right]{CustomName:'[{""text"":""Bau do (%{castelo2nome::%arg-2%}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock 86 149 27 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock 86 149 26 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock 86 149 19 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
+            make console execute command "setblock 86 149 18 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             wait 1 tick
             make console execute command "casasnpcs 1 1 4"
             wait 1 tick
@@ -273,11 +273,11 @@ command /jogo [<number>] [<world>]:
             
 on death:
     victim is a entity
-    name of victim is "%{castelo1nome}%":
-        broadcast "&a%{castelo2nome}% ganhou!"
+    name of victim is "%{castelo1nome::%world of victim%}%":
+        message "&a%{castelo2nome::%world of victim%}% ganhou!" to all players in world of victim
         make console execute command "globaldesativar %world of victim%"
         make console execute command "partidateminar 1"
-    name of victim is "%{castelo2nome}%":
-        broadcast "&a%{castelo1nome}% ganhou!"
-        make console execute command "globaldesativar %world of victim%"
+    name of victim is "%{castelo2nome::%world of victim%}%":
+        message "&a%{castelo1nome::%world of victim%}% ganhou!" to all players in world of victim
+        make console execute command "globaldesativar %world of victim%" to all players in world of victim
         make console execute command "partidateminar 2"

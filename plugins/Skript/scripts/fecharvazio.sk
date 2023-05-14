@@ -1,5 +1,0 @@
-on leave:
-    {jogo::%world of player%} is 1
-    if amount of online players is 0:
-        make console execute command "partidateminar 3"
-        broadcast "&6Partida vazia, reiniciando jogo"

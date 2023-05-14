@@ -5,7 +5,7 @@ command /npcs <world>:
         message "espere..."
         loop all entities in world arg-1:
             loop-entity is a citizen:
-                name of loop-entity contains "Ferreiro", "Bordador", "Invocador", "Fazendeiro", "Mago Misterioso", "Arqueiro", "Alquimista", "Necromancer","Vendedor Misterioso", "%{castelo2nome}%", "%{castelo1nome}%", "%{castelo1nomeantigo}%" or "%{castelo2nomeantigo}%":
+                name of loop-entity contains "Ferreiro", "Bordador", "Invocador", "Fazendeiro", "Mago Misterioso", "Arqueiro", "Alquimista", "Necromancer","Vendedor Misterioso", "%{castelo2nome::%loop-world%}%", "%{castelo1nome::%loop-world%}%", "%{castelo1nomeantigo::%loop-world%}%" or "%{castelo2nomeantigo::%loop-world%}%":
                     set {_id} to citizen id of loop-entity
                     make console execute command "npc select %{_id}%"
                     make console execute command "npc remove"      
@@ -121,14 +121,14 @@ command /npcs <world>:
 
         message "npcs feitos!"
 
-command /castelo1nome <text>:
+command /castelo1nome <text> <world>:
     executable by: console
     trigger:
         set {castelo1nomeantigo} to {castelo1nome}
         set {castelo1nome} to arg-1
         message "colocado castelo1 como %{castelo1nome}% (nome antigo: %{castelo1nomeantigo}%)"
 
-command /castelo2nome <text>:
+command /castelo2nome <text> <world>:
     executable by: console
     trigger:
         set {castelo2nomeantigo} to {castelo2nome}

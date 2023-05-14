@@ -154,8 +154,8 @@ command /partidapreparar [<text>] [<text>] [<text>] [<world>] [<text>]:
         else:
             delete {senha::%arg-5%}
 
-        make console execute command "castelo2nome %arg-1%"
-        make console execute command "castelo1nome %arg-2%"
+        make console execute command "castelo2nome %arg-1% %arg-5%"
+        make console execute command "castelo1nome %arg-2% %arg-5%"
         make console execute command "npc create Rei Carvalho (%{castelo1nome}%) --at -13.8:230.50:-136.50:%arg-5%"
         make console execute command "npc scoreboard --addtag lobby%arg-5%"
         
