@@ -146,7 +146,7 @@ on click on sign:
 
 every 130 seconds:
     loop all worlds:
-        loop-world is "world1", "world2" or "world3"
+        loop-world is "castlefight1", "castlefight2" or "castlefight3"
         {levelmobtime::%loop-world%} is 0
         if {jogo::%loop-world%} is 1:
             if {level} < 30:
@@ -156,7 +156,7 @@ every 130 seconds:
 
 every 50 seconds:
     loop all worlds:
-        loop-world is "world1", "world2" or "world3"
+        loop-world is "castlefight1", "castlefight2" or "castlefight3"
         {levelmobtime::%loop-world%} is 1
         if {jogo::%loop-world%} is 1:
             if {level} < 30:
@@ -168,7 +168,7 @@ command /fogo:
     executable by: console
     trigger:
         loop all worlds:
-            loop-world is "world1", "world2" or "world3"
+            loop-world is "castlefight1", "castlefight2" or "castlefight3"
             make console execute command "fastasyncworldedit:/world %loop-world%"
             make console execute command "fastasyncworldedit:/pos1 -250,272,195"
             make console execute command "fastasyncworldedit:/pos2 150,115,-122"
