@@ -86,6 +86,7 @@
   "minecraft:adventure/adventuring_time": {
     "criteria": {
       "minecraft:old_growth_pine_taiga": "2023-05-14 14:29:53 -0300",
+      "minecraft:taiga": "2023-05-14 17:29:22 -0300",
       "minecraft:beach": "2023-05-14 09:57:20 -0300",
       "minecraft:river": "2023-05-14 09:52:14 -0300",
       "minecraft:cold_ocean": "2023-05-14 09:57:00 -0300",
@@ -123,6 +124,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/decorations/composter": {
+    "criteria": {
+      "has_wood_slab": "2023-05-14 18:14:10 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/blast_furnace": {
     "criteria": {
       "has_smooth_stone": "2023-05-14 14:09:26 -0300"
@@ -150,6 +157,12 @@
   "minecraft:recipes/transportation/powered_rail": {
     "criteria": {
       "has_rail": "2023-05-14 14:09:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_wood_slab": "2023-05-14 18:14:10 -0300"
     },
     "done": true
   },
@@ -183,6 +196,12 @@
     },
     "done": true
   },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2023-05-14 16:27:58 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/redstone/redstone_lamp": {
     "criteria": {
       "has_glowstone": "2023-05-14 10:49:11 -0300"
@@ -213,15 +232,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/cyan_stained_glass": {
-    "criteria": {
-      "has_glass": "2023-05-14 15:45:35 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/light_blue_glazed_terracotta": {
     "criteria": {
       "has_light_blue_terracotta": "2023-05-14 14:20:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cyan_stained_glass": {
+    "criteria": {
+      "has_glass": "2023-05-14 15:45:35 -0300"
     },
     "done": true
   },
@@ -303,15 +322,15 @@
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/light_blue_stained_glass": {
-    "criteria": {
-      "has_glass": "2023-05-14 15:45:35 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/black_candle": {
     "criteria": {
       "has_black_dye": "2023-05-14 14:12:09 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/light_blue_stained_glass": {
+    "criteria": {
+      "has_glass": "2023-05-14 15:45:35 -0300"
     },
     "done": true
   },

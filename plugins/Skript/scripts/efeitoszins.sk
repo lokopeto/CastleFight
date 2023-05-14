@@ -10,7 +10,7 @@ on spawn of an entity:
     wait 3 ticks
     event-entity is a citizen:
         name of entity contains "lv"
-        name of entity contains {castelo1nome} or {castelo2nome}
+        name of entity contains {castelo1nome::%world of entity%} or {castelo2nome::%world of entity%}
         set {_loc} to location of entity
         make console execute command "pp fixed create %x-coordinate of {_loc}% %y-coordinate of {_loc} + 1% %z-coordinate of {_loc}% world enchant whirl"
         wait 3 second

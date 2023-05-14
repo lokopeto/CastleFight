@@ -1,0 +1,4 @@
+on right click on entity:
+    if the entity have the scoreboard tag "cfentrar1castelo1" or "cfentrar1castelo1":
+        apply invisibility to entity 
+

@@ -7,30 +7,30 @@ torneiroporta:
   - '&7Torneio de Castle Fight'
   position:
     world: world
-    x: 49.0
-    y: 66.0
-    z: -73.5
+    x: 46.0
+    y: 66.5
+    z: -82.5
 praxadasfloresporta:
   lines:
   - '&aPraça das Flores'
   position:
     world: world
-    x: 6.5
-    y: 66.0
-    z: -64.5
+    x: 3.5
+    y: 66.5
+    z: -61.5
 castlefight1sword:
   lines:
   - 'ICON: iron sword'
   position:
     world: world
-    x: 27.0
+    x: 24.0
     y: 68.8
-    z: -36.5
+    z: -33.5
 castlefight1:
   lines:
   - '&aCastle Fight'
   position:
     world: world
-    x: 27.0
-    y: 69.5
-    z: -36.5
+    x: 24.0
+    y: 69.37525195731116
+    z: -33.5

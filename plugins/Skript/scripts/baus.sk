@@ -1,11 +1,11 @@
 on rightclick on chest:
     set {_team} to "%team of player%"
 #    broadcast "%{_team}%"
-    name of block is "Bau do (%{castelo1nome}%)":
+    name of block is "Bau do (%{castelo1nome::%world of player%}%)":
         {_team} is "castelo2":
             cancel event
             message "&cEsse bau não é teu!"
-    name of block is "Bau do (%{castelo2nome}%)":
+    name of block is "Bau do (%{castelo2nome::%world of player%}%)":
         {_team} is "castelo1":
             cancel event
             message "&cEsse bau não é teu!"
