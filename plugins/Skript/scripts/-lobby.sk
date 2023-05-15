@@ -225,9 +225,9 @@ command /partidateminar [<number>] [<world>]:
                     make console execute command "npc remove"
 
         arg-1 is 3:
-            make console execute command "jogo 0"
+            make console execute command "jogo 0 %arg-2%"
             set gamemode of all players to adventure
-            loop all entities:
+            loop all entities in world arg-2:
                 loop-entity have scoreboard tag "lobby":
                     set {_id} to citizen id of loop-entity
                     make console execute command "npc select %{_id}%"
