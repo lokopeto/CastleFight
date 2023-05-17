@@ -1,13 +1,13 @@
 command /desistir:
     trigger:
         {jogo::%world of player%} is 1
-        if {jogadoresdesistir::*} contains uuid of player:
-            remove uuid of player from {jogadoresdesistir::*}
+        if {jogadoresdesistir::%world of player%::*} contains uuid of player:
+            remove uuid of player from {jogadoresdesistir::%world of player%::*}
 
             set {_teamplayer} to "%team of player%"
             replace "castelo" in {_teamplayer} with ""
 
-            loop all players:
+            loop all players in world of player:
                 set {_team} to "%team of loop-player%"
 #                broadcast "%{_team}%"
                 if {_team} is "castelo1":
@@ -20,20 +20,20 @@ command /desistir:
 
 #            broadcast "%{_desistir%{_teamplayer}%::*}%"
 #            broadcast "%{_quant1}% %{_quant2}%"
-            add 1 to {desistir%{_teamplayer}%}
+            add 1 to {desistir%{_teamplayer}%::%world of player%}
 
-            message "<cyan>%name of player% quer desistir! (faltam %{_quant%{_teamplayer}%} - {desistir%{_teamplayer}%}%)" to {_desistir%{_teamplayer}%::*}
+            message "<cyan>%name of player% quer desistir! (faltam %{_quant%{_teamplayer}%} - {desistir%{_teamplayer}%}%::%world of player%)" to {_desistir%{_teamplayer}%::*}
 
 
 #            broadcast "%{desistir%{_teamplayer}%}% %{_quant%{_teamplayer}%}%"
 
-            {desistir%{_teamplayer}%} >= {_quant%{_teamplayer}%}:
-                loop all entities:
+            {desistir%{_teamplayer}%::%world of player%} >= {_quant%{_teamplayer}%}:
+                loop all entities in world of player:
                     if loop-entity have scoreboard tag "rei%{_teamplayer}%":
                         kill loop-entity
                 broadcast "<cyan>%{castelo%{_teamplayer}%nome}% desistiu!"
-                delete {jogadoresdesistir::*}
-                delete {desistir%{_teamplayer}%}
+                delete {jogadoresdesistir::%world of player%::*}
+                delete {desistir%{_teamplayer}%::%world of player%}
         else:
             message "<red>Você já executou esse comando!"
         

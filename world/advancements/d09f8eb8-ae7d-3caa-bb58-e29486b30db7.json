@@ -35,6 +35,18 @@
     },
     "done": true
   },
+  "minecraft:recipes/transportation/acacia_chest_boat": {
+    "criteria": {
+      "has_boat": "2023-05-15 17:40:44 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_chest_boat": {
+    "criteria": {
+      "has_boat": "2023-05-15 17:40:44 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/polished_andesite_stairs": {
     "criteria": {
       "has_polished_andesite": "2023-05-14 10:07:30 -0300"
@@ -87,10 +99,18 @@
     "criteria": {
       "minecraft:old_growth_pine_taiga": "2023-05-14 14:29:53 -0300",
       "minecraft:taiga": "2023-05-14 17:29:22 -0300",
+      "minecraft:birch_forest": "2023-05-15 20:02:07 -0300",
       "minecraft:beach": "2023-05-14 09:57:20 -0300",
       "minecraft:river": "2023-05-14 09:52:14 -0300",
+      "minecraft:stony_shore": "2023-05-15 20:02:04 -0300",
+      "minecraft:swamp": "2023-05-15 18:41:04 -0300",
       "minecraft:cold_ocean": "2023-05-14 09:57:00 -0300",
-      "minecraft:old_growth_spruce_taiga": "2023-05-14 09:52:16 -0300"
+      "minecraft:forest": "2023-05-15 17:35:23 -0300",
+      "minecraft:deep_cold_ocean": "2023-05-15 17:07:02 -0300",
+      "minecraft:ice_spikes": "2023-05-15 20:01:34 -0300",
+      "minecraft:ocean": "2023-05-15 17:38:14 -0300",
+      "minecraft:old_growth_spruce_taiga": "2023-05-14 09:52:16 -0300",
+      "minecraft:old_growth_birch_forest": "2023-05-15 20:03:10 -0300"
     },
     "done": false
   },
@@ -163,6 +183,12 @@
   "minecraft:recipes/transportation/birch_boat": {
     "criteria": {
       "in_water": "2023-05-15 00:22:32 -0300"
+    },
+    "done": true
+  },
+  "minecraft:end/elytra": {
+    "criteria": {
+      "elytra": "2023-05-15 17:40:44 -0300"
     },
     "done": true
   },
@@ -244,6 +270,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/transportation/dark_oak_chest_boat": {
+    "criteria": {
+      "has_boat": "2023-05-15 17:40:44 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/green_stained_glass": {
     "criteria": {
       "has_glass": "2023-05-14 15:45:35 -0300"
@@ -316,6 +348,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/transportation/mangrove_chest_boat": {
+    "criteria": {
+      "has_boat": "2023-05-15 17:40:44 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/building_blocks/polished_andesite_stairs_from_polished_andesite_stonecutting": {
     "criteria": {
       "has_polished_andesite": "2023-05-14 10:07:30 -0300"
@@ -340,9 +378,22 @@
     },
     "done": true
   },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:crimson_forest": "2023-05-15 20:03:17 -0300",
+      "minecraft:nether_wastes": "2023-05-15 20:02:11 -0300"
+    },
+    "done": false
+  },
   "minecraft:recipes/building_blocks/stone_brick_stairs_from_stone_bricks_stonecutting": {
     "criteria": {
       "has_stone_bricks": "2023-05-14 14:27:07 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_chest_boat": {
+    "criteria": {
+      "has_boat": "2023-05-15 17:40:44 -0300"
     },
     "done": true
   },
@@ -364,6 +415,12 @@
     },
     "done": true
   },
+  "minecraft:recipes/transportation/jungle_chest_boat": {
+    "criteria": {
+      "has_boat": "2023-05-15 17:40:44 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/transportation/oak_boat": {
     "criteria": {
       "in_water": "2023-05-15 00:22:32 -0300"
@@ -373,6 +430,12 @@
   "minecraft:recipes/decorations/pink_glazed_terracotta": {
     "criteria": {
       "has_pink_terracotta": "2023-05-14 14:22:51 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_chest_boat": {
+    "criteria": {
+      "has_boat": "2023-05-15 17:40:44 -0300"
     },
     "done": true
   },

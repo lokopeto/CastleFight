@@ -319,7 +319,7 @@ on npc right click:
                     make console execute command "team join castelo%{_team}% %player%"
                     message "&eVocê entrou no castelo do rei %{castelo%{_team}%nome}%"
             
-        if {jogadoresdesistir::*} do not contain uuid of player:
+        if {jogadoresdesistir::%world of player%::*} do not contain uuid of player:
             add uuid of player to {jogadoresdesistir::%world of player%::*}
         {jogo::%world of player%} is 1:
             teleport player to location(x-coordinate of {rei%{_team}%loc}, y-coordinate of {rei%{_team}%loc}, z-coordinate of {rei%{_team}%loc, world of player})

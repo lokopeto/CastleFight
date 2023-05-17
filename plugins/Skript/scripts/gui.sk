@@ -7,7 +7,7 @@ on npc right click:
     replace "castelo" in {_team} with ""
 #    broadcast "%{_team}%"
     if npc name is "Invocador (%{castelo%{_team}%nome}%)":
-        {invocadorabrido%{_team}%} is 0:
+        {invocadorabrido%{_team}%::%world of player%} is set:
 #        broadcast "aaaaaa"
             create a gui with virtual chest inventory with 1 rows named "Invocador":
                 set the lock status of the edited gui to false
@@ -20,10 +20,10 @@ on npc right click:
 #                    message "%{Invocador%{_team}%::%{slots2}%}%"
                 wait 1 tick
                 run on gui open:
-                    set {invocadorabrido%{_team}%} to 1
+                    delete {invocadorabrido%{_team}%::%world of player%}
                 run on gui close:
-                    set {Invocador%{_team}%::*} to items of gui
-                    set {invocadorabrido%{_team}%} to 0
+                    set {Invocador%{_team}%::%world of player%::*} to items of gui
+                    set {invocadorabrido%{_team}%::%world of player%} to 1
 #                        broadcast "%{Invocador1lore::%{slots1}%::*}%"
             open the created gui for player
         else:
@@ -40,22 +40,22 @@ on npc right click:
                     set {_quant} to a random integer between 1 and {_quant}
                     if {_random} is 1:
                         make gui slot {slots1} with "%{_quant}% bread" parsed as item
-                    if {lvnpcs%{_team}%} >= 5:
+                    if {lvnpcs%{_team}%::%world of player%} >= 5:
                         if {_random} is 2:
                             make gui slot {slots1} with "%{_quant}% apple" parsed as item
-                    if {lvnpcs%{_team}%} >= 7:
+                    if {lvnpcs%{_team}%::%world of player%} >= 7:
                         if {_random} is 3:
                             make gui slot {slots1} with "%{_quant}% rotten flesh" parsed as item  
-                    if {lvnpcs%{_team}%} >= 10:
+                    if {lvnpcs%{_team}%::%world of player%} >= 10:
                         if {_random} is 4:
                             make gui slot {slots1} with "%{_quant}% cooked mutton" parsed as item  
-                    if {lvnpcs%{_team}%} >= 14:
+                    if {lvnpcs%{_team}%::%world of player%} >= 14:
                         if {_random} is 5:
                             make gui slot {slots1} with "%{_quant}% cooked chicken" parsed as item                               
-                    if {lvnpcs%{_team}%} >= 18:
+                    if {lvnpcs%{_team}%::%world of player%} >= 18:
                         if {_random} is 6:
                             make gui slot {slots1} with "%{_quant} - 5% cooked beef" parsed as item    
-                    if {lvnpcs%{_team}%} >= 20:
+                    if {lvnpcs%{_team}%::%world of player%} >= 20:
                         if {_random} is 7:
                             make gui slot {slots1} with "%{_quant} - 10% golden carrot" parsed as item                                                                                    
                     
@@ -79,19 +79,19 @@ on npc right click:
     if npc name is "Alquimista (%{castelo%{_team}%nome}%)":
         create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome}%)":
             set {_tipo::*} to "Básica" and ""
-            if {lvnpcs%{_team}%} >= 15:
+            if {lvnpcs%{_team}%::%world of player%} >= 15:
                 set {_tipo::*} to "Mediana" and "long_"
-            if {lvnpcs%{_team}%} >= 20:
+            if {lvnpcs%{_team}%::%world of player%} >= 20:
                 set {_tipo::*} to "Forte" and "strong_"
             set {_minutos} to 0
-            loop "%{lvnpcs%{_team}%}%" parsed as integer times:
+            loop "%{lvnpcs%{_team}%::%world of player%}%" parsed as integer times:
                 add 100 to {_ticks}
                 add 5 to {_segundos}
                 {_segundos} is 60:
                     set {_segundos} to 0
                     add 1 to {_minutos}
             set {_xp} to 40
-            loop "%{lvnpcs%{_team}%}%" parsed as integer times:
+            loop "%{lvnpcs%{_team}%::%world of player%}%" parsed as integer times:
                 add 5 to {_xp}
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Força %%%%%%%%%%%%%%%%%%%%%%%%%
             make gui slot 0 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Força"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:13699943,HideFlags:35}"
@@ -100,7 +100,7 @@ on npc right click:
 
             make gui slot 18 with lingering potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Força"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Area"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:13699943,HideFlags:35}"
 
-            if {lvnpcs%{_team}%} >= 6:
+            if {lvnpcs%{_team}%::%world of player%} >= 6:
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Invisibilidade %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 1 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Invisibilidade"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:34201,HideFlags:35}"
 
@@ -108,7 +108,7 @@ on npc right click:
 
                 make gui slot 19 with lingering potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Invisibilidade"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Area"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:34201,HideFlags:35}"            
             
-            if {lvnpcs%{_team}%} >= 8:
+            if {lvnpcs%{_team}%::%world of player%} >= 8:
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Velocidade %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 2 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Velocidade"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:56831,HideFlags:35}"
             
@@ -116,7 +116,7 @@ on npc right click:
             
                 make gui slot 20 with lingering potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Velocidade"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Area"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:56831,HideFlags:35}"     
             
-            if {lvnpcs%{_team}%} >= 10:
+            if {lvnpcs%{_team}%::%world of player%} >= 10:
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Veneno %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 3 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Veneno"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:6145792,HideFlags:35}"
 
@@ -124,7 +124,7 @@ on npc right click:
 
                 make gui slot 21 with lingering potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Veneno"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Area"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:6145792,HideFlags:35}"
 
-            if {lvnpcs%{_team}%} >= 12:
+            if {lvnpcs%{_team}%::%world of player%} >= 12:
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Nausea %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 4 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Nausea"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:7580928,HideFlags:35}"
 
@@ -132,7 +132,7 @@ on npc right click:
 
                 make gui slot 22 with lingering potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Nausea"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Area"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:7580928,HideFlags:35}"
 
-            if {lvnpcs%{_team}%} >= 14:
+            if {lvnpcs%{_team}%::%world of player%} >= 14:
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Lentidão %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 5 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Lentidão"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:7697781,HideFlags:35}"
 
@@ -140,7 +140,7 @@ on npc right click:
                 
                 make gui slot 23 with lingering potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Lentidão"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_minutos}%:%{_segundos}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Area"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:7697781,HideFlags:35}"
                 
-            if {lvnpcs%{_team}%} >= 16:
+            if {lvnpcs%{_team}%::%world of player%} >= 16:
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Levitação %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 6 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Levitação"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""0:15"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:16777215,HideFlags:35}"
             
@@ -148,7 +148,7 @@ on npc right click:
             
                 make gui slot 24 with lingering potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Levitação"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""0:15"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Area"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:16777215,HideFlags:35}"  
 
-            if {lvnpcs%{_team}%} >= 18:
+            if {lvnpcs%{_team}%::%world of player%} >= 18:
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Escuridão %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 7 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Escuridão"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""0:30"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:0,HideFlags:35}"
             
@@ -156,7 +156,7 @@ on npc right click:
                 
                 make gui slot 25 with lingering potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Escuridão"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""0:30"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Area"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:0,HideFlags:35}"                  
             
-            if {lvnpcs%{_team}%} >= 20:
+            if {lvnpcs%{_team}%::%world of player%} >= 20:
             #%%%%%%%%%%%%%%%%%%%%%%%%% Poção de Resistência %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 8 with potion with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Poção de Resistência"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tipo::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_xp}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""0:30"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Consumivel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:13075331,HideFlags:35}"
 
@@ -168,7 +168,7 @@ on npc right click:
         open the created gui for player
     
     if npc name is "Ferreiro (%{castelo%{_team}%nome}%)":
-        if {lvnpcs%{_team}%} is 1:
+        if {lvnpcs%{_team}%::%world of player%} is 1:
             create a gui with virtual chest inventory with 2 rows named "Ferreiro (%{castelo%{_team}%nome}%)":
                 set the lock status of the edited gui to false
                 set {slots1} to -1
@@ -186,27 +186,27 @@ on npc right click:
                     if {_random} is 4:
                         make gui slot {slots1} with wooden sword
             open the created gui for player
-        if {lvnpcs%{_team}%} >= 2:
+        if {lvnpcs%{_team}%::%world of player%} >= 2:
             create a gui with virtual chest inventory with 2 rows named "Ferreiro (%{castelo%{_team}%nome}%)":
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Espada Curta %%%%%%%%%%%%%%%%%%%%%%%%%
-                make gui slot 0 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Espada Curta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                make gui slot 0 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Espada Curta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Gládio Curta %%%%%%%%%%%%%%%%%%%%%%%%%
-                make gui slot 1 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Gládio Curta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""30 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
-                if {lvnpcs%{_team}%} >= 10:
+                make gui slot 1 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Gládio Curta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""30 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                if {lvnpcs%{_team}%::%world of player%} >= 10:
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Claymore %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 2 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Claymore"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Pesada/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""40 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
-                if {lvnpcs%{_team}%} >= 15:
+                    make gui slot 2 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Claymore"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Pesada/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""40 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                if {lvnpcs%{_team}%::%world of player%} >= 15:
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Sabre %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 3 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Sabre"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Leve"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""40 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 3 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Sabre"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Leve"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""40 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Escudo %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 9 with shield with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Escudo"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Quebravel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""60 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"                    
-                if {lvnpcs%{_team}%} >= 20:
+                    make gui slot 9 with shield with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Escudo"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Quebravel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""60 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"                    
+                if {lvnpcs%{_team}%::%world of player%} >= 20:
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Montante %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 4 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Montante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Afiada"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""50 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 4 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Montante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Afiada"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""50 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
     
     if npc name is "Arqueiro (%{castelo%{_team}%nome}%)":
-        if {lvnpcs%{_team}%} is 1:
+        if {lvnpcs%{_team}%::%world of player%} is 1:
             create a gui with virtual chest inventory with 2 rows named "Arqueiro (%{castelo%{_team}%nome}%)":
                 set the lock status of the edited gui to false
                 set {slots1} to -1
@@ -223,36 +223,36 @@ on npc right click:
                     if {_random} is 3:
                         make gui slot {slots1} with "%{_randomcount}% arrow" parsed as item
             open the created gui for player
-        if {lvnpcs%{_team}%} >= 2:
+        if {lvnpcs%{_team}%::%world of player%} >= 2:
             create a gui with virtual chest inventory with 2 rows named "Arqueiro (%{castelo%{_team}%nome}%)":
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Arco %%%%%%%%%%%%%%%%%%%%%%%%%
-                make gui slot 0 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Arco"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                make gui slot 0 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Arco"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Arco Compósito %%%%%%%%%%%%%%%%%%%%%%%%%
-                make gui slot 1 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Arco Compósito"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""30 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                make gui slot 1 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Arco Compósito"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""30 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Flecha Basica %%%%%%%%%%%%%%%%%%%%%%%%%
-                make gui slot 9 with arrow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha Basica"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
-                if {lvnpcs%{_team}%} >= 5:
+                make gui slot 9 with arrow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha Basica"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                if {lvnpcs%{_team}%::%world of player%} >= 5:
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Flecha de Lentidão %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 10 with tipped arrow with nbt compound from "{Potion:""minecraft:slowness"",EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha de Lentidão"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""5"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"  
+                    make gui slot 10 with tipped arrow with nbt compound from "{Potion:""minecraft:slowness"",EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha de Lentidão"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""5"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"  
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Flecha de Fraqueza %%%%%%%%%%%%%%%%%%%%%%%%%        
-                    make gui slot 11 with tipped arrow with nbt compound from "{Potion:""minecraft:weakness"",EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha de Fraqueza"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""5"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"        
-                if {lvnpcs%{_team}%} >= 10:
+                    make gui slot 11 with tipped arrow with nbt compound from "{Potion:""minecraft:weakness"",EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha de Fraqueza"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""5"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"        
+                if {lvnpcs%{_team}%::%world of player%} >= 10:
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Bodoque %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 2 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bodoque"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Leve/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""40 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 2 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bodoque"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Leve/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""40 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Flecha Espectral %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 12 with spectral arrow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha Espectral"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""5"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"  
-                if {lvnpcs%{_team}%} >= 15:
+                    make gui slot 12 with spectral arrow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha Espectral"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""5"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"  
+                if {lvnpcs%{_team}%::%world of player%} >= 15:
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Arco Longo %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 3 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Arco Longo"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Pesada/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""40 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 3 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Arco Longo"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Pesada/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""40 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Flecha de Veneno %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 13 with tipped arrow with nbt compound from "{Potion:""minecraft:poison"",EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha de Veneno"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""5"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"  
-                if {lvnpcs%{_team}%} >= 20:
+                    make gui slot 13 with tipped arrow with nbt compound from "{Potion:""minecraft:poison"",EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Flecha de Veneno"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gastavel"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""5"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"  
+                if {lvnpcs%{_team}%::%world of player%} >= 20:
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Besta %%%%%%%%%%%%%%%%%%%%%%%%%
-                    make gui slot 4 with crossbow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Besta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Lenta"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""50 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 4 with crossbow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Besta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Lenta"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""50 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
 
     if npc name is "Bordador (%{castelo%{_team}%nome}%)":
-        if {lvnpcs%{_team}%} is 1:
+        if {lvnpcs%{_team}%::%world of player%} is 1:
             create a gui with virtual chest inventory with 2 rows named "Bordador (%{castelo%{_team}%nome}%)":
                 set the lock status of the edited gui to false
                 set {slots1} to -1
@@ -282,46 +282,46 @@ on npc right click:
                         else:
                             make gui slot {slots1} with leather boots
             open the created gui for player
-        if {lvnpcs%{_team}%} >= 2:
+        if {lvnpcs%{_team}%::%world of player%} >= 2:
             create a gui with virtual chest inventory with 4 rows named "Bordador (%{castelo%{_team}%nome}%)":
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Ferro %%%%%%%%%%%%%%%%%%%%%%%%%
-                make gui slot 1 with iron helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                make gui slot 1 with iron helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                make gui slot 10 with iron chestplate with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Peitoral de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                make gui slot 10 with iron chestplate with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Peitoral de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                make gui slot 19 with iron leggings with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Calças de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                make gui slot 19 with iron leggings with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Calças de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 
-                make gui slot 28 with iron boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                make gui slot 28 with iron boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Diamante %%%%%%%%%%%%%%%%%%%%%%%%%
-                if {lvnpcs%{_team}%} >= 10:
-                    make gui slot 3 with diamond helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de diamante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""35 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                if {lvnpcs%{_team}%::%world of player%} >= 10:
+                    make gui slot 3 with diamond helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de diamante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""35 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 12 with diamond chestplate with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Peitoral de diamante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""35 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 12 with diamond chestplate with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Peitoral de diamante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""35 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 21 with diamond leggings with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Calças de diamante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""35 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 21 with diamond leggings with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Calças de diamante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""35 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 30 with diamond boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de diamante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""35 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 30 with diamond boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de diamante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""35 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Ouro %%%%%%%%%%%%%%%%%%%%%%%%%
-                if {lvnpcs%{_team}%} >= 15:
-                    make gui slot 5 with golden helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de ouro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""45 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                if {lvnpcs%{_team}%::%world of player%} >= 15:
+                    make gui slot 5 with golden helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de ouro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""45 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 14 with golden chestplate with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Peitoral de ouro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""45 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 14 with golden chestplate with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Peitoral de ouro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""45 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 23 with golden leggings with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Calças de ouro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""45 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 23 with golden leggings with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Calças de ouro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""45 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 32 with golden boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de ouro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""45 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 32 with golden boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de ouro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""45 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Netherite %%%%%%%%%%%%%%%%%%%%%%%%%
-                if {lvnpcs%{_team}%} >= 20:
-                    make gui slot 7 with netherite helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                if {lvnpcs%{_team}%::%world of player%} >= 20:
+                    make gui slot 7 with netherite helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 16 with netherite chestplate with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Peitoral de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 16 with netherite chestplate with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Peitoral de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 25 with netherite leggings with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Calças de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 25 with netherite leggings with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Calças de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
-                    make gui slot 34 with netherite boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
+                    make gui slot 34 with netherite boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
 
     if npc name is "Necromancer (%{castelo%{_team}%nome}%)":
@@ -354,8 +354,8 @@ on npc right click:
                         set {_loreadd::2} to round("%{_lore::6}%" parsed as number)
                         set {_loreadd::3} to round("%{_lore::7}%" parsed as number)
                         add 1 to {_loreadd::1}
-                        add {lvnpcs%{_team}%} to {_loreadd::2}
-                        add {lvnpcs%{_team}%} to {_loreadd::3}
+                        add {lvnpcs%{_team}%::%world of player%} to {_loreadd::2}
+                        add {lvnpcs%{_team}%::%world of player%} to {_loreadd::3}
                         set {_loreorin::1} to "&elevel = %{_loreadd::1}%"
                         set {_loreorin::6} to "&7&oVida = %{_loreadd::2}%"
                         set {_loreorin::7} to "&7&oDano = %{_loreadd::3}%"
@@ -387,7 +387,7 @@ on npc right click:
 
     if npc name is "Exilado":
         if {exiladotimer} <= 0:
-            if {exiladoabrido} is 0:
+            if {exiladoabrido} is set:
                 create a gui with virtual chest inventory with 1 rows named "Exilado":
                     set {slotsnecro1} to -1
                     loop 9 times:
@@ -400,7 +400,7 @@ on npc right click:
                     run on gui open:
                         set {exiladoabrido} to 1
                     run on gui close:
-                        set {exiladoabrido} to 0   
+                        delete {exiladoabrido}  
                 open the created gui for player 
             else:
                 message "&cExilado só fala com um por vez!"    
@@ -465,18 +465,18 @@ on inventory click:
             else:
                 add "-%{_lore::2}%" parsed as integer to level of player
                 if {_nome} is "Gládio Curta":
-                    make console execute command "itemgen give %event-player% gladiocurta %{lvnpcs%{_team}%}%"
+                    make console execute command "itemgen give %event-player% gladiocurta %{lvnpcs%{_team}%::%world of player%}%"
                 if {_nome} is "Claymore":
-                    make console execute command "itemgen give %event-player% claymore %{lvnpcs%{_team}%}%"
+                    make console execute command "itemgen give %event-player% claymore %{lvnpcs%{_team}%::%world of player%}%"
                 if {_nome} is "Sabre":
-                    make console execute command "itemgen give %event-player% sabre %{lvnpcs%{_team}%}%"   
+                    make console execute command "itemgen give %event-player% sabre %{lvnpcs%{_team}%::%world of player%}%"   
                 if {_nome} is "Montante":
-                    make console execute command "itemgen give %event-player% montante %{lvnpcs%{_team}%}%"   
+                    make console execute command "itemgen give %event-player% montante %{lvnpcs%{_team}%::%world of player%}%"   
                 if {_nome} is "Escudo":
                     make console execute command "give %event-player% shield"   
         else:
             if {_nome} is "Espada Curta":
-                make console execute command "itemgen give %event-player% espadacurta %{lvnpcs%{_team}%}%" 
+                make console execute command "itemgen give %event-player% espadacurta %{lvnpcs%{_team}%::%world of player%}%" 
 
     if name of event-inventory contains "Arqueiro (%{castelo%{_team}%nome}%)":
         set {_lore::*} to lore of clicked slot
@@ -493,13 +493,13 @@ on inventory click:
             else:
                 add "-%{_lore::2}%" parsed as integer to level of player
                 if {_nome} is "Arco Compósito":
-                    make console execute command "itemgen give %event-player% arcocomposito %{lvnpcs%{_team}%}%"
+                    make console execute command "itemgen give %event-player% arcocomposito %{lvnpcs%{_team}%::%world of player%}%"
                 if {_nome} is "Arco Longo":
-                    make console execute command "itemgen give %event-player% arcolongo %{lvnpcs%{_team}%}%"
+                    make console execute command "itemgen give %event-player% arcolongo %{lvnpcs%{_team}%::%world of player%}%"
                 if {_nome} is "Bodoque":
-                    make console execute command "itemgen give %event-player% bodoque %{lvnpcs%{_team}%}%"   
+                    make console execute command "itemgen give %event-player% bodoque %{lvnpcs%{_team}%::%world of player%}%"   
                 if {_nome} is "Besta":
-                    make console execute command "itemgen give %event-player% besta %{lvnpcs%{_team}%}%"   
+                    make console execute command "itemgen give %event-player% besta %{lvnpcs%{_team}%::%world of player%}%"   
                 if {_nome} is "Flecha de Veneno":
                     make console execute command "give %event-player% minecraft:tipped_arrow{Potion:""minecraft:poison""} 16"
                 if {_nome} is "Flecha de Lentidão":
@@ -510,7 +510,7 @@ on inventory click:
                     make console execute command "give %event-player% minecraft:tipped_arrow{Potion:""minecraft:weakness""} 16"                                                 
         else:
             if {_nome} is "Arco":
-                make console execute command "itemgen give %event-player% arco %{lvnpcs%{_team}%}%"
+                make console execute command "itemgen give %event-player% arco %{lvnpcs%{_team}%::%world of player%}%"
             if {_nome} is "Flecha Basica":
                 make console execute command "give %event-player% arrow 16"
 
@@ -560,14 +560,14 @@ on inventory click:
                 if clicked slot is a armor:
                     add "-%{_lore::1}%" parsed as integer to level of player
                     if {_nome} contains "diamante":
-                        make console execute command "itemgen give %event-player% armaduradediamante %{lvnpcs%{_team}%}% 1 DIAMOND_%{_tipo}%" 
+                        make console execute command "itemgen give %event-player% armaduradediamante %{lvnpcs%{_team}%::%world of player%}% 1 DIAMOND_%{_tipo}%" 
                     if {_nome} contains "ouro":
-                        make console execute command "itemgen give %event-player% armaduradeouro %{lvnpcs%{_team}%}% 1 GOLDEN_%{_tipo}%" 
+                        make console execute command "itemgen give %event-player% armaduradeouro %{lvnpcs%{_team}%::%world of player%}% 1 GOLDEN_%{_tipo}%" 
                     if {_nome} contains "netherita":
-                        make console execute command "itemgen give %event-player% armaduradenetherite %{lvnpcs%{_team}%}% 1 NETHERITE_%{_tipo}%" 
+                        make console execute command "itemgen give %event-player% armaduradenetherite %{lvnpcs%{_team}%::%world of player%}% 1 NETHERITE_%{_tipo}%" 
         else:
             if {_nome} contains "ferro":
-                make console execute command "itemgen give %event-player% armaduradeferro %{lvnpcs%{_team}%}% 1 IRON_%{_tipo}%"  
+                make console execute command "itemgen give %event-player% armaduradeferro %{lvnpcs%{_team}%::%world of player%}% 1 IRON_%{_tipo}%"  
 
     if name of event-inventory contains "Alquimista (%{castelo%{_team}%nome}%)":
         set {_lore::*} to lore of clicked slot
@@ -596,7 +596,7 @@ on inventory click:
             set {_tipo} to "lingering potion"
 
         set {_minutos} to 0
-        loop "%{lvnpcs%{_team}%}%" parsed as integer times:
+        loop "%{lvnpcs%{_team}%::%world of player%}%" parsed as integer times:
             add 100 to {_ticks}
             add 5 to {_segundos}
             {_segundos} is 60:

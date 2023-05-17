@@ -31,22 +31,24 @@ on death:
     attacker is a npc:
         name of attacker contains {castelo1nome::%world of attacker%}:
             victim is a npc:
-                add a random integer between 3 and 10 to {XPquant1}
+                add a random integer between 3 and 10 to {XPquant1::%world of attacker%}
             victim is a player:
-                add {xpplayer::%world of attacker%} to {XPquant1}     
+                add {xpplayer::%world of attacker%} to {XPquant1::%world of attacker%}     
 
         name of attacker contains {castelo2nome::%world of attacker%}:
             victim is a npc:
-                add a random integer between 3 and 10 to {XPquant2}
+                add a random integer between 3 and 10 to {XPquant2::%world of attacker%}
             victim is a player:
-                add {xpplayer::%world of attacker%} to {XPquant2}
+                add {xpplayer::%world of attacker%} to {XPquant2::%world of attacker%}
         
 
 
 
 every 10 ticks:
-    set line 3 of block at location(-170, 150, 26, world "world") to "&9%{XPquant2}%"
-    set line 3 of block at location(86, 150, 19, world "world") to "&9%{XPquant1}%"
+    loop all worlds:
+        loop-world is "castlefight1", "castlefight2" or "castlefight3"
+        set line 3 of block at location(-170, 150, 26, loop-world) to "&9%{XPquant2::%loop-world%}%"
+        set line 3 of block at location(86, 150, 19, loop-world) to "&9%{XPquant1::%loop-world%}%"
 
 on click on sign:
     {jogo::%world of player%} is 1
@@ -76,47 +78,47 @@ on click on sign:
                     add {_xp} to {lvnpcsquant%{_team}%}
                     {lvnpcsquant%{_team}%} >= {_placalevelmax}:
                         set {lvnpcsquant%{_team}%} to 0
-                        add 1 to {lvnpcs%{_team}%}
-                        {lvnpcs%{_team}%} is 5:
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 0 3"
-                        {lvnpcs%{_team}%} is 10:
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 1 2"
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 1 1"
-                        {lvnpcs%{_team}%} is 15:
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 0 4"
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 2 2"
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 2 1"
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 1 3"
-                        {lvnpcs%{_team}%} is 17:
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 1 4"
-                        {lvnpcs%{_team}%} is 18:
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 2 4"  
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 2 3"                      
-                        {lvnpcs%{_team}%} is 20:
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 3 4" 
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 3 2"        
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 3 1"
-                            make console execute command "casasnpcs %{castelo%{_team}%nome}% 3 3"
-                        message "&b&lLevel aumentado para &f&l%{lvnpcs%{_team}%}%"
+                        add 1 to {lvnpcs%{_team}%::%world of player%}
+                        {lvnpcs%{_team}%::%world of player%} is 5:
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 3 0"
+                        {lvnpcs%{_team}%::%world of player%} is 10:
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 2 1"
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 1 1"
+                        {lvnpcs%{_team}%::%world of player%} is 15:
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 4 0"
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 2 2"
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 1 2"
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 3 1"
+                        {lvnpcs%{_team}%::%world of player%} is 17:
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 4 1"
+                        {lvnpcs%{_team}%::%world of player%} is 18:
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 4 2"  
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 3 2"                      
+                        {lvnpcs%{_team}%::%world of player%} is 20:
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 4 3" 
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 2 3"        
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 1 3"
+                            make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 3 3"
+                        message "&b&lLevel aumentado para &f&l%{lvnpcs%{_team}%::%world of player%}%"
                     set line 3 to "&9%{lvnpcsquant%{_team}%}%/%{_placalevelmax}%"
-                    set line 4 to "&9Level %{lvnpcs%{_team}%}%"
-                    {lvnpcs%{_team}%} is 20:
+                    set line 4 to "&9Level %{lvnpcs%{_team}%::%world of player%}%"
+                    {lvnpcs%{_team}%::%world of player%} is 20:
                         set line 3 to "&cMAXIMO"
             else:
                 message "&9&lLevel maximo atingido" to player
 
         line 1 is "&b[XP]":
             player is sneaking:
-                {XPquant%{_team}%} <= 0:
+                {XPquant%{_team}%::%world of player%} <= 0:
                     message "&9XP insuficiente" to player
-                    set {XPquant%{_team}%} to 0
+                    set {XPquant%{_team}%::%world of player%} to 0
                 else:
-                    {XPquant%{_team}%} <= 30:
-                        increase player's level by {XPquant%{_team}%}
-                        set {XPquant%{_team}%} to 0
+                    {XPquant%{_team}%::%world of player%} <= 30:
+                        increase player's level by {XPquant%{_team}%::%world of player%}
+                        set {XPquant%{_team}%::%world of player%} to 0
                     else:
                         increase player's level by 30
-                        add -30 to {XPquant%{_team}%}
+                        add -30 to {XPquant%{_team}%::%world of player%}
                         
             else:
                 {_xp} = 0:
@@ -126,8 +128,8 @@ on click on sign:
                     {_xp} >= 30:
                         set {_xp} to 30 
                     reduce player's level by {_xp}
-                    add {_xp} to {XPquant%{_team}%}
-            set line 3 to "&9%{XPquant%{_team}%}%"
+                    add {_xp} to {XPquant%{_team}%::%world of player%}
+            set line 3 to "&9%{XPquant%{_team}%::%world of player%}%"
     else:
         message "&cEssa placa não é tua!" to player
 
@@ -136,7 +138,7 @@ every 130 seconds:
         loop-world is "castlefight1", "castlefight2" or "castlefight3"
         {levelmobtime::%loop-world%} is 0
         if {jogo::%loop-world%} is 1:
-            if {level} < 30:
+            if {level::%loop-world%} < 30:
                 add 1 to {level::%loop-world%}
                 message "level dos mobs: %{level::%loop-world%}%" to console
                 add 5 to {xpplayer::%loop-world%}
@@ -146,7 +148,7 @@ every 50 seconds:
         loop-world is "castlefight1", "castlefight2" or "castlefight3"
         {levelmobtime::%loop-world%} is 1
         if {jogo::%loop-world%} is 1:
-            if {level} < 30:
+            if {level::%loop-world%} < 30:
                 add 1 to {level::%loop-world%}
                 message "level dos mobs: %{level::%loop-world%}%" to console
                 add 10 to {xpplayer::%loop-world%}
@@ -180,39 +182,30 @@ command /jogo [<number>] [<world>]:
             wait 10 ticks
             make console execute command "kill @e[type=minecraft:item]"    
         if arg-1 is 0:
-            set {level} to 5
-            set max health of all players to 10.0
-            set {_else} to 1
+            set {level::%arg-2%} to 5
+            set max health of all players in world arg-2 to 10.0
             set {lvnpcsquant1} to 0
             set {lvnpcs1} to 1
             set {lvnpcsquant2} to 0
             set {lvnpcs2} to 1
-            delete {Invocador2::*}
-            delete {Invocador1::*}            
             set {raio1} to 1
             set {raio2} to 1
-            delete {executaruma::*}
-            delete {partida::*}      
-            delete {partidavotar::*}
-            set {invocadorabrido1} to 0
-            set {invocadorabrido2} to 0
-            set {XPquant1} to 0
-            set {XPquant2} to 0
-            delete {playerbk::*}
-            set {exiladoabrido} to 0
+            delete {Invocador2::%arg-2%::*}
+            delete {Invocador1::%arg-2%::*}          
+            set {invocadorabrido1::%arg-2%} to 0
+            set {invocadorabrido2::%arg-2%} to 0
+            set {XPquant1::%arg-2%} to 0
+            set {XPquant2::%arg-2%} to 0
             set {xpplayer::%arg-1%} to 40
-            delete {senhaplayer::*}
-            delete {senha}
             delete {jogadoresdesistir::*}
-            delete {sacrificio::*}
-            set {blockx1::%arg-2%} and {blockx2::%arg-2%} to 0
-            loop all players:
+#            delete {sacrificio::*}
+            loop all players in world arg-2:
                 set health of loop-players to 20
                 set hunger of loop-players to 20
-            clear all the potion effects of all players
-            make console execute command "kill @e[type=!minecraft:player]"
-            make console execute command "kill @e[type=minecraft:item]"
-            make console execute command "setblock -47 230 -116 air"
+                delete {playerbk::%loop-player's uuid%::*}
+            clear all the potion effects of all players in world arg-2
+            make console execute command "execute in minecraft:%arg-2% kill @e[type=!minecraft:player]"
+            make console execute command "execute in minecraft:%arg-2% kill @e[type=minecraft:item]"
             make console execute command "execute in minecraft:%arg-2% run fill -51 230 -116 -44 230 -116 air"
             wait 15 ticks
             make console execute command "execute in minecraft:%arg-2% run clear @a"
@@ -249,26 +242,26 @@ command /jogo [<number>] [<world>]:
             make console execute command "execute in minecraft:%arg-2% run setblock 86 149 19 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             make console execute command "execute in minecraft:%arg-2% run setblock 86 149 18 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             wait 1 tick
-            make console execute command "casasnpcs 1 1 4"
+            make console execute command "casasncpsfawe 1 4 1 %arg-2%"
             wait 1 tick
-            make console execute command "casasnpcs 1 0 2"
+            make console execute command "casasncpsfawe 1 2 0 %arg-2%"
             wait 1 tick
-            make console execute command "casasnpcs 1 4 3"
+            make console execute command "casasncpsfawe 1 3 4 %arg-2%"
             wait 1 tick
-            make console execute command "casasnpcs 1 4 4"
+            make console execute command "casasncpsfawe 1 4 4 %arg-2%"
             wait 1 tick
-            make console execute command "casasnpcs 1 0 1"
+            make console execute command "casasncpsfawe 1 1 0 %arg-2%"
             wait 1 tick
-            make console execute command "casasnpcs 1 0 2"
+            make console execute command "casasncpsfawe 1 2 0 %arg-2%"
             wait 1 tick
-            make console execute command "casasnpcs 1 4 3"
+            make console execute command "casasncpsfawe 1 3 4 %arg-2%"
             wait 1 tick
-            make console execute command "casasnpcs 1 4 4"
+            make console execute command "casasncpsfawe 1 4 4 %arg-2%"
             set {XPquant1::%arg-2%} to 0
-            set {XPquant2} to 0
+            set {XPquant2::%arg-2%} to 0
             wait 1 second
-            set {XPquant1} to 0
-            set {XPquant2} to 0
+            set {XPquant1::%arg-2%} to 0
+            set {XPquant2::%arg-2%} to 0
             
 on death:
     victim is a entity

@@ -56,7 +56,7 @@ release channel: stable
 # 'beta' and 'alpha' mean that also development releases will be checked for.
 # Initial value of this depends on the Skript version you first installed; it was 'stable'.
 
-enable effect commands: false
+enable effect commands: true
 effect command token: !
 # If 'enable effect commands' is set to true, chat messages starting with the 'effect command token' will be interpreted as effects and executed.
 # The token can be longer than a single character, but it should not start with '/' as that starts a command.

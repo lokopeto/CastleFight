@@ -91,53 +91,55 @@ command /spawnmob [<number>] [<text>] [<text>] [<number>] [<number>] [<number>] 
             make console execute command "npc glowing --color red"
 
 every 1 second:
-    {jogo} is 1
     set {_numb} to 0
-    loop 9 times:
-        add 1 to {_numb}
-        set {_lore1} to line 8 of lore of {Invocador1::%{_numb}%}
-        set {_lore2} to line 2 of lore of {Invocador1::%{_numb}%}
-        replace "&6Respawn = " in {_lore2} with ""
-        replace "Respawn orig. = " in {_lore1} with ""
-        set {_lore1} to uncolored {_lore1}
-        set {_lore1} to "%{_lore1}%" parsed as integer
-        if {_lore1} is set:
-            add -1 to {_lore1}
-        set line 8 of lore of {Invocador1::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
-        if {_lore1} <= 0:
-            set line 8 of lore of {Invocador1::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
-            set {_lorelist::*} to uncolored lore of {Invocador1::%{_numb}%}
-            set {_itemname} to uncolored name of {Invocador1::%{_numb}%}
-            replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = " and "Distancia = " in {_lorelist::*} with ""
+    loop all worlds:
+        loop-world is "castlefight1", "castlefight2" or "castlefight3"
+        {jogo::%loop-world%} is 1
+        loop 9 times:
+            add 1 to {_numb}
+            set {_lore1} to line 8 of lore of {Invocador1::%loop-world%::%{_numb}%}
+            set {_lore2} to line 2 of lore of {Invocador1::%loop-world%::%{_numb}%}
+            replace "&6Respawn = " in {_lore2} with ""
+            replace "Respawn orig. = " in {_lore1} with ""
+            set {_lore1} to uncolored {_lore1}
+            set {_lore1} to "%{_lore1}%" parsed as integer
+            if {_lore1} is set:
+                add -1 to {_lore1}
+            set line 8 of lore of {Invocador1::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
+            if {_lore1} <= 0:
+                set line 8 of lore of {Invocador1::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
+                set {_lorelist::*} to uncolored lore of {Invocador1::%loop-world%::%{_numb}%}
+                set {_itemname} to uncolored name of {Invocador1::%loop-world%::%{_numb}%}
+                replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = " and "Distancia = " in {_lorelist::*} with ""
 
-            if {_lorelist::11} or {_lorelist::12} is not set:
-                set {_lorelist::11} and {_lorelist::12} to 0
+                if {_lorelist::11} or {_lorelist::12} is not set:
+                    set {_lorelist::11} and {_lorelist::12} to 0
 
-            make console execute command "spawnmobc 1 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}%"
-#        broadcast "%{_lore1}%"
-    set {_numb} to 0
-    wait 1 tick
-    loop 9 times:
-        add 1 to {_numb}
-        set {_lore1} to line 8 of lore of {Invocador2::%{_numb}%}
-        set {_lore2} to line 2 of lore of {Invocador2::%{_numb}%}
-        replace "&6Respawn = " in {_lore2} with ""
-        replace "Respawn orig. = " in {_lore1} with ""
-        set {_lore1} to uncolored {_lore1}
-        set {_lore1} to "%{_lore1}%" parsed as integer
-        if {_lore1} is set:
-            add -1 to {_lore1}
-        set line 8 of lore of {Invocador2::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
-        if {_lore1} <= 0:
-            set line 8 of lore of {Invocador2::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
-            set {_lorelist::*} to uncolored lore of {Invocador2::%{_numb}%}
-            set {_itemname} to uncolored name of {Invocador2::%{_numb}%}
-            replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = " and "Distancia = " in {_lorelist::*} with ""
+                make console execute command "spawnmobc 1 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}% %loop-world%"
+    #        broadcast "%{_lore1}%"
+        set {_numb} to 0
+        wait 1 tick
+        loop 9 times:
+            add 1 to {_numb}
+            set {_lore1} to line 8 of lore of {Invocador2::%loop-world%::%{_numb}%}
+            set {_lore2} to line 2 of lore of {Invocador2::%loop-world%::%{_numb}%}
+            replace "&6Respawn = " in {_lore2} with ""
+            replace "Respawn orig. = " in {_lore1} with ""
+            set {_lore1} to uncolored {_lore1}
+            set {_lore1} to "%{_lore1}%" parsed as integer
+            if {_lore1} is set:
+                add -1 to {_lore1}
+            set line 8 of lore of {Invocador2::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
+            if {_lore1} <= 0:
+                set line 8 of lore of {Invocador2::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
+                set {_lorelist::*} to uncolored lore of {Invocador2::%loop-world%::%{_numb}%}
+                set {_itemname} to uncolored name of {Invocador2::%loop-world%::%{_numb}%}
+                replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = " and "Distancia = " in {_lorelist::*} with ""
 
-            if {_lorelist::11} or {_lorelist::12} is not set:
-                set {_lorelist::11} and {_lorelist::12} to 0
+                if {_lorelist::11} or {_lorelist::12} is not set:
+                    set {_lorelist::11} and {_lorelist::12} to 0
 
-            make console execute command "spawnmobc 2 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}%"
+                make console execute command "spawnmobc 2 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}% %loop-world%"
 
 
 every 5 minute:
