@@ -23,7 +23,7 @@ castlefight1sword:
   - 'ICON: iron sword'
   position:
     world: world
-    x: 24.0
+    x: 24.5
     y: 68.8
     z: -33.5
 castlefight1:
@@ -31,6 +31,22 @@ castlefight1:
   - '&aCastle Fight'
   position:
     world: world
-    x: 24.0
-    y: 69.37525195731116
+    x: 24.5
+    y: 69.3
+    z: -33.5
+castlefight2:
+  lines:
+  - '&aCastle Fight'
+  position:
+    world: world
+    x: 18.5
+    y: 69.3
+    z: -33.5
+castlefight2sword:
+  lines:
+  - 'ICON: iron sword'
+  position:
+    world: world
+    x: 18.5
+    y: 68.8
     z: -33.5
