@@ -13,6 +13,12 @@ on load:
     make console execute command "spawns"
 
 on right click on oak wall sign:
+#    set line 1 of event-block to "&a=[🗡CF3🛡]="
+#    set line 2 of event-block to "&bClique para"
+#    set line 3 of event-block to "&bEntrar!"
+#    set line 4 of event-block to "&a======="
+
+    line 1 of event-block contains "CF"
     line 2 of event-block contains "Clique para"
     line 3 of event-block contains "entrar!"
     teleport event-entity to location of event-block
@@ -23,9 +29,13 @@ on right click on oak wall sign:
         make console execute command "npc select %{_id}%"
         make console execute command "npc remove"
     create a citizen named the name of player at player's location as a player
+    set {_world} to line 1 of event-block
+    replace "=[🗡CF" and "🛡]=" on {_world} to ""
+
     add "player.%name of player%" to the scoreboard tags of event-entity
     set {placa::%uuid of player%::1} to location of event-block
     set {placa::%uuid of player%::2} to line 1
+
     set line 1 to ""
     set line 2 to ""
     set line 3 to ""
@@ -45,7 +55,7 @@ on leave:
     set line 4 of block at {placa::%uuid of player%::1} to "&a======="
 
 on player world change:
-    if world is "world"
+    world of player is "world"
     loop all entities in world "world":
         loop-entity is a citizen
         entity have scoreboard tag "player.%name of player%"

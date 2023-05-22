@@ -206,7 +206,6 @@ command /jogo [<number>] [<world>]:
             clear all the potion effects of all players in world arg-2
             make console execute command "execute in minecraft:%arg-2% kill @e[type=!minecraft:player]"
             make console execute command "execute in minecraft:%arg-2% kill @e[type=minecraft:item]"
-            make console execute command "execute in minecraft:%arg-2% run fill -51 230 -116 -44 230 -116 air"
             wait 15 ticks
             make console execute command "execute in minecraft:%arg-2% run clear @a"
             make console execute command "execute in minecraft:%arg-2% run xp set @a 0 levels"
