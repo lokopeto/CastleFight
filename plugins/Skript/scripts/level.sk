@@ -204,8 +204,8 @@ command /jogo [<number>] [<world>]:
                 set hunger of loop-players to 20
                 delete {playerbk::%loop-player's uuid%::*}
             clear all the potion effects of all players in world arg-2
-            make console execute command "execute in minecraft:%arg-2% kill @e[type=!minecraft:player]"
-            make console execute command "execute in minecraft:%arg-2% kill @e[type=minecraft:item]"
+            make console execute command "execute in minecraft:%arg-2% run kill @e[type=!minecraft:player]"
+            make console execute command "execute in minecraft:%arg-2% run kill @e[type=minecraft:item]"
             wait 15 ticks
             make console execute command "execute in minecraft:%arg-2% run clear @a"
             make console execute command "execute in minecraft:%arg-2% run xp set @a 0 levels"

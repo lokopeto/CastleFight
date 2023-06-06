@@ -15,7 +15,7 @@ regions:
         max: {x: -5, y: 247, z: -115}
         members: {}
         flags: {sleep: deny, item-drop: deny, exp-drops: deny, item-pickup: deny,
-            entity-painting-destroy: deny, pvp: deny, entity-item-frame-destroy: deny,
+            pvp: deny, entity-painting-destroy: deny, entity-item-frame-destroy: deny,
             mob-spawning: deny}
         owners:
             unique-ids: [d09f8eb8-ae7d-3caa-bb58-e29486b30db7]

@@ -1,5 +1,5 @@
 casasncpsfawe:
-    debug: true
+    debug: false
     type: command
     name: casasncpsfawe
     description: Fala com o chat global.
@@ -50,4 +50,4 @@ casasncpsfawe:
 #        - narrate <context.args.get[1]><context.args.get[2]><context.args.get[3]>
 
 
-        - schematic paste name:<context.args.get[1]><context.args.get[2]><context.args.get[3]> <server.flag[casasnpcslocation]>
+        - ~schematic paste name:<context.args.get[1]><context.args.get[2]><context.args.get[3]> <server.flag[casasnpcslocation]>
