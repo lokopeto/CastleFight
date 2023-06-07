@@ -1,9 +1,9 @@
 # These first 6 aren't configurable
 issues: "https://github.com/IntellectualSites/FastAsyncWorldEdit/issues"
 wiki: "https://intellectualsites.github.io/fastasyncworldedit-documentation/"
-date: "Thu Jul 06 00:00:00 BRT 2023"
-build: "https://ci.athion.net/job/FastAsyncWorldEdit/461"
-commit: "https://github.com/IntellectualSites/FastAsyncWorldEdit/commit/f7b78d31"
+date: "Mon May 01 00:00:00 BRT 2023"
+build: "https://ci.athion.net/job/FastAsyncWorldEdit/396"
+commit: "https://github.com/IntellectualSites/FastAsyncWorldEdit/commit/f4bd095e"
 platform: "Bukkit"
 # Set true to enable WorldEdit restrictions per region (e.g. PlotSquared or WorldGuard).
 # To be allowed to WorldEdit in a region, users need the appropriate
@@ -67,6 +67,10 @@ tick-limiter:
   physics-ms: 10
   # Max item spawns per interval (per chunk)
   items: 256
+  # Whether fireworks can load chunks
+  #  - Fireworks usually travel vertically so do not load any chunks
+  #  - Horizontal fireworks can be hacked in to crash a server
+  fireworks-load-chunks: false
 
 # Web/HTTP connection related settings
 web:
@@ -80,12 +84,6 @@ web:
   # The maximum size (width x length) an image being loaded can be.
   #  - 8294400 is 3840x2160
   max-image-size: 8294400
-  # Whitelist of hostnames to allow images to be downloaded from
-  #  - Adding '*' to the list will allow any host, but this is NOT adviseable
-  #  - Crash exploits exist with malformed images
-  #  - See: https://medium.com/chargebee-engineering/perils-of-parsing-pixel-flood-attack-on-java-imageio-a97aeb06637d
-  allowed-image-hosts: 
-  - "i.imgur.com"
 
 extent:
   # Don't bug console when these plugins slow down WorldEdit operations
@@ -152,7 +150,7 @@ queue:
   #  - A smaller value will reduce memory usage
   #  - A value too small may break some operations (deform?)
   #  - Values smaller than the configurated parallel-threads are not accepted
-  #  - It is recommended this option be at least 4x greater than parallel-threads
+  #  - It is recommended this option be at least 2x greater than parallel-threads
   target-size: 64
   # Force FAWE to start placing chunks regardless of whether an edit is finished processing
   #  - A larger value will use slightly less CPU time
@@ -344,7 +342,6 @@ limits:
     # Where block properties are specified, any blockstate with the property will be disallowed (e.g. all directions
     # of a waterlogged fence). For blocking/remapping of all occurrences of a property like waterlogged, see
     # remap-properties below.
-    # To generate a blank list, substitute the default content with a set of square brackets [] instead.
     # Example block property blocking:
     #  - "minecraft:conduit[waterlogged=true]"
     #  - "minecraft:piston[extended=false,facing=west]"

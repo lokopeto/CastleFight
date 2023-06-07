@@ -456,7 +456,8 @@
   "minecraft:nether/explore_nether": {
     "criteria": {
       "minecraft:crimson_forest": "2023-05-15 20:03:17 -0300",
-      "minecraft:nether_wastes": "2023-05-15 20:02:11 -0300"
+      "minecraft:nether_wastes": "2023-05-15 20:02:11 -0300",
+      "minecraft:warped_forest": "2023-06-07 10:04:14 -0300"
     },
     "done": false
   },

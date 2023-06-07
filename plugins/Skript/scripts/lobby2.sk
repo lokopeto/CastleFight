@@ -1,16 +1,24 @@
-on skript load:
-    loop all entities:
-        loop-entity is a citizen:
-            set {_id} to citizen id of loop-entity
-            make console execute command "npc select %{_id}%"
-            make console execute command "npc remove"
-        kill entity
+on skript start:
+    set {joinplayerblock} to 1
+#    loop all entities:
+#        loop-entity is a citizen:
+#            set {_id} to citizen id of loop-entity
+#            make console execute command "npc select %{_id}%"
+#            make console execute command "npc remove"
+#        kill entity
+    wait 1 ticks
     loop all worlds:
         loop-world is "castlefight1", "castlefight2" or "castlefight3"
         make console execute command "jogo 0 %loop-world%"
+        wait 30 ticks
     make console execute command "npcs"
     wait 100 ticks
     make console execute command "spawns"
+    set {joinplayerblock} to 0
+
+on join:
+    if {joinplayerblock} is 1:
+        kick the player due to "Espere um pouco..."
 
 on right click on oak wall sign:
 #    set line 1 of event-block to "&a=[🗡CF1🛡]="

@@ -6,7 +6,6 @@ casasncpsfawe:
     usage: /casasncpsfawe
     permission: casasncpsfawe.cmd
     script:
-        - schematic load name:<context.args.get[1]><context.args.get[2]><context.args.get[3]>
         - if <context.args.get[1]> = 1:
             - if <context.args.get[2]> = 1:
                 - flag server casasncpsfawex:145
@@ -51,3 +50,24 @@ casasncpsfawe:
 
 
         - ~schematic paste name:<context.args.get[1]><context.args.get[2]><context.args.get[3]> <server.flag[casasnpcslocation]>
+
+schematicload:
+    type: world
+    events:
+        on server start:
+            - repeat 5:
+                - schematic load name:11<[value]>
+            - repeat 5:
+                - schematic load name:12<[value]>
+            - repeat 5:
+                - schematic load name:13<[value]>
+            - repeat 5:
+                - schematic load name:14<[value]>
+            - repeat 5:
+                - schematic load name:21<[value]>
+            - repeat 5:
+                - schematic load name:22<[value]>
+            - repeat 5:
+                - schematic load name:23<[value]>
+            - repeat 5:
+                - schematic load name:24<[value]>

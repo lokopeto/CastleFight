@@ -363,7 +363,7 @@ desistir<none>, long, 0000000000000006
 desistircastelo1, long, 0000000000000009
 effect, long, 0000000000000000
 exiladoabrido, long, 0000000000000000
-exiladotimer, long, FFFFFFFFFFF61E2A
+exiladotimer, long, FFFFFFFFFFF60199
 historia::1, string, 80026161
 historia::2, string, 80026161
 historia::3, string, 80026161
@@ -403,6 +403,7 @@ jogo, long, 0000000000000000
 jogo::castlefight1, long, 0000000000000000
 jogo::castlefight2, long, 0000000000000000
 jogo::castlefight3, long, 0000000000000000
+joinplayerblock, long, 0000000000000000
 kill::6e75927b-4714-4957-a3aa-ee6fccab0b46, long, 0000000000000007
 kill::9bd3e8bb-6499-4e61-8b04-07eac9f50e27, long, 0000000000000078
 kill::55b781d3-3ecd-480e-8bc0-1b4ed7533e1e, long, 000000000000004B
@@ -807,14 +808,13 @@ mudar::993d0624-b2e6-330f-a0e3-0f6b7eced072, long, FFFFFFFFFFFFE474
 mudar::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFF2C63
 mudar::f119c6fd-687e-36dc-bfe2-d928aead21d5, long, FFFFFFFFFFFFC526
 mudar::fa327ee8-f1d0-3365-88ea-4de587f2446d, long, FFFFFFFFFFFFCF64
-nightvision::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, 0000000000000001
 nodama, long, 0000000000000000
 nodama::1, long, 0000000000000000
 nodama::3deaa639-bf83-3582-9086-316f419185de, long, 0000000000000000
 nodama::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, 0000000000000000
 numb, long, 0000000000000017
-padeirotimer1, long, FFFFFFFFFFFA206A
-padeirotimer2, long, FFFFFFFFFFF8AA8B
+padeirotimer1, long, FFFFFFFFFFFA03D9
+padeirotimer2, long, FFFFFFFFFFF88DFA
 partida::1::1, string, 8022526569426172726F2052656943617276616C686F204E6F726D616C20776F726C6431
 partida::1::2, long, 0000000000000001
 partida::2::1, string, 8029526569426172726F2052656943617276616C686F204E6F726D616C20776F726C6431203C6E6F6E653E
