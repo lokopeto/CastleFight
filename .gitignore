@@ -11,6 +11,7 @@ plugins/Citizens/saves.yml6381463358870215660.tmp
 plugins/Citizens/lang/messages_en.properties
 cache/mojang_1.19.3.jar
 cache/spark.jar
+CMD/graalvm-ce-java17-22.3.2
 libraries/com/github/oshi/oshi-core/6.2.2/oshi-core-6.2.2.jar
 libraries/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
 libraries/com/google/code/gson/gson-parent/2.8.9/_remote.repositories

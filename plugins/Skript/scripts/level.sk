@@ -240,21 +240,21 @@ command /jogo [<number>] [<world>]:
             make console execute command "execute in minecraft:%arg-2% run setblock 86 149 26 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             make console execute command "execute in minecraft:%arg-2% run setblock 86 149 19 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             make console execute command "execute in minecraft:%arg-2% run setblock 86 149 18 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
-            wait 1 tick
+            wait 50 tick
             make console execute command "casasncpsfawe 1 4 1 %arg-2%"
-            wait 1 tick
+            wait 50 tick
             make console execute command "casasncpsfawe 1 2 0 %arg-2%"
-            wait 1 tick
+            wait 50 tick
             make console execute command "casasncpsfawe 1 3 4 %arg-2%"
-            wait 1 tick
+            wait 50 tick
             make console execute command "casasncpsfawe 1 4 4 %arg-2%"
-            wait 1 tick
+            wait 50 tick
             make console execute command "casasncpsfawe 1 1 0 %arg-2%"
-            wait 1 tick
+            wait 50 tick
             make console execute command "casasncpsfawe 1 2 0 %arg-2%"
-            wait 1 tick
+            wait 50 tick
             make console execute command "casasncpsfawe 1 3 4 %arg-2%"
-            wait 1 tick
+            wait 50 tick
             make console execute command "casasncpsfawe 1 4 4 %arg-2%"
             set {XPquant1::%arg-2%} to 0
             set {XPquant2::%arg-2%} to 0

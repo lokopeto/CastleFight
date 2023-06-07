@@ -1,14 +1,13 @@
 on load:
-    set the gamerule announceAdvancements of world "world" to false
-    set the gamerule commandBlockOutput of world "world" to false
-    set the gamerule disableRaids of world "world" to true
-    set the gamerule doEntityDrops of world "world" to false
-    set the gamerule doImmediateRespawn of world "world" to true
-    set the gamerule doInsomnia of world "world" to true
-    set the gamerule doMobLoot of world "world" to false
-    set the gamerule doMobSpawning of world "world" to false
-    set the gamerule keepInventory of world "world" to true
-    set the gamerule sendCommandFeedback of world "world" to false
-
+    set the gamerule announceAdvancements of world "castlegfight1", "castlegfight2" and "castlegfight3" to false
+    set the gamerule commandBlockOutput of world "castlegfight1", "castlegfight2" and "castlegfight3" to false
+    set the gamerule disableRaids of world "castlegfight1", "castlegfight2" and "castlegfight3" to true
+    set the gamerule doEntityDrops of world "castlegfight1", "castlegfight2" and "castlegfight3" to false
+    set the gamerule doImmediateRespawn of world "castlegfight1", "castlegfight2" and "castlegfight3" to true
+    set the gamerule doInsomnia of world "castlegfight1", "castlegfight2" and "castlegfight3" to true
+    set the gamerule doMobLoot of world "castlegfight1", "castlegfight2" and "castlegfight3" to false
+    set the gamerule doMobSpawning of world "castlegfight1", "castlegfight2" and "castlegfight3" to false
+    set the gamerule keepInventory of world "castlegfight1", "castlegfight2" and "castlegfight3" to true
+    set the gamerule sendCommandFeedback of world "castlegfight1", "castlegfight2" and "castlegfight3"  to false
 
     message "gamerule setados" to console
