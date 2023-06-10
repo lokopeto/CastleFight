@@ -243,7 +243,7 @@ economy:
 storage:
   save-task:
     # How often to save NPCs to disk
-    delay: -1
+    delay: 72000
   file: saves.yml
   # Although technically Citizens can use NBT storage, it is not well tested and YAML is recommended
   type: yaml

@@ -1,5 +1,5 @@
 deletecitizen:
     type: world
     events:
-        on server start:
-            - adjust system delete_file:plugins/Citizens/saves.yml
+        on server prestart:
+            - adjust system delete_file:../citizens/saves.yml
