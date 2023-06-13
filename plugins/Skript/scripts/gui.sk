@@ -1,12 +1,14 @@
 
 every 1 second:
-    add -1 to {Padeirotimer1}, {Padeirotimer2} and {exiladotimer}
+    loop all worlds:
+        
+        add -1 to {Padeirotimer1}, {Padeirotimer2} and {exiladotimer}
 
 on npc right click:
     set {_team} to "%team of player%"
     replace "castelo" in {_team} with ""
 #    broadcast "%{_team}%"
-    if npc name is "Invocador (%{castelo%{_team}%nome}%)":
+    if npc name is "Invocador (%{castelo%{_team}%nome::%world of player%}%)":
         {invocadorabrido%{_team}%::%world of player%} is set:
 #        broadcast "aaaaaa"
             create a gui with virtual chest inventory with 1 rows named "Invocador":
@@ -27,9 +29,9 @@ on npc right click:
 #                        broadcast "%{Invocador1lore::%{slots1}%::*}%"
             open the created gui for player
         else:
-            message "&cInvocador só fala com um por vez!"
-    if npc name is "Fazendeiro (%{castelo%{_team}%nome}%)":
-        if {Padeirotimer%{_team}%} <= 0:
+            message "&cInvocador está ocupado!"
+    if npc name is "Fazendeiro (%{castelo%{_team}%nome::%world of player%}%)":
+        if {Padeirotimer%{_team}%::%world of player%} <= 0:
             create a gui with virtual chest inventory with 2 rows named "Fazendeiro":
                 set the lock status of the edited gui to false
                 set {slots1} to -1
@@ -62,22 +64,22 @@ on npc right click:
             open the created gui for player
             set {Padeirotimer%{_team}%} to 10
         else:
-            message "&7&oespere &f&o%{Padeirotimer%{_team}%}%&7&o segundos.."
-    if npc name is "Mago Misterioso (%{castelo%{_team}%nome}%)":
+            message "&7&oespere &f&o%{Padeirotimer%{_team}%::%world of player%}%&7&o segundos.."
+    if npc name is "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
         if {Padeirotimer%{_team}%} <= 0:
-            create a gui with virtual chest inventory with 1 rows named "Mago Misterioso (%{castelo%{_team}%nome}%)":
+            create a gui with virtual chest inventory with 1 rows named "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
                 set {slots1} to -1
                 loop 9 times:
                     add 1 to {slots1}
                     make gui slot {slots1} with cyan stained glass pane
-                {raio%{_team}%} is 1:
+                {raio%{_team}%::%world of player%} is 1:
                     make gui slot 4 with nether star with nbt compound from "{display:{Name:'[{""text"":""O Poder dos Raios"",""italic"":false,""color"":""aqua"",""bold"":true}]',Lore:['[{""text"":""Use os raios ao seu favor e"",""color"":""blue""}]','[{""text"":""elimine os monstros dentro"",""italic"":true,""color"":""blue""}]','[{""text"":""do seu castelo."",""italic"":true,""color"":""blue""},{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":""Rescue Strike??"",""italic"":true,""color"":""dark_gray""}]']}}"
                 else:
                     make gui slot 4 with nether star with nbt compound from "{display:{Name:'[{""text"":""O Poder dos Raios (usado)"",""italic"":false,""color"":""gray"",""bold"":true}]',Lore:['[{""text"":""Você já usou o poder dos raios"",""color"":""blue""}]','[{""text"":""Comprar?"",""italic"":true,""color"":""blue""},{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":""Custo: "",""italic"":false,""color"":""aqua""},{""text"":""2500"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""nem tudo na vida é de graça..."",""italic"":true,""color"":""dark_gray""}]']}}"
             open the created gui for player
 
-    if npc name is "Alquimista (%{castelo%{_team}%nome}%)":
-        create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome}%)":
+    if npc name is "Alquimista (%{castelo%{_team}%nome}%::%world of player%)":
+        create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome}%::%world of player%)":
             set {_tipo::*} to "Básica" and ""
             if {lvnpcs%{_team}%::%world of player%} >= 15:
                 set {_tipo::*} to "Mediana" and "long_"
@@ -528,12 +530,12 @@ on inventory click:
                 if clicked slot is a nether star:
                     add "-%{_lore::4}%" parsed as integer to level of player
                     message "&aVocê comprou ""O Poder dos Raios"""
-                    set {raio%{_team}%} to 1
+                    set {raio%{_team}%::%world of player%} to 1
                     close player's inventory
         else:
             message "&e""Meus r&ke&elâmpagos atin&kgi&erão com grande fúria."""
             make console execute command "matarmobs %{_team}%"
-            set {raio%{_team}%} to 0
+            set {raio%{_team}%::%world of player%} to 0
             close player's inventory
 
     if name of event-inventory contains "Bordador (%{castelo%{_team}%nome}%)":

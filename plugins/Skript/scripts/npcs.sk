@@ -4,11 +4,19 @@ command /npcs <world>:
     trigger:
         message "espere..."
         loop all entities in world arg-1:
-            loop-entity is a citizen:
-                name of loop-entity contains "Ferreiro", "Bordador", "Invocador", "Fazendeiro", "Mago Misterioso", "Arqueiro", "Alquimista", "Necromancer","Vendedor Misterioso", "%{castelo2nome::%arg-1%}%", "%{castelo1nome::%arg-1%}%", "%{castelo1nomeantigo::%arg-1%}%" or "%{castelo2nomeantigo::%arg-1%}%":
-                    set {_id} to citizen id of loop-entity
-                    make console execute command "npc select %{_id}%"
-                    make console execute command "npc remove"      
+            loop-entity have scoreboard tag "rei1":
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"      
+            loop-entity have scoreboard tag "rei2":
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"      
+            loop-entity have scoreboard tag "npcs":
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"  
+    
         wait 1 tick
         make console execute command "npc create %{castelo1nome::%arg-1%}% --at 139.5:153:23.00:%arg-1% --trait sentinel"
         make console execute command "npc scoreboard --addtag rei1"
@@ -45,51 +53,63 @@ command /npcs <world>:
         make console execute command "sentinel attackrate 0.5"
         wait 2 tick
         make console execute command "npc create Invocador (%{castelo1nome::%arg-1%}%) --at 139.5:152:25.5:%arg-1% --type villager"
-        make console execute command "npc villager --profession CLERIC" 
+        make console execute command "npc villager --profession CLERIC"
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Invocador (%{castelo2nome::%arg-1%}%) --at -222.5:152:20.5:%arg-1% --type villager"
         make console execute command "npc villager --profession CLERIC" 
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Fazendeiro (%{castelo1nome::%arg-1%}%) --at 142.5:152:32.5:%arg-1% --type villager"
         make console execute command "npc villager --profession farmer" 
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Fazendeiro (%{castelo2nome::%arg-1%}%) --at -225.5:152:13.5:%arg-1% --type villager"
         make console execute command "npc villager --profession farmer" 
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Mago Misterioso (%{castelo2nome::%arg-1%}%) --at -222.5:152:25.5:%arg-1% --type villager"
         make console execute command "npc villager --profession CLERIC" 
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Mago Misterioso (%{castelo1nome::%arg-1%}%) --at 139.5:152.00:20.5:%arg-1% --type villager"
         make console execute command "npc villager --profession CLERIC" 
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Ferreiro (%{castelo2nome::%arg-1%}%) --at -151.5:152:36.5:%arg-1% --type villager"
         make console execute command "npc villager --profession WEAPONSMITH"      
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Ferreiro (%{castelo1nome::%arg-1%}%) --at 68.5:152:9.5:%arg-1% --type villager"
         make console execute command "npc villager --profession WEAPONSMITH"      
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Bordador (%{castelo2nome::%arg-1%}%) --at -151.5:152:9.55:%arg-1% --type villager"
         make console execute command "npc villager --profession LEATHERWORKER"             
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Bordador (%{castelo1nome::%arg-1%}%) --at 68.5:152:36.5:%arg-1% --type villager"
         make console execute command "npc villager --profession LEATHERWORKER"    
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Arqueiro (%{castelo1nome::%arg-1%}%) --at 81.5:152:8.5:%arg-1% --type villager"
         make console execute command "npc villager --profession nitwit" 
+        make console execute command "npc scoreboard --addtag npcs" 
 
         wait 2 tick
         make console execute command "npc create Arqueiro (%{castelo2nome::%arg-1%}%) --at -164.5:152:37.5:%arg-1% --type villager"
         make console execute command "npc villager --profession nitwit" 
+        make console execute command "npc scoreboard --addtag npcs" 
 
 #        wait 2 tick
 #        make console execute command "npc create Alquimista (%{castelo1nome}%) --at 42.5:152:9.5:%arg-1% --type villager"

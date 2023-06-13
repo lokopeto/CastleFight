@@ -155,7 +155,6 @@ command /spawn:
     trigger:
         message "Espere..."
         loop all worlds:
-            wait 1 minute
             loop-world is "castlefight1", "castlefight2" or "castlefight3"
             loop all entities in loop-world:
                 if name of loop-entity contains "(natural)":
@@ -166,6 +165,7 @@ command /spawn:
                     set {_id} to citizen id of loop-entity
                     make console execute command "npc select %{_id}%"
                     make console execute command "npc remove"
+            wait 5 seconds
             #zombiecaverna1
             loop "%30 - {quantmobs}%" parsed as integer times:
                 add 1 to {_numb}

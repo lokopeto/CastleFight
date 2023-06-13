@@ -28,9 +28,13 @@ on respawn:
         set gamemode of player to adventure
         message "&7&o&lpronto para batalha!"
     "%team of player%" is "castelo1":
-        teleport player to {rei1loc}
+        loop all entities in world of player:
+            if loop-entity has scoreboard tag "rei1":
+                teleport player to loop-entity
     "%team of player%" is "castelo2":
-        teleport player to {rei2loc}    
+        loop all entities in world of player:
+            if loop-entity has scoreboard tag "rei2":
+                teleport player to loop-entity 
     set {deathtimer::%uuid of player%} to 30
     set {nodama::%uuid of player%} to 1
     make console execute command "ppo %player% add soul_fire_flame beam"

@@ -44,6 +44,8 @@ casasncpsfawe:
                     - flag server casasncpsfawex:-283
                     - flag server casasncpsfawey:149
                     - flag server casasncpsfawez:26
+                - if <context.args.get[3]> = 5:
+                    - flag server casasncpsfawez:28
         - flag server casasnpcslocation:<location[<server.flag[casasncpsfawex]>,<server.flag[casasncpsfawey]>,<server.flag[casasncpsfawez]>,<context.args.get[4]>]>
 #        - narrate <server.flag[casasnpcslocation]>
 #        - narrate <context.args.get[1]><context.args.get[2]><context.args.get[3]>
@@ -57,17 +59,10 @@ schematicload:
         on server start:
             - repeat 5:
                 - schematic load name:11<[value]>
-            - repeat 5:
                 - schematic load name:12<[value]>
-            - repeat 5:
                 - schematic load name:13<[value]>
-            - repeat 5:
                 - schematic load name:14<[value]>
-            - repeat 5:
                 - schematic load name:21<[value]>
-            - repeat 5:
                 - schematic load name:22<[value]>
-            - repeat 5:
                 - schematic load name:23<[value]>
-            - repeat 5:
                 - schematic load name:24<[value]>
