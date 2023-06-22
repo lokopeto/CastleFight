@@ -10,7 +10,7 @@ on join:
         message "     &2use &a&l/criarpartida &2para cria uma partida."
     message "     &2Use &a&l/comandos &2para visualizar os comandos,.."
 
-    message "&aAjude a manter o servidor vivo em https://apoia.se/kotomc!"
+    message "&aAjude a manter o servidor vivo em https://apoia.se/kotomc"
 
 every 15 minutes:
-    broadcast "&aAjude a manter o servidor vivo em https://apoia.se/kotomc!"
+    broadcast "&aAjude a manter o servidor vivo em https://apoia.se/kotomc"
