@@ -162,6 +162,7 @@ death::51459619-0ba8-4959-a0cd-567d190b551d, long, FFFFFFFFFFFFFFE2
 death::56145771-3abc-4c56-96a4-22bab6a17432, long, FFFFFFFFFFFFFFE2
 death::80557666-f057-4cc3-8c81-45f26ef950c6, long, FFFFFFFFFFFFFFE2
 death::a9cd2b86-7596-4408-8186-7155468145c9, long, FFFFFFFFFFFFFFE2
+death::a16332d2-18c1-3803-90b4-83edbc374eeb, long, FFFFFFFFFFFFFFA6
 death::a86437ad-902a-442b-9c3b-b26e48e8f5fb, long, FFFFFFFFFFFFFFE2
 death::ae5f6de0-7fe1-4fda-a8a5-d25baa08c38c, long, FFFFFFFFFFFFFFE2
 death::aee20e14-474f-4baa-a1ed-b797c17040b7, long, 0000000000000001
@@ -177,6 +178,7 @@ death::beac0240-3f8d-4bf9-a52e-c05b77493b66, long, FFFFFFFFFFFFFFE2
 death::c1c6fab7-9199-4e5c-b521-29bf45006e06, long, FFFFFFFFFFFFFFE2
 death::c4c784dc-f627-4451-a4cf-3c439d1d59c8, long, FFFFFFFFFFFFFFE2
 death::c5b2e3b4-d071-4208-b918-f9d7fc1cb925, long, FFFFFFFFFFFFFFE2
+death::c90eb265-bf3d-3fde-af34-3be11477631b, long, FFFFFFFFFFFFFFA6
 death::c940a384-799a-42e1-84be-5a0dc90efcd7, long, FFFFFFFFFFFFFFE2
 death::c7775acc-bf16-4dad-870e-882f5a524977, long, FFFFFFFFFFFFFFE2
 death::c600853c-6f5e-40e8-99a7-72fe66904aac, long, 0000000000000001
@@ -184,7 +186,7 @@ death::cc78f40e-5969-4feb-aa5e-e630a78148d6, long, FFFFFFFFFFFFFFE2
 death::d1d33fb9-9a15-4c66-9091-1f10b175c33a, long, FFFFFFFFFFFFFFE2
 death::d4b36c6b-a085-4c45-9989-a5941b25265e, long, FFFFFFFFFFFFFFE2
 death::d9a0a9a4-cfa5-4d5e-95a9-3711290ecb83, long, FFFFFFFFFFFFFFE2
-death::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFFFEB8
+death::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFFFE9A
 death::d09f8eb8-ae7d-3caa-bb58-e29486b30db7::1, long, 0000000000000001
 death::d09f8eb8-ae7d-3caa-bb58-e29486b30db7::2, long, 0000000000000001
 death::d09f8eb8-ae7d-3caa-bb58-e29486b30db7::3, long, 0000000000000001
@@ -314,6 +316,7 @@ deathpartida::51459619-0ba8-4959-a0cd-567d190b551d, long, FFFFFFFFFFFFFFE2
 deathpartida::56145771-3abc-4c56-96a4-22bab6a17432, long, FFFFFFFFFFFFFFE2
 deathpartida::80557666-f057-4cc3-8c81-45f26ef950c6, long, FFFFFFFFFFFFFFE2
 deathpartida::a9cd2b86-7596-4408-8186-7155468145c9, long, FFFFFFFFFFFFFFE2
+deathpartida::a16332d2-18c1-3803-90b4-83edbc374eeb, long, FFFFFFFFFFFFFFA6
 deathpartida::a86437ad-902a-442b-9c3b-b26e48e8f5fb, long, FFFFFFFFFFFFFFE2
 deathpartida::ae5f6de0-7fe1-4fda-a8a5-d25baa08c38c, long, FFFFFFFFFFFFFFE2
 deathpartida::aee20e14-474f-4baa-a1ed-b797c17040b7, long, 0000000000000001
@@ -329,6 +332,7 @@ deathpartida::beac0240-3f8d-4bf9-a52e-c05b77493b66, long, FFFFFFFFFFFFFFE2
 deathpartida::c1c6fab7-9199-4e5c-b521-29bf45006e06, long, FFFFFFFFFFFFFFE2
 deathpartida::c4c784dc-f627-4451-a4cf-3c439d1d59c8, long, FFFFFFFFFFFFFFE2
 deathpartida::c5b2e3b4-d071-4208-b918-f9d7fc1cb925, long, FFFFFFFFFFFFFFE2
+deathpartida::c90eb265-bf3d-3fde-af34-3be11477631b, long, FFFFFFFFFFFFFFA6
 deathpartida::c940a384-799a-42e1-84be-5a0dc90efcd7, long, FFFFFFFFFFFFFFE2
 deathpartida::c7775acc-bf16-4dad-870e-882f5a524977, long, FFFFFFFFFFFFFFE2
 deathpartida::c600853c-6f5e-40e8-99a7-72fe66904aac, long, 0000000000000001
@@ -336,7 +340,7 @@ deathpartida::cc78f40e-5969-4feb-aa5e-e630a78148d6, long, FFFFFFFFFFFFFFE2
 deathpartida::d1d33fb9-9a15-4c66-9091-1f10b175c33a, long, FFFFFFFFFFFFFFE2
 deathpartida::d4b36c6b-a085-4c45-9989-a5941b25265e, long, FFFFFFFFFFFFFFE2
 deathpartida::d9a0a9a4-cfa5-4d5e-95a9-3711290ecb83, long, FFFFFFFFFFFFFFE2
-deathpartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFFFEB8
+deathpartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFFFE9A
 deathpartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7::1, long, 0000000000000001
 deathpartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7::2, long, 0000000000000001
 deathpartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7::3, long, 0000000000000001
@@ -371,7 +375,7 @@ desistir<none>, long, 0000000000000006
 desistircastelo1, long, 0000000000000009
 effect, long, 0000000000000000
 exiladoabrido, long, 0000000000000000
-exiladotimer, long, FFFFFFFFFFF1FAEB
+exiladotimer, long, FFFFFFFFFFED3BCF
 historia::1, string, 80026161
 historia::2, string, 80026161
 historia::3, string, 80026161
@@ -418,8 +422,9 @@ kill::55b781d3-3ecd-480e-8bc0-1b4ed7533e1e, long, 000000000000004B
 kill::440f37ca-af7d-31ca-b414-00c1f75da2e1, long, 0000000000000258
 kill::62031b8c-e233-48a3-b697-133f93bab3d4, long, 0000000000000028
 kill::ac92b261-ea64-4cf3-97db-cd342bed1b19, long, 0000000000000002
+kill::c90eb265-bf3d-3fde-af34-3be11477631b, long, 0000000000000028
 kill::c600853c-6f5e-40e8-99a7-72fe66904aac, long, 000000000000002F
-kill::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, 00000000000000E8
+kill::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, 0000000000000160
 kill::e57eacce-4560-4c2e-ac3e-39c847e48388, long, 0000000000000001
 kill::f119c6fd-687e-36dc-bfe2-d928aead21d5, long, 0000000000000001
 killpartida::6e75927b-4714-4957-a3aa-ee6fccab0b46, long, 0000000000000007
@@ -428,8 +433,9 @@ killpartida::55b781d3-3ecd-480e-8bc0-1b4ed7533e1e, long, 000000000000004B
 killpartida::440f37ca-af7d-31ca-b414-00c1f75da2e1, long, 0000000000000258
 killpartida::62031b8c-e233-48a3-b697-133f93bab3d4, long, 0000000000000028
 killpartida::ac92b261-ea64-4cf3-97db-cd342bed1b19, long, 0000000000000002
+killpartida::c90eb265-bf3d-3fde-af34-3be11477631b, long, 0000000000000028
 killpartida::c600853c-6f5e-40e8-99a7-72fe66904aac, long, 000000000000002F
-killpartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, 00000000000000E8
+killpartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, 0000000000000160
 killpartida::e57eacce-4560-4c2e-ac3e-39c847e48388, long, 0000000000000001
 killpartida::f119c6fd-687e-36dc-bfe2-d928aead21d5, long, 0000000000000001
 level, long, 0000000000000005
@@ -821,8 +827,8 @@ nodama::1, long, 0000000000000000
 nodama::3deaa639-bf83-3582-9086-316f419185de, long, 0000000000000000
 nodama::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, 0000000000000000
 numb, long, 0000000000000017
-padeirotimer1, long, FFFFFFFFFFF5FD29
-padeirotimer2, long, FFFFFFFFFFF4874A
+padeirotimer1, long, FFFFFFFFFFF13E0D
+padeirotimer2, long, FFFFFFFFFFEFC82E
 partida::1::1, string, 8022526569426172726F2052656943617276616C686F204E6F726D616C20776F726C6431
 partida::1::2, long, 0000000000000001
 partida::2::1, string, 8029526569426172726F2052656943617276616C686F204E6F726D616C20776F726C6431203C6E6F6E653E
@@ -1003,6 +1009,7 @@ score::56145771-3abc-4c56-96a4-22bab6a17432, long, FFFFFFFFFFFFFFE2
 score::80557666-f057-4cc3-8c81-45f26ef950c6, long, FFFFFFFFFFFFFFE2
 score::<none>, long, FFFFFFFFFFFFFFFF
 score::a9cd2b86-7596-4408-8186-7155468145c9, long, FFFFFFFFFFFFFFE2
+score::a16332d2-18c1-3803-90b4-83edbc374eeb, long, FFFFFFFFFFFFFFA6
 score::a86437ad-902a-442b-9c3b-b26e48e8f5fb, long, FFFFFFFFFFFFFFE2
 score::ac92b261-ea64-4cf3-97db-cd342bed1b19, long, 0000000000000002
 score::ae5f6de0-7fe1-4fda-a8a5-d25baa08c38c, long, FFFFFFFFFFFFFFE2
@@ -1019,6 +1026,7 @@ score::beac0240-3f8d-4bf9-a52e-c05b77493b66, long, FFFFFFFFFFFFFFE2
 score::c1c6fab7-9199-4e5c-b521-29bf45006e06, long, FFFFFFFFFFFFFFE2
 score::c4c784dc-f627-4451-a4cf-3c439d1d59c8, long, FFFFFFFFFFFFFFE2
 score::c5b2e3b4-d071-4208-b918-f9d7fc1cb925, long, FFFFFFFFFFFFFFE2
+score::c90eb265-bf3d-3fde-af34-3be11477631b, long, FFFFFFFFFFFFFFCE
 score::c508f263-3724-432f-b52a-d28ab352656f, long, FFFFFFFFFFFFFFFF
 score::c940a384-799a-42e1-84be-5a0dc90efcd7, long, FFFFFFFFFFFFFFE2
 score::c7775acc-bf16-4dad-870e-882f5a524977, long, FFFFFFFFFFFFFFE2
@@ -1027,7 +1035,7 @@ score::cc78f40e-5969-4feb-aa5e-e630a78148d6, long, FFFFFFFFFFFFFFE2
 score::d1d33fb9-9a15-4c66-9091-1f10b175c33a, long, FFFFFFFFFFFFFFE2
 score::d4b36c6b-a085-4c45-9989-a5941b25265e, long, FFFFFFFFFFFFFFE2
 score::d9a0a9a4-cfa5-4d5e-95a9-3711290ecb83, long, FFFFFFFFFFFFFFE2
-score::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFFFF6A
+score::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFFFFC4
 score::d069f1d6-5d59-4b3a-bd44-44473d0cc4f1, long, FFFFFFFFFFFFFFE2
 score::d96e1400-df2a-4716-913c-c0a2b503c033, long, FFFFFFFFFFFFFFE2
 score::d391c59a-0664-432c-a871-6d8e6d1d28fc, long, FFFFFFFFFFFFFFE2
@@ -1159,6 +1167,7 @@ scorepartida::56145771-3abc-4c56-96a4-22bab6a17432, long, FFFFFFFFFFFFFFE2
 scorepartida::80557666-f057-4cc3-8c81-45f26ef950c6, long, FFFFFFFFFFFFFFE2
 scorepartida::<none>, long, FFFFFFFFFFFFFFFF
 scorepartida::a9cd2b86-7596-4408-8186-7155468145c9, long, FFFFFFFFFFFFFFE2
+scorepartida::a16332d2-18c1-3803-90b4-83edbc374eeb, long, FFFFFFFFFFFFFFA6
 scorepartida::a86437ad-902a-442b-9c3b-b26e48e8f5fb, long, FFFFFFFFFFFFFFE2
 scorepartida::ac92b261-ea64-4cf3-97db-cd342bed1b19, long, 0000000000000002
 scorepartida::ae5f6de0-7fe1-4fda-a8a5-d25baa08c38c, long, FFFFFFFFFFFFFFE2
@@ -1175,6 +1184,7 @@ scorepartida::beac0240-3f8d-4bf9-a52e-c05b77493b66, long, FFFFFFFFFFFFFFE2
 scorepartida::c1c6fab7-9199-4e5c-b521-29bf45006e06, long, FFFFFFFFFFFFFFE2
 scorepartida::c4c784dc-f627-4451-a4cf-3c439d1d59c8, long, FFFFFFFFFFFFFFE2
 scorepartida::c5b2e3b4-d071-4208-b918-f9d7fc1cb925, long, FFFFFFFFFFFFFFE2
+scorepartida::c90eb265-bf3d-3fde-af34-3be11477631b, long, FFFFFFFFFFFFFFCE
 scorepartida::c508f263-3724-432f-b52a-d28ab352656f, long, FFFFFFFFFFFFFFFF
 scorepartida::c940a384-799a-42e1-84be-5a0dc90efcd7, long, FFFFFFFFFFFFFFE2
 scorepartida::c7775acc-bf16-4dad-870e-882f5a524977, long, FFFFFFFFFFFFFFE2
@@ -1183,7 +1193,7 @@ scorepartida::cc78f40e-5969-4feb-aa5e-e630a78148d6, long, FFFFFFFFFFFFFFE2
 scorepartida::d1d33fb9-9a15-4c66-9091-1f10b175c33a, long, FFFFFFFFFFFFFFE2
 scorepartida::d4b36c6b-a085-4c45-9989-a5941b25265e, long, FFFFFFFFFFFFFFE2
 scorepartida::d9a0a9a4-cfa5-4d5e-95a9-3711290ecb83, long, FFFFFFFFFFFFFFE2
-scorepartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFFFEE8
+scorepartida::d09f8eb8-ae7d-3caa-bb58-e29486b30db7, long, FFFFFFFFFFFFFF42
 scorepartida::d069f1d6-5d59-4b3a-bd44-44473d0cc4f1, long, FFFFFFFFFFFFFFE2
 scorepartida::d96e1400-df2a-4716-913c-c0a2b503c033, long, FFFFFFFFFFFFFFE2
 scorepartida::d391c59a-0664-432c-a871-6d8e6d1d28fc, long, FFFFFFFFFFFFFFE2
