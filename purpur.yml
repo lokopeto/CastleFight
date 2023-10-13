@@ -10,11 +10,14 @@
 
 verbose: false
 settings:
+  player-deaths-always-show-item: false
   clamp-attributes: true
   limit-armor: true
   fix-network-serialized-items-in-creative: false
   fix-projectile-looting-transfer: false
   messages:
+    afk-broadcast-use-display-name: false
+    sleep-not-possible: default
     cannot-ride-mob: <red>Você não pode montar nessa entidade
     afk-broadcast-away: <yellow><italic>%s está AFK
     afk-broadcast-back: <yellow><italic>%s não está AFK
@@ -186,13 +189,14 @@ settings:
     allow-looting-on-shears: false
     allow-transparent-blocks-in-enchantment-box: false
     anvil:
+      replace-incompatible-enchants: false
       allow-unsafe-enchants: false
       allow-inapplicable-enchants: true
       allow-incompatible-enchants: true
       allow-higher-enchants-levels: true
     allow-unsafe-enchant-command: false
     clamp-levels: true
-config-version: 31
+config-version: 33
 world-settings:
   default:
     settings:
@@ -207,6 +211,7 @@ world-settings:
           max_health: 14.0
         breeding-delay-ticks: 6000
       camel:
+        ridable-in-water: false
         attributes:
           max_health:
             min: 32.0
@@ -300,6 +305,13 @@ world-settings:
         controllable: true
         ridable-max-y: 320.0
         attributes:
+          follow_range: 16.0
+          knockback_resistance: 0.0
+          movement_speed: 0.6
+          flying_speed: 0.6
+          armor: 0.0
+          armor_toughness: 0.0
+          attack_knockback: 0.0
           max_health: 6.0
         takes-damage-from-water: false
         always-drop-exp: false
@@ -638,6 +650,7 @@ world-settings:
         can-breed: false
         always-drop-exp: false
       ocelot:
+        spawn-below-sea-level: false
         ridable: false
         ridable-in-water: false
         controllable: true
@@ -739,6 +752,7 @@ world-settings:
         takes-damage-from-water: false
         always-drop-exp: false
       piglin:
+        ignores-armor-with-gold-trim: false
         head-visibility-percent: 0.5
         ridable: false
         ridable-in-water: false
@@ -1206,6 +1220,7 @@ world-settings:
         infinite-source: true
         infinite-required-sources: 2
       sponge:
+        absorbs-water-from-mud: false
         absorption:
           area: 64
           radius: 6
@@ -1304,6 +1319,15 @@ world-settings:
           minecraft:crimson_hyphae:
             into: minecraft:stripped_crimson_hyphae
             drops: {}
+          minecraft:cherry_log:
+            drops: {}
+            into: minecraft:stripped_cherry_log
+          minecraft:cherry_wood:
+            drops: {}
+            into: minecraft:stripped_cherry_wood
+          minecraft:bamboo_block:
+            drops: {}
+            into: minecraft:stripped_bamboo_block
         waxables:
           minecraft:waxed_weathered_cut_copper:
             into: minecraft:weathered_cut_copper
@@ -1415,6 +1439,26 @@ world-settings:
             into: minecraft:dirt
         replant-crops: true
         replant-nether-warts: true
+      shovel:
+        flattenables:
+          minecraft:coarse_dirt:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:dirt:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:grass_block:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:mycelium:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:podzol:
+            drops: {}
+            into: minecraft:dirt_path
+          minecraft:rooted_dirt:
+            drops: {}
+            into: minecraft:dirt_path
     ridable-settings:
       use-dismounts-underwater-tag: true
       babies-are-ridable: true
@@ -1423,6 +1467,7 @@ world-settings:
     hunger:
       starvation-damage: 1.0
     gameplay-mechanics:
+      mending-multiplier: 1.0
       clamp-explosion-radius: true
       entity-lifespan: 0
       entity-left-handed-chance: 0.05000000074505806
@@ -1456,12 +1501,15 @@ world-settings:
         hunger-exhaustion-amount: 0.004999999888241291
         saturation-regen-amount: 1.0
       item:
+        end-crystal:
+          place-anywhere: false
         immune:
           cactus: []
           explosion: []
           fire: []
           lightning: []
         shears:
+          defuse-tnt-chance: 0.0
           ignore-in-water: false
           ignore-in-lava: false
           damage-if-sprinting: false
@@ -1483,6 +1531,8 @@ world-settings:
             candles: false
             campfires: false
       player:
+        portal-wait-time: 80
+        creative-portal-wait-time: 1
         idle-timeout:
           kick-if-idle: false
           tick-nearby-entities: true
@@ -1528,13 +1578,6 @@ world-settings:
         ignore-creative-players: false
       projectile-damage:
         snowball: -1
-      shovel-turns-block-to-grass-path:
-      - minecraft:coarse_dirt
-      - minecraft:dirt
-      - minecraft:grass_block
-      - minecraft:mycelium
-      - minecraft:podzol
-      - minecraft:rooted_dirt
       silk-touch:
         enabled: false
         spawner-name: <reset><white>Spawner

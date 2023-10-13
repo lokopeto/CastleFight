@@ -14,6 +14,7 @@ projectile:
 misc:
   disable-method-profiler: true
   disable-out-of-order-chat: false
+  suppress-null-id-disconnections: false
 sentry-dsn: ''
 enable-suffocation-optimization: true
 inactive-goal-selector-throttle: false
@@ -32,3 +33,4 @@ dab:
 entity_timeouts:
   SNOWBALL: -1
   LLAMA_SPIT: -1
+allow-end-crystal-respawn: true

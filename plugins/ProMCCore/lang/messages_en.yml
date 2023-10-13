@@ -274,6 +274,11 @@ EntityType:
   PLAYER: Player
   UNKNOWN: Unknown
   CAMEL: Camel
+  BLOCK_DISPLAY: Block Display
+  INTERACTION: Interaction
+  ITEM_DISPLAY: Item Display
+  SNIFFER: Sniffer
+  TEXT_DISPLAY: Text Display
 Material:
   AIR: Air
   STONE: Stone
@@ -2065,6 +2070,81 @@ Material:
   WARPED_WALL_HANGING_SIGN: Warped Wall Hanging Sign
   BAMBOO_WALL_HANGING_SIGN: Bamboo Wall Hanging Sign
   PIGLIN_WALL_HEAD: Piglin Wall Head
+  CHERRY_PLANKS: Cherry Planks
+  CHERRY_SAPLING: Cherry Sapling
+  SUSPICIOUS_SAND: Suspicious Sand
+  SUSPICIOUS_GRAVEL: Suspicious Gravel
+  CHERRY_LOG: Cherry Log
+  STRIPPED_CHERRY_LOG: Stripped Cherry Log
+  STRIPPED_CHERRY_WOOD: Stripped Cherry Wood
+  CHERRY_WOOD: Cherry Wood
+  CHERRY_LEAVES: Cherry Leaves
+  TORCHFLOWER: Torchflower
+  PITCHER_PLANT: Pitcher Plant
+  PINK_PETALS: Pink Petals
+  CHERRY_SLAB: Cherry Slab
+  DECORATED_POT: Decorated Pot
+  CHERRY_FENCE: Cherry Fence
+  CHERRY_STAIRS: Cherry Stairs
+  SNIFFER_EGG: Sniffer Egg
+  CALIBRATED_SCULK_SENSOR: Calibrated Sculk Sensor
+  CHERRY_BUTTON: Cherry Button
+  CHERRY_PRESSURE_PLATE: Cherry Pressure Plate
+  CHERRY_DOOR: Cherry Door
+  CHERRY_TRAPDOOR: Cherry Trapdoor
+  CHERRY_FENCE_GATE: Cherry Fence Gate
+  CHERRY_BOAT: Cherry Boat
+  CHERRY_CHEST_BOAT: Cherry Chest Boat
+  CHERRY_SIGN: Cherry Sign
+  CHERRY_HANGING_SIGN: Cherry Hanging Sign
+  SNIFFER_SPAWN_EGG: Sniffer Spawn Egg
+  TORCHFLOWER_SEEDS: Torchflower Seeds
+  PITCHER_POD: Pitcher Pod
+  MUSIC_DISC_RELIC: Music Disc Relic
+  BRUSH: Brush
+  NETHERITE_UPGRADE_SMITHING_TEMPLATE: Netherite Upgrade Smithing Template
+  SENTRY_ARMOR_TRIM_SMITHING_TEMPLATE: Sentry Armor Trim Smithing Template
+  DUNE_ARMOR_TRIM_SMITHING_TEMPLATE: Dune Armor Trim Smithing Template
+  COAST_ARMOR_TRIM_SMITHING_TEMPLATE: Coast Armor Trim Smithing Template
+  WILD_ARMOR_TRIM_SMITHING_TEMPLATE: Wild Armor Trim Smithing Template
+  WARD_ARMOR_TRIM_SMITHING_TEMPLATE: Ward Armor Trim Smithing Template
+  EYE_ARMOR_TRIM_SMITHING_TEMPLATE: Eye Armor Trim Smithing Template
+  VEX_ARMOR_TRIM_SMITHING_TEMPLATE: Vex Armor Trim Smithing Template
+  TIDE_ARMOR_TRIM_SMITHING_TEMPLATE: Tide Armor Trim Smithing Template
+  SNOUT_ARMOR_TRIM_SMITHING_TEMPLATE: Snout Armor Trim Smithing Template
+  RIB_ARMOR_TRIM_SMITHING_TEMPLATE: Rib Armor Trim Smithing Template
+  SPIRE_ARMOR_TRIM_SMITHING_TEMPLATE: Spire Armor Trim Smithing Template
+  WAYFINDER_ARMOR_TRIM_SMITHING_TEMPLATE: Wayfinder Armor Trim Smithing Template
+  SHAPER_ARMOR_TRIM_SMITHING_TEMPLATE: Shaper Armor Trim Smithing Template
+  SILENCE_ARMOR_TRIM_SMITHING_TEMPLATE: Silence Armor Trim Smithing Template
+  RAISER_ARMOR_TRIM_SMITHING_TEMPLATE: Raiser Armor Trim Smithing Template
+  HOST_ARMOR_TRIM_SMITHING_TEMPLATE: Host Armor Trim Smithing Template
+  ANGLER_POTTERY_SHERD: Angler Pottery Sherd
+  ARCHER_POTTERY_SHERD: Archer Pottery Sherd
+  ARMS_UP_POTTERY_SHERD: Arms Up Pottery Sherd
+  BLADE_POTTERY_SHERD: Blade Pottery Sherd
+  BREWER_POTTERY_SHERD: Brewer Pottery Sherd
+  BURN_POTTERY_SHERD: Burn Pottery Sherd
+  DANGER_POTTERY_SHERD: Danger Pottery Sherd
+  EXPLORER_POTTERY_SHERD: Explorer Pottery Sherd
+  FRIEND_POTTERY_SHERD: Friend Pottery Sherd
+  HEART_POTTERY_SHERD: Heart Pottery Sherd
+  HEARTBREAK_POTTERY_SHERD: Heartbreak Pottery Sherd
+  HOWL_POTTERY_SHERD: Howl Pottery Sherd
+  MINER_POTTERY_SHERD: Miner Pottery Sherd
+  MOURNER_POTTERY_SHERD: Mourner Pottery Sherd
+  PLENTY_POTTERY_SHERD: Plenty Pottery Sherd
+  PRIZE_POTTERY_SHERD: Prize Pottery Sherd
+  SHEAF_POTTERY_SHERD: Sheaf Pottery Sherd
+  SHELTER_POTTERY_SHERD: Shelter Pottery Sherd
+  SKULL_POTTERY_SHERD: Skull Pottery Sherd
+  SNORT_POTTERY_SHERD: Snort Pottery Sherd
+  CHERRY_WALL_SIGN: Cherry Wall Sign
+  CHERRY_WALL_HANGING_SIGN: Cherry Wall Hanging Sign
+  POTTED_TORCHFLOWER: Potted Torchflower
+  POTTED_CHERRY_SAPLING: Potted Cherry Sapling
+  TORCHFLOWER_CROP: Torchflower Crop
+  PITCHER_CROP: Pitcher Crop
 PotionEffectType:
   SPEED: Speed
   SLOW: Slow

@@ -59,6 +59,7 @@ commands:
   - tellraw
 world-settings:
   default:
+    seed-trailruins: 83469867
     below-zero-generation-in-existing-chunks: true
     zombie-aggressive-towards-villager: true
     enable-zombie-pigmen-portal-spawns: true
@@ -76,6 +77,8 @@ world-settings:
     arrow-despawn-rate: 1200
     trident-despawn-rate: 1200
     growth:
+      torchflower-modifier: 100
+      pitcherplant-modifier: 100
       cactus-modifier: 100
       cane-modifier: 100
       melon-modifier: 100
@@ -128,6 +131,7 @@ world-settings:
       tick-inactive-villagers: true
       ignore-spectators: false
     entity-tracking-range:
+      display: 128
       players: 48
       animals: 48
       monsters: 48

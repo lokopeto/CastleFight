@@ -113,6 +113,8 @@ random:
     # If false: checks from NPC eye to target eye. If true: checks from NPC eye to multiple points on target body.
     # 'true' is smarter at checking, at the cost of performance.
     enhance los traces: true
+    # If true, armor stands can be targeted. Unexpected behavior may result.
+    allow armor stand targets: false
 # How fast to recalculate, in ticks.
 update rate: 10
 #----------- Important! -----------
@@ -125,4 +127,4 @@ update rate: 10
 # The below value is how many times automatic updates have been applied
 # since you last cleaned this file.
 # ----------- End Important! -----------
-times_changed: 2
+times_changed: 3

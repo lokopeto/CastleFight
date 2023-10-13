@@ -49,6 +49,7 @@ npc:
     maximum-visited-blocks: 768
     # The default allowed maximum fall distance when pathfinding, set to -1 to use the Minecraft value
     allowed-fall-distance: -1
+    default-stuck-action: none
   default:
     # The default bossbar range, in blocks
     bossbar-view-range: 71
@@ -92,6 +93,7 @@ npc:
     spawn-nodamage-duration: 1s
     # Default duration in the same location before the NPC considers itself stuck and failed pathfinding
     stationary-duration: -1
+    reset-yaw-on-spawn: true
   chat:
     options:
       # Whether nearby players also hear text, even if targeted at a specific player
@@ -128,6 +130,7 @@ npc:
     default-line-height: 0.4
     # How often to update hologram names (including placeholders)
     update-rate: 1s
+    use-display-entities: false
   limits:
     # Default maximum number of NPCs owned by a single player (give the citizens ignore-limits permission to skip this check)
     default-limit: 10
@@ -170,6 +173,7 @@ npc:
     player-join-update-delay: 3s
     # How often to update placeholders
     placeholder-update-frequency: 5m
+    try-fetch-default-skin: true
   chunks:
     # Whether to keep NPC chunks loaded
     always-keep-loaded: false
@@ -207,6 +211,8 @@ npc:
   # Use packet NPCs for name holograms (experimental)
   use-packet-holograms: false
   delay-player-teleport: -1
+  shops:
+    global-view-permission: ''
 general:
   authlib:
     # Search for gameprofiles using this URL
