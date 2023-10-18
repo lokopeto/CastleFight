@@ -123,6 +123,7 @@ npc:
     max-ground-speed: 0.5
     # Whether to change vehicle direction with movement instead of strafe controls
     use-boat-controls: true
+    max-flying-speed: 0.75
   defaults:
     block-breaker-radius: -1
   hologram:

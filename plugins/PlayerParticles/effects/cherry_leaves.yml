@@ -1,0 +1,11 @@
+# The name the effect will display as
+# Default: cherry_leaves
+effect-name: cherry_leaves
+
+# If the effect is enabled or not
+# Default: true
+enabled: true
+
+# Default: [CHERRY_LEAVES]
+gui-icon-material:
+  - CHERRY_LEAVES

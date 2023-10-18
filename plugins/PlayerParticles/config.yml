@@ -196,6 +196,9 @@ gui-border-colors:
   # Default: ORANGE
   manage-particles: ORANGE
 
+  # Default: GREEN
+  load-preset-groups: GREEN
+
 # Settings for WorldGuard
 # If WorldGuard is not installed, these settings will do nothing
 worldguard-settings:

@@ -1,7 +1,7 @@
 # Default English language file
 
 # Which version of Skript this language file was written for
-version: 2.7.0
+version: 2.7.1
 
 # What null (nothing) should show up as in a string/text
 none: <none>
@@ -45,7 +45,7 @@ skript command:
 			changes: Lists all changes since the current version
 			download: Download the newest version
 		info: Prints a message with links to Skript's aliases and documentation
-		gen-docs: Generates documentation using doc-templates in plugin folder
+		gen-docs: Generates documentation using docs/templates in plugin folder
 		test: Used for running internal Skript tests
 		
 	invalid script: Can't find the script <grey>'<gold>%s<grey>'<red> in the scripts folder!
