@@ -8,7 +8,7 @@ on leave:
     set {playerbk::%player's uuid%::equip::4} to helm of player
     set {playerbk::%player's uuid%::equip::5} to offhand item of player    
     remove {playerbk::%player's uuid%::equip::*} from {playerbk::%player's uuid%::inventory::*}
-    set {playerbk::%player's uuid%::xp} to xp of player
+    set {playerbk::%player's uuid%::xp} to total experience of player
     set {playerbk::%player's uuid%::health} to health of player
     set {playerbk::%player's uuid%::maxhealth} to maximum health of player
     if {playerbk::%player's uuid%::health} <= 0:
@@ -20,7 +20,7 @@ on join:
     {jogo::%{playerbk::%player's uuid%::world}%} is 1
     teleport player to location(-46.5, 231.00, -136.5, {playerbk::%player's uuid%::world})
     set inventory of player to {playerbk::%player's uuid%::inventory::*}
-    set xp of player to {playerbk::%player's uuid%::xp}
+    set total experience of player to {playerbk::%player's uuid%::xp}
     set health of player to {playerbk::%player's uuid%::health}
     set boot of player to {playerbk::%player's uuid%::equip::1}
     set leg of player to {playerbk::%player's uuid%::equip::2}

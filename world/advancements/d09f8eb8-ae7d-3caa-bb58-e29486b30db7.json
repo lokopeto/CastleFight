@@ -1466,9 +1466,21 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/purple_bed": {
+  "minecraft:recipes/decorations/lime_carpet": {
     "criteria": {
-      "has_purple_wool": "2023-10-18 00:34:38 -0300"
+      "has_lime_wool": "2023-10-18 00:29:52 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/lime_banner": {
+    "criteria": {
+      "has_lime_wool": "2023-10-18 00:29:52 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/lime_bed": {
+    "criteria": {
+      "has_lime_wool": "2023-10-18 00:29:52 -0300"
     },
     "done": true
   },
@@ -1478,27 +1490,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/lime_carpet": {
-    "criteria": {
-      "has_lime_wool": "2023-10-18 00:29:52 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/pink_bed": {
-    "criteria": {
-      "has_pink_wool": "2023-10-18 00:34:37 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/blue_carpet": {
     "criteria": {
       "has_blue_wool": "2023-10-18 00:30:06 -0300"
-    },
-    "done": true
-  },
-  "minecraft:recipes/decorations/purple_carpet": {
-    "criteria": {
-      "has_purple_wool": "2023-10-18 00:34:38 -0300"
     },
     "done": true
   },
@@ -1508,9 +1502,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/lime_banner": {
+  "minecraft:recipes/decorations/pink_bed": {
     "criteria": {
-      "has_lime_wool": "2023-10-18 00:29:52 -0300"
+      "has_pink_wool": "2023-10-18 00:34:37 -0300"
     },
     "done": true
   },
@@ -1526,15 +1520,39 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/lime_bed": {
+  "minecraft:recipes/decorations/purple_bed": {
     "criteria": {
-      "has_lime_wool": "2023-10-18 00:29:52 -0300"
+      "has_purple_wool": "2023-10-18 00:34:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/purple_carpet": {
+    "criteria": {
+      "has_purple_wool": "2023-10-18 00:34:38 -0300"
     },
     "done": true
   },
   "minecraft:recipes/decorations/purple_banner": {
     "criteria": {
       "has_purple_wool": "2023-10-18 00:34:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/orange_dye_from_torchflower": {
+    "criteria": {
+      "has_torchflower": "2023-10-18 14:13:51 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/cyan_dye_from_pitcher_plant": {
+    "criteria": {
+      "has_pitcher_plant": "2023-10-18 14:14:09 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/obtain_sniffer_egg": {
+    "criteria": {
+      "obtain_sniffer_egg": "2023-10-18 14:14:21 -0300"
     },
     "done": true
   },

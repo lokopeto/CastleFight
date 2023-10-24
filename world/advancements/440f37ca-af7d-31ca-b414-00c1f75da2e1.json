@@ -6,6 +6,7 @@
       "minecraft:beach": "2023-05-14 16:54:18 -0300",
       "minecraft:river": "2023-10-13 01:43:46 -0300",
       "minecraft:cold_ocean": "2023-05-14 16:27:38 -0300",
+      "minecraft:lush_caves": "2023-10-18 14:15:43 -0300",
       "minecraft:old_growth_spruce_taiga": "2023-05-14 16:27:43 -0300"
     },
     "done": false
@@ -1348,12 +1349,6 @@
     },
     "done": true
   },
-  "minecraft:recipes/redstone/spruce_button": {
-    "criteria": {
-      "has_planks": "2023-10-17 15:43:14 -0300"
-    },
-    "done": true
-  },
   "minecraft:recipes/decorations/red_carpet": {
     "criteria": {
       "has_red_wool": "2023-10-17 15:29:33 -0300"
@@ -1363,6 +1358,18 @@
   "minecraft:recipes/decorations/red_banner": {
     "criteria": {
       "has_red_wool": "2023-10-17 15:29:33 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/red_bed": {
+    "criteria": {
+      "has_red_wool": "2023-10-17 15:29:33 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/spruce_button": {
+    "criteria": {
+      "has_planks": "2023-10-17 15:43:14 -0300"
     },
     "done": true
   },
@@ -1414,9 +1421,21 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/red_bed": {
+  "minecraft:recipes/misc/orange_dye_from_torchflower": {
     "criteria": {
-      "has_red_wool": "2023-10-17 15:29:33 -0300"
+      "has_torchflower": "2023-10-18 14:13:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/obtain_sniffer_egg": {
+    "criteria": {
+      "obtain_sniffer_egg": "2023-10-18 14:14:05 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/cyan_dye_from_pitcher_plant": {
+    "criteria": {
+      "has_pitcher_plant": "2023-10-18 14:14:06 -0300"
     },
     "done": true
   },

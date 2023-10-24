@@ -1,4 +1,15 @@
-casasncpsfawez:28
+npcskingw@castlefight1:li@n@1023|n@1024|
+npcskingw@w@castlefight1:n@64
+\exnpcsinteractlocation[<context:map@[__value=map@[args=map@[__value=map@[get&lb2&rb>&rb=map@[__value=map@[world=map@[__value=entry[npc].created_npc]]];get&lb1&rb>&rb=map@[__value=map@[]]]]]]
+npcskingw@castlefight3:li@n@1061|n@1062|
+npcskingw@castlefight2:li@n@1042|n@1043|
+casasncpsfawez:26
+\exnpcskinglocation[<context:map@[__value=map@[args=map@[__value=map@[get&lb2&rb>&rb=map@[__value=map@[world=map@[__value=entry[npc].created_npc]]];get&lb1&rb>&rb=map@[__value=map@[]]]]]]
 casasncpsfawey:149
 casasncpsfawex:-283
-casasnpcslocation:l@-283,149,28,castlefight3
+casasnpcslocation:l@-283,149,26,castlefight1
+npcsinteract1:li@
+npcsinteractw@castlefight3:li@n@1063|n@1064|n@1065|n@1066|n@1067|n@1068|n@1069|n@1070|n@1071|n@1072|n@1073|n@1074|
+npcsinteractw@w@castlefight1:n@76
+npcsinteractw@castlefight1:li@n@1025|n@1026|n@1027|n@1028|n@1029|n@1030|n@1031|n@1032|n@1033|n@1034|n@1035|n@1036|
+npcsinteractw@castlefight2:li@n@1044|n@1045|n@1046|n@1047|n@1048|n@1049|n@1050|n@1051|n@1052|n@1053|n@1054|n@1055|
