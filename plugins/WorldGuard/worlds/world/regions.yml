@@ -25,8 +25,8 @@ regions:
         min: {x: -38, y: 45, z: -68}
         max: {x: 53, y: 131, z: 53}
         members: {}
-        flags: {natural-health-regen: deny, item-drop: deny, fall-damage: deny, invincible: allow,
-            game-mode: adventure, item-frame-rotation: deny, item-pickup: deny, leaf-decay: deny,
+        flags: {natural-health-regen: deny, item-drop: deny, invincible: allow, game-mode: adventure,
+            fall-damage: deny, item-pickup: deny, item-frame-rotation: deny, leaf-decay: deny,
             entity-painting-destroy: deny, entity-item-frame-destroy: deny, fire-spread: deny,
             natural-hunger-drain: deny}
         owners:
@@ -54,8 +54,11 @@ regions:
         priority: 0
     __global__:
         members: {}
-        flags: {vine-growth: deny, mycelium-spread: deny, item-frame-rotation: deny,
-            leaf-decay: deny, entity-painting-destroy: deny, grass-growth: allow}
+        flags: {natural-health-regen: allow, lava-fire: deny, mycelium-spread: deny,
+            leaf-decay: deny, use-dripleaf: deny, pvp: deny, fire-spread: deny, natural-hunger-drain: deny,
+            sleep: deny, coral-fade: deny, vine-growth: deny, copper-fade: deny, fall-damage: deny,
+            item-frame-rotation: deny, entity-painting-destroy: deny, entity-item-frame-destroy: deny,
+            grass-growth: allow}
         owners: {}
         type: global
         priority: 0
