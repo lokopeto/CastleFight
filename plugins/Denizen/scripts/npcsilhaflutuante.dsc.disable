@@ -1,0 +1,27 @@
+resetnpcshub:
+    type: command
+    name: resetnpcshub
+    description: Does something
+    usage: /resetnpcshub
+    permission: dscript.resetnpcshub
+    script:
+    - remove <server.flag[npcsilha]>
+    - flag server npcsilha:!
+
+
+
+
+
+    - create player Guarda <location[-58.5,65.00,-0.5,world]> save:npc
+    - flag server npcsilha:->:<entry[npc].created_npc>
+
+Dialogo:
+    type: world
+    events:
+        on delta time secondly:
+            - foreach <world[world].players>:
+                - if <[value].target>:
+                    - glow <[value].target> for:<[value]>
+                    - flag <[value]> dialogoglow:<[value].target>
+                - else:
+                    - glow <[value].flag[dialogoglow]> reset for:<[value]>

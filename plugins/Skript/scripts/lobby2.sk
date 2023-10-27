@@ -2,6 +2,7 @@ on skript start:
     make console execute command "jogo 0 castlefight1 castlefight2"
 
 on right click on oak wall sign:
+    cancel event
 #    set line 1 of event-block to "&a=[🗡CF1🛡]="
 #    set line 2 of event-block to "&bClique para"
 #    set line 3 of event-block to "&bEntrar!"
@@ -12,6 +13,7 @@ on right click on oak wall sign:
     line 2 of event-block contains "Clique para"
     line 3 of event-block contains "entrar!"
     teleport event-entity to location of event-block
+    set {lobbylocation::%uuid of player%} to location of event-block
     loop all entities in world of player:
         loop-entity is a citizen
         entity have scoreboard tag "player.%name of player%"
@@ -43,7 +45,29 @@ on right click on oak wall sign:
         teleport player to location(-77.5, 229, -136.5, world "castlefight%{_world}%", -90, 0)
         add "cfbarro" to the scoreboard tags of player
 
-    add uuid of player to {lobbyplayers::%world of player%::*}
+    set {lobbyworld::%uuid of player%} to world of player
+
+    add player to {lobbyplayers::%world of player%::*}
+
+    if amount of players in world of player is 1:
+        set {lobbyhost::%world of player%} to player
+        set slot 4 of player to 1 diamond sword named "&bMenu"
+        message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
+
+
+    set slot 8 of player to 1 clock named "&cSair"
+
+    message "&e&l%player% &7entrou na partida no &a&lRei %{_team}%" to all players in world of player
+
+every 1 second:
+    loop all players in "castlefight1", "castlefight2" or "castlefight3":
+
+        if {lobbyhost::%world of loop-player%} is not set:
+            set {lobbyhost::%world of loop-player%} to a random element of {lobbyplayers::%world of loop-player%::*}
+            set slot 4 of loop-player to 1 diamond sword named "&bMenu"
+            message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to loop-player
+        if {lobbyhost::%world of loop-player%} is loop-player:
+            send action bar "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to loop-player
 
 on leave:
 #    world of player is "castlefight1", "castlefight2" or "castlefight3"
@@ -59,6 +83,9 @@ on leave:
     set line 4 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::3}
     remove "cfbarro" and "cfcarvalho" from scoreboard tags of player
     remove uuid of player from {lobbyplayers::%world of player%::*}
+    delete {lobbyhost::%{lobbyworld::%uuid of player%}%}
+
+    make console execute command "team leave %player%"
 
 on player world change:
     world of player is "world"
@@ -74,3 +101,10 @@ on player world change:
     set line 4 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::3}
     remove "cfbarro" and "cfcarvalho" from scoreboard tags of player
     remove uuid of player from {lobbyplayers::%world of player%::*}
+    delete {lobbyhost::%{lobbyworld::%uuid of player%}%}
+
+command /sair:
+    trigger:
+        world of player is "castlefight1", "castlefight2" or "castlefight3"
+        teleport player to {lobbylocation::%uuid of player%}
+
