@@ -36,8 +36,15 @@ npccreatorking:
 
     - execute as_server "sentinel knockback --id <entry[npc].created_npc.id>" silent
     - execute as_server "sentinel health <context.args.get[3]> --id <entry[npc].created_npc.id>" silent
-    - execute as_server "sentinel addtarget sbteam:castelo2 --id <entry[npc].created_npc.id>" silent
-    - execute as_server "sentinel addignore sbteam:castelo1 --id <entry[npc].created_npc.id>" silent
+
+    - if <context.args.get[2]> = rei1:
+        - execute as_server "sentinel addtarget sbteam:castelo2<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
+        - execute as_server "sentinel addignore sbteam:castelo1<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
+
+    - if <context.args.get[2]> = rei2:
+        - execute as_server "sentinel addtarget sbteam:castelo1<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
+        - execute as_server "sentinel addignore sbteam:castelo2<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
+
     - execute as_server "sentinel chaserange --id <entry[npc].created_npc.id>" silent
     - execute as_server "sentinel damage 6 --id <entry[npc].created_npc.id>" silent
     - execute as_server "sentinel attackrate 0.5 --id <entry[npc].created_npc.id>" silent

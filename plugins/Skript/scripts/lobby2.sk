@@ -1,5 +1,17 @@
 on skript start:
-    make console execute command "jogo 0 castlefight1 castlefight2"
+    make console execute command "jogo 0 castlefight1 castlefight2 castlefight3"
+    loop all entities in world "world":
+        loop-entity is a citizen
+        scoreboard tags of entity contains "player"
+        set {_id} to citizen id of loop-entity
+        make console execute command "npc select %{_id}%"
+        make console execute command "npc remove"
+    loop all offline players:
+        set {placa::%uuid of loop-players%::1} to location of event-block
+        set line 1 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::2}
+        set line 2 of block at {placa::%uuid of player%::1} to "&bClique para"
+        set line 3 of block at {placa::%uuid of player%::1} to "&bEntrar!"
+        set line 4 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::3}
 
 on right click on oak wall sign:
     cancel event
@@ -13,7 +25,6 @@ on right click on oak wall sign:
     line 2 of event-block contains "Clique para"
     line 3 of event-block contains "entrar!"
     teleport event-entity to location of event-block
-    set {lobbylocation::%uuid of player%} to location of event-block
     loop all entities in world of player:
         loop-entity is a citizen
         entity have scoreboard tag "player.%name of player%"
@@ -47,10 +58,10 @@ on right click on oak wall sign:
 
     set {lobbyworld::%uuid of player%} to world of player
 
-    add player to {lobbyplayers::%world of player%::*}
+    add name of player to {lobbyplayers::%world of player%::*}
 
     if amount of players in world of player is 1:
-        set {lobbyhost::%world of player%} to player
+        set {lobbyhost::%world of player%} to name of player
         set slot 4 of player to 1 diamond sword named "&bMenu"
         message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
 
@@ -58,19 +69,26 @@ on right click on oak wall sign:
     set slot 8 of player to 1 clock named "&cSair"
 
     message "&e&l%player% &7entrou na partida no &a&lRei %{_team}%" to all players in world of player
+    message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida"
+
+    make console execute command "team add castelo1%world of player%"
+    make console execute command "team add castelo2%world of player%"
+
+
+
+
+
+
 
 every 1 second:
     loop all players in "castlefight1", "castlefight2" or "castlefight3":
-
-        if {lobbyhost::%world of loop-player%} is not set:
-            set {lobbyhost::%world of loop-player%} to a random element of {lobbyplayers::%world of loop-player%::*}
-            set slot 4 of loop-player to 1 diamond sword named "&bMenu"
-            message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to loop-player
-        if {lobbyhost::%world of loop-player%} is loop-player:
+        if {lobbyhost::%world of loop-player%} is name of loop-player:
             send action bar "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to loop-player
 
-on leave:
+
+on quit:
 #    world of player is "castlefight1", "castlefight2" or "castlefight3"
+
     loop all entities in world "world":
         loop-entity is a citizen
         entity have scoreboard tag "player.%name of player%"
@@ -82,29 +100,196 @@ on leave:
     set line 3 of block at {placa::%uuid of player%::1} to "&bEntrar!"
     set line 4 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::3}
     remove "cfbarro" and "cfcarvalho" from scoreboard tags of player
-    remove uuid of player from {lobbyplayers::%world of player%::*}
-    delete {lobbyhost::%{lobbyworld::%uuid of player%}%}
+    remove name of player from {lobbyplayers::%world of player%::*}
+
+    delete {placa::%uuid of player%::*} 
 
     make console execute command "team leave %player%"
 
-on player world change:
-    world of player is "world"
-    loop all entities in world "world":
-        loop-entity is a citizen
-        entity have scoreboard tag "player.%name of player%"
-        set {_id} to citizen id of loop-entity
-        make console execute command "npc select %{_id}%"
-        make console execute command "npc remove"
-    set line 1 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::2}
-    set line 2 of block at {placa::%uuid of player%::1} to "&bClique para"
-    set line 3 of block at {placa::%uuid of player%::1} to "&bEntrar!"
-    set line 4 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::3}
-    remove "cfbarro" and "cfcarvalho" from scoreboard tags of player
-    remove uuid of player from {lobbyplayers::%world of player%::*}
-    delete {lobbyhost::%{lobbyworld::%uuid of player%}%}
+    if {lobbyhost::%world of player%} is name of player:
+        delete {lobbyhost::%world of player%}
+
+    if event-world is not "world":
+        if {lobbyhost::%event-world%} is not set:
+            set {lobbyhost::%event-world%} to a random element of {lobbyplayers::%event-world%::*}
+            set slot 4 of player to 1 diamond sword named "&bMenu"
+            message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
+
+
+
+
+
+
+
+
+
+
+
+On Player World Change:
+    past event-world is "castlefight1", "castlefight2" or "castlefight3":
+        message "&7%player% saiu da partida" to all players in past event-world
+
+
+
+
+
 
 command /sair:
     trigger:
-        world of player is "castlefight1", "castlefight2" or "castlefight3"
-        teleport player to {lobbylocation::%uuid of player%}
+        wait 5 ticks
+        world of player is "castlefight1", "castlefight2" or "castlefight3":
+            remove name of player from {lobbyplayers::%world of player%::*}
+
+            if {lobbyhost::%world of player%} is name of player:
+                delete {lobbyhost::%world of player%}
+                message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida"
+            
+            if {lobbyhost::%world of player%} is not set:
+
+                set {lobbyhost::%world of player%} to {lobbyplayers::%world of player%::1}
+
+                set slot 4 of {lobbyhost::%world of player%} to 1 diamond sword named "&bMenu"
+                message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to {lobbyhost::%world of player%}
+                message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida" to {lobbyhost::%world of player%} 
+
+            if amount of players in world of player is 0:
+                delete {lobbyplayers::%world of player%::*}
+
+            teleport player to {placa::%uuid of player%::1}
+
+
+        world of player is "world":
+            loop all entities in world "world":
+                loop-entity is a citizen
+                entity have scoreboard tag "player.%name of player%"
+                set {_id} to citizen id of loop-entity
+                make console execute command "npc select %{_id}%"
+                make console execute command "npc remove"
+            set line 1 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::2}
+            set line 2 of block at {placa::%uuid of player%::1} to "&bClique para"
+            set line 3 of block at {placa::%uuid of player%::1} to "&bEntrar!"
+            set line 4 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::3}
+            remove "cfbarro" and "cfcarvalho" from scoreboard tags of player
+        
+        delete {placa::%uuid of player%::*} 
+
+
+
+# GUI
+
+
+
+
+on right click:
+    world of player is "castlefight1", "castlefight2" or "castlefight3"
+    tool of player is a diamond sword named "&bMenu"
+    create a gui with virtual chest inventory with 1 rows named "Modo":
+        make gui slot 3 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""Um modo mais ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""simples""},{""color"":""aqua"",""text"":"" e ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""mais rapido""},{""color"":""aqua"",""text"":""!""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Recomendado para jogadores""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""iniciantes.""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""gold"",""text"":""Rapido""}],""text"":""""}'}}"
+
+        make gui slot 5 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""O jeito ""},{""bold"":true,""color"":""green"",""text"":""padrão""},{""color"":""aqua"",""text"":"" de se jogar""},{""text"":""!""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""Normal""}],""text"":""""}'}}"
+
+    open the created gui for player
+
+on inventory click:
+    if name of event-inventory contains "Modo":
+        set {_nome} to name of clicked slot
+        set {_nome} to uncolored {_nome}
+
+        if {_nome} is "Rapido" or "Normal":
+            set {_reicarvalho} to a new anvil gui named "Nome do Rei Carvalho" with default text "ReiCarvalho"
+            open anvil gui {_reicarvalho} to player
+
+        if {_nome} is "Normal":
+            set {chance::%world of player%} to 25
+            set {quantmobs1::%world of player%} to 10
+            set {levelmobtime::%world of player%} to 0
+            set {reivida::%world of player%} to 2300
+        if {_nome} is "Rapido":
+            set {chance::%world of player%} to 90   
+            set {quantmobs::%world of player%} to 0     
+            set {levelmobtime::%world of player%} to 1
+            set {reivida::%world of player%} to 1300
+        
+        set {criarpartidamodo::%player%} to {_nome}
+
+on anvil gui click:
+    if title of event-virtual anvil is "Nome do Rei Carvalho":
+        if event-integer is 2:
+            set {castelo1nome::%world of player%} to event-text
+        else:
+            set {castelo1nome::%world of player%} to "ReiCarvalho"
+        set {_reibarro} to a new anvil gui named "Nome do Rei Barro" with default text "ReiBarro"
+        open anvil gui {_reibarro} to player
+    if title of event-virtual anvil is "Nome do Rei Barro":
+        if event-integer is 2:
+            set {castelo2nome::%world of player%} to event-text
+        else:
+            set {castelo2nome::%world of player%} to "ReiBarro"
+        create a gui with virtual chest inventory with 1 rows named "Tudo Pronto!!":
+            make gui slot 4 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Carvalho: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo1nome::%world of player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Barro: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo2nome::%world of player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Modo: ""},{""color"":""dark_green"",""text"":""%{criarpartidamodo::%player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Jogadores: %amount of players in world of player%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Server: %world of player%""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""CONFIRMAR""},{""color"":""green"",""text"":""""}],""text"":""""}'}}":
+                close player's inventory
+                if amount of players in world of player >= 2:
+                    message "&l&a%player% Iniciou a partida" to all players in world of player
+                
+                    make console execute command "npcs %world of player%"
+                    make console execute command "jogo 1 %world of player%"
+                    loop all players in world of player:
+                        teleport loop-player to location(x-coordinate of {rei%{_team}%loc}, y-coordinate of {rei%{_team}%loc}, z-coordinate of {rei%{_team}%loc, world of player})   
+                    make console execute command "execute in minecraft:%world of player% data merge block 134 150 27 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%world of player%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+                    make console execute command "execute in minecraft:%world of player% data merge block -218 150 18 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%world of player%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+                    make console execute command "team modify castelo1%world of player% displayName {""text"":""%{castelo1nome::%world of player%}%""}"
+                    make console execute command "team modify castelo1%world of player% displayName {""text"":""%{castelo2nome::%world of player%}%""}"
+
+                    set slot 4 of player to air 
+
+                    delete {lobbyhost::%world of player%}
+
+        open the created gui for player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+command /partidateminar [<number>] [<world>] [<world>]:
+    executable by: console
+    trigger:
+        arg-1 is 1:
+            set gamemode of all players in world arg-2 to spectator
+            teleport all players in world arg-2 to location(116.5, 149.00, 23.0, arg-2, -90, 23) 
+        arg-1 is 2:
+            set gamemode of all players in world arg-2 to spectator
+            teleport all players in world arg-2 to location(-199.5, 154.00, 23.0, arg-2, 90, 23)
+        
+        arg-1 is 1 or 2:
+            wait 10 seconds
+            make console execute command "sair"
+            make console execute command "jogo 0 %arg-2%"
+
+        arg-1 is 3:
+            make console execute command "jogo 0 %arg-2%"
+            set gamemode of all players to adventure
+            loop all entities in world arg-2:
+                loop-entity have scoreboard tag "lobby":
+                    set {_id} to citizen id of loop-entity
+                    make console execute command "npc select %{_id}%"
+                    make console execute command "npc remove"
+            
+
+
+
+
+
+
+
+
+
 

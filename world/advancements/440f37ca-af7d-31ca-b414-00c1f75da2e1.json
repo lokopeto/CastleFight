@@ -3,11 +3,14 @@
     "criteria": {
       "minecraft:old_growth_pine_taiga": "2023-05-14 17:27:59 -0300",
       "minecraft:taiga": "2023-05-14 17:21:56 -0300",
+      "minecraft:birch_forest": "2023-10-27 14:45:59 -0300",
       "minecraft:beach": "2023-05-14 16:54:18 -0300",
       "minecraft:river": "2023-10-13 01:43:46 -0300",
+      "minecraft:swamp": "2023-10-27 14:47:42 -0300",
       "minecraft:cold_ocean": "2023-05-14 16:27:38 -0300",
       "minecraft:forest": "2023-10-25 20:10:38 -0300",
       "minecraft:lush_caves": "2023-10-18 14:15:43 -0300",
+      "minecraft:ocean": "2023-10-27 14:42:43 -0300",
       "minecraft:old_growth_spruce_taiga": "2023-05-14 16:27:43 -0300"
     },
     "done": false
@@ -1599,6 +1602,30 @@
   "minecraft:recipes/transportation/dark_oak_boat": {
     "criteria": {
       "in_water": "2023-10-26 15:54:56 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/light_blue_dye_from_blue_orchid": {
+    "criteria": {
+      "has_blue_orchid": "2023-10-27 17:35:46 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/bowl": {
+    "criteria": {
+      "has_red_mushroom": "2023-10-27 21:39:43 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/obtain_netherite_hoe": {
+    "criteria": {
+      "netherite_hoe": "2023-10-27 21:38:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/mushroom_stew": {
+    "criteria": {
+      "has_red_mushroom": "2023-10-27 21:39:43 -0300"
     },
     "done": true
   },

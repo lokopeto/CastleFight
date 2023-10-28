@@ -75,9 +75,9 @@ on click on sign:
                     {_xp} >= 30:
                         set {_xp} to 30 
                     reduce player's level by {_xp}
-                    add {_xp} to {lvnpcsquant%{_team}%}
-                    {lvnpcsquant%{_team}%} >= {_placalevelmax}:
-                        set {lvnpcsquant%{_team}%} to 0
+                    add {_xp} to {lvnpcsquant%{_team}%::%world of player%}
+                    {lvnpcsquant%{_team}%::%world of player%} >= {_placalevelmax}:
+                        set {lvnpcsquant%{_team}%::%world of player%} to 0
                         add 1 to {lvnpcs%{_team}%::%world of player%}
                         {lvnpcs%{_team}%::%world of player%} is 5:
                             make console execute command "casasncpsfawe %{castelo%{_team}%nome}% 3 0"
@@ -164,10 +164,9 @@ command /fogo:
             make console execute command "fastasyncworldedit:/replace fire air"
             wait 5 ticks
 
-command /jogo <number> [<world>] [<world>]:
+command /jogo <number> [<world>] [<world>] [<world>]:
     executable by: console
     trigger:
-        set {jogo::%arg-2%} to arg-1
         if arg-1 is 1: 
             wait 10 ticks
 #            make console execute command "execute in setblock -47 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""[Espectador]"",""clickEvent"":{""action"":""run_command"",""value"":""gamemode spectator @s""},""color"":""aqua""}',Text2:'{""text"":""Clique para"",""clickEvent"":{""action"":""run_command"",""value"":""tp @s -40.50 200.00 23.00""},""bold"":true,""color"":""blue""}',Text3:'{""text"":""Espectar"",""clickEvent"":{""action"":""run_command"",""value"":""team join espectador @s""},""bold"":true,""color"":""blue""}',Text4:'{""text"":""==========="",""color"":""aqua""}'}"
@@ -187,10 +186,10 @@ command /jogo <number> [<world>] [<world>]:
             set max health of all players in world arg-2 to 10.0
             set {castelo1nome::%arg-2%} to "ReiCarvalho"
             set {castelo2nome::%arg-2%} to "ReiBarro"
-            set {lvnpcsquant1} to 0
-            set {lvnpcs1} to 1
-            set {lvnpcsquant2} to 0
-            set {lvnpcs2} to 1
+            set {lvnpcsquant1::%arg-2%} to 0
+            set {lvnpcs1::%arg-2%} to 1
+            set {lvnpcsquant2::%arg-2%} to 0
+            set {lvnpcs2::%arg-2%} to 1
             set {raio1::%arg-2%} to 1
             set {raio2::%arg-2%} to 1
             delete {Invocador2::%arg-2%::*}
@@ -200,7 +199,7 @@ command /jogo <number> [<world>] [<world>]:
             set {XPquant1::%arg-2%} to 0
             set {XPquant2::%arg-2%} to 0
             set {xpplayer::%arg-1%} to 40
-            delete {jogadoresdesistir::*}
+            delete {jogadoresdesistir::%arg-2%::*}
 #            delete {sacrificio::*}
             loop all players in world arg-2:
                 set health of loop-players to 20
@@ -245,21 +244,21 @@ command /jogo <number> [<world>] [<world>]:
             make console execute command "execute in minecraft:%arg-2% run setblock 134 152 19 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             make console execute command "execute in minecraft:%arg-2% run setblock 134 152 18 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             wait 50 tick
-            make console execute command "casasncpsfawe 1 1 1 %arg-2%"
+            make console execute command "casasncpsfawe 1 1 1 w@%arg-2%"
             wait 50 tick
-            make console execute command "casasncpsfawe 1 2 1 %arg-2%"
+            make console execute command "casasncpsfawe 1 2 1 w@%arg-2%"
             wait 50 tick
-            make console execute command "casasncpsfawe 1 3 5 %arg-2%"
+            make console execute command "casasncpsfawe 1 3 5 w@%arg-2%"
             wait 50 tick
-            make console execute command "casasncpsfawe 1 4 5 %arg-2%"
+            make console execute command "casasncpsfawe 1 4 5 w@%arg-2%"
             wait 50 tick
-            make console execute command "casasncpsfawe 2 1 1 %arg-2%"
+            make console execute command "casasncpsfawe 2 1 1 w@%arg-2%"
             wait 50 tick
-            make console execute command "casasncpsfawe 2 2 1 %arg-2%"
+            make console execute command "casasncpsfawe 2 2 1 w@%arg-2%"
             wait 50 tick
-            make console execute command "casasncpsfawe 2 3 5 %arg-2%"
+            make console execute command "casasncpsfawe 2 3 5 w@%arg-2%"
             wait 50 tick
-            make console execute command "casasncpsfawe 2 4 5 %arg-2%"
+            make console execute command "casasncpsfawe 2 4 5 w@%arg-2%"
             set {XPquant1::%arg-2%} to 0
             set {XPquant2::%arg-2%} to 0
             wait 1 second

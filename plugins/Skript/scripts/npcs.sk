@@ -57,7 +57,7 @@ command /npcs <world>:
 
         wait 1 tick
         
-        make console execute command "npccreatorinteractive villager -151.5,152,36.5,%arg-1% npcs2 WEAPONSMITH Ferreiro (%{castelo2nome::%arg-1%}%)"
+        make console execute command "npccreatorinteractive villager -240.5,150.00,36.5,%arg-1% npcs2 WEAPONSMITH Ferreiro (%{castelo2nome::%arg-1%}%)"
 
         wait 1 tick
         
@@ -65,7 +65,7 @@ command /npcs <world>:
 
         wait 1 tick
         
-        make console execute command "npccreatorinteractive villager -151.5,152,9.55,%arg-1% npcs2 LEATHERWORKER Bordador (%{castelo2nome::%arg-1%}%)"
+        make console execute command "npccreatorinteractive villager -240.5,150.00,9.5,%arg-1% npcs2 LEATHERWORKER Bordador (%{castelo2nome::%arg-1%}%)"
 
         wait 1 tick
         
@@ -73,7 +73,7 @@ command /npcs <world>:
 
         wait 1 tick
         
-        make console execute command "npccreatorinteractive villager 168.0,152.00,8.5,%arg-1% npcs1 nitwit Arqueiro (%{castelo1nome::%arg-1%}%)"
+        make console execute command "npccreatorinteractive villager -251.0,150.00,37.5,%arg-1% npcs1 nitwit Arqueiro (%{castelo1nome::%arg-1%}%)"
 
         wait 1 tick
         

@@ -9,7 +9,6 @@ efeitozins:
                 - wait 1t
                 - execute as_server "ppo <player.name> reset"
                 - execute as_server "ppo <player.name> add soul point"
-                - execute as_server "ppo <player.name> add ash spin"
         on player changes gamemode:
             - if !<player.location.world.contains_text[menu]>:
                 - execute as_server "ppo <player.name> reset"
