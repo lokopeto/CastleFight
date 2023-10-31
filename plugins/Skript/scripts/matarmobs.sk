@@ -2,7 +2,7 @@ command /matarmobs [<number>] <world>:
     executable by: console
     trigger:
         arg-1 is 1:
-            set {_x} to 95
+            set {_x} to 132
             loop 68 times:
                 add -1 to {_x} 
                 set {_loc1} to location({_x}, 148, 20, arg-2)
@@ -10,11 +10,11 @@ command /matarmobs [<number>] <world>:
                 loop blocks between block at {_loc1} and block at {_loc2}:
                     chance of 20%:
                         strike lightning effect at loop-block
-                    make console execute command "execute in minecraft:%arg-2% positioned %loop-block's x-position% %loop-block's y-position% %loop-block's z-position% run kill @e[dy=50,tag=castelo2,type=!minecraft:player]"
-                    make console execute command "execute in minecraft:%arg-2% positioned %loop-block's x-position% %loop-block's y-position% %loop-block's z-position% run kill @a[dy=50,team=castelo2,type=minecraft:player]"
+                    make console execute command "execute in minecraft:%arg-2% positioned %loop-block's x-position% 148 %loop-block's z-position% run kill @e[dy=50,tag=castelo2,type=!minecraft:player]"
+                    make console execute command "execute in minecraft:%arg-2% positioned %loop-block's x-position% 148 %loop-block's z-position% run kill @a[dy=50,team=castelo2]"
                 wait 1 ticks
         arg-1 is 2:
-            set {_x} to -179
+            set {_x} to -216
             loop 68 times:
                 add 1 to {_x} 
                 set {_loc1} to location({_x}, 148, 20, arg-2)
@@ -22,6 +22,6 @@ command /matarmobs [<number>] <world>:
                 loop blocks between block at {_loc1} and block at {_loc2}:
                     chance of 20%:
                         strike lightning effect at loop-block
-                    make console execute command "execute in minecraft:%arg-2% positioned %loop-block's x-position% %loop-block's y-position% %loop-block's z-position% run kill @e[dy=50,tag=castelo1,type=!minecraft:player]"
-                    make console execute command "execute in minecraft:%arg-2% positioned %loop-block's x-position% %loop-block's y-position% %loop-block's z-position% run kill @a[dy=50,team=castelo1,type=minecraft:player]"
+                    make console execute command "execute in minecraft:%arg-2% positioned %loop-block's x-position% 148 %loop-block's z-position% run kill @e[dy=50,tag=castelo1,type=!minecraft:player]"
+                    make console execute command "execute in minecraft:%arg-2% positioned %loop-block's x-position% 148 %loop-block's z-position% run kill @a[dy=50,team=castelo1]"
                 wait 1 ticks

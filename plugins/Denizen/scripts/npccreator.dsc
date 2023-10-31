@@ -42,14 +42,16 @@ npccreatorking:
         - execute as_server "sentinel addignore sbteam:castelo1<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
 
     - if <context.args.get[2]> = rei2:
-        - execute as_server "sentinel addtarget sbteam:castelo1<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
-        - execute as_server "sentinel addignore sbteam:castelo2<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
+        - execute as_server "sentinel addtarget sbteam:castelo1<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <entry[npc].created_npc.id>" silent
+        - execute as_server "sentinel addignore sbteam:castelo2<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <entry[npc].created_npc.id>" silent
 
     - execute as_server "sentinel chaserange --id <entry[npc].created_npc.id>" silent
     - execute as_server "sentinel damage 6 --id <entry[npc].created_npc.id>" silent
     - execute as_server "sentinel attackrate 0.5 --id <entry[npc].created_npc.id>" silent
 
     - flag server npcsking<location[<context.args.get[1]>].world>:->:<entry[npc].created_npc>
+    - flag server castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world.replace_text[w@].with[]>loc:<entry[npc].created_npc.location>
+    - narrate castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world>:<entry[npc].created_npc>
 
 npccreatordelete:
     type: command
@@ -57,7 +59,7 @@ npccreatordelete:
     description: delete all npcs
     usage: /npccreatordelete <&lt>world<&gt>
     permission: dscript.npccreatordelete
-    debug: false
+    debug: true
     script:
 
     - remove <server.flag[npcsinteract<context.args.get[1]>]>

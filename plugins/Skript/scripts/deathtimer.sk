@@ -12,7 +12,6 @@ every 1 second:
 on respawn:
     {jogo::%world of player%} is 1
     set gamemode of player to spectator
-    set respawn location to {deathloc::%uuid of player%}
     set {_tempo} to {deathtimer::%uuid of player%} -1
     {deathtimer::%uuid of player%} <= 0:
         set gamemode of player to adventure

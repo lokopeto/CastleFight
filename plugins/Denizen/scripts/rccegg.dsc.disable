@@ -1,7 +1,0 @@
-rccegg:
-    type: world
-    debug: false
-    events:
-        on player clicks block:
-            - if <context.item.contains_any[spawn_egg]>:
-                - determine cancelled

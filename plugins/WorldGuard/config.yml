@@ -137,6 +137,9 @@ crops:
 turtle-egg:
     disable-creature-trampling: false
     disable-player-trampling: false
+sniffer-egg:
+    disable-creature-trampling: false
+    disable-player-trampling: false
 weather:
     prevent-lightning-strike-blocks: []
     disable-lightning-strike-fire: false
@@ -162,8 +165,8 @@ dynamics:
     disable-crop-growth: false
     disable-soil-dehydration: false
     disable-coral-block-fade: false
-    snow-fall-blocks: []
     disable-copper-block-fade: false
+    snow-fall-blocks: []
 blacklist:
     use-as-whitelist: false
     logging:
@@ -180,8 +183,3 @@ blacklist:
             path: worldguard/logs/%Y-%m-%d.log
             open-files: 10
 custom-metrics-charts: true
-extra-timings:
-    session-handlers: true
-sniffer-egg:
-    disable-creature-trampling: false
-    disable-player-trampling: false

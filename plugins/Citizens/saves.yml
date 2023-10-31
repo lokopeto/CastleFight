@@ -1,66 +1,11 @@
 # Citizens NPC Storage
 
-last-created-npc-id: 383
+last-created-npc-id: 56
 npc:
-  '344':
+  '56':
     name: Arqueiro (ReiBarro)
-    uuid: 1f2a7556-c60c-456f-9ace-713c873f0d0c
+    uuid: d1eea323-d93c-467c-a73f-75bcedf4e229
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '-164.5'
-        y: '152.0'
-        z: '37.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '343':
-    name: Arqueiro (ReiBarro)
-    uuid: a92ab211-2e21-491b-965c-7fbf985b37d7
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -69,17 +14,6 @@ npc:
         z: '37.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '342':
-    name: Arqueiro (ReiBarro)
-    uuid: 6d3dc587-b58c-49cd-89f2-d6e1488cdce5
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -98,83 +32,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: -129.85855
-        world: castlefight1
-        x: '-164.5'
-        y: '152.0'
-        z: '37.5'
-        yaw: '-149.8586'
-        pitch: '0.0'
-      type: VILLAGER
-      scoreboardtrait:
-        tags:
-          '0': npcs2
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '341':
+  '55':
     name: Arqueiro (ReiCarvalho)
-    uuid: e11c1f05-9355-4cf3-b269-c93bca15b9fa
+    uuid: 501aca8b-6220-43b3-b3ca-0ba24ae926f9
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '-251.0'
-        y: '150.0'
-        z: '37.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '340':
-    name: Arqueiro (ReiCarvalho)
-    uuid: 82cc07f3-c9c9-44f9-87fa-9f4dfb8224e7
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -183,17 +51,6 @@ npc:
         z: '37.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '339':
-    name: Arqueiro (ReiCarvalho)
-    uuid: 17bbf16b-cd4c-49c9-ae9b-b145c6661921
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -212,80 +69,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: 125.46398
-        world: castlefight1
-        x: '-251.0'
-        y: '149.875'
-        z: '37.5'
-        yaw: '125.464'
-        pitch: '0.0'
-      type: VILLAGER
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '338':
+  '54':
     name: Bordador (ReiCarvalho)
-    uuid: 315e66d7-749a-4e84-bb1e-880ffc8517d7
+    uuid: 20cb5321-9fc8-47af-be4b-a581e1c99588
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '157.5'
-        y: '152.0'
-        z: '36.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '337':
-    name: Bordador (ReiCarvalho)
-    uuid: cce0dbff-413e-451a-8391-82020a6a02eb
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -294,17 +88,6 @@ npc:
         z: '36.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '336':
-    name: Bordador (ReiCarvalho)
-    uuid: 7fb5eb24-c9f3-4b11-8322-72746daa6ec0
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -323,173 +106,25 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: 128.31566
-        world: castlefight1
-        x: '157.5'
-        y: '152.0'
-        z: '36.5'
-        yaw: '128.3157'
-        pitch: '0.0'
-      type: VILLAGER
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '335':
+  '53':
     name: Bordador (ReiBarro)
-    uuid: 4c7e5356-dda5-4b40-bb26-4416d8421671
+    uuid: 0b0a8a6b-81e6-47b9-9b63-a4f24011abb1
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '-240.5'
-        y: '150.0'
-        z: '9.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '334':
-    name: Bordador (ReiBarro)
-    uuid: b37d6fde-7421-48c0-b2e2-20df6f5a9eca
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
-        x: '-240.5'
-        y: '150.0'
-        z: '9.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '333':
-    name: Bordador (ReiBarro)
-    uuid: aa88acb3-5b16-4dfd-b35c-2b7f350d71af
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: -99.22824
-        world: castlefight1
         x: '157.5'
         y: '152.0'
         z: '36.5'
-        yaw: '-79.2282'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '332':
-    name: Ferreiro (ReiCarvalho)
-    uuid: 667efd7d-dc35-4237-b3ca-26c43fe792fa
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '157.5'
-        y: '152.0'
-        z: '9.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '331':
-    name: Ferreiro (ReiCarvalho)
-    uuid: 86e02dee-9e9e-4a21-9428-dfbe66045ee6
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -508,6 +143,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '52':
+    name: Ferreiro (ReiCarvalho)
+    uuid: 1b694c9f-ec4c-40a7-9993-d24d15861041
+    traits:
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -516,17 +162,6 @@ npc:
         z: '9.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '330':
-    name: Ferreiro (ReiCarvalho)
-    uuid: 0fe4d92b-d0aa-4ca8-a30b-f3f4da7ead83
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -545,80 +180,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: 47.620773
-        world: castlefight1
-        x: '157.5'
-        y: '152.0'
-        z: '9.5'
-        yaw: '47.6208'
-        pitch: '0.0'
-      type: VILLAGER
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '329':
+  '51':
     name: Ferreiro (ReiBarro)
-    uuid: 1937d6f8-b5bb-4e7a-a2d3-d45742dfffec
+    uuid: 4094bd5d-9d3b-46ef-b762-ed34a3b84e23
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '157.5'
-        y: '152.0'
-        z: '9.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '328':
-    name: Ferreiro (ReiBarro)
-    uuid: 012c079d-62e3-4efc-9b70-776e2c0c96da
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -627,17 +199,6 @@ npc:
         z: '36.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '327':
-    name: Ferreiro (ReiBarro)
-    uuid: 3baa28ee-5d63-4b4b-abd7-8a8eaf2267c6
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -656,80 +217,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: 167.56439
-        world: castlefight1
-        x: '-240.5'
-        y: '149.875'
-        z: '36.5'
-        yaw: '167.5644'
-        pitch: '0.0'
-      type: VILLAGER
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '326':
+  '50':
     name: Mago Misterioso (ReiCarvalho)
-    uuid: a3b87579-0a67-48ac-842d-eb2dc182650c
+    uuid: c1c49f0f-4d3d-4405-8691-4e720d4248b2
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '139.5'
-        y: '152.0'
-        z: '20.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '325':
-    name: Mago Misterioso (ReiCarvalho)
-    uuid: e80cf0ee-48a4-48b9-8b3e-82324ef1d0ba
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -738,17 +236,6 @@ npc:
         z: '20.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '324':
-    name: Mago Misterioso (ReiCarvalho)
-    uuid: 0e277dbf-b846-41ff-be86-23d0e1c2d0e3
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -767,86 +254,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: 34.8784
-        world: castlefight1
-        x: '139.5'
-        y: '152.0'
-        z: '20.5'
-        yaw: '34.8784'
-        pitch: '0.0'
-      type: VILLAGER
-      scoreboardtrait:
-        tags:
-          '0': npcs1
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '323':
+  '49':
     name: Mago Misterioso (ReiBarro)
-    uuid: 672458b4-65e4-414b-8be5-3a4dc03dc25a
+    uuid: 3075d15c-cb76-4eff-9cbb-0ee7f18afe62
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: 128.55939
-        world: castlefight2
-        x: '-222.5'
-        y: '150.0'
-        z: '25.5'
-        yaw: '128.5594'
-        pitch: '0.0'
-      type: VILLAGER
-      scoreboardtrait:
-        tags:
-          '0': npcs2
-      spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '322':
-    name: Mago Misterioso (ReiBarro)
-    uuid: b1bcc840-f52b-4e47-944a-e70f79702389
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -855,17 +273,6 @@ npc:
         z: '25.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '321':
-    name: Mago Misterioso (ReiBarro)
-    uuid: 7d551fdf-6e0e-4649-9738-691cbffee44b
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -884,83 +291,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: 132.69292
-        world: castlefight1
-        x: '-222.5'
-        y: '150.0'
-        z: '25.5'
-        yaw: '132.6929'
-        pitch: '0.0'
-      type: VILLAGER
-      scoreboardtrait:
-        tags:
-          '0': npcs2
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '320':
+  '48':
     name: Fazendeiro (ReiBarro)
-    uuid: d9c160f7-4657-455e-a586-a9fa1a256356
+    uuid: 844e88d9-c90c-44b8-ab99-891c908a2def
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '-225.5'
-        y: '152.0'
-        z: '13.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '319':
-    name: Fazendeiro (ReiBarro)
-    uuid: ec9807bf-eb4c-472d-ba97-9579fb7d089e
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -969,17 +310,6 @@ npc:
         z: '13.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '318':
-    name: Fazendeiro (ReiBarro)
-    uuid: 277a03de-f126-4dae-a05b-05f2d1fd3c9c
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -998,80 +328,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: 12.731461
-        world: castlefight1
-        x: '-225.5'
-        y: '150.0'
-        z: '13.5'
-        yaw: '32.7315'
-        pitch: '0.0'
-      type: VILLAGER
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '317':
+  '47':
     name: Fazendeiro (ReiCarvalho)
-    uuid: 83273dd9-c04a-4f29-a09a-1950f5c05608
+    uuid: d8b71028-c069-44ea-a0c3-55adbf09e3e4
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '142.5'
-        y: '152.0'
-        z: '32.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '316':
-    name: Fazendeiro (ReiCarvalho)
-    uuid: 5a9d0867-df37-4ebc-93f8-7cb777658be3
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -1080,17 +347,6 @@ npc:
         z: '32.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '315':
-    name: Fazendeiro (ReiCarvalho)
-    uuid: 6f6c583e-4885-42fa-a5b2-f326776cbd50
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -1109,86 +365,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: -101.72354
-        world: castlefight1
-        x: '142.5'
-        y: '152.0'
-        z: '32.5'
-        yaw: '-117.5686'
-        pitch: '0.0'
-      type: VILLAGER
-      scoreboardtrait:
-        tags:
-          '0': npcs1
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '314':
+  '46':
     name: Invocador (ReiBarro)
-    uuid: 892fa3ae-3d76-41fd-8b5b-d667af01985d
+    uuid: 104e06e8-d3e3-4933-9c34-7c246564c56d
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: -135.22723
-        world: castlefight2
-        x: '-222.5'
-        y: '150.0'
-        z: '20.5'
-        yaw: '-155.2272'
-        pitch: '0.0'
-      type: VILLAGER
-      scoreboardtrait:
-        tags:
-          '0': npcs2
-      spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '313':
-    name: Invocador (ReiBarro)
-    uuid: 8e239d1f-546a-4ede-a764-d822a60ac4f7
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -1197,17 +384,6 @@ npc:
         z: '20.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '312':
-    name: Invocador (ReiBarro)
-    uuid: c048f7f1-401c-438f-a2fc-eed21d860602
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -1226,83 +402,17 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: 41.24728
-        world: castlefight1
-        x: '-222.5'
-        y: '150.0'
-        z: '20.5'
-        yaw: '41.2473'
-        pitch: '0.0'
-      type: VILLAGER
-      scoreboardtrait:
-        tags:
-          '0': npcs2
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '311':
+  '45':
     name: Invocador (ReiCarvalho)
-    uuid: 86d5ec84-1ce1-4e63-a9f4-23b7f8edff00
+    uuid: 08843af0-7b8a-4825-99e4-1b89357569b7
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      location:
-        bodyYaw: !!float 'NaN'
-        world: castlefight2
-        x: '139.5'
-        y: '152.0'
-        z: '25.5'
-        yaw: '0.0'
-        pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '310':
-    name: Invocador (ReiCarvalho)
-    uuid: 26627347-56f6-4004-a831-f842c00c7c2c
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -1311,17 +421,6 @@ npc:
         z: '25.5'
         yaw: '0.0'
         pitch: '0.0'
-      type: VILLAGER
-      spawned: true
-    traitnames: lookclose,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '309':
-    name: Invocador (ReiCarvalho)
-    uuid: f9d3f45d-a40e-4ee6-82fc-310ea2723ed0
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -1340,34 +439,31 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      location:
-        bodyYaw: -74.34146
-        world: castlefight1
-        x: '139.5'
-        y: '152.0'
-        z: '25.5'
-        yaw: '-54.3415'
-        pitch: '0.0'
-      type: VILLAGER
-      scoreboardtrait:
-        tags:
-          '0': npcs1
       spawned: true
-    traitnames: lookclose,rotationtrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '308':
+  '44':
     metadata:
       collidable: true
       protected: false
       glowing: true
     name: ReiBarro
-    uuid: 54a468aa-2028-455d-8e54-5d18d4951cc1
+    uuid: daa75873-9a8f-4934-b5bd-89d989269d8e
     traits:
+      location:
+        bodyYaw: 172.42099
+        world: castlefight3
+        x: '-222.5'
+        y: '151.0'
+        z: '23.0'
+        yaw: '-167.579'
+        pitch: '0.0'
       sentinel:
-        stats_ticksSpawned: 61194
+        stats_ticksSpawned: 3657
         stats_timesSpawned: 1
         stats_arrowsFired: 0
         stats_potionsThrow: 0
@@ -1426,12 +522,12 @@ npc:
         death_xp: 0
         allTargets:
           byOther:
-            '0': sbteam:castelo1w@castlefight2
+            '0': sbteam:castelo1castlefight3
         allIgnores:
           targets:
             '0': OWNER
           byOther:
-            '0': sbteam:castelo2w@castlefight2
+            '0': sbteam:castelo2castlefight3
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -1450,380 +546,38 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      skintrait:
-        fetchDefaultSkin: true
-        updateSkins: false
-      location:
-        bodyYaw: 82.26316
-        world: castlefight2
-        x: '-222.5'
-        y: '151.0'
-        z: '23.0'
-        yaw: '82.2632'
-        pitch: '0.0'
+      spawned: true
       type: PLAYER
       scoreboardtrait:
         color: WHITE
         tags:
           '0': rei2
-      spawned: true
-    traitnames: sentinel,lookclose,rotationtrait,inventory,skintrait,mounttrait,location,owner,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '307':
-    metadata:
-      collidable: true
-      protected: false
-      glowing: true
-    name: ReiBarro
-    uuid: d9977669-da3b-40f7-abe0-167b2a8f5da2
-    traits:
-      sentinel:
-        stats_ticksSpawned: 61194
-        stats_timesSpawned: 1
-        stats_arrowsFired: 0
-        stats_potionsThrow: 0
-        stats_fireballsFired: 0
-        stats_snowballsThrown: 0
-        stats_eggsThrown: 0
-        stats_skullsThrown: 0
-        stats_llamaSpitShot: 0
-        stats_shulkerBulletsShot: 0
-        stats_evokerFangsSpawned: 0
-        stats_pearlsUsed: 0
-        stats_punches: 0
-        stats_attackAttempts: 0
-        stats_damageTaken: 0.0
-        stats_damageGiven: 0.0
-        avoidRange: 10.0
-        range: 20.0
-        damage: 6.0
-        armor: -1.0
-        health: 1000.0
-        ranged_chase: true
-        close_chase: true
-        invincible: false
-        protected: true
-        fightback: true
-        runaway: false
-        attackRate: 10
-        attackRateRanged: 30
-        healRate: 100
-        guardingUpper: 0
-        guardingLower: 0
-        guardedNPC: -1
-        needsAmmo: false
-        safeShot: true
-        respawnTime: -1
-        chaseRange: 100.0
-        enemyDrops: false
-        enemyTargetTime: 6000
-        speed: 1.5
-        warning_text: ''
-        greeting_text: ''
-        greet_range: 10.0
-        greet_rate: 100
-        autoswitch: false
-        accuracy: 0.0
-        realistic: false
-        ignore_los: false
-        reach: 2.2
-        projectileRange: 100.0
-        guard_distance_minimum: 7.0
-        guard_selection_range: 4.0
-        retain_target: false
-        disable_teleporting: false
-        reaction_slowdown: 0
-        allow_knockback: false
-        death_xp: 0
-        allTargets:
-          byOther:
-            '0': sbteam:castelo1w@castlefight3
-        allIgnores:
-          targets:
-            '0': OWNER
-          byOther:
-            '0': sbteam:castelo2w@castlefight3
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       skintrait:
         fetchDefaultSkin: true
         updateSkins: false
-      location:
-        bodyYaw: -84.16589
-        world: castlefight3
-        x: '-222.5'
-        y: '151.0'
-        z: '23.0'
-        yaw: '-64.1659'
-        pitch: '0.0'
-      type: PLAYER
-      scoreboardtrait:
-        color: WHITE
-        tags:
-          '0': rei2
-      spawned: true
-    traitnames: sentinel,lookclose,rotationtrait,inventory,skintrait,mounttrait,location,owner,type,scoreboardtrait,spawned
+    traitnames: location,inventory,sentinel,rotationtrait,lookclose,spawned,mounttrait,owner,type,scoreboardtrait,skintrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '306':
-    metadata:
-      collidable: true
-      protected: false
-      glowing: true
-    name: ReiBarro
-    uuid: 09b568c0-f3e6-439e-bde3-21be0e5e5653
-    traits:
-      sentinel:
-        stats_ticksSpawned: 61194
-        stats_timesSpawned: 1
-        stats_arrowsFired: 0
-        stats_potionsThrow: 0
-        stats_fireballsFired: 0
-        stats_snowballsThrown: 0
-        stats_eggsThrown: 0
-        stats_skullsThrown: 0
-        stats_llamaSpitShot: 0
-        stats_shulkerBulletsShot: 0
-        stats_evokerFangsSpawned: 0
-        stats_pearlsUsed: 0
-        stats_punches: 0
-        stats_attackAttempts: 0
-        stats_damageTaken: 0.0
-        stats_damageGiven: 0.0
-        avoidRange: 10.0
-        range: 20.0
-        damage: 6.0
-        armor: -1.0
-        health: 1000.0
-        ranged_chase: true
-        close_chase: true
-        invincible: false
-        protected: true
-        fightback: true
-        runaway: false
-        attackRate: 10
-        attackRateRanged: 30
-        healRate: 100
-        guardingUpper: 0
-        guardingLower: 0
-        guardedNPC: -1
-        needsAmmo: false
-        safeShot: true
-        respawnTime: -1
-        chaseRange: 100.0
-        enemyDrops: false
-        enemyTargetTime: 6000
-        speed: 1.5
-        warning_text: ''
-        greeting_text: ''
-        greet_range: 10.0
-        greet_rate: 100
-        autoswitch: false
-        accuracy: 0.0
-        realistic: false
-        ignore_los: false
-        reach: 2.2
-        projectileRange: 100.0
-        guard_distance_minimum: 7.0
-        guard_selection_range: 4.0
-        retain_target: false
-        disable_teleporting: false
-        reaction_slowdown: 0
-        allow_knockback: false
-        death_xp: 0
-        allTargets:
-          byOther:
-            '0': sbteam:castelo1w@castlefight1
-        allIgnores:
-          targets:
-            '0': OWNER
-          byOther:
-            '0': sbteam:castelo2w@castlefight1
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      skintrait:
-        fetchDefaultSkin: true
-        updateSkins: false
-      location:
-        bodyYaw: 93.24001
-        world: castlefight1
-        x: '-222.5'
-        y: '151.0'
-        z: '23.0'
-        yaw: '93.24'
-        pitch: '0.0'
-      type: PLAYER
-      scoreboardtrait:
-        color: WHITE
-        tags:
-          '0': rei2
-      spawned: true
-    traitnames: sentinel,lookclose,rotationtrait,inventory,skintrait,mounttrait,location,owner,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '305':
+  '43':
     metadata:
       collidable: true
       protected: false
       glowing: true
     name: ReiCarvalho
-    uuid: 3a183eb9-c8b9-4e2f-b1b5-7e1b82aaec1f
+    uuid: 4c437e62-e487-491e-9975-9a02f740e0f7
     traits:
-      sentinel:
-        stats_ticksSpawned: 61195
-        stats_timesSpawned: 1
-        stats_arrowsFired: 0
-        stats_potionsThrow: 0
-        stats_fireballsFired: 0
-        stats_snowballsThrown: 0
-        stats_eggsThrown: 0
-        stats_skullsThrown: 0
-        stats_llamaSpitShot: 0
-        stats_shulkerBulletsShot: 0
-        stats_evokerFangsSpawned: 0
-        stats_pearlsUsed: 0
-        stats_punches: 0
-        stats_attackAttempts: 0
-        stats_damageTaken: 0.0
-        stats_damageGiven: 0.0
-        avoidRange: 10.0
-        range: 20.0
-        damage: 6.0
-        armor: -1.0
-        health: 1000.0
-        ranged_chase: true
-        close_chase: true
-        invincible: false
-        protected: true
-        fightback: true
-        runaway: false
-        attackRate: 10
-        attackRateRanged: 30
-        healRate: 100
-        guardingUpper: 0
-        guardingLower: 0
-        guardedNPC: -1
-        needsAmmo: false
-        safeShot: true
-        respawnTime: -1
-        chaseRange: 100.0
-        enemyDrops: false
-        enemyTargetTime: 6000
-        speed: 1.5
-        warning_text: ''
-        greeting_text: ''
-        greet_range: 10.0
-        greet_rate: 100
-        autoswitch: false
-        accuracy: 0.0
-        realistic: false
-        ignore_los: false
-        reach: 2.2
-        projectileRange: 100.0
-        guard_distance_minimum: 7.0
-        guard_selection_range: 4.0
-        retain_target: false
-        disable_teleporting: false
-        reaction_slowdown: 0
-        allow_knockback: false
-        death_xp: 0
-        allTargets:
-          byOther:
-            '0': sbteam:castelo2w@castlefight2
-        allIgnores:
-          targets:
-            '0': OWNER
-          byOther:
-            '0': sbteam:castelo1w@castlefight2
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      skintrait:
-        fetchDefaultSkin: true
-        updateSkins: false
       location:
-        bodyYaw: 8.905228
-        world: castlefight2
+        bodyYaw: 40.0117
+        world: castlefight3
         x: '139.5'
         y: '153.0'
         z: '23.0'
-        yaw: '8.9052'
+        yaw: '40.0117'
         pitch: '0.0'
-      type: PLAYER
-      scoreboardtrait:
-        color: WHITE
-        tags:
-          '0': rei1
-      spawned: true
-    traitnames: sentinel,lookclose,rotationtrait,inventory,skintrait,mounttrait,location,owner,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '304':
-    metadata:
-      collidable: true
-      protected: false
-      glowing: true
-    name: ReiCarvalho
-    uuid: 9ccb3041-f192-4f29-9b3c-2c1a96385c03
-    traits:
       sentinel:
-        stats_ticksSpawned: 61195
+        stats_ticksSpawned: 3658
         stats_timesSpawned: 1
         stats_arrowsFired: 0
         stats_potionsThrow: 0
@@ -1906,257 +660,97 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      skintrait:
-        fetchDefaultSkin: true
-        updateSkins: false
-      location:
-        bodyYaw: 66.33254
-        world: castlefight3
-        x: '139.5'
-        y: '153.0'
-        z: '23.0'
-        yaw: '66.3325'
-        pitch: '0.0'
+      spawned: true
       type: PLAYER
       scoreboardtrait:
         color: WHITE
         tags:
           '0': rei1
-      spawned: true
-    traitnames: sentinel,lookclose,rotationtrait,inventory,skintrait,mounttrait,location,owner,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '303':
-    metadata:
-      collidable: true
-      protected: false
-      glowing: true
-    name: ReiCarvalho
-    uuid: fc2ba155-22f9-4e31-8732-4d1131f5bb0f
-    traits:
-      sentinel:
-        stats_ticksSpawned: 61195
-        stats_timesSpawned: 1
-        stats_arrowsFired: 0
-        stats_potionsThrow: 0
-        stats_fireballsFired: 0
-        stats_snowballsThrown: 0
-        stats_eggsThrown: 0
-        stats_skullsThrown: 0
-        stats_llamaSpitShot: 0
-        stats_shulkerBulletsShot: 0
-        stats_evokerFangsSpawned: 0
-        stats_pearlsUsed: 0
-        stats_punches: 0
-        stats_attackAttempts: 0
-        stats_damageTaken: 0.0
-        stats_damageGiven: 0.0
-        avoidRange: 10.0
-        range: 20.0
-        damage: 6.0
-        armor: -1.0
-        health: 1000.0
-        ranged_chase: true
-        close_chase: true
-        invincible: false
-        protected: true
-        fightback: true
-        runaway: false
-        attackRate: 10
-        attackRateRanged: 30
-        healRate: 100
-        guardingUpper: 0
-        guardingLower: 0
-        guardedNPC: -1
-        needsAmmo: false
-        safeShot: true
-        respawnTime: -1
-        chaseRange: 100.0
-        enemyDrops: false
-        enemyTargetTime: 6000
-        speed: 1.5
-        warning_text: ''
-        greeting_text: ''
-        greet_range: 10.0
-        greet_rate: 100
-        autoswitch: false
-        accuracy: 0.0
-        realistic: false
-        ignore_los: false
-        reach: 2.2
-        projectileRange: 100.0
-        guard_distance_minimum: 7.0
-        guard_selection_range: 4.0
-        retain_target: false
-        disable_teleporting: false
-        reaction_slowdown: 0
-        allow_knockback: false
-        death_xp: 0
-        allTargets:
-          byOther:
-            '0': sbteam:castelo2w@castlefight1
-        allIgnores:
-          targets:
-            '0': OWNER
-          byOther:
-            '0': sbteam:castelo1w@castlefight1
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       skintrait:
         fetchDefaultSkin: true
         updateSkins: false
-      location:
-        bodyYaw: 90.65698
-        world: castlefight1
-        x: '139.5'
-        y: '153.0'
-        z: '23.0'
-        yaw: '90.657'
-        pitch: '0.0'
-      type: PLAYER
-      scoreboardtrait:
-        color: WHITE
-        tags:
-          '0': rei1
-      spawned: true
-    traitnames: sentinel,lookclose,rotationtrait,inventory,skintrait,mounttrait,location,owner,type,scoreboardtrait,spawned
+    traitnames: location,inventory,sentinel,rotationtrait,lookclose,spawned,mounttrait,owner,type,scoreboardtrait,skintrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '302':
+  '42':
     metadata:
-      cached-skin-uuid-name: a1a2098b-caec-46cc-ab8d-24a6122e81b0
+      cached-skin-uuid-name: 65858181-b81e-4100-b9d3-c632e2ce63b2
     name: Exilado
-    uuid: 4ce9f182-a2b8-4bb7-bb49-8b54659253c1
+    uuid: b535853b-b76f-4383-8b50-8f0f79e7ab3b
     traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
-      sitting:
-        sitting: true
-        chair location:
-          world: castlefight2
-          x: '-25.5'
-          y: '175.0'
-          z: '114.5'
-          yaw: '0.0'
-          pitch: '0.0'
-      skintrait:
-        fetchDefaultSkin: true
-        signature: BTHGvHeUx0dbgZ9bqiNarpZ4qZDqVcL/ycIsgWT9/wZ80SgSy49QegcZdb23SXhtp5gGzuGI1Uh3gEGcErVMRSovDnNwX4cA/EVWOt9JGNcF5IxsmKCkI3K1MIajPvcCp1DCOT7Qdl2GtkCe5EZoKTacFRFU6KxgNCHWbGvjwe29iJqLFS33658t/KX0ZKZUUfDufl+quMCoHyb6KeShNoiBYP0rmZI7CrRaps0f3cVrZHHyvbSv6MxJCymtShafg5qloljSStKXxgsYpq7CpU2i9fwj6wpzMpOIZ4sj0CUOxT50H4zCk1tPng+x/O9IrQ0SorV87Jioim38DYzUIz1ncm/hkFakEGa2CbJ7Q0EBaU51dV09ZoRk0DczBhlqTmYvaD9Clr/yVOUPrIJB8JjPimO8EdKMSNFK8kCULgCOmHh7RfzH8TShAqf+F82IldqoldvTY5ZG0nk1wFZ7znXujlMDrHT0ZaTb7WEFDV61gykR4miz1y+2/w0PgC5CHg1ovR9Fuctb/7Ae0SNlsPzMdnpfulWd/k5iwuBynF1O/4xwDacTpMnmDy/GEhgH3ZsBKlY4X4RXVb6+pFXRfKFdmObBYjwgxG2Zc4uF753L29a1P1tate6++oHWbaqwHOIWjCyJAyanSh4b6oLRukK5OKbPNSk6unIaNVwkQHg=
-        skinName: a1a2098b-caec-46cc-ab8d-24a6122e81b0
-        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY3MTMwOTMyNTE1OSwKICAicHJvZmlsZUlkIiA6ICI2NmE2ZWZiNzEwNDc0NjdiYmMzYmVhMGRjYWZlNTU4MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJZdWtpb0RhbmRyZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xNWRhMDMwYzUzMmNiYmQzMmY1ZjkzYTFmZWVkYzU5NWQ2NWNkNmEyMTU1NTUyYzk2OWY0ZjZkMTRhOTllMDFlIgogICAgfQogIH0KfQ==
-        updateSkins: false
       location:
         bodyYaw: 0.0
-        world: castlefight2
+        world: castlefight3
         x: '-25.5'
         y: '175.0'
         z: '114.5'
-        yaw: '0.0'
+        yaw: '35.2592'
         pitch: '0.0'
-      type: PLAYER
-      spawned: true
-    traitnames: lookclose,rotationtrait,inventory,sitting,skintrait,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '301':
-    metadata:
-      cached-skin-uuid-name: fd515aee-eae7-4e0c-bd9b-130646ded6ef
-    name: Exilado
-    uuid: 577a47d5-3bc9-48b4-a2a8-a839ba870c15
-    traits:
-      lookclose:
-        range: '5.0'
-        disablewhilenavigating: true
-        enabled: true
-        enableRandomLook: true
-        headonly: false
-        linkedbody: false
-        perplayer: false
-        randomLookDelay: 60
-        randomSwitchTargets: false
-        realisticlooking: false
-        targetnpcs: false
-        randomPitchRange:
-          '0': 0.0
-          '1': 0.0
-        randomYawRange:
-          '0': 0.0
-          '1': 360.0
       sitting:
         sitting: true
         chair location:
-          world: castlefight2
-          x: '-37.5'
-          y: '173.0'
-          z: '111.5'
-          yaw: '0.0'
+          world: castlefight3
+          x: '-25.5'
+          y: '175.0'
+          z: '114.5'
+          yaw: '35.2592'
           pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: PLAYER
       skintrait:
         fetchDefaultSkin: true
         signature: BTHGvHeUx0dbgZ9bqiNarpZ4qZDqVcL/ycIsgWT9/wZ80SgSy49QegcZdb23SXhtp5gGzuGI1Uh3gEGcErVMRSovDnNwX4cA/EVWOt9JGNcF5IxsmKCkI3K1MIajPvcCp1DCOT7Qdl2GtkCe5EZoKTacFRFU6KxgNCHWbGvjwe29iJqLFS33658t/KX0ZKZUUfDufl+quMCoHyb6KeShNoiBYP0rmZI7CrRaps0f3cVrZHHyvbSv6MxJCymtShafg5qloljSStKXxgsYpq7CpU2i9fwj6wpzMpOIZ4sj0CUOxT50H4zCk1tPng+x/O9IrQ0SorV87Jioim38DYzUIz1ncm/hkFakEGa2CbJ7Q0EBaU51dV09ZoRk0DczBhlqTmYvaD9Clr/yVOUPrIJB8JjPimO8EdKMSNFK8kCULgCOmHh7RfzH8TShAqf+F82IldqoldvTY5ZG0nk1wFZ7znXujlMDrHT0ZaTb7WEFDV61gykR4miz1y+2/w0PgC5CHg1ovR9Fuctb/7Ae0SNlsPzMdnpfulWd/k5iwuBynF1O/4xwDacTpMnmDy/GEhgH3ZsBKlY4X4RXVb6+pFXRfKFdmObBYjwgxG2Zc4uF753L29a1P1tate6++oHWbaqwHOIWjCyJAyanSh4b6oLRukK5OKbPNSk6unIaNVwkQHg=
-        skinName: fd515aee-eae7-4e0c-bd9b-130646ded6ef
+        skinName: 65858181-b81e-4100-b9d3-c632e2ce63b2
         textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY3MTMwOTMyNTE1OSwKICAicHJvZmlsZUlkIiA6ICI2NmE2ZWZiNzEwNDc0NjdiYmMzYmVhMGRjYWZlNTU4MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJZdWtpb0RhbmRyZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xNWRhMDMwYzUzMmNiYmQzMmY1ZjkzYTFmZWVkYzU5NWQ2NWNkNmEyMTU1NTUyYzk2OWY0ZjZkMTRhOTllMDFlIgogICAgfQogIH0KfQ==
         updateSkins: false
+    traitnames: location,sitting,inventory,rotationtrait,lookclose,spawned,mounttrait,type,scoreboardtrait,skintrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '41':
+    metadata:
+      cached-skin-uuid-name: 6cc7cc20-6793-47db-b7dc-706c7f8d42f9
+    name: Exilado
+    uuid: 370ba8f6-2a80-470c-a1ba-bb2e114bd2dc
+    traits:
       location:
         bodyYaw: 0.0
-        world: castlefight2
+        world: castlefight3
         x: '-37.5'
         y: '173.0'
         z: '111.5'
-        yaw: '0.0'
+        yaw: '-40.0'
         pitch: '0.0'
-      type: PLAYER
-      spawned: true
-    traitnames: lookclose,rotationtrait,inventory,sitting,skintrait,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '300':
-    metadata:
-      cached-skin-uuid: 2971f0d9-861a-46d3-bd53-5a38aec2112c
-      cached-skin-uuid-name: b5680a4b-cef5-4514-928f-eaa95fe5beac
-    name: Exilado
-    uuid: f79d5c01-ac13-4da9-a308-53c1bc1fd1bb
-    traits:
+      sitting:
+        sitting: true
+        chair location:
+          world: castlefight3
+          x: '-37.5'
+          y: '173.0'
+          z: '111.5'
+          yaw: '-40.0'
+          pitch: '0.0'
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -2175,34 +769,34 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
+      spawned: true
+      type: PLAYER
       skintrait:
         fetchDefaultSkin: true
         signature: BTHGvHeUx0dbgZ9bqiNarpZ4qZDqVcL/ycIsgWT9/wZ80SgSy49QegcZdb23SXhtp5gGzuGI1Uh3gEGcErVMRSovDnNwX4cA/EVWOt9JGNcF5IxsmKCkI3K1MIajPvcCp1DCOT7Qdl2GtkCe5EZoKTacFRFU6KxgNCHWbGvjwe29iJqLFS33658t/KX0ZKZUUfDufl+quMCoHyb6KeShNoiBYP0rmZI7CrRaps0f3cVrZHHyvbSv6MxJCymtShafg5qloljSStKXxgsYpq7CpU2i9fwj6wpzMpOIZ4sj0CUOxT50H4zCk1tPng+x/O9IrQ0SorV87Jioim38DYzUIz1ncm/hkFakEGa2CbJ7Q0EBaU51dV09ZoRk0DczBhlqTmYvaD9Clr/yVOUPrIJB8JjPimO8EdKMSNFK8kCULgCOmHh7RfzH8TShAqf+F82IldqoldvTY5ZG0nk1wFZ7znXujlMDrHT0ZaTb7WEFDV61gykR4miz1y+2/w0PgC5CHg1ovR9Fuctb/7Ae0SNlsPzMdnpfulWd/k5iwuBynF1O/4xwDacTpMnmDy/GEhgH3ZsBKlY4X4RXVb6+pFXRfKFdmObBYjwgxG2Zc4uF753L29a1P1tate6++oHWbaqwHOIWjCyJAyanSh4b6oLRukK5OKbPNSk6unIaNVwkQHg=
-        skinName: b5680a4b-cef5-4514-928f-eaa95fe5beac
+        skinName: 6cc7cc20-6793-47db-b7dc-706c7f8d42f9
         textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY3MTMwOTMyNTE1OSwKICAicHJvZmlsZUlkIiA6ICI2NmE2ZWZiNzEwNDc0NjdiYmMzYmVhMGRjYWZlNTU4MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJZdWtpb0RhbmRyZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xNWRhMDMwYzUzMmNiYmQzMmY1ZjkzYTFmZWVkYzU5NWQ2NWNkNmEyMTU1NTUyYzk2OWY0ZjZkMTRhOTllMDFlIgogICAgfQogIH0KfQ==
         updateSkins: false
+    traitnames: location,sitting,inventory,rotationtrait,lookclose,spawned,mounttrait,type,scoreboardtrait,skintrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '40':
+    metadata:
+      cached-skin-uuid: 2971f0d9-861a-46d3-bd53-5a38aec2112c
+      cached-skin-uuid-name: 9c41efc6-2342-41ec-8b83-844329ca0b08
+    name: Exilado
+    uuid: 0f168224-068b-4495-ab62-fcb01f008f4b
+    traits:
       location:
-        bodyYaw: 77.2572
-        world: castlefight2
+        bodyYaw: 145.94553
+        world: castlefight3
         x: '-46.7'
         y: '174.875'
         z: '113.7'
-        yaw: '77.2572'
+        yaw: '145.9455'
         pitch: '0.0'
-      type: PLAYER
-      spawned: true
-    traitnames: lookclose,rotationtrait,inventory,skintrait,mounttrait,location,type,scoreboardtrait,spawned
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '299':
-    metadata:
-      cached-skin-uuid: 2971f0d9-861a-46d3-bd53-5a38aec2112c
-      cached-skin-uuid-name: c4e64b3a-6148-4c7c-bdb2-f0fbe9a8103e
-    name: Exilado
-    uuid: 2969ab11-595a-4f18-9e7e-5146348322c6
-    traits:
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -2221,33 +815,34 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
+      spawned: true
+      type: PLAYER
       skintrait:
         fetchDefaultSkin: true
         signature: BTHGvHeUx0dbgZ9bqiNarpZ4qZDqVcL/ycIsgWT9/wZ80SgSy49QegcZdb23SXhtp5gGzuGI1Uh3gEGcErVMRSovDnNwX4cA/EVWOt9JGNcF5IxsmKCkI3K1MIajPvcCp1DCOT7Qdl2GtkCe5EZoKTacFRFU6KxgNCHWbGvjwe29iJqLFS33658t/KX0ZKZUUfDufl+quMCoHyb6KeShNoiBYP0rmZI7CrRaps0f3cVrZHHyvbSv6MxJCymtShafg5qloljSStKXxgsYpq7CpU2i9fwj6wpzMpOIZ4sj0CUOxT50H4zCk1tPng+x/O9IrQ0SorV87Jioim38DYzUIz1ncm/hkFakEGa2CbJ7Q0EBaU51dV09ZoRk0DczBhlqTmYvaD9Clr/yVOUPrIJB8JjPimO8EdKMSNFK8kCULgCOmHh7RfzH8TShAqf+F82IldqoldvTY5ZG0nk1wFZ7znXujlMDrHT0ZaTb7WEFDV61gykR4miz1y+2/w0PgC5CHg1ovR9Fuctb/7Ae0SNlsPzMdnpfulWd/k5iwuBynF1O/4xwDacTpMnmDy/GEhgH3ZsBKlY4X4RXVb6+pFXRfKFdmObBYjwgxG2Zc4uF753L29a1P1tate6++oHWbaqwHOIWjCyJAyanSh4b6oLRukK5OKbPNSk6unIaNVwkQHg=
-        skinName: c4e64b3a-6148-4c7c-bdb2-f0fbe9a8103e
+        skinName: 9c41efc6-2342-41ec-8b83-844329ca0b08
         textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY3MTMwOTMyNTE1OSwKICAicHJvZmlsZUlkIiA6ICI2NmE2ZWZiNzEwNDc0NjdiYmMzYmVhMGRjYWZlNTU4MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJZdWtpb0RhbmRyZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xNWRhMDMwYzUzMmNiYmQzMmY1ZjkzYTFmZWVkYzU5NWQ2NWNkNmEyMTU1NTUyYzk2OWY0ZjZkMTRhOTllMDFlIgogICAgfQogIH0KfQ==
         updateSkins: false
-      location:
-        bodyYaw: -152.7703
-        world: castlefight2
-        x: '-35.5'
-        y: '172.0'
-        z: '114.5'
-        yaw: '-172.7703'
-        pitch: '0.0'
-      type: PLAYER
-      spawned: true
-    traitnames: lookclose,rotationtrait,inventory,skintrait,mounttrait,location,type,scoreboardtrait,spawned
+    traitnames: location,inventory,rotationtrait,lookclose,spawned,mounttrait,type,scoreboardtrait,skintrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '298':
+  '39':
     metadata:
-      cached-skin-uuid-name: 845d2141-eb63-44d9-8a2f-c363085fa7ea
-    name: Londama
-    uuid: c1a4379d-69f4-4474-ada3-940b10dcc59b
+      cached-skin-uuid: 2971f0d9-861a-46d3-bd53-5a38aec2112c
+      cached-skin-uuid-name: 0c60cd6c-ddbd-45ed-bda2-461cbc298c63
+    name: Exilado
+    uuid: 72dca22a-a1de-4d65-a807-783681e933fc
     traits:
+      location:
+        bodyYaw: -96.38376
+        world: castlefight3
+        x: '-35.5'
+        y: '172.0'
+        z: '114.5'
+        yaw: '-76.3838'
+        pitch: '0.0'
       lookclose:
         range: '5.0'
         disablewhilenavigating: true
@@ -2266,23 +861,1404 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
+      spawned: true
+      type: PLAYER
       skintrait:
         fetchDefaultSkin: true
-        signature: LPKY8Lw2P3Sw8B/2iDdCBvzTm0ESe4rS22lEqodeEQlPsXMbut42Zk+QuwHDzC8KJPdM3t52IFZVUGo9FQNndcZhYCYyBtZNjtlcve1UmfHqrMSLtHCHtc3NHAYbUT0NwNOhC9qJcwAxN0wAvBYFATqlFbLcA5Q71FXoYhRnhdW1EueoX+12Opbkphhpmk+wHWbT7tmKAPJKQWyNF66Od5IOFpXEkvmkh4XggZ9GbzLbEVwXi+hTWA1i2LLpjwJWRA/dJCxhm2HQ6QTTFa7ry5Mwul5CASv/aJCGBWZO3tc0XQV4GmDWaMyeIiX83/0Lrgbqx3Zr815FniYGTsIb+63WMQXPwIFrlAnvte4Nddy2T6vT3fQZyjOGcdn/aSLiD5oSUQn1tAsqpNKIcfrT2MUmPId96USInspLGrqehzpP+tYaQMLNKGMrnjTsINdl7mKJvYzuvokeYX0HuC+UJ984J8V+C5s2w0RwhJ+7r5/kLfDmT9Ap8WpuXdhAH9iaPXjhusTBJ+0w1WSuihNZDJRdHlLyjMKBy07/FFvlrvEAVplAmYVsIPa6v6LJu24B5k9QN7W9keTMf0G6lxEZASRe5VLaN3+HWiD9NjFgbzYKhnuUIRylwbcNk6eG7fodErrNUrU8wnProBU/3Z/LAry305ZL2GsoEcnNE2J8Hpk=
-        skinName: 845d2141-eb63-44d9-8a2f-c363085fa7ea
-        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY4MjgwODY5MzU2MywKICAicHJvZmlsZUlkIiA6ICJiYzRlZGZiNWYzNmM0OGE3YWM5ZjFhMzlkYzIzZjRmOCIsCiAgInByb2ZpbGVOYW1lIiA6ICI4YWNhNjgwYjIyNDYxMzQwIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMzY2U1MmQyOWZhM2YxNGRmODk4MDRlNTE2Yzc3Y2M4YTIzOTg1M2M5YTBkODgxNzlkOGY5OTVhNDhkYzQ2NTAiCiAgICB9CiAgfQp9
+        signature: BTHGvHeUx0dbgZ9bqiNarpZ4qZDqVcL/ycIsgWT9/wZ80SgSy49QegcZdb23SXhtp5gGzuGI1Uh3gEGcErVMRSovDnNwX4cA/EVWOt9JGNcF5IxsmKCkI3K1MIajPvcCp1DCOT7Qdl2GtkCe5EZoKTacFRFU6KxgNCHWbGvjwe29iJqLFS33658t/KX0ZKZUUfDufl+quMCoHyb6KeShNoiBYP0rmZI7CrRaps0f3cVrZHHyvbSv6MxJCymtShafg5qloljSStKXxgsYpq7CpU2i9fwj6wpzMpOIZ4sj0CUOxT50H4zCk1tPng+x/O9IrQ0SorV87Jioim38DYzUIz1ncm/hkFakEGa2CbJ7Q0EBaU51dV09ZoRk0DczBhlqTmYvaD9Clr/yVOUPrIJB8JjPimO8EdKMSNFK8kCULgCOmHh7RfzH8TShAqf+F82IldqoldvTY5ZG0nk1wFZ7znXujlMDrHT0ZaTb7WEFDV61gykR4miz1y+2/w0PgC5CHg1ovR9Fuctb/7Ae0SNlsPzMdnpfulWd/k5iwuBynF1O/4xwDacTpMnmDy/GEhgH3ZsBKlY4X4RXVb6+pFXRfKFdmObBYjwgxG2Zc4uF753L29a1P1tate6++oHWbaqwHOIWjCyJAyanSh4b6oLRukK5OKbPNSk6unIaNVwkQHg=
+        skinName: 0c60cd6c-ddbd-45ed-bda2-461cbc298c63
+        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY3MTMwOTMyNTE1OSwKICAicHJvZmlsZUlkIiA6ICI2NmE2ZWZiNzEwNDc0NjdiYmMzYmVhMGRjYWZlNTU4MyIsCiAgInByb2ZpbGVOYW1lIiA6ICJZdWtpb0RhbmRyZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xNWRhMDMwYzUzMmNiYmQzMmY1ZjkzYTFmZWVkYzU5NWQ2NWNkNmEyMTU1NTUyYzk2OWY0ZjZkMTRhOTllMDFlIgogICAgfQogIH0KfQ==
         updateSkins: false
+    traitnames: location,inventory,rotationtrait,lookclose,spawned,mounttrait,type,scoreboardtrait,skintrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '38':
+    metadata:
+      cached-skin-uuid-name: c33746af-c0bc-4dcd-a0ec-f55d36c149e5
+    name: Londama
+    uuid: 9be6e067-bbf3-4329-9212-2aaf4823fc83
+    traits:
       location:
-        bodyYaw: -63.324677
-        world: castlefight2
+        bodyYaw: 16.560583
+        world: castlefight3
         x: '-38.5'
         y: '147.0'
         z: '124.5'
-        yaw: '-73.7133'
+        yaw: '16.5606'
         pitch: '0.0'
-      type: PLAYER
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
       spawned: true
-    traitnames: lookclose,rotationtrait,inventory,skintrait,mounttrait,location,type,scoreboardtrait,spawned
+      type: PLAYER
+      skintrait:
+        fetchDefaultSkin: true
+        signature: LPKY8Lw2P3Sw8B/2iDdCBvzTm0ESe4rS22lEqodeEQlPsXMbut42Zk+QuwHDzC8KJPdM3t52IFZVUGo9FQNndcZhYCYyBtZNjtlcve1UmfHqrMSLtHCHtc3NHAYbUT0NwNOhC9qJcwAxN0wAvBYFATqlFbLcA5Q71FXoYhRnhdW1EueoX+12Opbkphhpmk+wHWbT7tmKAPJKQWyNF66Od5IOFpXEkvmkh4XggZ9GbzLbEVwXi+hTWA1i2LLpjwJWRA/dJCxhm2HQ6QTTFa7ry5Mwul5CASv/aJCGBWZO3tc0XQV4GmDWaMyeIiX83/0Lrgbqx3Zr815FniYGTsIb+63WMQXPwIFrlAnvte4Nddy2T6vT3fQZyjOGcdn/aSLiD5oSUQn1tAsqpNKIcfrT2MUmPId96USInspLGrqehzpP+tYaQMLNKGMrnjTsINdl7mKJvYzuvokeYX0HuC+UJ984J8V+C5s2w0RwhJ+7r5/kLfDmT9Ap8WpuXdhAH9iaPXjhusTBJ+0w1WSuihNZDJRdHlLyjMKBy07/FFvlrvEAVplAmYVsIPa6v6LJu24B5k9QN7W9keTMf0G6lxEZASRe5VLaN3+HWiD9NjFgbzYKhnuUIRylwbcNk6eG7fodErrNUrU8wnProBU/3Z/LAry305ZL2GsoEcnNE2J8Hpk=
+        skinName: c33746af-c0bc-4dcd-a0ec-f55d36c149e5
+        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTY4MjgwODY5MzU2MywKICAicHJvZmlsZUlkIiA6ICJiYzRlZGZiNWYzNmM0OGE3YWM5ZjFhMzlkYzIzZjRmOCIsCiAgInByb2ZpbGVOYW1lIiA6ICI4YWNhNjgwYjIyNDYxMzQwIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMzY2U1MmQyOWZhM2YxNGRmODk4MDRlNTE2Yzc3Y2M4YTIzOTg1M2M5YTBkODgxNzlkOGY5OTVhNDhkYzQ2NTAiCiAgICB9CiAgfQp9
+        updateSkins: false
+    traitnames: location,inventory,rotationtrait,lookclose,spawned,mounttrait,type,scoreboardtrait,skintrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '37':
+    name: Arqueiro (ReiBarro)
+    uuid: ac5115e0-d4b8-47e9-b979-025da2a10f34
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '-164.5'
+        y: '152.0'
+        z: '37.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '36':
+    name: Arqueiro (ReiCarvalho)
+    uuid: f93ce1f0-e8d6-4818-bfea-a765cac00b74
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '-251.0'
+        y: '150.0'
+        z: '37.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '35':
+    name: Bordador (ReiCarvalho)
+    uuid: 1af57452-1125-40f2-b1f3-99da89944c77
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '157.5'
+        y: '152.0'
+        z: '36.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '34':
+    name: Bordador (ReiBarro)
+    uuid: e7868e16-243f-46ac-93fc-5a49cf9c8c7d
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '-240.5'
+        y: '150.0'
+        z: '9.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '33':
+    name: Ferreiro (ReiCarvalho)
+    uuid: 21d2ffeb-a173-4ab7-8431-e0d04537fb33
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '157.5'
+        y: '152.0'
+        z: '9.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '32':
+    name: Ferreiro (ReiBarro)
+    uuid: 110561ca-da51-422d-bc83-3852484b529d
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '-240.5'
+        y: '150.0'
+        z: '36.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '31':
+    name: Mago Misterioso (ReiCarvalho)
+    uuid: e2866f15-9c04-47a0-80c5-c29fe5a6a562
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '139.5'
+        y: '152.0'
+        z: '20.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '30':
+    name: Mago Misterioso (ReiBarro)
+    uuid: 08495ff3-d13e-46c6-9e65-bd2d4409e444
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '-222.5'
+        y: '152.0'
+        z: '25.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '29':
+    name: Fazendeiro (ReiBarro)
+    uuid: 1fd2e88d-cdfd-477d-a9af-e4b346199fbb
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '-225.5'
+        y: '152.0'
+        z: '13.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '28':
+    name: Fazendeiro (ReiCarvalho)
+    uuid: 840faadc-4ed9-46d3-a6ce-b096844f08e7
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '142.5'
+        y: '152.0'
+        z: '32.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '27':
+    name: Invocador (ReiBarro)
+    uuid: f28775e3-3a26-40d7-a6e4-896f36ac08f5
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '-222.5'
+        y: '152.0'
+        z: '20.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '26':
+    name: Invocador (ReiCarvalho)
+    uuid: d10ca918-4e5b-4053-aba9-938fc448f3c7
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight2
+        x: '139.5'
+        y: '152.0'
+        z: '25.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '25':
+    metadata:
+      collidable: true
+      protected: false
+      glowing: true
+    name: ReiBarro
+    uuid: 8aa9a128-2707-4f61-bf81-4004de557fe1
+    traits:
+      location:
+        bodyYaw: -67.70122
+        world: castlefight2
+        x: '-222.5'
+        y: '151.0'
+        z: '23.0'
+        yaw: '-72.9316'
+        pitch: '0.0'
+      sentinel:
+        stats_ticksSpawned: 4115
+        stats_timesSpawned: 1
+        stats_arrowsFired: 0
+        stats_potionsThrow: 0
+        stats_fireballsFired: 0
+        stats_snowballsThrown: 0
+        stats_eggsThrown: 0
+        stats_skullsThrown: 0
+        stats_llamaSpitShot: 0
+        stats_shulkerBulletsShot: 0
+        stats_evokerFangsSpawned: 0
+        stats_pearlsUsed: 0
+        stats_punches: 0
+        stats_attackAttempts: 0
+        stats_damageTaken: 0.0
+        stats_damageGiven: 0.0
+        avoidRange: 10.0
+        range: 20.0
+        damage: 6.0
+        armor: -1.0
+        health: 1000.0
+        ranged_chase: true
+        close_chase: true
+        invincible: false
+        protected: true
+        fightback: true
+        runaway: false
+        attackRate: 10
+        attackRateRanged: 30
+        healRate: 100
+        guardingUpper: 0
+        guardingLower: 0
+        guardedNPC: -1
+        needsAmmo: false
+        safeShot: true
+        respawnTime: -1
+        chaseRange: 100.0
+        enemyDrops: false
+        enemyTargetTime: 6000
+        speed: 1.5
+        warning_text: ''
+        greeting_text: ''
+        greet_range: 10.0
+        greet_rate: 100
+        autoswitch: false
+        accuracy: 0.0
+        realistic: false
+        ignore_los: false
+        reach: 2.2
+        projectileRange: 100.0
+        guard_distance_minimum: 7.0
+        guard_selection_range: 4.0
+        retain_target: false
+        disable_teleporting: false
+        reaction_slowdown: 0
+        allow_knockback: false
+        death_xp: 0
+        allTargets:
+          byOther:
+            '0': sbteam:castelo1castlefight2
+        allIgnores:
+          targets:
+            '0': OWNER
+          byOther:
+            '0': sbteam:castelo2castlefight2
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: PLAYER
+      scoreboardtrait:
+        color: WHITE
+        tags:
+          '0': rei2
+      skintrait:
+        fetchDefaultSkin: true
+        updateSkins: false
+    traitnames: location,inventory,sentinel,rotationtrait,lookclose,spawned,mounttrait,owner,type,scoreboardtrait,skintrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '24':
+    metadata:
+      collidable: true
+      protected: false
+      glowing: true
+    name: ReiCarvalho
+    uuid: 36be30b8-21ee-40c4-a958-0fb339844993
+    traits:
+      location:
+        bodyYaw: -42.773045
+        world: castlefight2
+        x: '139.5'
+        y: '153.0'
+        z: '23.0'
+        yaw: '-23.4901'
+        pitch: '0.0'
+      sentinel:
+        stats_ticksSpawned: 4116
+        stats_timesSpawned: 1
+        stats_arrowsFired: 0
+        stats_potionsThrow: 0
+        stats_fireballsFired: 0
+        stats_snowballsThrown: 0
+        stats_eggsThrown: 0
+        stats_skullsThrown: 0
+        stats_llamaSpitShot: 0
+        stats_shulkerBulletsShot: 0
+        stats_evokerFangsSpawned: 0
+        stats_pearlsUsed: 0
+        stats_punches: 0
+        stats_attackAttempts: 0
+        stats_damageTaken: 0.0
+        stats_damageGiven: 0.0
+        avoidRange: 10.0
+        range: 20.0
+        damage: 6.0
+        armor: -1.0
+        health: 1000.0
+        ranged_chase: true
+        close_chase: true
+        invincible: false
+        protected: true
+        fightback: true
+        runaway: false
+        attackRate: 10
+        attackRateRanged: 30
+        healRate: 100
+        guardingUpper: 0
+        guardingLower: 0
+        guardedNPC: -1
+        needsAmmo: false
+        safeShot: true
+        respawnTime: -1
+        chaseRange: 100.0
+        enemyDrops: false
+        enemyTargetTime: 6000
+        speed: 1.5
+        warning_text: ''
+        greeting_text: ''
+        greet_range: 10.0
+        greet_rate: 100
+        autoswitch: false
+        accuracy: 0.0
+        realistic: false
+        ignore_los: false
+        reach: 2.2
+        projectileRange: 100.0
+        guard_distance_minimum: 7.0
+        guard_selection_range: 4.0
+        retain_target: false
+        disable_teleporting: false
+        reaction_slowdown: 0
+        allow_knockback: false
+        death_xp: 0
+        allTargets:
+          byOther:
+            '0': sbteam:castelo2w@castlefight2
+        allIgnores:
+          targets:
+            '0': OWNER
+          byOther:
+            '0': sbteam:castelo1w@castlefight2
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: PLAYER
+      scoreboardtrait:
+        color: WHITE
+        tags:
+          '0': rei1
+      skintrait:
+        fetchDefaultSkin: true
+        updateSkins: false
+    traitnames: location,inventory,sentinel,rotationtrait,lookclose,spawned,mounttrait,owner,type,scoreboardtrait,skintrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '18':
+    name: Arqueiro (ReiBarro)
+    uuid: fd0f91d5-cb75-4d8b-adc7-d7127de75a4e
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '-164.5'
+        y: '152.0'
+        z: '37.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '17':
+    name: Arqueiro (ReiCarvalho)
+    uuid: eb275c9c-993d-46a1-9f95-0b7ce6f48f8c
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '-251.0'
+        y: '150.0'
+        z: '37.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '16':
+    name: Bordador (ReiCarvalho)
+    uuid: 641aa2d4-7f02-49c2-acb4-b6cbf0bc2310
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '157.5'
+        y: '152.0'
+        z: '36.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '15':
+    name: Bordador (ReiBarro)
+    uuid: b1b63ca2-3d40-4391-b029-ad9c3741cc2b
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '-240.5'
+        y: '150.0'
+        z: '9.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '14':
+    name: Ferreiro (ReiCarvalho)
+    uuid: d629baf1-0035-4dc3-822d-3eb78996e78c
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '157.5'
+        y: '152.0'
+        z: '9.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '13':
+    name: Ferreiro (ReiBarro)
+    uuid: 156eda8c-4bef-4a25-aac4-cf44d6a1d3db
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '-240.5'
+        y: '150.0'
+        z: '36.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '12':
+    name: Mago Misterioso (ReiCarvalho)
+    uuid: d773b8ff-e759-4da5-8130-75cf04a880b2
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '139.5'
+        y: '152.0'
+        z: '20.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '11':
+    name: Mago Misterioso (ReiBarro)
+    uuid: 830f93f0-3fc6-467e-b8c9-a7295b6b112b
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '-222.5'
+        y: '152.0'
+        z: '25.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '10':
+    name: Fazendeiro (ReiBarro)
+    uuid: 00a3786a-04ed-4256-a508-b5ef2e2df3f5
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '-225.5'
+        y: '152.0'
+        z: '13.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '9':
+    name: Fazendeiro (ReiCarvalho)
+    uuid: f0754394-b636-4210-9d3a-d83e422dd01a
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '142.5'
+        y: '152.0'
+        z: '32.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '8':
+    name: Invocador (ReiBarro)
+    uuid: 3ac66696-f7db-4f19-96de-2bf4e0872d7a
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '-222.5'
+        y: '152.0'
+        z: '20.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '7':
+    name: Invocador (ReiCarvalho)
+    uuid: ead63078-8e18-481d-8f75-56d1f49152d8
+    traits:
+      location:
+        bodyYaw: !!float 'NaN'
+        world: castlefight1
+        x: '139.5'
+        y: '152.0'
+        z: '25.5'
+        yaw: '0.0'
+        pitch: '0.0'
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: VILLAGER
+    traitnames: location,lookclose,spawned,mounttrait,type,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '6':
+    metadata:
+      collidable: true
+      protected: false
+      glowing: true
+    name: ReiBarro
+    uuid: 7673e420-11d3-40c7-84f5-00ec3128c4d8
+    traits:
+      location:
+        bodyYaw: 123.501564
+        world: castlefight1
+        x: '-222.5'
+        y: '151.0'
+        z: '23.0'
+        yaw: '123.5016'
+        pitch: '0.0'
+      sentinel:
+        stats_ticksSpawned: 4573
+        stats_timesSpawned: 1
+        stats_arrowsFired: 0
+        stats_potionsThrow: 0
+        stats_fireballsFired: 0
+        stats_snowballsThrown: 0
+        stats_eggsThrown: 0
+        stats_skullsThrown: 0
+        stats_llamaSpitShot: 0
+        stats_shulkerBulletsShot: 0
+        stats_evokerFangsSpawned: 0
+        stats_pearlsUsed: 0
+        stats_punches: 0
+        stats_attackAttempts: 0
+        stats_damageTaken: 0.0
+        stats_damageGiven: 0.0
+        avoidRange: 10.0
+        range: 20.0
+        damage: 6.0
+        armor: -1.0
+        health: 1000.0
+        ranged_chase: true
+        close_chase: true
+        invincible: false
+        protected: true
+        fightback: true
+        runaway: false
+        attackRate: 10
+        attackRateRanged: 30
+        healRate: 100
+        guardingUpper: 0
+        guardingLower: 0
+        guardedNPC: -1
+        needsAmmo: false
+        safeShot: true
+        respawnTime: -1
+        chaseRange: 100.0
+        enemyDrops: false
+        enemyTargetTime: 6000
+        speed: 1.5
+        warning_text: ''
+        greeting_text: ''
+        greet_range: 10.0
+        greet_rate: 100
+        autoswitch: false
+        accuracy: 0.0
+        realistic: false
+        ignore_los: false
+        reach: 2.2
+        projectileRange: 100.0
+        guard_distance_minimum: 7.0
+        guard_selection_range: 4.0
+        retain_target: false
+        disable_teleporting: false
+        reaction_slowdown: 0
+        allow_knockback: false
+        death_xp: 0
+        allTargets:
+          byOther:
+            '0': sbteam:castelo1castlefight1
+        allIgnores:
+          targets:
+            '0': OWNER
+          byOther:
+            '0': sbteam:castelo2castlefight1
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: PLAYER
+      scoreboardtrait:
+        color: WHITE
+        tags:
+          '0': rei2
+      skintrait:
+        fetchDefaultSkin: true
+        updateSkins: false
+    traitnames: location,inventory,sentinel,rotationtrait,lookclose,spawned,mounttrait,owner,type,scoreboardtrait,skintrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '5':
+    metadata:
+      collidable: true
+      protected: false
+      glowing: true
+    name: ReiCarvalho
+    uuid: d2ebd066-50a8-450f-bde7-82570a5b6f02
+    traits:
+      location:
+        bodyYaw: 161.62363
+        world: castlefight1
+        x: '139.5'
+        y: '153.0'
+        z: '23.0'
+        yaw: '-178.3764'
+        pitch: '0.0'
+      sentinel:
+        stats_ticksSpawned: 4574
+        stats_timesSpawned: 1
+        stats_arrowsFired: 0
+        stats_potionsThrow: 0
+        stats_fireballsFired: 0
+        stats_snowballsThrown: 0
+        stats_eggsThrown: 0
+        stats_skullsThrown: 0
+        stats_llamaSpitShot: 0
+        stats_shulkerBulletsShot: 0
+        stats_evokerFangsSpawned: 0
+        stats_pearlsUsed: 0
+        stats_punches: 0
+        stats_attackAttempts: 0
+        stats_damageTaken: 0.0
+        stats_damageGiven: 0.0
+        avoidRange: 10.0
+        range: 20.0
+        damage: 6.0
+        armor: -1.0
+        health: 1000.0
+        ranged_chase: true
+        close_chase: true
+        invincible: false
+        protected: true
+        fightback: true
+        runaway: false
+        attackRate: 10
+        attackRateRanged: 30
+        healRate: 100
+        guardingUpper: 0
+        guardingLower: 0
+        guardedNPC: -1
+        needsAmmo: false
+        safeShot: true
+        respawnTime: -1
+        chaseRange: 100.0
+        enemyDrops: false
+        enemyTargetTime: 6000
+        speed: 1.5
+        warning_text: ''
+        greeting_text: ''
+        greet_range: 10.0
+        greet_rate: 100
+        autoswitch: false
+        accuracy: 0.0
+        realistic: false
+        ignore_los: false
+        reach: 2.2
+        projectileRange: 100.0
+        guard_distance_minimum: 7.0
+        guard_selection_range: 4.0
+        retain_target: false
+        disable_teleporting: false
+        reaction_slowdown: 0
+        allow_knockback: false
+        death_xp: 0
+        allTargets:
+          byOther:
+            '0': sbteam:castelo2w@castlefight1
+        allIgnores:
+          targets:
+            '0': OWNER
+          byOther:
+            '0': sbteam:castelo1w@castlefight1
+      lookclose:
+        range: '5.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: true
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      spawned: true
+      type: PLAYER
+      scoreboardtrait:
+        color: WHITE
+        tags:
+          '0': rei1
+      skintrait:
+        fetchDefaultSkin: true
+        updateSkins: false
+    traitnames: location,inventory,sentinel,rotationtrait,lookclose,spawned,mounttrait,owner,type,scoreboardtrait,skintrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false

@@ -200,8 +200,8 @@ command /partidainiciar <world>:
             location(x-coordinate of {rei%{_team}%loc}, y-coordinate of {rei%{_team}%loc}, z-coordinate of {rei%{_team}%loc, world of player})   
         make console execute command "execute in minecraft:%arg-1% data merge block 134 150 27 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
         make console execute command "execute in minecraft:%arg-1% data merge block -218 150 18 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
-        make console execute command "team modify castelo1%arg-1% displayName {""text"":""%{castelo1nome}%""}"
-        make console execute command "team modify castelo1%arg-1% displayName {""text"":""%{castelo2nome}%""}"
+        make console execute command "team modify castelo1w@%arg-1% displayName {""text"":""%{castelo1nome}%""}"
+        make console execute command "team modify castelo1w@%arg-1% displayName {""text"":""%{castelo2nome}%""}"
 
 command /partidateminar [<number>] [<world>]:
     executable by: console

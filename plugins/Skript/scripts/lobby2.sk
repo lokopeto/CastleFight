@@ -7,11 +7,11 @@ on skript start:
         make console execute command "npc select %{_id}%"
         make console execute command "npc remove"
     loop all offline players:
-        set {placa::%uuid of loop-players%::1} to location of event-block
-        set line 1 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::2}
-        set line 2 of block at {placa::%uuid of player%::1} to "&bClique para"
-        set line 3 of block at {placa::%uuid of player%::1} to "&bEntrar!"
-        set line 4 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::3}
+        set {placa::%uuid of loop-offline player%::1} to location of event-block
+        set line 1 of block at {placa::%uuid of loop-offline player%::1} to {placa::%uuid of player%::2}
+        set line 2 of block at {placa::%uuid of loop-offline player%::1} to "&bClique para"
+        set line 3 of block at {placa::%uuid of loop-offline player%::1} to "&bEntrar!"
+        set line 4 of block at {placa::%uuid of loop-offline player%::1} to {placa::%uuid of player%::3}
 
 on right click on oak wall sign:
     cancel event
@@ -73,6 +73,12 @@ on right click on oak wall sign:
 
     make console execute command "team add castelo1%world of player%"
     make console execute command "team add castelo2%world of player%"
+
+    {_team} is "Carvalho":
+        make console execute command "team join castelo1%world of player% %player%"
+    {_team} is "Barro":
+        make console execute command "team join castelo2%world of player% %player%"
+ 
 
 
 
@@ -142,8 +148,7 @@ command /sair:
 
             if {lobbyhost::%world of player%} is name of player:
                 delete {lobbyhost::%world of player%}
-                message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida"
-            
+    
             if {lobbyhost::%world of player%} is not set:
 
                 set {lobbyhost::%world of player%} to {lobbyplayers::%world of player%::1}
@@ -226,23 +231,23 @@ on anvil gui click:
         else:
             set {castelo2nome::%world of player%} to "ReiBarro"
         create a gui with virtual chest inventory with 1 rows named "Tudo Pronto!!":
-            make gui slot 4 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Carvalho: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo1nome::%world of player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Barro: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo2nome::%world of player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Modo: ""},{""color"":""dark_green"",""text"":""%{criarpartidamodo::%player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Jogadores: %amount of players in world of player%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Server: %world of player%""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""CONFIRMAR""},{""color"":""green"",""text"":""""}],""text"":""""}'}}":
+            make gui slot 4 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Carvalho: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo1nome::%world of player%}% (%%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Barro: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo2nome::%world of player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Modo: ""},{""color"":""dark_green"",""text"":""%{criarpartidamodo::%player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Jogadores: %amount of players in world of player%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Server: %world of player%""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""CONFIRMAR""},{""color"":""green"",""text"":""""}],""text"":""""}'}}":
                 close player's inventory
                 if amount of players in world of player >= 2:
                     message "&l&a%player% Iniciou a partida" to all players in world of player
                 
                     make console execute command "npcs %world of player%"
                     make console execute command "jogo 1 %world of player%"
-                    loop all players in world of player:
-                        teleport loop-player to location(x-coordinate of {rei%{_team}%loc}, y-coordinate of {rei%{_team}%loc}, z-coordinate of {rei%{_team}%loc, world of player})   
-                    make console execute command "execute in minecraft:%world of player% data merge block 134 150 27 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%world of player%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
-                    make console execute command "execute in minecraft:%world of player% data merge block -218 150 18 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%world of player%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+                        
+                    make console execute command "execute in minecraft:%world of player% run data merge block 134 150 27 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%world of player%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+                    make console execute command "execute in minecraft:%world of player% run data merge block -218 150 18 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%world of player%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
                     make console execute command "team modify castelo1%world of player% displayName {""text"":""%{castelo1nome::%world of player%}%""}"
                     make console execute command "team modify castelo1%world of player% displayName {""text"":""%{castelo2nome::%world of player%}%""}"
 
                     set slot 4 of player to air 
 
                     delete {lobbyhost::%world of player%}
+                
 
         open the created gui for player
 
@@ -271,7 +276,7 @@ command /partidateminar [<number>] [<world>] [<world>]:
         
         arg-1 is 1 or 2:
             wait 10 seconds
-            make console execute command "sair"
+            make players in world arg-2 execute command "sair"
             make console execute command "jogo 0 %arg-2%"
 
         arg-1 is 3:

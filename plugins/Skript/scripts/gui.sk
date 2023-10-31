@@ -2,11 +2,12 @@
 every 1 second:
     loop all worlds:
         
-        add -1 to {Padeirotimer1}, {Padeirotimer2} and {exiladotimer}
+        add -1 to {Padeirotimer1::%loop-world%}, {Padeirotimer2::%loop-world%} and {exiladotimer::%loop-world%}
 
 on npc right click:
     set {_team} to "%team of player%"
     replace "castelo" in {_team} with ""
+    replace "%world of player%" in {_team} with ""
 #    broadcast "%{_team}%"
     if npc name is "Invocador (%{castelo%{_team}%nome::%world of player%}%)":
         {invocadorabrido%{_team}%::%world of player%} is set:
@@ -18,7 +19,7 @@ on npc right click:
                 loop 10 times:
                     add 1 to {slots1}
                     add 1 to {slots2}
-                    make gui slot {slots1} with {Invocador%{_team}%::%{slots2}%}
+                    make gui slot {slots1} with {Invocador%{_team}%::%world of player%::%{slots2}%}
 #                    message "%{Invocador%{_team}%::%{slots2}%}%"
                 wait 1 tick
                 run on gui open:
@@ -62,24 +63,23 @@ on npc right click:
                             make gui slot {slots1} with "%{_quant} - 10% golden carrot" parsed as item                                                                                    
                     
             open the created gui for player
-            set {Padeirotimer%{_team}%} to 10
+            set {Padeirotimer%{_team}%::%world of player%} to 10
         else:
             message "&7&oespere &f&o%{Padeirotimer%{_team}%::%world of player%}%&7&o segundos.."
     if npc name is "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
-        if {Padeirotimer%{_team}%} <= 0:
-            create a gui with virtual chest inventory with 1 rows named "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
-                set {slots1} to -1
-                loop 9 times:
-                    add 1 to {slots1}
-                    make gui slot {slots1} with cyan stained glass pane
-                {raio%{_team}%::%world of player%} is 1:
-                    make gui slot 4 with nether star with nbt compound from "{display:{Name:'[{""text"":""O Poder dos Raios"",""italic"":false,""color"":""aqua"",""bold"":true}]',Lore:['[{""text"":""Use os raios ao seu favor e"",""color"":""blue""}]','[{""text"":""elimine os monstros dentro"",""italic"":true,""color"":""blue""}]','[{""text"":""do seu castelo."",""italic"":true,""color"":""blue""},{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":""Rescue Strike??"",""italic"":true,""color"":""dark_gray""}]']}}"
-                else:
-                    make gui slot 4 with nether star with nbt compound from "{display:{Name:'[{""text"":""O Poder dos Raios (usado)"",""italic"":false,""color"":""gray"",""bold"":true}]',Lore:['[{""text"":""Você já usou o poder dos raios"",""color"":""blue""}]','[{""text"":""Comprar?"",""italic"":true,""color"":""blue""},{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":""Custo: "",""italic"":false,""color"":""aqua""},{""text"":""2500"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""nem tudo na vida é de graça..."",""italic"":true,""color"":""dark_gray""}]']}}"
-            open the created gui for player
+        create a gui with virtual chest inventory with 1 rows named "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
+            set {slots1} to -1
+            loop 9 times:
+                add 1 to {slots1}
+                make gui slot {slots1} with cyan stained glass pane
+            {raio%{_team}%::%world of player%} is 1:
+                make gui slot 4 with nether star with nbt compound from "{display:{Name:'[{""text"":""O Poder dos Raios"",""italic"":false,""color"":""aqua"",""bold"":true}]',Lore:['[{""text"":""Use os raios ao seu favor e"",""color"":""blue""}]','[{""text"":""elimine os monstros dentro"",""italic"":true,""color"":""blue""}]','[{""text"":""do seu castelo."",""italic"":true,""color"":""blue""},{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":""Rescue Strike??"",""italic"":true,""color"":""dark_gray""}]']}}"
+            else:
+                make gui slot 4 with nether star with nbt compound from "{display:{Name:'[{""text"":""O Poder dos Raios (usado)"",""italic"":false,""color"":""gray"",""bold"":true}]',Lore:['[{""text"":""Você já usou o poder dos raios"",""color"":""blue""}]','[{""text"":""Comprar?"",""italic"":true,""color"":""blue""},{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":""Custo: "",""italic"":false,""color"":""aqua""},{""text"":""2500"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""nem tudo na vida é de graça..."",""italic"":true,""color"":""dark_gray""}]']}}"
+        open the created gui for player
 
-    if npc name is "Alquimista (%{castelo%{_team}%nome}%::%world of player%)":
-        create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome}%::%world of player%)":
+    if npc name is "Alquimista (%{castelo%{_team}%nome::%world of player%}%::%world of player%)":
+        create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome::%world of player%}%::%world of player%)":
             set {_tipo::*} to "Básica" and ""
             if {lvnpcs%{_team}%::%world of player%} >= 15:
                 set {_tipo::*} to "Mediana" and "long_"
@@ -169,9 +169,9 @@ on npc right click:
 
         open the created gui for player
     
-    if npc name is "Ferreiro (%{castelo%{_team}%nome}%)":
+    if npc name is "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
         if {lvnpcs%{_team}%::%world of player%} is 1:
-            create a gui with virtual chest inventory with 2 rows named "Ferreiro (%{castelo%{_team}%nome}%)":
+            create a gui with virtual chest inventory with 2 rows named "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
                 set the lock status of the edited gui to false
                 set {slots1} to -1
                 set {slots2} to 0
@@ -189,7 +189,7 @@ on npc right click:
                         make gui slot {slots1} with wooden sword
             open the created gui for player
         if {lvnpcs%{_team}%::%world of player%} >= 2:
-            create a gui with virtual chest inventory with 2 rows named "Ferreiro (%{castelo%{_team}%nome}%)":
+            create a gui with virtual chest inventory with 2 rows named "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Espada Curta %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 0 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Espada Curta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Gládio Curta %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -207,9 +207,9 @@ on npc right click:
                     make gui slot 4 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Montante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Afiada"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""50 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
     
-    if npc name is "Arqueiro (%{castelo%{_team}%nome}%)":
+    if npc name is "Arqueiro (%{castelo%{_team}%nome::%world of player%}%)":
         if {lvnpcs%{_team}%::%world of player%} is 1:
-            create a gui with virtual chest inventory with 2 rows named "Arqueiro (%{castelo%{_team}%nome}%)":
+            create a gui with virtual chest inventory with 2 rows named "Arqueiro (%{castelo%{_team}%nome::%world of player%}%)":
                 set the lock status of the edited gui to false
                 set {slots1} to -1
                 set {slots2} to 0
@@ -226,7 +226,7 @@ on npc right click:
                         make gui slot {slots1} with "%{_randomcount}% arrow" parsed as item
             open the created gui for player
         if {lvnpcs%{_team}%::%world of player%} >= 2:
-            create a gui with virtual chest inventory with 2 rows named "Arqueiro (%{castelo%{_team}%nome}%)":
+            create a gui with virtual chest inventory with 2 rows named "Arqueiro (%{castelo%{_team}%nome::%world of player%}%)":
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Arco %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 0 with bow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Arco"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Básica/Duas mãos"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Arco Compósito %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -253,9 +253,9 @@ on npc right click:
                     make gui slot 4 with crossbow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Besta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Lenta"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""50 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
 
-    if npc name is "Bordador (%{castelo%{_team}%nome}%)":
+    if npc name is "Bordador (%{castelo%{_team}%nome::%world of player%}%)":
         if {lvnpcs%{_team}%::%world of player%} is 1:
-            create a gui with virtual chest inventory with 2 rows named "Bordador (%{castelo%{_team}%nome}%)":
+            create a gui with virtual chest inventory with 2 rows named "Bordador (%{castelo%{_team}%nome::%world of player%}%)":
                 set the lock status of the edited gui to false
                 set {slots1} to -1
                 set {slots2} to 0
@@ -285,7 +285,7 @@ on npc right click:
                             make gui slot {slots1} with leather boots
             open the created gui for player
         if {lvnpcs%{_team}%::%world of player%} >= 2:
-            create a gui with virtual chest inventory with 4 rows named "Bordador (%{castelo%{_team}%nome}%)":
+            create a gui with virtual chest inventory with 4 rows named "Bordador (%{castelo%{_team}%nome::%world of player%}%)":
                 #%%%%%%%%%%%%%%%%%%%%%%%%% Ferro %%%%%%%%%%%%%%%%%%%%%%%%%
                 make gui slot 1 with iron helmet with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Capacete de ferro"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Gratis"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
 
@@ -326,8 +326,8 @@ on npc right click:
                     make gui slot 34 with netherite boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
 
-    if npc name is "Necromancer (%{castelo%{_team}%nome}%)":
-        create a gui with virtual chest inventory with 1 rows named "Necromancer (%{castelo%{_team}%nome}%)":
+    if npc name is "Necromancer (%{castelo%{_team}%nome::%world of player%}%)":
+        create a gui with virtual chest inventory with 1 rows named "Necromancer (%{castelo%{_team}%nome::%world of player%}%)":
             set the lock status of the edited gui to false
             set {slotsnecro1} to -1
             loop 9 times:
@@ -409,7 +409,7 @@ on npc right click:
         else:
             message "&7&oespere &f&o%{exiladotimer}%&7&o segundos.."
 
-    if npc name is "Vendedor Misterioso (%{castelo%{_team}%nome}%)":
+    if npc name is "Vendedor Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
         create a gui with virtual chest inventory with 2 rows named "Vendedor Misterioso":
             set {slotsitems} to -1
             loop 18 times:
@@ -452,7 +452,7 @@ on inventory click:
 #        if clicked slot is not a spawn egg:
 #            cancel event
     
-    if name of event-inventory contains "Ferreiro (%{castelo%{_team}%nome}%)":
+    if name of event-inventory contains "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
         set {_lore::*} to lore of clicked slot
         set {_nome} to name of clicked slot
         set {_lore::2} to uncolored {_lore::2}
@@ -480,7 +480,7 @@ on inventory click:
             if {_nome} is "Espada Curta":
                 make console execute command "itemgen give %event-player% espadacurta %{lvnpcs%{_team}%::%world of player%}%" 
 
-    if name of event-inventory contains "Arqueiro (%{castelo%{_team}%nome}%)":
+    if name of event-inventory contains "Arqueiro (%{castelo%{_team}%nome::%world of player%}%)":
         set {_lore::*} to lore of clicked slot
         set {_nome} to name of clicked slot
         set {_lore::2} to uncolored {_lore::2}
@@ -516,7 +516,7 @@ on inventory click:
             if {_nome} is "Flecha Basica":
                 make console execute command "give %event-player% arrow 16"
 
-    if name of event-inventory contains "Mago Misterioso (%{castelo%{_team}%nome}%)":
+    if name of event-inventory contains "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
         set {_lore::*} to lore of clicked slot
         set {_nome} to name of clicked slot
         set {_lore::4} to uncolored {_lore::4}
@@ -534,11 +534,11 @@ on inventory click:
                     close player's inventory
         else:
             message "&e""Meus r&ke&elâmpagos atin&kgi&erão com grande fúria."""
-            make console execute command "matarmobs %{_team}%"
+            make console execute command "matarmobs %{_team}% %world of player%"
             set {raio%{_team}%::%world of player%} to 0
             close player's inventory
 
-    if name of event-inventory contains "Bordador (%{castelo%{_team}%nome}%)":
+    if name of event-inventory contains "Bordador (%{castelo%{_team}%nome::%world of player%}%)":
         set {_lore::*} to lore of clicked slot
         set {_nome} to name of clicked slot
         set {_lore::1} to uncolored {_lore::1}
@@ -571,7 +571,7 @@ on inventory click:
             if {_nome} contains "ferro":
                 make console execute command "itemgen give %event-player% armaduradeferro %{lvnpcs%{_team}%::%world of player%}% 1 IRON_%{_tipo}%"  
 
-    if name of event-inventory contains "Alquimista (%{castelo%{_team}%nome}%)":
+    if name of event-inventory contains "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
         set {_lore::*} to lore of clicked slot
         set {_nome} to name of clicked slot
         set {_lore::*} to uncolored {_lore::*}
@@ -639,7 +639,7 @@ on inventory click:
             add "-%{_lore::2}%" parsed as integer to level of player
             give "%{_tipo}%" parsed as item with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""%{_nome}%"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_lore::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tempo}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_lore::4}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:%{_color}%,HideFlags:35,CustomPotionEffects:[{Id:%{_id}%,Duration:%{_ticks}%,Amplifier:%{_força}%}]}" to player 
 
-#    if name of event-inventory is "Necromancer (%{castelo%{_team}%nome}%)":
+#    if name of event-inventory is "Necromancer (%{castelo%{_team}%nome::%world of player%}%)":
 #        if clicked slot is not a spawn egg:
 #            cancel event
 
@@ -678,7 +678,7 @@ on inventory click:
             loop 4 times:
                 wait 4 tick
                 set {_z} to a random number between 25.0 and 21.0
-                make console execute command "npc create Exilado (%{castelo%{_team}%nome}%) --type player --trait sentinel --at %{_x}%:149:%{_z}%:world"
+                make console execute command "npc create Exilado (%{castelo%{_team}%nome::%world of player%}%) --type player --trait sentinel --at %{_x}%:149:%{_z}%:world"
                 
                 make console execute command "npc skin --url %{skins::1}%"  
                 make console execute command "sentinel invincible"
