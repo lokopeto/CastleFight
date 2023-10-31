@@ -40,9 +40,6 @@ on death:
                 add a random integer between 3 and 10 to {XPquant2::%world of attacker%}
             victim is a player:
                 add {xpplayer::%world of attacker%} to {XPquant2::%world of attacker%}
-        
-
-
 
 every 10 ticks:
     loop all worlds:
@@ -51,8 +48,8 @@ every 10 ticks:
         set line 3 of block at location(134, 150, 19, loop-world) to "&9%{XPquant1::%loop-world%}%"
 
 on click on sign:
-    cancel event
     {jogo::%world of player%} is 1
+    message "player"
     loop all players:
         set {_team} to "%team of loop-player%"
         replace "castelo" in {_team} with ""
@@ -134,7 +131,10 @@ on click on sign:
                     add {_xp} to {XPquant%{_team}%::%world of player%}
             set line 3 to "&9%{XPquant%{_team}%::%world of player%}%"
     else:
-        message "&cEssa placa não é tua!" to player
+        line 1 is "&b[Evoluir]":
+            message "&cEssa placa não é tua!" to player
+        line 1 is "&b[XP]":
+            message "&cEssa placa não é tua!" to player
 
 every 130 seconds:
     loop all worlds:
@@ -171,6 +171,8 @@ command /jogo <number> [<world>] [<world>] [<world>]:
     executable by: console
     trigger:
         if arg-1 is 1: 
+            set {jogo::%arg-2%} to 1
+
             wait 10 ticks
 #            make console execute command "execute in setblock -47 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""[Espectador]"",""clickEvent"":{""action"":""run_command"",""value"":""gamemode spectator @s""},""color"":""aqua""}',Text2:'{""text"":""Clique para"",""clickEvent"":{""action"":""run_command"",""value"":""tp @s -40.50 200.00 23.00""},""bold"":true,""color"":""blue""}',Text3:'{""text"":""Espectar"",""clickEvent"":{""action"":""run_command"",""value"":""team join espectador @s""},""bold"":true,""color"":""blue""}',Text4:'{""text"":""==========="",""color"":""aqua""}'}"
             #evoluir npcs
@@ -185,6 +187,8 @@ command /jogo <number> [<world>] [<world>] [<world>]:
             wait 10 ticks
             make console execute command "execute in minecraft:%arg-2% run kill @e[type=minecraft:item]"    
         if arg-1 is 0:
+            set {jogo::%arg-2%} to 0
+
             set {level::%arg-2%} to 5
             set max health of all players in world arg-2 to 10.0
             set {castelo1nome::%arg-2%} to "ReiCarvalho"

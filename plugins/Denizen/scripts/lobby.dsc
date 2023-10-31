@@ -14,3 +14,8 @@ lobby:
             - if <context.args.get[1]> = 1:
                 - foreach <world[<context.args.get[2]>].players>:
                     - teleport <[value]> <server.flag[<[value].scoreboard_team_name>loc]>
+                    - inventory clear
+
+        on player right clicks block:
+            - if <context.item.contains_text[sign]>:
+                - determine cancelled

@@ -14,7 +14,6 @@ on skript start:
         set line 4 of block at {placa::%uuid of loop-offline player%::1} to {placa::%uuid of player%::3}
 
 on right click on oak wall sign:
-    cancel event
 #    set line 1 of event-block to "&a=[🗡CF1🛡]="
 #    set line 2 of event-block to "&bClique para"
 #    set line 3 of event-block to "&bEntrar!"
@@ -78,7 +77,6 @@ on right click on oak wall sign:
         make console execute command "team join castelo1%world of player% %player%"
     {_team} is "Barro":
         make console execute command "team join castelo2%world of player% %player%"
- 
 
 
 
