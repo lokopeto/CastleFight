@@ -447,9 +447,9 @@ on npc right click:
 on inventory click:
     set {_team} to "%team of player%"
     replace "castelo" in {_team} with ""
-    if name of event-inventory is "Invocador":
-        if clicked slot is not a spawn egg:
-            cancel event
+#    if name of event-inventory is "Invocador":
+#        if clicked slot is not a spawn egg:
+#            cancel event
     
     if name of event-inventory contains "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
         set {_lore::*} to lore of clicked slot

@@ -1,8 +1,9 @@
 #[Invocador|Necromancer]
 inventario:
     type: world
+    debug: true
     events:
         on player clicks in inventory:
             - if <context.inventory.title.contains_any_text[Invocador|Necromancer]>:
-                - if not <context.item.contains_any[spawn_egg|air]>:
+                - if !<context.item.contains_all_text[spawn_egg]>:
                     - determine cancelled

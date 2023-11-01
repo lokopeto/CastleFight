@@ -1,5 +1,6 @@
 lobby:
     type: world
+    debug: false
     events:
         on player clicks item in inventory:
             - if <player.location.in_region[lobby]>:
