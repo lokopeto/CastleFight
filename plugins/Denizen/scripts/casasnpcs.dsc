@@ -89,9 +89,10 @@ casasncpsfawe:
                                 - flag server npcsinteract<context.args.get[1]>:<-:<[npc]>
                     - if <context.args.get[3]> = 1:
                         - execute as_server "npcsextra <context.args.get[1]> <context.args.get[2]> <context.args.get[4]>"
-                    - if <context.args.get[3]> = 1 or 4:
-                        - flag server casasncpsfawex:-283
-                        - flag server casasncpsfawey:149
+                    - if <context.args.get[3]> = 1:
+                        - flag server casasncpsfawez:26
+                    - if <context.args.get[3]> = 4:
+                        - narrate <context.args.get[3]>
                         - flag server casasncpsfawez:26
                     - if <context.args.get[3]> = 5:
                         - flag server casasncpsfawez:28

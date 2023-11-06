@@ -1,56 +1,64 @@
-command /spawnmobc [<number>] [<text>] [<text>] [<number>] [<number>] [<number>] [<number>] / [<number>] [<number>] [<number>] [<world>]: 
+#command /spawnmobc [<number>] [<text>] [<text>] [<number>] [<number>] [<number>] [<number>] / [<number>] [<number>] [<number>] [<world>]: 
 #                 [<castelo>] [<type>] [<lv>] [<damage>] [<health>] [<armor>] [<speed>] / [<npc speed>] [<accuracy>] [<range>] [<world>]
-    executable by: console
-    trigger:
-        set {_random} to a random integer between 1 and 6
-        wait "%{_random}% ticks" parsed as timespan
-        set {_arg2} to arg-2
-        replace all "_" in {_arg2} with " "
-        replace all " ", "lv.", "Lv.", "0", "1", "2","3", "4", "5", "6", "7", "8" and "9" in {_arg2} with ""
+#    executable by: console
+#    trigger:
+#        set {_random} to a random integer between 1 and 6
+#        wait "%{_random}% ticks" parsed as timespan
+#        set {_arg2} to arg-2
+#        replace all "_" in {_arg2} with " "
+#        replace all " ", "lv.", "Lv.", "0", "1", "2","3", "4", "5", "6", "7", "8" and "9" in {_arg2} with ""
+#
+#        set {_z} to a random number between 25.0 and 21.0
+#
+#        if arg-1 is 1:
+#            set {_x} to 136.0
+#            set {_y} to 150
+#            set {_inim} to 2
+#            set {_castelo} to "castelo1"
+#        if arg-1 is 2:
+#            set {_x} to -219.0
+#            set {_y} to 152
+#            set {_inim} to 1
+#            set {_castelo} to "castelo2"
+#
+#        make console execute command "npc create %{_arg2}% %arg-3% (%{castelo%arg-1%nome::%arg-11%}%) --type %{mobs::%{_arg2}%::15}% --trait sentinel --at %{_x}%:%{_y}%:%{_z}%:%arg-11%"
+#        make console execute command "wp disableteleport"
+#        make console execute command "sentinel addtarget npc:%{castelo%{_inim}%nome::%arg-11%}%"
+#        make console execute command "sentinel addtarget sbteam:%{castelo%{_inim}%nome::%arg-11%}%"
+#        make console execute command "sentinel respawntime -1"
+#        make console execute command "sentinel addignore npc:Invocador"
+#        make console execute command "sentinel addignore npc:Bordador"
+#        make console execute command "sentinel addignore npc:Ferreiro"
+#        make console execute command "sentinel addignore npc:Fazendeiro"
+#        make console execute command "sentinel addignore npc:Arqueiro"
+#        make console execute command "sentinel addignore npc:Alquimista"
+#        make console execute command "sentinel addignore npc:Necromancer"  
+#        make console execute command "sentinel addignore npc:Misterioso"                
+#        make console execute command "sentinel addignore sbteam:castelo%arg-1%%arg-11%"
+#        make console execute command "sentinel addtarget players"
+#        make console execute command "sentinel damage %arg-4%"
+#        make console execute command "sentinel health %arg-5%"
+#        make console execute command "sentinel armor %arg-6%"
+#        make console execute command "sentinel speed %arg-8%"
+#        make console execute command "npc speed %arg-7%"
+#        
+#        if arg-8 is set:
+#            make console execute command "sentinel accuracy %arg-9%"
+#        if arg-9 is set:
+#            make console execute command "sentinel range %arg-10%"
+#        if arg-2 contains "Spider":
+#            make console execute command "sentinel attackrate 0.6"
+#        if arg-2 contains "blaze" or "bat":
+#            make console execute command "npc flyable true"	
+#        if arg-2 contains "ravager" or "strider":
+#            make console execute command "npc control"
 
-        set {_z} to a random number between 25.0 and 21.0
 
-        if arg-1 is 1:
-            set {_x} to 88
-            set {_inim} to 2
-            set {_castelo} to "castelo1"
-        if arg-1 is 2:
-            set {_x} to -172
-            set {_inim} to 1
-            set {_castelo} to "castelo2"
 
-        make console execute command "npc create %{_arg2}% %arg-3% (%{castelo%arg-1%nome}%) --type %{mobs::%{_arg2}%::15}% --trait sentinel --at %{_x}%:149:%{_z}%:%arg-11%"
-        make console execute command "wp disableteleport"
-        make console execute command "npc scoreboard --addtag %{_castelo}%"
-        make console execute command "sentinel addtarget npc:%{castelo%{_inim}%nome}%"
-        make console execute command "sentinel addtarget sbteam:%{castelo%{_inim}%nome}%"
-        make console execute command "sentinel respawntime -1"
-        make console execute command "sentinel addignore npc:Invocador"
-        make console execute command "sentinel addignore npc:Bordador"
-        make console execute command "sentinel addignore npc:Ferreiro"
-        make console execute command "sentinel addignore npc:Fazendeiro"
-        make console execute command "sentinel addignore npc:Arqueiro"
-        make console execute command "sentinel addignore npc:Alquimista"
-        make console execute command "sentinel addignore npc:Necromancer"  
-        make console execute command "sentinel addignore npc:Misterioso"                
-        make console execute command "sentinel addignore sbteam:castelo%arg-1%"
-        make console execute command "sentinel addtarget players"
-        make console execute command "sentinel damage %arg-4%"
-        make console execute command "sentinel health %arg-5%"
-        make console execute command "sentinel armor %arg-6%"
-        make console execute command "sentinel speed %arg-8%"
-        make console execute command "npc speed %arg-7%"
-        
-        if arg-8 is set:
-            make console execute command "sentinel accuracy %arg-9%"
-        if arg-9 is set:
-            make console execute command "sentinel range %arg-10%"
-        if arg-2 contains "Spider":
-            make console execute command "sentinel attackrate 0.6"
-        if arg-2 contains "blaze" or "bat":
-            make console execute command "npc flyable true"	
-        if arg-2 contains "ravager" or "strider":
-            make console execute command "npc control"
+
+# SPAWNMOBC IN NPCCREATOR.DSC
+
+
 
 command /spawnmob [<number>] [<text>] [<text>] [<number>] [<number>] [<number>] [<number>] / [<number>] [<number>] [<number>]: 
 #              1[<level>] 2[<location>] 3[<type>] 4[<damage>] 5[<health>] 6[<armor>] 7[<speed>] / 8[<npc speed>] 9[<accuracy>] 10[<range>] 

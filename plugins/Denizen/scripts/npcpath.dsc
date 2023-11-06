@@ -1,15 +1,17 @@
 npcpathfind:
     type: world
-    debug: false
+    debug: true
     events:
-        on delta time secondly every:5:
-            - foreach <world[world].spawned_npcs> as:npcs:
-                - if <[npcs].scoreboard_tags.contains_text[castelo1]>:
-                    - walk <[npcs]> <location[-175,150.00,23.0,world]> auto_range
-                - if <[npcs].scoreboard_tags.contains_text[castelo2]>:
-                    - walk <[npcs]> <location[92,150.00,23,world]> auto_range
+        on delta time secondly every:10:
+            - foreach <server.npcs_flagged[castelo1]> as:npcs:
+                - walk <[npcs]> <location[-222.5,150.00,23.0,<[npcs].location.world>]> auto_range
+            - foreach <server.npcs_flagged[castelo2]> as:npcs:
+                - walk <[npcs]> <location[139.50,152.00,23.0,<[npcs].location.world>]> auto_range
 
-                - if <[npcs].scoreboard_tags.contains_text[rei1]>:
-                    - walk <[npcs]> <location[92.5,150.00,23.0,world]> auto_range
-                - if <[npcs].scoreboard_tags.contains_text[rei2]>:
-                    - walk <[npcs]> <location[-175.5,150.00,23.0,world]> auto_range
+        on delta time secondly every:20:
+
+            - foreach <server.npcs_flagged[rei2]> as:npcs:
+                - walk <[npcs]> <location[-222.5,150.00,23.0,<[npcs].location.world>]>
+            - foreach <server.npcs_flagged[rei1]> as:npcs:
+                - walk <[npcs]> <location[139.50,150.00,23.0,<[npcs].location.world>]>
+

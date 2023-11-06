@@ -48,9 +48,12 @@ every 10 ticks:
         set line 3 of block at location(134, 150, 19, loop-world) to "&9%{XPquant1::%loop-world%}%"
 
 on click on sign:
+    make player swing hand
+    cancel event
+
+on click on sign:
     {jogo::%world of player%} is 1
-    message "player"
-    loop all players:
+    loop all players in world of player:
         set {_team} to "%team of loop-player%"
         replace "castelo" in {_team} with ""
         replace "%world of player%" in {_team} with ""
@@ -80,27 +83,27 @@ on click on sign:
                         set {lvnpcsquant%{_team}%::%world of player%} to 0
                         add 1 to {lvnpcs%{_team}%::%world of player%}
                         {lvnpcs%{_team}%::%world of player%} is 5:
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 3 0"
+                            make console execute command "casasncpsfawe %{_team}% 3 0 w@%world of player%"
                         {lvnpcs%{_team}%::%world of player%} is 10:
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 2 1"
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 1 1"
+                            make console execute command "casasncpsfawe %{_team}% 2 1 w@%world of player%"
+                            make console execute command "casasncpsfawe %{_team}% 1 1 w@%world of player%"
                         {lvnpcs%{_team}%::%world of player%} is 15:
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 4 0"
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 2 2"
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 1 2"
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 3 1"
+                            make console execute command "casasncpsfawe %{_team}% 4 0 w@%world of player%"
+                            make console execute command "casasncpsfawe %{_team}% 2 2 w@%world of player%"
+                            make console execute command "casasncpsfawe %{_team}% 1 2 w@%world of player%"
+                            make console execute command "casasncpsfawe %{_team}% 3 1 w@%world of player%"
                         {lvnpcs%{_team}%::%world of player%} is 17:
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 4 1"
+                            make console execute command "casasncpsfawe %{_team}% 4 1 w@%world of player%"
                         {lvnpcs%{_team}%::%world of player%} is 18:
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 4 2"  
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 3 2"                      
+                            make console execute command "casasncpsfawe %{_team}% 4 2 w@%world of player%"  
+                            make console execute command "casasncpsfawe %{_team}% 3 2 w@%world of player%"                      
                         {lvnpcs%{_team}%::%world of player%} is 20:
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 4 3" 
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 2 3"        
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 1 3"
-                            make console execute command "casasncpsfawe %{castelo%{_team}%nome::%world of player%}% 3 3"
+                            make console execute command "casasncpsfawe %{_team}% 4 3 w@%world of player%" 
+                            make console execute command "casasncpsfawe %{_team}% 2 3 w@%world of player%"        
+                            make console execute command "casasncpsfawe %{_team}% 1 3 w@%world of player%"
+                            make console execute command "casasncpsfawe %{_team}% 3 3 w@%world of player%"
                         message "&b&lLevel aumentado para &f&l%{lvnpcs%{_team}%::%world of player%}%"
-                    set line 3 to "&9%{lvnpcsquant%{_team}%}%/%{_placalevelmax}%"
+                    set line 3 to "&9%{lvnpcsquant%{_team}%::%world of player%}%/%{_placalevelmax}%"
                     set line 4 to "&9Level %{lvnpcs%{_team}%::%world of player%}%"
                     {lvnpcs%{_team}%::%world of player%} is 20:
                         set line 3 to "&cMAXIMO"
@@ -173,14 +176,22 @@ command /jogo <number> [<world>] [<world>] [<world>]:
         if arg-1 is 1: 
             set {jogo::%arg-2%} to 1
 
+            make console execute command "ex flag server nomecastelo1%arg-2%:%{castelo1nome::%arg-2%}%"
+            make console execute command "ex flag server nomecastelo2%arg-2%:%{castelo2nome::%arg-2%}%"
+
+            loop all players in world arg-2:
+                set health of loop-players to 20
+                set hunger of loop-players to 20
+                clear the loop-player's inventory
+
             wait 10 ticks
 #            make console execute command "execute in setblock -47 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""[Espectador]"",""clickEvent"":{""action"":""run_command"",""value"":""gamemode spectator @s""},""color"":""aqua""}',Text2:'{""text"":""Clique para"",""clickEvent"":{""action"":""run_command"",""value"":""tp @s -40.50 200.00 23.00""},""bold"":true,""color"":""blue""}',Text3:'{""text"":""Espectar"",""clickEvent"":{""action"":""run_command"",""value"":""team join espectador @s""},""bold"":true,""color"":""blue""}',Text4:'{""text"":""==========="",""color"":""aqua""}'}"
             #evoluir npcs
-            make console execute command "execute in minecraft:%arg-2% run data merge block 134 150 26 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
-            make console execute command "execute in minecraft:%arg-2% run data merge block -218 151 19 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+            make console execute command "execute in minecraft:%arg-2% run data merge block 134 153 26 {front_text: {messages: ['{""color"":""aqua"",""text"":""[Evoluir]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo1nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0/%{placalevelmax}%""}', '{""color"":""blue"",""text"":""Level 1""}']}}"
+            make console execute command "execute in minecraft:%arg-2% run data merge block -218 151 19 {front_text: {messages: ['{""color"":""aqua"",""text"":""[Evoluir]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo2nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0/%{placalevelmax}%""}', '{""color"":""blue"",""text"":""Level 1""}']}}"
             #guardar xp
-            make console execute command "execute in minecraft:%arg-2% run data merge block 134 150 19 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"
-            make console execute command "execute in minecraft:%arg-2% run data merge block -218 151 26 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}" 
+            make console execute command "execute in minecraft:%arg-2% run data merge block 134 153 19 {front_text: {messages: ['{""color"":""aqua"",""text"":""[XP]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo1nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0""}', '{""color"":""gray"",""text"":""(Agachar: +/-)""}']}}"
+            make console execute command "execute in minecraft:%arg-2% run data merge block -218 153 26 {front_text: {messages: ['{""color"":""aqua"",""text"":""[XP]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo2nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0""}', '{""color"":""gray"",""text"":""(Agachar: +/-)""}']}}"
             #team nome
 #            make console execute command "team modify castelo1 displayName {""text"":""%{castelo1nome::%arg-2%}%""}"     
 #            make console execute command "team modify castelo2 displayName {""text"":""%{castelo2nome::%arg-2%}%""}" 
@@ -208,18 +219,21 @@ command /jogo <number> [<world>] [<world>] [<world>]:
             set {xpplayer::%arg-1%} to 40
             delete {jogadoresdesistir::%arg-2%::*}
 #            delete {sacrificio::*}
+
             loop all players in world arg-2:
                 set health of loop-players to 20
                 set hunger of loop-players to 20
                 delete {playerbk::%loop-player's uuid%::*}
                 delete {lobbyplayers::%arg-2%}
+                clear the loop-player's inventory
+                set total experience of loop-players to 0
+            
+            loop all entities in world arg-2:
+                loop-entity is item entity:
+                    kill loop-entity
+            
             clear all the potion effects of all players in world arg-2
             make console execute command "execute in minecraft:%arg-2% run kill @e[type=!minecraft:player]"
-            make console execute command "execute in minecraft:%arg-2% run kill @e[type=minecraft:item]"
-            wait 15 ticks
-            make console execute command "execute in minecraft:%arg-2% run clear @a"
-            make console execute command "execute in minecraft:%arg-2% run xp set @a 0 levels"
-            make console execute command "execute in minecraft:%arg-2% run xp set @a 0 points"
             wait 1 tick
             make console execute command "fogo"
             wait 1 tick
@@ -228,11 +242,12 @@ command /jogo <number> [<world>] [<world>] [<world>]:
             make console execute command "npcs %arg-2%"
             make console execute command "execute in minecraft:%arg-2% run kill @e[type=!minecraft:player]"
             #evoluir npcs
-            make console execute command "execute in minecraft:%arg-2% run data merge block 134 153 26 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
-            make console execute command "execute in minecraft:%arg-2% run data merge block -218 151 19 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
+            make console execute command "execute in minecraft:%arg-2% run data merge block 134 153 26 {front_text: {messages: ['{""color"":""aqua"",""text"":""[Evoluir]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo1nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0/%{placalevelmax}%""}', '{""color"":""blue"",""text"":""Level 1""}']}}"
+            make console execute command "execute in minecraft:%arg-2% run data merge block -218 151 19 {front_text: {messages: ['{""color"":""aqua"",""text"":""[Evoluir]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo2nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0/%{placalevelmax}%""}', '{""color"":""blue"",""text"":""Level 1""}']}}"
             #guardar xp
-            make console execute command "execute in minecraft:%arg-2% run data merge block 134 153 19 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"
-            make console execute command "execute in minecraft:%arg-2% run data merge block -218 151 26 {Text1:'{""text"":""[XP]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%arg-2%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0"",""color"":""blue""}',Text4:'{""text"":""(Agachar: +/-)"",""color"":""gray""}'}"            
+            make console execute command "execute in minecraft:%arg-2% run data merge block 134 153 19 {front_text: {messages: ['{""color"":""aqua"",""text"":""[XP]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo1nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0""}', '{""color"":""gray"",""text"":""(Agachar: +/-)""}']}}"
+            make console execute command "execute in minecraft:%arg-2% run data merge block -218 153 26 {front_text: {messages: ['{""color"":""aqua"",""text"":""[XP]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo2nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0""}', '{""color"":""gray"",""text"":""(Agachar: +/-)""}']}}"
+
             make console execute command "execute in minecraft:%arg-2% run setblock -218 150 19 air"
             make console execute command "execute in minecraft:%arg-2% run setblock -218 150 18 air"
             make console execute command "execute in minecraft:%arg-2% run setblock -218 150 27 air"

@@ -1,0 +1,23 @@
+on death:
+    event-damagecause is void
+    set {_message} to a random text out of "&7Um leigo chamado &7&l%victim%&7, caiu do mundo!", "&7Um jogador com o nome &7&l%victim%&7 descobriu que foi traido e se jogou do mundo..", "&7Um jogador chamado &7&l%victim%&7, defensor da terra plana caiu da beira do mundo.", "&7Um jogador chamado &7&l%victim%&7 descobriu amargamente que não sabe voar..", "&7Digite F para o nosso jogador &7&l%victim%&7 que caiu do mundo", "&7O jogador &7&l%victim%&7 está aprendendo a usar os controles", "&7Alguem por favor segura nas mãos do jogador &7&l%victim%&7 para ele não cair do mundo!", "&7É um passaro? é um avião? não, foi o jogador &7&l%victim%&7 que se jogou do mundo..", "&7É o homen passaro! um player chamado &7&l%victim%&7 tentou voar..", "&7Leigo, leigo, leigo... o jogador &7&l%victim%&7 caiu do mundo!", "&7Vou pedir para o dev instalar um parapeito para o jogador &7&l%victim%&7 não cair do mundo...", "&7POW! &7&l%victim%&7, ta chatao já, toda hora caindo!!" and "&7Estou impressionado pela sua leiguice &7&l%victim%&7, mais uma vez caiu do mundo"
+    add 1 to {voiddeaths::%victim%}
+    if {voiddeaths::%victim%} is 10:
+        set {_message} to "&7&l%victim%&7, porque você ta fazendo isso?, você ja caiu do mundo mais de &7&l%{voiddeaths::%victim%}%&7 vezes!"
+    if {voiddeaths::%victim%} is 20:
+        set {_message} to "É serio, vamos conversar &7&l%victim%&7! você já caiu do mundo &7&l%{voiddeaths::%victim%}%&7 vezes!"
+    if {voiddeaths::%victim%} is 50:
+        set {_message} to "Já que o &7&l%victim%&7 não vai parar.. vou contar um fato historico sobre os anos &7&l%{voiddeaths::%victim%}%&7... AH! é porque &7&l%victim%&7 caiu do mundo &7&l%{voiddeaths::%victim%}%&7 vezes!"
+    if {voiddeaths::%victim%} is 100:
+        set {_message} to a random text out of "Em 1950 é realizada a corrida inaugural de Fórmula 1, o Grande Prêmio da Grã-Bretanha de 1950, vencida pelo piloto italiano Giuseppe Farina, da equipe Alfa Romeo.", "Em 1950, Inicia-se a IV Copa do Mundo de Futebol no Brasil." and "Em 1950, The Twilight Zone foi a primeira série de ficção científica que teve na época nomeada em série de ficção."
+    if {voiddeaths::%victim%} is 101:
+        set {_message} to "Oque &7&l%victim%&7? não gostou do fato historico? que tal um fato matematico? Biologico talvez?.."
+    if {voiddeaths::%victim%} is 102:
+        set {_message} to "...isso foi um sim &7&l%victim%&7?"
+    if {voiddeaths::%victim%} is 103:
+        set {_message} to "Ok ok, mas com um trato.. &7&l%victim%&7, complete um total de 200 caidas do mundo, e eu falo.. alguma coisa.."
+    if {voiddeaths::%victim%} is 200:
+        set {_message} to a random text out of "No México, o bolo é frequentemente associado a celebrações religiosas, como o Dia dos Mortos e a Páscoa. O ""pan de muerto"" é um tipo de pão doce em forma de crânio ou osso, decorado com açúcar, que é tradicionalmente consumido durante o Dia dos Mortos." and "Parabéns a você, nesta data querida, muita felicidade, muitos anos de vida..."
+    
+    set death message to {_message}
+

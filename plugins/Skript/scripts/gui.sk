@@ -78,8 +78,8 @@ on npc right click:
                 make gui slot 4 with nether star with nbt compound from "{display:{Name:'[{""text"":""O Poder dos Raios (usado)"",""italic"":false,""color"":""gray"",""bold"":true}]',Lore:['[{""text"":""Você já usou o poder dos raios"",""color"":""blue""}]','[{""text"":""Comprar?"",""italic"":true,""color"":""blue""},{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":""Custo: "",""italic"":false,""color"":""aqua""},{""text"":""2500"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""nem tudo na vida é de graça..."",""italic"":true,""color"":""dark_gray""}]']}}"
         open the created gui for player
 
-    if npc name is "Alquimista (%{castelo%{_team}%nome::%world of player%}%::%world of player%)":
-        create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome::%world of player%}%::%world of player%)":
+    if npc name is "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
+        create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
             set {_tipo::*} to "Básica" and ""
             if {lvnpcs%{_team}%::%world of player%} >= 15:
                 set {_tipo::*} to "Mediana" and "long_"
@@ -447,6 +447,7 @@ on npc right click:
 on inventory click:
     set {_team} to "%team of player%"
     replace "castelo" in {_team} with ""
+    replace "%world of player%" in {_team} with ""
 #    if name of event-inventory is "Invocador":
 #        if clicked slot is not a spawn egg:
 #            cancel event

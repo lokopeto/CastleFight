@@ -27,7 +27,7 @@ command /npcs <world>:
 
         make console execute command "npccreatorking 139.5,153,23.00,%arg-1% rei1 1000 %{castelo1nome::%arg-1%}%" # REI CARVALHO
 
-        wait 1 tick
+        wait 3 tick
         
         make console execute command "npccreatorking -222.5,153,23.00,%arg-1% rei2 1000 %{castelo2nome::%arg-1%}%" # REI BARRO
 

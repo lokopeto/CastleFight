@@ -8,7 +8,6 @@ npccreatorinteractive:
     tab completions:
         1: <server.entity_types>
     script:
-    - narrate "npccreatorinteractive <context.args>"
     - create <context.args.get[1]> <context.args.get[5].to[last].space_separated> <context.args.get[2]> save:npc
     - adjust <entry[npc].created_npc> scoreboard_tags:<context.args.get[3]>
     - adjust <entry[npc].created_npc> profession:<context.args.get[4]>
@@ -26,20 +25,20 @@ npccreatorking:
         2: <server.entity_types>
     script:
     - narrate "npccreatorinteractive <context.args>"
-    - create player <context.args.get[4].to[last].space_separated> <context.args.get[1]> traits:sentinel save:npc:
-        - npcbossbar color:white title:<context.npc.name> progress:health
+    - create player <context.args.get[4].to[last].space_separated> <context.args.get[1]> traits:sentinel save:npc
     - adjust <entry[npc].created_npc> scoreboard_tags:<context.args.get[2]>
     - adjust <entry[npc].created_npc> collidable:true
     - adjust <entry[npc].created_npc> glowing:true
     - adjust <entry[npc].created_npc> glow_color:white
     - adjust <entry[npc].created_npc> path_distance_margin:5
 
+    - execute as_server "npc bossbar --track health --title <context.args.get[4].to[last].space_separated> --range 500 --id <entry[npc].created_npc.id>" silent
     - execute as_server "sentinel knockback --id <entry[npc].created_npc.id>" silent
     - execute as_server "sentinel health <context.args.get[3]> --id <entry[npc].created_npc.id>" silent
 
     - if <context.args.get[2]> = rei1:
-        - execute as_server "sentinel addtarget sbteam:castelo2<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
-        - execute as_server "sentinel addignore sbteam:castelo1<location[<context.args.get[1]>].world> --id <entry[npc].created_npc.id>" silent
+        - execute as_server "sentinel addtarget sbteam:castelo2<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <entry[npc].created_npc.id>" silent
+        - execute as_server "sentinel addignore sbteam:castelo1<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <entry[npc].created_npc.id>" silent
 
     - if <context.args.get[2]> = rei2:
         - execute as_server "sentinel addtarget sbteam:castelo1<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <entry[npc].created_npc.id>" silent
@@ -50,8 +49,80 @@ npccreatorking:
     - execute as_server "sentinel attackrate 0.5 --id <entry[npc].created_npc.id>" silent
 
     - flag server npcsking<location[<context.args.get[1]>].world>:->:<entry[npc].created_npc>
+    - flag <entry[npc].created_npc> <context.args.get[2]>
+
     - flag server castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world.replace_text[w@].with[]>loc:<entry[npc].created_npc.location>
-    - narrate castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world>:<entry[npc].created_npc>
+
+spawnmobc:
+    type: command
+    name: spawnmobc
+    description: Does something
+    usage: /spawnmobc <&lt>castelo<&gt> <&lt>type<&gt> <&lt>lv<&gt> <&lt>damage<&gt> <&lt>health<&gt> <&lt>armor<&gt> <&lt>speed<&gt> / <&lt>npc speed<&gt> <&lt>accuracy<&gt> <&lt>range<&gt> <&lt>world<&gt>
+    permission: dscript.npccastle
+    debug: true
+    script:
+        - narrate "spawnmobc <context.args>"
+        - if <context.args.get[1]> = 1:
+            - define x 136.0
+            - define y 152
+            - define inim 2
+        - if <context.args.get[1]> = 2:
+            - define x -219.0
+            - define y 150
+            - define inim 1
+        - define z <util.random.decimal[25.0].to[21.0].round_to_precision[3]>
+        - create <context.args.get[2]> "<context.args.get[2]> <context.args.get[3]> (<server.flag[nomecastelo<context.args.get[1]><context.args.get[12]>]>)" <location[<[x]>,<[y]>,<[z]>,<world[<context.args.get[12]>]>]> traits:sentinel save:npc
+
+        - if <context.args.get[1]> = 1:
+            - flag <entry[npc].created_npc> castelo1
+        - if <context.args.get[1]> = 2:
+            - flag <entry[npc].created_npc> castelo2
+
+        - execute as_server "wp disableteleport --id <entry[npc].created_npc.id>" silent
+
+        - execute as_server "sentinel addtarget npc:<server.flag[nomecastelo<[inim]><context.args.get[12]>]> --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addtarget sbteam:sbteam:castelo<[inim]><location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore sbteam:castelo<context.args.get[1]><context.args.get[12]> --id <entry[npc].created_npc.id> " silent
+
+        - execute as_server "sentinel respawntime -1 --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore npc:Invocador --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore npc:Bordador --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore npc:Ferreiro --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore npc:Fazendeiro --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore npc:Arqueiro --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore npc:Alquimista --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore npc:Necromancer --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addignore npc:Misterioso --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel addtarget players --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel damage <context.args.get[4]> --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel health <context.args.get[5]> --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel armor <context.args.get[6]> --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel speed <context.args.get[9]> --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel accuracy <context.args.get[10]> --id <entry[npc].created_npc.id> " silent
+        - execute as_server "sentinel range <context.args.get[11]> --id <entry[npc].created_npc.id> " silent
+
+        - if <context.args.get[2]> = Spider:
+            - execute as_server "sentinel attackrange <context.args.get[11]> --id <entry[npc].created_npc.id> " silent
+        - if <context.args.get[2]> = Ravager:
+            - adjust <entry[npc].created_npc.id> controllable:true
+        - if <context.args.get[2]> = Strider:
+            - adjust <entry[npc].created_npc.id> controllable:true
+
+        - adjust <entry[npc].created_npc.id> speed:<context.args.get[7]>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 npccreatordelete:
     type: command

@@ -51,9 +51,13 @@ on right click on oak wall sign:
     if {_team} is "Carvalho":
         teleport player to location(-15.5, 229, -136.5, world "castlefight%{_world}%", 90, 0)
         add "cfcarvalho" to the scoreboard tags of player
+        make console execute command "team add castelo1%world of player%"
+        make console execute command "team join castelo1%world of player% %player%"
     if {_team} is "Barro":
         teleport player to location(-77.5, 229, -136.5, world "castlefight%{_world}%", -90, 0)
         add "cfbarro" to the scoreboard tags of player
+        make console execute command "team add castelo2%world of player%"
+        make console execute command "team join castelo2%world of player% %player%"
 
     set {lobbyworld::%uuid of player%} to world of player
 
@@ -69,15 +73,6 @@ on right click on oak wall sign:
 
     message "&e&l%player% &7entrou na partida no &a&lRei %{_team}%" to all players in world of player
     message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida"
-
-    make console execute command "team add castelo1%world of player%"
-    make console execute command "team add castelo2%world of player%"
-
-    {_team} is "Carvalho":
-        make console execute command "team join castelo1%world of player% %player%"
-    {_team} is "Barro":
-        make console execute command "team join castelo2%world of player% %player%"
-
 
 
 
@@ -155,10 +150,20 @@ command /sair:
                 message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to {lobbyhost::%world of player%}
                 message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida" to {lobbyhost::%world of player%} 
 
-            if amount of players in world of player is 0:
+            if amount of players in world of player is 1:
                 delete {lobbyplayers::%world of player%::*}
+                if {jogo::%world of player%} is 1:
+                    make console execute command "jogo 0 %world of player%"
+
+            set health of player to 20
+            set hunger of player to 20
+            set total experience of player to 0
 
             teleport player to {placa::%uuid of player%::1}
+
+
+            make console execute command "team leave %player%"
+
 
 
         world of player is "world":
@@ -240,7 +245,7 @@ on anvil gui click:
                     make console execute command "execute in minecraft:%world of player% run data merge block 134 150 27 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo1nome::%world of player%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
                     make console execute command "execute in minecraft:%world of player% run data merge block -218 150 18 {Text1:'{""text"":""[Evoluir]"",""color"":""aqua""}',Text2:'{""text"":""%{castelo2nome::%world of player%}%"",""italic"":true,""color"":""white""}',Text3:'{""text"":""0/%{placalevelmax}%"",""color"":""blue""}',Text4:'{""text"":""Level 1"",""color"":""blue""}'}"
                     make console execute command "team modify castelo1%world of player% displayName {""text"":""%{castelo1nome::%world of player%}%""}"
-                    make console execute command "team modify castelo1%world of player% displayName {""text"":""%{castelo2nome::%world of player%}%""}"
+                    make console execute command "team modify castelo2%world of player% displayName {""text"":""%{castelo2nome::%world of player%}%""}"
 
                     set slot 4 of player to air 
 
