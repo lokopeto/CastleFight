@@ -6,12 +6,10 @@ castelo1w@castlefight1loc:l@139.5,153,23,castlefight1
 npcsrei1w@castlefight1:n@10630
 castelo1w@castlefight2:n@82
 npcsinteractw@castlefight3:li@n@532|n@533|n@534|n@535|n@536|n@537|n@538|n@539|n@540|n@541|n@542|n@543|
-npcsinteractw@castlefight1:li@n@494|n@495|n@496|n@497|n@498|n@499|n@500|n@501|n@502|n@503|n@504|n@505|
 npcsinteractw@castlefight2:li@n@513|n@514|n@515|n@516|n@517|n@518|n@519|n@520|n@521|n@522|n@523|n@524|
 castelo1w@castlefight3:n@101
 castelo1castlefight3loc:l@139.5,153,23,castlefight3
 castelo1castlefight1loc:l@139.5,153,23,castlefight1
-npcskingw@castlefight1:li@n@492|n@493|
 npcskingw@w@castlefight1:n@64
 \exnpcsinteractlocation[<context:map@[__value=map@[args=map@[__value=map@[get&lb2&rb>&rb=map@[__value=map@[world=map@[__value=entry[npc].created_npc]]];get&lb1&rb>&rb=map@[__value=map@[]]]]]]
 npcskingw@castlefight3:li@n@530|n@531|
