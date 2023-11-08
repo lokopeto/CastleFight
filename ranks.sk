@@ -1,0 +1,29 @@
+
+var ranks = [
+  "Novato",
+  "Aprendiz",
+  "Experimentado",
+  "Mestre",
+  "Lenda"
+];
+var kills = 0;
+var deaths = 0;
+
+
+on kill:
+  kills++;
+
+
+on death:
+  deaths++;
+
+
+  var newRank = ranks[Math.floor((kills + deaths) / 20)];
+
+  
+  setPlayerRank(player, newRank);
+
+
+on join:
+  setPlayerRank(player, "Novato");
+  
