@@ -1,9 +1,7 @@
 
 var ranks = [
   "Novato",
-  "Aprendiz",
   "Experimentado",
-  "Mestre",
   "Lenda"
 ];
 var kills = 0;
