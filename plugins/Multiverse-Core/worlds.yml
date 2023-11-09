@@ -1,12 +1,12 @@
 worlds:
-  testaaaaa:
+  world_the_end:
     ==: MVWorld
     hidden: 'false'
-    alias: testaaaaa
+    alias: world_the_end
     color: WHITE
     style: NORMAL
     pvp: 'true'
-    scale: '1.0'
+    scale: '16.0'
     respawnWorld: ''
     allowWeather: 'true'
     difficulty: EASY
@@ -33,17 +33,64 @@ worlds:
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: 208.0
-      y: 66.0
-      z: -380.0
+      x: 0.0
+      y: 62.0
+      z: 0.0
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
+    worldBlacklist: []
+    environment: THE_END
+    seed: '-6558221449149618090'
+    generator: 'null'
+    playerLimit: '-1'
+    allowFlight: 'true'
+  world:
+    ==: MVWorld
+    hidden: 'false'
+    alias: world
+    color: WHITE
+    style: NORMAL
+    pvp: 'true'
+    scale: '1.0'
+    respawnWorld: ''
+    allowWeather: 'true'
+    difficulty: EASY
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'true'
+    portalForm: ALL
+    gameMode: ADVENTURE
+    keepSpawnInMemory: 'true'
+    spawnLocation:
+      ==: MVSpawnLocation
+      x: -249.5
+      y: 83.0
+      z: 1.5
+      pitch: 0.0
+      yaw: -90.0
+    autoLoad: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
-    seed: '4422696068697910216'
-    generator: 'null'
+    seed: '-2606607412248378669'
+    generator: VoidGen
     playerLimit: '-1'
     allowFlight: 'true'
   castlefightbackuptemp:
@@ -86,17 +133,17 @@ worlds:
       pitch: 0.0
       yaw: -90.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '6172343188073036545'
     generator: VoidGen
     playerLimit: '-1'
     allowFlight: 'true'
-  world:
+  testaaaaa:
     ==: MVWorld
     hidden: 'false'
-    alias: world
+    alias: testaaaaa
     color: WHITE
     style: NORMAL
     pvp: 'true'
@@ -127,63 +174,16 @@ worlds:
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: -249.5
-      y: 83.0
-      z: 1.5
-      pitch: 0.0
-      yaw: -90.0
-    autoLoad: 'true'
-    bedRespawn: 'true'
-    worldBlacklist: []
-    environment: NORMAL
-    seed: '-2606607412248378669'
-    generator: VoidGen
-    playerLimit: '-1'
-    allowFlight: 'true'
-  world_the_end:
-    ==: MVWorld
-    hidden: 'false'
-    alias: world_the_end
-    color: WHITE
-    style: NORMAL
-    pvp: 'true'
-    scale: '16.0'
-    respawnWorld: ''
-    allowWeather: 'true'
-    difficulty: EASY
-    spawning:
-      ==: MVSpawnSettings
-      animals:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-      monsters:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-    entryfee:
-      ==: MVEntryFee
-      amount: '0.0'
-    hunger: 'true'
-    autoHeal: 'true'
-    adjustSpawn: 'true'
-    portalForm: ALL
-    gameMode: SURVIVAL
-    keepSpawnInMemory: 'true'
-    spawnLocation:
-      ==: MVSpawnLocation
-      x: 0.0
-      y: 62.0
-      z: 0.0
+      x: 208.0
+      y: 66.0
+      z: -380.0
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
-    environment: THE_END
-    seed: '-6558221449149618090'
+    environment: NORMAL
+    seed: '4422696068697910216'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
@@ -227,7 +227,7 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NETHER
     seed: '-6558221449149618090'
@@ -274,58 +274,11 @@ worlds:
       pitch: 0.0
       yaw: -180.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '6172343188073036545'
     generator: VoidGen
-    playerLimit: '-1'
-    allowFlight: 'true'
-  worldantigooo:
-    ==: MVWorld
-    hidden: 'false'
-    alias: ''
-    color: WHITE
-    style: NORMAL
-    pvp: 'true'
-    scale: '1.0'
-    respawnWorld: ''
-    allowWeather: 'true'
-    difficulty: EASY
-    spawning:
-      ==: MVSpawnSettings
-      animals:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-      monsters:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-    entryfee:
-      ==: MVEntryFee
-      amount: '0.0'
-    hunger: 'true'
-    autoHeal: 'true'
-    adjustSpawn: 'true'
-    portalForm: ALL
-    gameMode: SURVIVAL
-    keepSpawnInMemory: 'true'
-    spawnLocation:
-      ==: MVSpawnLocation
-      x: 56.0
-      y: 65.0
-      z: -71.0
-      pitch: 0.0
-      yaw: 0.0
-    autoLoad: 'true'
-    bedRespawn: 'true'
-    worldBlacklist: []
-    environment: NORMAL
-    seed: '-2606607412248378669'
-    generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
   worldbackup:
@@ -368,17 +321,17 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '-2606607412248378669'
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
-  castlefight1:
+  worldantigooo:
     ==: MVWorld
     hidden: 'false'
-    alias: castlefight1
+    alias: ''
     color: WHITE
     style: NORMAL
     pvp: 'true'
@@ -409,17 +362,17 @@ worlds:
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: -41.0
-      y: 147.0
-      z: 23.0
+      x: 56.0
+      y: 65.0
+      z: -71.0
       pitch: 0.0
-      yaw: -180.0
+      yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
-    seed: '6172343188073036545'
-    generator: VoidGen
+    seed: '-2606607412248378669'
+    generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
   world314:
@@ -462,11 +415,58 @@ worlds:
       pitch: 0.0
       yaw: 0.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '-2606607412248378669'
     generator: 'null'
+    playerLimit: '-1'
+    allowFlight: 'true'
+  castlefight1:
+    ==: MVWorld
+    hidden: 'false'
+    alias: castlefight1
+    color: WHITE
+    style: NORMAL
+    pvp: 'true'
+    scale: '1.0'
+    respawnWorld: ''
+    allowWeather: 'true'
+    difficulty: EASY
+    spawning:
+      ==: MVSpawnSettings
+      animals:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+      monsters:
+        ==: MVSpawnSubSettings
+        spawn: 'true'
+        spawnrate: '-1'
+        exceptions: []
+    entryfee:
+      ==: MVEntryFee
+      amount: '0.0'
+    hunger: 'true'
+    autoHeal: 'true'
+    adjustSpawn: 'true'
+    portalForm: ALL
+    gameMode: ADVENTURE
+    keepSpawnInMemory: 'true'
+    spawnLocation:
+      ==: MVSpawnLocation
+      x: -41.0
+      y: 147.0
+      z: 23.0
+      pitch: 0.0
+      yaw: -180.0
+    autoLoad: 'true'
+    bedRespawn: 'false'
+    worldBlacklist: []
+    environment: NORMAL
+    seed: '6172343188073036545'
+    generator: VoidGen
     playerLimit: '-1'
     allowFlight: 'true'
   castlefight3:
@@ -499,7 +499,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
-    gameMode: SURVIVAL
+    gameMode: ADVENTURE
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
@@ -509,7 +509,7 @@ worlds:
       pitch: 0.0
       yaw: -180.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '6172343188073036545'
@@ -546,7 +546,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
-    gameMode: SURVIVAL
+    gameMode: ADVENTURE
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
@@ -556,7 +556,7 @@ worlds:
       pitch: 0.0
       yaw: -180.0
     autoLoad: 'true'
-    bedRespawn: 'true'
+    bedRespawn: 'false'
     worldBlacklist: []
     environment: NORMAL
     seed: '6172343188073036545'

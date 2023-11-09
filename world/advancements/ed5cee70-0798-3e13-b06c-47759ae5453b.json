@@ -1132,8 +1132,15 @@
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
+      "minecraft:pillager": "2023-11-07 19:32:47 -0300",
+      "minecraft:ravager": "2023-11-07 18:37:13 -0300",
+      "minecraft:hoglin": "2023-11-07 19:49:14 -0300",
+      "minecraft:vindicator": "2023-11-07 19:32:51 -0300",
       "minecraft:spider": "2023-11-05 14:01:33 -0300",
-      "minecraft:husk": "2023-11-05 14:01:50 -0300"
+      "minecraft:evoker": "2023-11-07 19:44:55 -0300",
+      "minecraft:witch": "2023-11-07 19:47:16 -0300",
+      "minecraft:husk": "2023-11-05 14:01:50 -0300",
+      "minecraft:stray": "2023-11-07 19:32:36 -0300"
     },
     "done": false
   },
@@ -1146,6 +1153,72 @@
   "minecraft:nether/netherite_armor": {
     "criteria": {
       "netherite_armor": "2023-11-05 14:09:03 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stripped_warped_hyphae": {
+    "criteria": {
+      "has_log": "2023-11-06 15:27:12 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/warped_hanging_sign": {
+    "criteria": {
+      "has_stripped_logs": "2023-11-06 15:27:12 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2023-11-07 19:44:22 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_boots": "2023-11-07 19:46:29 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/oak_wood": {
+    "criteria": {
+      "has_log": "2023-11-07 23:41:33 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/spruce_planks": {
+    "criteria": {
+      "has_logs": "2023-11-07 23:48:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/spruce_wood": {
+    "criteria": {
+      "has_log": "2023-11-07 23:48:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/lava_bucket": {
+    "criteria": {
+      "lava_bucket": "2023-11-08 20:41:59 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/white_dye": {
+    "criteria": {
+      "has_bone_meal": "2023-11-08 21:17:01 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/combat/turtle_helmet": {
+    "criteria": {
+      "has_scute": "2023-11-08 22:00:22 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/bone_block": {
+    "criteria": {
+      "has_bone_meal": "2023-11-08 21:17:01 -0300"
     },
     "done": true
   },

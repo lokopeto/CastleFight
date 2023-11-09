@@ -11,8 +11,10 @@
       "minecraft:birch_forest": "2023-11-01 15:50:50 -0300",
       "minecraft:beach": "2023-10-29 17:12:28 -0300",
       "minecraft:river": "2023-10-29 17:12:18 -0300",
+      "minecraft:swamp": "2023-11-08 12:13:34 -0300",
       "minecraft:cold_ocean": "2023-10-29 17:08:31 -0300",
       "minecraft:forest": "2023-10-29 17:26:45 -0300",
+      "minecraft:lush_caves": "2023-11-07 23:34:53 -0300",
       "minecraft:ocean": "2023-10-29 17:12:49 -0300",
       "minecraft:old_growth_spruce_taiga": "2023-11-05 16:22:18 -0300"
     },
@@ -201,11 +203,16 @@
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
       "minecraft:pillager": "2023-10-31 16:21:57 -0300",
+      "minecraft:skeleton": "2023-11-08 19:37:18 -0300",
       "minecraft:ravager": "2023-10-31 16:21:26 -0300",
       "minecraft:vindicator": "2023-10-31 16:21:29 -0300",
       "minecraft:spider": "2023-11-01 15:50:49 -0300",
+      "minecraft:creeper": "2023-11-08 19:37:10 -0300",
+      "minecraft:evoker": "2023-11-07 18:33:13 -0300",
       "minecraft:husk": "2023-11-01 18:14:58 -0300",
-      "minecraft:stray": "2023-11-01 18:14:17 -0300"
+      "minecraft:stray": "2023-11-01 18:14:17 -0300",
+      "minecraft:enderman": "2023-11-08 19:37:07 -0300",
+      "minecraft:zombie": "2023-11-08 19:37:47 -0300"
     },
     "done": false
   },
@@ -506,6 +513,156 @@
   "minecraft:recipes/decorations/chest": {
     "criteria": {
       "has_lots_of_items": "2023-11-05 18:56:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/lightning_rod_with_villager_no_fire": {
+    "criteria": {
+      "lightning_rod_with_villager_no_fire": "2023-11-07 18:22:07 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "bread": "2023-11-07 18:33:32 -0300"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2023-11-07 18:33:32 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_andesite_stairs": {
+    "criteria": {
+      "has_polished_andesite": "2023-11-08 19:42:36 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_andesite_slab": {
+    "criteria": {
+      "has_polished_andesite": "2023-11-08 19:42:36 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_andesite_slab_from_polished_andesite_stonecutting": {
+    "criteria": {
+      "has_polished_andesite": "2023-11-08 19:42:36 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/polished_andesite_stairs_from_polished_andesite_stonecutting": {
+    "criteria": {
+      "has_polished_andesite": "2023-11-08 19:42:36 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/stone_brick_wall": {
+    "criteria": {
+      "has_stone_bricks": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_slab_from_stone_bricks_stonecutting": {
+    "criteria": {
+      "has_stone_bricks": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/cracked_stone_bricks": {
+    "criteria": {
+      "has_stone_bricks": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_stairs_from_stone_bricks_stonecutting": {
+    "criteria": {
+      "has_stone_bricks": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_slab": {
+    "criteria": {
+      "has_stone_bricks": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_stairs": {
+    "criteria": {
+      "has_stone_bricks": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/chiseled_stone_bricks_from_stone_bricks_stonecutting": {
+    "criteria": {
+      "has_stone_bricks": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/chiseled_stone_bricks": {
+    "criteria": {
+      "has_tag": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/stone_brick_wall_from_stone_bricks_stonecutting": {
+    "criteria": {
+      "has_stone_bricks": "2023-11-08 19:42:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mangrove_planks": {
+    "criteria": {
+      "has_logs": "2023-11-08 20:36:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mud_brick_slab": {
+    "criteria": {
+      "has_mud_bricks": "2023-11-08 20:34:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mud_brick_stairs": {
+    "criteria": {
+      "has_mud_bricks": "2023-11-08 20:34:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mud_brick_slab_from_mud_bricks_stonecutting": {
+    "criteria": {
+      "has_mud_bricks": "2023-11-08 20:34:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2023-11-08 20:37:57 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/mud_brick_wall": {
+    "criteria": {
+      "has_mud_bricks": "2023-11-08 20:34:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2023-11-08 20:36:56 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mud_brick_stairs_from_mud_bricks_stonecutting": {
+    "criteria": {
+      "has_mud_bricks": "2023-11-08 20:34:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/mud_brick_wall_from_mud_bricks_stonecutting": {
+    "criteria": {
+      "has_mud_bricks": "2023-11-08 20:34:39 -0300"
     },
     "done": true
   },

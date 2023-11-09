@@ -1,7 +1,7 @@
 #!/bin/bash
 
-link="https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-17.0.9/graalvm-community-jdk-17.0.9_linux-x64_bin.tar.gz"
-nome="graalvm-community-openjdk-17.0.9+9.1"
+link="https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-22.3.2/graalvm-ce-java17-linux-amd64-22.3.2.tar.gz"
+nome="graalvm-ce-java17-22.3.2"
 
 if [ ! -d "./CMD/$nome" ]; then
     echo "Baixando Java..."

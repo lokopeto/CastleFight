@@ -54,7 +54,7 @@ anticheat:
       hide-itemmeta-with-visual-effects: false
 chunks:
   auto-save-interval: default
-  delay-chunk-unloads-by: 10s
+  delay-chunk-unloads-by: 1000000000000h
   entity-per-chunk-save-limit:
     arrow: -1
     ender_pearl: -1

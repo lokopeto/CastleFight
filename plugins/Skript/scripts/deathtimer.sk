@@ -1,4 +1,5 @@
-on death:
+on death of player:
+
     set {deathloc::%name of victim%} to location of victim
     if name of attacker contains "(BOSS)":
         if attacker is npc:
@@ -10,41 +11,44 @@ every 1 second:
 #        broadcast "%{deathtimer::%name of loop-player%}%"
 
 on respawn:
+    wait 1 tick
     {jogo::%world of player%} is 1
     set gamemode of player to spectator
     teleport player to {deathloc::%name of player%}
     set {_tempo} to {deathtimer::%name of player%} -1
     {deathtimer::%name of player%} <= 0:
         set gamemode of player to adventure
-        message "&7&o&lpronto para batalha!"
+        message "&7&o&lPronto para batalha!"
     else:
         message "&c&oVoce Morreu!"
         loop "%{_tempo}%" parsed as integer times:
             wait 1 second
             {deathtimer::%name of player%} is 20:
-                message "&7&ofaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."
+                message "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."
             {deathtimer::%name of player%} <= 10:
-                message "&7&ofaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."            
+                message "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."            
         set gamemode of player to adventure
-        message "&7&o&lpronto para batalha!"
+        message "&7&o&lPronto para batalha!"
     wait 1 tick
+
     "%team of player%" is "castelo1%world of player%":
         loop all entities in world of player:
             if loop-entity has scoreboard tag "rei1":
                 teleport player to loop-entity
     "%team of player%" is "castelo2%world of player%":
         loop all entities in world of player:
-            message scoreboard tags of loop-entity
             if loop-entity has scoreboard tag "rei2":
-                teleport player to loop-entity 
+                teleport player to loop-entity
+
     set {deathtimer::%name of player%} to 30
     set {nodama::%name of player%} to 1
     make console execute command "ppo %player% add soul_fire_flame beam"
-    make console execute command "ppo %player% add soul trail"
+    make console execute command "ppo %player% add soul trail"  
     wait 10 seconds
     set {nodama::%name of player%} to 0
     make console execute command "ppo %player% remove 1"
     make console execute command "ppo %player% remove 2"
+    make console execute command "ppo %player% remove 3"
 
 on damage of player:
     damage was caused by void:

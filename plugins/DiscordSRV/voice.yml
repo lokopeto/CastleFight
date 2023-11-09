@@ -6,16 +6,16 @@
 
 # Whether to enable the proximity voice chat feature of DiscordSRV
 # You must restart your server after changing this option
-Voice enabled: false
+Voice enabled: true
 # Amount of ticks between network updates
 Tick speed: 5
 # The main category that the voice module will create/delete/move voice channels in
 # No channels other than the lobby channel (below) should be in this category
-Voice category: 000000000000000000
+Voice category: 1171982109133512764
 # The lobby channel (inside the voice category) that people will be moved to
 # when they are not in range of any networks. This is also the channel people will
 # join to be connected to the proximity voice network.
-Lobby channel: 000000000000000000
+Lobby channel: 1171982310439145604
 # Mutes users in the lobby who have the Speak and Mute Others permissions in the lobby
 Mute users who bypass speak permissions in the lobby: true
 
@@ -28,4 +28,4 @@ Network:
   Falloff: 5
   # Whether voice network channels are visible to everyone, even those not connected
   # Helps let players know if people are actually using the voice network at the moment
-  Channels are visible: false
+  Channels are visible: true

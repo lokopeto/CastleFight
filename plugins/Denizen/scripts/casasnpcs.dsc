@@ -92,7 +92,6 @@ casasncpsfawe:
                     - if <context.args.get[3]> = 1:
                         - flag server casasncpsfawez:26
                     - if <context.args.get[3]> = 4:
-                        - narrate <context.args.get[3]>
                         - flag server casasncpsfawez:26
                     - if <context.args.get[3]> = 5:
                         - flag server casasncpsfawez:28

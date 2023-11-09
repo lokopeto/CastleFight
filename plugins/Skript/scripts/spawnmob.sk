@@ -151,19 +151,19 @@ every 1 second:
 
 
 every 5 minute:
-    make console execute command "spawn"
+    make console execute command "spawn castlefight1 castlefight2 castlefight3"
 
 every 15 minute:
-    make console execute command "spawnboss"
+    make console execute command "spawnboss castlefight1 castlefight2 castlefight3"
 
 
 #spawnar os mobs, conjunto com drops.sk
-command /spawn:
+command /spawn [<world>] [<world>] [<world>]:
     executable by: console
     trigger:
         message "Espere..."
         loop all worlds:
-            loop-world is "castlefight1", "castlefight2" or "castlefight3"
+            loop-world is arg-1, arg-2 or arg-3 
             loop all entities in loop-world:
                 if name of loop-entity contains "(natural)":
                     set {_id} to citizen id of loop-entity
@@ -175,18 +175,18 @@ command /spawn:
                     make console execute command "npc remove"
             wait 5 seconds
             #zombiecaverna1
-            loop "%30 - {quantmobs}%" parsed as integer times:
+            loop "%30 - {quantmobs::%loop-world%}%" parsed as integer times:
                 add 1 to {_numb}
-                chance of "%{chance}%" parsed as integer:
+                chance of "%{chance::%loop-world%}%" parsed as integer:
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 1 and {level}
+                    set {_levelstats} to a random integer between 1 and {level::%loop-world%}
                     set {_level} to {_levelstats}
                     if {_levelstats} >= 20:
                         set {_levelmin} to 20                 
                     if {_levelstats} >= 30:
                         set {_levelmin} to 30  
-                    set {_levelstats} to a random integer between {_levelmin} and {level}
+                    set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
 
                     set {_tipomob} to a random text out of "Skeleton_Horse", "Stray", "Spider" and "Husk"
 
@@ -204,19 +204,21 @@ command /spawn:
                     make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%loop-world% %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
 
             set {_numb} to 0
+
+            wait 1 tick
             #nether1
             loop 7 times:
                 add 1 to {_numb}
                 chance of 90%:
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 1 and {level}
+                    set {_levelstats} to a random integer between 1 and {level::%loop-world%}
                     set {_level} to {_levelstats}
                     if {_levelstats} >= 20:
                         set {_levelmin} to 20                 
                     if {_levelstats} >= 30:
                         set {_levelmin} to 30  
-                    set {_levelstats} to a random integer between {_levelmin} and {level}
+                    set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
 
                     set {_tipomob} to a random text out of "Piglin_Brute", "Hoglin" and "Strider"
 
@@ -234,19 +236,21 @@ command /spawn:
                     make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%loop-world% %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
 
             set {_numb} to 0
+
+            wait 1 tick
             #vila1
-            loop "%23 + 5 - {quantmobs}%" parsed as integer times:
+            loop "%23 + 5 - {quantmobs::%loop-world%}%" parsed as integer times:
                 add 1 to {_numb}
-                chance of "%{chance}%" parsed as integer:
+                chance of "%{chance::%loop-world%}%" parsed as integer:
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 1 and {level}
+                    set {_levelstats} to a random integer between 1 and {level::%loop-world%}
                     set {_level} to {_levelstats}
                     if {_levelstats} >= 20:
                         set {_levelmin} to 20                 
                     if {_levelstats} >= 30:
                         set {_levelmin} to 30  
-                    set {_levelstats} to a random integer between {_levelmin} and {level}
+                    set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
 
                     set {_tipomob} to a random text out of "Ravager", "Pillager", "Vindicator" and "Evoker"
 
@@ -267,19 +271,21 @@ command /spawn:
                     make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%loop-world% %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
 
             set {_numb} to 0
+
+            wait 1 tick
             #pantano1
             loop 7 times:
                 add 1 to {_numb}
                 chance of 90%:
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 1 and {level}
+                    set {_levelstats} to a random integer between 1 and {level::%loop-world%}
                     set {_level} to {_levelstats}
                     if {_levelstats} >= 20:
                         set {_levelmin} to 20
                     if {_levelstats} >= 30:
                         set {_levelmin} to 30  
-                    set {_levelstats} to a random integer between {_levelmin} and {level}
+                    set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
 
                     set {_tipomob} to a random text out of "Witch" and "Frog"
 
@@ -298,14 +304,14 @@ command /spawn:
 
             set {_numb} to 0
 
+            wait 1 tick
             #caverna2
             loop 117 times:
                 add 1 to {_numb}
                 chance of 40%:
-                    wait 1 tick
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 5 and {level} * 2
+                    set {_levelstats} to a random integer between 5 and {level::%loop-world%} * 2
                     set {_level} to {_levelstats}
                     if {_levelstats} >= 20:
                         set {_levelmin} to 30                 
@@ -314,7 +320,7 @@ command /spawn:
                     if {_levelstats} >= 30:
                         set {_levelmin} to 45
 
-                    set {_level} to a random integer between {_levelmin} and {level}
+                    set {_level} to a random integer between {_levelmin} and {level::%loop-world%}
 
                     set {_tipomob} to a random text out of "Zombie", "Skeleton", "Spider", "Creeper" and "Enderman"
 
@@ -330,17 +336,17 @@ command /spawn:
                     set {_nomespawn} to "caverna2"
 
                     make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%loop-world% %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
-
+                    wait 1 tick
             message "Spawns feitos!"
             set {_numb} to 0
 
-command /spawnboss:
+command /spawnboss [<world>] [<world>] [<world>]:
     executable by: console
     trigger:
         message "Espere..."
         loop all worlds:
             wait 1 minute
-            loop-world is "castlefight1", "castlefight2" or "castlefight3"
+            loop-world is arg-1, arg-2 or arg-3 
             loop all entities in loop-world:
                 if name of loop-entity contains "(BOSS)":
                     set {_id} to citizen id of loop-entity
@@ -352,9 +358,9 @@ command /spawnboss:
                     set {_health} to 0
                     set {_damage} to 0
                     set {_level} to 100
-                    {level} > 20: 
+                    {level::%loop-world%} > 20: 
                         set {_level} to 200
-                    {level} > 30: 
+                    {level::%loop-world%} > 30: 
                         set {_level} to 300
 
                     set {_tipomob} to a random text out of "Zombie", "Skeleton", "Spider", "Creeper" and "Enderman"
@@ -382,7 +388,7 @@ command /spawnboss:
 #            chance of 40%:
 #                set {_health} to 0
 #                set {_damage} to 0
-#                set {_levelstats} to {level} -30
+#                set {_levelstats} to {level::%loop-world%} -30
 #                set {_levelstats} to a random integer between {_levelstats} and -5 
 #                set {_level} to abs({_levelstats})
 #                #wither skeleton

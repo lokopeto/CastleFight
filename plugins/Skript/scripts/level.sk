@@ -44,8 +44,8 @@ on death:
 every 10 ticks:
     loop all worlds:
         loop-world is "castlefight1", "castlefight2" or "castlefight3"
-        set line 3 of block at location(-218, 150, 26, loop-world) to "&9%{XPquant2::%loop-world%}%"
-        set line 3 of block at location(134, 150, 19, loop-world) to "&9%{XPquant1::%loop-world%}%"
+        set line 3 of block at location(-218, 151, 26, loop-world) to "&9%{XPquant2::%loop-world%}%"
+        set line 3 of block at location(134, 153, 19, loop-world) to "&9%{XPquant1::%loop-world%}%"
 
 on click on sign:
     make player swing hand
@@ -178,6 +178,9 @@ command /jogo <number> [<world>] [<world>] [<world>]:
 
             make console execute command "ex flag server nomecastelo1%arg-2%:%{castelo1nome::%arg-2%}%"
             make console execute command "ex flag server nomecastelo2%arg-2%:%{castelo2nome::%arg-2%}%"
+
+            make console execute command "spawn"
+            make console execute command "spawnboss"
 
             loop all players in world arg-2:
                 set health of loop-players to 20

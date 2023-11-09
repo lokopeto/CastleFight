@@ -177,7 +177,7 @@ npc:
     try-fetch-default-skin: true
   chunks:
     # Whether to keep NPC chunks loaded
-    always-keep-loaded: false
+    always-keep-loaded: true
   commands:
     global-delay-seconds: 1
     error-messages:

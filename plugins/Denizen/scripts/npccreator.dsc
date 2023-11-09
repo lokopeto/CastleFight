@@ -20,11 +20,11 @@ npccreatorking:
     description: Does something
     usage: /npccreatorking <&lt>lugar<&gt> <&lt>tag<&gt> <&lt>vida<&gt> <&lt>nome<&gt>
     permission: dscript.npccreatorking
-    debug: false
+    debug: true
     tab completions:
         2: <server.entity_types>
     script:
-    - narrate "npccreatorinteractive <context.args>"
+    - narrate "npccreatorking <context.args>"
     - create player <context.args.get[4].to[last].space_separated> <context.args.get[1]> traits:sentinel save:npc
     - adjust <entry[npc].created_npc> scoreboard_tags:<context.args.get[2]>
     - adjust <entry[npc].created_npc> collidable:true
@@ -59,7 +59,7 @@ spawnmobc:
     description: Does something
     usage: /spawnmobc <&lt>castelo<&gt> <&lt>type<&gt> <&lt>lv<&gt> <&lt>damage<&gt> <&lt>health<&gt> <&lt>armor<&gt> <&lt>speed<&gt> / <&lt>npc speed<&gt> <&lt>accuracy<&gt> <&lt>range<&gt> <&lt>world<&gt>
     permission: dscript.npccastle
-    debug: true
+    debug: false
     script:
         - narrate "spawnmobc <context.args>"
         - if <context.args.get[1]> = 1:
@@ -83,6 +83,8 @@ spawnmobc:
         - execute as_server "sentinel addtarget npc:<server.flag[nomecastelo<[inim]><context.args.get[12]>]> --id <entry[npc].created_npc.id> " silent
         - execute as_server "sentinel addtarget sbteam:sbteam:castelo<[inim]><location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <entry[npc].created_npc.id> " silent
         - execute as_server "sentinel addignore sbteam:castelo<context.args.get[1]><context.args.get[12]> --id <entry[npc].created_npc.id> " silent
+
+        - wait 1t
 
         - execute as_server "sentinel respawntime -1 --id <entry[npc].created_npc.id> " silent
         - execute as_server "sentinel addignore npc:Invocador --id <entry[npc].created_npc.id> " silent
@@ -108,7 +110,7 @@ spawnmobc:
         - if <context.args.get[2]> = Strider:
             - adjust <entry[npc].created_npc.id> controllable:true
 
-        - adjust <entry[npc].created_npc.id> speed:<context.args.get[7]>
+        - adjust <entry[npc].created_npc> speed:<context.args.get[7]>
 
 
 
@@ -130,7 +132,7 @@ npccreatordelete:
     description: delete all npcs
     usage: /npccreatordelete <&lt>world<&gt>
     permission: dscript.npccreatordelete
-    debug: true
+    debug: false
     script:
 
     - remove <server.flag[npcsinteract<context.args.get[1]>]>
