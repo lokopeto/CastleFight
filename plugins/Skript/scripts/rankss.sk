@@ -1,0 +1,123 @@
+command /partidapesquisarcancelar:
+    permission: pspc.cmd
+    aliases: /pspc
+    trigger:
+        set {psspwait::%player%} to 0
+        message "Pesquisa cancelada"
+        send action bar "Pesquisa cancelada" to player  
+        wait 3 seconds
+        if {psspwait::%player%} is not 1:
+            set {psspwait::%player%} to 1
+
+command /partidapesquisar <integer>:
+    permission: psp.cmd
+    aliases: /psp
+    trigger:
+
+        if {psspwait::%player%} is 0:
+            message "Espere um momento"
+
+        if {psspwait::%player%} is 1:
+            message "Buscando partida"
+            set {psspwait::%player%} to 2
+
+
+        while {psspwait::%player%} is 2:
+            loop all worlds:
+                if {psspwait::%player%} is 0:
+                    stop
+                loop-world is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"  
+                if {psspwait::%player%} is 3    :
+                    stop loop
+                wait 1 second
+                set {_worldd} to name of loop-value
+                replace "castlefight" in {_worldd} with ""
+                amount of players in loop-value is 1, 3 or 5:
+                    loop all players in loop-value:
+                        if {rank::%loop-player%} is between {rank::%player%} and {rank::%player%} + 10:
+                            set {_rankcompativell} to 1
+                            send action bar "Rank Compativel Achado &7&o(%120 - {_time}%s, %loop-value-1%)" to player
+                        else:
+                            send action bar "Procurando rank compativel &7&o(%120 - {_time}%s, %loop-value-1%)" to player
+
+                        set {_reicarvalho} and {_reibarro} to 0
+
+                        if "%team of loop-player%" is "castelo1%world of loop-player%":
+                            add 1 to {_reicarvalho}
+                    
+                        if "%team of loop-player%" is "castelo2%world of loop-player%":
+                            add 1 to {_reibarro}
+                        
+
+
+                    if {_rankcompativell} is 1:
+
+                        if {_reicarvalho} > {_reibarro}:
+                            if arg-1 is 2:
+                                set {_disponibilidade} to 1
+                        
+                        if {_reicarvalho} < {_reibarro}:
+                            if arg-1 is 1:
+                                set {_disponibilidade} to 1
+                        
+                        if {_disponibilidade} is 1:
+                            send action bar "Partida encontrada com %amount of players in loop-value% jogador(es) em %loop-value%" to player
+
+                            set {psspwait::%player%} to 3
+
+                            
+
+                        else:
+                            send action bar "&c&lPartida indisponivel &7&o(%120 - {_time}%s, %loop-value%)" to player
+    
+    
+ 
+ 
+                else:
+                    add 1 to {_time}
+                    send action bar "Procurando Partida &7&o(%120 - {_time}%s, %loop-value%)" to player
+                    if {_time} is 120:
+                        send action bar "&c&lNenhuma partida achada, crie uma" to player
+                        message "&c&lNenhuma partida foi achada, crie você mesmo uma partida indo nas estações."
+                        stop
+
+        if {psspwait::%player%} is 3:
+
+            while {psspwait::%player%} is 3:
+                if arg-1 is 1:
+                    set {_loc1placa} to 1
+                    set {_loc2placa} to 2
+
+                if arg-1 is 2:
+                    set {_loc1placa} to 3
+                    set {_loc2placa} to 4
+
+
+                if arg-1 is 1:
+                    set {_yaw} to {partidaplaca::%{_worldd}%::5}           
+                if arg-1 is 2:
+                    set {_yaw} to {partidaplaca::%{_worldd}%::6}           
+
+
+                set {_loc1} to {partidaplaca::%{_worldd}%::%{_loc1placa}%}
+                set {_loc2} to {partidaplaca::%{_worldd}%::%{_loc2placa}%}
+
+
+
+                loop blocks between the block at {_loc1} and the block at {_loc2}:
+                    loop-block is sign:
+                        teleport player to location(loop-block's x-coordinate, loop-block's y-coordinate - 0.5, loop-block's z-coordinate, loop-block's world, {_yaw}, 70) 
+
+
+                send title "&b&lPARTIDA ENCONTRADA" with subtitle "&bClique com o botão direito para entrar" to player for 1 seconds with fadein 0 second and fade out 1 second
+                send action bar "&bCaso queira sair, digite &n/pspc" to player
+
+                wait 1 tick
+
+on join:
+    set {psspwait::%player%} to 1
+    {rank::%player%} is not set:
+        set {rank::%player%} to 1                   
+
+
+

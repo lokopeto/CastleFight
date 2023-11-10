@@ -1210,15 +1210,27 @@
     },
     "done": true
   },
+  "minecraft:recipes/building_blocks/bone_block": {
+    "criteria": {
+      "has_bone_meal": "2023-11-08 21:17:01 -0300"
+    },
+    "done": true
+  },
   "minecraft:recipes/combat/turtle_helmet": {
     "criteria": {
       "has_scute": "2023-11-08 22:00:22 -0300"
     },
     "done": true
   },
-  "minecraft:recipes/building_blocks/bone_block": {
+  "minecraft:recipes/building_blocks/mangrove_planks": {
     "criteria": {
-      "has_bone_meal": "2023-11-08 21:17:01 -0300"
+      "has_logs": "2023-11-09 11:17:55 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/mangrove_wood": {
+    "criteria": {
+      "has_log": "2023-11-09 11:17:55 -0300"
     },
     "done": true
   },

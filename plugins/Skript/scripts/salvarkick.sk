@@ -28,3 +28,4 @@ on join:
     set helm of player to {playerbk::%player's uuid%::equip::4}
     set offhand item of player to {playerbk::%player's uuid%::equip::5}   
     set maximum health of player to {playerbk::%player's uuid%::maxhealth}
+    wait 1 tick

@@ -9,7 +9,7 @@ command /criarpartida [<text>] [<text>] [<text>] [<text>]:
     trigger:
         {jogo::%world of player%} is 0
 
-        arg-1, arg-2 or arg-3 is not set:    
+        arg-1, arg-2, arg-3 or arg-4 is not set:    
             message "&cIncorreto! use /criarpartida <Nome do Rei Barro> <Nome do Rei Carvalho> <Tipo> (senha)"
         arg-1 is set
         arg-2 is set
@@ -114,7 +114,7 @@ command /confirmar <integer> <text> <text> <text> <world> [<text>]:
 
 every 10 minutes:
     loop all worlds:
-        loop-world is "castlefight1", "castlefight2" or "castlefight3"
+        loop-world is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"
         {jogo::%loop-world%} is 0
         number of players in loop-world is 0 or 1
         set {blockx1::%loop-world%} and {blockx2::%loop-world%} to 0

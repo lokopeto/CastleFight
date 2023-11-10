@@ -1,5 +1,6 @@
 invdrops:
     type: world
+    debug: false
     events:
         on player death:
             - foreach <player.inventory.list_contents> as:invloop:

@@ -1,5 +1,6 @@
 commandskinshop:
     type: world
+    
     events:
         on player right clicks npc:
             - ratelimit <player> 1t

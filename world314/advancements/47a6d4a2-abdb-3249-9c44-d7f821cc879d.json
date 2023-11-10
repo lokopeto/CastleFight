@@ -1,0 +1,64 @@
+{
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2023-03-25 12:15:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2023-03-25 12:15:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2023-03-25 12:15:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2023-03-25 12:15:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2023-03-25 12:15:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2023-03-25 12:15:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2023-03-25 12:15:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:birch_forest": "2023-03-25 12:15:01 -0300",
+      "minecraft:swamp": "2023-03-25 12:19:59 -0300",
+      "minecraft:forest": "2023-03-25 12:06:20 -0300",
+      "minecraft:ice_spikes": "2023-03-25 12:20:59 -0300",
+      "minecraft:frozen_ocean": "2023-03-25 12:15:10 -0300",
+      "minecraft:ocean": "2023-03-25 12:06:23 -0300"
+    },
+    "done": false
+  },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:crimson_forest": "2023-03-25 12:14:44 -0300",
+      "minecraft:nether_wastes": "2023-03-25 12:21:14 -0300",
+      "minecraft:warped_forest": "2023-03-25 12:21:01 -0300"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

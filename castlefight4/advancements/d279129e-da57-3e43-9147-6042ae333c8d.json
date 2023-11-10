@@ -1,0 +1,149 @@
+{
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+    "criteria": {
+      "has_iron_sword": "2023-03-31 00:30:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2023-03-31 00:38:37 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2023-03-31 00:31:46 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:17 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2023-03-31 00:17:21 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/shiny_gear": {
+    "criteria": {
+      "diamond_chestplate": "2023-03-31 00:59:57 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:17 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:evoker": "2023-03-31 00:08:14 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:17 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:pillager": "2023-03-31 00:48:37 -0300",
+      "minecraft:skeleton": "2023-03-31 01:52:59 -0300",
+      "minecraft:vindicator": "2023-03-31 00:17:20 -0300",
+      "minecraft:spider": "2023-03-31 00:36:13 -0300",
+      "minecraft:evoker": "2023-03-31 00:08:14 -0300",
+      "minecraft:witch": "2023-03-31 00:21:00 -0300",
+      "minecraft:husk": "2023-03-31 00:48:06 -0300",
+      "minecraft:enderman": "2023-03-31 01:42:14 -0300",
+      "minecraft:stray": "2023-03-31 02:00:29 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/lightning_rod_with_villager_no_fire": {
+    "criteria": {
+      "lightning_rod_with_villager_no_fire": "2023-03-31 00:19:32 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:17 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_helmet": "2023-03-31 00:30:55 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:17 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "cooked_mutton": "2023-03-31 01:06:43 -0300",
+      "bread": "2023-03-31 00:31:46 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_by_something": "2023-03-31 00:02:11 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:17 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_smelting": {
+    "criteria": {
+      "has_iron_sword": "2023-03-31 00:30:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2023-03-31 00:48:20 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:17 -0300"
+    },
+    "done": true
+  },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:crimson_forest": "2023-03-31 00:26:07 -0300",
+      "minecraft:nether_wastes": "2023-03-31 00:04:40 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:birch_forest": "2023-03-31 00:04:36 -0300",
+      "minecraft:river": "2023-03-31 00:44:20 -0300",
+      "minecraft:swamp": "2023-03-31 00:20:31 -0300",
+      "minecraft:forest": "2023-03-30 23:56:04 -0300",
+      "minecraft:ocean": "2023-03-30 23:58:01 -0300"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

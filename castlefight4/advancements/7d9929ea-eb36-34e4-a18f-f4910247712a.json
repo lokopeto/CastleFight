@@ -1,0 +1,192 @@
+{
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+    "criteria": {
+      "has_iron_helmet": "2023-03-31 00:07:26 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2023-03-31 01:00:24 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:pillager": "2023-03-31 00:12:58 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:pillager": "2023-03-31 00:12:58 -0300",
+      "minecraft:skeleton": "2023-03-31 01:04:59 -0300",
+      "minecraft:ravager": "2023-03-31 01:45:40 -0300",
+      "minecraft:hoglin": "2023-03-31 00:21:10 -0300",
+      "minecraft:vindicator": "2023-03-31 00:22:55 -0300",
+      "minecraft:spider": "2023-03-31 00:22:00 -0300",
+      "minecraft:creeper": "2023-03-31 23:52:23 -0300",
+      "minecraft:evoker": "2023-03-31 00:13:19 -0300",
+      "minecraft:witch": "2023-03-31 00:17:02 -0300",
+      "minecraft:husk": "2023-03-31 00:16:14 -0300",
+      "minecraft:enderman": "2023-03-31 00:20:30 -0300",
+      "minecraft:stray": "2023-03-31 00:16:24 -0300",
+      "minecraft:zombie": "2023-03-31 00:57:06 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/lightning_rod_with_villager_no_fire": {
+    "criteria": {
+      "lightning_rod_with_villager_no_fire": "2023-03-31 00:25:48 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_helmet": "2023-03-31 00:07:26 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/sniper_duel": {
+    "criteria": {
+      "killed_skeleton": "2023-03-31 01:15:12 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "cooked_mutton": "2023-03-31 00:37:03 -0300",
+      "cooked_beef": "2023-03-31 01:16:13 -0300",
+      "apple": "2023-03-31 00:21:13 -0300",
+      "bread": "2023-03-31 00:04:05 -0300",
+      "rotten_flesh": "2023-03-31 01:59:30 -0300",
+      "cooked_chicken": "2023-03-31 01:28:42 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/ol_betsy": {
+    "criteria": {
+      "shot_crossbow": "2023-03-31 01:19:35 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_smelting": {
+    "criteria": {
+      "has_iron_helmet": "2023-03-31 00:07:26 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:birch_forest": "2023-03-31 00:00:38 -0300",
+      "minecraft:swamp": "2023-03-31 00:13:52 -0300",
+      "minecraft:forest": "2023-03-30 23:29:06 -0300",
+      "minecraft:ocean": "2023-03-30 23:29:40 -0300"
+    },
+    "done": false
+  },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:crimson_forest": "2023-03-31 00:15:26 -0300",
+      "minecraft:nether_wastes": "2023-03-30 23:59:19 -0300"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2023-03-31 00:04:05 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2023-03-31 00:07:28 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/shiny_gear": {
+    "criteria": {
+      "diamond_chestplate": "2023-03-31 00:38:08 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget_from_smelting": {
+    "criteria": {
+      "has_golden_chestplate": "2023-04-01 00:49:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2023-03-31 00:02:11 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 00:01:38 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/deflect_arrow": {
+    "criteria": {
+      "deflected_projectile": "2023-03-31 00:58:05 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2023-03-31 01:04:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget_from_blasting": {
+    "criteria": {
+      "has_golden_chestplate": "2023-04-01 00:49:23 -0300"
+    },
+    "done": true
+  },
+  "minecraft:nether/netherite_armor": {
+    "criteria": {
+      "netherite_armor": "2023-03-31 01:15:35 -0300"
+    },
+    "done": true
+  },
+  "DataVersion": 3218
+}

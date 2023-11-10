@@ -1,6 +1,6 @@
 npcpathfind:
     type: world
-    debug: true
+    debug: false
     events:
         on delta time secondly every:10:
             - foreach <server.npcs_flagged[castelo1]> as:npcs:

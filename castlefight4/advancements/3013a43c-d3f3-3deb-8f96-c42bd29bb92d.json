@@ -1,0 +1,186 @@
+{
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+    "criteria": {
+      "has_iron_sword": "2023-03-31 23:51:52 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/dispenser": {
+    "criteria": {
+      "has_bow": "2023-03-31 23:50:49 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/dark_oak_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 23:58:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:pillager": "2023-03-31 23:49:11 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/food/mushroom_stew": {
+    "criteria": {
+      "has_brown_mushroom": "2023-04-10 01:56:10 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:pillager": "2023-03-31 23:49:11 -0300",
+      "minecraft:skeleton": "2023-04-01 00:28:17 -0300",
+      "minecraft:ravager": "2023-04-01 00:04:59 -0300",
+      "minecraft:hoglin": "2023-04-01 00:18:45 -0300",
+      "minecraft:vindicator": "2023-04-01 00:08:57 -0300",
+      "minecraft:spider": "2023-03-31 23:58:58 -0300",
+      "minecraft:creeper": "2023-04-10 01:36:17 -0300",
+      "minecraft:evoker": "2023-04-01 00:05:05 -0300",
+      "minecraft:witch": "2023-04-01 00:00:51 -0300",
+      "minecraft:husk": "2023-04-10 01:40:13 -0300",
+      "minecraft:enderman": "2023-04-01 00:23:31 -0300",
+      "minecraft:stray": "2023-03-31 23:59:29 -0300",
+      "minecraft:zombie": "2023-04-01 00:24:20 -0300",
+      "minecraft:drowned": "2023-04-10 03:19:46 -0300"
+    },
+    "done": false
+  },
+  "minecraft:adventure/lightning_rod_with_villager_no_fire": {
+    "criteria": {
+      "lightning_rod_with_villager_no_fire": "2023-04-01 00:56:46 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_helmet": "2023-03-31 23:52:00 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/sniper_duel": {
+    "criteria": {
+      "killed_skeleton": "2023-04-01 00:53:15 -0300"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/balanced_diet": {
+    "criteria": {
+      "cooked_mutton": "2023-04-01 00:39:50 -0300",
+      "cooked_beef": "2023-04-10 02:29:26 -0300",
+      "apple": "2023-04-01 00:32:33 -0300",
+      "bread": "2023-03-31 23:50:42 -0300",
+      "cooked_chicken": "2023-04-01 00:49:59 -0300"
+    },
+    "done": false
+  },
+  "minecraft:recipes/misc/iron_nugget_from_smelting": {
+    "criteria": {
+      "has_iron_sword": "2023-03-31 23:51:52 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:birch_forest": "2023-03-31 23:53:38 -0300",
+      "minecraft:swamp": "2023-03-31 23:52:48 -0300",
+      "minecraft:forest": "2023-03-31 23:43:48 -0300",
+      "minecraft:ocean": "2023-03-31 23:44:15 -0300"
+    },
+    "done": false
+  },
+  "minecraft:nether/explore_nether": {
+    "criteria": {
+      "minecraft:crimson_forest": "2023-04-01 00:18:17 -0300",
+      "minecraft:nether_wastes": "2023-03-31 23:53:40 -0300"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2023-03-31 23:50:42 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2023-03-31 23:51:46 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/birch_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 23:58:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/shiny_gear": {
+    "criteria": {
+      "diamond_chestplate": "2023-04-01 00:46:33 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/mangrove_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 23:58:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:end/levitate": {
+    "criteria": {
+      "levitated": "2023-04-01 00:59:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/acacia_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 23:58:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/oak_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 23:58:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2023-03-31 23:49:11 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/jungle_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 23:58:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/bowl": {
+    "criteria": {
+      "has_brown_mushroom": "2023-04-10 01:56:10 -0300"
+    },
+    "done": true
+  },
+  "minecraft:adventure/shoot_arrow": {
+    "criteria": {
+      "shot_arrow": "2023-03-31 23:51:18 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/transportation/spruce_boat": {
+    "criteria": {
+      "in_water": "2023-03-31 23:58:45 -0300"
+    },
+    "done": true
+  },
+  "minecraft:nether/netherite_armor": {
+    "criteria": {
+      "netherite_armor": "2023-04-10 03:18:13 -0300"
+    },
+    "done": true
+  },
+  "DataVersion": 3218
+}
