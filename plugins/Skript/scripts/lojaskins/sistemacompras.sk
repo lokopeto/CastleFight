@@ -1,0 +1,6 @@
+command /buy [<text>] [<player>] [<text>] [<number>]:
+#/buy <type> <player> <tipodeskin> <id> # type1 = uma skin # type2 = pacote de skins
+    permission: lojaskins.cmd
+    trigger:
+        if arg-1 is "type1":
+            add 1 to {inventario::%player%::%arg-3%::%arg-4%}

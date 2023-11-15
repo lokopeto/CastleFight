@@ -1,20 +1,21 @@
 command /desistir:
     trigger:
         {jogo::%world of player%} is 1
-        if {jogadoresdesistir::%world of player%::*} contains uuid of player:
-            remove uuid of player from {jogadoresdesistir::%world of player%::*}
+        if {jogadoresdesistir::%world of player%::*} contains player:
+            remove player from {jogadoresdesistir::%world of player%::*}
 
             set {_teamplayer} to "%team of player%"
             replace "castelo" in {_teamplayer} with ""
+            replace "%world of player%" in {_teamplayer} with ""
 
             loop all players in world of player:
                 set {_team} to "%team of loop-player%"
 #                broadcast "%{_team}%"
-                if {_team} is "castelo1":
+                if {_team} is "castelo1%world of player%":
                     add loop-player to {_desistir1::*}
                     add 1 to {_quant1}
 
-                if {_team} is "castelo2":    
+                if {_team} is "castelo2%world of player%":    
                     add loop-player to {_desistir2::*}
                     add 1 to {_quant2}
 
@@ -22,7 +23,7 @@ command /desistir:
 #            broadcast "%{_quant1}% %{_quant2}%"
             add 1 to {desistir%{_teamplayer}%::%world of player%}
 
-            message "<cyan>%name of player% quer desistir! (faltam %{_quant%{_teamplayer}%} - {desistir%{_teamplayer}%}%::%world of player%)" to {_desistir%{_teamplayer}%::*}
+            message "<cyan>%name of player% quer desistir! (faltam %{_quant%{_teamplayer}%} - {desistir%{_teamplayer}%::%world of player%}%)" to {_desistir%{_teamplayer}%::*}
 
 
 #            broadcast "%{desistir%{_teamplayer}%}% %{_quant%{_teamplayer}%}%"
@@ -31,7 +32,7 @@ command /desistir:
                 loop all entities in world of player:
                     if loop-entity have scoreboard tag "rei%{_teamplayer}%":
                         kill loop-entity
-                broadcast "<cyan>%{castelo%{_teamplayer}%nome}% desistiu!"
+                message "<cyan>%{castelo%{_teamplayer}%nome}% desistiu!" to all players in world of player
                 delete {jogadoresdesistir::%world of player%::*}
                 delete {desistir%{_teamplayer}%::%world of player%}
         else:

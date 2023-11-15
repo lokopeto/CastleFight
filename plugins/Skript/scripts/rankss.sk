@@ -3,6 +3,7 @@ command /partidapesquisarcancelar:
     aliases: /pspc
     trigger:
         set {psspwait::%player%} to 0
+        teleport player to {pssplocplayer::%player%}    
         message "Pesquisa cancelada"
         send action bar "Pesquisa cancelada" to player  
         wait 3 seconds
@@ -13,6 +14,8 @@ command /partidapesquisar <integer>:
     permission: psp.cmd
     aliases: /psp
     trigger:
+
+        set {pssplocplayer::%player%} to location of player
 
         if {psspwait::%player%} is 0:
             message "Espere um momento"

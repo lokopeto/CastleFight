@@ -24,12 +24,6 @@
     "bypassesPlayerLimit": false
   },
   {
-    "uuid": "ed5cee70-0798-3e13-b06c-47759ae5453b",
-    "name": "lokopetoo",
-    "level": 4,
-    "bypassesPlayerLimit": false
-  },
-  {
     "uuid": "305ade1b-356d-3ab4-b6df-3344bf024da3",
     "name": "Pudinim",
     "level": 4,
@@ -38,6 +32,12 @@
   {
     "uuid": "f90c7efe-bfce-3cea-b302-74a4685a9dba",
     "name": "EmanuDragon",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "ed5cee70-0798-3e13-b06c-47759ae5453b",
+    "name": "lokopetoo",
     "level": 4,
     "bypassesPlayerLimit": false
   }

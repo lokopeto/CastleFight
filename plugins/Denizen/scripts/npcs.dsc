@@ -24,3 +24,4 @@ npcs:
             - if <npc.name.contains[exiladosit]>:
                 - sit
                 - adjust <npc> name:Exilado
+

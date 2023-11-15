@@ -2,7 +2,6 @@ rccegg:
     type: world
     debug: false
     events:
-        on player clicks block:
+        on player clicks block with:*_spawn_egg:
             - if <player.location.world.contains_any_text[castlefight]>
-            - if <context.item.contains_any[spawn_egg]>:
-                - determine cancelled
+            - determine cancelled

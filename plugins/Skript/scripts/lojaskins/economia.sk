@@ -1,0 +1,13 @@
+command /cfcoins [<text>] [<player>] [<number>]:
+    trigger:
+        if arg-1 is "add":
+            add arg-3 to {CFcoins::%arg-2%}
+        if arg-1 is "remove":
+            add arg-3 * -1 to {CFcoins::%arg-2%}
+
+
+command /balance:
+    trigger:
+        send "Você tem %{CFcoins::%player%}%"
+
+

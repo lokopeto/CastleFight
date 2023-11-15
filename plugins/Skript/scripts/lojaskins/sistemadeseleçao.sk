@@ -1,0 +1,3 @@
+command /selecionarskin [<player>] [<text>] [<number>]:
+    trigger:
+        

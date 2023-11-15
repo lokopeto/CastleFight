@@ -4,14 +4,13 @@ variables:
 command /lojaskins:
     permission: lojaskins.cmd
     trigger:
-        send "O que deseja?" to player
         create a gui with virtual chest inventory with 3 rows named "§6Loja §6de §6Skins" and shape "xxxxxxxxx", "xxxabcxxx", and "xxxxxxxxx":
             make gui slot "x" with black stained glass pane named "BORDA"
             make gui slot "a" with chest named "§bSuas Skins":
                 wait 1 tick
                 close player's inventory
                 set {lojaskins::%player%} to 1
-                execute player command "/selecionarskins"
+                execute player command "/lojaselecionarskins"
             make gui slot "b" with bricks named "§6Comprar":
                 wait 1 tick
                 close player's inventory
@@ -22,62 +21,61 @@ command /lojaskins:
                 close player's inventory
         open the last gui for the player
 
-command /selecionarskins [<text>] [<text>]:
+command /lojaselecionarskins [<text>] [<text>]:
     trigger:
         if arg-1 is not set:
             if {lojaskins::%player%} is 1:
-                send "Selecione o tipo de Skin"
                 create a gui with virtual chest inventory with 3 rows named "§6Seleção de tipos de Skins" and shape "xxxxxxxxx", "xabcdeeex", and "xxxxfxxxx":
                     make gui slot "x" with black stained glass pane named "BORDA"
                     make gui slot "a" with stone bricks named "§3Castelos":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins castelos"
+                        execute player command "/lojaselecionarskins castelos"
                     make gui slot "b" with iron sword named "§3Armas":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins armas"
+                        execute player command "/lojaselecionarskins armas"
                     make gui slot "c" with iron chestplate named "§3Armaduras":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins armaduras"
+                        execute player command "/lojaselecionarskins armaduras"
                     make gui slot "d" with chicken spawn egg named "§3Invocações":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins invocações"
+                        execute player command "/lojaselecionarskins invocações"
                     make gui slot "e" with blackstone named "NOTSET":
                         wait 1 tick
                         close player's inventory
-                    make gui slot "f" with red concrete named "§4SAIR":
+                    make gui slot "f" with red concrete named "§4Voltar":
                         wait 1 tick
                         close player's inventory
+                        execute player command "/lojaskins"
                 open the last gui for the player        
         if arg-1 is "castelos":
             if {lojaskins::%player%} is 1:
-                send "Selecione a Skin de castelo"
                 create a gui with virtual chest inventory with 3 rows named "§6Seleção de Skins de Castelo" and shape "abxxxxxxx", "xxxxxxxxx", and "xxxxxxxcd":
-                    make gui slot "x" with white stained glass pane named "EMPITY"
+                    make gui slot "x" with white stained glass pane named "NONE"
                     make gui slot "a" with grass block named "§3Default":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins castelos default"
+                        execute player command "/lojaselecionarskins castelos default"
                         #tem q mudar os comandos dps tipo esse de cima "/selecionarskins castelos default" e os de baixo... na verdade tem q mudar os de selecionar a skin em si, nao a categoria
                     make gui slot "b" with podzol named "§3test":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins castelos skintest"
-                    make gui slot "c" with yellow concrete named "§4Proxima pagina":
+                        execute player command "/lojaselecionarskins castelos skintest"
+                    make gui slot "c" with yellow concrete named "§eProxima pagina":
                         wait 1 tick
                         close player's inventory
-                    make gui slot "d" with red concrete named "§4SAIR":
+                    make gui slot "d" with red concrete named "§4Voltar":
                         wait 1 tick
                         close player's inventory
+                        execute player command "/lojaselecionarskins"
                 open the last gui for the player
         if arg-1 is "armas":
             if {lojaskins::%player%} is 1:
-                send "Selecione a Skin de armas"
                 create a gui with virtual chest inventory with 3 rows named "§6Seleção de Skins de Armas" and shape "abxxxxxxx", "xxxxxxxxx", and "xxxxxxxcd":
-                    make gui slot "x" with white stained glass pane named "EMPITY"
+                    make gui slot "x" with white stained glass pane named "NONE"
                     make gui slot "a" with iron sword named "§3Default":
                         wait 1 tick
                         close player's inventory
@@ -86,80 +84,197 @@ command /selecionarskins [<text>] [<text>]:
                         wait 1 tick
                         close player's inventory
                         execute player command "/selecionarskins armas test2"
-                    make gui slot "c" with yellow concrete named "§4Proxima pagina":
+                    make gui slot "c" with yellow concrete named "§eProxima pagina":
                         wait 1 tick
                         close player's inventory
-                    make gui slot "d" with red concrete named "§4SAIR":
+                    make gui slot "d" with red concrete named "§4Voltar":
                         wait 1 tick
                         close player's inventory
+                        execute player command "/lojaselecionarskins"
                 open the last gui for the player
         if arg-1 is "armaduras":
             if {lojaskins::%player%} is 1:
-                send "Selecione a Skin de armaduras"
                 create a gui with virtual chest inventory with 3 rows named "§6Seleção de Skins de Armaduras" and shape "abxxxxxxx", "xxxxxxxxx", and "xxxxxxxcd":
-                    make gui slot "x" with white stained glass pane named "EMPITY"
+                    make gui slot "x" with white stained glass pane named "NONE"
                     make gui slot "a" with iron chestplate named "§3Default":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins armas default"
+                        execute player command "/lojaselecionarskins armas default"
                     make gui slot "b" with leather chestplate named "§3test3":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins armas test3"
-                    make gui slot "c" with yellow concrete named "§4Proxima pagina":
+                        execute player command "/lojaselecionarskins armas test3"
+                    make gui slot "c" with yellow concrete named "§eProxima pagina":
                         wait 1 tick
                         close player's inventory
-                    make gui slot "d" with red concrete named "§4SAIR":
+                    make gui slot "d" with red concrete named "§4Voltar":
                         wait 1 tick
                         close player's inventory
+                        execute player command "/lojaselecionarskins"
                 open the last gui for the player
         if arg-1 is "invocações":
             if {lojaskins::%player%} is 1:
-                send "Selecione a Skin de invocações"
                 create a gui with virtual chest inventory with 3 rows named "§6Seleção de Skins de Invocações" and shape "abxxxxxxx", "xxxxxxxxx", and "xxxxxxxcd":
-                    make gui slot "x" with white stained glass pane named "EMPITY"
+                    make gui slot "x" with white stained glass pane named "NONE"
                     make gui slot "a" with spawner named "§3Default":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins invocações default"
-                        #lembre da linha 65
-                    make gui slot "b" with enderman spawn egg named "§3test3":
+                        execute player command "/lojaselecionarskins invocações default"
+                        #lembre da linha 64
+                    make gui slot "b" with enderman spawn egg named "§3test4":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins invocações test3"
-                    make gui slot "c" with yellow concrete named "§4Proxima pagina":
+                        execute player command "/lojaselecionarskins invocações test4"
+                    make gui slot "c" with yellow concrete named "§eProxima pagina":
                         wait 1 tick
                         close player's inventory
-                    make gui slot "d" with red concrete named "§4SAIR":
+                    make gui slot "d" with red concrete named "§4Voltar":
                         wait 1 tick
                         close player's inventory
+                        execute player command "/lojaselecionarskins"
                 open the last gui for the player
 
-command /comprarskins [<text>] [<text>] [<text>]:
+command /comprarskins [<text>] [<text>] [<text>] [<text>]:
     trigger:
         if arg-1 is not set:
-            if {lojaskins::%player%} to 1:
-                send "Compre!"
-                create a gui with virtual chest inventory with 3 rows named "§1Loja de Skins" and shape "xxxxxxxxx", "xxxabcxxx", "xxxxxxxxx":
+            if {lojaskins::%player%} is 1:
+                create a gui with virtual chest inventory with 3 rows named "§1Loja de Skins" and shape "xxxxxxxxx", "xxxabcxxx", and "xxxxxxxxx":
                     make gui slot "x" with black stained glass pane named "BORDA"
                     make gui slot "a" with chest named "§3Tipos de Skins":
                         wait 1 tick
                         close player's inventory 
-                        execute player command "/comprarskins tiposdeskins"
-                    make gui slot "b" with barrel named "§3Pacotes de Skins"
+                        execute player command "/comprarskins type1"
+                    make gui slot "b" with barrel named "§3Pacotes de Skins":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/comprarskins pacotes"
-                    make gui slot "b" with red concrete named "§4SAIR":
+                        execute player command "/comprarskins type2"
+                    make gui slot "c" with red concrete named "§4Voltar":
                         wait 1 tick
                         close player's inventory
-                open the last gui for the player        
-        if arg-1 is "tiposdeskins":
-            if {lojaskins::%player%} to 1:
+                        execute player command "/lojaskins"
+                open the last gui for the player
+        if arg-1 is "type1":
+            if arg-2 is not set:    
+                if {lojaskins::%player%} is 1:
+                    create a gui with virtual chest inventory with 3 rows named "§1Tipos de Skins" and shape "xxxxxxxxx", "xabcdeeex", and "xxxxfxxxx":
+                        make gui slot "x" with black stained glass pane named "BORDA"
+                        make gui slot "a" with stone bricks named "§3Castelos":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins type1 castelos"
+                        make gui slot "b" with iron sword named "§3Armas":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins type1 armas"
+                        make gui slot "c" with iron chestplate named "§3Armaduras":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins type1 armaduras"
+                        make gui slot "d" with chicken spawn egg named "§3Invocações":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins type1 invocaçoes"
+                        make gui slot "e" with blackstone named "NOTSET":
+                            wait 1 tick
+                            close player's inventory
+                        make gui slot "f" with red concrete named "§4Voltar":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins"
+                        open the last gui for the player
+            if arg-2 is "castelos":
+                if {lojaskins::%player%} is 1:
+                    create a gui with virtual chest inventory with 3 rows named "Catálogo skins de Castelos" and shape "axxxxxxxx", "xxxxxxxxx" and "xxxxxxxbc":
+                        make gui slot "x" with white stained glass pane named "NONE"
+                        make gui slot "a" with podzol named "§3test":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/buy type1 %player% 5"
+                            send "Você comprou a skin test"
+                        make gui slot "b" with yellow concrete named "§eProxima pagina":
+                            wait 1 tick
+                            close player's inventory
+                        make gui slot "c" with red concrete named "§4Voltar":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins type1"
+                    open the last gui for the player
+            if arg-2 is "armas":
+                if {lojaskins::%player%} is 1:
+                    create a gui with virtual chest inventory with 3 rows named "Catálogo skins de Armas" and shape "axxxxxxxx", "xxxxxxxxx" and "xxxxxxxbc":
+                        make gui slot "x" with white stained glass pane named "NONE"
+                        make gui slot "a" with wooden sword named "§3test2":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/buy type1 %player% 6"
+                            send "Você comprou a skin test2"
+                        make gui slot "b" with yellow concrete named "§eProxima pagina":
+                            wait 1 tick
+                            close player's inventory
+                        make gui slot "c" with red concrete named "§4Voltar":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins type1"
+                    open the last gui for the player      
+            if arg-2 is "armaduras":
+                if {lojaskins::%player%} is 1:
+                    create a gui with virtual chest inventory with 3 rows named "Catálogo skins de Armaduras" and shape "axxxxxxxx", "xxxxxxxxx" and "xxxxxxxbc":
+                        make gui slot "x" with white stained glass pane named "NONE"
+                        make gui slot "a" with leather chestplate named "§3test3":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/buy type1 %player% 7"
+                            send "Você comprou a skin test3" 
+                        make gui slot "b" with yellow concrete named "§eProxima pagina":
+                            wait 1 tick
+                            close player's inventory
+                        make gui slot "c" with red concrete named "§4Voltar":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins type1"
+                    open the last gui for the player      
+            if arg-2 is "invocaçoes":
+                if {lojaskins::%player%} is 1:
+                    create a gui with virtual chest inventory with 3 rows named "Catálogo skins de Invocaçoes" and shape "axxxxxxxx", "xxxxxxxxx" and "xxxxxxxbc":
+                        make gui slot "x" with white stained glass pane named "NONE"
+                        make gui slot "a" with enderman spawn egg named "§3test4":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/buy type1 %player% 8"
+                            send "Você comprou a skin test4" 
+                        make gui slot "b" with yellow concrete named "§eProxima pagina":
+                            wait 1 tick
+                            close player's inventory
+                        make gui slot "c" with red concrete named "§4Voltar":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins type1"
+                    open the last gui for the player
+        if arg-1 is "type2":
+            if arg-2 is not set:
+                if {lojaskins::%player%} is 1:
+                    Create a gui with virtual chest inventory with 6 rows named "Loja de Pacotes" and shape "xxxxxxxxx", "xayyyyyyx", "xyyyyyyyx", "xyyyyyyyx", "xyyyyyyyx" and "xxxxbxxxx":
+                        make gui slot "x" with black stained glass pane named "BORDA"
+                        make gui slot "y" with gray stained glass pane named "NONE"
+                        make gui slot "a" with white shulker box named "pacotetest":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/buy type2 %player% 1"
+                        make gui slot "b" with red concrete named "Voltar":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/comprarskins"
+                    open the last gui for the player
 
-                    
 
 
 
 
 
+
+
+
+
+#/buy <type> <player> <id>
+# type1 = uma skin
+# type2 = pacote de skins

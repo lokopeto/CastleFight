@@ -57,10 +57,13 @@ on click on sign:
         set {_team} to "%team of loop-player%"
         replace "castelo" in {_team} with ""
         replace "%world of player%" in {_team} with ""
+
         {_team} is "1":
             add 1 to {_max%{_team}%}
+            add loop-player to {_teamlist%{_team}%::*}
         {_team} is "2":
             add 1 to {_max%{_team}%}
+            add loop-player to {_teamlist%{_team}%::*}
 
     set {_team} to "%team of player%"
     replace "castelo" in {_team} with ""
@@ -102,7 +105,7 @@ on click on sign:
                             make console execute command "casasncpsfawe %{_team}% 2 3 w@%world of player%"        
                             make console execute command "casasncpsfawe %{_team}% 1 3 w@%world of player%"
                             make console execute command "casasncpsfawe %{_team}% 3 3 w@%world of player%"
-                        message "&b&lLevel aumentado para &f&l%{lvnpcs%{_team}%::%world of player%}%"
+                        message "&b&lLevel aumentado para &f&l%{lvnpcs%{_team}%::%world of player%}%" to {_teamlist%{_team}%::*}
                     set line 3 to "&9%{lvnpcsquant%{_team}%::%world of player%}%/%{_placalevelmax}%"
                     set line 4 to "&9Level %{lvnpcs%{_team}%::%world of player%}%"
                     {lvnpcs%{_team}%::%world of player%} is 20:
@@ -257,7 +260,7 @@ command /jogo <number> [<world>] [<world>]:
             make console execute command "execute in minecraft:%arg-2% run setblock -218 150 26 air"
             make console execute command "execute in minecraft:%arg-2% run setblock 134 152 27 air"
             make console execute command "execute in minecraft:%arg-2% run setblock 134 152 26 air"
-            make console execute {pspwaittime::%player%}command "execute in minecraft:%arg-2% run setblock 134 152 19 air"
+            make console execute command "execute in minecraft:%arg-2% run setblock 134 152 19 air"
             make console execute command "execute in minecraft:%arg-2% run setblock 134 152 18 air"
             wait 1 tick
             make console execute command "execute in minecraft:%arg-2% run setblock -218 150 19 chest[facing=west,type=left]{CustomName:'[{""text"":""Bau do (%{castelo2nome::%arg-2%}%)"",""italic"":false}]'} replace"

@@ -37,13 +37,10 @@ on right click on warped sign:
 
     set gamemode of player to adventure
 
-    loop all entities in world of player:
-        loop-entity is a citizen
-        entity have scoreboard tag "player.%player%"
-        set {_id} to citizen id of loop-entity
-        make console execute command "npc select %{_id}%"
-        make console execute command "npc remove"
-    create a citizen named the name of player at player's location as a player
+    make console execute command "ex run npcplacacreate def.player:%player% def.x:%x-coordinate of player% def.y:%y-coordinate of player% def.z:%z-coordinate of player%"
+
+    wait 1 tick
+
     set {_world} to line 1 of event-block
     set {_team} to line 4 of event-block
     replace "=[🗡CF" and "🛡]=" in {_world} with ""
@@ -51,7 +48,6 @@ on right click on warped sign:
     set {_world} to uncolored {_world}
     set {_team} to uncolored {_team}
 
-    add "player.%player%" to the scoreboard tags of event-entity
     set {placa::%uuid of player%::1} to location of event-block
     set {placa::%uuid of player%::2} to line 1
     set {placa::%uuid of player%::3} to line 4
@@ -100,7 +96,7 @@ on right click on warped sign:
         
         clear inventory of player
 
-
+    add player to {jogadoresdesistir::%world of player%::*}
 
 every 1 second:
     loop all players in "castlefight1", "castlefight2" or "castlefight3":
@@ -141,6 +137,7 @@ on quit:
             set slot 4 of player to 1 diamond sword named "&bMenu"
             message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
 
+    remove player from {jogadoresdesistir::%world of player%::*}
 
 
 
@@ -208,6 +205,7 @@ command /sair:
         
         delete {placa::%uuid of player%::*} 
 
+        remove player from {jogadoresdesistir::%world of player%::*}
 
 
 # GUI
