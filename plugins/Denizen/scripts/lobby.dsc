@@ -21,7 +21,14 @@ lobby:
             - remove <server.spawned_npcs_flagged[player.<player.name>]>
 
         on player changes world to world:
-            - remove <server.spawned_npcs_flagged[player.<player.name>]>
+            - if <context.origin_world.contains[castlefight]>:
+                - remove <server.spawned_npcs_flagged[player.<player.name>]>
+
+        on server start:
+            - foreach <server.npcs>:
+                - remove <[value]>
+            - execute as_server "jogo 0 castlefight1 castlefight2 castlefight3 castlefight4"
+
 
 npcplacacreate:
     type: task

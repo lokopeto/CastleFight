@@ -153,3 +153,18 @@ command /loopblocksview <integer>:
                 message line 4 of loop-block
                 set {_yaw} to {partidaplaca::%arg-1%::6}
                 teleport player to location(loop-block's x-coordinate, loop-block's y-coordinate, loop-block's z-coordinate, loop-block's world, {_yaw}, 70) 
+
+command /testsounddssss:
+    trigger:
+        loop 15 times:
+            wait 1 second
+            add 0.2 to {_pitch}
+            add 0.08 to {_volume}
+
+            message "&l&oEm %16 - loop-integer%" to all players in world of player
+            play sound "block.amethyst_cluster.hit" with volume {_volume} with pitch {_pitch} for all players in world of player 
+        
+        wait 1 second
+
+        play sound "item.trident.return" to all players in world of player
+

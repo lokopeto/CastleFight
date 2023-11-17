@@ -64,7 +64,6 @@ on click on sign:
         {_team} is "2":
             add 1 to {_max%{_team}%}
             add loop-player to {_teamlist%{_team}%::*}
-
     set {_team} to "%team of player%"
     replace "castelo" in {_team} with ""
     replace "%world of player%" in {_team} with ""
@@ -173,7 +172,7 @@ command /fogo:
             make console execute command "fastasyncworldedit:/replace fire air"
             wait 5 ticks
 
-command /jogo <number> [<world>] [<world>]:
+command /jogo <number> [<world>] [<world>] [<world>] [<world>]:
     executable by: console
     trigger:
         if arg-1 is 1: 

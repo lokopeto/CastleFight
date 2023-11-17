@@ -53,6 +53,8 @@ npccreatorking:
 
     - flag server castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world.replace_text[w@].with[]>loc:<entry[npc].created_npc.location>
 
+    - equip <entry[npc].created_npc> hand:netherite_sword
+
 spawnmobc:
     type: command
     name: spawnmobc

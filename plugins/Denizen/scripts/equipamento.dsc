@@ -30,10 +30,3 @@ equipamento:
 
 
 
-        - wait 35t
-        - if <npc.scoreboard_tags.contains_text[rei]>:
-            - equip <npc> hand:netherite_sword
-
-
-
-

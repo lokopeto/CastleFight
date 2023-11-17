@@ -1,5 +1,4 @@
 on skript start:
-    make console execute command "jogo 0 castlefight1 castlefight2 castlefight3"
     loop all entities in world "world":
         loop-entity is a citizen
         scoreboard tags of loop-entity contains "player"
@@ -38,6 +37,8 @@ on right click on warped sign:
     set gamemode of player to adventure
 
     make console execute command "ex run npcplacacreate def.player:%player% def.x:%x-coordinate of player% def.y:%y-coordinate of player% def.z:%z-coordinate of player%"
+
+    play sound "block.amethyst_block.fall" at location of player to all players
 
     wait 1 tick
 
@@ -99,14 +100,14 @@ on right click on warped sign:
     add player to {jogadoresdesistir::%world of player%::*}
 
 every 1 second:
-    loop all players in "castlefight1", "castlefight2" or "castlefight3":
+    loop all players in "castlefight1", "castlefight2", "castlefight3" or "castlefight4":
         if {lobbyhost::%world of loop-player%} is loop-player:
             if {jogo::%world of loop-player%} is 0:
                 send action bar "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to loop-player
 
 
 on quit:
-#    world of player is "castlefight1", "castlefight2" or "castlefight3"
+#    world of player is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"
     {jogo::%world of player%} is 1:
         wait 1 minute
     
@@ -149,7 +150,7 @@ on quit:
 
 
 On Player World Change:
-    past event-world is "castlefight1", "castlefight2" or "castlefight3":
+    past event-world is "castlefight1", "castlefight2", "castlefight3" or "castlefight4":
         message "&7%player% saiu da partida" to all players in past event-world
 
 
@@ -160,7 +161,9 @@ On Player World Change:
 command /sair:
     trigger:
         wait 5 ticks
-        world of player is "castlefight1", "castlefight2" or "castlefight3":
+        world of player is "castlefight1", "castlefight2", "castlefight3" or "castlefight4":
+
+            play sound "block.amethyst_block.resonate" at location of player to all players
 
             set {psspwait::%player%} to 1
 
@@ -185,6 +188,7 @@ command /sair:
 
             teleport player to {placa::%uuid of player%::1}
 
+            clear inventory of player
 
             make console execute command "team leave %player%"
 
@@ -214,7 +218,7 @@ command /sair:
 
 
 on right click:
-    world of player is "castlefight1", "castlefight2" or "castlefight3"
+    world of player is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"
     tool of player is a diamond sword named "&bMenu"
     create a gui with virtual chest inventory with 1 rows named "&f七七七七七七七七ㇺ":
         make gui slot 3 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""Um modo mais ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""simples""},{""color"":""aqua"",""text"":"" e ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""mais rapido""},{""color"":""aqua"",""text"":""!""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Recomendado para jogadores""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""iniciantes.""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""gold"",""text"":""Rapido""}],""text"":""""}'}}"
@@ -222,6 +226,8 @@ on right click:
         make gui slot 5 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""O jeito ""},{""bold"":true,""color"":""green"",""text"":""padrão""},{""color"":""aqua"",""text"":"" de se jogar""},{""text"":""!""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""Normal""}],""text"":""""}'}}"
 
     open the created gui for player
+
+    play sound "block.wooden_button.click_off" to player
 
 on inventory click:
     if name of event-inventory contains "&f七七七七七七七七ㇺ":
@@ -231,6 +237,8 @@ on inventory click:
         if {_nome} is "Rapido" or "Normal":
             set {_reicarvalho} to a new anvil gui named "Nome do Rei Carvalho" with default text "ReiCarvalho"
             open anvil gui {_reicarvalho} to player
+            play sound "block.wooden_pressure_plate.click_off" to player
+
 
         if {_nome} is "Normal":
             set {chance::%world of player%} to 25
@@ -247,6 +255,7 @@ on inventory click:
 
 on anvil gui click:
     if title of event-virtual anvil is "Nome do Rei Carvalho":
+        play sound "block.hanging_sign.place" to player
         if event-integer is 2:
             set {castelo1nome::%world of player%} to event-text
         else:
@@ -254,6 +263,8 @@ on anvil gui click:
         set {_reibarro} to a new anvil gui named "Nome do Rei Barro" with default text "ReiBarro"
         open anvil gui {_reibarro} to player
     if title of event-virtual anvil is "Nome do Rei Barro":
+        play sound "block.hanging_sign.place" to player
+
         if event-integer is 2:
             set {castelo2nome::%world of player%} to event-text
         else:
@@ -272,12 +283,21 @@ on anvil gui click:
             
             make gui slot 4 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Carvalho: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo1nome::%world of player%}% (%{_reicarvalho}%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Barro: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo2nome::%world of player%}% (%{_reibarro}%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Modo: ""},{""color"":""dark_green"",""text"":""%{criarpartidamodo::%player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Jogadores: %amount of players in world of player%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Server: %world of player%""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""CONFIRMAR""},{""color"":""green"",""text"":""""}],""text"":""""}'}}":
                 close player's inventory
+                play sound "item.trident.throw" at player to all players 
                 if amount of players in world of player >= 2:
                     message "&l&a%player% iniciou a partida" to all players in world of player
 
                     loop 15 times:
                         wait 1 second
+                        add 0.2 to {_pitch}
+                        add 0.08 to {_volume}
+
                         message "&l&oEm %16 - loop-integer%" to all players in world of player
+                        play sound "block.amethyst_cluster.hit" with volume {_volume} with pitch {_pitch} for all players in world of player 
+                    
+                    wait 1 second
+
+                    play sound "item.trident.return" to all players in world of player
 
                     make console execute command "npcs %world of player%"
                     make console execute command "jogo 1 %world of player%"
@@ -308,7 +328,7 @@ on anvil gui click:
 
 
 
-command /partidateminar [<number>] [<world>] [<world>]:
+command /partidateminar [<number>] [<world>]:
     executable by: console
     trigger:
         arg-1 is 1:
