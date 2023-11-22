@@ -24,7 +24,7 @@ command /desistir:
             add 1 to {desistir%{_teamplayer}%::%world of player%}
 
             message "<cyan>%name of player% quer desistir! (faltam %{_quant%{_teamplayer}%} - {desistir%{_teamplayer}%::%world of player%}%)" to {_desistir%{_teamplayer}%::*}
-
+            
 
 #            broadcast "%{desistir%{_teamplayer}%}% %{_quant%{_teamplayer}%}%"
 

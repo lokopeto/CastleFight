@@ -55,10 +55,10 @@ regions:
     __global__:
         members: {}
         flags: {natural-health-regen: allow, lava-fire: deny, mycelium-spread: deny,
-            leaf-decay: deny, use-dripleaf: deny, pvp: deny, chunk-unload: deny, fire-spread: deny,
-            natural-hunger-drain: deny, sleep: deny, coral-fade: deny, vine-growth: deny,
-            copper-fade: deny, fall-damage: deny, item-frame-rotation: deny, entity-painting-destroy: deny,
-            entity-item-frame-destroy: deny, grass-growth: allow}
+            leaf-decay: deny, use-dripleaf: deny, pvp: deny, fire-spread: deny, natural-hunger-drain: deny,
+            sleep: deny, coral-fade: deny, vine-growth: deny, copper-fade: deny, fall-damage: deny,
+            item-frame-rotation: deny, entity-painting-destroy: deny, entity-item-frame-destroy: deny,
+            grass-growth: allow}
         owners: {}
         type: global
         priority: 0

@@ -1,6 +1,18 @@
 command /buy [<text>] [<player>] [<text>] [<number>]:
-#/buy <type> <player> <tipodeskin> <id> # type1 = uma skin # type2 = pacote de skins
+#       /buy  <type>   <player> <tipodeskin> <id> # type1 = uma skin # type2 = pacote de skins
     permission: lojaskins.cmd
     trigger:
         if arg-1 is "type1":
             add 1 to {inventario::%player%::%arg-3%::%arg-4%}
+            send "compra realizada"
+
+command /haveskin [<text>] [<player>] [<text>] [<number>]:
+    permission: lojaskins.cmd
+    trigger:
+        if arg-1 is "type1":
+            if arg-3 is "castelo":
+                if {inventario::%arg-2%::%arg-3%::%arg-4%} > 0:
+                    send "voce tem %{inventario::%arg-2%::%arg-3%::%arg-4%}%"
+                else:
+                    send "nao tem"
+#{inventario::player::tipodeskin::id}

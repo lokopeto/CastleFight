@@ -114,7 +114,7 @@ command /confirmar <integer> <text> <text> <text> <world> [<text>]:
 
 every 10 minutes:
     loop all worlds:
-        loop-world is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"
+        loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
         {jogo::%loop-world%} is 0
         number of players in loop-world is 0 or 1
         set {blockx1::%loop-world%} and {blockx2::%loop-world%} to 0

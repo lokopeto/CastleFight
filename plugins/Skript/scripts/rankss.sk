@@ -18,10 +18,10 @@ command /partidapesquisar <integer>:
         set {pssplocplayer::%player%} to location of player
 
         if {psspwait::%player%} is 0:
-            message "Espere um momento"
+            message "&7&oEspere um momento"
 
         if {psspwait::%player%} is 1:
-            message "Buscando partida"
+            message "&7&oBuscando partida"
             set {psspwait::%player%} to 2
 
 
@@ -29,7 +29,7 @@ command /partidapesquisar <integer>:
             loop all worlds:
                 if {psspwait::%player%} is 0:
                     stop
-                loop-world is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"  
+                loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"  
                 if {psspwait::%player%} is 3    :
                     stop loop
                 wait 1 second
@@ -122,5 +122,5 @@ on join:
     {rank::%player%} is not set:
         set {rank::%player%} to 1                   
 
-
+#criar sistema de ranks
 

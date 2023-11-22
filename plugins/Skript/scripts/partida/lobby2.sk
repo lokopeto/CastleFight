@@ -17,6 +17,21 @@ on skript start:
         set line 3 of block at {placa::%uuid of loop-player%::1} to "&bEntrar!"
         set line 4 of block at {placa::%uuid of loop-player%::1} to {placa::%uuid of loop-player%::3}
 
+    loop 6 times:
+        loop blocks between the block at {partidaplaca::%loop-integer%::1} and the block at {partidaplaca::%loop-integer%::2}:
+            loop-block is sign:
+                set line 1 of loop-block to "&a=[🗡CF%loop-integer%🛡]="
+                set line 2 of loop-block to "&bClique para"
+                set line 3 of loop-block to "&bEntrar!"
+                set line 4 of loop-block to "&a= Carvalho ="
+
+        loop blocks between the block at {partidaplaca::%loop-integer%::3} and the block at {partidaplaca::%loop-integer%::4}:
+            loop-block is sign:
+                set line 1 of loop-block to "&a=[🗡CF%loop-integer%🛡]="
+                set line 2 of loop-block to "&bClique para"
+                set line 3 of loop-block to "&bEntrar!"
+                set line 4 of loop-block to "&a= Barro ="
+
 
 on right click on warped sign:
 #    set line 1 of event-block to "&a=[🗡CF1🛡]="
@@ -99,18 +114,17 @@ on right click on warped sign:
 
     add player to {jogadoresdesistir::%world of player%::*}
 
+    make console execute command "ex flag <player[%player%]> global:!"
+
 every 1 second:
-    loop all players in "castlefight1", "castlefight2", "castlefight3" or "castlefight4":
+    loop all players in "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
         if {lobbyhost::%world of loop-player%} is loop-player:
             if {jogo::%world of loop-player%} is 0:
                 send action bar "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to loop-player
 
 
 on quit:
-#    world of player is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"
-    {jogo::%world of player%} is 1:
-        wait 1 minute
-    
+#    world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
 
     loop all entities in world "world":
         loop-entity is a citizen
@@ -140,6 +154,7 @@ on quit:
 
     remove player from {jogadoresdesistir::%world of player%::*}
 
+    make console execute command "ex flag <player[%player%]> global"
 
 
 
@@ -150,7 +165,7 @@ on quit:
 
 
 On Player World Change:
-    past event-world is "castlefight1", "castlefight2", "castlefight3" or "castlefight4":
+    past event-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
         message "&7%player% saiu da partida" to all players in past event-world
 
 
@@ -161,7 +176,7 @@ On Player World Change:
 command /sair:
     trigger:
         wait 5 ticks
-        world of player is "castlefight1", "castlefight2", "castlefight3" or "castlefight4":
+        world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
 
             play sound "block.amethyst_block.resonate" at location of player to all players
 
@@ -211,14 +226,14 @@ command /sair:
 
         remove player from {jogadoresdesistir::%world of player%::*}
 
-
+        make console execute command "ex flag <player[%player%]> global"
 # GUI
 
 
 
 
 on right click:
-    world of player is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"
+    world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
     tool of player is a diamond sword named "&bMenu"
     create a gui with virtual chest inventory with 1 rows named "&f七七七七七七七七ㇺ":
         make gui slot 3 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""Um modo mais ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""simples""},{""color"":""aqua"",""text"":"" e ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""mais rapido""},{""color"":""aqua"",""text"":""!""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Recomendado para jogadores""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""iniciantes.""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""gold"",""text"":""Rapido""}],""text"":""""}'}}"
@@ -297,18 +312,22 @@ on anvil gui click:
                     
                     wait 1 second
 
-                    play sound "item.trident.return" to all players in world of player
-
                     make console execute command "npcs %world of player%"
                     make console execute command "jogo 1 %world of player%"
                         
-                    make console execute command "team modify castelo1%world of player% displayName {""text"":""%{castelo1nome::%world of player%}%""}"
-                    make console execute command "team modify castelo2%world of player% displayName {""text"":""%{castelo2nome::%world of player%}%""}"
+                    loop 2 times:
+                        make console execute command "team modify castelo%loop-integer%%world of player% displayName {""text"":""%{castelo%loop-integer%nome::%world of player%}%""}"
+                        make console execute command "team modify castelo%loop-integer%%world of player% friendlyFire false"
+                        make console execute command "team modify castelo%loop-integer%%world of player% seeFriendlyInvisibles true"                        
+
+
 
                     make console execute command "spawn %world of player%"
                     make console execute command "spawnboss %world of player%"
     
                     set slot 4 of player to air 
+
+                    play sound "item.trident.return" to all players in world of player
                 else:
                     message "&c&lJogadores insuficientes!"
 
@@ -333,10 +352,10 @@ command /partidateminar [<number>] [<world>]:
     trigger:
         arg-1 is 1:
             set gamemode of all players in world arg-2 to spectator
-            teleport all players in world arg-2 to location(116.5, 149.00, 23.0, arg-2, -90, 23) 
+            teleport all players in world arg-2 to location(116.5, 160.00, 23.0, arg-2, -90, 23) 
         arg-1 is 2:
             set gamemode of all players in world arg-2 to spectator
-            teleport all players in world arg-2 to location(-199.5, 154.00, 23.0, arg-2, 90, 23)
+            teleport all players in world arg-2 to location(-199.5, 158.00, 23.0, arg-2, 90, 23)
         
         arg-1 is 1 or 2:
             wait 10 seconds

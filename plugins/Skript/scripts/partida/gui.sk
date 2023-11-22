@@ -345,6 +345,7 @@ on npc right click:
 #                broadcast "%{_xp}% %{_lore::*}%"
                 if "%{_lore::3}%" parsed as integer >= {_xp}:
                     message "&bXp insuficiente!"
+                    play sound "fx.error" to player
                 else:
                     add "-%{_lore::3}%" parsed as integer to level of player
                     if {Necromancer%{_team}%::2} is not blue stained glass pane, book or bone meal:
@@ -464,6 +465,7 @@ on inventory click:
         if {_lore::2} is not "Gratis":
             if "%{_lore::2}%" parsed as integer >= {_xp}:
                 message "&bXp insuficiente!"
+                play sound "fx.error" to player
             else:
                 add "-%{_lore::2}%" parsed as integer to level of player
                 if {_nome} is "Gládio Curta":
@@ -492,6 +494,7 @@ on inventory click:
         if {_lore::2} is not "Gratis":
             if "%{_lore::2}%" parsed as integer >= {_xp}:
                 message "&bXp insuficiente!"
+                play sound "fx.error" to player
             else:
                 add "-%{_lore::2}%" parsed as integer to level of player
                 if {_nome} is "Arco Compósito":
@@ -526,6 +529,7 @@ on inventory click:
         {_nome} contains "usado":
             if "%{_lore::4}%" parsed as integer >= {_xp}:
                 message "&bXp insuficiente!"
+                play sound "fx.error" to player
             else:
                 if clicked slot is a nether star:
                     add "-%{_lore::4}%" parsed as integer to level of player
@@ -558,6 +562,7 @@ on inventory click:
         if {_lore::1} is not "Gratis":
             if "%{_lore::1}%" parsed as integer >= {_xp}:
                 message "&bXp insuficiente!"
+                play sound "fx.error" to player
             else:
                 if clicked slot is a armor:
                     add "-%{_lore::1}%" parsed as integer to level of player
@@ -635,6 +640,7 @@ on inventory click:
 #        message "%{_tipo}%"
         if "%{_lore::2}%" parsed as integer >= {_xp}:
             message "&bXp insuficiente!"
+            play sound "fx.error" to player
         else:
             add "-%{_lore::2}%" parsed as integer to level of player
             give "%{_tipo}%" parsed as item with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""%{_nome}%"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_lore::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tempo}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_lore::4}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:%{_color}%,HideFlags:35,CustomPotionEffects:[{Id:%{_id}%,Duration:%{_ticks}%,Amplifier:%{_força}%}]}" to player 
@@ -653,6 +659,7 @@ on inventory click:
         replace "XP", "Custo:" and " " in {_lore::5} with ""
         if "%{_lore::5}%" parsed as integer >= {_xp}:
             message "&bXp insuficiente!"
+            play sound "fx.error" to player
         else:
             add "-%{_lore::5}%" parsed as integer to level of player
             message "&cPRONTO PRA BATALHAA!!!!"

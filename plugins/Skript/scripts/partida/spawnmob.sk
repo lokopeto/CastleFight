@@ -101,7 +101,7 @@ command /spawnmob [<number>] [<text>] [<text>] [<number>] [<number>] [<number>] 
 every 1 second:
     set {_numb} to 0
     loop all worlds:
-        loop-world is "castlefight1", "castlefight2", "castlefight3" or "castlefight4"
+        loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
         {jogo::%loop-world%} is 1
         loop 9 times:
             add 1 to {_numb}

@@ -1,5 +1,9 @@
 on death of player:
 
+    loop all players in world of victim:
+        if "%team of loop-player%" is "%team of victim%":
+            message "&l&o%victim% &cfoi morto por &l&f&o%attacker%" to loop-player
+
     set {deathloc::%name of victim%} to location of victim
     if name of attacker contains "(BOSS)":
         if attacker is npc:
@@ -15,20 +19,32 @@ on respawn:
     {jogo::%world of player%} is 1
     set gamemode of player to spectator
     teleport player to {deathloc::%name of player%}
+    play sound "fx.death" to all players in location of player
     set {_tempo} to {deathtimer::%name of player%} -1
     {deathtimer::%name of player%} <= 0:
         set gamemode of player to adventure
         message "&7&o&lPronto para batalha!"
+        play sound "fx.respawn" to player
     else:
-        message "&c&oVoce Morreu!"
+        set {_pitch} to 1
         loop "%{_tempo}%" parsed as integer times:
+
             wait 1 second
+
             {deathtimer::%name of player%} is 20:
                 message "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."
             {deathtimer::%name of player%} <= 10:
-                message "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."            
+                message "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."   
+                add 0.1 to {_pitch}
+                play sound "fx.countdown" with pitch {_pitch} to player
+            
+        wait 1 second
+
         set gamemode of player to adventure
         message "&7&o&lPronto para batalha!"
+        
+        play sound "fx.respawn" to player
+
     wait 1 tick
 
     "%team of player%" is "castelo1%world of player%":

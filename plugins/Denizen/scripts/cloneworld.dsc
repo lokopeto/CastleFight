@@ -9,6 +9,10 @@ cfcloneref:
     - adjust <world[castlefight2]> destroy
     - adjust <world[castlefight3]> destroy
     - adjust <world[castlefight4]> destroy
+    - adjust <world[castlefight5]> destroy
+    - adjust <world[castlefight6]> destroy
+
+
 
     - ~createworld castlefight1 copy_from:world314 generator:denizen:void:
         - narrate castlefight1 criado
@@ -18,6 +22,12 @@ cfcloneref:
         - narrate castlefight3 criado
     - ~createworld castlefight4 copy_from:world314 generator:denizen:void:
         - narrate castlefight4 criado
+    - ~createworld castlefight5 copy_from:world314 generator:denizen:void:
+        - narrate castlefight5 criado
+    - ~createworld castlefight6 copy_from:world314 generator:denizen:void:
+        - narrate castlefight6 criado
+
+
 
 
 worldteleport:

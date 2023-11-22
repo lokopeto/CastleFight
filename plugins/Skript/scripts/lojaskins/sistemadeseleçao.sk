@@ -1,3 +1,10 @@
 command /selecionarskin [<player>] [<text>] [<number>]:
+#                        <player> <tipodeskin> <id>
+#            {inventario::player::tipodeskin::id}
     trigger:
+        if {inventario::%arg-1%::%arg-2%::%arg-3%} >= 1:
+            set {skinselect::%arg-1%::%arg-2%::%arg-3%} to 1
+        else:
+            send "Você não tem essa skin"
+
         
