@@ -1,44 +1,44 @@
 ARROW:
   enabled: true
-  name: Arrow
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Flecha
+  format: '&7➶ Tipo de Munição: &f%name%'
 
 SNOWBALL:
   enabled: true
-  name: Snowball
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Bola de Neve
+  format: '&7➶ Tipo de Munição: &f%name%'
 
 EGG:
   enabled: true
-  name: Egg
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Ovo
+  format: '&7➶ Tipo de Munição: &f%name%'
 
 FIREBALL:
   enabled: true
-  name: Fireball
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Bola de Fogo
+  format: '&7➶ Tipo de Munição: &f%name%'
 
 WITHER_SKULL:
   enabled: true
-  name: Wither Skull
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Caveira do Wither
+  format: '&7➶ Tipo de Munição: &f%name%'
 
 SHULKER_BULLET:
   enabled: true
-  name: Shulker Bullet
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Projétil de Shulker
+  format: '&7➶ Tipo de Munição: &f%name%'
 
 LLAMA_SPIT:
   enabled: true
-  name: Llama Spit
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Cuspe de Lhama
+  format: '&7➶ Tipo de Munição: &f%name%'
 
 ENDER_PEARL:
   enabled: true
-  name: Ender Pearl
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Pérola do Fim
+  format: '&7➶ Tipo de Munição: &f%name%'
 
 EXP_POTION:
   enabled: true
-  name: Exp Potion
-  format: '&7➶ Ammo Type: &f%name%'
+  name: Poção de Experiência
+  format: '&7➶ Tipo de Munição: &f%name%'

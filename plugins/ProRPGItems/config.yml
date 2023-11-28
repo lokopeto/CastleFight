@@ -1,5 +1,5 @@
 core:
-  lang: en
+  lang: pt
   command-aliases: prorpgitems,rpgitems,rpgi,quantumrpg,qrpg
   prefix: ProRPGItems
 
@@ -41,18 +41,11 @@ tiers:
   mythic:
     color: '&5'
     name: '%TIER_COLOR%Mythic'
-  basico:
-    color: '&r&f'
-    name: '%TIER_COLOR%Basico'
-
-  avançado:
-    color: '&r&f'
-    name: '%TIER_COLOR%Avançado'
 
 modules:
   item_hints:
     enabled: true
-    name: Dicas de item
+    name: Dicas de Item
   gems:
     enabled: true
     name: Gemas
@@ -64,16 +57,16 @@ modules:
     name: Runas
   arrows:
     enabled: true
-    name: flechas
+    name: Flechas
   sets:
     enabled: true
-    name: Conjuntas
+    name: Conjuntos
   item_generator:
     enabled: true
-    name: Gerador de itens
+    name: Gerador de Itens
   custom_items:
     enabled: true
-    name: Itens personalizados
+    name: Itens Personalizados
   money:
     enabled: true
     name: Dinheiro
@@ -82,28 +75,28 @@ modules:
     name: Refinar
   fortify:
     enabled: true
-    name: Fortalecer
+    name: Fortificar
   identify:
     enabled: true
     name: Identificar
   magic_dust:
     enabled: true
-    name: Pó magico
+    name: Pó Mágico
   soulbound:
     enabled: true
-    name: Preso à alma
+    name: Vinculação de Alma
   repair:
     enabled: true
     name: Reparar
   dismantle:
     enabled: true
-    name: Desmantelar
+    name: Desmontar
   extractor:
     enabled: true
     name: Extrator
   party:
     enabled: true
-    name: Partida
+    name: Grupo
   loot:
     enabled: true
     name: Saque
@@ -112,13 +105,13 @@ modules:
     name: Vender
   combat_log:
     enabled: true
-    name: Log de combate
+    name: Registro de Combate
   consumables:
     enabled: true
     name: Consumíveis
   drops:
     enabled: true
-    name: Drops
+    name: Saques
 
 item-sub-types:
   axe:

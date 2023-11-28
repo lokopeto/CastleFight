@@ -1,16 +1,16 @@
 GEM:
   categories:
     common:
-      tier: common
-      name: '%TIER_NAME% Soquete da gema'
+      tier: Comum
+      name: '%TIER_NAME% Soquete de gem'
       format:
         main: '%value%'
         value:
           empty: '%TIER_COLOR%□ <%name%>'
           filled: '%TIER_COLOR%▣ &7%value%'
     rare:
-      tier: rare
-      name: '%TIER_NAME% Soquete da gema'
+      tier: Raro
+      name: '%TIER_NAME% Soquete de gem'
       format:
         main: '%value%'
         value:
@@ -20,7 +20,7 @@ GEM:
 RUNE:
   categories:
     default:
-      tier: common
+      tier: Comum
       name: '%TIER_COLOR%Soquete de runa'
       format:
         main: '%value%'
@@ -30,7 +30,7 @@ RUNE:
 ESSENCE:
   categories:
     default:
-      tier: common
+      tier: Comum
       name: '%TIER_COLOR%Soquete de essência'
       format:
         main: '%value%'

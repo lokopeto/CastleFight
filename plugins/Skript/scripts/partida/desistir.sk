@@ -32,7 +32,7 @@ command /desistir:
                 loop all entities in world of player:
                     if loop-entity have scoreboard tag "rei%{_teamplayer}%":
                         kill loop-entity
-                message "<cyan>%{castelo%{_teamplayer}%nome}% desistiu!" to all players in world of player
+                message "<cyan>%{castelo%{_teamplayer}%nome::%world of player%}% desistiu!" to all players in world of player
                 delete {jogadoresdesistir::%world of player%::*}
                 delete {desistir%{_teamplayer}%::%world of player%}
         else:

@@ -118,12 +118,12 @@ every 1 second:
                 set line 8 of lore of {Invocador1::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
                 set {_lorelist::*} to uncolored lore of {Invocador1::%loop-world%::%{_numb}%}
                 set {_itemname} to uncolored name of {Invocador1::%loop-world%::%{_numb}%}
-                replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = " and "Distancia = " in {_lorelist::*} with ""
+                replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = ", "Distancia = " and "Skin = " in {_lorelist::*} with ""
 
                 if {_lorelist::11} or {_lorelist::12} is not set:
                     set {_lorelist::11} and {_lorelist::12} to 0
 
-                make console execute command "spawnmobc 1 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}% %loop-world%"
+                make console execute command "spawnmobc 1 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}% %{_lorelist::13}% %loop-world%"
     #        broadcast "%{_lore1}%"
         set {_numb} to 0
         wait 1 tick

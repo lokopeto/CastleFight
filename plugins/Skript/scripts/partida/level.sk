@@ -201,6 +201,8 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
                 set health of loop-players to 20
                 set hunger of loop-players to 20
                 clear the loop-player's inventory
+                set total experience of loop-players to 0
+            
 
             wait 10 ticks
 #            make console execute command "execute in setblock -47 230 -116 minecraft:oak_wall_sign{Text1:'{""text"":""[Espectador]"",""clickEvent"":{""action"":""run_command"",""value"":""gamemode spectator @s""},""color"":""aqua""}',Text2:'{""text"":""Clique para"",""clickEvent"":{""action"":""run_command"",""value"":""tp @s -40.50 200.00 23.00""},""bold"":true,""color"":""blue""}',Text3:'{""text"":""Espectar"",""clickEvent"":{""action"":""run_command"",""value"":""team join espectador @s""},""bold"":true,""color"":""blue""}',Text4:'{""text"":""==========="",""color"":""aqua""}'}"
@@ -209,7 +211,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             make console execute command "execute in minecraft:%arg-2% run data merge block -218 151 19 {front_text: {messages: ['{""color"":""aqua"",""text"":""[Evoluir]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo2nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0/%{placalevelmax}%""}', '{""color"":""blue"",""text"":""Level 1""}']}}"
             #guardar xp
             make console execute command "execute in minecraft:%arg-2% run data merge block 134 153 19 {front_text: {messages: ['{""color"":""aqua"",""text"":""[XP]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo1nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0""}', '{""color"":""gray"",""text"":""(Agachar: +/-)""}']}}"
-            make console execute command "execute in minecraft:%arg-2% run data merge block -218 153 26 {front_text: {messages: ['{""color"":""aqua"",""text"":""[XP]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo2nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0""}', '{""color"":""gray"",""text"":""(Agachar: +/-)""}']}}"
+            make console execute command "execute in minecraft:%arg-2% run data merge block -218 151 26 {front_text: {messages: ['{""color"":""aqua"",""text"":""[XP]""}', '{""italic"":true,""color"":""white"",""text"":""%{castelo2nome::%arg-2%}%""}', '{""color"":""blue"",""text"":""0""}', '{""color"":""gray"",""text"":""(Agachar: +/-)""}']}}"
             #team nome
 #            make console execute command "team modify castelo1 displayName {""text"":""%{castelo1nome::%arg-2%}%""}"     
 #            make console execute command "team modify castelo2 displayName {""text"":""%{castelo2nome::%arg-2%}%""}" 
@@ -234,8 +236,9 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             set {invocadorabrido2::%arg-2%} to 0
             set {XPquant1::%arg-2%} to 0
             set {XPquant2::%arg-2%} to 0
-            set {xpplayer::%arg-1%} to 40
+            set {xpplayer::%arg-2%} to 40
             delete {jogadoresdesistir::%arg-2%::*}
+            delete {pronto::%arg-2%}
 #            delete {sacrificio::*}
 
             loop all players in world arg-2:

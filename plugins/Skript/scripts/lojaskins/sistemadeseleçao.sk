@@ -3,8 +3,20 @@ command /selecionarskin [<player>] [<text>] [<number>]:
 #            {inventario::player::tipodeskin::id}
     trigger:
         if {inventario::%arg-1%::%arg-2%::%arg-3%} >= 1:
+            set {skinselect::%arg-1%::%arg-2%::*} to 0
+            wait 1 tick
             set {skinselect::%arg-1%::%arg-2%::%arg-3%} to 1
         else:
             send "Você não tem essa skin"
+
+on first join:
+    set {skinselect::%player%::castelo} to 1
+    set {skinselect::%player%::arma} to 1
+    set {skinselect::%player%::arco} to 1
+    set {skinselect::%player%::crossbow} to 1
+    set {skinselect::%player%::armadura} to 1
+    loop {mobsnomes::*}:
+        set {skinselect::%player%::%loop-integer%} to 1
+
 
         

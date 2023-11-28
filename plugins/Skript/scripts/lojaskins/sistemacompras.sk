@@ -16,3 +16,12 @@ command /haveskin [<text>] [<player>] [<text>] [<number>]:
                 else:
                     send "nao tem"
 #{inventario::player::tipodeskin::id}
+
+on first join:
+    set {inventario::%player%::castelo::1} to 1
+    set {inventario::%player%::arma::1} to 1
+    set {inventario::%player%::arco::1} to 1
+    set {inventario::%player%::crossbow::1} to 1
+    set {inventario::%player%::armadura::1} to 1
+    loop {mobsnomes::*}:
+        set {inventario::%player%::%loop-integer%::1} to 1

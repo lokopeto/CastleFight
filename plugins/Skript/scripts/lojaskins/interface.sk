@@ -1,6 +1,6 @@
 variables:
     {lojaskins} = 0
-
+    
 command /lojaskins:
     permission: lojaskins.cmd
     trigger:
@@ -24,7 +24,7 @@ command /lojaskins:
                 play sound "block.note_block.bass" with pitch 0.75 to player
         open the last gui for the player
 
-command /lojaselecionarskins [<text>] [<text>]:
+command /lojaselecionarskins [<text>] [<text>] [<text>]:
     trigger:
         if arg-1 is not set:
             if {lojaskins::%player%} is 1:
@@ -48,7 +48,7 @@ command /lojaselecionarskins [<text>] [<text>]:
                     make gui slot "d" with chicken spawn egg named "§3Invocações":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/lojaselecionarskins invocações"
+                        execute player command "/lojaselecionarskins invocações select"
                         play sound "block.note_block.pling" with pitch 2 to player
                     make gui slot "e" with blackstone named "NOTSET":
                         wait 1 tick
@@ -66,13 +66,13 @@ command /lojaselecionarskins [<text>] [<text>]:
                     make gui slot "a" with grass block named "§3Default":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/lojaselecionarskins castelos default"
+                        execute player command "/selecionarskin %player% castelo 1"
                         play sound "block.note_block.pling" with pitch 2 to player
                         #tem q mudar os comandos dps tipo esse de cima "/selecionarskins castelos default" e os de baixo... na verdade tem q mudar os de selecionar a skin em si, nao a categoria
                     make gui slot "b" with podzol named "§3test":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/lojaselecionarskins castelos skintest"
+                        execute player command "/selecionarskin %player% castelo 2"
                         play sound "block.note_block.pling" with pitch 2 to player
                     make gui slot "c" with yellow concrete named "§eProxima pagina":
                         wait 1 tick
@@ -91,12 +91,12 @@ command /lojaselecionarskins [<text>] [<text>]:
                     make gui slot "a" with iron sword named "§3Default":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins armas default"
+                        execute player command "/selecionarskin %player% armas 1"
                         play sound "block.note_block.pling" with pitch 2 to player
                     make gui slot "b" with wooden sword named "§3test2":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/selecionarskins armas test2"
+                        execute player command "/selecionarskin %player% arma 2"
                         play sound "block.note_block.pling" with pitch 2 to player
                     make gui slot "c" with yellow concrete named "§eProxima pagina":
                         wait 1 tick
@@ -115,12 +115,12 @@ command /lojaselecionarskins [<text>] [<text>]:
                     make gui slot "a" with iron chestplate named "§3Default":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/lojaselecionarskins armas default"
+                        execute player command "/selecionarskin %player% armadura 1"
                         play sound "block.note_block.pling" with pitch 2 to player
                     make gui slot "b" with leather chestplate named "§3test3":
                         wait 1 tick
                         close player's inventory
-                        execute player command "/lojaselecionarskins armas test3"
+                        execute player command "/selecionarskin %player% armadura 2"
                         play sound "block.note_block.pling" with pitch 2 to player
                     make gui slot "c" with yellow concrete named "§eProxima pagina":
                         wait 1 tick
@@ -133,30 +133,111 @@ command /lojaselecionarskins [<text>] [<text>]:
                         play sound "block.note_block.bass" with pitch 0.75 to player
                 open the last gui for the player
         if arg-1 is "invocações":
-            if {lojaskins::%player%} is 1:
-                create a gui with virtual chest inventory with 3 rows named "§6Seleção de Skins de Invocações" and shape "abxxxxxxx", "xxxxxxxxx", and "xxxxxxxcd":
-                    make gui slot "x" with white stained glass pane named "NONE"
-                    make gui slot "a" with spawner named "§3Default":
-                        wait 1 tick
-                        close player's inventory
-                        execute player command "/lojaselecionarskins invocações default"
-                        play sound "block.note_block.pling" with pitch 2 to player
-                        #lembre da linha 64
-                    make gui slot "b" with enderman spawn egg named "§3test4":
-                        wait 1 tick
-                        close player's inventory
-                        execute player command "/lojaselecionarskins invocações test4"
-                        play sound "block.note_block.pling" with pitch 2 to player
-                    make gui slot "c" with yellow concrete named "§eProxima pagina":
-                        wait 1 tick
-                        close player's inventory
-                        play sound "block.note_block.pling" with pitch 2 to player
-                    make gui slot "d" with red concrete named "§4Voltar":
-                        wait 1 tick
-                        close player's inventory
-                        execute player command "/lojaselecionarskins"
-                        play sound "block.note_block.bass" with pitch 0.75 to player
-                open the last gui for the player
+            if arg-2 is "select":
+                if {lojaskins::%player%} is 1:
+                    create a gui with virtual chest inventory with 6 rows named "§6Skins de Mobs" and shape "000000000", "abcdefghi", "jklmnopqr", "stuvwxyz1", "000ABC000", and "0000DF000":
+                        make gui slot "0" with black stained glass pane named "BORDA"
+                        make gui slot "a" with zombie spawn egg named "§3Skins de Zumbi":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/lojaselecionarskins invocações select zumbi1"
+                            play sound "block.note_block.pling" with pitch 2 to player
+                        make gui slot "b" with skeleton spawn egg named "§3Skins de Esqueleto":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/lojaselecionarskins invocações select esqueleto1"
+                            play sound "block.note_block.pling" with pitch 2 to player
+                        make gui slot "c" with spider spawn egg named "§3Skins de Aranha":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/lojaselecionarskins invocações select aranha1"
+                            play sound "block.note_block.pling" with pitch 2 to player
+                        make gui slot "D" with red concrete named "§4Voltar":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/lojaselecionarskins"
+                            play sound "block.note_block.bass" with pitch 0.75 to player
+                        make gui slot "F" with yellow concrete named "§3Proxima pagina":
+                            wait 1 tick
+                            close player's inventory
+                            execute player command "/lojaselecionarskins invocações select2"
+                            play sound "block.note_block.pling" with pitch 2 to player
+                    open the last gui for the player
+                if arg-3 is "zumbi1":
+                    if {lojaskins::%player%} is 1:
+                        create a gui with chest inventory with 3 rows named "§6Skins de Zumbi" and shape "abxxxxxxx", "xxxxxxxxx", and "xxxxxxxcd":
+                            make gui slot "x" with white stained glass pane named "NONE"
+                            make gui slot "a" with zombie spawn egg named "§3Default":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/selecionarskin %player% zumbi 1"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "b" with zombie spawn egg named "§3test5":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/selecionarskin %player% zumbi 2"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "c" with yellow concrete named "§3Proxima Pagina":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/lojaselecionarskins invocações select zumbi2"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "d" with red concrete named "§4Voltar":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/lojaselecionarskins invocações select"
+                                play sound "block.note_block.bass" with pitch 0.75 to player
+                        open the last gui for the player        
+                if arg-3 is "esqueleto1":
+                    if {lojaskins::%player%} is 1:
+                        create a gui with chest inventory with 3 rows named "§6Skins de Esqueleto" and shape "abxxxxxxx", "xxxxxxxxx", and "xxxxxxxcd":
+                            make gui slot "x" with white stained glass pane named "NONE"
+                            make gui slot "a" with skeleton spawn egg named "§3Default":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/selecionarskin %player% esqueleto 1"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "b" with skeleton spawn egg named "§3test6":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/selecionarskin %player% esqueleto 2"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "c" with yellow concrete named "§3Proxima Pagina":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/lojaselecionarskins invocações select esqueleto2"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "d" with red concrete named "§4Voltar":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/lojaselecionarskins invocações select"
+                                play sound "block.note_block.bass" with pitch 0.75 to player
+                        open the last gui for the player
+                if arg-3 is "aranha1":
+                    if {lojaskins::%player%} is 1:
+                        create a gui with chest inventory with 3 rows named "§6Skins de Aranha" and shape "abxxxxxxx", "xxxxxxxxx", and "xxxxxxxcd":
+                            make gui slot "x" with white stained glass pane named "NONE"
+                            make gui slot "a" with spider spawn egg named "§3Default":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/selecionarskin %player% aranha 1"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "b" with spider spawn egg named "§3test7":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/selecionarskin %player% aranha 2"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "c" with yellow concrete named "§3Proxima Pagina":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/lojaselecionarskins invocações select aranha2"
+                                play sound "block.note_block.pling" with pitch 2 to player
+                            make gui slot "d" with red concrete named "§4Voltar":
+                                wait 1 tick
+                                close player's inventory
+                                execute player command "/lojaselecionarskins invocações select"
+                                play sound "block.note_block.bass" with pitch 0.75 to player
+                        open the last gui for the player
 
 command /comprarskins [<text>] [<text>] [<text>] [<text>]:
     trigger:

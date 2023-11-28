@@ -1,4 +1,4 @@
-chance: 0.0
+chance: 10.0
 roll-once: true
 vanilla-mobs:
 - MONSTER

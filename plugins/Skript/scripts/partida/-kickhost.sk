@@ -1,0 +1,31 @@
+command /kick:
+    trigger:
+        if {jogo::%world of player%} is 0:
+            {lobbyhost::%world of player%} is player:
+                create a gui with virtual chest inventory with 1 rows named "Kick":
+                    set {_slotteam1} to 1
+                    set {_slotteam2} to 5
+
+                    loop all players in world of player:
+                        set {_player} to loop-player
+                        player is not {_player}
+                        "%team of loop-player%" contains "castelo1":
+                            make gui slot {_slotteam1} with skull of loop-player with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""bold"":true,""color"":""dark_red"",""text"":""Clique para""},{""bold"":true,""color"":""red"",""text"":"" ""},{""bold"":true,""underlined"":true,""color"":""red"",""text"":""EXPULSAR""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Rei: ""},{""color"":""aqua"",""text"":""Carvalho""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Rank:""},{""color"":""aqua"",""text"":"" # (%{rank::%loop-player%}%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Level: ""},{""color"":""aqua"",""text"":""%{level::%loop-player%}%""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""white"",""text"":""%loop-player%""}],""text"":""""}'}}":
+                                message "%player% expulsou %{_player}%" to all players in world of player
+                                make {_player} execute command "sair"
+
+                            add 1 to {_slotteam1}
+                            
+                        "%team of loop-player%" contains "castelo2":
+                            make gui slot {_slotteam1} with skull of loop-player with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""bold"":true,""color"":""dark_red"",""text"":""Clique para""},{""bold"":true,""color"":""red"",""text"":"" ""},{""bold"":true,""underlined"":true,""color"":""red"",""text"":""EXPULSAR""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Rei: ""},{""color"":""aqua"",""text"":""Barro""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Rank:""},{""color"":""aqua"",""text"":"" # (%{rank::%loop-player%}%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Level: ""},{""color"":""aqua"",""text"":""%{level::%loop-player%}%""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""white"",""text"":""%loop-player%""}],""text"":""""}'}}":
+                                message "%player% expulsou %{_player}%" to all players in world of player
+                                make {_player} execute command "sair"
+
+                            add 1 to {_slotteam2}
+
+                open the created gui for player
+
+            else:
+                message "Você não é o host"
+        else:
+            message "Você não pode expulsar em partida"

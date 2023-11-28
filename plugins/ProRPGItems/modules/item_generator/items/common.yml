@@ -8,14 +8,16 @@ lore:
 - '%ENCHANTS%'
 - ''
 - '%USER_CLASS%'
+- '%USER_BANNED_CLASS'
 - '%USER_LEVEL%'
 - ''
 - '%ITEM_SET%'
 - ''
-- '%GENERATOR_ABILITY%'
+- '%GENERATOR_SKILLS%'
 - '%GENERATOR_DEFENSE%'
 - '%GENERATOR_DAMAGE%'
 - '%GENERATOR_STATS%'
+- '%GENERATOR_SKILLAPI_ATTR%'
 - '%GENERATOR_SOCKETS_GEM%'
 - '%GENERATOR_SOCKETS_ESSENCE%'
 - '%GENERATOR_SOCKETS_RUNE%'
@@ -26,7 +28,7 @@ item-flags:
 tier: common
 level:
   min: 1
-  max: 10000
+  max: 50
 generator:
   prefix-chance: 100.0
   suffix-chance: 100.0
@@ -71,6 +73,8 @@ generator:
       '21': 0 + %ITEM_LEVEL%
     class:
       '1': Warrior,Cleric
+    banned-class:
+      '1': Gunner,Archer
   enchantments:
     minimum: 1
     maximum: 2
@@ -102,51 +106,51 @@ generator:
     list:
       physical:
         chance: 100.0
-        scale-by-level: 1.05
-        min: 26
-        max: 28
+        scale-by-level: 1.025
+        min: 2.6
+        max: 5.8
         flat-range: false
         round: false
       _vanilla_generic:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       magical:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       fire:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       poison:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       water:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       wind:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
   defense-types:
@@ -163,44 +167,44 @@ generator:
     list:
       physical:
         chance: 100.0
-        scale-by-level: 1.15
-        min: 24
-        max: 24.8
+        scale-by-level: 1.025
+        min: 3.25
+        max: 8.75
         flat-range: false
         round: false
       magical:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       fire:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       poison:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       water:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       wind:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
   item-stats:
@@ -216,6 +220,7 @@ generator:
     - '%ITEM_STAT_BLOCK_DAMAGE%'
     - '%ITEM_STAT_LOOT_RATE%'
     - '%ITEM_STAT_MOVEMENT_SPEED%'
+    - '%ITEM_STAT_BASE_ATTACK_SPEED%'
     - '%ITEM_STAT_ATTACK_SPEED%'
     - '%ITEM_STAT_MAX_HEALTH%'
     - '%ITEM_STAT_PENETRATION%'
@@ -345,152 +350,83 @@ generator:
         scale-by-level: 1.025
         min: 5.0
         max: 25.0
-      disarm_rate:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: '0'
-        max: '0'
-        flat-range: false
-        round: false
-      sale_price:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: '0'
-        max: '0'
-        flat-range: false
-        round: false
-      pve_damage:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: '0'
-        max: '0'
-        flat-range: false
-        round: false
-      mana_regen:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: '0'
-        max: '0'
-        flat-range: false
-        round: false
-      pvp_damage:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: '0'
-        max: '0'
-        flat-range: false
-        round: false
       bleed_rate:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
-        flat-range: false
-        round: false
-      thornmail:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       pvp_defense:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
       pve_defense:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
+        flat-range: false
+        round: false
+      sale_price:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 0
+        max: 0
+        flat-range: false
+        round: false
+      pve_damage:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 0
+        max: 0
         flat-range: false
         round: false
       health_regen:
         chance: 0.0
         scale-by-level: 1.0
-        min: '0'
-        max: '0'
+        min: 0
+        max: 0
         flat-range: false
         round: false
-  sockets:
-    GEM:
-      minimum: 0
-      maximum: 2
-      lore-format:
-      - '&8&m               &f  「 GEMS 」  &8&m               '
-      - '%SOCKET_GEM_COMMON%'
-      - '%SOCKET_GEM_RARE%'
-      list:
-        common:
-          chance: 35.0
-        rare:
-          chance: 15.0
-    ESSENCE:
-      minimum: 0
-      maximum: 2
-      lore-format:
-      - '&8&m               &f  「 ESSENCES 」  &8&m               '
-      - '%SOCKET_ESSENCE_DEFAULT%'
-      list:
-        default:
-          chance: 35.0
-    RUNE:
-      minimum: 0
-      maximum: 2
-      lore-format:
-      - '&8&m               &f  「 RUNES 」  &8&m               '
-      - '%SOCKET_RUNE_DEFAULT%'
-      list:
-        default:
-          chance: 35.0
-  abilities:
-    minimum: 0
-    maximum: 0
-    allowed-clicks:
-    - RIGHT
-    - LEFT
-    variables-by-level:
-      '1':
-        rad: 4.0
-        dur: '&f10 &7seconds'
-        durTick: 200
-      '2':
-        rad: 7.0
-        dur: '&f15 &7seconds'
-        durTick: 300
-      '3':
-        rad: 10.0
-        dur: '&f20 &7seconds'
-        durTick: 400
-    list:
-      ability-1:
+      pvp_damage:
         chance: 0.0
-        cooldown: 5.0
-        lore-format:
-        - '&bSample Ability: &7[&f%key%&7]'
-        actions:
-          default:
-            target-selectors:
-              radius:
-              - '[RADIUS] ~distance: %var_rad%; ~allow-self: false; ~party-member:
-                false; ~attackable: true;'
-              self:
-              - '[SELF]'
-            conditions:
-              list: []
-              actions-on-fail: 'null'
-            action-executors:
-            - '[PROGRESS_BAR] ~title: &e&lCasting...; ~subtitle: •; ~color-empty:
-              &7; ~color-fill: &e; ~duration: 35; ~target: self;'
-            - '[PARTICLE_SIMPLE] ~offset: 0.2,0.3,0.2; ~speed: 0.1; ~name: FLAME;
-              ~target: radius; ~amount: 30; ~delay: 23;'
-            - '[POTION] ~name: BLINDNESS; ~amount: 1; ~duration: %var_durTick%; ~target:
-              radius; ~delay: 23;'
-            - '[BURN] ~duration: %var_durtick%; ~target: radius; ~delay: 23;'
-            - '[SOUND] ~name: BLOCK_FIRE_EXTINGUISH; ~target: self; ~delay: 23;'
+        scale-by-level: 1.0
+        min: 0
+        max: 0
+        flat-range: false
+        round: false
+      base_attack_speed:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 0
+        max: 0
+        flat-range: false
+        round: false
+      mana_regen:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 0
+        max: 0
+        flat-range: false
+        round: false
+      thornmail:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 0
+        max: 0
+        flat-range: false
+        round: false
+      disarm_rate:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 0
+        max: 0
+        flat-range: false
+        round: false
   skillapi-attributes:
     minimum: 1
     maximum: 4
@@ -526,6 +462,37 @@ generator:
         scale-by-level: 1.025
         min: 1.5
         max: 7.0
+  sockets:
+    GEM:
+      minimum: 0
+      maximum: 2
+      lore-format:
+      - '&8&m               &f  「 GEMS 」  &8&m               '
+      - '%SOCKET_GEM_COMMON%'
+      - '%SOCKET_GEM_RARE%'
+      list:
+        common:
+          chance: 35.0
+        rare:
+          chance: 15.0
+    ESSENCE:
+      minimum: 0
+      maximum: 2
+      lore-format:
+      - '&8&m               &f  「 ESSENCES 」  &8&m               '
+      - '%SOCKET_ESSENCE_DEFAULT%'
+      list:
+        default:
+          chance: 35.0
+    RUNE:
+      minimum: 0
+      maximum: 2
+      lore-format:
+      - '&8&m               &f  「 RUNES 」  &8&m               '
+      - '%SOCKET_RUNE_DEFAULT%'
+      list:
+        default:
+          chance: 35.0
   skills:
     minimum: 0
     maximum: 0

@@ -12,6 +12,10 @@ lobby:
                 - inventory clear
                 - remove <server.spawned_npcs_flagged[player.<player.name>]>
 
+        on player right clicks block with:diamond_sword:
+            - if <player.location.in_region[lobby]>:
+                - execute as_player pronto
+
         on jogo command:
             - if <context.args.get[1]> = 1:
                 - foreach <world[<context.args.get[2]>].players>:

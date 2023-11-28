@@ -133,8 +133,10 @@
   },
   "minecraft:husbandry/balanced_diet": {
     "criteria": {
+      "cooked_mutton": "2023-11-25 11:16:05 -0300",
       "apple": "2023-11-07 19:35:12 -0300",
-      "bread": "2023-10-29 23:39:08 -0300"
+      "bread": "2023-10-29 23:39:08 -0300",
+      "cooked_chicken": "2023-11-25 11:27:24 -0300"
     },
     "done": false
   },
@@ -549,6 +551,24 @@
   "minecraft:end/elytra": {
     "criteria": {
       "elytra": "2023-11-14 21:47:39 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/snow": {
+    "criteria": {
+      "has_snowball": "2023-11-25 10:36:27 -0300"
+    },
+    "done": true
+  },
+  "minecraft:story/shiny_gear": {
+    "criteria": {
+      "diamond_boots": "2023-11-25 11:30:53 -0300"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/snow_block": {
+    "criteria": {
+      "has_snowball": "2023-11-25 10:36:27 -0300"
     },
     "done": true
   },

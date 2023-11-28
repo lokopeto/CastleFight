@@ -16,7 +16,7 @@ _vanilla_generic:
 
 physical:
   priority: 1000
-  name: Dano físico
+  name: Dano Físico
   format: '&6⚔ %name%: &f%value%'
   attached-damage-causes: []
   on-hit-actions: {}
@@ -29,7 +29,7 @@ physical:
 
 magical:
   priority: 10
-  name: Dano mágico
+  name: Dano Mágico
   format: '&d⚡ %name%: &f%value%'
   attached-damage-causes:
   - DRAGON_BREATH
@@ -46,7 +46,7 @@ magical:
 
 fire:
   priority: 10
-  name: Dano de fogo
+  name: Dano de Fogo
   format: '&c☀ %name%: &f%value%'
   attached-damage-causes:
   - FIRE
@@ -79,7 +79,7 @@ poison:
 
 water:
   priority: 10
-  name: Dano Aquatico
+  name: Dano de Agua
   format: '&9⚓ %name%: &f%value%'
   attached-damage-causes: []
   on-hit-actions: {}
@@ -93,7 +93,7 @@ water:
 
 wind:
   priority: 10
-  name: Dano de ar
+  name: Dano de Vento
   format: '&7⚕ %name%: &f%value%'
   attached-damage-causes: []
   on-hit-actions: {}

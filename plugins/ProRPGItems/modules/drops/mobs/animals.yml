@@ -1,4 +1,4 @@
-chance: 0.0
+chance: 5.0
 roll-once: true
 vanilla-mobs:
 - 'ANIMAL'

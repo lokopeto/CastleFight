@@ -45,9 +45,21 @@ on right click on warped sign:
     line 2 of event-block contains "Clique para"
     line 3 of event-block contains "entrar!"
 
+    set {_world} to line 1 of event-block
+    set {_team} to line 4 of event-block
+    replace "=[🗡CF" and "🛡]=" in {_world} with ""
+    replace " " and "=" in {_team} with ""
+    set {_world} to uncolored {_world}
+    set {_team} to uncolored {_team}
+
     set {psspwait::%player%} to 0 
 
+
+    #=========
     teleport event-entity to location of event-block
+    #========= JOGADOR ENTROU NO MUNDO
+
+    delete {prontoswitch::%player%}
 
     set gamemode of player to adventure
 
@@ -56,13 +68,6 @@ on right click on warped sign:
     play sound "block.amethyst_block.fall" at location of player to all players
 
     wait 1 tick
-
-    set {_world} to line 1 of event-block
-    set {_team} to line 4 of event-block
-    replace "=[🗡CF" and "🛡]=" in {_world} with ""
-    replace " " and "=" in {_team} with ""
-    set {_world} to uncolored {_world}
-    set {_team} to uncolored {_team}
 
     set {placa::%uuid of player%::1} to location of event-block
     set {placa::%uuid of player%::2} to line 1
@@ -78,25 +83,49 @@ on right click on warped sign:
         add "cfcarvalho" to the scoreboard tags of player
         make console execute command "team add castelo1%world of player%"
         make console execute command "team join castelo1%world of player% %player%"
+        set {_teamnumb} to 1
     if {_team} is "Barro":
         teleport player to location(-77.5, 229, -136.5, world "castlefight%{_world}%", -90, 0)
         add "cfbarro" to the scoreboard tags of player
         make console execute command "team add castelo2%world of player%"
         make console execute command "team join castelo2%world of player% %player%"
+        set {_teamnumb} to 2
 
     set {lobbyworld::%uuid of player%} to world of player
 
     add player to {lobbyplayers::%world of player%::*}
 
-    if amount of players in world of player is 1:
-        set {lobbyhost::%world of player%} to player
-        set slot 4 of player to 1 diamond sword named "&bMenu"
-        message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
+#    if amount of players in world of player is 1:
+#        set {lobbyhost::%world of player%} to player
+#        set slot 4 of player to 1 diamond sword named "&bMenu"
+#        message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
+#        delete {ban::castlefight%{_world}%::*}
 
-    set slot 8 of player to 1 clock named "&cSair"
+    {jogo::%world of player%} is 0:
 
-    message "&e&l%player% &7entrou na partida no &a&lRei %{_team}%" to all players in world of player
-    message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida"
+        loop all players in world of player:
+            "%team of loop-player%" is "%team of player%":
+                set {_teamnomecastelo} to 1
+            
+        if {_teamnomecastelo} = 1:
+            set {castelo%{_teamnumb}%nome::%world of player%} to "Rei %name of player%"
+
+        set health of player to 20
+        set hunger of player to 20
+        clear the inventory of player
+        set total experience of player to 0
+    
+
+    set slot 8 of player to 1 clock named "&c/sair"
+    set slot 0 of player to 1 diamond sword named "&b/pronto"
+
+    if {jogo::%world of player%} is 0:
+        set {_teammsn} to {_team}
+    else:
+        set {_teammsn} to "%team of player%"
+
+    message "&e&l%player% &7entrou na partida no &a&lRei %{_teammsn}%" to all players in world of player
+#    message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida"
 
     {jogo::%world of player%} is 1:
 
@@ -109,22 +138,14 @@ on right click on warped sign:
             loop all entities in world of player:
                 if loop-entity has scoreboard tag "rei2":
                     teleport player to loop-entity 
-        
-        clear inventory of player
 
     add player to {jogadoresdesistir::%world of player%::*}
 
     make console execute command "ex flag <player[%player%]> global:!"
 
-every 1 second:
-    loop all players in "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
-        if {lobbyhost::%world of loop-player%} is loop-player:
-            if {jogo::%world of loop-player%} is 0:
-                send action bar "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to loop-player
-
-
 on quit:
-#    world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
+    world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
+        set {partidacountdown::%world of player%} to 15
 
     loop all entities in world "world":
         loop-entity is a citizen
@@ -146,28 +167,126 @@ on quit:
     if {lobbyhost::%world of player%} is player:
         delete {lobbyhost::%world of player%}
 
-    if event-world is not "world":
-        if {lobbyhost::%event-world%} is not set:
-            set {lobbyhost::%event-world%} to {lobbyplayers::%event-world%::1}
-            set slot 4 of player to 1 diamond sword named "&bMenu"
-            message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
+#    if event-world is not "world":
+#        if {lobbyhost::%event-world%} is not set:
+#            delete {ban::%world of player%::*}
+#            set {lobbyhost::%event-world%} to {lobbyplayers::%event-world%::1}
+#            if {jogo::%world of player%} is 0:
+#                set slot 4 of {lobbyhost::%event-world%} to 1 diamond sword named "&bMenu"
+#            message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to {lobbyhost::%event-world%}
 
     remove player from {jogadoresdesistir::%world of player%::*}
 
     make console execute command "ex flag <player[%player%]> global"
 
+    if {prontoswitch::%player%} is 1:
+        add -1 to {pronto::%world of player%}
 
 
 
 
+command /pronto:
+    cooldown: 1 second
+    trigger:
+        {jogo::%world of player%} is 0
+        amount of players in world of player > 1
+
+
+        if {prontoswitch::%player%} is not set: #true
+            set {prontoswitch::%player%} to 1
+            add 1 to {pronto::%world of player%}
+            message "&7&o%player% está pronto!" to all players in world of player
+            send action bar "&7&oVocê está pronto para jogar!"
+            make console execute command "ppo %player% add glow overhead"
+            play sound "item.crossbow.shoot" to all players in world of player
+
+        else: #false
+            delete {prontoswitch::%player%}
+            add -1 to {pronto::%world of player%}
+            message "&7&o%player% não está pronto!" to all players in world of player
+            send action bar "&7&oVocê não está mais pronto para jogar!"
+            make console execute command "ppo %player% reset"
+            play sound "item.crossbow.hit" to all players in world of player
+
+
+
+every 1 second:
+    loop all worlds:
+        loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
+            if {jogo::%loop-world%} is 0:
+                set {_amountplayers} to amount of players in loop-world
+                if {_amountplayers} is 1:
+                    set {_amountplayers} to -1
+                if {partidacountdown::%loop-world%} > 0:
+                    if {pronto::%loop-world%} is {_amountplayers}:
+                        if {partidacountdown::%loop-world%} is 15:
+                            message "&lA partida ira começar em %{partidacountdown::%loop-world%}% segundos" to all players in loop-world
+                        else:
+                            message "&l&o..em %{partidacountdown::%loop-world%}%" to all players in loop-world
+                            add 0.2 to {partidacountdownpitch::%loop-world%}
+                            add 0.08 to {partidacountdownvolume::%loop-world%}
+
+                            play sound "block.amethyst_cluster.hit" with volume {partidacountdownvolume::%loop-world%} with pitch {partidacountdownpitch::%loop-world%} for all players in loop-world
+
+                        add -1 to {partidacountdown::%loop-world%}
+                    else:
+                        set {partidacountdown::%loop-world%} to 15
+                        delete {partidacountdownpitch::%loop-world%} and {partidacountdownvolume::%loop-world%}
+
+                else:
+                    set {chance::%loop-world%} to 25
+                    set {quantmobs::%loop-world%} to 10
+                    set {levelmobtime::%loop-world%} to 0
+                    set {reivida::%loop-world%} to 2300
+
+                    make console execute command "npcs %loop-world%"
+                    make console execute command "jogo 1 %loop-world%"
+                        
+                    loop 2 times:
+                        make console execute command "team modify castelo%loop-integer%%loop-world% displayName {""text"":""%{castelo%loop-integer%nome::%loop-world%}%""}"
+                        make console execute command "team modify castelo%loop-integer%%loop-world% friendlyFire false"
+                        make console execute command "team modify castelo%loop-integer%%loop-world% seeFriendlyInvisibles true"                        
+
+
+                    make console execute command "spawn %loop-world%"
+                    make console execute command "spawnboss %loop-world%"
+
+                    play sound "item.trident.return" to all players in loop-world              
+
+
+                    loop all players in loop-world:
+                        make console execute command "ppo %loop-player% reset"
 
 
 
 
+#sistema de fechar partida
 On Player World Change:
     past event-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
-        message "&7%player% saiu da partida" to all players in past event-world
+        if {jogo::%past event-world%} is 1:
+            set {_world} to past event-world
+            message "&7%player% saiu da partida" to all players in past event-world
 
+            if amount of players in past event-world is 1:
+                message "&7&oParece meio solitario ai.. mas processador não da em arvore!" to all players in past event-world
+
+                wait 3 second
+
+            if amount of players in past event-world is 1:
+                set {_time} to 30
+                message "&7&oO servidor será fechado em %{_time}%" to all players in past event-world
+
+            wait 1 second
+
+            while amount of players in {_world} is 1:
+                add -1 to {_time}
+                message "&7&o..em %{_time}%" to all players in {_world}
+                if {_time} <= 0:
+                    make all players in {_world} execute command "sair"
+                    make console execute command "jogo 0 %loop-world%"
+
+                wait 1 second
+     
 
 
 
@@ -180,15 +299,24 @@ command /sair:
 
             play sound "block.amethyst_block.resonate" at location of player to all players
 
+            if {prontoswitch::%player%} is 1:
+                add -1 to {pronto::%world of player%}
+
+
+
+            set {partidacountdown::%world of player%} to 15
+
             set {psspwait::%player%} to 1
 
-            if {lobbyhost::%world of player%} is player:
+#            if {lobbyhost::%world of player%} is player:
 
-                set {lobbyhost::%world of player%} to {lobbyplayers::%world of player%::2}
+#                set {lobbyhost::%world of player%} to {lobbyplayers::%world of player%::2}
 
-                set slot 4 of {lobbyhost::%world of player%} to 1 diamond sword named "&bMenu"
-                message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to {lobbyhost::%world of player%}
-                message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida" to {lobbyhost::%world of player%} 
+#                if {jogo::%world of player%} is 0:
+#                    set slot 4 of {lobbyhost::%world of player%} to 1 diamond sword named "&bMenu"
+#                message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to {lobbyhost::%world of player%}
+#                message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida" to all players in world of player
+#                delete {ban::%world of player%::*}
 
             remove player from {lobbyplayers::%world of player%::*}
 
@@ -227,112 +355,111 @@ command /sair:
         remove player from {jogadoresdesistir::%world of player%::*}
 
         make console execute command "ex flag <player[%player%]> global"
+
+
+
+
 # GUI
-
-
-
-
-on right click:
-    world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
-    tool of player is a diamond sword named "&bMenu"
-    create a gui with virtual chest inventory with 1 rows named "&f七七七七七七七七ㇺ":
-        make gui slot 3 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""Um modo mais ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""simples""},{""color"":""aqua"",""text"":"" e ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""mais rapido""},{""color"":""aqua"",""text"":""!""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Recomendado para jogadores""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""iniciantes.""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""gold"",""text"":""Rapido""}],""text"":""""}'}}"
-
-        make gui slot 5 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""O jeito ""},{""bold"":true,""color"":""green"",""text"":""padrão""},{""color"":""aqua"",""text"":"" de se jogar""},{""text"":""!""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""Normal""}],""text"":""""}'}}"
-
-    open the created gui for player
-
-    play sound "block.wooden_button.click_off" to player
-
-on inventory click:
-    if name of event-inventory contains "&f七七七七七七七七ㇺ":
-        set {_nome} to name of clicked slot
-        set {_nome} to uncolored {_nome}
-
-        if {_nome} is "Rapido" or "Normal":
-            set {_reicarvalho} to a new anvil gui named "Nome do Rei Carvalho" with default text "ReiCarvalho"
-            open anvil gui {_reicarvalho} to player
-            play sound "block.wooden_pressure_plate.click_off" to player
-
-
-        if {_nome} is "Normal":
-            set {chance::%world of player%} to 25
-            set {quantmobs::%world of player%} to 10
-            set {levelmobtime::%world of player%} to 0
-            set {reivida::%world of player%} to 2300
-        if {_nome} is "Rapido":
-            set {chance::%world of player%} to 90   
-            set {quantmobs::%world of player%} to 0     
-            set {levelmobtime::%world of player%} to 1
-            set {reivida::%world of player%} to 1300
-        
-        set {criarpartidamodo::%player%} to {_nome}
-
-on anvil gui click:
-    if title of event-virtual anvil is "Nome do Rei Carvalho":
-        play sound "block.hanging_sign.place" to player
-        if event-integer is 2:
-            set {castelo1nome::%world of player%} to event-text
-        else:
-            set {castelo1nome::%world of player%} to "ReiCarvalho"
-        set {_reibarro} to a new anvil gui named "Nome do Rei Barro" with default text "ReiBarro"
-        open anvil gui {_reibarro} to player
-    if title of event-virtual anvil is "Nome do Rei Barro":
-        play sound "block.hanging_sign.place" to player
-
-        if event-integer is 2:
-            set {castelo2nome::%world of player%} to event-text
-        else:
-            set {castelo2nome::%world of player%} to "ReiBarro"
-        create a gui with virtual chest inventory with 1 rows named "&f七七七七七七七七⮬":
-        
-            set {_reicarvalho} to 0
-            set {_reibarro} to 0    
-
-            loop all players in world of player:
-                if "%team of loop-player%" is "castelo1%world of loop-player%":
-                    add 1 to {_reicarvalho}
-            
-                if "%team of loop-player%" is "castelo2%world of loop-player%":
-                    add 1 to {_reibarro}
-            
-            make gui slot 4 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Carvalho: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo1nome::%world of player%}% (%{_reicarvalho}%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Barro: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo2nome::%world of player%}% (%{_reibarro}%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Modo: ""},{""color"":""dark_green"",""text"":""%{criarpartidamodo::%player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Jogadores: %amount of players in world of player%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Server: %world of player%""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""CONFIRMAR""},{""color"":""green"",""text"":""""}],""text"":""""}'}}":
-                close player's inventory
-                play sound "item.trident.throw" at player to all players 
-                if amount of players in world of player >= 2:
-                    message "&l&a%player% iniciou a partida" to all players in world of player
-
-                    loop 15 times:
-                        wait 1 second
-                        add 0.2 to {_pitch}
-                        add 0.08 to {_volume}
-
-                        message "&l&oEm %16 - loop-integer%" to all players in world of player
-                        play sound "block.amethyst_cluster.hit" with volume {_volume} with pitch {_pitch} for all players in world of player 
-                    
-                    wait 1 second
-
-                    make console execute command "npcs %world of player%"
-                    make console execute command "jogo 1 %world of player%"
-                        
-                    loop 2 times:
-                        make console execute command "team modify castelo%loop-integer%%world of player% displayName {""text"":""%{castelo%loop-integer%nome::%world of player%}%""}"
-                        make console execute command "team modify castelo%loop-integer%%world of player% friendlyFire false"
-                        make console execute command "team modify castelo%loop-integer%%world of player% seeFriendlyInvisibles true"                        
-
-
-
-                    make console execute command "spawn %world of player%"
-                    make console execute command "spawnboss %world of player%"
-    
-                    set slot 4 of player to air 
-
-                    play sound "item.trident.return" to all players in world of player
-                else:
-                    message "&c&lJogadores insuficientes!"
-
-
-        open the created gui for player
+#on right click:
+#    world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
+#    tool of player is a diamond sword named "&bMenu"
+#    create a gui with virtual chest inventory with 1 rows named "&f七七七七七七七七ㇺ":
+#        make gui slot 3 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""Um modo mais ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""simples""},{""color"":""aqua"",""text"":"" e ""},{""bold"":true,""italic"":true,""color"":""green"",""text"":""mais rapido""},{""color"":""aqua"",""text"":""!""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Recomendado para jogadores""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""iniciantes.""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""gold"",""text"":""Rapido""}],""text"":""""}'}}"
+#
+#        make gui slot 5 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""O jeito ""},{""bold"":true,""color"":""green"",""text"":""padrão""},{""color"":""aqua"",""text"":"" de se jogar""},{""text"":""!""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""Normal""}],""text"":""""}'}}"
+#
+#    open the created gui for player
+#
+#    play sound "block.wooden_button.click_off" to player
+#
+#on inventory click:
+#    if name of event-inventory contains "&f七七七七七七七七ㇺ":
+#        set {_nome} to name of clicked slot
+#        set {_nome} to uncolored {_nome}
+#
+#        if {_nome} is "Rapido" or "Normal":
+#            set {_reicarvalho} to a new anvil gui named "Nome do Rei Carvalho" with default text "ReiCarvalho"
+#            open anvil gui {_reicarvalho} to player
+#            play sound "block.wooden_pressure_plate.click_off" to player
+#
+#
+#        if {_nome} is "Normal":
+#            set {chance::%world of player%} to 25
+#            set {quantmobs::%world of player%} to 10
+#            set {levelmobtime::%world of player%} to 0
+#            set {reivida::%world of player%} to 2300
+#        if {_nome} is "Rapido":
+#            set {chance::%world of player%} to 90   
+#            set {quantmobs::%world of player%} to 0     
+#            set {levelmobtime::%world of player%} to 1
+#            set {reivida::%world of player%} to 1300
+#        
+#        set {criarpartidamodo::%player%} to {_nome}
+#on anvil gui click:
+#    if title of event-virtual anvil is "Nome do Rei Carvalho":
+#        play sound "block.hanging_sign.place" to player
+#        if event-integer is 2:
+#            set {castelo1nome::%world of player%} to event-text
+#        else:
+#            set {castelo1nome::%world of player%} to "ReiCarvalho"
+#        set {_reibarro} to a new anvil gui named "Nome do Rei Barro" with default text "ReiBarro"
+#        open anvil gui {_reibarro} to player
+#    if title of event-virtual anvil is "Nome do Rei Barro":
+#        play sound "block.hanging_sign.place" to player
+#
+#        if event-integer is 2:
+#            set {castelo2nome::%world of player%} to event-text
+#        else:
+#            set {castelo2nome::%world of player%} to "ReiBarro"
+#        create a gui with virtual chest inventory with 1 rows named "&f七七七七七七七七⮬":
+#        
+#            set {_reicarvalho} to 0
+#            set {_reibarro} to 0    
+#
+#            loop all players in world of player:
+#                if "%team of loop-player%" is "castelo1%world of loop-player%":
+#                    add 1 to {_reicarvalho}
+#            
+#                if "%team of loop-player%" is "castelo2%world of loop-player%":
+#                    add 1 to {_reibarro}
+#            
+#            make gui slot 4 with emerald with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Carvalho: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo1nome::%world of player%}% (%{_reicarvalho}%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Barro: ""},{""underlined"":true,""color"":""dark_green"",""text"":""%{castelo2nome::%world of player%}% (%{_reibarro}%)""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Modo: ""},{""color"":""dark_green"",""text"":""%{criarpartidamodo::%player%}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Jogadores: %amount of players in world of player%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""gray"",""text"":""Server: %world of player%""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""CONFIRMAR""},{""color"":""green"",""text"":""""}],""text"":""""}'}}":
+#                close player's inventory
+#                play sound "item.trident.throw" at player to all players 
+#                if amount of players in world of player >= 2:
+#                    message "&l&a%player% iniciou a partida" to all players in world of player
+#
+#                    loop 15 times:
+#                        wait 1 second
+#                        add 0.2 to {_pitch}
+#                        add 0.08 to {_volume}
+#
+#                        message "&l&oEm %16 - loop-integer%" to all players in world of player
+#                        play sound "block.amethyst_cluster.hit" with volume {_volume} with pitch {_pitch} for all players in world of player 
+#                    
+#                    wait 1 second
+#
+#                    make console execute command "npcs %world of player%"
+#                    make console execute command "jogo 1 %world of player%"
+#                        
+#                    loop 2 times:
+#                        make console execute command "team modify castelo%loop-integer%%world of player% displayName {""text"":""%{castelo%loop-integer%nome::%world of player%}%""}"
+#                        make console execute command "team modify castelo%loop-integer%%world of player% friendlyFire false"
+#                        make console execute command "team modify castelo%loop-integer%%world of player% seeFriendlyInvisibles true"                        
+#
+#
+#
+#                    make console execute command "spawn %world of player%"
+#                    make console execute command "spawnboss %world of player%"
+#    
+#                    set slot 4 of player to air 
+#
+#                    play sound "item.trident.return" to all players in world of player
+#                else:
+#                    message "&c&lJogadores insuficientes!"
+#
+#
+#        open the created gui for player
 
 
 

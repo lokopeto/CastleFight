@@ -1,13 +1,15 @@
 on death of player:
 
-    loop all players in world of victim:
-        if "%team of loop-player%" is "%team of victim%":
-            message "&l&o%victim% &cfoi morto por &l&f&o%attacker%" to loop-player
+    if world of victim is not world "world":
 
-    set {deathloc::%name of victim%} to location of victim
-    if name of attacker contains "(BOSS)":
-        if attacker is npc:
-            set {deathtimer::%name of victim%} to 30
+        loop all players in world of victim:
+            if "%team of loop-player%" is "%team of victim%":
+                message "&l&o%victim% &cfoi morto por &l&f&o%name of attacker%" to loop-player
+
+        set {deathloc::%name of victim%} to location of victim
+        if name of attacker contains "(BOSS)":
+            if attacker is npc:
+                set {deathtimer::%name of victim%} to 30
 
 every 1 second:
     loop all players:

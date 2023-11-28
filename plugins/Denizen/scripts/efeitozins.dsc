@@ -12,7 +12,8 @@ efeitozins:
         on player changes gamemode:
             - if !<player.location.world.contains_text[menu]>:
                 - execute as_server "ppo <player.name> reset"
-
+        on player changes world:
+            - execute as_server "ppo <player.name> reset"
 
 #        on tick every:5:
 #            - if <player.location.in[londama]>:
