@@ -1,5 +1,5 @@
 core:
-  lang: pt
+  lang: en
   command-aliases: prorpgitems,rpgitems,rpgi,quantumrpg,qrpg
   prefix: ProRPGItems
 
@@ -45,73 +45,73 @@ tiers:
 modules:
   item_hints:
     enabled: true
-    name: Dicas de Item
+    name: Item Hints
   gems:
     enabled: true
-    name: Gemas
+    name: Gems
   essences:
     enabled: true
-    name: Essências
+    name: Essences
   runes:
     enabled: true
-    name: Runas
+    name: Runes
   arrows:
     enabled: true
-    name: Flechas
+    name: Arrows
   sets:
     enabled: true
-    name: Conjuntos
+    name: Sets
   item_generator:
     enabled: true
-    name: Gerador de Itens
+    name: Item Generator
   custom_items:
     enabled: true
-    name: Itens Personalizados
+    name: Custom Items
   money:
     enabled: true
-    name: Dinheiro
+    name: Money
   refine:
     enabled: true
-    name: Refinar
+    name: Refine
   fortify:
     enabled: true
-    name: Fortificar
+    name: Fortify
   identify:
     enabled: true
-    name: Identificar
+    name: Identify
   magic_dust:
     enabled: true
-    name: Pó Mágico
+    name: Magic Dust
   soulbound:
     enabled: true
-    name: Vinculação de Alma
+    name: Soulbound
   repair:
     enabled: true
-    name: Reparar
+    name: Repair
   dismantle:
     enabled: true
-    name: Desmontar
+    name: Dismantle
   extractor:
     enabled: true
-    name: Extrator
+    name: Extractor
   party:
     enabled: true
-    name: Grupo
+    name: Party
   loot:
     enabled: true
-    name: Saque
+    name: Loot
   sell:
     enabled: true
-    name: Vender
+    name: Sell
   combat_log:
     enabled: true
-    name: Registro de Combate
+    name: Combat Log
   consumables:
     enabled: true
-    name: Consumíveis
+    name: Consumables
   drops:
     enabled: true
-    name: Saques
+    name: Drops
 
 item-sub-types:
   axe:

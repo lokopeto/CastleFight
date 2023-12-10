@@ -24,11 +24,11 @@ settings:
   user-cache-size: 1000
   attribute:
     maxHealth:
-      max: 200048.0
+      max: 1000000.0
     movementSpeed:
       max: 2048.0
     attackDamage:
-      max: 200048.0
+      max: 1000000.0
   log-villager-deaths: false
   log-named-deaths: false
   netty-threads: 4
@@ -40,7 +40,7 @@ messages:
   outdated-client: Outdated client! Please use {0}
   outdated-server: Outdated server! I'm still on {0}
 advancements:
-  disable-saving: false
+  disable-saving: true
   disabled:
   - minecraft:story/disabled
 players:
@@ -177,5 +177,5 @@ world-settings:
     verbose: false
 config-version: 12
 stats:
-  disable-saving: false
+  disable-saving: true
   forced-stats: {}

@@ -121,56 +121,6 @@ command /partidatest <integer>:
     trigger:
         message {partida::%arg-1%::1}
 
-command /loopblocksset <integer> <integer>:
-    trigger:
-        set {partidaplaca::%arg-1%::%arg-2%} to location(player's x-coordinate, player's y-coordinate, player's z-coordinate, player's world) 
-        message "CF%arg-1%: setado %arg-2% para %{partidaplaca::%arg-1%::%arg-2%}%"
-
-command /loopblocksrei <integer> <integer> <integer>:
-    trigger:
-        if arg-2 is 1:
-            set {_arg2} to 5
-        if arg-2 is 2:
-            set {_arg2} to 6
-        set {partidaplaca::%arg-1%::%{_arg2}%} to arg-3
-        message "CF%arg-1%: setado %{_arg2}% para %arg-3%"
-
-command /loopblocksview <integer>:
-    trigger:
-        loop blocks between the block at {partidaplaca::%arg-1%::1} and the block at {partidaplaca::%arg-1%::2}:
-            loop-block is sign:
-                wait 5 tick
-                message loop-block
-                message line 1 of loop-block
-                message line 4 of loop-block
-                set {_yaw} to {partidaplaca::%arg-1%::5}
-                teleport player to location(loop-block's x-coordinate, loop-block's y-coordinate, loop-block's z-coordinate, loop-block's world, {_yaw}, 70) 
-
-        loop blocks between the block at {partidaplaca::%arg-1%::3} and the block at {partidaplaca::%arg-1%::4}:
-            loop-block is sign:
-                wait 5 tick
-                message loop-block
-                message line 1 of loop-block
-                message line 4 of loop-block
-                set {_yaw} to {partidaplaca::%arg-1%::6}
-                teleport player to location(loop-block's x-coordinate, loop-block's y-coordinate, loop-block's z-coordinate, loop-block's world, {_yaw}, 70) 
-
-command /loopblocksreform <integer>:
-    trigger:
-        loop blocks between the block at {partidaplaca::%arg-1%::1} and the block at {partidaplaca::%arg-1%::2}:
-            loop-block is sign:
-                set line 1 of loop-block to "&a=[🗡CF%arg-1%🛡]="
-                set line 2 of loop-block to "&bClique para"
-                set line 3 of loop-block to "&bEntrar!"
-                set line 4 of loop-block to "&a= Carvalho ="
-
-        loop blocks between the block at {partidaplaca::%arg-1%::3} and the block at {partidaplaca::%arg-1%::4}:
-            loop-block is sign:
-                set line 1 of loop-block to "&a=[🗡CF%arg-1%🛡]="
-                set line 2 of loop-block to "&bClique para"
-                set line 3 of loop-block to "&bEntrar!"
-                set line 4 of loop-block to "&a= Barro ="
-
 command /testsounddssss:
     trigger:
         loop 15 times:
@@ -187,14 +137,46 @@ command /testsounddssss:
 
 command /textotesste:
     trigger:
-        message "&a=[🗡 Castle Fight 1 🛡]="
-        message ""
-        message "Pontuação = "
-        message "Assasinatos = "
-        message "Mortes = "
-        message "Assasinatos (ovos) = "
-        message "Mortes (ovos) = "
-        message "Ovos pegos = "
-        message ""
-        message "&a= Carvalho ="
-    
+        set {_world} to "%world of player%"
+        replace "castlefight" in {_world} with ""
+
+        loop all players in world of player:
+
+            set {pontuaçãopartida::%loop-player%::%world of loop-player%::1} to 0
+
+            #soma
+            set {_score::1} to {pontuaçãopartida::%loop-player%::%world of loop-player%::2} + {pontuaçãopartida::%loop-player%::%world of loop-player%::4}
+            set {_score::2} to {pontuaçãopartida::%loop-player%::%world of loop-player%::3} + {pontuaçãopartida::%loop-player%::%world of loop-player%::5}
+
+            #divisão
+            set {_score::1} to {_score::1} / 2
+            set {_score::2} to {_score::2} / 2
+
+            #subtração
+            set {pontuaçãopartida::%loop-player%::%world of loop-player%::1} to {_score::1} - {_score::2}
+
+            if {pontuaçãopartida::%loop-player%::%world of loop-player%::1} > 0:
+                set {_messagerank} to "subiu para"
+            if {pontuaçãopartida::%loop-player%::%world of loop-player%::1} < 0:
+                set {_messagerank} to "desceu para"
+            if {pontuaçãopartida::%loop-player%::%world of loop-player%::1} = 0:
+                set {_messagerank} to "é"
+
+            message "&a=[🗡 Castle Fight %{_world}% 🛡]=" to loop-player
+            message "" to loop-player
+            message "Pontuação = %{pontuaçãopartida::%loop-player%::%world of loop-player%::1}%" to loop-player #1
+            message "Assasinatos = %{pontuaçãopartida::%loop-player%::%world of loop-player%::2}%" to loop-player #2
+            message "Mortes = %{pontuaçãopartida::%loop-player%::%world of loop-player%::3}%" to loop-player #3
+            message "Assasinatos (naturais) = %{pontuaçãopartida::%loop-player%::%world of loop-player%::4}%" to loop-player #4
+            message "Mortes (naturais) = %{pontuaçãopartida::%loop-player%::%world of loop-player%::5}%" to loop-player #5
+            message "Ovos pegos = %{pontuaçãopartida::%loop-player%::%world of loop-player%::6}%" to loop-player #6
+            message "" to loop-player
+            message "&a= Seu Rank %{_messagerank}% %{rank::%player%}% =" to loop-player
+
+
+
+#on gamemode change to spectator:
+#    wait 1 tick
+#    loop all players:
+#        add loop-player to {_playerlist::*}
+#    set spectator target of player to {_playerlist::1}

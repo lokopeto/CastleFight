@@ -1,0 +1,84 @@
+command /testselecionarskininvocacoes <integer>: # <integer> - essa é pagina
+    trigger:
+        create a gui with virtual chest inventory with 6 rows named "Seleção de invocações":
+            set {_slot} to -1 # slot do bau/gui
+            set {_limit} to 9 # limite da quantidade de items na pagina
+
+            loop arg-1 times: # multiplicar o limite com o valor da pagina, por exemplo, se for 1, vai ser o valor original, se for dois, vai multiplicar, esse valor do ultimo item na lista
+                add {_limit} to {_loop-index2}
+
+            set {_loop-index1} to {_loop-index2} - {_limit} + 1 # esse é o primeiro item da lista, ele subtrai pelo {_limit}
+                                                                # ele adiciona mais um pra arrumar, porque, por algum motivo ele diminue um numero a mais
+
+            loop 50 times: # loop necessario pra saber os items da lista
+                if loop-integer is between {_loop-index2} and {_loop-index1}: # if para pegar o primeiro item e o ultimo item da lista
+                    add 1 to {_slot} # ele adiciona mais um para mudar o slot criando uma fileira de items
+                    make gui slot {_slot} with stone named "%loop-integer%"
+        open the created gui for player
+
+
+command /selecionarskininvocacoes <integer>:
+    trigger:
+        create a gui with virtual chest inventory with 3 rows named "Seleção de Skins de invocações":
+            set {_slot} to -1
+            set {_limit} to 9 
+
+            loop arg-1 times:
+                add {_limit} to {_loop-index2}
+
+            set {_loop-index1} to {_loop-index2} - {_limit} + 1
+
+            loop {mobsnomes::*}:
+                if loop-index parsed as integer is between {_loop-index2} and {_loop-index1}:
+                    add 1 to {_slot}
+                    set {_loop-variable} to "%loop-variable%" in lowercase
+                    make gui slot {_slot} with stone named "%loop-variable%":
+                        wait 1 tick
+                        close player's inventory
+                        execute player command "lojaselecionarskins invocações select %{_loop-variable}%"
+
+        open the created gui for player
+
+command /testskininvocacoes <integer>:
+    trigger:
+        create a gui with virtual chest inventory with 3 rows named "Seleção de Skins de invocações":
+            set {_slot.true} to -1
+            set {_limit.true} to 18 
+
+            set {_slot} to {_slot.true}
+            set {_limit} to {_limit.true}
+
+            loop arg-1 times:
+                add {_limit} to {_loop-index2}
+
+            set {_loop-index1} to {_loop-index2} - {_limit} + 1
+
+            loop {mobsnomes::*}:
+                if loop-index parsed as integer is between {_loop-index2} and {_loop-index1}:
+                    add 1 to {_slot}
+                    set {_loop-variable} to "%loop-variable%" in lowercase
+                    make gui slot {_slot} with stone named "%loop-variable%":
+                        wait 1 tick
+                        close player's inventory
+                        create a gui with virtual chest inventory with 3 rows named "Skins de %{_loop-variable}%":
+                            set {_slot} to {_slot.true}
+                            set {_limit} to {_limit.true}
+                            set {_loop-index1} and {_loop-index2} to 0
+
+                            add {_limit} to {_loop-index2}
+                            set {_loop-index1} to {_loop-index2} - {_limit} + 1
+
+                            loop {mobskinnome::%{_loop-variable}%::*}:
+                                if loop-index parsed as integer is between {_loop-index2} and {_loop-index1}:
+                                    add 1 to {_slot}
+                                    set {_loop-test} to loop-index
+                                    make gui slot {_slot} with stone named "%{skinnome::%{_loop-variable}%::%loop-index%}%"
+                        open the created gui for player
+
+                        
+                        
+                        
+                        
+                        #execute player command "lojaselecionarskins invocações select %{_loop-variable}%"
+
+        open the created gui for player

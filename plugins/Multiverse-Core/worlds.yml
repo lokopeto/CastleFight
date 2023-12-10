@@ -450,14 +450,14 @@ worlds:
       amount: '0.0'
     hunger: 'true'
     autoHeal: 'true'
-    adjustSpawn: 'true'
+    adjustSpawn: 'false'
     portalForm: ALL
     gameMode: ADVENTURE
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: -249.5
-      y: 83.0
+      x: -140.5
+      y: 64.9375
       z: 1.5
       pitch: 0.0
       yaw: -90.0

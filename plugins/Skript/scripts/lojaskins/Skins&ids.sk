@@ -1,0 +1,74 @@
+command /skinmobcriar <text> <number> <text>:
+#                       |       |        |
+#                #mobsnomes #id da skin #nome da skin   
+    permission: lojaskins.cmd
+    trigger:
+        if arg-1, arg-2 and arg-3 is set:
+            set {skinnome::%arg-1%::%arg-2%} to arg-3
+            send "§3Você criou a skin §6%arg-3% §3no id §6%arg-2% §3no mob §6%arg-1%"
+        if arg-1 is not set:
+            send "Selecione(Coloque) algum mob"
+
+command /skintipocriar <text> [<number>] [<text>]:
+#line 3     ^    
+    permission: lojaskins.cmd
+    trigger:
+        if arg-1, arg-2 and arg-3 is set:
+            set {skinnome::%arg-1%::%arg-2%} to arg-3
+            send "§3Você criou a skin §6%arg-3% §3no id §6%arg-2% §3no(a) §6%arg-1%"
+
+command /addtiposkinnomes <text>:
+    permission: lojaskins.cmd
+    trigger:
+        set {_tiposkin} to arg-1
+        if {tiposkinnome::*} contains {_tiposkin}:
+            remove all {_tiposkin} from {tiposkinnome::*}
+            send "%{_tiposkin}% ja existe"
+        else:
+            add {_tiposkin} to {tiposkinnome::*}
+            send "Você adicionou %{_tiposkin}% a variavel {tiposkinnome::*}"
+
+command /addnomedaskinmob <text> [<text>]:
+    permission: lojaskins.cmd
+    trigger:
+        set {_skinnomemob} to arg-2
+        if {mobskinnome::%arg-1%::*} contains {_skinnomemob}:
+            remove all {_skinnomemob} from {mobskinnome::%arg-1%::*}
+            send "%{_tiposkin}% ja existe"
+        else:
+            add {_skinnomemob} to {mobskinnome::%arg-1%::*}
+            send "Você adicionou %{_skinnomemob}% a variavel {mobskinnome::%arg-1%::*}"
+
+on tab complete of "/skinmobcriar":
+    set tab completions for position 1 to {mobsnomes::*}
+on tab complete of "/skintipocriar":
+    set tab completions for position 1 to {tiposkinnome::*}
+on tab complete of "/addnomedaskinmob":
+    set tab completions for position 1 to {mobsnomes::*}
+on tab complete of "/addnomedaskinmob":
+    set tab completions for position 2 to {mobsnomes::*}
+on tab complete of "/skinmobcriar":
+    set tab completions for position 3 to {mobsnomes::*}
+on tab complete of
+
+command /setskinselectandinv <player>:
+    trigger:
+        set {fisrtjoin::%arg-1%} to 1
+        loop {mobsnomes::*}:
+            set {inventario::%arg-1%::%loop-variable%::1} to 1
+        loop {tiposkinnome::*}:
+            set {inventario::%arg-1%::%loop-variable%::1} to 1
+        loop {mobsnomes::*}:
+            set {skinselect::%arg-1%::%loop-variable%::1} to 1
+        loop {tiposkinnome::*}:
+            set {skinselect::%arg-1%::%loop-variable%::1} to 1
+
+
+
+
+command /testarnomesskin <text>:
+    trigger:
+        set {_nome} to arg-1
+        {mobsnomes::*} contains {_nome}:
+                if {skinselect::%attacker%::%{_nome}%::%{skinselectid::%attacker%::%{_nome}%}%} >= 1:
+                    set {_ovonomeskin} to {skinnome::%{_nome}%::%{skinselectid::%attacker%::%{_nome}%}%}

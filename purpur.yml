@@ -12,7 +12,7 @@ verbose: false
 settings:
   player-deaths-always-show-item: false
   clamp-attributes: true
-  limit-armor: true
+  limit-armor: false
   fix-network-serialized-items-in-creative: false
   fix-projectile-looting-transfer: false
   messages:
@@ -1547,8 +1547,8 @@ world-settings:
         teleport-if-outside-border: false
         teleport-on-nether-ceiling-damage: false
         totem-of-undying-works-in-inventory: false
-        fix-stuck-in-portal: false
-        one-punch-in-creative: true
+        fix-stuck-in-portal: true
+        one-punch-in-creative: false
         sleep-ignore-nearby-mobs: true
         can-skip-night: false
         critical-damage-multiplier: 1.5

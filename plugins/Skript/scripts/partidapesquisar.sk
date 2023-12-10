@@ -1,0 +1,312 @@
+command /partidapesquisarcancelar:
+    permission: pspc.cmd
+    aliases: /pspc
+    trigger:
+        set {psspwait::%player%} to 0
+        message "&7&oPesquisa cancelada"
+        set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
+        loop 5 times:
+            continue
+            wait 1 tick
+            send action bar "&7&oPesquisa cancelada" to player
+        teleport player to {pssplocplayer::%player%}
+        delete {pssplocplayer::%player%} 
+        wait 3 seconds
+        if {psspwait::%player%} is not 1:
+            set {psspwait::%player%} to 1
+
+command /partidapesquisar [<integer>]:
+    permission: psp.cmd
+    aliases: /psp
+    trigger:
+
+        if {psspwait::%player%} is 2 or 3:
+            execute player command "partidapesquisarcancelar"
+            stop
+
+        if arg-1 is 3:
+            create a gui with virtual chest inventory with 1 rows named "Partidas Achadas":
+                run on gui close:
+                    wait 1 tick
+                    execute player command "partidapesquisar 1"
+
+                set {_slot} to 0
+                
+                loop all worlds:
+                    loop-world is "castlefight1": #, "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
+
+                        set {_worlddpsp} to name of loop-world
+                        replace "castlefight" in {_worlddpsp} with ""
+
+                        set {_disponibilidade} to 0
+
+                        set {_team1} to 0
+                        set {_team2} to 0
+
+                        #refazer parte do codigo de procurar partida
+
+                        loop all players in loop-world:
+                            if "%team of loop-player%" is "castelo1%loop-world%":
+                                add 1 to {_team1}
+                            if "%team of loop-player%" is "castelo2%loop-world%":
+                                add 1 to {_team2}
+
+                        set {_psp2local::1} to {psp2::%player%::1}
+                        set {_psp2local::2} to {psp2::%player%::2}
+
+                        if {_psp2local::1} is 1:
+                            set {_psp2localinver::1} to 2
+                        if {_psp2local::1} is 2:
+                            set {_psp2localinver::1} to 1
+                        if {_psp2local::1} is 3:
+                            set {_psp2localinver::1} to 4
+
+                        if {_psp2local::1} is 3:
+                            set {_team%{psp2::%player%::1}%} to -2
+                            set {_team%{_psp2localinver::1}%} to -1
+
+                        set {_teamall} to {_team1} + {_team2}
+
+
+
+
+                        #verificar se o time ta desequilibrado
+                        if {_team1} is not {_team2}:
+                            set {_teamunfair} to 1
+
+                        #{psp2::%player%::1}
+
+                        if {_teamunfair} is 1:
+                            {_team%{psp2::%player%::1}%} < {_team%{_psp2localinver::1}%}:
+                                set {_verificar} to 1
+                        
+                        #{psp2::%player%::2}
+                        
+
+                        if {_teamall} is 
+
+
+
+                        message "%loop-world%"
+                        message ""
+                        message "team: %{_team1}% / %{_team2}%"
+                        message "teamlocal: %{_team%{psp2::%player%::1}%}% / %{_team%{_psp2localinver::1}%}%"
+                        message "psp2: %{psp2::%player%::1}% / %{psp2::%player%::2}%"
+                        message ""
+
+                        if {_disponibilidade} is 1:
+                            make gui slot {_slot} with 1 nether star with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Rei Carvalho: ""},{""bold"":true,""color"":""aqua"",""text"":""%{_team1}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Rei Barro: ""},{""bold"":true,""color"":""aqua"",""text"":""%{_team2}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Rank: ""},{""bold"":true,""color"":""aqua"",""text"":""/""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""aqua"",""text"":""%loop-world%""}],""text"":""""}'}}":
+
+
+                                set {_teampsp} to {psp2::%player%::1}
+                                if {psp2::%player%::1} is 3:
+                                    set {_teampsp} to random integer between 1 and 2
+
+                                if {_teampsp} is 1:
+                                    set {_loc1placapsp} to 1
+                                    set {_loc2placapsp} to 2
+
+                                if {_teampsp} is 2:
+                                    set {_loc1placapsp} to 3
+                                    set {_loc2placapsp} to 4
+
+
+                                if {_teampsp} is 1:
+                                    set {_yaw} to {partidaplaca::%{_worlddpsp}%::5}           
+                                if {_teampsp} is 2:
+                                    set {_yaw} to {partidaplaca::%{_worlddpsp}%::6}           
+
+
+                                set {_loc1} to {partidaplaca::%{_worlddpsp}%::%{_loc1placapsp}%}
+                                set {_loc2} to {partidaplaca::%{_worlddpsp}%::%{_loc2placapsp}%}
+
+
+
+                                loop blocks between the block at {_loc1} and the block at {_loc2}:
+                                    loop-block is sign:
+                                        teleport player to location(loop-block's x-coordinate, loop-block's y-coordinate - 0.5, loop-block's z-coordinate, loop-block's world, {_yaw}, 70) 
+
+
+                            add 1 to {_slot}
+                        wait 2 tick
+
+                
+            open the last gui for the player
+                            
+        if arg-1 is 1:
+            create a gui with virtual chest inventory with 1 rows named "Busca Avançada":
+
+                if {psp2::%player%::1} is not set:
+                    set {psp2::%player%::1} to 3
+                if {psp2::%player%::2} is not set:
+                    set {psp2::%player%::2} to 1
+
+                if {psp2::%player%::1} is 1:
+                    set {_reitexto} to "Rei Carvalho"
+                if {psp2::%player%::1} is 2:
+                    set {_reitexto} to "Rei Barro"
+                if {psp2::%player%::1} is 3:
+                    set {_reitexto} to "Deselecionado"
+
+                if {psp2::%player%::2} is not 4:
+                    set {_versustext} to "%{psp2::%player%::2}%v%{psp2::%player%::2}%"
+                else:
+                    set {_versustext} to "Qualquer" 
+
+                make gui slot 1 with 1 wooden axe with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""bold"":true,""color"":""light_purple"",""text"":""%{_reitexto}%""}],""text"":""""}','{""extra"":[{""text"":""""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Botão Esquerdo: Rei Carvalho""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Botão Direito: Rei Barro""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Dropar: Deselecionado""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""Rei""}],""text"":""""}'},HideFlags:127}":
+
+                    if gui click type is left mouse button:
+                        set {psp2::%player%::1} to 1
+                    if gui click type is right mouse button:
+                        set {psp2::%player%::1} to 2
+                    if gui click type is drop key:
+                        set {psp2::%player%::1} to 3
+
+                    execute player command "partidapesquisar 1"
+                
+                make gui slot 3 with 1 netherite helmet with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""bold"":true,""color"":""light_purple"",""text"":""%{_versustext}%""}],""text"":""""}','{""extra"":[{""text"":""""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Botão Esquerdo: Aumentar""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Botão Direito: Diminuir""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""aqua"",""text"":""Jogadores""}],""text"":""""}'},HideFlags:127}":
+
+                    if gui click type is left mouse button:
+                        add 1 to {psp2::%player%::2}
+                    if gui click type is right mouse button:
+                        add -1 to {psp2::%player%::2}
+
+                    if {psp2::%player%::2} is 0:
+                        set {psp2::%player%::2} to 4
+                    if {psp2::%player%::2} is 5:
+                        set {psp2::%player%::2} to 1
+                    if {psp2::%player%::2} is 5:
+                        set {psp2::%player%::2} to 1
+
+                    execute player command "partidapesquisar 1"
+
+                set {_rankallplayers} to 0
+                loop all players:  
+                    add {rank::%loop-player%} to {_rankallplayers}
+                set {_rankallplayers} to {_rankallplayers} / amount of players
+
+                make gui slot 7 with 1 ender eye with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""Rank: %{rank::%player%}%/%{_rankallplayers}%""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""aqua"",""text"":""Online: %amount of players%""}],""text"":""""}','{""extra"":[{""text"":""""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""blue"",""text"":""Clique para iniciar a busca""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""green"",""text"":""Buscar""}],""text"":""""}'},HideFlags:127}":
+
+                    execute player command "partidapesquisar 3"
+
+
+            open the created gui for player 
+
+        if arg-1 is 2:
+
+            if {psspwait::%player%} is 0:
+                message "&7&oEspere um momento"
+                send action bar "&7&oEspere um momento"
+
+            if {psspwait::%player%} is 1:
+                message "&7&oBuscando partida"
+                set {psspwait::%player%} to 2
+
+
+            while {psspwait::%player%} is 2:
+                loop all worlds:
+                    if {psspwait::%player%} is 0:
+                        stop
+                    loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"  
+                    if {psspwait::%player%} is 3:
+                        stop loop
+                    wait 1 second
+                    set {_worldd} to name of loop-value
+                    replace "castlefight" in {_worldd} with ""
+                    amount of players in loop-value >= 1:
+                        loop all players in loop-value:
+                            if {rank::%loop-player%} is between {rank::%player%} and {rank::%player%} + 10:
+                                set {_rankcompativell} to 1
+                                send action bar "Rank Compativel Achado &7&o(%120 - {_time}%s, %loop-value-1%)" to player
+                            else:
+                                send action bar "Procurando rank compativel &7&o(%120 - {_time}%s, %loop-value-1%)" to player
+
+                            set {_reicarvalho} and {_reibarro} to 0
+
+                            if "%team of loop-player%" is "castelo1%world of loop-player%":
+                                add 1 to {_reicarvalho}
+                        
+                            if "%team of loop-player%" is "castelo2%world of loop-player%":
+                                add 1 to {_reibarro}
+                            
+
+                        if {_rankcompativell} is 1:
+
+                            if {_reicarvalho} > {_reibarro}:
+                                set {_disponibilidade} to 1
+                                set {_team} to 2
+                            
+                            if {_reicarvalho} < {_reibarro}:
+                                set {_disponibilidade} to 1
+                                set {_team} to 1
+
+                            if {_disponibilidade} is 1:
+                                send action bar "Partida encontrada com %amount of players in loop-value% jogador(es) em %loop-value%" to player
+                                set {pssplocplayer::%player%} to location of player
+
+                                set {psspwait::%player%} to 3
+
+                            else:
+                                send action bar "&c&lPartida indisponivel &7&o(%120 - {_time}%s, %loop-value%)" to player
+
+                    else:
+                        add 1 to {_time}
+                        send action bar "Procurando Partida &7&o(%120 - {_time}%s, %loop-value%)" to player
+                        if {_time} is 120:
+                            send action bar "&c&lNenhuma partida achada, crie uma" to player
+                            message "&c&lNenhuma partida foi achada, crie você mesmo uma partida indo nas estações."
+                            stop
+
+            if {psspwait::%player%} is 3:
+
+                while {psspwait::%player%} is 3:
+                    if {_team} is 1:
+                        set {_loc1placa} to 1
+                        set {_loc2placa} to 2
+
+                    if {_team} is 2:
+                        set {_loc1placa} to 3
+                        set {_loc2placa} to 4
+
+
+                    if {_team} is 1:
+                        set {_yaw} to {partidaplaca::%{_worldd}%::5}           
+                    if {_team} is 2:
+                        set {_yaw} to {partidaplaca::%{_worldd}%::6}           
+
+
+                    set {_loc1} to {partidaplaca::%{_worldd}%::%{_loc1placa}%}
+                    set {_loc2} to {partidaplaca::%{_worldd}%::%{_loc2placa}%}
+
+
+
+                    loop blocks between the block at {_loc1} and the block at {_loc2}:
+                        loop-block is sign:
+                            teleport player to location(loop-block's x-coordinate, loop-block's y-coordinate - 0.5, loop-block's z-coordinate, loop-block's world, {_yaw}, 70) 
+
+
+                    send title "&b&lPARTIDA ENCONTRADA" with subtitle "&bClique com o botão direito para entrar" to player for 1 seconds with fadein 0 second and fade out 1 second
+                    send action bar "&bCaso queira sair, digite &n/pspc" to player
+
+                    wait 1 tick
+        
+        if arg-1 is not set:
+            if {psspwait::%player%} is 0:
+                message "&7&oEspere um momento"
+                send action bar "&7&oEspere um momento"
+                stop
+            create a gui with virtual chest inventory with 1 rows named "Tipo de Busca":
+                make gui slot 3 with 1 ender eye with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""Escolha qual ""},{""bold"":true,""color"":""dark_aqua"",""text"":""Rei""},{""color"":""dark_aqua"",""text"":"", ""},{""bold"":true,""color"":""dark_aqua"",""text"":""Jogadores""},{""color"":""dark_aqua"",""text"":"" e""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""obtenha uma ""},{""bold"":true,""color"":""dark_aqua"",""text"":""Lista das Partidas""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""light_purple"",""text"":""Busca Completa""}],""text"":""""}'},HideFlags:127}":
+                    close player's inventory    
+                    execute player command "partidapesquisar 1"
+
+                make gui slot 5 with 1 ender pearl with nbt compound from "{display:{Lore:['{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""bold"":true,""color"":""dark_aqua"",""text"":""Recomendado""},{""color"":""dark_aqua"",""text"":"" para quem""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""color"":""dark_aqua"",""text"":""quer achar rapido uma ""}],""text"":""""}','{""italic"":false,""color"":""white"",""extra"":[{""text"":""""},{""bold"":true,""color"":""dark_aqua"",""text"":""Partida""}],""text"":""""}'],Name:'{""italic"":false,""extra"":[{""text"":""""},{""bold"":true,""color"":""yellow"",""text"":""Busca Cega""}],""text"":""""}'},HideFlags:127}":
+                    execute player command "partidapesquisar 2"
+                    close player's inventory
+
+
+            open the created gui for player 
+
+
+
+

@@ -1,8 +1,9 @@
 
 every 1 second:
     loop all worlds:
-        
+        loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"  
         add -1 to {Padeirotimer1::%loop-world%}, {Padeirotimer2::%loop-world%} and {exiladotimer::%loop-world%}
+
 
 on npc right click:
     set {_team} to "%team of player%"

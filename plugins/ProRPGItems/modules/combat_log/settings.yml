@@ -9,62 +9,62 @@ general:
       text: '&6[%time%] &r%message% %damage% %defense% %details% %weapon%'
       buttons:
         damage:
-          name: '&c&l[Dano]'
+          name: '&c&l[Damage]'
           text:
-          - '&6▸ &ePoder de Ataque: &6%attack_power%%'
+          - '&6▸ &eAttack Power: &6%attack_power%%'
           - '&7'
-          - '&6▸ &eTipo de Dano: &6%amount% &7de &6%raw% &c(%percent%%)'
+          - '&6▸ &e%damage_type%: &6%amount% &7of &6%raw% &c(%percent%%)'
           - '&7'
-          - '&e&lTotal: &6%amount_total% &7de &6%raw_total% &c(%percent_total%%)'
+          - '&e&lTotal: &6%amount_total% &7of &6%raw_total% &c(%percent_total%%)'
         defense:
-          name: '&b&l[Defesa]'
+          name: '&b&l[Defense]'
           text:
-          - '&9&l&nDano Defendido'
+          - '&9&l&nDefended Damage'
           - '&7'
-          - '&3▸ &b%defense_type%: &f%amount% &7de &f%damage% &9(%percent%%)'
+          - '&3▸ &b%defense_type%: &f%amount% &7of &f%damage% &9(%percent%%)'
           - '&7'
-          - '&b&lTotal: &f%amount_total% &7de &f%damage_total% &9(%percent_total%%)'
+          - '&b&lTotal: &f%amount_total% &7of &f%damage_total% &9(%percent_total%%)'
         details:
-          name: '&e&l[Detalhes]'
+          name: '&e&l[Details]'
           text:
-          - '&2▸ &aModificador Direto: &2x%direct_modifier%'
-          - '&2▸ &aModificador Crítico: &2x%critical_modifier%'
-          - '&2▸ &aModificador de Bloqueio: &2x%block_modifier%'
-          - '&2▸ &aPenetração de Defesa: &2x%penetrate_modifier%'
-          - '&2▸ &aModificador PvP/PvE: &2x%pvpe_modifier%'
-          - '&2▸ &aFator de Proteção de Encantamento: &2x%enchantment_protection_factor%'
+          - '&2▸ &aDirect Modifier: &2x%direct_modifier%'
+          - '&2▸ &aCritical Modifier: &2x%critical_modifier%'
+          - '&2▸ &aBlock Modifier: &2x%block_modifier%'
+          - '&2▸ &aDefense Penetration: &2x%penetrate_modifier%'
+          - '&2▸ &aPvE/PvP Modifier: &2x%pvpe_modifier%'
+          - '&2▸ &aEnchant Protection Factor: &2x%enchantment_protection_factor%'
         weapon:
-          name: '&d&l[Arma]'
+          name: '&d&l[Weapon]'
 messages:
   ignore-zero-damage: false
   types:
     NORMAL:
       enabled: true
       messages:
-        damager: '&e*** Você causou &7%damage% &ede dano a &7%entity%&e. ***'
-        victim: '&c***  ,&7%entity% &causou &7%damage% &cde dano a você. ***'
+        damager: '&e*** You dealt &7%damage% &edamage to &7%entity%&e. ***'
+        victim: '&c*** &7%entity% &cdealt &7%damage% &cdamage to you. ***'
         indicator: ''
       sound: NONE
     CRITICAL:
       enabled: true
       messages:
-        damager: '&e*** &lCrítico! &eVocê causou &7%damage% &ede dano a &7%entity%&e. ***'
-        victim: '&d*** &lCrítico! &7%entity% &dcausou &7%damage% &ddano a você. ***'
-        indicator: '&8[&c&lCrítico!&8]'
+        damager: '&e*** &lCritical! &eYou dealt &7%damage% &edamage to &7%entity%&e. ***'
+        victim: '&d*** &lCritical! &7%entity% &ddealt &7%damage% &ddamage to you. ***'
+        indicator: '&8[&c&lCritical!&8]'
       sound: ENTITY_GENERIC_EXPLODE
     DODGE:
       enabled: true
       messages:
-        damager: '&6*** &7%entity% &6esquivou do seu ataque! ***'
-        victim: '&6*** Você esquivou do ataque de &7%entity% &6! ***'
-        indicator: '&8[&b&lEsquiva!&8]'
+        damager: '&6*** &7%entity% &6has dodged your attack! ***'
+        victim: '&6*** You has dodged &7%entity% &6attack! ***'
+        indicator: '&8[&b&lDodge!&8]'
       sound: BLOCK_SNOW_FALL
     BLOCK:
       enabled: true
       messages:
-        damager: '&6*** &7%entity% &6bloqueou &7%block%% &6do seu ataque! Dano total: &7%damage% &6***'
-        victim: '&6*** Você bloqueou &7%block%% &6do ataque de &7%entity%&6! Dano total: &7%damage% &6***'
-        indicator: '&8[&e&lBloqueado!&8]'
+        damager: '&6*** &7%entity% &6has blocked &7%block%% &6of your attack! Total damage: &7%damage% &6***'
+        victim: '&6*** You blocked &7%block%% &6of &7%entity% &6attack! Total damage: &7%damage% &6***'
+        indicator: '&8[&e&lBlocked!&8]'
       sound: BLOCK_ANVIL_PLACE
 indicators:
   enabled: true

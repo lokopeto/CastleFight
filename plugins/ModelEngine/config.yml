@@ -1,0 +1,23 @@
+Model-Engine:
+  Slerp-Mode: SLERP
+  Animation-Mode: B
+  Movement-Resolution: 0.001
+  Compress-Packet: true
+  Default-Animations:
+    IDLE: idle
+    WALK: walk
+    JUMP: jump
+    SPAWN: spawn
+    DEATH: death
+Model-Generator:
+  Register-Post-Server: true
+  Assets-Post-Server: true
+  Enable-Error: true
+  Debug-Level: 1
+  Namespace: modelengine
+  Compartment-Size: 1000
+  Create-Zip: true
+  Item-Model: LEATHER_HORSE_ARMOR
+Model-Calibrator:
+  Use-Calibration: true
+  Animation-Sync: 0.685

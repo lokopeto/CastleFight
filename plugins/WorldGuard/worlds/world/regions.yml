@@ -10,46 +10,49 @@
 # REMEMBER TO KEEP PERIODICAL BACKUPS.
 #
 regions:
-    lobby:
-        min: {x: -89, y: 228, z: -159}
-        max: {x: -5, y: 247, z: -115}
-        members: {}
-        flags: {sleep: deny, item-drop: deny, exp-drops: deny, item-pickup: deny,
-            pvp: deny, entity-painting-destroy: deny, entity-item-frame-destroy: deny,
-            mob-spawning: deny}
-        owners:
-            unique-ids: [d09f8eb8-ae7d-3caa-bb58-e29486b30db7]
-        type: cuboid
-        priority: 0
-    pracadasflores:
-        min: {x: -38, y: 45, z: -68}
-        max: {x: 53, y: 131, z: 53}
-        members: {}
-        flags: {natural-health-regen: deny, item-drop: deny, invincible: allow, game-mode: adventure,
-            fall-damage: deny, item-pickup: deny, item-frame-rotation: deny, leaf-decay: deny,
-            entity-painting-destroy: deny, entity-item-frame-destroy: deny, fire-spread: deny,
-            natural-hunger-drain: deny}
-        owners:
-            unique-ids: [d09f8eb8-ae7d-3caa-bb58-e29486b30db7]
-        type: cuboid
-        priority: 0
-    torneiro:
-        min: {x: 4, y: 64, z: -111}
-        max: {x: 53, y: 75, z: -74}
+    castelo:
+        min: {x: -97, y: 64, z: -66}
+        max: {x: 19, y: 150, z: 68}
         members: {}
         flags: {}
         owners:
-            unique-ids: [d09f8eb8-ae7d-3caa-bb58-e29486b30db7]
+            unique-ids: [ed5cee70-0798-3e13-b06c-47759ae5453b]
         type: cuboid
         priority: 0
-    londama:
-        min: {x: -55, y: 142, z: 100}
-        max: {x: -23, y: 162, z: 127}
+    floresta4:
+        min: {x: 20, y: 58, z: -120}
+        max: {x: 41, y: 136, z: 69}
         members: {}
-        flags:
-            command-on-entry: [/londamaentrada]
+        flags: {}
         owners:
-            unique-ids: [d09f8eb8-ae7d-3caa-bb58-e29486b30db7]
+            unique-ids: [ed5cee70-0798-3e13-b06c-47759ae5453b]
+        type: cuboid
+        priority: 0
+    floresta2:
+        min: {x: -161, y: 55, z: -112}
+        max: {x: -98, y: 147, z: 111}
+        members: {}
+        flags: {}
+        owners:
+            unique-ids: [ed5cee70-0798-3e13-b06c-47759ae5453b]
+        type: cuboid
+        priority: 0
+    floresta3:
+        min: {x: -101, y: 57, z: 69}
+        max: {x: 41, y: 136, z: 115}
+        members: {}
+        flags: {}
+        owners:
+            unique-ids: [ed5cee70-0798-3e13-b06c-47759ae5453b]
+        type: cuboid
+        priority: 0
+    floresta:
+        min: {x: -179, y: 48, z: -135}
+        max: {x: 62, y: 102, z: -67}
+        members: {}
+        flags: {}
+        owners:
+            unique-ids: [ed5cee70-0798-3e13-b06c-47759ae5453b]
         type: cuboid
         priority: 0
     __global__:

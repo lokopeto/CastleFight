@@ -12,9 +12,9 @@ lobby:
                 - inventory clear
                 - remove <server.spawned_npcs_flagged[player.<player.name>]>
 
-        on player right clicks block with:diamond_sword:
-            - if <player.location.in_region[lobby]>:
-                - execute as_player pronto
+        on player right clicks block with:recovery_compass:
+            - if <context.item.display.contains_text[Buscar Partida]>:
+                - execute as_player partidapesquisar
 
         on jogo command:
             - if <context.args.get[1]> = 1:
@@ -28,10 +28,12 @@ lobby:
             - if <context.origin_world.contains[castlefight]>:
                 - remove <server.spawned_npcs_flagged[player.<player.name>]>
 
+
         on server start:
             - foreach <server.npcs>:
                 - remove <[value]>
-            - execute as_server "jogo 0 castlefight1 castlefight2 castlefight3 castlefight4"
+            - wait 50t
+            - execute as_server "jogo 0 castlefight1 castlefight2 castlefight3 castlefight4 castlefight5 castlefight6"
 
 
 npcplacacreate:

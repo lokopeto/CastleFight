@@ -32,7 +32,6 @@ on skript start:
                 set line 3 of loop-block to "&bEntrar!"
                 set line 4 of loop-block to "&a= Barro ="
 
-
 on right click on warped sign:
 #    set line 1 of event-block to "&a=[🗡CF1🛡]="
 #    set line 2 of event-block to "&bClique para"
@@ -45,6 +44,7 @@ on right click on warped sign:
     line 2 of event-block contains "Clique para"
     line 3 of event-block contains "entrar!"
 
+
     set {_world} to line 1 of event-block
     set {_team} to line 4 of event-block
     replace "=[🗡CF" and "🛡]=" in {_world} with ""
@@ -52,96 +52,115 @@ on right click on warped sign:
     set {_world} to uncolored {_world}
     set {_team} to uncolored {_team}
 
-    set {psspwait::%player%} to 0 
+    if {lobbytimer::%player%::%{_world}%} is not set:
 
 
-    #=========
-    teleport event-entity to location of event-block
-    #========= JOGADOR ENTROU NO MUNDO
+        set {psspwait::%player%} to 0 
 
-    delete {prontoswitch::%player%}
+        set {lobbylembrar::%world of player%::%player%} to 1
 
-    set gamemode of player to adventure
+        teleport event-entity to location of event-block
 
-    make console execute command "ex run npcplacacreate def.player:%player% def.x:%x-coordinate of player% def.y:%y-coordinate of player% def.z:%z-coordinate of player%"
 
-    play sound "block.amethyst_block.fall" at location of player to all players
+        set gamemode of player to adventure
 
-    wait 1 tick
+        make console execute command "ex run npcplacacreate def.player:%player% def.x:%x-coordinate of player% def.y:%y-coordinate of player% def.z:%z-coordinate of player%"
 
-    set {placa::%uuid of player%::1} to location of event-block
-    set {placa::%uuid of player%::2} to line 1
-    set {placa::%uuid of player%::3} to line 4
+        play sound "block.amethyst_block.fall" at location of player to all players
 
-    set line 1 to ""
-    set line 2 to ""
-    set line 3 to ""
-    set line 4 to ""
+        wait 1 tick
 
-    if {_team} is "Carvalho":
-        teleport player to location(-15.5, 229, -136.5, world "castlefight%{_world}%", 90, 0)
-        add "cfcarvalho" to the scoreboard tags of player
-        make console execute command "team add castelo1%world of player%"
-        make console execute command "team join castelo1%world of player% %player%"
-        set {_teamnumb} to 1
-    if {_team} is "Barro":
-        teleport player to location(-77.5, 229, -136.5, world "castlefight%{_world}%", -90, 0)
-        add "cfbarro" to the scoreboard tags of player
-        make console execute command "team add castelo2%world of player%"
-        make console execute command "team join castelo2%world of player% %player%"
-        set {_teamnumb} to 2
+        set {placa::%uuid of player%::1} to location of event-block
+        set {placa::%uuid of player%::2} to line 1
+        set {placa::%uuid of player%::3} to line 4
 
-    set {lobbyworld::%uuid of player%} to world of player
+        set line 1 to ""
+        set line 2 to ""
+        set line 3 to ""
+        set line 4 to ""
 
-    add player to {lobbyplayers::%world of player%::*}
+        #=========
 
-#    if amount of players in world of player is 1:
-#        set {lobbyhost::%world of player%} to player
-#        set slot 4 of player to 1 diamond sword named "&bMenu"
-#        message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
-#        delete {ban::castlefight%{_world}%::*}
+        if {_team} is "Carvalho":
+            teleport player to location(-15.5, 229, -136.5, world "castlefight%{_world}%", 90, 0)
+            add "cfcarvalho" to the scoreboard tags of player
+            make console execute command "team add castelo1%world of player%"
+            make console execute command "team join castelo1%world of player% %player%"
+            set {_teamnumb} to 1
+        if {_team} is "Barro":
+            teleport player to location(-77.5, 229, -136.5, world "castlefight%{_world}%", -90, 0)
+            add "cfbarro" to the scoreboard tags of player
+            make console execute command "team add castelo2%world of player%"
+            make console execute command "team join castelo2%world of player% %player%"
+            set {_teamnumb} to 2
 
-    {jogo::%world of player%} is 0:
+        #========= JOGADOR ENTROU NO MUNDO
 
-        loop all players in world of player:
-            "%team of loop-player%" is "%team of player%":
-                set {_teamnomecastelo} to 1
-            
-        if {_teamnomecastelo} = 1:
-            set {castelo%{_teamnumb}%nome::%world of player%} to "Rei %name of player%"
+        set {pronto::%world of player%} to 0
 
-        set health of player to 20
-        set hunger of player to 20
-        clear the inventory of player
-        set total experience of player to 0
-    
+        delete {pontuaçãopartida::%player%::%world of player%::*}
 
-    set slot 8 of player to 1 clock named "&c/sair"
-    set slot 0 of player to 1 diamond sword named "&b/pronto"
+        delete {prontoswitch::%player%}
 
-    if {jogo::%world of player%} is 0:
-        set {_teammsn} to {_team}
+
+        set {lobbyworld::%uuid of player%} to world of player
+
+        add player to {lobbyplayers::%world of player%::*}
+
+    #    if amount of players in world of player is 1:
+    #        set {lobbyhost::%world of player%} to player
+    #        set slot 4 of player to 1 diamond sword named "&bMenu"
+    #        message "&6Você é o &a&lHost &6da partida, acesse os menus para iniciar a partida" to player
+    #        delete {ban::castlefight%{_world}%::*}
+
+        {jogo::%world of player%} is 0:
+
+            loop all players in world of player:
+                "%team of loop-player%" is "%team of player%":
+                    set {_teamnomecastelo} to 1
+                
+            if {_teamnomecastelo} = 1:
+                set {castelo%{_teamnumb}%nome::%world of player%} to "Rei%name of player%"
+
+            set health of player to 20
+            set hunger of player to 20
+            clear the inventory of player
+            set total experience of player to 0
+        
+
+            set slot 8 of player to 1 clock named "&c/sair"
+
+        if {jogo::%world of player%} is 0:
+            set {_teammsn} to {_team}
+        else:
+            set {_teammsn} to "%team of player%"
+
+        message "&e&l%player% &7entrou na partida no &a&lRei %{_teammsn}%" to all players in world of player
+    #    message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida"
+
+        {jogo::%world of player%} is 1:
+
+            "%team of player%" is "castelo1%world of player%":
+                loop all entities in world of player:
+                    if loop-entity has scoreboard tag "rei1":
+                        teleport player to loop-entity
+
+            "%team of player%" is "castelo2%world of player%":
+                loop all entities in world of player:
+                    if loop-entity has scoreboard tag "rei2":
+                        teleport player to loop-entity 
+
+            clear inventory of player
+
+        add player to {jogadoresdesistir::%world of player%::*}
+
+        make console execute command "ex flag <player[%player%]> global:!"
+
     else:
-        set {_teammsn} to "%team of player%"
 
-    message "&e&l%player% &7entrou na partida no &a&lRei %{_teammsn}%" to all players in world of player
-#    message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida"
+        message "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente"
+        send action bar "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente"
 
-    {jogo::%world of player%} is 1:
-
-        "%team of player%" is "castelo1%world of player%":
-            loop all entities in world of player:
-                if loop-entity has scoreboard tag "rei1":
-                    teleport player to loop-entity
-
-        "%team of player%" is "castelo2%world of player%":
-            loop all entities in world of player:
-                if loop-entity has scoreboard tag "rei2":
-                    teleport player to loop-entity 
-
-    add player to {jogadoresdesistir::%world of player%::*}
-
-    make console execute command "ex flag <player[%player%]> global:!"
 
 on quit:
     world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
@@ -185,28 +204,45 @@ on quit:
 
 
 
-command /pronto:
-    cooldown: 1 second
-    trigger:
-        {jogo::%world of player%} is 0
-        amount of players in world of player > 1
-
-
-        if {prontoswitch::%player%} is not set: #true
-            set {prontoswitch::%player%} to 1
-            add 1 to {pronto::%world of player%}
-            message "&7&o%player% está pronto!" to all players in world of player
-            send action bar "&7&oVocê está pronto para jogar!"
-            make console execute command "ppo %player% add glow overhead"
-            play sound "item.crossbow.shoot" to all players in world of player
-
-        else: #false
-            delete {prontoswitch::%player%}
-            add -1 to {pronto::%world of player%}
-            message "&7&o%player% não está pronto!" to all players in world of player
-            send action bar "&7&oVocê não está mais pronto para jogar!"
-            make console execute command "ppo %player% reset"
-            play sound "item.crossbow.hit" to all players in world of player
+#command /pronto:
+#    cooldown: 1 second
+#    trigger:
+#        {jogo::%world of player%} is 0
+#
+#        loop all players in world of player:
+#            "%team of loop-player%" is "castelo1%world of player%":
+#                add 1 to {_team1}
+#
+#            "%team of loop-player%" is "castelo2%world of player%":
+#                add 1 to {_team2}
+#
+#        if {_team1} is {_team2}:
+#
+#            amount of players in world of player is 2, 4 or 6:
+#
+#                if {prontoswitch::%player%} is not set: #true
+#                    set {prontoswitch::%player%} to 1
+#                    add 1 to {pronto::%world of player%}
+#                    message "&7&o%player% está pronto!" to all players in world of player
+#                    send action bar "&7&oVocê está pronto para jogar!"
+#                    make console execute command "ppo %player% add glow overhead"
+#                    play sound "item.crossbow.shoot" to all players in world of player
+#
+#                else: #false
+#                    delete {prontoswitch::%player%}
+#                    add -1 to {pronto::%world of player%}
+#                    message "&7&o%player% não está pronto!" to all players in world of player
+#                    send action bar "&7&oVocê não está mais pronto para jogar!"
+#                    make console execute command "ppo %player% reset"
+#                    play sound "item.crossbow.hit" to all players in world of player
+#
+#            else:
+#                message "&7&o&lJogadores desequilibrados ou insuficientes"
+#                send action bar "&7&o&lJogadores desequilibrados ou insuficientes"
+#
+#        else:
+#            message "&7&o&lJogadores desequilibrados ou insuficientes"
+#            send action bar "&7&o&lJogadores desequilibrados ou insuficientes"
 
 
 
@@ -214,24 +250,59 @@ every 1 second:
     loop all worlds:
         loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
             if {jogo::%loop-world%} is 0:
+
+                if amount of players in loop-world is 1 or 0:
+                    set {_time} to 60
+
+                if amount of players in loop-world is 2 or 3:
+                    set {_time} to 30
+
+                if amount of players in loop-world is 4 or 5:
+                    set {_time} to 15
+
+                if amount of players in loop-world is 6:
+                    set {_time} to 15
+
                 set {_amountplayers} to amount of players in loop-world
-                if {_amountplayers} is 1:
-                    set {_amountplayers} to -1
+                if {_amountplayers} is 1 or 0:
+                    delete {_amountplayers}
+                    send action bar "&lEsperando Jogadores" to all players in loop-world
+
                 if {partidacountdown::%loop-world%} > 0:
-                    if {pronto::%loop-world%} is {_amountplayers}:
-                        if {partidacountdown::%loop-world%} is 15:
-                            message "&lA partida ira começar em %{partidacountdown::%loop-world%}% segundos" to all players in loop-world
+                    if {_amountplayers} is 2, 4 or 6:
+                        loop all players in loop-world:
+                            "%team of loop-player%" is "castelo1%loop-world%":
+                                add 1 to {_team1players}
+                            "%team of loop-player%" is "castelo2%loop-world%":
+                                add 1 to {_team2players}
+
+                        if {_team1players} is {_team2players}:
+
+                            if {partidacountdown::%loop-world%} is {_time}:
+                                message "&lA partida ira começar em %{partidacountdown::%loop-world%}% segundos" to all players in loop-world
+                                add -1 to {partidacountdown::%loop-world%}
+                            else:
+                                message "&l&o..em %{partidacountdown::%loop-world%}%" to all players in loop-world
+                                add 0.2 to {partidacountdownpitch::%loop-world%}
+                                add 0.08 to {partidacountdownvolume::%loop-world%}
+
+                                play sound "block.amethyst_cluster.hit" with volume {partidacountdownvolume::%loop-world%} with pitch {partidacountdownpitch::%loop-world%} for all players in loop-world
+
+                                add -1 to {partidacountdown::%loop-world%}
                         else:
-                            message "&l&o..em %{partidacountdown::%loop-world%}%" to all players in loop-world
-                            add 0.2 to {partidacountdownpitch::%loop-world%}
-                            add 0.08 to {partidacountdownvolume::%loop-world%}
-
-                            play sound "block.amethyst_cluster.hit" with volume {partidacountdownvolume::%loop-world%} with pitch {partidacountdownpitch::%loop-world%} for all players in loop-world
-
-                        add -1 to {partidacountdown::%loop-world%}
+                            set {partidacountdown::%loop-world%} to {_time}
+                            delete {partidacountdownpitch::%loop-world%} and {partidacountdownvolume::%loop-world%}
+                            send action bar "&7&o&lJogadores desequilibrados" to all players in loop-world
+    
                     else:
-                        set {partidacountdown::%loop-world%} to 15
+                        set {partidacountdown::%loop-world%} to {_time}
                         delete {partidacountdownpitch::%loop-world%} and {partidacountdownvolume::%loop-world%}
+                        if amount of players in loop-world is 1:
+                            send action bar "&7&o&lEsperando Jogadores" to all players in loop-world
+                        else:
+                            send action bar "&7&o&lJogadores insuficientes" to all players in loop-world
+
+
 
                 else:
                     set {chance::%loop-world%} to 25
@@ -263,18 +334,25 @@ every 1 second:
 #sistema de fechar partida
 On Player World Change:
     past event-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
-        if {jogo::%past event-world%} is 1:
-            set {_world} to past event-world
-            message "&7%player% saiu da partida" to all players in past event-world
+        if {jogo::%past event-world%} is 0:
+            message "&e&l%player% &7&osaiu da partida" to all players in past event-world
+            play sound "block.amethyst_block.resonate" at location of player to all players in past event-world
 
-            if amount of players in past event-world is 1:
-                message "&7&oParece meio solitario ai.. mas processador não da em arvore!" to all players in past event-world
+        set {_world} to past event-world
+
+        wait 50 ticks
+
+        if {jogo::%{_world}%} is 1:
+            message "&7%player% saiu da partida" to all players in {_world}
+
+            if amount of players in {_world} is 1:
+                message "&7&oParece meio solitario ai.. mas processador não da em arvore!" to all players in {_world}
 
                 wait 3 second
 
-            if amount of players in past event-world is 1:
+            if amount of players in {_world} is 1:
                 set {_time} to 30
-                message "&7&oO servidor será fechado em %{_time}%" to all players in past event-world
+                message "&7&oA partida será fechada em %{_time}%" to all players in {_world}
 
             wait 1 second
 
@@ -283,18 +361,18 @@ On Player World Change:
                 message "&7&o..em %{_time}%" to all players in {_world}
                 if {_time} <= 0:
                     make all players in {_world} execute command "sair"
-                    make console execute command "jogo 0 %loop-world%"
+                    make console execute command "jogo 0 %{_world}%"
 
                 wait 1 second
      
-
-
+        #sistema de items para gui
+on join:
+    set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
 
 
 
 command /sair:
     trigger:
-        wait 5 ticks
         world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
 
             play sound "block.amethyst_block.resonate" at location of player to all players
@@ -302,11 +380,12 @@ command /sair:
             if {prontoswitch::%player%} is 1:
                 add -1 to {pronto::%world of player%}
 
+            set {_timer} to 30
 
+            set {lobbytimer::%world of player%::%{_world}%} to {_timer}
 
             set {partidacountdown::%world of player%} to 15
 
-            set {psspwait::%player%} to 1
 
 #            if {lobbyhost::%world of player%} is player:
 
@@ -325,16 +404,24 @@ command /sair:
                 if {jogo::%world of player%} is 1:
                     make console execute command "jogo 0 %world of player%"
 
-            set health of player to 20
-            set hunger of player to 20
-            set total experience of player to 0
 
             teleport player to {placa::%uuid of player%::1}
 
             clear inventory of player
 
+
+            set {psspwait::%player%} to 1
+
+            set health of player to 20
+            set hunger of player to 20
+            set total experience of player to 0
+
             make console execute command "team leave %player%"
 
+
+        wait 1 tick
+
+        set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
 
 
         world of player is "world":
@@ -499,7 +586,10 @@ command /partidateminar [<number>] [<world>]:
                     make console execute command "npc remove"
             
 
-
+on join:
+    message "&e%player% entrou no servidor" to all players in world "world"
+on quit:
+    message "&e%player% saiu do servidor" to all players in world "world"
 
 
 

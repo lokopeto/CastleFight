@@ -1,7 +1,8 @@
 variables:
     {placalevelmax} = 60
 
-
+on load:
+    set {jogo::world} to 0
 
 on death:
     attacker is a player:
@@ -188,6 +189,9 @@ command /fogo:
 command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
     executable by: console
     trigger:
+        set {_world} to name of arg-2
+        replace "castlefight" in {_world} with ""
+
         if arg-1 is 1: 
             set {jogo::%arg-2%} to 1
 
@@ -216,9 +220,17 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
 #            make console execute command "team modify castelo1 displayName {""text"":""%{castelo1nome::%arg-2%}%""}"     
 #            make console execute command "team modify castelo2 displayName {""text"":""%{castelo2nome::%arg-2%}%""}" 
             wait 10 ticks
-            make console execute command "execute in minecraft:%arg-2% run kill @e[type=minecraft:item]"    
+            make console execute command "execute in minecraft:%arg-2% run kill @e[type=minecraft:item]"   
+
+            loop all players in world arg-2:
+                loop 6 times:
+                    set {pontuaçãopartida::%loop-player%::%world of loop-player%::%loop-integer%} to 0
+            make console execute command "loopblocksdeform %{_world}%"
+
+
         if arg-1 is 0:
             set {jogo::%arg-2%} to 0
+            set {pronto::%arg-2%} to 0
 
             set {level::%arg-2%} to 5
             set max health of all players in world arg-2 to 10.0
@@ -254,6 +266,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
                     kill loop-entity
             
             clear all the potion effects of all players in world arg-2
+
             make console execute command "execute in minecraft:%arg-2% run kill @e[type=!minecraft:player]"
             wait 1 tick
             make console execute command "fogo"
@@ -286,27 +299,29 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             make console execute command "execute in minecraft:%arg-2% run setblock 134 152 26 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             make console execute command "execute in minecraft:%arg-2% run setblock 134 152 19 chest[facing=east,type=right]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
             make console execute command "execute in minecraft:%arg-2% run setblock 134 152 18 chest[facing=east,type=left]{CustomName:'[{""text"":""Bau do (%{castelo1nome::%arg-2%}%)"",""italic"":false}]'} replace"
-            wait 50 tick
+            wait 10 tick
             make console execute command "casasncpsfawe 1 1 1 w@%arg-2%"
-            wait 50 tick
+            wait 10 tick
             make console execute command "casasncpsfawe 1 2 1 w@%arg-2%"
-            wait 50 tick
+            wait 10 tick
             make console execute command "casasncpsfawe 1 3 5 w@%arg-2%"
-            wait 50 tick
+            wait 10 tick
             make console execute command "casasncpsfawe 1 4 5 w@%arg-2%"
-            wait 50 tick
+            wait 10 tick
             make console execute command "casasncpsfawe 2 1 1 w@%arg-2%"
-            wait 50 tick
+            wait 10 tick
             make console execute command "casasncpsfawe 2 2 1 w@%arg-2%"
-            wait 50 tick
+            wait 10 tick
             make console execute command "casasncpsfawe 2 3 5 w@%arg-2%"
-            wait 50 tick
+            wait 10 tick
             make console execute command "casasncpsfawe 2 4 5 w@%arg-2%"
             set {XPquant1::%arg-2%} to 0
             set {XPquant2::%arg-2%} to 0
             wait 1 second
             set {XPquant1::%arg-2%} to 0
             set {XPquant2::%arg-2%} to 0
+
+            make console execute command "loopblocksreform %{_world}%"
 
             if arg-3 is "castlefight2":
                 make console execute command "jogo 0 %arg-3% castlefight3"
@@ -323,6 +338,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             if arg-3 is "castlefight6":
                 make console execute command "jogo 0 %arg-3%"
 
+
 on death:
     victim is a entity
     name of victim is "%{castelo1nome::%world of victim%}%":
@@ -331,3 +347,43 @@ on death:
     name of victim is "%{castelo2nome::%world of victim%}%":
         message "&a%{castelo1nome::%world of victim%}% ganhou!" to all players in world of victim
         make console execute command "partidateminar 2 %world of victim%"
+    
+    if name of victim is {castelo1nome::%world of victim%} or {castelo2nome::%world of victim%}:
+
+        set {_world} to "%world of victim%"
+        replace "castlefight" in {_world} with ""
+
+        loop all players in world of victim:
+
+            set {pontuaçãopartida::%loop-player%::%world of loop-player%::1} to 0
+
+            #soma
+            set {_score::1} to {pontuaçãopartida::%loop-player%::%world of loop-player%::2} + {pontuaçãopartida::%loop-player%::%world of loop-player%::4}
+            set {_score::2} to {pontuaçãopartida::%loop-player%::%world of loop-player%::3} + {pontuaçãopartida::%loop-player%::%world of loop-player%::5}
+
+            #divisão
+            set {_score::1} to {_score::1} / 2
+            set {_score::2} to {_score::2} / 2
+
+            #subtração
+            set {pontuaçãopartida::%loop-player%::%world of loop-player%::1} to {_score::1} - {_score::2}
+
+            if {pontuaçãopartida::%loop-player%::%world of loop-player%::1} is > 0:
+                set {_messagerank} to "subiu para"
+            if {pontuaçãopartida::%loop-player%::%world of loop-player%::1} is < 0:
+                set {_messagerank} to "desceu para"
+            if {pontuaçãopartida::%loop-player%::%world of loop-player%::1} is = 0:
+                set {_messagerank} to "é"
+
+            message "&a=[🗡 Castle Fight %{_world}% 🛡]=" to loop-player
+            message "" to loop-player
+            message "Pontuação = %{pontuaçãopartida::%loop-player%::%world of loop-player%::1}%" to loop-player #1
+            message "Assasinatos = %{pontuaçãopartida::%loop-player%::%world of loop-player%::2}%" to loop-player #2
+            message "Mortes = %{pontuaçãopartida::%loop-player%::%world of loop-player%::3}%" to loop-player #3
+            message "Assasinatos (naturais) = %{pontuaçãopartida::%loop-player%::%world of loop-player%::4}%" to loop-player #4
+            message "Mortes (naturais) = %{pontuaçãopartida::%loop-player%::%world of loop-player%::5}%" to loop-player #5
+            message "Ovos pegos = %{pontuaçãopartida::%loop-player%::%world of loop-player%::6}%" to loop-player #6
+            message "" to loop-player
+            message "&a= Seu Rank %{_messagerank}% %{rank::%player%}% =" to loop-player
+
+            delete {pontuaçãopartida::%loop-player%::%world of loop-player%::*}

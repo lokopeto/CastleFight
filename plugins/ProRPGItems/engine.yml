@@ -52,7 +52,7 @@ attributes:
       # When enabled, all mobs equipment will be affected to the durability stat.
       mobs: true
       # When enabled, casting SkillAPI skills will reduce the durability of an item in hand.
-      skill-api-skills: false
+      skill-api-skills: true
   # When enabled, mobs will be able to use all the plugin attributes: dealing custom damage, protecting by custom defense, etc.
   effective-for-mobs: true
   # When enabled, attributes from an offhand item will have effect as well.
@@ -78,7 +78,7 @@ combat:
   # This setting DOES NOT AFFECT THE REAL PLAYER'S HEALTH!
   # This only reduces the VISUAL HEART DISPLAY to save the screen's space.
   # NOTE: Sometimes this setting may have weird behavior with result of visual death bugs. This is either a plugin conflict or a Spigot bug.
-  compress-player-health-bar: true
+  compress-player-health-bar: false
   # When enabled, Fishing Rod can be used to damage entities by Fishing hook.
   fishing-hook-do-damage: true
   # When enabled, Bows will do the full damage (depends on Damage Attributes) in melee combat.
@@ -167,7 +167,7 @@ lore:
                 single: '%min%+'
                 range: '%min%-%max%'
           class:
-            enabled: false
+            enabled: true
             name: 'Player Class'
             format:
               main: '&c%state%%name%: %value%'

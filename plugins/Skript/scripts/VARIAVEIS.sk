@@ -1,7 +1,7 @@
 on load:
     message {rank::%player%} #rank dos jogadores por numero entre 1 e 30 
     message {level::%player%} #level dos jogadores
-    message {jogo::%world%} #1 = se a partida esta acontecendo [] 2 = se a partida nao esta acontecendo
+    message {jogo::%world%} #1 = se a partida esta acontecendo [] 0 = se a partida nao esta acontecendo
 
 
 

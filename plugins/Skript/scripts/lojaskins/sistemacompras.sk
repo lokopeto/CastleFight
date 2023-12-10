@@ -6,22 +6,21 @@ command /buy [<text>] [<player>] [<text>] [<number>]:
             add 1 to {inventario::%player%::%arg-3%::%arg-4%}
             send "compra realizada"
 
-command /haveskin [<text>] [<player>] [<text>] [<number>]:
+command /haveskin [<player>] [<text>] [<number>]:
+#                  #player    #tipo    #id
+    
     permission: lojaskins.cmd
     trigger:
-        if arg-1 is "type1":
-            if arg-3 is "castelo":
-                if {inventario::%arg-2%::%arg-3%::%arg-4%} > 0:
-                    send "voce tem %{inventario::%arg-2%::%arg-3%::%arg-4%}%"
-                else:
-                    send "nao tem"
+        if {inventario::%arg-1%::%arg-2%::%arg-3%} > 0:
+            send "voce tem %{inventario::%arg-1%::%arg-2%::%arg-3%}% %{skinnome::%arg-2%::%arg-3%}% de %arg-2%"
+        else:
+            send "nao tem"
 #{inventario::player::tipodeskin::id}
 
-on first join:
-    set {inventario::%player%::castelo::1} to 1
-    set {inventario::%player%::arma::1} to 1
-    set {inventario::%player%::arco::1} to 1
-    set {inventario::%player%::crossbow::1} to 1
-    set {inventario::%player%::armadura::1} to 1
-    loop {mobsnomes::*}:
-        set {inventario::%player%::%loop-integer%::1} to 1
+on join:
+    if {fisrtjoin::%player%} is not set: 
+        set {fisrtjoin::%player%} to 1
+        loop {mobsnomes::*}:
+            set {inventario::%player%::%loop-variable%::1} to 1
+        loop {tiposkinnome::*}:
+            set {inventario::%player%::%loop-variable%::1} to 1

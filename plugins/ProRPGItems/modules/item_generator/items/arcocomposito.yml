@@ -24,24 +24,6 @@ generator:
     reverse: true
     black-list:
     - BOW
-    model-data:
-      default:
-      - 1
-      - 2
-      - 3
-      special:
-        diamond_sword:
-        - 10
-        - 11
-        golden_sword:
-        - 12
-        - 13
-        axe:
-        - 30
-        - 40
-        armor:
-        - 20
-        - 22
     stat-modifiers:
       iron_sword:
         damage-types:
@@ -54,15 +36,21 @@ generator:
           CRITICAL_DAMAGE: 1.5
   user-requirements-by-level: {}
   enchantments:
-    minimum: 1
-    maximum: 2
+    minimum: 0
+    maximum: 0
     safe-only: false
-    list: {}
-    safe-levels: false
+    list:
+      sharpness: '1:2'
+      knockback: '1:2'
+      efficiency: '1:2'
+      silk_touch: 0:1
+      smite: '1:2'
+    safe-levels: true
   ammo-types:
     ARROW: 100.0
   hand-types:
     ONE: 100.0
+    TWO: 0.0
   damage-types:
     minimum: 1
     maximum: 2
@@ -79,8 +67,8 @@ generator:
       physical:
         chance: 100.0
         scale-by-level: 1.05
-        min: 10
-        max: 20
+        min: 7
+        max: 9
         flat-range: false
         round: false
       _vanilla_generic:
@@ -126,8 +114,8 @@ generator:
         flat-range: false
         round: false
   defense-types:
-    minimum: 1
-    maximum: 2
+    minimum: 0
+    maximum: 0
     lore-format:
     - '%DEFENSE_PHYSICAL%'
     - '%DEFENSE_MAGICAL%'
@@ -139,9 +127,9 @@ generator:
     list:
       physical:
         chance: 0.0
-        scale-by-level: 1.025
-        min: 3.25
-        max: 8.75
+        scale-by-level: 1.05
+        min: 6
+        max: 10
         flat-range: false
         round: false
       magical:
@@ -181,7 +169,7 @@ generator:
         round: false
   item-stats:
     minimum: 1
-    maximum: 4
+    maximum: 2
     lore-format:
     - '%ITEM_STAT_AOE_DAMAGE%'
     - '%ITEM_STAT_CRITICAL_RATE%'
@@ -213,28 +201,28 @@ generator:
     - ''
     list:
       critical_rate:
-        chance: 20.0
-        scale-by-level: 1.025
-        min: 3.0
-        max: 6.25
+        chance: 0.0
+        scale-by-level: 1.1
+        min: 1.0
+        max: 2.25
         flat-range: false
         round: false
       critical_damage:
-        chance: 20.0
+        chance: 0.0
         scale-by-level: 1.025
         min: 1.1
         max: 1.25
         flat-range: false
         round: false
       dodge_rate:
-        chance: 10.0
+        chance: 0.0
         scale-by-level: 1.025
         min: 2.5
         max: 4.0
         flat-range: false
         round: false
       accuracy_rate:
-        chance: 10.0
+        chance: 0.0
         scale-by-level: 1.025
         min: 4.5
         max: 7.5
@@ -255,14 +243,14 @@ generator:
         flat-range: false
         round: false
       vampirism:
-        chance: 5.0
+        chance: 0.0
         scale-by-level: 1.025
         min: 1.5
         max: 4.5
         flat-range: false
         round: false
       burn_rate:
-        chance: 8.0
+        chance: 0.0
         scale-by-level: 1.025
         min: 4.5
         max: 12.5
@@ -272,14 +260,14 @@ generator:
         chance: 0.0
         scale-by-level: 1.025
         min: 150
-        max: 700
+        max: 900
         flat-range: false
         round: false
       penetration:
-        chance: 6.0
-        scale-by-level: 1.025
-        min: 4.5
-        max: 10.0
+        chance: 100.0
+        scale-by-level: 1.05
+        min: 1.0
+        max: 2.25
         flat-range: false
         round: false
       loot_rate:
@@ -290,109 +278,109 @@ generator:
         flat-range: false
         round: false
       movement_speed:
-        chance: 3.5
+        chance: 0.0
         scale-by-level: 1.025
         min: 7.5
         max: 15.0
         flat-range: false
         round: false
       attack_speed:
-        chance: 4.75
+        chance: 0.0
         scale-by-level: 1.025
         min: 5.0
         max: 10.0
         flat-range: false
         round: false
       max_health:
-        chance: 10.0
-        scale-by-level: 1.025
-        min: 5.0
-        max: 10.0
+        chance: 0.0
+        scale-by-level: 1.035
+        min: 1.0
+        max: 5.0
         flat-range: false
         round: false
       aoe_damage:
-        chance: 5
+        chance: 0
         scale-by-level: 1.025
         min: 5.0
         max: 10.0
         flat-range: false
         round: false
       range:
-        chance: 20.0
+        chance: 0.0
         scale-by-level: 1.025
         min: 5.0
         max: 25.0
-      health_regen:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: 0
-        max: 0
-        flat-range: false
-        round: false
-      pvp_defense:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: 0
-        max: 0
-        flat-range: false
-        round: false
       disarm_rate:
-        chance: 20.0
-        scale-by-level: 1.0
-        min: 1
-        max: 5
-        flat-range: false
-        round: false
-      mana_regen:
         chance: 0.0
         scale-by-level: 1.0
-        min: 0
-        max: 0
+        min: '0'
+        max: '0'
         flat-range: false
         round: false
       sale_price:
         chance: 0.0
         scale-by-level: 1.0
-        min: 0
-        max: 0
-        flat-range: false
-        round: false
-      pve_defense:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: 0
-        max: 0
-        flat-range: false
-        round: false
-      thornmail:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: 0
-        max: 0
+        min: '0'
+        max: '0'
         flat-range: false
         round: false
       pve_damage:
         chance: 0.0
         scale-by-level: 1.0
-        min: 0
-        max: 0
+        min: 5.0
+        max: 10.0
+        flat-range: false
+        round: false
+      mana_regen:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: '0'
+        max: '0'
+        flat-range: false
+        round: false
+      pvp_damage:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 2.0
+        max: 3.0
         flat-range: false
         round: false
       bleed_rate:
         chance: 0.0
         scale-by-level: 1.0
-        min: 0
-        max: 0
+        min: '0'
+        max: '0'
+        flat-range: false
+        round: false
+      thornmail:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: '0'
+        max: '0'
+        flat-range: false
+        round: false
+      pvp_defense:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: '0'
+        max: '0'
+        flat-range: false
+        round: false
+      pve_defense:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: '0'
+        max: '0'
+        flat-range: false
+        round: false
+      health_regen:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 0.2
+        max: 0.5
         flat-range: false
         round: false
       base_attack_speed:
-        chance: 0.0
-        scale-by-level: 1.0
-        min: 0
-        max: 0
-        flat-range: false
-        round: false
-      pvp_damage:
         chance: 0.0
         scale-by-level: 1.0
         min: 0
@@ -437,7 +425,7 @@ generator:
   sockets:
     GEM:
       minimum: 0
-      maximum: 0
+      maximum: 2
       lore-format:
       - '&8&m               &f  「 GEMS 」  &8&m               '
       - '%SOCKET_GEM_COMMON%'
@@ -449,7 +437,7 @@ generator:
           chance: 15.0
     ESSENCE:
       minimum: 0
-      maximum: 0
+      maximum: 2
       lore-format:
       - '&8&m               &f  「 ESSENCES 」  &8&m               '
       - '%SOCKET_ESSENCE_DEFAULT%'
@@ -458,7 +446,7 @@ generator:
           chance: 35.0
     RUNE:
       minimum: 0
-      maximum: 0
+      maximum: 2
       lore-format:
       - '&8&m               &f  「 RUNES 」  &8&m               '
       - '%SOCKET_RUNE_DEFAULT%'
@@ -468,5 +456,11 @@ generator:
   skills:
     minimum: 0
     maximum: 0
-    list: {}
+    list:
+      ability-1:
+        chance: 0.0
+        min-level: 1
+        max-level: 1
+        lore-format:
+        - '&bSample Ability: &7[&f%level%&7]'
 target-requirements: {}

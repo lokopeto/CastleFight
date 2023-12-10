@@ -1,9 +1,0 @@
-{
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:cold_ocean": "2023-06-22 15:07:13 -0300"
-    },
-    "done": false
-  },
-  "DataVersion": 3218
-}
