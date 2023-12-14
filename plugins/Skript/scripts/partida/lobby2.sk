@@ -122,7 +122,7 @@ on right click on warped sign:
             if {_teamnomecastelo} = 1:
                 set {castelo%{_teamnumb}%nome::%world of player%} to "Rei%name of player%"
 
-            set health of player to 20
+            set max health of player to 20
             set hunger of player to 20
             clear the inventory of player
             set total experience of player to 0
@@ -412,7 +412,7 @@ command /sair:
 
             set {psspwait::%player%} to 1
 
-            set health of player to 20
+            set max health of player to 20
             set hunger of player to 20
             set total experience of player to 0
 

@@ -194,6 +194,36 @@ worth-calculator:
     item_generator:
       common:
         '1': 134
+      arco:
+        '1': 172
+      arcocomposito:
+        '1': 127
+      arcolongo:
+        '1': 127
+      armaduradediamante:
+        '1': 134
+      armaduradeferro:
+        '1': 175
+      armaduradenetherite:
+        '1': 138
+      armaduradeouro:
+        '1': 133
+      besta:
+        '1': 113
+      bodoque:
+        '1': 196
+      claymore:
+        '1': 188
+      espadacurta:
+        '1': 110
+      gladiocurta:
+        '1': 179
+      montante:
+        '1': 139
+      sabre:
+        '1': 196
+      test:
+        '1': 198
     custom_items:
       basic:
         '1': 195

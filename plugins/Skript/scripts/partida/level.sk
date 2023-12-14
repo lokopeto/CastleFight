@@ -202,7 +202,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             make console execute command "spawnboss"
 
             loop all players in world arg-2:
-                set health of loop-players to 20
+                set max health of loop-players to 20
                 set hunger of loop-players to 20
                 clear the loop-player's inventory
                 set total experience of loop-players to 0
@@ -254,7 +254,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
 #            delete {sacrificio::*}
 
             loop all players in world arg-2:
-                set health of loop-players to 20
+                set max health of loop-players to 20
                 set hunger of loop-players to 20
                 delete {playerbk::%loop-player's uuid%::*}
                 delete {lobbyplayers::%arg-2%}
