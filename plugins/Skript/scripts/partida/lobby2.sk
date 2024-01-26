@@ -122,8 +122,8 @@ on right click on warped sign:
             if {_teamnomecastelo} = 1:
                 set {castelo%{_teamnumb}%nome::%world of player%} to "Rei%name of player%"
 
-            set max health of player to 20
-            set hunger of player to 20
+            set max health of player to 10
+            set hunger of player to 10
             clear the inventory of player
             set total experience of player to 0
         
@@ -161,6 +161,7 @@ on right click on warped sign:
         message "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente"
         send action bar "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente"
 
+    message "&lA partida ira começar em %{partidacountdown::%world of player%}% segundos" to player
 
 on quit:
     world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
@@ -251,10 +252,10 @@ every 1 second:
         loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
             if {jogo::%loop-world%} is 0:
 
-                if amount of players in loop-world is 1 or 0:
+                if amount of players in loop-world is  2,1 or 0:
                     set {_time} to 60
 
-                if amount of players in loop-world is 2 or 3:
+                if amount of players in loop-world is 3:
                     set {_time} to 30
 
                 if amount of players in loop-world is 4 or 5:
@@ -283,25 +284,38 @@ every 1 second:
                                 add -1 to {partidacountdown::%loop-world%}
                             else:
                                 message "&l&o..em %{partidacountdown::%loop-world%}%" to all players in loop-world
-                                add 0.2 to {partidacountdownpitch::%loop-world%}
-                                add 0.08 to {partidacountdownvolume::%loop-world%}
+
+                                set {partidacountdownpitch::%loop-world%} to {partidacountdown::%loop-world%} / {_time} * 4 - 2
+                                set {partidacountdownpitch::%loop-world%} to {partidacountdownpitch::%loop-world%} * -1
+
+
+                                set {partidacountdownvolume::%loop-world%} to {partidacountdown::%loop-world%} / {_time} * 1
+
+                                message "partidacountdownvolume %{partidacountdownvolume::%loop-world%}%" to all players
+                                message "partidacountdownpitch %{partidacountdownpitch::%loop-world%}%" to all players
+                                message "partidacountdown %{partidacountdown::%loop-world%}%" to all players
+                                message "" to all players
+                                message "%{partidacountdown::%loop-world%}% / %{_time}% * 1" to all players
 
                                 play sound "block.amethyst_cluster.hit" with volume {partidacountdownvolume::%loop-world%} with pitch {partidacountdownpitch::%loop-world%} for all players in loop-world
 
                                 add -1 to {partidacountdown::%loop-world%}
+                                set {partidacountdowniniciando::%loop-world%} to 1
                         else:
                             set {partidacountdown::%loop-world%} to {_time}
                             delete {partidacountdownpitch::%loop-world%} and {partidacountdownvolume::%loop-world%}
                             send action bar "&7&o&lJogadores desequilibrados" to all players in loop-world
-    
+                            set {partidacountdowniniciando::%loop-world%} to 0
                     else:
                         set {partidacountdown::%loop-world%} to {_time}
                         delete {partidacountdownpitch::%loop-world%} and {partidacountdownvolume::%loop-world%}
                         if amount of players in loop-world is 1:
                             send action bar "&7&o&lEsperando Jogadores" to all players in loop-world
+                            set {partidacountdowniniciando::%loop-world%} to 0
                         else:
                             send action bar "&7&o&lJogadores insuficientes" to all players in loop-world
-
+                            set {partidacountdowniniciando::%loop-world%} to 0
+                        
 
 
                 else:
@@ -366,8 +380,17 @@ On Player World Change:
                 wait 1 second
      
         #sistema de items para gui
-on join:
-    set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
+on player world change:
+    event-world is "world":
+        set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
+
+        amount of players in event-world is 1:
+            wait 1 tick
+
+            make console execute command "loopblocksdisplayitemcreate"
+    else:
+        event-world is "castlefightmenu":
+            set slot 0 of player to air
 
 
 

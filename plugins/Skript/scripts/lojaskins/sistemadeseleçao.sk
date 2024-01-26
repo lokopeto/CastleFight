@@ -16,8 +16,10 @@ on join:
         set {fisrtjoin::%player%} to 1
         loop {mobsnomes::*}:
             set {skinselect::%player%::%loop-variable%::1} to 1
+            set {skinselectid::%player%::%loop-variable%} to 1
         loop {tiposkinnome::*}:
             set {skinselect::%player%::%loop-variable%::1} to 1
+            set {skinselectid::%player%::%loop-variable%} to 1
 
 
 

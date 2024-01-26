@@ -64,3 +64,21 @@ command /loopblocksdeform <integer>:
                 set line 2 of loop-block to ""
                 set line 3 of loop-block to ""
                 set line 4 of loop-block to ""
+
+command /loopblocksdisplayitem <integer>:
+    trigger:
+        set {partidaplaca::%arg-1%::7} to location of player
+
+every 5 seconds:
+    loop 6 times:
+        set {_status} to {partidacountdowniniciando::castlefight%loop-integer%}
+        if {jogo::castlefight%loop-integer%} is 1:
+            set {_status} to 2
+
+        make console execute command "ex run dipartida_update def.partida:%loop-integer% def.status:%{_status}%"
+
+
+command /loopblocksdisplayitemcreate:
+    trigger:
+        loop 6 times:
+            make console execute command "ex run dipartida_create def.x:%x-coordinate of {partidaplaca::%loop-integer%::7}% def.y:%y-coordinate of {partidaplaca::%loop-integer%::7}% def.z:%z-coordinate of {partidaplaca::%loop-integer%::7}% def.partida:%loop-integer% def.status:%{_status}%"

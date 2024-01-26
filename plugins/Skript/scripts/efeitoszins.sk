@@ -16,7 +16,9 @@ on spawn of an entity:
         wait 3 second
         make console execute command "pp fixed clear 1 %x-coordinate of {_loc}% %y-coordinate of {_loc} + 1% %z-coordinate of {_loc}% world enchant whirl"
 
-on join:
+on player world change:
+    event-world is "world"
+
     make console execute command "ppo %player% add soul beam"
     wait 1 tick
     make console execute command "ppo %player% add soul death"

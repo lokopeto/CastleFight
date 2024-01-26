@@ -15,10 +15,10 @@ npc:
       open-doors: false
     # The default distance in blocks where the NPC will just teleport to the destination
     # Useful when trying to get exactly to the destination
-    default-destination-teleport-margin: -1
+    default-destination-teleport-margin: 0
     # The default MOVEMENT distance in blocks where the NPC will move to before considering a path finished
     # Note: this is different from the PATHFINDING distance which is specified by path-distance-margin
-    default-distance-margin: 1
+    default-distance-margin: 2
     # Default PATHFINDING distance in blocks where the NPC will consider pathfinding complete
     # Note: this is different from the MOVEMENT distance, which is specified by the distance-margin
     # Set to 0 if you want to try pathfind exactly to the target destination
@@ -34,7 +34,7 @@ npc:
     default-stuck-action: none
     # Minecraft will pick a 'close-enough' location when pathfinding to a block if it can't find a direct path
     # Disabled by default
-    disable-mc-fallback-navigation: true
+    disable-mc-fallback-navigation: false
     # The maximum number of blocks to check when MINECRAFT pathfinding
     maximum-visited-blocks: 768
     # The range in blocks before attacking the target

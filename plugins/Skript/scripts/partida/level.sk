@@ -192,7 +192,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
         set {_world} to name of arg-2
         replace "castlefight" in {_world} with ""
 
-        if arg-1 is 1: 
+        if arg-1 is 1:
             set {jogo::%arg-2%} to 1
 
             make console execute command "ex flag server nomecastelo1%arg-2%:%{castelo1nome::%arg-2%}%"
@@ -323,20 +323,24 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
 
             make console execute command "loopblocksreform %{_world}%"
 
-            if arg-3 is "castlefight2":
-                make console execute command "jogo 0 %arg-3% castlefight3"
+        set {_arg3}, {_arg4}, {_arg5}, {_arg6} and {_arg7} to ""
 
-            if arg-3 is "castlefight3":
-                make console execute command "jogo 0 %arg-3% castlefight4"
+        if arg-3 is set:
+            set {_arg3} to arg-3
+        if arg-4 is set:
+            set {_arg4} to arg-4
+        if arg-5 is set:
+            set {_arg5} to arg-5
+        if arg-6 is set:
+            set {_arg6} to arg-6
+        if arg-7 is set:
+            set {_arg7} to arg-7
 
-            if arg-3 is "castlefight4":
-                make console execute command "jogo 0 %arg-3% castlefight5"
+        if arg-3 is set:
+            make console execute command "jogo 0 %{_arg3}% %{_arg4}% %{_arg5}% %{_arg6}% %{_arg7}%"
 
-            if arg-3 is "castlefight5":
-                make console execute command "jogo 0 %arg-3% castlefight6"
 
-            if arg-3 is "castlefight6":
-                make console execute command "jogo 0 %arg-3%"
+
 
 
 on death:
@@ -384,6 +388,6 @@ on death:
             message "Mortes (naturais) = %{pontuaçãopartida::%loop-player%::%world of loop-player%::5}%" to loop-player #5
             message "Ovos pegos = %{pontuaçãopartida::%loop-player%::%world of loop-player%::6}%" to loop-player #6
             message "" to loop-player
-            message "&a= Seu Rank %{_messagerank}% %{rank::%player%}% =" to loop-player
+            message "&a= Seu Rank %{_messagerank}% %{rank::%loo-player%}% =" to loop-player
 
             delete {pontuaçãopartida::%loop-player%::%world of loop-player%::*}

@@ -5,6 +5,19 @@
       "name": "lokopetoo",
       "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
     },
+    "time": 1703108229111,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/es03TG6XfM"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "lokopetoo",
+      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
+    },
     "time": 1701639084477,
     "type": "Profiler (live)",
     "data": {
@@ -18,140 +31,11 @@
       "name": "lokopetoo",
       "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
     },
-    "time": 1700855729209,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/lsKLDnIyXb"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1700854435836,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/rwAL4R9vUI"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1700852411571,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/J0bMlE4anH"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1699445795181,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/cIjweVYqlm"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1699445784187,
-    "type": "Profiler",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/ZITOO2XNIM"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1699445783635,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/fFf1u6I1Za"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1699444255569,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/ZRp0ow0LT4"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1699402191387,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/wJM083GbkN"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1699402166184,
-    "type": "Heap dump summary",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/KbwINE5PI2"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
     "time": 1699402119524,
     "type": "Heap dump",
     "data": {
       "type": "file",
       "value": "plugins/spark/heap-2023-11-07_21.08.29.hprof"
-    }
-  },
-  {
-    "user": {
-      "type": "other",
-      "name": "CONSOLE"
-    },
-    "time": 1699402003593,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/MMQXchDCYB"
     }
   }
 ]

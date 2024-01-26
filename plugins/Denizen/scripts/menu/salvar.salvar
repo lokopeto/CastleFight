@@ -1,0 +1,290 @@
+    - teleport <player> <location[14.2739,<element[75.6656].sub[-2.5]>,13.5,<element[97.5].div[naa]>,<element[-90].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[14.2747,<element[75.7475].sub[-2.5]>,13.5,<element[92.2135].div[naa]>,<element[-90.9472].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[14.2913,<element[75.8834].sub[-2.5]>,13.5,<element[83.477].div[naa]>,<element[-89.2382].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[14.3394,<element[76.0498].sub[-2.5]>,13.5,<element[72.4864].div[naa]>,<element[-89.5306].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[14.4218,<element[76.214].sub[-2.5]>,13.4999,<element[60.8494].div[naa]>,<element[-89.5966].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[14.5385,<element[76.365].sub[-2.5]>,13.5,<element[48.7758].div[naa]>,<element[-89.6207].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[14.683,<element[76.4908].sub[-2.5]>,13.5,<element[36.654].div[naa]>,<element[-89.623].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[14.8437,<element[76.4908].sub[-2.5]>,13.5,<element[24.8937].div[naa]>,<element[-89.6125].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.0065,<element[76.6405].sub[-2.5]>,13.5,<element[13.8981].div[naa]>,<element[-89.591].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.1387,<element[76.6645].sub[-2.5]>,13.5,<element[5.1731].div[naa]>,<element[-89.5603].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2571,<element[76.6703].sub[-2.5]>,13.5001,<element[-2.6125].div[naa]>,<element[-89.5262].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.293,<element[76.6691].sub[-2.5]>,13.5001,<element[-5.516].div[naa]>,<element[-89.4935].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3202,<element[76.6672].sub[-2.5]>,13.5002,<element[-7.8858].div[naa]>,<element[-89.4673].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3303,<element[76.6662].sub[-2.5]>,13.5002,<element[-9.2202].div[naa]>,<element[-89.4501].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3326,<element[76.6657].sub[-2.5]>,13.5002,<element[-10.0679].div[naa]>,<element[-89.4408].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3298,<element[76.6657].sub[-2.5]>,13.5003,<element[-10.5489].div[naa]>,<element[-89.4499].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3228,<element[76.666].sub[-2.5]>,13.5003,<element[-10.752].div[naa]>,<element[-89.4689].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3135,<element[76.6664].sub[-2.5]>,13.5003,<element[-10.7382].div[naa]>,<element[-89.5174].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3023,<element[76.6669].sub[-2.5]>,13.5002,<element[-10.5375].div[naa]>,<element[-89.6036].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2935,<element[76.6672].sub[-2.5]>,13.5002,<element[-10.3942].div[naa]>,<element[-89.742].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2856,<element[76.6675].sub[-2.5]>,13.5,<element[-10.2028].div[naa]>,<element[-90].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2868,<element[76.6673].sub[-2.5]>,13.4988,<element[-10.565].div[naa]>,<element[-91.6529].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2883,<element[76.667].sub[-2.5]>,13.4973,<element[-11.0149].div[naa]>,<element[-93.635].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2908,<element[76.6665].sub[-2.5]>,13.495,<element[-11.7445].div[naa]>,<element[-96.4454].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.294,<element[76.6658].sub[-2.5]>,13.4919,<element[-11.7445].div[naa]>,<element[-99.5764].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2985,<element[76.6646].sub[-2.5]>,13.488,<element[-14.1208].div[naa]>,<element[-102.9173].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3038,<element[76.6629].sub[-2.5]>,13.4831,<element[-15.8335].div[naa]>,<element[-106.3398].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3103,<element[76.6605].sub[-2.5]>,13.4768,<element[-18.049].div[naa]>,<element[-109.776].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3176,<element[76.6571].sub[-2.5]>,13.4694,<element[-20.6587].div[naa]>,<element[-113.1094].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3239,<element[76.6537].sub[-2.5]>,13.462,<element[-23.0888].div[naa]>,<element[-115.9542].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3291,<element[76.6501].sub[-2.5]>,13.4546,<element[-25.3608].div[naa]>,<element[-118.5923].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3308,<element[76.6486].sub[-2.5]>,13.4513,<element[-26.2796].div[naa]>,<element[-119.7765].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3319,<element[76.6476].sub[-2.5]>,13.449,<element[-26.9017].div[naa]>,<element[-120.5899].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3326,<element[76.6469].sub[-2.5]>,13.4474,<element[-27.3305].div[naa]>,<element[-121.1508].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3331,<element[76.6464].sub[-2.5]>,13.4462,<element[-27.6597].div[naa]>,<element[-121.5776].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3334,<element[76.646].sub[-2.5]>,13.4453,<element[-27.9127].div[naa]>,<element[-121.8998].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3337,<element[76.6457].sub[-2.5]>,13.4453,<element[-28.122].div[naa]>,<element[-122.1617].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.334,<element[76.6454].sub[-2.5]>,13.4441,<element[-28.2844].div[naa]>,<element[-122.3583].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3342,<element[76.6453].sub[-2.5]>,13.4437,<element[-28.4133].div[naa]>,<element[-122.508].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3343,<element[76.6452].sub[-2.5]>,13.4434,<element[-28.511].div[naa]>,<element[-122.6136].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3344,<element[76.6451].sub[-2.5]>,13.4432,<element[-28.5856].div[naa]>,<element[-122.6867].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3345,<element[76.6452].sub[-2.5]>,13.4435,<element[-28.5762].div[naa]>,<element[-122.7044].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3345,<element[76.6457].sub[-2.5]>,13.445,<element[-28.3515].div[naa]>,<element[-122.6697].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3344,<element[76.6466].sub[-2.5]>,13.4477,<element[-27.9156].div[naa]>,<element[-122.6005].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3342,<element[76.6476].sub[-2.5]>,13.4514,<element[-27.3246].div[naa]>,<element[-122.5055].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3338,<element[76.6488].sub[-2.5]>,13.4555,<element[-26.637].div[naa]>,<element[-122.4207].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3334,<element[76.65].sub[-2.5]>,13.4596,<element[-25.9311].div[naa]>,<element[-122.3425].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3328,<element[76.6511].sub[-2.5]>,13.4635,<element[-25.212].div[naa]>,<element[-122.3225].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3319,<element[76.6521].sub[-2.5]>,13.4668,<element[-24.5344].div[naa]>,<element[-122.3932].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3309,<element[76.6529].sub[-2.5]>,13.4691,<element[-23.9514].div[naa]>,<element[-122.5598].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3301,<element[76.6535].sub[-2.5]>,13.4702,<element[-23.5928].div[naa]>,<element[-122.7402].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.33,<element[76.6537].sub[-2.5]>,13.4703,<element[-23.5262].div[naa]>,<element[-122.7807].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3299,<element[76.6538].sub[-2.5]>,13.4703,<element[-23.4927].div[naa]>,<element[-122.8026].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.33,<element[76.6538].sub[-2.5]>,13.4701,<element[-23.5256].div[naa]>,<element[-122.7876].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3301,<element[76.6538].sub[-2.5]>,13.4699,<element[-23.5887].div[naa]>,<element[-122.7576].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3304,<element[76.6538].sub[-2.5]>,13.4697,<element[-23.671].div[naa]>,<element[-122.7186].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3307,<element[76.6537].sub[-2.5]>,13.4694,<element[-23.7691].div[naa]>,<element[-122.674].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.331,<element[76.6536].sub[-2.5]>,13.4691,<element[-23.8747].div[naa]>,<element[-122.6283].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3314,<element[76.6535].sub[-2.5]>,13.4689,<element[-23.9873].div[naa]>,<element[-122.5835].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3318,<element[76.6534].sub[-2.5]>,13.4687,<element[-23.9873].div[naa]>,<element[-122.5475].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3322,<element[76.6533].sub[-2.5]>,13.4685,<element[-24.2087].div[naa]>,<element[-122.516].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3327,<element[76.6532].sub[-2.5]>,13.4685,<element[-24.2952].div[naa]>,<element[-122.5217].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3332,<element[76.6531].sub[-2.5]>,13.4688,<element[-24.3512].div[naa]>,<element[-122.5659].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3337,<element[76.653].sub[-2.5]>,13.4694,<element[-24.3406].div[naa]>,<element[-122.708].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.334,<element[76.653].sub[-2.5]>,13.47,<element[-24.3079].div[naa]>,<element[-122.9335].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3343,<element[76.653].sub[-2.5]>,13.47,<element[-24.3117].div[naa]>,<element[-123.1529].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3345,<element[76.653].sub[-2.5]>,13.4699,<element[-24.3237].div[naa]>,<element[-123.3625].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3346,<element[76.653].sub[-2.5]>,13.4697,<element[-24.3237].div[naa]>,<element[-123.5504].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3347,<element[76.653].sub[-2.5]>,13.4695,<element[-24.3511].div[naa]>,<element[-123.7255].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3348,<element[76.653].sub[-2.5]>,13.4693,<element[-24.3576].div[naa]>,<element[-123.8855].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3348,<element[76.6531].sub[-2.5]>,13.4691,<element[-24.3557].div[naa]>,<element[-124.0275].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3348,<element[76.6531].sub[-2.5]>,13.4688,<element[-24.3451].div[naa]>,<element[-124.1546].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3348,<element[76.6532].sub[-2.5]>,13.4687,<element[-24.323].div[naa]>,<element[-124.2612].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3347,<element[76.6533].sub[-2.5]>,13.4685,<element[-24.2877].div[naa]>,<element[-124.3471].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3346,<element[76.6534].sub[-2.5]>,13.4684,<element[-24.2403].div[naa]>,<element[-124.4146].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3344,<element[76.6535].sub[-2.5]>,13.4684,<element[-24.1689].div[naa]>,<element[-124.4449].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3342,<element[76.6537].sub[-2.5]>,13.4684,<element[-24.0852].div[naa]>,<element[-124.4578].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.334,<element[76.6539].sub[-2.5]>,13.4686,<element[-23.9695].div[naa]>,<element[-124.4225].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3336,<element[76.6541].sub[-2.5]>,13.4688,<element[-23.826].div[naa]>,<element[-124.3462].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3332,<element[76.6544].sub[-2.5]>,13.4692,<element[-23.6478].div[naa]>,<element[-124.2185].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3326,<element[76.6548].sub[-2.5]>,13.4698,<element[-23.4149].div[naa]>,<element[-124.0052].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.332,<element[76.6553].sub[-2.5]>,13.4706,<element[-23.1344].div[naa]>,<element[-123.7189].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.331,<element[76.6559].sub[-2.5]>,13.472,<element[-22.7351].div[naa]>,<element[-123.2223].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3298,<element[76.6567].sub[-2.5]>,13.4744,<element[-22.1574].div[naa]>,<element[-122.221].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3281,<element[76.658].sub[-2.5]>,13.4788,<element[-22.1574].div[naa]>,<element[-120.0734].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3253,<element[76.6596].sub[-2.5]>,13.4861,<element[-20.1387].div[naa]>,<element[-115.9859].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3211,<element[76.6616].sub[-2.5]>,13.4944,<element[-18.7011].div[naa]>,<element[-110.8394].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3151,<element[76.6637].sub[-2.5]>,13.4944,<element[-17.001].div[naa]>,<element[-104.8832].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3073,<element[76.6658].sub[-2.5]>,13.51,<element[-15.1103].div[naa]>,<element[-98.6416].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2981,<element[76.6679].sub[-2.5]>,13.5152,<element[-13.0527].div[naa]>,<element[-92.4293].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2882,<element[76.6697].sub[-2.5]>,13.5184,<element[-10.8856].div[naa]>,<element[-86.4291].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2781,<element[76.6712].sub[-2.5]>,13.5192,<element[-8.648].div[naa]>,<element[-81.0332].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2684,<element[76.6724].sub[-2.5]>,13.5181,<element[-6.415].div[naa]>,<element[-76.2078].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2596,<element[76.6732].sub[-2.5]>,13.5157,<element[-4.2694].div[naa]>,<element[-72.214].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2522,<element[76.6737].sub[-2.5]>,13.5125,<element[-2.3163].div[naa]>,<element[-69.1153].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2465,<element[76.6738].sub[-2.5]>,13.5094,<element[-0.76].div[naa]>,<element[-67.1594].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2429,<element[76.6738].sub[-2.5]>,13.5071,<element[0.3023].div[naa]>,<element[-66.1638].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2425,<element[76.6737].sub[-2.5]>,13.5067,<element[0.4763].div[naa]>,<element[-66.4139].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2434,<element[76.6737].sub[-2.5]>,13.5072,<element[0.2438].div[naa]>,<element[-67.084].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2443,<element[76.6736].sub[-2.5]>,13.5076,<element[0.0368].div[naa]>,<element[-67.732].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2446,<element[76.6735].sub[-2.5]>,13.5079,<element[-0.0118].div[naa]>,<element[-68.217].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.244,<element[76.6734].sub[-2.5]>,13.5077,<element[0.1423].div[naa]>,<element[-68.4202].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2432,<element[76.6733].sub[-2.5]>,13.5075,<element[0.3696].div[naa]>,<element[-68.3932].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2423,<element[76.6732].sub[-2.5]>,13.5071,<element[0.6121].div[naa]>,<element[-68.045].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2416,<element[76.673].sub[-2.5]>,13.5067,<element[0.806].div[naa]>,<element[-67.4105].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2411,<element[76.6729].sub[-2.5]>,13.5065,<element[0.9244].div[naa]>,<element[-66.7356].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2408,<element[76.6728].sub[-2.5]>,13.5064,<element[0.9994].div[naa]>,<element[-66.3086].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2492,<element[76.6726].sub[-2.5]>,13.5105,<element[-1.3038].div[naa]>,<element[-67.8994].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2651,<element[76.6714].sub[-2.5]>,13.5168,<element[-1.3038].div[naa]>,<element[-70.1707].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.2961,<element[76.6658].sub[-2.5]>,13.5257,<element[-13.7458].div[naa]>,<element[-73.3145].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.3348,<element[76.6524].sub[-2.5]>,13.5328,<element[-24.1742].div[naa]>,<element[-76.6066].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.376,<element[76.6287].sub[-2.5]>,13.5365,<element[-36.088].div[naa]>,<element[-79.837].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.411,<element[76.5981].sub[-2.5]>,13.5355,<element[-47.6635].div[naa]>,<element[-82.9938].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4366,<element[76.5655].sub[-2.5]>,13.5314,<element[-47.6635].div[naa]>,<element[-86.0856].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4535,<element[76.5349].sub[-2.5]>,13.5254,<element[-66.7548].div[naa]>,<element[-89.068].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4632,<element[76.5093].sub[-2.5]>,13.5193,<element[-73.6124].div[naa]>,<element[-91.9611].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4687,<element[76.4879].sub[-2.5]>,13.5133,<element[-79.1507].div[naa]>,<element[-94.7852].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4712,<element[76.4724].sub[-2.5]>,13.5081,<element[-83.112].div[naa]>,<element[-96.9196].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4722,<element[76.4622].sub[-2.5]>,13.5038,<element[-85.7027].div[naa]>,<element[-96.425].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4725,<element[76.4554].sub[-2.5]>,13.5001,<element[-87.4223].div[naa]>,<element[-89.4412].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4726,<element[76.4515].sub[-2.5]>,13.497,<element[-88.2686].div[naa]>,<element[-73.7584].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4711,<element[76.4534].sub[-2.5]>,13.4947,<element[-86.8794].div[naa]>,<element[-74.5514].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4673,<element[76.4571].sub[-2.5]>,13.4927,<element[-84.6552].div[naa]>,<element[-78.1117].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4609,<element[76.4619].sub[-2.5]>,13.4911,<element[-81.5528].div[naa]>,<element[-81.2328].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4526,<element[76.4664].sub[-2.5]>,13.4898,<element[-77.8232].div[naa]>,<element[-83.4283].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4431,<element[76.4696].sub[-2.5]>,13.4887,<element[-73.606].div[naa]>,<element[-84.9156].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4331,<element[76.4708].sub[-2.5]>,13.4878,<element[-69.1536].div[naa]>,<element[-86.0125].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4236,<element[76.47].sub[-2.5]>,13.4872,<element[-64.5667].div[naa]>,<element[-86.8008].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4154,<element[76.4674].sub[-2.5]>,13.4868,<element[-60.0289].div[naa]>,<element[-87.4429].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4099,<element[76.4639].sub[-2.5]>,13.4865,<element[-55.7114].div[naa]>,<element[-87.9294].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.407,<element[76.4599].sub[-2.5]>,13.4865,<element[-51.6759].div[naa]>,<element[-88.3469].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4097,<element[76.4578].sub[-2.5]>,13.4866,<element[-48.2723].div[naa]>,<element[-88.6846].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4177,<element[76.4582].sub[-2.5]>,13.4868,<element[-45.505].div[naa]>,<element[-88.9857].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4308,<element[76.4626].sub[-2.5]>,13.4873,<element[-43.5586].div[naa]>,<element[-89.2394].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.445,<element[76.4722].sub[-2.5]>,13.4873,<element[-42.4861].div[naa]>,<element[-89.4738].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.4751,<element[76.4856].sub[-2.5]>,13.4886,<element[-42.6241].div[naa]>,<element[-89.4738].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.5177,<element[76.4994].sub[-2.5]>,13.4894,<element[-42.6241].div[naa]>,<element[-89.8629].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.5731,<element[76.5117].sub[-2.5]>,13.4904,<element[-45.1365].div[naa]>,<element[-90.0244].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.637,<element[76.5202].sub[-2.5]>,13.4915,<element[-47.2121].div[naa]>,<element[-90.1699].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.7061,<element[76.5235].sub[-2.5]>,13.4927,<element[-47.2121].div[naa]>,<element[-90.282].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.7771,<element[76.5209].sub[-2.5]>,13.4939,<element[-51.9892].div[naa]>,<element[-90.3651].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.8459,<element[76.5129].sub[-2.5]>,13.4953,<element[-54.2878].div[naa]>,<element[-90.395].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.91,<element[76.5007].sub[-2.5]>,13.4953,<element[-56.3362].div[naa]>,<element[-90.3732].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[15.9655,<element[76.4865].sub[-2.5]>,13.4979,<element[-56.3362].div[naa]>,<element[-90.2807].div[naaa]>,world]>
+    - wait 0.1t
+    - teleport <player> <location[16.0069,<element[76.4736].sub[-2.5]>,13.499,<element[-59.0446].div[naa]>,<element[-90.1556].div[naaa]>,world]>
+

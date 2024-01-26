@@ -1,23 +1,53 @@
 Model-Engine:
+  Print-Script-Warnings: false
+  Use-State-Machine: false
+  Default-Animations:
+    IDLE: idle
+    WALK: walk
+    STRAFE: strafe
+    JUMP_START: jump_start
+    JUMP: jump
+    JUMP_END: jump_end
+    HOVER: hover
+    FLY: fly
+    SPAWN: spawn
+    DEATH: death
   Slerp-Mode: SLERP
   Animation-Mode: B
   Movement-Resolution: 0.001
   Compress-Packet: true
-  Default-Animations:
-    IDLE: idle
-    WALK: walk
-    JUMP: jump
-    SPAWN: spawn
-    DEATH: death
 Model-Generator:
   Register-Post-Server: true
   Assets-Post-Server: true
+  Compile-Post-Server: true
   Enable-Error: true
   Debug-Level: 1
   Namespace: modelengine
-  Compartment-Size: 1000
   Create-Zip: true
+  Create-Atlas: true
+  Create-Shader: true
   Item-Model: LEATHER_HORSE_ARMOR
+  Compartment-Size: 1000
+Network-Optimization:
+  Bundle-Everything: false
+  Bundle-Size: 512
+  Cull-Interval: 4
+  Vertical-Render-Distance:
+    Enabled: true
+    Vertical-Render-Distance: 32
+    Cull-Type: CULLED
+  Skip-Models-Behind-Viewer:
+    Enabled: true
+    View-Angle: 180
+    Force-Render-Radius: 5
+    Cull-Type: MOVEMENT_ONLY
+  Skip-Blocked-Models:
+    Enabled: true
+    Force-Render-Radius: 5
+    Cull-Type: CULLED
+    Force-Render-Size:
+      Width: 32
+      Height: 32
 Model-Calibrator:
   Use-Calibration: true
   Animation-Sync: 0.685
