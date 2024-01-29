@@ -31,7 +31,7 @@ on npc right click:
 #                        broadcast "%{Invocador1lore::%{slots1}%::*}%"
             open the created gui for player
         else:
-            message "&cInvocador está ocupado!"
+            send action bar "&cInvocador está ocupado!"
     if npc name is "Fazendeiro (%{castelo%{_team}%nome::%world of player%}%)":
         if {Padeirotimer%{_team}%::%world of player%} <= 0:
             create a gui with virtual chest inventory with 2 rows named "Fazendeiro":
@@ -345,7 +345,7 @@ on npc right click:
                 set {_xp} to level of player
 #                broadcast "%{_xp}% %{_lore::*}%"
                 if "%{_lore::3}%" parsed as integer >= {_xp}:
-                    message "&bXp insuficiente!"
+                    send action bar "&bXp insuficiente!"
                     play sound "fx.error" to player
                 else:
                     add "-%{_lore::3}%" parsed as integer to level of player
@@ -407,9 +407,9 @@ on npc right click:
                         delete {exiladoabrido}  
                 open the created gui for player 
             else:
-                message "&cExilado só fala com um por vez!"    
+                send action bar "&cExilado só fala com um por vez!"    
         else:
-            message "&7&oespere &f&o%{exiladotimer}%&7&o segundos.."
+            send action bar "&7&oespere &f&o%{exiladotimer}%&7&o segundos.."
 
     if npc name is "Vendedor Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
         create a gui with virtual chest inventory with 2 rows named "Vendedor Misterioso":
@@ -663,7 +663,7 @@ on inventory click:
             play sound "fx.error" to player
         else:
             add "-%{_lore::5}%" parsed as integer to level of player
-            message "&cPRONTO PRA BATALHAA!!!!"
+            message "&cPRONTO PRA BATALHA!!!!"
             close player's inventory
             set {exiladotimer} to 0 #560
             loop all entities:

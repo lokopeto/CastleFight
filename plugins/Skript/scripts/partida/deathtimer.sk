@@ -7,6 +7,9 @@ on death of player:
                 if name of victim is set:
                     set {_por} to "&fpor &c&l&o%name of attacker%"
                 message "&a&l&o%victim% &ffoi morto %{_por}%" to loop-player
+            if "%team of loop-player%" is "%team of attacker%":
+                message "&c&l&o%name of attacker% &fmatou &c&l&o%victim%" to loop-player
+
 
         set {deathloc::%name of victim%} to location of victim
         if name of attacker contains "(BOSS)":
@@ -27,7 +30,7 @@ on respawn:
     set {_tempo} to {deathtimer::%name of player%} -1
     {deathtimer::%name of player%} <= 0:
         set gamemode of player to adventure
-        message "&7&o&lPronto para batalha!"
+        send action bar "&7&o&lPronto para batalha!"
         play sound "fx.respawn" to player
     else:
         set {_pitch} to 1
@@ -36,16 +39,16 @@ on respawn:
             wait 1 second
 
             {deathtimer::%name of player%} is 20:
-                message "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."
+                send action bar "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."
             {deathtimer::%name of player%} <= 10:
-                message "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."   
+                send action bar "&7&oFaltam &f&o%{deathtimer::%name of player%}%&7&o segundos.."   
                 add 0.1 to {_pitch}
                 play sound "fx.countdown" with pitch {_pitch} to player
             
         wait 1 second
 
         set gamemode of player to adventure
-        message "&7&o&lPronto para batalha!"
+        send action bar "&7&o&lPronto para batalha!"
         
         play sound "fx.respawn" to player
 

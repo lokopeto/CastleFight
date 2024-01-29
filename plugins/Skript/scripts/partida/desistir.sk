@@ -1,4 +1,6 @@
 command /desistir:
+    cooldown: 1 seconds
+    cooldown storage: {desistircooldown::%world of player%}
     trigger:
         {jogo::%world of player%} is 1
         if {jogadoresdesistir::%world of player%::*} contains player:
@@ -29,10 +31,30 @@ command /desistir:
 #            broadcast "%{desistir%{_teamplayer}%}% %{_quant%{_teamplayer}%}%"
 
             {desistir%{_teamplayer}%::%world of player%} >= {_quant%{_teamplayer}%}:
+                message "<cyan>%{castelo%{_teamplayer}%nome::%world of player%}% desistiu!" to all players in world of player
+                send title "<cyan>Desistencia" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 2 seconds with fadein 0.1 second and fade out 1 second
+                play sound "fx.desistencia" to all players in world of player
+                wait 5 second
+
+                message "<cyan>terminando partida em 3" to all players in world of player
+                send title "<cyan>terminando partida em 3" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 2 seconds with fadein 0.1 second and fade out 1 second
+                play sound "fx.countdown" to all players in world of player
+                wait 1 second
+
+                message "<cyan>..em 2"
+                send title "<cyan>..em 2" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 2 seconds with fadein 0.1 second and fade out 1 second
+                play sound "fx.countdown" to all players in world of player
+                wait 1 second
+
+                message "<cyan>..em 1"
+                send title "<cyan>..em 1" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 2 seconds with fadein 0.1 second and fade out 1 second
+                play sound "fx.countdown" to all players in world of player
+                wait 1 second
+
                 loop all entities in world of player:
                     if loop-entity have scoreboard tag "rei%{_teamplayer}%":
                         kill loop-entity
-                message "<cyan>%{castelo%{_teamplayer}%nome::%world of player%}% desistiu!" to all players in world of player
+
                 delete {jogadoresdesistir::%world of player%::*}
                 delete {desistir%{_teamplayer}%::%world of player%}
         else:

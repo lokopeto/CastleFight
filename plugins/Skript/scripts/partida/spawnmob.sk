@@ -154,10 +154,6 @@ every 1 second:
 every 5 minute:
     make console execute command "spawn castlefight1 castlefight2 castlefight3 castlefight4 castlefight5 castlefight6"
 
-every 15 minute:
-    make console execute command "spawnboss castlefight1 castlefight2 castlefight3 castlefight4 castlefight5 castlefight6"
-
-
 #spawnar os mobs, conjunto com drops.sk
 command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
     executable by: console
@@ -172,6 +168,9 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
 
         loop all worlds:
             {_worlds::*} contains loop-world
+
+            
+
             loop all entities in loop-world:
                 if name of loop-entity contains "(natural)":
                     set {_id} to citizen id of loop-entity
@@ -186,6 +185,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
             loop "%30 - {quantmobs::%loop-world%}%" parsed as integer times:
                 add 1 to {_numb}
                 chance of "%{chance::%loop-world%}%" parsed as integer:
+                    wait 1 ticks
                     set {_health} to 0
                     set {_damage} to 0
                     set {_levelstats} to a random integer between 1 and {level::%loop-world%}
@@ -219,6 +219,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
             loop 7 times:
                 add 1 to {_numb}
                 chance of 90%:
+                    wait 1 ticks
                     set {_health} to 0
                     set {_damage} to 0
                     set {_levelstats} to a random integer between 1 and {level::%loop-world%}
@@ -252,6 +253,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
             loop "%23 + 5 - {quantmobs::%loop-world%}%" parsed as integer times:
                 add 1 to {_numb}
                 chance of "%{chance::%loop-world%}%" parsed as integer:
+                    wait 1 ticks
                     set {_health} to 0
                     set {_damage} to 0
                     set {_levelstats} to a random integer between 1 and {level::%loop-world%}
@@ -288,6 +290,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
             loop 7 times:
                 add 1 to {_numb}
                 chance of 90%:
+                    wait 1 ticks
                     set {_health} to 0
                     set {_damage} to 0
                     set {_levelstats} to a random integer between 1 and {level::%loop-world%}
@@ -321,6 +324,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
             loop 117 times:
                 add 1 to {_numb}
                 chance of 40%:
+                    wait 2 ticks
                     set {_health} to 0
                     set {_damage} to 0
                     set {_levelstats} to a random integer between 5 and {level::%loop-world%} * 2
@@ -352,54 +356,6 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
                     wait 1 tick
             message "Spawns feitos!"
             set {_numb} to 0
-
-command /spawnboss [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
-    executable by: console
-    trigger:
-        message "Espere..."
-        add arg-1 to {_worlds::*}
-        add arg-2 to {_worlds::*}
-        add arg-3 to {_worlds::*}
-        add arg-4 to {_worlds::*}
-        add arg-5 to {_worlds::*}
-        add arg-6 to {_worlds::*}
-
-        loop all worlds:
-            wait 1 minute
-            {_worlds::*} contains loop-world
-            loop all entities in loop-world:
-                if name of loop-entity contains "(BOSS)":
-                    set {_id} to citizen id of loop-entity
-                    make console execute command "npc select %{_id}%"
-                    make console execute command "npc remove"
-            loop 3 times:
-                add 1 to {_numb}
-                chance of 80%:
-                    set {_health} to 0
-                    set {_damage} to 0
-                    set {_level} to 100
-                    {level::%loop-world%} > 20: 
-                        set {_level} to 200
-                    {level::%loop-world%} > 30: 
-                        set {_level} to 300
-
-                    set {_tipomob} to a random text out of "Zombie", "Skeleton", "Spider", "Creeper" and "Enderman"
-
-                    loop "%{_level}%" parsed as integer times:
-                        add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}
-                        add a random number between {mobs::%{_tipomob}%::3} and {mobs::%{_tipomob}%::4} to {_damage}
-                    set {_armor} to a random number between {mobs::%{_tipomob}%::5} and {mobs::%{_tipomob}%::6}
-                    set {_speed} to a random number between {mobs::%{_tipomob}%::7} and {mobs::%{_tipomob}%::8}
-                    set {_npcspeed} to a random number between {mobs::%{_tipomob}%::9} and {mobs::%{_tipomob}%::10}
-                    set {_accuracy} to a random number between {mobs::%{_tipomob}%::11} and {mobs::%{_tipomob}%::12}
-                    set {_range} to a random number between {mobs::%{_tipomob}%::13} and {mobs::%{_tipomob}%::14}
-
-                    set {_nomespawn} to "caverna2boss"
-
-                    message "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%loop-world% %{_tipomob}% %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
-                    make console execute command "spawnmob %{_level}% %x-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%y-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%z-coordinate of {spawns::%{_nomespawn}%::%{_numb}%}%:%loop-world% %{_tipomob}%_boss %{_damage}% %{_health}% %{_armor}% %{_speed}% / %{_npcspeed}% %{_accuracy}% %{_range}%"
-
-            message "Spawns feitos!"
 
 #/give @p zombie_spawn_egg{display:{Name:'[{"text":"Zumbi","italic":false,"bold":true,"color":"red"}]',Lore:['[{"text":"Level = 1","italic":false,"color":"yellow"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"status:","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"vida = 5","italic":true,"color":"dark_gray"}]','[{"text":"dano = 2","italic":true,"color":"dark_gray"}]','[{"text":"armadura = 0.1","italic":true,"color":"dark_gray"}]','[{"text":"velocidade = 1 / 1","italic":true,"color":"dark_gray"}]']}} 1
 #/give @p zombie_spawn_egg{display:{Name:'[{"text":"Zombie","italic":false,"bold":true,"color":"red"}]',Lore:['[{"text":"Level = 1","italic":false,"color":"yellow"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Respawn = 30","italic":false,"color":"gold"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Status:","italic":true,"color":"dark_gray"},{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"","italic":false,"color":"dark_purple"}]','[{"text":"Vida = 5","italic":true,"color":"dark_gray"},{"text":"","italic":true,"color":"dark_purple"}]','[{"text":"Dano = 2","italic":true,"color":"dark_gray"},{"text":"","italic":true,"color":"dark_purple"}]','[{"text":"Armadura = 0.1","italic":true,"color":"dark_gray"},{"text":"","italic":true,"color":"dark_purple"}]','[{"text":"Velocidade = 1 / 1","italic":true,"color":"dark_gray"}]']}} 1

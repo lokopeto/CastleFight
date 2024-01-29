@@ -283,19 +283,14 @@ every 1 second:
                                 message "&lA partida ira começar em %{partidacountdown::%loop-world%}% segundos" to all players in loop-world
                                 add -1 to {partidacountdown::%loop-world%}
                             else:
-                                message "&l&o..em %{partidacountdown::%loop-world%}%" to all players in loop-world
+                                send action bar "&l&oComeça em %{partidacountdown::%loop-world%}%" to all players in loop-world
 
                                 set {partidacountdownpitch::%loop-world%} to {partidacountdown::%loop-world%} / {_time} * 4 - 2
                                 set {partidacountdownpitch::%loop-world%} to {partidacountdownpitch::%loop-world%} * -1
 
-
-                                set {partidacountdownvolume::%loop-world%} to {partidacountdown::%loop-world%} / {_time} * 1
-
-                                message "partidacountdownvolume %{partidacountdownvolume::%loop-world%}%" to all players
-                                message "partidacountdownpitch %{partidacountdownpitch::%loop-world%}%" to all players
-                                message "partidacountdown %{partidacountdown::%loop-world%}%" to all players
-                                message "" to all players
-                                message "%{partidacountdown::%loop-world%}% / %{_time}% * 1" to all players
+                                set {partidacountdownvolume::%loop-world%} to {partidacountdown::%loop-world%} - {_time}
+                                set {partidacountdownvolume::%loop-world%} to {partidacountdownvolume::%loop-world%} / {_time} * 1
+                                set {partidacountdownvolume::%loop-world%} to {partidacountdownvolume::%loop-world%} * -1
 
                                 play sound "block.amethyst_cluster.hit" with volume {partidacountdownvolume::%loop-world%} with pitch {partidacountdownpitch::%loop-world%} for all players in loop-world
 
@@ -383,11 +378,7 @@ On Player World Change:
 on player world change:
     event-world is "world":
         set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
-
-        amount of players in event-world is 1:
-            wait 1 tick
-
-            make console execute command "loopblocksdisplayitemcreate"
+        make console execute command "loopblocksdisplayitemcreate"
     else:
         event-world is "castlefightmenu":
             set slot 0 of player to air
@@ -435,8 +426,8 @@ command /sair:
 
             set {psspwait::%player%} to 1
 
-            set max health of player to 20
-            set hunger of player to 20
+            set max health of player to 10
+            set hunger of player to 10
             set total experience of player to 0
 
             make console execute command "team leave %player%"

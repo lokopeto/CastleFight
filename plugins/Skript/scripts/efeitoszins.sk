@@ -24,3 +24,7 @@ on player world change:
     make console execute command "ppo %player% add soul death"
     wait 5 seconds
     make console execute command "ppo %player% reset"
+
+on player join:
+    wait 1 tick
+    make console execute command "ppo %player% reset"

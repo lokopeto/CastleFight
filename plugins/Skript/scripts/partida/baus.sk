@@ -5,8 +5,8 @@ on rightclick on chest:
     name of block is "Bau do (%{castelo1nome::%world of player%}%)":
         {_team} is "castelo2":
             cancel the event
-            message "&cEsse bau não é teu!"
+            send action bar "&cEsse bau não é teu!"
     name of block is "Bau do (%{castelo2nome::%world of player%}%)":
         {_team} is "castelo1":
             cancel the event
-            message "&cEsse bau não é teu!"
+            send action bar "&cEsse bau não é teu!"

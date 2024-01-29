@@ -12,9 +12,9 @@ multiverse-configuration:
   silentstart: 'false'
   messagecooldown: '5000'
   version: '2.9'
-  firstspawnworld: world
+  firstspawnworld: castlefightmenu
   teleportcooldown: '1000'
   defaultportalsearch: 'true'
   portalsearchradius: '128'
   autopurge: 'true'
-  idonotwanttodonate: 'false'
+  idonotwanttodonate: 'true'

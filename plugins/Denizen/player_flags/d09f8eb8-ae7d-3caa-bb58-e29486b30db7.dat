@@ -4,5 +4,8 @@ regenloc1:l@51,149,23,world
 regenfood:20
 regenloc2:l@51,149,23,world
 regenhel:2.5
+blockmenu1:true
 global:true
+menu:2
+menulimite:3
 \exdcreative:map@[__value=map@[]]

@@ -62,7 +62,7 @@ world-settings:
     seed-trailruins: 83469867
     below-zero-generation-in-existing-chunks: true
     zombie-aggressive-towards-villager: true
-    enable-zombie-pigmen-portal-spawns: true
+    enable-zombie-pigmen-portal-spawns: false
     mob-spawn-range: 8
     nerf-spawner-mobs: false
     hanging-tick-frequency: 100
@@ -72,7 +72,7 @@ world-settings:
     merge-radius:
       item: 2.5
       exp: 3.0
-    item-despawn-rate: 6000
+    item-despawn-rate: 50000
     end-portal-sound-radius: 0
     arrow-despawn-rate: 1200
     trident-despawn-rate: 1200

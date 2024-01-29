@@ -78,9 +78,12 @@ command /npcs <world>:
         wait 1 tick
         
         make console execute command "npccreatorinteractive villager -251.0,150.00,37.5,%arg-1% npcs2 nitwit Arqueiro (%{castelo2nome::%arg-1%}%)"
-
-
+ 
         message "npcs feitos!"
+
+command /npcs <world>:
+    executable by: console
+    trigger:
 
 command /npcsextra <integer> <integer> <text>:
     executable by: console

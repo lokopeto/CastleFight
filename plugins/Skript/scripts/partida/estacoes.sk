@@ -53,29 +53,30 @@ command /loopblocksdeform <integer>:
     trigger:
         loop blocks between the block at {partidaplaca::%arg-1%::1} and the block at {partidaplaca::%arg-1%::2}:
             loop-block is sign:
-                set line 1 of loop-block to ""
-                set line 2 of loop-block to ""
-                set line 3 of loop-block to ""
-                set line 4 of loop-block to ""
+                set line 1 of loop-block to " "
+                set line 2 of loop-block to " "
+                set line 3 of loop-block to " "
+                set line 4 of loop-block to " "
 
         loop blocks between the block at {partidaplaca::%arg-1%::3} and the block at {partidaplaca::%arg-1%::4}:
             loop-block is sign:
-                set line 1 of loop-block to ""
-                set line 2 of loop-block to ""
-                set line 3 of loop-block to ""
-                set line 4 of loop-block to ""
+                set line 1 of loop-block to " "
+                set line 2 of loop-block to " "
+                set line 3 of loop-block to " "
+                set line 4 of loop-block to " "
 
 command /loopblocksdisplayitem <integer>:
     trigger:
         set {partidaplaca::%arg-1%::7} to location of player
 
 every 5 seconds:
-    loop 6 times:
-        set {_status} to {partidacountdowniniciando::castlefight%loop-integer%}
-        if {jogo::castlefight%loop-integer%} is 1:
-            set {_status} to 2
+    if amount of players in world "world" > 0:
+        loop 6 times:
+            set {_status} to {partidacountdowniniciando::castlefight%loop-integer%}
+            if {jogo::castlefight%loop-integer%} is 1:
+                set {_status} to 2
 
-        make console execute command "ex run dipartida_update def.partida:%loop-integer% def.status:%{_status}%"
+            make console execute command "ex run dipartida_update def.partida:%loop-integer% def.status:%{_status}%"
 
 
 command /loopblocksdisplayitemcreate:

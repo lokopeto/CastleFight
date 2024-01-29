@@ -78,10 +78,10 @@ combat:
   # This setting DOES NOT AFFECT THE REAL PLAYER'S HEALTH!
   # This only reduces the VISUAL HEART DISPLAY to save the screen's space.
   # NOTE: Sometimes this setting may have weird behavior with result of visual death bugs. This is either a plugin conflict or a Spigot bug.
-  compress-player-health-bar: false
+  compress-player-health-bar: true
   # When enabled, Fishing Rod can be used to damage entities by Fishing hook.
   fishing-hook-do-damage: true
-  # When enabled, Bows will do the full damage (depends on Damage Attributes) in melee combat.
+  # When e nabled, Bows will do thefull damage (depends on Damage Attributes) in melee combat.
   bows-do-full-melee-damage: false
   # Defines the damage modifier for attack cooldown.
   # 1.0 = 100%, no changes.
@@ -108,7 +108,7 @@ lore:
         format: 'default'
         # Defines format for unbreakable items.
         # Overrides 'format' value.
-        unbreakable: '&fUnbreakable'
+        unbreakable: '&fInquebrável'
         # Placeholders:
         # %current% - Current item durability.
         # %max% - Maximal item durability.
@@ -129,24 +129,24 @@ lore:
             '1': '&4◼&7◼◼◼◼◼◼◼◼◼'
             '0': '&7◼◼◼◼◼◼◼◼◼◼'
           text:
-            '100': '&aGood &7(%percent%%)'
-            '70': '&2Pretty good &7(%percent%%)'
-            '50': '&eDamaged &7(%percent%%)'
-            '25': '&6Need repair &7(%percent%%)'
-            '10': '&cAlmost broken &7(%percent%%)'
-            '0': '&4Broken &7(%percent%%)'
+            '100': '&aBoa &7(%percent%%)'
+            '70': '&2Muito bom &7(%percent%%)'
+            '50': '&eDanificada &7(%percent%%)'
+            '25': '&6Precisa de reparo &7(%percent%%)'
+            '10': '&cQuase quebrado &7(%percent%%)'
+            '0': '&4Quebrada &7(%percent%%)'
       damage:
         format:
           single: '&f%value%'
           double: '&f%min% &7- &f%max%'
       charges:
         enabled: true
-        name: 'Charges'
+        name: 'Cobranças'
         format:
           main: '&7%name%: &f%value%'
           value:
             default: '&f%min%&7/&f%max%'
-            unlimited: 'Unlimited'
+            unlimited: 'Ilimitada'
         break-items-on-zero:
           enabled: true
           excluded-modules:
@@ -160,7 +160,7 @@ lore:
               'false': '&c&l✗ &r&c'
           level:
             enabled: true
-            name: 'Player Level'
+            name: 'Nível de jogador'
             format:
               main: '&c%state%%name%: &f%value%'
               value:
@@ -168,7 +168,7 @@ lore:
                 range: '%min%-%max%'
           class:
             enabled: true
-            name: 'Player Class'
+            name: 'Classe de jogador'
             format:
               main: '&c%state%%name%: %value%'
               max-classes-per-line: -1
@@ -178,7 +178,7 @@ lore:
                 newline: '&r  '
           banned-class:
             enabled: true
-            name: 'Banned Player Class'
+            name: 'Classe de jogador proibido'
             format:
               main: '&c%state%%name%: %value%'
               max-classes-per-line: -1
@@ -189,7 +189,7 @@ lore:
         item:
           level:
             enabled: true
-            name: 'Item Level'
+            name: 'Nível de item'
             format:
               main: '&c▸ %name%: %value%'
               value:
@@ -197,7 +197,7 @@ lore:
                 range: '%min% ~ %max%'
           module:
             enabled: true
-            name: 'Item Module'
+            name: 'Módulo de item'
             format:
               main: '&c▸ %name%: %value%'
               value:
@@ -205,19 +205,19 @@ lore:
                 color: '&f'
           type:
             enabled: true
-            name: 'Item Type'
+            name: 'Tipo de item'
             format:
               main: '&c▸ %name%: %value%'
               value:
                 separator: '&7/'
                 color: '&f'
           socket:
-            name: 'Socket Type'
+            name: 'Tipo de soquete'
             format:
               main: '&c▸ %name%: %value%'
           tier:
             enabled: true
-            name: 'Tier'
+            name: 'Nível'
             format:
               main: '&c▸ %name%: %value%'
       enchantments:
