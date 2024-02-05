@@ -18,19 +18,6 @@
       "name": "lokopetoo",
       "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
     },
-    "time": 1701639084477,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/am8UELpr4j"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
     "time": 1699402119524,
     "type": "Heap dump",
     "data": {

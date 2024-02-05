@@ -119,8 +119,9 @@ on right click on warped sign:
                 "%team of loop-player%" is "%team of player%":
                     set {_teamnomecastelo} to 1
                 
-            if {_teamnomecastelo} = 1:
-                set {castelo%{_teamnumb}%nome::%world of player%} to "Rei%name of player%"
+            set {castelo1nome::%world of player%} to "Rei Carvalho"
+
+            set {castelo2nome::%world of player%} to "Rei Barro"
 
             set max health of player to 10
             set hunger of player to 10
@@ -160,8 +161,6 @@ on right click on warped sign:
 
         message "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente"
         send action bar "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente"
-
-    message "&lA partida ira começar em %{partidacountdown::%world of player%}% segundos" to player
 
 on quit:
     world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
@@ -280,7 +279,6 @@ every 1 second:
                         if {_team1players} is {_team2players}:
 
                             if {partidacountdown::%loop-world%} is {_time}:
-                                message "&lA partida ira começar em %{partidacountdown::%loop-world%}% segundos" to all players in loop-world
                                 add -1 to {partidacountdown::%loop-world%}
                             else:
                                 send action bar "&l&oComeça em %{partidacountdown::%loop-world%}%" to all players in loop-world
@@ -318,21 +316,17 @@ every 1 second:
                     set {quantmobs::%loop-world%} to 10
                     set {levelmobtime::%loop-world%} to 0
                     set {reivida::%loop-world%} to 2300
+                    set {partidacountdown::%loop-world%} to -1
 
-                    make console execute command "npcs %loop-world%"
                     make console execute command "jogo 1 %loop-world%"
-                        
+
+
                     loop 2 times:
                         make console execute command "team modify castelo%loop-integer%%loop-world% displayName {""text"":""%{castelo%loop-integer%nome::%loop-world%}%""}"
                         make console execute command "team modify castelo%loop-integer%%loop-world% friendlyFire false"
                         make console execute command "team modify castelo%loop-integer%%loop-world% seeFriendlyInvisibles true"                        
 
-
-                    make console execute command "spawn %loop-world%"
-                    make console execute command "spawnboss %loop-world%"
-
                     play sound "item.trident.return" to all players in loop-world              
-
 
                     loop all players in loop-world:
                         make console execute command "ppo %loop-player% reset"
@@ -578,6 +572,9 @@ command /sair:
 command /partidateminar [<number>] [<world>]:
     executable by: console
     trigger:
+        set {_worldint} to arg-2
+        replace "castlefight" in {_worldint} with ""
+
         arg-1 is 1:
             set gamemode of all players in world arg-2 to spectator
             teleport all players in world arg-2 to location(116.5, 160.00, 23.0, arg-2, -90, 23) 
@@ -589,15 +586,19 @@ command /partidateminar [<number>] [<world>]:
             wait 10 seconds
             make players in world arg-2 execute command "sair"
             make console execute command "jogo 0 %arg-2%"
-
+            wait 10 tick
+            make console execute command "loopblocksdeform %{_worldint}%"
+ 
         arg-1 is 3:
             make console execute command "jogo 0 %arg-2%"
-            set gamemode of all players to adventure
+            set gamemode of all players in world arg-2 to adventure
             loop all entities in world arg-2:
                 loop-entity have scoreboard tag "lobby":
                     set {_id} to citizen id of loop-entity
                     make console execute command "npc select %{_id}%"
                     make console execute command "npc remove"
+            wait 10 tick
+            make console execute command "loopblocksdeform %{_worldint}%"
             
 
 on join:

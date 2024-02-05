@@ -1,4 +1,4 @@
-name: Espada Curta
+name: Espada Curta &7lv.%ITEM_LEVEL%
 lore:
 - '&7Level: &f%ITEM_LEVEL%'
 - '%ITEM_AMMO%'

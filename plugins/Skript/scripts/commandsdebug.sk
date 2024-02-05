@@ -142,6 +142,9 @@ command /textotesste:
 
         loop all players in world of player:
 
+            loop {pontuaçãopartida::%loop-player%::%world of loop-player%::*}:
+                delete {pontuaçãopartida::%loop-player%::%world of loop-player%::%loop-index%}
+
             set {pontuaçãopartida::%loop-player%::%world of loop-player%::1} to 0
 
             #soma
@@ -161,6 +164,10 @@ command /textotesste:
                 set {_messagerank} to "desceu para"
             if {pontuaçãopartida::%loop-player%::%world of loop-player%::1} = 0:
                 set {_messagerank} to "é"
+
+            loop 6 times:
+                if {pontuaçãopartida::%loop-player%::%world of loop-player%::%loop-number%} is not set:
+                    set {pontuaçãopartida::%loop-player%::%world of loop-player%::%loop-number%} to 0
 
             message "&a=[🗡 Castle Fight %{_world}% 🛡]=" to loop-player
             message "" to loop-player

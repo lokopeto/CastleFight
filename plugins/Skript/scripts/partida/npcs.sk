@@ -18,7 +18,7 @@ command /npcs <world>:
 #                make console execute command "npc select %{_id}%"
 #                make console execute command "npc remove"  
     
-        wait 1 tick
+        wait 4 tick
         
         #comando no denizen!
         
@@ -26,82 +26,43 @@ command /npcs <world>:
         #/npccreatorinteractive <tipo> <lugar> <tag> <profissao> <nome>
 
         make console execute command "npccreatorking 139.5,153,23.00,%arg-1% rei1 %{reivida::%arg-1%}% %{castelo1nome::%arg-1%}%" # REI CARVALHO
-
-        wait 3 tick
-        
         make console execute command "npccreatorking -222.5,153,23.00,%arg-1% rei2 %{reivida::%arg-1%}% %{castelo2nome::%arg-1%}%" # REI BARRO
 
-        wait 1 tick
-        
         make console execute command "npccreatorinteractive villager 139.5,152,25.5,%arg-1% npcs1 CLERIC Invocador (%{castelo1nome::%arg-1%}%)"
-
-        wait 1 tick
-        
         make console execute command "npccreatorinteractive villager -222.5,152,20.5,%arg-1% npcs2 CLERIC Invocador (%{castelo2nome::%arg-1%}%)"
 
-        wait 1 tick
-        
         make console execute command "npccreatorinteractive villager 142.5,152,32.5,%arg-1% npcs1 farmer Fazendeiro (%{castelo1nome::%arg-1%}%)"
-
-        wait 1 tick
-        
         make console execute command "npccreatorinteractive villager -225.5,152,13.5,%arg-1% npcs2 farmer Fazendeiro (%{castelo2nome::%arg-1%}%)"
 
-        wait 1 tick
-        
         make console execute command "npccreatorinteractive villager -222.5,152,25.5,%arg-1% npcs2 CLERIC Mago Misterioso (%{castelo2nome::%arg-1%}%)"
-
-        wait 1 tick
-        
         make console execute command "npccreatorinteractive villager 139.5,152.00,20.5,%arg-1% npcs1 CLERIC Mago Misterioso (%{castelo1nome::%arg-1%}%)"
 
-        wait 1 tick
-        
-        make console execute command "npccreatorinteractive villager -240.5,150.00,36.5,%arg-1% npcs2 WEAPONSMITH Ferreiro (%{castelo2nome::%arg-1%}%)"
-
-        wait 1 tick
-        
-        make console execute command "npccreatorinteractive villager 157.5,152.00,9.5,%arg-1% npcs1 WEAPONSMITH Ferreiro (%{castelo1nome::%arg-1%}%)"
-
-        wait 1 tick
-        
-        make console execute command "npccreatorinteractive villager -240.5,150.00,9.5,%arg-1% npcs2 LEATHERWORKER Bordador (%{castelo2nome::%arg-1%}%)"
-
-        wait 1 tick
-        
-        make console execute command "npccreatorinteractive villager 157.5,152,36.5,%arg-1% npcs1 LEATHERWORKER Bordador (%{castelo1nome::%arg-1%}%)"
-
-        wait 1 tick
-        
-        make console execute command "npccreatorinteractive villager 168,152.00,8.5,%arg-1% npcs1 nitwit Arqueiro (%{castelo1nome::%arg-1%}%)"
-
-        wait 1 tick
-        
-        make console execute command "npccreatorinteractive villager -251.0,150.00,37.5,%arg-1% npcs2 nitwit Arqueiro (%{castelo2nome::%arg-1%}%)"
- 
         message "npcs feitos!"
 
-command /npcs <world>:
+command /npcscomplex <integer> <integer> <text> <text>:
     executable by: console
     trigger:
+#       arg-1 castelo
+#       arg-2 tipo(villager)
+#       arg-3 local
+#       arg-4 mundo
 
-command /npcsextra <integer> <integer> <text>:
-    executable by: console
-    trigger:
-        message "espere..."
-        set {_world} to arg-3
-        replace "w@" in {_world} with "" 
-        if arg-1 is 1:
-            if arg-2 is 3:
-                make console execute command "npccreatorinteractive villager 187.5,152.00,36.5,%arg-3% npcs1 cleric Alquimista (%{castelo1nome::%{_world}%}%)"
-            if arg-2 is 4:
-                make console execute command "npccreatorinteractive villager 187.5,152.00,9.5,%arg-3% npcs1 cleric Necromancer (%{castelo1nome::%{_world}%}%)"
+        set {_world} to arg-4
+        replace "w@" in {_world} with ""
 
-        if arg-1 is 2:
-            if arg-2 is 3:
-                make console execute command "npccreatorinteractive villager -270.5,150.00,36.5,%arg-3% npcs2 cleric Alquimista (%{castelo2nome::%{_world}%}%)"
-            if arg-2 is 4:
-                make console execute command "npccreatorinteractive villager -270.5,150.00,9.5,%arg-3% npcs2 cleric Necromancer (%{castelo2nome::%{_world}%}%)"
+        if arg-2 is 1:
+            make console execute command "npccreatorinteractive villager %arg-3%,%{_world}% npcs%arg-1%.Ferreiro WEAPONSMITH Ferreiro (%{castelo%arg-1%nome::%{_world}%}%)"
+            make console execute command "npccreatorinteractive villager 168.0,152.0,8.5,%{_world}% npcs%arg-1%.Arqueiro nitwit Arqueiro (%{castelo%arg-1%nome::%{_world}%}%)"
+
+        if arg-2 is 2:
+            make console execute command "npccreatorinteractive villager %arg-3%,%{_world}% npcs%arg-1%.Bordador LEATHERWORKER Bordador (%{castelo%arg-1%nome::%{_world}%}%)"
+
+        if arg-2 is 3:
+            make console execute command "npccreatorinteractive villager %arg-3%,%{_world}% npcs%arg-1%.Necromancer cleric Necromancer (%{castelo%arg-1%nome::%{_world}%}%)"
+
+        if arg-2 is 4:
+            make console execute command "npccreatorinteractive villager %arg-3%,%{_world}% npcs%arg-1%.Alquimista cleric Alquimista (%{castelo%arg-1%nome::%{_world}%}%)"
+
 
 command /castelo1nome <text> <world>:
     executable by: console

@@ -2,6 +2,10 @@ command /partidapesquisarcancelar:
     permission: pspc.cmd
     aliases: /pspc
     trigger:
+
+        if {psspwait::%player%} is 3:
+            teleport player to {pssplocplayer::%player%}
+
         set {psspwait::%player%} to 0
         message "&7&oPesquisa cancelada"
         set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
@@ -9,7 +13,6 @@ command /partidapesquisarcancelar:
             continue
             wait 1 tick
             send action bar "&7&oPesquisa cancelada" to player
-        teleport player to {pssplocplayer::%player%}
         delete {pssplocplayer::%player%} 
         wait 3 seconds
         if {psspwait::%player%} is not 1:
@@ -125,6 +128,7 @@ command /partidapesquisar [<integer>]:
                 message "&7&oBuscando partida"
                 set {psspwait::%player%} to 2
 
+            set {_time} to 0
 
             while {psspwait::%player%} is 2:
                 loop all worlds:
@@ -175,11 +179,7 @@ command /partidapesquisar [<integer>]:
 
                     else:
                         add 1 to {_time}
-                        send action bar "Procurando Partida &7&o(%120 - {_time}%s, %loop-value%)" to player
-                        if {_time} is 120:
-                            send action bar "&c&lNenhuma partida achada, crie uma" to player
-                            message "&c&lNenhuma partida foi achada, crie você mesmo uma partida indo nas estações."
-                            stop
+                        send action bar "Procurando Partida &7&o(%{_time}%s, %loop-value%)" to player
         
         if arg-1 is not set:
             if {psspwait::%player%} is 0:

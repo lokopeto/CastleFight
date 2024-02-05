@@ -16,11 +16,6 @@ lobby:
             - if <context.item.display.contains_text[Buscar Partida]>:
                 - execute as_player partidapesquisar
 
-        on jogo command:
-            - if <context.args.get[1]> = 1:
-                - foreach <world[<context.args.get[2]>].players>:
-                    - teleport <[value]> <server.flag[<[value].scoreboard_team_name>loc]>
-
         on player quit:
             - remove <server.spawned_npcs_flagged[player.<player.name>]>
 

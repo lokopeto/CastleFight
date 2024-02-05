@@ -38,4 +38,3 @@ on death:
                 set {_range} to a random number between {mobs::%{_nome}%::13} and {mobs::%{_nome}%::14}
 
                 drop "1 %{mobs::%{_nome}%::15}% spawn egg" parsed as item named "&4&l%{_nome}% Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%", "&8&oDistancia = %{_range}%" and "&8&oSkin = %{_ovonomeskin}%" at location of victim
-                add 1 to {pontuaçãopartida::%attacker%::%world of attacker%::6}

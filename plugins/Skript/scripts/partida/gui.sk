@@ -343,8 +343,9 @@ on npc right click:
                 set {_lore::*} to uncolored {_lore::*}
                 replace all "Gasta: " and " XP" in {_lore::*} with ""
                 set {_xp} to level of player
+                set {_xpquantverify} to {_xp} - 1
 #                broadcast "%{_xp}% %{_lore::*}%"
-                if "%{_lore::3}%" parsed as integer >= {_xp}:
+                if "%{_lore::3}%" parsed as integer > {_xpquantverify}:
                     send action bar "&bXp insuficiente!"
                     play sound "fx.error" to player
                 else:
@@ -390,26 +391,24 @@ on npc right click:
         open the created gui for player
 
     if npc name is "Exilado":
-        if {exiladotimer} <= 0:
-            if {exiladoabrido} is set:
+        if {exiladotimer::%world of player%} <= 0:
+            if {exiladoabrido::%world of player%} is not set:
                 create a gui with virtual chest inventory with 1 rows named "Exilado":
-                    set {slotsnecro1} to -1
+                    set {slotsnexila1} to -1
                     loop 9 times:
-                        add 1 to {slotsnecro1}
-                        make gui slot {slotsnecro1} with blue stained glass pane
-
-                    wait 1 tick
+                        add 1 to {slotsexila1}
+                        make gui slot {slotsexila1} with blue stained glass pane
 
                     make gui slot 4 with iron axe with nbt compound from "{display:{Name:'[{""text"":""Exilados"",""italic"":false,""bold"":true,""color"":""gold""}]',Lore:['[{""text"":""Um grupo de exilados!"",""color"":""blue""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Eles fazem "",""italic"":true,""color"":""dark_gray""},{""text"":""guarda"",""color"":""gray""},{""text"":"",""},{""text"":"" "",""color"":""gray""},{""text"":""deseja"",""color"":""dark_gray""}]','[{""text"":""contratar?"",""italic"":true,""color"":""dark_gray""},{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""Custo: "",""italic"":false,""color"":""aqua""},{""text"":""200 XP"",""color"":""yellow""}]']},HideFlags:35}"
                     run on gui open:
-                        set {exiladoabrido} to 1
+                        set {exiladoabrido::%world of player%} to 1
                     run on gui close:
-                        delete {exiladoabrido}  
+                        delete {exiladoabrido::%world of player%}  
                 open the created gui for player 
             else:
                 send action bar "&cExilado só fala com um por vez!"    
         else:
-            send action bar "&7&oespere &f&o%{exiladotimer}%&7&o segundos.."
+            send action bar "&7&oespere &f&o%{exiladotimer::%world of player%}%&7&o segundos.."
 
     if npc name is "Vendedor Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
         create a gui with virtual chest inventory with 2 rows named "Vendedor Misterioso":
@@ -461,10 +460,11 @@ on inventory click:
         set {_nome} to uncolored {_nome}
         {_lore::2} contains "Custo"
         set {_xp} to level of player
+        set {_xpquantverify} to {_xp} - 1
         replace "XP", "Custo:" and " " in {_lore::2} with ""
 #        broadcast "%{_lore::*}%"
         if {_lore::2} is not "Gratis":
-            if "%{_lore::2}%" parsed as integer >= {_xp}:
+            if "%{_lore::2}%" parsed as integer > {_xpquantverify}:
                 message "&bXp insuficiente!"
                 play sound "fx.error" to player
             else:
@@ -490,10 +490,11 @@ on inventory click:
         set {_nome} to uncolored {_nome}
         {_lore::2} contains "Custo"
         set {_xp} to level of player
+        set {_xpquantverify} to {_xp} - 1
         replace "XP", "Custo:" and " " in {_lore::2} with ""
 #        broadcast "%{_lore::*}%"
         if {_lore::2} is not "Gratis":
-            if "%{_lore::2}%" parsed as integer >= {_xp}:
+            if "%{_lore::2}%" parsed as integer > {_xpquantverify}:
                 message "&bXp insuficiente!"
                 play sound "fx.error" to player
             else:
@@ -526,9 +527,10 @@ on inventory click:
         set {_lore::4} to uncolored {_lore::4}
         set {_nome} to uncolored {_nome}
         set {_xp} to level of player
+        set {_xpquantverify} to {_xp} - 1
         replace "Custo: " in {_lore::4} with ""  
         {_nome} contains "usado":
-            if "%{_lore::4}%" parsed as integer >= {_xp}:
+            if "%{_lore::4}%" parsed as integer > {_xpquantverify}:
                 message "&bXp insuficiente!"
                 play sound "fx.error" to player
             else:
@@ -550,6 +552,7 @@ on inventory click:
         set {_nome} to uncolored {_nome}
         {_lore::1} contains "Custo"
         set {_xp} to level of player
+        set {_xpquantverify} to {_xp} - 1
         replace "XP", "Custo:" and " " in {_lore::1} with ""
 #        broadcast "%{_lore::*}%"
         if {_nome} contains "Capacete":
@@ -561,7 +564,7 @@ on inventory click:
         if {_nome} contains "Bota":
             set {_tipo} to "BOOTS"
         if {_lore::1} is not "Gratis":
-            if "%{_lore::1}%" parsed as integer >= {_xp}:
+            if "%{_lore::1}%" parsed as integer > {_xpquantverify}:
                 message "&bXp insuficiente!"
                 play sound "fx.error" to player
             else:
@@ -585,6 +588,7 @@ on inventory click:
         set {_color} to "CustomPotionColor" tag of nbt compound of clicked slot
         {_lore::2} contains "Custo"
         set {_xp} to level of player
+        set {_xpquantverify} to {_xp} - 1
         replace "XP", "Custo:" and " " in {_lore::2} with ""
         replace "Tipo: " in {_lore::1} with ""
         replace "Frasco: " in {_lore::4} with ""
@@ -639,7 +643,7 @@ on inventory click:
 
 
 #        message "%{_tipo}%"
-        if "%{_lore::2}%" parsed as integer >= {_xp}:
+        if "%{_lore::2}%" parsed as integer > {_xpquantverify}:
             message "&bXp insuficiente!"
             play sound "fx.error" to player
         else:
@@ -657,15 +661,18 @@ on inventory click:
         set {_nome} to uncolored {_nome}
         {_lore::5} contains "Custo"
         set {_xp} to level of player
+        set {_xpquantverify} to {_xp} - 1
         replace "XP", "Custo:" and " " in {_lore::5} with ""
-        if "%{_lore::5}%" parsed as integer >= {_xp}:
+        if "%{_lore::5}%" parsed as integer > {_xpquantverify}:
             message "&bXp insuficiente!"
             play sound "fx.error" to player
         else:
             add "-%{_lore::5}%" parsed as integer to level of player
-            message "&cPRONTO PRA BATALHA!!!!"
+            loop all players in world of player:
+                if "%team of loop-player%" is "%team of player%":
+                    message "&cVingança ao rei!! %player% ativou os exilados" to loop-player
             close player's inventory
-            set {exiladotimer} to 0 #560
+            set {exiladotimer::%world of player%} to 560
             loop all entities:
                 loop-entity is a citizen:
                     name of loop-entity is "Exilado":
@@ -673,29 +680,11 @@ on inventory click:
                         make console execute command "npc select %{_id}%"
                         make console execute command "npc invisible"
             
-            wait 1 tick
-            
-            if {_team} is "1":
-                set {_x} to 22.5
-                set {_tpr} to 2
-            if {_team} is "2":
-                set {_x} to -105.5
-                set {_tpr} to 1
-
-
             loop 4 times:
-                wait 4 tick
-                set {_z} to a random number between 25.0 and 21.0
-                make console execute command "npc create Exilado (%{castelo%{_team}%nome::%world of player%}%) --type player --trait sentinel --at %{_x}%:149:%{_z}%:world"
-                
-                make console execute command "npc skin --url %{skins::1}%"  
-                make console execute command "sentinel invincible"
-                make console execute command "sentinel addtarget npc:%{castelo%{_tpr}%nome}%"
-                make console execute command "sentinel addtarget sbteam:%{castelo%{_tpr}%nome}%"
-                make console execute command "sentinel addignore sbteam:castelo%{_team}%"
-                make console execute command "sentinel addtarget players"
-            
-            wait 1 minute #60
+
+                make console execute command "exilados %world of player% rei%{_team}%"
+        
+            wait 4 minute
 
             loop all entities:
                 loop-entity is a citizen:

@@ -1,7 +1,5 @@
 regenfood:20
 regenhel:2.5
-teleport:true
 blockmenu1:true
-global:true
-menu:1
+menu:2
 menulimite:3

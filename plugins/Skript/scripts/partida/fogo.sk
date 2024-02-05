@@ -1,2 +1,0 @@
-every 40 minutes:
-    make console execute command "fogo"

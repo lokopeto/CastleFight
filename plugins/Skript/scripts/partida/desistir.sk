@@ -1,7 +1,6 @@
 command /desistir:
-    cooldown: 1 seconds
-    cooldown storage: {desistircooldown::%world of player%}
     trigger:
+        {desistircooldown::%world of player%} is set
         {jogo::%world of player%} is 1
         if {jogadoresdesistir::%world of player%::*} contains player:
             remove player from {jogadoresdesistir::%world of player%::*}
@@ -32,22 +31,19 @@ command /desistir:
 
             {desistir%{_teamplayer}%::%world of player%} >= {_quant%{_teamplayer}%}:
                 message "<cyan>%{castelo%{_teamplayer}%nome::%world of player%}% desistiu!" to all players in world of player
-                send title "<cyan>Desistencia" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 2 seconds with fadein 0.1 second and fade out 1 second
+                send title "<cyan>Desistencia" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 6 seconds with fadein 0.1 second and fade out 1 second
                 play sound "fx.desistencia" to all players in world of player
                 wait 5 second
 
-                message "<cyan>terminando partida em 3" to all players in world of player
-                send title "<cyan>terminando partida em 3" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 2 seconds with fadein 0.1 second and fade out 1 second
+                send title "<cyan>Desistencia" with subtitle "<bold>terminando partida em 3" to all players in world of player for 3 seconds with fadein 0.1 second and fade out 1 second
                 play sound "fx.countdown" to all players in world of player
                 wait 1 second
 
-                message "<cyan>..em 2"
-                send title "<cyan>..em 2" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 2 seconds with fadein 0.1 second and fade out 1 second
+                send title "<cyan>Desistencia" with subtitle "<bold>..em 2" to all players in world of player for 3 seconds with fadein 0.1 second and fade out 1 second
                 play sound "fx.countdown" to all players in world of player
                 wait 1 second
 
-                message "<cyan>..em 1"
-                send title "<cyan>..em 1" with subtitle "<bold>%{castelo%{_teamplayer}%nome::%world of player%}% pediu desistencia!" to all players in world of player for 2 seconds with fadein 0.1 second and fade out 1 second
+                send title "<cyan>Desistencia" with subtitle "<bold>..em 1" to all players in world of player for 3 seconds with fadein 0.1 second and fade out 1 second
                 play sound "fx.countdown" to all players in world of player
                 wait 1 second
 
@@ -59,4 +55,9 @@ command /desistir:
                 delete {desistir%{_teamplayer}%::%world of player%}
         else:
             message "<red>Você já executou esse comando!"
-        
+
+command /desistircooldown <world>:
+    executable by: console
+    trigger:
+        wait 5 minutes
+        set {desistircooldown::%arg-1%} to 1

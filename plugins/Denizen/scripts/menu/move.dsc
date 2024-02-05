@@ -34,6 +34,10 @@ selecionarmenu:
 
             - cast LEVITATION <player> duration:0 amplifier:255 hide_particles no_icon no_ambient
 
+            - while <player.flag[menu]> = 1:
+                - wait 1s
+                - run menufade1
+
             - flag player blockmenu1
 
             - foreach <world[castlefightmenu].players>:
@@ -117,7 +121,7 @@ selecionarmenu:
             - team name:lobby option:COLLISION_RULE status:never
             - team name:lobby option:FRIENDLY_FIRE status:never
             - team name:lobby option:SEE_INVISIBLE status:never
-            - team name:lobby option:NAME_TAG_VISIBILITY status:true
+            - team name:lobby option:NAME_TAG_VISIBILITY status:always
 
 
 model_startmenu:

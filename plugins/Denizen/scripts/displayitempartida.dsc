@@ -1,6 +1,7 @@
 dipartida_update:
     type: task
     definitions: partida|status
+    debug: false
     script:
     - if <[status]> = 0:
         - define "status:<aqua>Castle Fight <[partida]>"
@@ -15,6 +16,7 @@ dipartida_update:
 dipartida_create:
     type: task
     definitions: x|y|z|partida
+    debug: false
     script:
     - remove <server.flag[dipartida<[partida]>]>
 

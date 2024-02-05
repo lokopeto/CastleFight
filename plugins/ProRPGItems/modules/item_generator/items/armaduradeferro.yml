@@ -1,4 +1,4 @@
-name: Armadura de Ferro
+name: Armadura de Ferro &7lv.%ITEM_LEVEL%
 lore:
 - '&7Level: &f%ITEM_LEVEL%'
 - '%ITEM_AMMO%'

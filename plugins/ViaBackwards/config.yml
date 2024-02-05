@@ -8,14 +8,14 @@ always-show-original-mob-name: true
 add-custom-enchants-into-lore: true
 #
 # Adds the color of a scoreboard team after its prefix for 1.12 clients on 1.13+ servers.
-add-teamcolor-to-prefix: true
+add-teamcolor-to-prefix: false
 #
 # Converts the 1.13 face look-at packet for 1.12- players. Requires a bit of extra caching.
 fix-1_13-face-player: false
 #
 # Fixes 1.13 clients and lower not seeing color or formatting in inventory titles by converting them to legacy text.
 # If you have issues with translatable text being displayed wrongly, disable this.
-fix-formatted-inventory-titles: true
+fix-formatted-inventory-titles: false
 #
 # Sends inventory acknowledgement packets to act as a replacement for ping packets for sub 1.17 clients.
 # This only takes effect for ids in the short range. Useful for anticheat compatibility.
