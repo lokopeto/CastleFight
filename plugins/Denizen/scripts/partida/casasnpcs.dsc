@@ -138,13 +138,14 @@ casasncpsfawe:
             - if <context.args.get[3]> > 0:
                 - execute as_server "npcscomplex <context.args.get[1]> <context.args.get[2]> <[locnpcs]> <context.args.get[4]>"
 
+
             - ~schematic paste name:<context.args.get[1]><context.args.get[2]><context.args.get[3]> <server.flag[casasnpcslocation]>
 
 schematicload:
     type: world
     events:
         on server start:
-            - repeat 6 from:0:
+            - repeat 8 from:-1:
                 - schematic load name:11<[value]>
                 - schematic load name:12<[value]>
                 - schematic load name:13<[value]>
@@ -153,3 +154,16 @@ schematicload:
                 - schematic load name:22<[value]>
                 - schematic load name:23<[value]>
                 - schematic load name:24<[value]>
+
+aaaaaaaaaaa:
+    type: task
+    script:
+    - repeat 8 from:0:
+        - schematic load name:11<[value]>
+        - schematic load name:12<[value]>
+        - schematic load name:13<[value]>
+        - schematic load name:14<[value]>
+        - schematic load name:21<[value]>
+        - schematic load name:22<[value]>
+        - schematic load name:23<[value]>
+        - schematic load name:24<[value]>

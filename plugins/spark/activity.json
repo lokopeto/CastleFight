@@ -5,6 +5,19 @@
       "name": "lokopetoo",
       "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
     },
+    "time": 1707171159173,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/QXRdSNDTxd"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "lokopetoo",
+      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
+    },
     "time": 1703108229111,
     "type": "Profiler (live)",
     "data": {

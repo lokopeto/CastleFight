@@ -52,7 +52,9 @@ command /npcscomplex <integer> <integer> <text> <text>:
 
         if arg-2 is 1:
             make console execute command "npccreatorinteractive villager %arg-3%,%{_world}% npcs%arg-1%.Ferreiro WEAPONSMITH Ferreiro (%{castelo%arg-1%nome::%{_world}%}%)"
-            make console execute command "npccreatorinteractive villager 168.0,152.0,8.5,%{_world}% npcs%arg-1%.Arqueiro nitwit Arqueiro (%{castelo%arg-1%nome::%{_world}%}%)"
+            make console execute command "npccreatorinteractive villager 168.0,152.0,8.5,%{_world}% npcs1.Arqueiro nitwit Arqueiro (%{castelo1nome::%{_world}%}%)"
+            make console execute command "npccreatorinteractive villager -251.0,150.00,37.5,0,180,%{_world}% npcs2.Arqueiro nitwit Arqueiro (%{castelo2nome::%{_world}%}%)"
+
 
         if arg-2 is 2:
             make console execute command "npccreatorinteractive villager %arg-3%,%{_world}% npcs%arg-1%.Bordador LEATHERWORKER Bordador (%{castelo%arg-1%nome::%{_world}%}%)"

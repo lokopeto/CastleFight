@@ -27,8 +27,8 @@ lobby:
         on server start:
             - foreach <server.npcs>:
                 - remove <[value]>
-#            - wait 10s
-#            - execute as_server "jogo 0 castlefight1 castlefight2 castlefight3 castlefight4 castlefight5 castlefight6"
+            - wait 10s
+            - execute as_server "jogo 0 castlefight1 castlefight2 castlefight3 castlefight4 castlefight5 castlefight6"
 
 
 npcplacacreate:

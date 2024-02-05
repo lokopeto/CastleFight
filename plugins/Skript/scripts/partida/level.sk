@@ -233,6 +233,23 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
                     set {pontuaçãopartida::%loop-player%::%world of loop-player%::%loop-integer%} to 0
             make console execute command "loopblocksdeform %{_world}%"
  
+            wait 2 tick
+            make console execute command "casasncpsfawe 1 1 1 w@%arg-2%"
+            wait 2 tick
+            make console execute command "casasncpsfawe 1 2 1 w@%arg-2%"
+            wait 2 tick
+            make console execute command "casasncpsfawe 1 3 0 w@%arg-2%"
+            wait 2 tick
+            make console execute command "casasncpsfawe 1 4 0 w@%arg-2%"
+            wait 2 tick
+            make console execute command "casasncpsfawe 2 1 1 w@%arg-2%"
+            wait 2 tick
+            make console execute command "casasncpsfawe 2 2 1 w@%arg-2%"
+            wait 2 tick
+            make console execute command "casasncpsfawe 2 3 0 w@%arg-2%"
+            wait 2 tick
+            make console execute command "casasncpsfawe 2 4 0 w@%arg-2%"
+
 
         if arg-1 is 0:
             set {jogo::%arg-2%} to 0
@@ -256,8 +273,8 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             set {xpplayer::%arg-2%} to 40
             delete {jogadoresdesistir::%arg-2%::*}
             delete {pronto::%arg-2%}
-            delete {exiladoabrido::%loop-world%}
-            delete {desistircooldown::%loop-player%}
+            delete {exiladoabrido::%arg-2%}
+            delete {desistircooldown::%arg-2%}
 #            delete {sacrificio::*}
 
             loop all players in world arg-2:
