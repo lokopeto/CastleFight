@@ -1,6 +1,6 @@
-regenfood:20
+regenfood:17
+regenhel:2.25
+blockmenu1:true
 global:true
-regenhel:2.5
-menu:1
+menu:2
 menulimite:3
-teleport:true

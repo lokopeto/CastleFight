@@ -4,7 +4,7 @@ npccreatorinteractive:
     description: Does something
     usage: /npccreatorinteractive <&lt>tipo<&gt> <&lt>lugar<&gt> <&lt>tag<&gt> <&lt>profissao<&gt> <&lt>nome<&gt>
     permission: dscript.npccreatorinteractive
-    debug: true
+    debug: false
     tab completions:
         1: <server.entity_types>
     script:
@@ -23,6 +23,7 @@ npccreatorinteractive:
 
     - adjust <[npccreated]> scoreboard_tags:<context.args.get[3].replace[.].with[<&chr[007C]>]>
     - adjust <[npccreated]> profession:<context.args.get[4]>
+    - adjust <[npccreated]> lookclose:true
 
     - flag server npcsinteract<location[<context.args.get[2]>].world>:->:<[npccreated]>
 
@@ -73,6 +74,7 @@ npccreatorking:
 
     - flag server npcsking<location[<context.args.get[1]>].world>:->:<[npccreated]>
     - flag <[npccreated]> <context.args.get[2]><location[<context.args.get[1]>].world>
+    - flag <[npccreated]> <context.args.get[2]>
 
     - flag server castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world.replace_text[w@].with[]>loc:<entry[npc].created_npc.location>
 
@@ -104,16 +106,15 @@ spawnmobc:
         - define inim 1
     - define z <util.random.decimal[25.0].to[21.0].round_to_precision[0.001]>
 
-    - create <context.args.get[2]> "<context.args.get[2]> <context.args.get[3]> (<server.flag[nomecastelo<context.args.get[1]><context.args.get[12]>]>)" <location[<[x]>,<[y]>,<[z]>,<world[<context.args.get[12]>]>]> traits:sentinel save:npc
+    - create <context.args.get[2]> "<context.args.get[2]> <context.args.get[3]> (<list[<server.flag[nomecastelo<context.args.get[1]><context.args.get[12]>]>].space_separated>)" <location[<[x]>,<[y]>,<[z]>,<world[<context.args.get[12]>]>]> traits:sentinel save:npc
     - define npccreatedid <entry[npc].created_npc.id>
     - define npccreated <entry[npc].created_npc>
 
-    - if <context.args.get[1]> = 1:
-        - flag <[npccreated]> castelo1
-    - if <context.args.get[1]> = 2:
-        - flag <[npccreated]> castelo2
+    - flag <[npccreated]> castelo<context.args.get[1]>
 
-    - execute as_server "sentinel addtarget npc:<server.flag[nomecastelo<[inim]><context.args.get[12]>]> --id <[npccreatedid]> " silent
+    - execute as_server "sentinel addtarget npc:<list[<server.flag[nomecastelo<[inim]><context.args.get[12]>]>].space_separated.replace[ ].with[\s*]> --id <[npccreatedid]> "
+    - narrate "sentinel addtarget npc:<list[<server.flag[nomecastelo<context.args.get[1]><context.args.get[12]>]>].space_separated.replace[ ].with[\s*]> --id <[npccreatedid]> "
+
     - execute as_server "sentinel addtarget sbteam:castelo<[inim]><context.args.get[12]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel addignore sbteam:castelo<context.args.get[1]><context.args.get[12]> --id <[npccreatedid]> " silent
 
@@ -145,6 +146,8 @@ spawnmobc:
 
     - adjust <[npccreated]> speed:<context.args.get[7]>
 
+
+
 spawnmob:
     type: command
     name: spawnmob
@@ -153,7 +156,7 @@ spawnmob:
     permission: dscript.npccastle
     debug: false
     script:
-    - narrate "<red><bold>spawnmob <context.args>"
+    - narrate "<light_purple><bold>spawnmob <context.args>"
 
     - remove <server.npcs_flagged[<context.args.get[13]>_<context.args.get[12]>]>
 
@@ -164,7 +167,7 @@ spawnmob:
     - if !<[categoria].contains_text[boss|xp]>:
         - define categoria natural
 
-    - create <[type]> "<[nome].to_titlecase> lv.<context.args.get[3]> (<[categoria].to_uppercase>)" <location[<context.args.get[1]>,<world[<context.args.get[12]>]>]> traits:sentinel save:npc
+    - create <[type]> "<bold><Red><[nome].to_titlecase> lv.<context.args.get[3]> <bold><dark_red>(<[categoria].to_uppercase>)" <location[<context.args.get[1]>,<world[<context.args.get[12]>]>]> traits:sentinel save:npc
     - define npccreatedid <entry[npc].created_npc.id>
     - define npccreated <entry[npc].created_npc>
 
@@ -193,9 +196,9 @@ spawnmob_exilado:
     description: Does something
     usage: /exilados <&lt>world<&gt> <&lt>tagreis<&gt>
     permission: dscript.npccastle
-    debug: true
+    debug: false
     script:
-    - narrate "<red><bold>exilados <context.args>"
+    - narrate "<light_purple><bold>exilados <context.args>"
 
     - foreach <server.spawned_npcs_flagged[<context.args.get[2]><context.args.get[1]>]>:
         - define reiloc <[value].location>

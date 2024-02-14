@@ -7,9 +7,9 @@ sentinel defaults:
     # Whether 'ranged attack' NPCs should chase targets.
     ranged chase target: true
     # How much damage to do. -1 for calculated values.
-    damage: -1
+    damage: 0
     # How much armor to have (percentage). -1 for calculated values.
-    armor: -1
+    armor: 0
     # How much health to have.
     health: 20
     # Whether this NPC is invincible.
@@ -39,7 +39,7 @@ sentinel defaults:
     # Accuracy offset, 0 means perfectly accurate, 5 means pretty inaccurate.
     accuracy: 0
     # "Realistic" logic, don't attack targets we can't see, if enabled.
-    realistic: false
+    realistic: true
     # How far the NPC can reach.
     reach: 2.2
     # How far the NPC is willing to fire projectiles.
@@ -69,7 +69,7 @@ random:
     # If set 'true', native (Spigot or NMS) driven attack handlers will be used for melee attacks from some NPC entity types when that NPC's damage value is -1.
     # If the damage value is manually specified, or the NPC is not a supported type, or this config key is set to 'false', a direct damage induction will be used instead.
     # If 'workaround damage' is enabled, neither native nor direct damage will be used, and the workaround hack will apply instead.
-    do native attacks: true
+    do native attacks: false
     # Whether to enforce drops even when 'keepInventory' or similar are enabled.
     workaround drops: false
     # Whether to block some Bukkit events related to Sentinel NPCs from ever running. Will cause weirdness with basic functionality.

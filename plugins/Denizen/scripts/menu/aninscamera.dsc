@@ -253,7 +253,7 @@ anim_inicio_reverse:
     - teleport <player> <location[-21.8303,174.3267,113.5369,-84.9008,112.5466,castlefightmenu]>
     - wait 0.1t
     - teleport <player> <location[-21.8303,174.3267,113.5369,-86.5482,112.5466,castlefightmenu]>
-    - wait 0.1t>
+    - wait 0.1t
     - teleport <player> <location[-21.8303,174.3267,113.5369,-87.9066,112.5466,castlefightmenu]>
     - wait 0.1t
     - teleport <player> <location[-21.8303,174.3267,113.5369,-88.9521,112.5466,castlefightmenu]>
@@ -636,9 +636,269 @@ anim_play:
     - wait 0.1t
     - teleport <player> <location[-21.8303,174.2076,113.5369,0,3.0531,castlefightmenu]>
 
+anim_jogo_final:
+    debug: false
+    type: task
+    definitions: castelo
+    script:
+        - define y 152.8819
+        - define z 23.0
+        - define yaw -90
+        - define pitch -13.0472
 
+        - if <[castelo]> = 1:
+            - define yaw -90
+            - define x 104.5
+            - define y 152.8819
 
+            - teleport <player> <location[<element[<[x]>].add[0.0000]>,<element[<[y]>].add[0.0000]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[00.0000]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[0.5025]>,<element[<[y]>].sub[0.0248]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[00.7204]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[0.9336]>,<element[<[y]>].sub[0.0618]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[01.4755]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[1.3158]>,<element[<[y]>].sub[0.1047]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[02.2611]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[1.6617]>,<element[<[y]>].sub[0.1497]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[03.0728]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[1.9792]>,<element[<[y]>].sub[0.1941]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[03.9055]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[2.2737]>,<element[<[y]>].sub[0.2362]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[04.7538]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[2.5491]>,<element[<[y]>].sub[0.2748]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[05.6119]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[2.8084]>,<element[<[y]>].sub[0.3089]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[06.4738]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[3.0535]>,<element[<[y]>].sub[0.3379]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[07.3331]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[3.2865]>,<element[<[y]>].sub[0.3615]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[08.1837]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[3.5087]>,<element[<[y]>].sub[0.3793]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[09.0193]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[3.7212]>,<element[<[y]>].sub[0.3912]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[09.8341]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[3.9252]>,<element[<[y]>].sub[0.3971]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[10.6223]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[4.1216]>,<element[<[y]>].sub[0.3969]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[11.3788]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[4.3111]>,<element[<[y]>].sub[0.3908]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[12.0986]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[4.4947]>,<element[<[y]>].sub[0.3786]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[12.7777]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[4.6730]>,<element[<[y]>].sub[0.3604]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[13.4123]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[4.8472]>,<element[<[y]>].sub[0.3364]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[13.9992]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.0182]>,<element[<[y]>].sub[0.3064]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[14.5361]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.1879]>,<element[<[y]>].sub[0.2702]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.0208]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.3168]>,<element[<[y]>].sub[0.2403]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.3966]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.4069]>,<element[<[y]>].sub[0.2194]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.6637]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.4800]>,<element[<[y]>].sub[0.2025]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.8652]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.5435]>,<element[<[y]>].sub[0.1878]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.0216]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.6009]>,<element[<[y]>].sub[0.1745]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.1445]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.6540]>,<element[<[y]>].sub[0.1622]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.2413]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.7042]>,<element[<[y]>].sub[0.1505]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.3169]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.7522]>,<element[<[y]>].sub[0.1394]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.3750]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.7985]>,<element[<[y]>].sub[0.1287]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4182]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.8437]>,<element[<[y]>].sub[0.1182]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4487]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.8879]>,<element[<[y]>].sub[0.1080]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4680]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.9315]>,<element[<[y]>].sub[0.0979]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4775]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[5.9746]>,<element[<[y]>].sub[0.0879]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4782]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.0175]>,<element[<[y]>].sub[0.0779]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4711]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.0601]>,<element[<[y]>].sub[0.0681]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4569]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.1028]>,<element[<[y]>].sub[0.0582]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4362]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.1454]>,<element[<[y]>].sub[0.0483]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4098]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.1883]>,<element[<[y]>].sub[0.0384]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.3779]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.2314]>,<element[<[y]>].sub[0.0284]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.3412]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.2748]>,<element[<[y]>].sub[0.0183]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.2999]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.3188]>,<element[<[y]>].sub[0.0081]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.2544]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.3634]>,<element[<[y]>].add[0.0022]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.2051]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.4087]>,<element[<[y]>].add[0.0127]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.1522]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.4550]>,<element[<[y]>].add[0.0235]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.0961]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.5024]>,<element[<[y]>].add[0.0344]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.0370]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.5512]>,<element[<[y]>].add[0.0457]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.9751]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.6017]>,<element[<[y]>].add[0.0574]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.9107]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.6541]>,<element[<[y]>].add[0.0696]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.8440]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.7091]>,<element[<[y]>].add[0.0823]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.7753]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.7671]>,<element[<[y]>].add[0.0958]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.7049]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.8288]>,<element[<[y]>].add[0.1101]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.6331]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.8951]>,<element[<[y]>].add[0.1254]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.5601]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[6.9674]>,<element[<[y]>].add[0.1422]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.4865]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[7.0473]>,<element[<[y]>].add[0.1607]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.4127]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[7.1372]>,<element[<[y]>].add[0.1816]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.3393]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[7.2409]>,<element[<[y]>].add[0.2056]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.2674]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[7.3645]>,<element[<[y]>].add[0.2342]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.1985]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[7.5191]>,<element[<[y]>].add[0.2700]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.1352]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[7.7305]>,<element[<[y]>].add[0.3190]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.0834]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].add[8.1011]>,<element[<[y]>].add[0.4049]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.0640]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
 
+        - if <[castelo]> = 2:
+            - define yaw 90
+            - define x -187.5
+            - define y 150.8819
+
+            - teleport <player> <location[<element[<[x]>].sub[0.0000]>,<element[<[y]>].add[0.0000]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[00.0000]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[0.5025]>,<element[<[y]>].sub[0.0248]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[00.7204]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[0.9336]>,<element[<[y]>].sub[0.0618]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[01.4755]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[1.3158]>,<element[<[y]>].sub[0.1047]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[02.2611]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[1.6617]>,<element[<[y]>].sub[0.1497]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[03.0728]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[1.9792]>,<element[<[y]>].sub[0.1941]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[03.9055]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[2.2737]>,<element[<[y]>].sub[0.2362]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[04.7538]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[2.5491]>,<element[<[y]>].sub[0.2748]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[05.6119]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[2.8084]>,<element[<[y]>].sub[0.3089]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[06.4738]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[3.0535]>,<element[<[y]>].sub[0.3379]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[07.3331]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[3.2865]>,<element[<[y]>].sub[0.3615]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[08.1837]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[3.5087]>,<element[<[y]>].sub[0.3793]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[09.0193]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[3.7212]>,<element[<[y]>].sub[0.3912]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[09.8341]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[3.9252]>,<element[<[y]>].sub[0.3971]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[10.6223]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[4.1216]>,<element[<[y]>].sub[0.3969]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[11.3788]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[4.3111]>,<element[<[y]>].sub[0.3908]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[12.0986]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[4.4947]>,<element[<[y]>].sub[0.3786]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[12.7777]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[4.6730]>,<element[<[y]>].sub[0.3604]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[13.4123]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[4.8472]>,<element[<[y]>].sub[0.3364]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[13.9992]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.0182]>,<element[<[y]>].sub[0.3064]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[14.5361]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.1879]>,<element[<[y]>].sub[0.2702]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.0208]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.3168]>,<element[<[y]>].sub[0.2403]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.3966]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.4069]>,<element[<[y]>].sub[0.2194]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.6637]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.4800]>,<element[<[y]>].sub[0.2025]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.8652]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.5435]>,<element[<[y]>].sub[0.1878]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.0216]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.6009]>,<element[<[y]>].sub[0.1745]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.1445]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.6540]>,<element[<[y]>].sub[0.1622]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.2413]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.7042]>,<element[<[y]>].sub[0.1505]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.3169]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.7522]>,<element[<[y]>].sub[0.1394]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.3750]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.7985]>,<element[<[y]>].sub[0.1287]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4182]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.8437]>,<element[<[y]>].sub[0.1182]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4487]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.8879]>,<element[<[y]>].sub[0.1080]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4680]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.9315]>,<element[<[y]>].sub[0.0979]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4775]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[5.9746]>,<element[<[y]>].sub[0.0879]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4782]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.0175]>,<element[<[y]>].sub[0.0779]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4711]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.0601]>,<element[<[y]>].sub[0.0681]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4569]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.1028]>,<element[<[y]>].sub[0.0582]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4362]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.1454]>,<element[<[y]>].sub[0.0483]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.4098]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.1883]>,<element[<[y]>].sub[0.0384]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.3779]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.2314]>,<element[<[y]>].sub[0.0284]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.3412]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.2748]>,<element[<[y]>].sub[0.0183]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.2999]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.3188]>,<element[<[y]>].sub[0.0081]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.2544]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.3634]>,<element[<[y]>].add[0.0022]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.2051]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.4087]>,<element[<[y]>].add[0.0127]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.1522]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.4550]>,<element[<[y]>].add[0.0235]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.0961]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.5024]>,<element[<[y]>].add[0.0344]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[16.0370]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.5512]>,<element[<[y]>].add[0.0457]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.9751]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.6017]>,<element[<[y]>].add[0.0574]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.9107]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.6541]>,<element[<[y]>].add[0.0696]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.8440]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.7091]>,<element[<[y]>].add[0.0823]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.7753]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.7671]>,<element[<[y]>].add[0.0958]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.7049]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.8288]>,<element[<[y]>].add[0.1101]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.6331]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.8951]>,<element[<[y]>].add[0.1254]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.5601]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[6.9674]>,<element[<[y]>].add[0.1422]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.4865]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[7.0473]>,<element[<[y]>].add[0.1607]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.4127]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[7.1372]>,<element[<[y]>].add[0.1816]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.3393]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[7.2409]>,<element[<[y]>].add[0.2056]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.2674]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[7.3645]>,<element[<[y]>].add[0.2342]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.1985]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[7.5191]>,<element[<[y]>].add[0.2700]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.1352]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[7.7305]>,<element[<[y]>].add[0.3190]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.0834]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
+            - wait 0.1t
+            - teleport <player> <location[<element[<[x]>].sub[8.1011]>,<element[<[y]>].add[0.4049]>,<element[<[z]>].add[0]>,<element[<[pitch]>].add[15.0640]>,<element[<[yaw]>].add[0]>,<player.location.world>]>
 
 
 

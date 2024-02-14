@@ -197,9 +197,11 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             set {_castelo1nomereplec} to {castelo1nome::%arg-2%}
             set {_castelo2nomereplec} to {castelo2nome::%arg-2%}
 
+            replace " " in {_castelo1nomereplec} and {_castelo2nomereplec} with "|"
 
-            make console execute command "ex flag server nomecastelo1%arg-2%:%{castelo1nome::%arg-2%}%"
-            make console execute command "ex flag server nomecastelo2%arg-2%:%{castelo2nome::%arg-2%}%"
+
+            make console execute command "ex flag server nomecastelo1%arg-2%:%{_castelo1nomereplec}%"
+            make console execute command "ex flag server nomecastelo2%arg-2%:%{_castelo2nomereplec}%"
 
             make console execute command "spawn %arg-2%"
             make console execute command "npcs %arg-2%"
@@ -388,7 +390,7 @@ on death:
 
             set {pontuaçãopartida::%loop-player%::%world of loop-player%::1} to 0
 
-            set {pontuaçãopartida::%loop-player%::%world of loop-player%::6} to max health of loop-player
+            set {pontuaçãopartida::%loop-player%::%world of loop-player%::6} to max health of loop-player * 2
 
             #soma
             set {_score::1} to {pontuaçãopartida::%loop-player%::%world of loop-player%::2} + {pontuaçãopartida::%loop-player%::%world of loop-player%::4}

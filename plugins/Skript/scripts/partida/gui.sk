@@ -15,23 +15,57 @@ on npc right click:
 #        broadcast "aaaaaa"
             create a gui with virtual chest inventory with 1 rows named "Invocador":
                 set the lock status of the edited gui to false
-                set {slots1} to -1
-                set {slots2} to 0
-                loop 10 times:
-                    add 1 to {slots1}
-                    add 1 to {slots2}
-                    make gui slot {slots1} with {Invocador%{_team}%::%world of player%::%{slots2}%}
-#                    message "%{Invocador%{_team}%::%{slots2}%}%"
-                wait 1 tick
+
+                loop 34 times:
+                    set {_index} to loop-integer - 1 
+                    set {_playerinvsave::%loop-integer%} to slot {_index} of player
+
+                loop {_playerinvsave::*}:
+                    if loop-variable is a spawn egg:
+                        set {_invloopegg::%loop-index%} to loop-variable
+                    else:
+                        if loop-variable is not air:
+                            set {_invloopegg::%loop-index%} to a barrier named "&c&lBloqueado"
+
+                loop 34 times:
+                    set {_index} to loop-integer - 1
+                    set slot {_index} of player to {_invloopegg::%loop-integer%}
+
+                delete {_invloopegg::*}
+
+
+                set {_slots1} to -1
+                set {_slots2} to 0
+                loop 9 times:
+                    add 1 to {_slots1}
+                    add 1 to {_slots2}
+                    make gui slot {_slots1} with {Invocador%{_team}%::%world of player%::%{_slots2}%}
+
                 run on gui open:
                     delete {invocadorabrido%{_team}%::%world of player%}
                 run on gui close:
-                    set {Invocador%{_team}%::%world of player%::*} to items of gui
                     set {invocadorabrido%{_team}%::%world of player%} to 1
-#                        broadcast "%{Invocador1lore::%{slots1}%::*}%"
+                    set {Invocador%{_team}%::%world of player%::*} to items of gui
+
+                    loop 34 times:
+                        set {_index} to loop-integer - 1 
+                        set {_invloopegg::%loop-integer%} to slot {_index} of player
+
+                    remove every spawn egg item from {_playerinvsave::*}
+
+                    loop {_invloopegg::*}:
+                        if loop-variable is a spawn egg:
+                            set {_playerinvsave::%loop-index%} to loop-variable
+
+                    loop 34 times:
+                        set {_index} to loop-integer - 1
+                        set slot {_index} of player to {_playerinvsave::%loop-integer%}
+
+
             open the created gui for player
         else:
             send action bar "&cInvocador está ocupado!"
+
     if npc name is "Fazendeiro (%{castelo%{_team}%nome::%world of player%}%)":
         if {Padeirotimer%{_team}%::%world of player%} <= 0:
             create a gui with virtual chest inventory with 2 rows named "Fazendeiro":

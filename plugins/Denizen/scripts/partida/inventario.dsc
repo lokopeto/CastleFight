@@ -5,5 +5,5 @@ inventario:
     events:
         on player clicks in inventory:
             - if <context.inventory.title.contains_any_text[Invocador|Necromancer]>:
-                - if !<context.item.contains_all_text[spawn_egg]>:
+                - if <context.item.contains_all_text[barrier]>:
                     - determine cancelled

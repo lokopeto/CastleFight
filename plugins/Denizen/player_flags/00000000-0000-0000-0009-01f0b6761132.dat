@@ -1,3 +1,6 @@
-regenfood:20
-regenhel:2.5
+regenfood:19
+regenhel:0.99075734615325925
+blockmenu1:true
 global:true
+menu:2
+menulimite:3

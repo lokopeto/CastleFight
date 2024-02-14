@@ -11,7 +11,7 @@ dipartida_update:
         - define "status:<red>Castle Fight <[partida]>"
 
     - adjust <server.flag[dipartida<[partida]>]> name:<[status]>
-    - adjust <server.flag[dipartida<[partida]>]> item:air
+    - adjust <server.flag[dipartida<[partida]>]> item:iron_sword
 
 dipartida_create:
     type: task
