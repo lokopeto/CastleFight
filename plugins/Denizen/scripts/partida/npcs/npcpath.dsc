@@ -11,6 +11,6 @@ npcpathfind:
         on delta time secondly every:3:
 
             - foreach <server.spawned_npcs_flagged[rei2]> as:npcs:
-                - teleport <[npcs]> <location[-222.5,151.00,23.0,<[npcs].location.world>]>
+                - teleport <[npcs]> <location[-222.5,151.00,23.0,0,-90,<[npcs].location.world>]>
             - foreach <server.spawned_npcs_flagged[rei1]> as:npcs:
-                - teleport <[npcs]> <location[139.50,153.00,23.0,<[npcs].location.world>]>
+                - teleport <[npcs]> <location[139.50,153.00,23.0,0,90,<[npcs].location.world>]>

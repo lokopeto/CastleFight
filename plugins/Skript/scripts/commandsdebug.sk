@@ -180,6 +180,35 @@ command /textotesste:
             message "" to loop-player
             message "&a= Seu Rank %{_messagerank}% %{rank::%player%}% =" to loop-player
 
+command /pocaoalqcreate <integer> <text> <text> <integer> <integer> <color> <integer>:
+    trigger:
+        set {_slot} to arg-1
+
+        set {_item} to potion named arg-2
+
+        colour {_item} arg-6
+
+        delete {pocoes::%{_slot}%::*}
+        add {_item}, arg-3, arg-4, arg-5, arg-6 and arg-7 to {pocoes::%{_slot}%::*}
+
+        message ""
+        message "Criado poção %arg-2%/%{_slot}%"
+        message "Efeitos: %arg-3% / DUR: %arg-4% / AMP: %arg-5%"
+        message "Cor: %arg-6%"
+        message "Valor: %arg-7%"
+
+command /pocaoalqrem <integer>:
+    trigger:
+        message "deletado %{pocoes::%arg-1%::1}%"
+        delete {pocoes::%arg-1%::*}
+
+command /pocaoalqverif <integer>:
+    trigger:
+        message ""
+        message "Poção %{pocoes::%arg-1%::1}%"
+        message "Efeitos: %{pocoes::%arg-1%::2}% / AMP: %{pocoes::%arg-1%::3}% / DUR: %{pocoes::%arg-1%::4}%"
+        message "Cor: %{pocoes::%arg-1%::5}%"
+
 
 
 #on gamemode change to spectator:

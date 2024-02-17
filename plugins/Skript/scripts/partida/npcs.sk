@@ -25,12 +25,12 @@ command /npcs <world>:
         #/npccreatorking <lugar> <tag> <vida> <nome>
         #/npccreatorinteractive <tipo> <lugar> <tag> <profissao> <nome>
 
-        make console execute command "npccreatorking 139.5,153,23.00,%arg-1% rei1 %{reivida::%arg-1%}% %{castelo1nome::%arg-1%}%" # REI CARVALHO
-        make console execute command "npccreatorking -222.5,153,23.00,%arg-1% rei2 %{reivida::%arg-1%}% %{castelo2nome::%arg-1%}%" # REI BARRO
+        make console execute command "npccreatorking 139.5,153,23.00,0,90,%arg-1% rei1 %{reivida::%arg-1%}% %{castelo1nome::%arg-1%}%" # REI CARVALHO
+        make console execute command "npccreatorking -222.5,153,23.00,0,-90,%arg-1% rei2 %{reivida::%arg-1%}% %{castelo2nome::%arg-1%}%" # REI BARRO
 
         make console execute command "npccreatorinteractive villager 139.5,152,25.5,%arg-1% npcs1 CLERIC Invocador (%{castelo1nome::%arg-1%}%)"
         make console execute command "npccreatorinteractive villager -222.5,152,20.5,%arg-1% npcs2 CLERIC Invocador (%{castelo2nome::%arg-1%}%)"
-
+        
         make console execute command "npccreatorinteractive villager 142.5,152,32.5,%arg-1% npcs1 farmer Fazendeiro (%{castelo1nome::%arg-1%}%)"
         make console execute command "npccreatorinteractive villager -225.5,152,13.5,%arg-1% npcs2 farmer Fazendeiro (%{castelo2nome::%arg-1%}%)"
 
@@ -54,7 +54,7 @@ command /npcscomplex <integer> <integer> <text> <text>:
             make console execute command "npccreatorinteractive villager %arg-3%,%{_world}% npcs%arg-1%.Ferreiro WEAPONSMITH Ferreiro (%{castelo%arg-1%nome::%{_world}%}%)"
             make console execute command "npccreatorinteractive villager 168.0,152.0,8.5,%{_world}% npcs1.Arqueiro nitwit Arqueiro (%{castelo1nome::%{_world}%}%)"
             make console execute command "npccreatorinteractive villager -251.0,150.00,37.5,0,180,%{_world}% npcs2.Arqueiro nitwit Arqueiro (%{castelo2nome::%{_world}%}%)"
-
+            make console execute command "ex run DUMMY def.castelo:%arg-1% def.world:%{_world}%"
 
         if arg-2 is 2:
             make console execute command "npccreatorinteractive villager %arg-3%,%{_world}% npcs%arg-1%.Bordador LEATHERWORKER Bordador (%{castelo%arg-1%nome::%{_world}%}%)"

@@ -16,7 +16,7 @@ on death:
                 increase the attacker's level by a random integer between 5 and 10
             else:
                 name of victim contains {castelo1nome::%world of attacker%} or {castelo2nome::%world of attacker%}:
-                    increase the attacker's level by a random integer between 1 and 5
+                    increase the attacker's level by a random integer between 1 and 3
                 else:
                     increase the attacker's level by a random integer between 13 and 20
 
@@ -74,8 +74,7 @@ on click on sign:
         line 1 is "&b[Evoluir]":
             line 3 is not "&cMAXIMO":
                 {_xp} = 0:
-                    message "&9XP insuficiente" to player
-                    play sound "fx.error" to player
+                    xpinsuficiente(player)
                 else:
                     if {_max%{_team}%} > 1:
                         set {_max%{_team}%} to {_max%{_team}%} - 0.5
@@ -127,8 +126,7 @@ on click on sign:
         line 1 is "&b[XP]":
             player is sneaking:
                 {XPquant%{_team}%::%world of player%} <= 0:
-                    message "&9XP insuficiente" to player
-                    play sound "fx.error" to player
+                    xpinsuficiente(player)
                     set {XPquant%{_team}%::%world of player%} to 0
                 else:
                     {XPquant%{_team}%::%world of player%} <= 30:
@@ -140,8 +138,7 @@ on click on sign:
                         
             else:
                 {_xp} = 0:
-                    message "&9XP insuficiente" to player
-                    play sound "fx.error" to player
+                    xpinsuficiente(player)
 
                 else:
                     {_xp} >= 30:
@@ -286,6 +283,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
                 delete {lobbyplayers::%arg-2%}
                 clear the loop-player's inventory
                 set total experience of loop-players to 0
+                make console execute command "ex flag <player[%loop-player%]> londamaplayer:!"
             
             
             clear all the potion effects of all players in world arg-2

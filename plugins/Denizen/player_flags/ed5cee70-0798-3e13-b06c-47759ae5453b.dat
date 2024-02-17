@@ -1,7 +1,6 @@
-regenfood:15
-regenhel:125000
+regenfood:6
+regenhel:2.5
 teleport?!:true
 blockmenu1:true
-global:true
 menu:2
 menulimite:3

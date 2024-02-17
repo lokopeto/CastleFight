@@ -65,6 +65,11 @@ selecionarmenu:
 
 
         on player walks in:castlefightmenu:
+#            - define loc1 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+#            - wait 1t
+#            - define loc2 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+
+#            - if <[loc1]> = <[loc2]>:
             - if <player.flag[teleport].exists> && <player.flag[teleportpausar].exists>:
                 - if <context.old_location.z> < <context.new_location.z>:
                     - if <player.flag[menu]> > 1:

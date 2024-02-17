@@ -36,7 +36,7 @@ npccreatorking:
     description: Does something
     usage: /npccreatorking <&lt>lugar<&gt> <&lt>tag<&gt> <&lt>vida<&gt> <&lt>nome<&gt>
     permission: dscript.npccreatorking
-    debug: true
+    debug: false
     tab completions:
         2: <server.entity_types>
     script:
@@ -100,20 +100,23 @@ spawnmobc:
         - define x 136.0
         - define y 152
         - define inim 2
+        - define cor <green>
     - if <context.args.get[1]> = 2:
         - define x -219.0
         - define y 150
         - define inim 1
-    - define z <util.random.decimal[25.0].to[21.0].round_to_precision[0.001]>
+        - define cor <&color[#F57F51]>
 
-    - create <context.args.get[2]> "<context.args.get[2]> <context.args.get[3]> (<list[<server.flag[nomecastelo<context.args.get[1]><context.args.get[12]>]>].space_separated>)" <location[<[x]>,<[y]>,<[z]>,<world[<context.args.get[12]>]>]> traits:sentinel save:npc
+    - define z <util.random.decimal[25.0].to[21.0].round_to_precision[0.001]>
+    - define damagediv <context.args.get[4].div[2]>
+
+    - create <context.args.get[2]> "<[cor]><context.args.get[2]> <context.args.get[3]> <bold>(<list[<server.flag[nomecastelo<context.args.get[1]><context.args.get[12]>]>].space_separated>)" <location[<[x]>,<[y]>,<[z]>,<world[<context.args.get[12]>]>]> traits:sentinel save:npc
     - define npccreatedid <entry[npc].created_npc.id>
     - define npccreated <entry[npc].created_npc>
 
     - flag <[npccreated]> castelo<context.args.get[1]>
 
-    - execute as_server "sentinel addtarget npc:<list[<server.flag[nomecastelo<[inim]><context.args.get[12]>]>].space_separated.replace[ ].with[\s*]> --id <[npccreatedid]> "
-    - narrate "sentinel addtarget npc:<list[<server.flag[nomecastelo<context.args.get[1]><context.args.get[12]>]>].space_separated.replace[ ].with[\s*]> --id <[npccreatedid]> "
+    - execute as_server "sentinel addtarget npc:<list[<server.flag[nomecastelo<[inim]><context.args.get[12]>]>].space_separated.replace[ ].with[\s*]> --id <[npccreatedid]> " silent
 
     - execute as_server "sentinel addtarget sbteam:castelo<[inim]><context.args.get[12]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel addignore sbteam:castelo<context.args.get[1]><context.args.get[12]> --id <[npccreatedid]> " silent
@@ -130,7 +133,7 @@ spawnmobc:
     - execute as_server "sentinel addignore npc:Necromancer --id <[npccreatedid]> " silent
     - execute as_server "sentinel addignore npc:Misterioso --id <[npccreatedid]> " silent
     - execute as_server "sentinel addtarget players --id <[npccreatedid]> " silent
-    - execute as_server "sentinel damage <context.args.get[4]> --id <[npccreatedid]> " silent
+    - execute as_server "sentinel damage <[damagediv]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel health <context.args.get[5]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel armor <context.args.get[6]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel speed <context.args.get[9]> --id <[npccreatedid]> " silent
@@ -146,7 +149,7 @@ spawnmobc:
 
     - adjust <[npccreated]> speed:<context.args.get[7]>
 
-
+    - run equipamento def:<[npccreated]>
 
 spawnmob:
     type: command
@@ -163,6 +166,7 @@ spawnmob:
     - define type <context.args.get[2].replace_text[_boss|_xp]>
     - define categoria <context.args.get[2].replace_text[<[type]>_]>
     - define nome <[type].replace_text[_].with[ ]>
+    - define damagediv <context.args.get[4].div[2]>
 
     - if !<[categoria].contains_text[boss|xp]>:
         - define categoria natural
@@ -175,20 +179,21 @@ spawnmob:
 
     - execute as_server "sentinel respawntime -1 --id <[npccreatedid]> " silent
     - execute as_server "sentinel addtarget players --id <[npccreatedid]> " silent
-    - execute as_server "sentinel damage <context.args.get[4]> --id <[npccreatedid]> " silent
+    - execute as_server "sentinel damage <[damagediv]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel health <context.args.get[5]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel armor <context.args.get[6]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel speed <context.args.get[9]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel accuracy <context.args.get[10]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel range <context.args.get[11]> --id <[npccreatedid]> " silent
 
-    - if <context.args.get[2]> = Spider:
-        - execute as_server "sentinel attackrange <context.args.get[11]> --id <[npccreatedid]> " silent
-
     - adjust <[npccreated]> speed:<context.args.get[7]>
 
     - flag <[npccreated]> <context.args.get[13]>_<context.args.get[12]>
     - flag <[npccreated]> mobsagressive<context.args.get[12]>
+
+    - wait 3t
+
+    - run equipamento def:<[npccreated]>
 
 spawnmob_exilado:
     type: command
@@ -219,15 +224,32 @@ spawnmob_exilado:
     - execute as_server "sentinel addignore sbteam:<context.args.get[2]> --id <[npccreatedid]>"
     - execute as_server "sentinel addtarget players --id <[npccreatedid]>"
 
+dummy:
+    type: task
+    definitions: castelo|world
+    script:
 
+    - foreach <server.npcs_flagged[dummy<[castelo]><[world]>]>:
+        - remove <[value]>
 
+    - if <[castelo]> = 1:
+        - define loc <location[171.5,152.00,14.5,0,90,<[world]>]>
+    - if <[castelo]> = 2:
+        - define loc <location[-254.5,150.00,31.5,0,-90,<[world]>]>
 
+    - create armor_stand "Boneco de Teste" <[loc]> traits:sentinel save:npc
+    - define npccreated <entry[npc].created_npc>
+    - define npccreatedid <entry[npc].created_npc.id>
 
+    - adjust <[npccreated]> name_visible:false
+    - adjust <[npccreated]> invulnerable:false
 
+    - equip <[npccreated]> hand:wooden_sword offhand:bow
 
+    - execute as_server "sentinel knockback --id <[npccreatedid]>"
+    - execute as_server "sentinel fightback --id <[npccreatedid]>"
 
-
-
+    - flag <[npccreated]> dummy<[castelo]><[world]>
 
 
 
@@ -246,3 +268,28 @@ npccreatordelete:
 
     - flag server npcsinteract<context.args.get[1]>:!
     - flag server npcsking<context.args.get[1]>:!
+
+equipamento:
+    type: task
+    definitions: npc
+    debug: false
+    script:
+        - if <[npc].name.contains_all_text[Exilado|(|)]>:
+            - equip <[npc]> hand:iron_sword offhand:bow
+        - if <[npc].name.contains_any_text[Skeleton|Pillager|Stray]>:
+            - random:
+                - equip <[npc]> hand:crossbow
+                - equip <[npc]> hand:bow offhand:stone_sword
+        - if <[npc].name.contains_all_text[Piglin]>:
+            - random:
+                - equip <[npc]> hand:golden_sword
+                - equip <[npc]> hand:golden_axe
+        - if <[npc].name.contains_all_text[Strider]>:
+            - equip <[npc]> hand:blaze_rod
+        - if <[npc].name.contains_all_text[Evoker]>:
+            - equip <[npc]> hand:book
+        - if <[npc].name.contains_all_text[Witch]>:
+            - equip <[npc]> hand:potion[potion_effects=<map[type=INSTANT_DAMAGE;upgraded=false;extended=false]>
+        - if <[npc].name.contains_all_text[Bruxa Avançada]>:
+            - equip <[npc]> hand:blaze_rod
+

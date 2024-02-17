@@ -1,0 +1,49 @@
+healstop:
+    type: world
+    events:
+        after player starts sneaking:
+
+            - if <player.location.world> not equals <world[world]>:
+
+                - define loc1 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+                - wait 1t
+                - define loc2 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+
+                - if <[loc1]> = <[loc2]>:
+                    - actionbar "<green><bold>Preparando Regeneração..."
+                    - execute as_server "ppo <player.name> add glow spin"
+                    - flag <player> mec_regenerando
+
+                - repeat 20:
+                    - define loc1 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+                    - wait 1t
+                    - define loc2 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+                    - if <[loc1]> not equals <[loc2]>:
+                        - execute as_server "ppo <player.name> reset"
+                        - flag <player> mec_regenerando:!
+                        - actionbar "<green><bold>Regeneração Cancelada..."
+                        - determine cancelled
+
+                - define loc1 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+                - wait 1t
+                - define loc2 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+
+                - if <[loc1]> = <[loc2]>:
+                    - execute as_server "ppo <player.name> reset"
+                    - execute as_server "ppo <player.name> add entity_effect popper lime"
+                    - flag <player> mec_regenerando
+
+                - while <player.is_sneaking>:
+                    - define loc1 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+                    - wait 1t
+                    - define loc2 <location[<player.location.x>,<player.location.y>,<player.location.z>,<player.location.world>]>
+
+                    - if <[loc1]> = <[loc2]>:
+                        - actionbar <green><bold>Regenerando...
+                        - heal 0.1 <player>
+
+        after player stops sneaking:
+            - if <player.location.world> not equals <world[world]>:
+                - if <player.has_flag[mec_regenerando]>:
+                    - execute as_server "ppo <player.name> reset"
+                    - flag <player> mec_regenerando:!

@@ -6,10 +6,13 @@ on death of player:
             if "%team of loop-player%" is "%team of victim%":
                 if name of victim is set:
                     set {_por} to "&fpor &c&l&o%name of attacker%"
-                message "&a&l&o%victim% &ffoi morto %{_por}%" to loop-player
+                
+                if attacker exist:
+                    message "&a&l&o%victim% &ffoi morto %{_por}%" to loop-player
+                else:
+                    message "&a&l&o%victim% &fmorreu" to loop-player
             if "%team of loop-player%" is "%team of attacker%":
                 message "&c&l&o%name of attacker% &fmatou &c&l&o%victim%" to loop-player
-
 
         set {deathloc::%name of victim%} to location of victim
         if name of attacker contains "(BOSS)":

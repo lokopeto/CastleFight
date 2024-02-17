@@ -15,6 +15,7 @@ jogodsc:
 
     - if <[jogo]> = 0:
         - remove <world[<[world]>].npcs>
+        - remove <world[<[world]>].entities>
 
         - foreach <world[<[world]>].players> as:players:
             - team name:lobby add:<[players]>
