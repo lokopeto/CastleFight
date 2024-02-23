@@ -61,12 +61,12 @@ npccreatorking:
     - execute as_server "sentinel health <context.args.get[3]> --id <[npccreatedid]>" silent
 
     - if <context.args.get[2]> = rei1:
-        - execute as_server "sentinel addtarget sbteam:castelo2<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <[npccreatedid]>" silent
-        - execute as_server "sentinel addignore sbteam:castelo1<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <[npccreatedid]>" silent
+        - execute as_server "sentinel addtarget sbteam:castelo2<location[<context.args.get[1]>].world.name> --id <[npccreatedid]>" silent
+        - execute as_server "sentinel addignore sbteam:castelo1<location[<context.args.get[1]>].world.name> --id <[npccreatedid]>" silent
 
     - if <context.args.get[2]> = rei2:
-        - execute as_server "sentinel addtarget sbteam:castelo1<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <[npccreatedid]>" silent
-        - execute as_server "sentinel addignore sbteam:castelo2<location[<context.args.get[1]>].world.replace_text[w@].with[]> --id <[npccreatedid]>" silent
+        - execute as_server "sentinel addtarget sbteam:castelo1<location[<context.args.get[1]>].world.name> --id <[npccreatedid]>" silent
+        - execute as_server "sentinel addignore sbteam:castelo2<location[<context.args.get[1]>].world.name> --id <[npccreatedid]>" silent
 
     - execute as_server "sentinel chaserange --id <[npccreatedid]>" silent
     - execute as_server "sentinel damage 6 --id <[npccreatedid]>" silent
@@ -76,10 +76,7 @@ npccreatorking:
     - flag <[npccreated]> <context.args.get[2]><location[<context.args.get[1]>].world>
     - flag <[npccreated]> <context.args.get[2]>
 
-    - flag server castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world.replace_text[w@].with[]>loc:<entry[npc].created_npc.location>
-
-    - equip <[npccreated]> hand:netherite_sword
-
+    - flag server castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world.name>loc:<entry[npc].created_npc.location>
 
 
 spawnmobc:
@@ -96,16 +93,22 @@ spawnmobc:
     - repeat 2:
         - narrate " "
 
+    - define plus 0
+
+    - if <context.args.get[2]> = spider:
+        - define plus 5
+
     - if <context.args.get[1]> = 1:
-        - define x 136.0
+        - define x <element[136.0].sub[<[plus]>]>
         - define y 152
         - define inim 2
         - define cor <green>
     - if <context.args.get[1]> = 2:
-        - define x -219.0
+        - define x <element[-219.0].add[<[plus]>]>
         - define y 150
         - define inim 1
         - define cor <&color[#F57F51]>
+
 
     - define z <util.random.decimal[25.0].to[21.0].round_to_precision[0.001]>
     - define damagediv <context.args.get[4].div[2]>
@@ -115,6 +118,8 @@ spawnmobc:
     - define npccreated <entry[npc].created_npc>
 
     - flag <[npccreated]> castelo<context.args.get[1]>
+
+    - adjust <[npccreated]> scoreboard_tags:reimob<context.args.get[1]>
 
     - execute as_server "sentinel addtarget npc:<list[<server.flag[nomecastelo<[inim]><context.args.get[12]>]>].space_separated.replace[ ].with[\s*]> --id <[npccreatedid]> " silent
 
@@ -139,6 +144,7 @@ spawnmobc:
     - execute as_server "sentinel speed <context.args.get[9]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel accuracy <context.args.get[10]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel range <context.args.get[11]> --id <[npccreatedid]> " silent
+    - execute as_server "sentinel addignore potion:invisibility --id <[npccreatedid]> " silent
 
     - if <context.args.get[2]> = Spider:
         - execute as_server "sentinel attackrange <context.args.get[11]> --id <[npccreatedid]> " silent
@@ -185,6 +191,7 @@ spawnmob:
     - execute as_server "sentinel speed <context.args.get[9]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel accuracy <context.args.get[10]> --id <[npccreatedid]> " silent
     - execute as_server "sentinel range <context.args.get[11]> --id <[npccreatedid]> " silent
+    - execute as_server "sentinel addignore potion:invisibility --id <[npccreatedid]> " silent
 
     - adjust <[npccreated]> speed:<context.args.get[7]>
 
@@ -274,22 +281,26 @@ equipamento:
     definitions: npc
     debug: false
     script:
-        - if <[npc].name.contains_all_text[Exilado|(|)]>:
-            - equip <[npc]> hand:iron_sword offhand:bow
-        - if <[npc].name.contains_any_text[Skeleton|Pillager|Stray]>:
-            - random:
-                - equip <[npc]> hand:crossbow
-                - equip <[npc]> hand:bow offhand:stone_sword
-        - if <[npc].name.contains_all_text[Piglin]>:
-            - random:
-                - equip <[npc]> hand:golden_sword
-                - equip <[npc]> hand:golden_axe
-        - if <[npc].name.contains_all_text[Strider]>:
-            - equip <[npc]> hand:blaze_rod
-        - if <[npc].name.contains_all_text[Evoker]>:
-            - equip <[npc]> hand:book
-        - if <[npc].name.contains_all_text[Witch]>:
-            - equip <[npc]> hand:potion[potion_effects=<map[type=INSTANT_DAMAGE;upgraded=false;extended=false]>
-        - if <[npc].name.contains_all_text[Bruxa Avançada]>:
-            - equip <[npc]> hand:blaze_rod
+        - if <[npc].is_spawned>:
+            - if <[npc].name.contains_all_text[Exilado|(|)]>:
+                - equip <[npc]> hand:iron_sword offhand:bow
+            - if <[npc].name.contains_any_text[Skeleton|Pillager|Stray]>:
+                - random:
+                    - equip <[npc]> hand:crossbow
+                    - equip <[npc]> hand:bow offhand:stone_sword
+            - if <[npc].name.contains_all_text[Piglin]>:
+                - random:
+                    - equip <[npc]> hand:golden_sword
+                    - equip <[npc]> hand:golden_axe
+            - if <[npc].name.contains_all_text[Strider]>:
+                - equip <[npc]> hand:blaze_rod
+            - if <[npc].name.contains_all_text[Evoker]>:
+                - equip <[npc]> hand:book
+            - if <[npc].name.contains_all_text[Witch]>:
+                - random:
+                    - equip <[npc]> hand:potion[potion_effects=<map[type=INSTANT_DAMAGE;upgraded=false;extended=false]>]
+                    - equip <[npc]> hand:potion[potion_effects=<map[type=INSTANT_DAMAGE;upgraded=false;extended=false]>]
+
+            - if <[npc].name.contains_all_text[Bruxa Avançada]>:
+                - equip <[npc]> hand:blaze_rod
 

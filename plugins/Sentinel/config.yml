@@ -5,7 +5,7 @@ sentinel defaults:
     # Whether 'close quarters' NPCs should chase targets.
     close chase target: true
     # Whether 'ranged attack' NPCs should chase targets.
-    ranged chase target: true
+    ranged chase target: false
     # How much damage to do. -1 for calculated values.
     damage: 0
     # How much armor to have (percentage). -1 for calculated values.
@@ -19,7 +19,7 @@ sentinel defaults:
     # Heal rate, in ticks.
     heal rate: 100
     # Whether the NPC should be protected from damage by ignore targets.
-    protected: true
+    protected: false
     # Whether this NPC fights back.
     fightback: true
     # Whether this NPC needs ammo to fight with.

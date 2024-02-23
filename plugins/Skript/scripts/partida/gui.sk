@@ -116,20 +116,22 @@ on npc right click:
     if npc name is "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
         create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
 
-            loop 27 times:
-                set {_slot} to loop-integer
-                set {_slot} to {_slot} - 1
+            loop 3 times:
+                loop 9 times:
+                    set {_slot} to loop-integer-2
+                    set {_slot} to {_slot} - 1
+                    set {_slot} to {_slot} * loop-integer-1
 
-                set {_pocao} to {pocoes::%{_slot} + 1%::1}
+                    set {_pocao} to {pocoes::%{_slot} + 1%::1}
 
-                set {_effect} to name of {_pocao}
-                replace "_" in {_effect} with " "
-                set {_effect} to "&e%{_effect}%"
+                    set {_effect} to name of {_pocao}
+                    replace "_" in {_effect} with " "
+                    set {_effect} to "&e%{_effect}%"
 
-                set name of {_pocao} to {_effect}
+                    set name of {_pocao} to {_effect}
 
-                make gui slot {_slot} with {_pocao} with nbt compound from "{HideFlags:255}":
-                    alquimistapotio({castelo%{_team}%nome::%world of player%} , {_effect} , {pocoes::%{_slot} + 1%::3} , {pocoes::%{_slot} + 1%::4} , {pocoes::%{_slot} + 1%::5} , {pocoes::%{_slot} + 1%::6} , player , {pocoes::%{_slot} + 1%::2})
+                    make gui slot {_slot} with {_pocao} with nbt compound from "{HideFlags:255}":
+                        alquimistapotio({castelo%{_team}%nome::%world of player%} , {_effect} , {pocoes::%{_slot} + 1%::3} , {pocoes::%{_slot} + 1%::4} , {pocoes::%{_slot} + 1%::5} , {pocoes::%{_slot} + 1%::6} , player , {pocoes::%{_slot} + 1%::2})
 
 
 

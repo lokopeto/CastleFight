@@ -1,6 +1,6 @@
 casasncpsfawe:
     type: command
-    debug: true
+    debug: false
     name: casasncpsfawe
     description: Fala com o chat global.
     usage: /casasncpsfawe

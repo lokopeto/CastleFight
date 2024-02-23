@@ -1,5 +1,6 @@
 selecionarmenu:
     type: world
+    debug: false
     events:
         on player join:
             - team name:menu add:<player>
@@ -162,6 +163,7 @@ menufade2:
 
 fakeentity:
     type: task
+    debug: false
     script:
         - remove <server.npcs_flagged[menuinicionpc.<player>]>
 
@@ -178,6 +180,7 @@ fakeentity:
 
 fakeentity_start_click:
     type: task
+    debug: false
     script:
         - execute as_server "npc stand --id <server.npcs_flagged[menuinicionpc.<player>].get[1].id>" silent
         - wait 10t
@@ -186,6 +189,7 @@ fakeentity_start_click:
 menu_teleport_jogar:
     type: task
     definitions: player
+    debug: false
     script:
         - if <[player].flag[menu]> = 2:
             - run fakeentity_start_click

@@ -27,7 +27,7 @@ npcs:
 
             - spawn falling_block[gravity=false;fallingblock_type=soul_lantern;custom_name=Londama<[world]>;auto_expire=false] <location[-38.5,144.00,113.5,<[world]>]> save:Londamatrigger
             - define Londamatrigger <entry[Londamatrigger].spawned_entity>
-            - define Londama <entry[Londama].spawned_entity>
+            - define Londama <entry[Londama].created_npc>
 
             - flag server Londama<[world]>:<[Londama]>
             - flag server Londamatrigger<[world]>:<[Londamatrigger]>

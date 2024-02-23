@@ -1,5 +1,6 @@
 commandskinshop:
     type: world
+    debug: false
 
     events:
         on player right clicks npc:
@@ -12,6 +13,7 @@ commandskinshop:
 
 skinsnpc:
     type: task
+    debug: false
     script:
         - remove <server.npcs_flagged[npcskinshop]>
         - flag <server.npcs_flagged[npcskinshop]> npcskinshop:!

@@ -15,12 +15,12 @@ on death:
             name of victim contains "XP":
                 increase the attacker's level by a random integer between 5 and 10
             else:
-                name of victim contains {castelo1nome::%world of attacker%} or {castelo2nome::%world of attacker%}:
+                scoreboard tags of victim contains "reimob1" or "reimob2":
                     increase the attacker's level by a random integer between 1 and 3
                 else:
                     increase the attacker's level by a random integer between 13 and 20
 
-            name of victim contains {castelo1nome::%world of attacker%} or {castelo2nome::%world of attacker%}:
+            scoreboard tags of victim contains "reimob1" or "reimob2":
                 add 0.1 to {vida::%uuid of attacker%}
 
             add 1 to {vida::%uuid of attacker%}
@@ -30,17 +30,17 @@ on death:
                 set {vida::%uuid of attacker%} to 0
                 message "&aSua vida aumentou!" to attacker
     attacker is a npc:
-        name of attacker contains {castelo1nome::%world of attacker%}:
+        scoreboard tags of victim contains "reimob1":
             victim is a npc:
                 add a random integer between 3 and 10 to {XPquant1::%world of attacker%}
             victim is a player:
                 add {xpplayer::%world of attacker%} to {XPquant1::%world of attacker%}     
 
-        name of attacker contains {castelo2nome::%world of attacker%}:
+        scoreboard tags of victim contains "reimob2":
             victim is a npc:
                 add a random integer between 3 and 10 to {XPquant2::%world of attacker%}
             victim is a player:
-                add {xpplayer::%world of attacker%} to {XPquant2::%world of attacker%}
+                add {xpplayer::%world of attacker%} to {XPquant2::%world of attacker%}     
 
 every 10 ticks:
     loop all worlds:

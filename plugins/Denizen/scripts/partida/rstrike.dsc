@@ -27,16 +27,24 @@ rescuestrike:
 
             - foreach <[distance].entities[player]> as:player:
                 - if <[player].scoreboard_team_name.contains_text[castelo<[teamrev]><[world]>]>:
-                    - kill <[player]>
-                    - strike no_damage <[player].location>
+                    - run rescuestrikekill def:<[player]>|<[team]>|<[world]>
             - foreach <[distance].npcs> as:npcs:
                 - if <[npcs].has_flag[castelo<[teamrev]>]>:
-                    - kill <[npcs]>
-                    - strike no_damage <[npcs].location>
+                    - run rescuestrikekill def:<[npcs]>|<[team]>|<[world]>
 
             - define cuboid <[cuboid].shift[<[menos]>,0,0]>
 
             - wait 1t
+
+rescuestrikekill:
+    type: task
+    definitions: entity|team|world
+    debug: false
+    script:
+        - if <[entity].is_spawned>:
+            - kill <[entity]>
+            - strike no_damage <[entity].location>
+            - heal 10 <server.npcs_flagged[rei<[team]><world[<[world]>]>]>
 
 
 
