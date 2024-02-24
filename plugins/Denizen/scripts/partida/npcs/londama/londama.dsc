@@ -139,7 +139,7 @@ londama_text_show:
             - define londamatext_replace <[londamatext_corte].replace[_].with[ ]>
             - define londamatext_FINAL <element[<aqua><bold><[londamatext_replace].to_list.get[first].to[<[value].sub[1]>].unseparated><white><bold><[londamatext_replace].to_list.get[<[value]>]>]>
 
-            - title title:<[londamatext_FINAL]> fade_in:0s 0.5s fade_out:1s
+            - title title:<[londamatext_FINAL]> fade_in:0s stay:1s fade_out:2s
             - wait 2t
 
 londama_interact_animation:
@@ -184,33 +184,40 @@ londama_interact_animation:
 
 londama_interact:
     type: world
-    debug: false
+    debug: true
     events:
-
         on player right clicks block:
+            - inject londama_interact_inject
+        on player right clicks fake entity:
+            - inject londama_interact_inject
+
+londama_interact_func:
+    type: task
+    definitions: world|player
+    script:
+        - define worldw <[world].name>
+
+        - invisible <[player]>
+        - flag server londamadisp<[worldw]>:!
+        - flag <[player]> londamaplayer:!
+
+londama_interact_inject:
+    type: task
+    script:
             - if <player.name> = lokopetoo:
-
-
-
 
                 - ratelimit <player> 1t
 
-                - define interact <context.entity>
                 - define world <player.location.world>
                 - define worldw <[world].name>
                 - define reputação <player.flag[londamareputação]>
-
-                - if <[interact].custom_name> equals Londama<[worldw]>:
+                - if !<player.has_flag[londamaresp]>:
                     - if <server.flag[londamadisp<[worldw]>]> = true:
-                        - if !<player.has_flag[londamaplayer]>:
-
+                        - if <player.has_flag[londamaplayer]>:
                             - if <[reputação]> = 0:
                                 - if <player.location.yaw> > 270:
-                                    
-                                - if <player.location.yaw> < 90:
-
-
-
+                                    - run londama_interact_func def:<[world]>|<player>
+                                    - inject anim_londama_sacrificio
 
 
 

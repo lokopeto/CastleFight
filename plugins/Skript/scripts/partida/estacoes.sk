@@ -78,6 +78,10 @@ every 5 seconds:
 
             make console execute command "ex run dipartida_update def.partida:%loop-integer% def.status:%{_status}%"
 
+command /loopblocksloopcommand <integer>:
+    trigger:
+        loop {partidaplaca::%arg-1%::*}:
+            message "%loop-index%: %loop-variable%"
 
 command /loopblocksdisplayitemcreate:
     trigger:

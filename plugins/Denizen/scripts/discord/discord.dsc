@@ -20,6 +20,7 @@ discordmessagestatusdev:
     script:
     - define messageid 1209445955321987112
     - define channel 1209214703838953552
+
     - if <[message]> = 1:
         - discordmessage id:bot_dev edit:<[messageid]> channel:<[channel]> "**Status: Rodando**<n>**Jogadores: <server.players.size>**<n>**Tempo: <server.flag[temposerveriniciado].format_discord[R]>**"
     - if <[message]> = 2:

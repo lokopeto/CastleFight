@@ -201,6 +201,26 @@ on quit:
     if {prontoswitch::%player%} is 1:
         add -1 to {pronto::%world of player%}
 
+function spectatorlobbyplaca(mapa: string, visivel: boolean):
+    set {_worldnumb} to {_mapa}
+    replace "castlefight" in {_worldnumb} with ""
+
+    message {_worldnumb} and {_mapa} to all players
+
+    if {_visivel} = true:
+        loop 3 times:
+            loop 2 times:
+                show soul on {partidaplaca::%{_worldnumb}%::%7 + loop-integer-2%}
+            wait 3 tick
+        loop 2 times:
+            set block at {partidaplaca::%{_worldnumb}%::%7 + loop-integer%} to warped_wall_hanging_sign[facing=south;waterlogged=false]
+            wait 1 tick
+            set line 4 of block at {partidaplaca::%{_worldnumb}%::%7 + loop-integer%} to "asdasd"
+    if {_visivel} = false:
+        loop 2 times:
+            set block at {partidaplaca::%{_worldnumb}%::%7 + loop-integer%} to air
+            show soul on {partidaplaca::%{_worldnumb}%::%7 + loop-integer%}
+
 
 
 
@@ -381,18 +401,24 @@ on player world change:
 
 command /sair:
     trigger:
-        world of player is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
+        set {_motivo} to "natural"
+        sairpartida(player , {_motivo})
 
-            play sound "block.amethyst_block.resonate" at location of player to all players
 
-            if {prontoswitch::%player%} is 1:
-                add -1 to {pronto::%world of player%}
+function sairpartida(p: player, motivo: string):
 
-            set {_timer} to 30
+    world of {_p} is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6":
 
-            set {lobbytimer::%world of player%::%{_world}%} to {_timer}
+        play sound "block.amethyst_block.resonate" at location of {_p} to all players
 
-            set {partidacountdown::%world of player%} to 15
+        if {prontoswitch::%{_p}%} is 1:
+            add -1 to {pronto::%world of {_p}%}
+
+        set {_timer} to 30
+
+        set {lobbytimer::%world of {_p}%::%{_world}%} to {_timer}
+
+        set {partidacountdown::%world of {_p}%} to 15
 
 
 #            if {lobbyhost::%world of player%} is player:
@@ -405,51 +431,59 @@ command /sair:
 #                message "&7&l%{lobbyhost::%world of player%}% &7é o host da partida" to all players in world of player
 #                delete {ban::%world of player%::*}
 
-            remove player from {lobbyplayers::%world of player%::*}
+        remove {_p} from {lobbyplayers::%world of {_p}%::*}
 
-            if amount of players in world of player is 1:
-                delete {lobbyplayers::%world of player%::*}
-                if {jogo::%world of player%} is 1:
-                    make console execute command "jogo 0 %world of player%"
-
-
-            teleport player to {placa::%uuid of player%::1}
-
-            clear inventory of player
+        if amount of players in world of {_p} is 1:
+            delete {lobbyplayers::%world of {_p}%::*}
+            if {jogo::%world of {_p}%} is 1:
+                make console execute command "jogo 0 %world of {_p}%"
 
 
-            set {psspwait::%player%} to 1
+        teleport {_p} to {placa::%uuid of {_p}%::1}
 
-            set max health of player to 10
-            set hunger of player to 10
-            set total experience of player to 0
-
-            make console execute command "team leave %player%"
+        clear inventory of {_p}
 
 
-        wait 1 tick
+        set {psspwait::%{_p}%} to 1
 
-        set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
+        set max health of {_p} to 10
+        set hunger of {_p} to 10
+        set total experience of {_p} to 0
+
+        make console execute command "team leave %{_p}%"
 
 
-        world of player is "world":
-            loop all entities in world "world":
-                loop-entity is a citizen
-                entity have scoreboard tag "player.%player%"
-                set {_id} to citizen id of loop-entity
-                make console execute command "npc select %{_id}%"
-                make console execute command "npc remove"
-            set line 1 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::2}
-            set line 2 of block at {placa::%uuid of player%::1} to "&bClique para"
-            set line 3 of block at {placa::%uuid of player%::1} to "&bEntrar!"
-            set line 4 of block at {placa::%uuid of player%::1} to {placa::%uuid of player%::3}
-            remove "cfbarro" and "cfcarvalho" from scoreboard tags of player
-        
-        delete {placa::%uuid of player%::*} 
+    wait 1 tick
 
-        remove player from {jogadoresdesistir::%world of player%::*}
+    set slot 0 of {_p} to 1 recovery compass named "&bBuscar Partida"
 
-        make console execute command "ex flag <player[%player%]> global"
+    if {_motivo} is "natural":
+        set line 1 of block at {placa::%uuid of {_p}%::1} to {placa::%uuid of {_p}%::2}
+        set line 2 of block at {placa::%uuid of {_p}%::1} to "&bClique para"
+        set line 3 of block at {placa::%uuid of {_p}%::1} to "&bEntrar!"
+        set line 4 of block at {placa::%uuid of {_p}%::1} to {placa::%uuid of {_p}%::3}
+
+    if {_motivo} is "londama":
+        set line 1 of block at {placa::%uuid of {_p}%::1} to "&9&ka&r &9&lCorrompido &r&9&ka"
+        set line 2 of block at {placa::%uuid of {_p}%::1} to "&bBloqueada até"
+        set line 3 of block at {placa::%uuid of {_p}%::1} to "&bo fim da"
+        set line 4 of block at {placa::%uuid of {_p}%::1} to "&9&ka&r &b&lPartida &r&9&ka"
+
+    world of {_p} is "world":
+        loop all entities in world "world":
+            loop-entity is a citizen
+            loop-entity have scoreboard tag "player.%{_p}%"
+            set {_id} to citizen id of loop-entity
+            make console execute command "npc select %{_id}%"
+            make console execute command "npc remove"
+        remove "cfbarro" and "cfcarvalho" from scoreboard tags of {_p}
+
+    delete {placa::%uuid of {_p}%::*} 
+
+    remove {_p} from {jogadoresdesistir::%world of {_p}%::*}
+
+    make console execute command "ex flag <player[%{_p}%]> global"
+
 
 
 

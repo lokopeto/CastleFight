@@ -209,8 +209,6 @@ command /pocaoalqverif <integer>:
         message "Efeitos: %{pocoes::%arg-1%::2}% / AMP: %{pocoes::%arg-1%::3}% / DUR: %{pocoes::%arg-1%::4}%"
         message "Cor: %{pocoes::%arg-1%::5}%"
 
-
-
 #on gamemode change to spectator:
 #    wait 1 tick
 #    loop all players:
