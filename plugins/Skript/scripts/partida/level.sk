@@ -9,26 +9,43 @@ on death:
         victim is a player:
             set {_1} to "%team of victim%"
             set {_2} to "%team of attacker%"
+            set {_xpreduc} to "%team of attacker%"
+            replace "castelo" in {_xpreduc} with "reimob"
+            replace "%world of attacker%" in {_xpreduc} with ""
+
             if {_1} is not {_2}: 
-                increase the attacker's level by {xpplayer::%world of attacker%}
+                increase the attacker's level by {XPquant%{_xpreduc}%::%world of attacker%} * 2
+
         victim is a npc:
-            name of victim contains "XP":
-                increase the attacker's level by a random integer between 5 and 10
-            else:
-                scoreboard tags of victim contains "reimob1" or "reimob2":
-                    increase the attacker's level by a random integer between 1 and 3
+            set {_1} to "%team of attacker%"
+            replace "castelo" in {_1} with "reimob"
+            replace "%world of attacker%" in {_1} with ""
+            if {_1} is not "%scoreboard tags of victim%":
+                name of victim contains "XP":
+                    increase the attacker's level by a random integer between 5 and 10
                 else:
-                    increase the attacker's level by a random integer between 13 and 20
+                    scoreboard tags of victim contains "reimob1" or "reimob2":
+                        increase the attacker's level by a random integer between 1 and 2
+                    else:
+                        increase the attacker's level by a random integer between 13 and 20
 
-            scoreboard tags of victim contains "reimob1" or "reimob2":
-                add 0.1 to {vida::%uuid of attacker%}
-
-            add 1 to {vida::%uuid of attacker%}
+                scoreboard tags of victim contains "reimob1" or "reimob2":
+                    add 0.1 to {vida::%uuid of attacker%}
+                
+                name of victim contains "NATURAL":
+                    add 1 to {vida::%uuid of attacker%}
 
             if {vida::%uuid of attacker%} >= 10:
                 add 1 to max health of attacker
                 set {vida::%uuid of attacker%} to 0
-                message "&aSua vida aumentou!" to attacker
+
+                send action bar "&aSua vida aumentou!" to attacker
+
+        set {_exp} to {vida::%uuid of attacker%} / 10 * 1
+        set level progress of attacker to {_exp}
+
+
+
     attacker is a npc:
         scoreboard tags of victim contains "reimob1":
             victim is a npc:
@@ -152,7 +169,7 @@ on click on sign:
         line 1 is "&b[XP]":
             send action bar "&cEssa placa não é tua!" to player
 
-every 130 seconds:
+every 110 seconds:
     loop all worlds:
         loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
         {levelmobtime::%loop-world%} is 0
@@ -170,7 +187,7 @@ every 50 seconds:
             if {level::%loop-world%} < 30:
                 add 1 to {level::%loop-world%}
                 message "level dos mobs: %{level::%loop-world%}%" to console
-                add 10 to {xpplayer::%loop-world%}
+                add 2 to {xpplayer::%loop-world%}
 
 command /fogo <world>:
     executable by: console

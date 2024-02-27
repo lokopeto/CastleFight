@@ -41,9 +41,11 @@ londama_menu:
 
                             - inject anim_londama_lanterna_2
 
+                            - run londama_lantern def:<[reputação]>|<[world]>|<player>
+                            - run londama_lantern_teleport def:<[world]>|<[player]>
+
                             - while !<player.has_flag[londamaresp]>:
                                 - run londama_resp def:<[reputação]>
-                                - run londama_lantern def:<[reputação]>|<[world]>|<player>
 
                                 - if !<player.has_flag[londamaplayer]>:
                                     - determine cancelled
@@ -79,14 +81,8 @@ londama_lantern:
     script:
 
         - if <[reputação]> = 0:
-            - if <player.location.yaw> > 270:
-                - fakespawn falling_block[gravity=false;fallingblock_type=lantern;custom_name=<bold>Estou<&nbsp>Desesperado;custom_name_visible=true] <location[-37.5,148.00,119.5,<[world]>].random_offset[0.01,0.01,0]> save:londamalantern1 players:<[player]> duration:2t
-            - else:
-                - fakespawn falling_block[gravity=false;fallingblock_type=soul_lantern;custom_name=<bold>Estou<&nbsp>Desesperado] <location[-37.5,148.00,119.5,<[world]>].random_offset[0.01,0.01,0]> save:londamalantern1 players:<[player]> duration:2t
-            - if <player.location.yaw> < 90:
-                - fakespawn falling_block[gravity=false;fallingblock_type=lantern;custom_name=<bold>Vossa<&nbsp>majestade,<&nbsp>sou<&nbsp>um<&nbsp>nobre<&nbsp>guerreiro;custom_name_visible=true] <location[-39.5,148.00,119.5,<[world]>].random_offset[0.01,0.01,0]> save:londamalantern2 players:<[player]> duration:2t
-            - else:
-                - fakespawn falling_block[gravity=false;fallingblock_type=soul_lantern;custom_name=<bold>Vossa<&nbsp>majestade,<&nbsp>sou<&nbsp>um<&nbsp>nobre<&nbsp>guerreiro] <location[-39.5,148.00,119.5,<[world]>].random_offset[0.01,0.01,0]> save:londamalantern2 players:<[player]> duration:2t
+            - fakespawn londama_lantern_display <location[-37.5,148.00,119.5,<[world]>]> save:londamalantern1 players:<[player]> duration:0
+            - fakespawn londama_lantern_display <location[-39.5,148.00,119.5,<[world]>]> save:londamalantern2 players:<[player]> duration:0
 
             - define londamalantern1 <entry[londamalantern1].faked_entity>
             - define londamalantern2 <entry[londamalantern2].faked_entity>
@@ -94,16 +90,13 @@ londama_lantern:
             - flag server ll_1_<[reputação]>_<[world]>:<[londamalantern1]>
             - flag server ll_2_<[reputação]>_<[world]>:<[londamalantern2]>
 
+            - flag server ll_1_torem_<[world]>:<[londamalantern1]>
+            - flag server ll_2_torem_<[world]>:<[londamalantern2]>
 
         - if <[reputação]> = 1:
             - actionbar "Vejo que retornou"
         - if <[reputação]> = -1:
             - actionbar "Oque veio fazer aqui? inferior..."
-
-        - playeffect effect:wax_off at:<[londamalantern1].location> targets:<[player]>
-        - playeffect effect:wax_off at:<[londamalantern2].location> targets:<[player]>
-        - playeffect effect:DUST_COLOR_TRANSITION offset:0.5,0,0.5 velocity:0,-1,0 special_data:1|white|aqua quantity:20 at:<[londamalantern1].location> targets:<[player]>
-        - playeffect effect:DUST_COLOR_TRANSITION offset:0.5,0,0.5 velocity:0,-1,0 special_data:1|white|aqua quantity:20 at:<[londamalantern2].location> targets:<[player]>
 
 
 londama_stop:
@@ -118,6 +111,9 @@ londama_stop:
             - cast blindness remove <[player]>
             - showfake soul_lantern <list[<location[-37.5,147.00,124.5,<[world]>]>|<location[-39.5,147.00,124.5,<[world]>]>]> players:<[player]> d:0
             - flag server londamadisp<[world].name>
+
+            - remove <server.flag[ll_1_torem_<[world]>]>
+            - remove <server.flag[ll_2_torem_<[world]>]>
 
 londama_text:
     type: task
@@ -142,49 +138,12 @@ londama_text_show:
             - title title:<[londamatext_FINAL]> fade_in:0s stay:1s fade_out:2s
             - wait 2t
 
-londama_interact_animation:
-    type: task
-    definitions: reputação|world|player
-    debug: true
-    script:
-        - define dur 20
-
-        - if <[reputação]> = 0:
-            - if <player.location.yaw> > 270:
-                - fakespawn falling_block[gravity=false;fallingblock_type=lantern;custom_name=<bold>Estou<&nbsp>Desesperado;custom_name_visible=true] <location[-37.5,148.00,119.5,<[world]>].random_offset[0.01,0.01,0]> save:londamalantern1 players:<[player]> duration:<[dur]>t
-            - else:
-                - fakespawn falling_block[gravity=false;fallingblock_type=soul_lantern;custom_name=<bold>Estou<&nbsp>Desesperado] <location[-37.5,148.00,119.5,<[world]>].random_offset[0.01,0.01,0]> save:londamalantern1 players:<[player]> duration:<[dur]>t
-            - if <player.location.yaw> < 90:
-                - fakespawn falling_block[gravity=false;fallingblock_type=lantern;custom_name=<bold>Vossa<&nbsp>majestade,<&nbsp>sou<&nbsp>um<&nbsp>nobre<&nbsp>guerreiro;custom_name_visible=true] <location[-39.5,148.00,119.5,<[world]>].random_offset[0.01,0.01,0]> save:londamalantern2 players:<[player]> duration:<[dur]>t
-            - else:
-                - fakespawn falling_block[gravity=false;fallingblock_type=soul_lantern;custom_name=<bold>Vossa<&nbsp>majestade,<&nbsp>sou<&nbsp>um<&nbsp>nobre<&nbsp>guerreiro] <location[-39.5,148.00,119.5,<[world]>].random_offset[0.01,0.01,0]> save:londamalantern2 players:<[player]> duration:<[dur]>t
-
-            - define londamalantern1 <entry[londamalantern1].faked_entity>
-            - define londamalantern2 <entry[londamalantern2].faked_entity>
-
-            - flag server ll_1_<[reputação]>_<[world]>:<[londamalantern1]>
-            - flag server ll_2_<[reputação]>_<[world]>:<[londamalantern2]>
-
-            - repeat <[dur].div[2]>:
-                - define londamalantern1 <entry[londamalantern1].faked_entity>
-                - define londamalantern2 <entry[londamalantern2].faked_entity>
-
-                - playeffect effect:wax_off at:<[londamalantern1].location> targets:<[player]>
-                - playeffect effect:wax_off at:<[londamalantern2].location> targets:<[player]>
-                - playeffect effect:DUST_COLOR_TRANSITION offset:0.5,0,0.5 velocity:0,-1,0 special_data:1|white|aqua quantity:20 at:<[londamalantern1].location> targets:<[player]>
-                - playeffect effect:DUST_COLOR_TRANSITION offset:0.5,0,0.5 velocity:0,-1,0 special_data:1|white|aqua quantity:20 at:<[londamalantern2].location> targets:<[player]>
-
-                - wait 2t
-
-
-
-
 
 
 
 londama_interact:
     type: world
-    debug: true
+    debug: false
     events:
         on player right clicks block:
             - inject londama_interact_inject
@@ -218,6 +177,22 @@ londama_interact_inject:
                                 - if <player.location.yaw> > 270:
                                     - run londama_interact_func def:<[world]>|<player>
                                     - inject anim_londama_sacrificio
+
+londama_lantern_teleport:
+    type: task
+    definitions: world|player
+    script:
+    - while !<player.has_flag[londamaresp]>:
+        - define londamalantern1 <server.flag[ll_1_torem_<[world]>]>
+        - define londamalantern2 <server.flag[ll_2_torem_<[world]>]>
+
+        - teleport <[londamalantern1]> <[londamalantern1].location.random_offset[0.01,0.01,0]>
+        - teleport <[londamalantern2]> <[londamalantern2].location.random_offset[0.01,0.01,0]>
+
+        - playeffect effect:wax_off at:<[londamalantern1].location> targets:<[player]>
+        - playeffect effect:wax_off at:<[londamalantern2].location> targets:<[player]>
+        - playeffect effect:DUST_COLOR_TRANSITION offset:0.5,0,0.5 velocity:0,-1,0 special_data:1|white|aqua quantity:20 at:<[londamalantern1].location> targets:<[player]>
+        - playeffect effect:DUST_COLOR_TRANSITION offset:0.5,0,0.5 velocity:0,-1,0 special_data:1|white|aqua quantity:20 at:<[londamalantern2].location> targets:<[player]>
 
 
 

@@ -9,6 +9,7 @@ command /partidapesquisarcancelar:
         set {psspwait::%player%} to 0
         message "&7&oPesquisa cancelada"
         set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
+        set item cooldown of slot 0 of player to 3 seconds
         loop 5 times:
             continue
             wait 1 tick
@@ -119,10 +120,6 @@ command /partidapesquisar [<integer>]:
             open the created gui for player 
 
         if arg-1 is 2:
-
-            if {psspwait::%player%} is 0:
-                message "&7&oEspere um momento"
-                send action bar "&7&oEspere um momento"
 
             if {psspwait::%player%} is 1:
                 message "&7&oBuscando partida"

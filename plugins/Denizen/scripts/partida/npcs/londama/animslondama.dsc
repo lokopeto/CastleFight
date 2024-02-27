@@ -1,3 +1,12 @@
+londama_lantern_display:
+    type: entity
+    entity_type: block_display
+    mechanisms:
+        material: soul_lantern
+        translation: -0.5,0,-0.5
+        teleport_duration: 2t
+
+
 
 anim_londama_lanterna_2:
     debug: false
@@ -7,8 +16,8 @@ anim_londama_lanterna_2:
     - define player <player>
 
     - showfake air <list[<location[-37.5,147.00,124.5,<[world]>]>|<location[-39.5,147.00,124.5,<[world]>]>]> players:<[player]> d:0
-    - fakespawn falling_block[gravity=false;fallingblock_type=soul_lantern] <location[-37.5,147.00,124.5,<[world]>]> save:londamalantern1 players:<[player]>
-    - fakespawn falling_block[gravity=false;fallingblock_type=soul_lantern] <location[-39.5,147.00,124.5,<[world]>]> save:londamalantern2 players:<[player]>
+    - fakespawn londama_lantern_display <location[-37.5,147.00,124.5,<[world]>]> save:londamalantern1 players:<[player]>
+    - fakespawn londama_lantern_display <location[-39.5,147.00,124.5,<[world]>]> save:londamalantern2 players:<[player]>
     - define londamalantern1 <entry[londamalantern1].faked_entity>
     - define londamalantern2 <entry[londamalantern2].faked_entity>
 
@@ -602,8 +611,8 @@ anim_londama_sacrificio:
     - define player <player>
     - flag player londamacutscene
 
-    - fakespawn falling_block[gravity=false;fallingblock_type=soul_lantern] <location[-37.5,148.0,119.5,<[world]>]> save:londamalantern1 players:<[player]>
-    - fakespawn falling_block[gravity=false;fallingblock_type=soul_lantern] <location[-39.5,148.0,119.5,<[world]>]> save:londamalantern2 players:<[player]>
+    - fakespawn londama_lantern_display <location[-37.5,148.0,119.5,<[world]>]> save:londamalantern1 players:<[player]>
+    - fakespawn londama_lantern_display <location[-39.5,148.0,119.5,<[world]>]> save:londamalantern2 players:<[player]>
     - define londamalantern1 <entry[londamalantern1].faked_entity>
     - define londamalantern2 <entry[londamalantern2].faked_entity>
 

@@ -98,7 +98,7 @@ on npc right click:
                             make gui slot {slots1} with "%{_quant} - 10% golden carrot" parsed as item                                                                                    
                     
             open the created gui for player
-            set {Padeirotimer%{_team}%::%world of player%} to 10
+            set {Padeirotimer%{_team}%::%world of player%} to 10 * {lvnpcs%{_team}%::%world of player%}
         else:
             message "&7&oespere &f&o%{Padeirotimer%{_team}%::%world of player%}%&7&o segundos.."
     if npc name is "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
@@ -116,6 +116,15 @@ on npc right click:
     if npc name is "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
         create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
 
+            set {_lv} to {lvnpcs%{_team}%::%world of player%}
+            set {_lv} to {_lv} - 16
+
+            set {_lvfinal} to {_lv} / 3 * 9
+
+            if {_lv} > 29:
+                set {_lv} to 3
+
+
             loop 3 times:
                 loop 9 times:
                     set {_slot} to loop-integer-2
@@ -131,7 +140,7 @@ on npc right click:
                     set name of {_pocao} to {_effect}
 
                     make gui slot {_slot} with {_pocao} with nbt compound from "{HideFlags:255}":
-                        alquimistapotio({castelo%{_team}%nome::%world of player%} , {_effect} , {pocoes::%{_slot} + 1%::3} , {pocoes::%{_slot} + 1%::4} , {pocoes::%{_slot} + 1%::5} , {pocoes::%{_slot} + 1%::6} , player , {pocoes::%{_slot} + 1%::2})
+                        alquimistapotio({castelo%{_team}%nome::%world of player%} , {_effect} , {pocoes::%{_slot} + 1%::3} , {pocoes::%{_slot} + 1%::4} , {pocoes::%{_slot} + 1%::5} , {pocoes::%{_slot} + 1%::6} , player , {pocoes::%{_slot} + 1%::2} , {_lvfinal})
 
 
 
@@ -358,11 +367,12 @@ on npc right click:
             make gui slot 7 with bone meal with nbt compound from "{display:{Name:'[{""text"":""Evaporar"",""italic"":false,""bold"":true,""color"":""light_purple""}]',Lore:['[{""text"":""Clique para evaporar"",""italic"":false,""color"":""aqua""},{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""Ganha: "",""italic"":false,""color"":""aqua""},{""text"":""30 XP"",""color"":""yellow""}]']}}":
                 set {Necromancer%{_team}%::*} to items of gui
                 if {Necromancer%{_team}%::2} is not blue stained glass pane, book or bone meal:
-                    make gui slot 1 to air
-                    add 30 to level of player
-                    message "&eVocê evaporou um ovo!"
-                else:
-                    message "&cColoque um ovo para evaporar!"
+                    if {Necromancer%{_team}%::2} is a spawn egg:
+                        make gui slot 1 to air
+                        add 30 to level of player
+                        message "&eVocê evaporou um ovo!"
+                    else:
+                        message "&cColoque um ovo para evaporar!"
 
 
 
@@ -429,7 +439,7 @@ function xpinsuficiente(p: player):
     message "&bXp insuficiente!" to {_p}
     play sound "fx.error" to {_p}
 
-function alquimistapotio(castelo: string, name: string, duration: number, tier: number, color: color, valor: number, p: player, effect: string):
+function alquimistapotio(castelo: string, name: string, duration: number, tier: number, color: color, valor: number, p: player, effect: string, quant: number):
     create a gui with virtual chest inventory with 3 rows named "Alquimista (%{_castelo}%)":
         if {_name} is "&eVida Instantanea" or "&eFraquesa":
             set {_div} to 6
@@ -447,7 +457,7 @@ function alquimistapotio(castelo: string, name: string, duration: number, tier: 
                 set {_type} to lingering potion named {_name} with nbt compound from "{HideFlags:255}"
                 set {_regul} to 5
 
-            loop 9 times:
+            loop {_quant} times:
                 set {_slot} to loop-integer-2
                 set {_slot} to {_slot} + {_slotrow}
                 set {_slot} to {_slot} - 1

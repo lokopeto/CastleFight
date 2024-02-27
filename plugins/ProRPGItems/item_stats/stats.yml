@@ -6,133 +6,133 @@
 
 AOE_DAMAGE:
   enabled: true
-  name: AoE Damage
+  name: AoE
   format: '&3▸ %name%: &f%value%'
   capacity: -1
 
 PVP_DAMAGE:
   enabled: true
-  name: PvP Damage
+  name: PvP
   format: '&b▸ %name%: &f%value%'
   capacity: 200.0
 
 PVE_DAMAGE:
   enabled: true
-  name: PvE Damage
+  name: PvE
   format: '&b▸ %name%: &f%value%'
   capacity: 200.0
 
 DODGE_RATE:
   enabled: true
-  name: Dodge Rate
+  name: Taxa de evasão
   format: '&6▸ %name%: &f%value%'
   capacity: 45.0
 
 ACCURACY_RATE:
   enabled: true
-  name: Accuracy Rate
+  name: Taxa de precisão
   format: '&6▸ %name%: &f%value%'
   capacity: 30.0
 
 BLOCK_RATE:
   enabled: true
-  name: Block Rate
+  name: Taxa de bloqueio
   format: '&6▸ %name%: &f%value%'
   capacity: 100.0
 
 BLOCK_DAMAGE:
   enabled: true
-  name: Block Damage
+  name: Bloquear dano
   format: '&6▸ %name%: &f%value%'
   capacity: 100.0
 
 CRITICAL_RATE:
   enabled: true
-  name: Crit. Strike Rate
+  name: Taxa crítica
   format: '&a▸ %name%: &f%value%'
   capacity: 100.0
 
 CRITICAL_DAMAGE:
   enabled: true
-  name: Crit. Strike Dmg
+  name: Dano crítico
   format: '&a▸ %name%: &f%value%'
   capacity: 3.5
 
 PVP_DEFENSE:
   enabled: true
-  name: PvP Defense
+  name: Defesa PvP
   format: '&b▸ %name%: &f%value%'
   capacity: 100.0
 
 PVE_DEFENSE:
   enabled: true
-  name: PvE Defense
+  name: Defesa PvE
   format: '&b▸ %name%: &f%value%'
   capacity: 100.0
 
 LOOT_RATE:
   enabled: true
-  name: Loot Rate
+  name: Taxa de loot
   format: '&e▸ %name%: &f%value%'
   capacity: 250.0
 
 MOVEMENT_SPEED:
   enabled: true
-  name: Movement Speed
+  name: Velocidade de movimento
   format: '&e▸ %name%: &f%value%'
   capacity: 70.0
 
 DURABILITY:
   enabled: true
-  name: Durability
+  name: Durabilidade
   format: '&7▸ %name%: &f%value%'
   capacity: -1
 
 PENETRATION:
   enabled: true
-  name: Armor Penetration
+  name: Penetração de armadura
   format: '&c▸ %name%: &f%value%'
   capacity: 60.0
 
 VAMPIRISM:
   enabled: true
-  name: Vampirism
+  name: Vampirismo
   format: '&c▸ %name%: &f%value%'
   capacity: 35.0
 
 BURN_RATE:
   enabled: true
-  name: Chance to Burn
+  name: Chance de queimar
   format: '&c▸ %name%: &f%value%'
   capacity: 100.0
 
 BASE_ATTACK_SPEED:
   enabled: true
-  name: Base Attack Speed
+  name: Velocidade de ataque base
   format: '&e▸ %name%: &f%value%'
   capacity: -1
 
 ATTACK_SPEED:
   enabled: true
-  name: Attack Speed
+  name: Velocidade de ataque
   format: '&e▸ %name%: &f%value%'
   capacity: -1
 
 MAX_HEALTH:
   enabled: true
-  name: Max Health
+  name: Saúde máxima
   format: '&c▸ %name%: &f%value%'
   capacity: 20
 
 SALE_PRICE:
   enabled: true
-  name: Sale Price
+  name: Preço de venda
   format: '&d▸ %name%: &f%value%'
   capacity: -1
 
 BLEED_RATE:
   enabled: true
-  name: Chance to Open Wounds
+  name: Chance de abrir feridas
   format: '&c▸ %name%: &f%value%'
   capacity: 75.0
   settings:
@@ -142,30 +142,30 @@ BLEED_RATE:
 
 DISARM_RATE:
   enabled: true
-  name: Chance to Disarm
+  name: Chance de desarmar
   format: '&c▸ %name%: &f%value%'
   capacity: 25.0
 
 RANGE:
   enabled: true
-  name: Range
+  name: Alcance
   format: '&6▸ %name%: &f%value%'
   capacity: 7.0
 
 THORNMAIL:
   enabled: true
-  name: Thornmail
+  name: Cota de malha
   format: '&c▸ %name%: &f%value%'
   capacity: 35.0
 
 HEALTH_REGEN:
   enabled: true
-  name: Health Regen
+  name: Recuperação de Saúde
   format: '&c▸ %name%: &f%value%'
   capacity: -1.0
 
 MANA_REGEN:
   enabled: true
-  name: Mana Regen
+  name: Regeneração de mana
   format: '&9▸ %name%: &f%value%'
   capacity: -1.0

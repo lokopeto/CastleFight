@@ -1,0 +1,25 @@
+testessss:
+    type: world
+    events:
+        on player steps on water:
+            - define loc <context.location>
+            - define block <[loc].block.material>
+            - narrate <[block]>
+
+            - flag <player> jesus
+            - cast levitation amplifier:255 duration:0 hide_particles no_ambient no_clear no_icon
+            - while <player.has_flag[jesus]>:
+                - playeffect effect:water_wake at:<player.location> offset:0.3,0,0.3 quantity:10
+                - playeffect effect:water_bubble at:<player.location> offset:0.2,0,0.2 quantity:10
+                - wait 5t
+        on player steps on !water:
+            - define loc <context.location>
+            - define block <[loc].block.material>
+            - narrate <[block]>
+
+            - if <player.has_flag[jesus]>:
+                - flag <player> jesus:!
+                - cast levitation remove
+
+        after egg hits:
+            

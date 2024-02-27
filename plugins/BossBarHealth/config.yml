@@ -151,7 +151,7 @@ BossBarHealth:
         # Name of the region, if player is in multiple region, the plugin takes upper one in config
         # For example, I have "shop" on top of "spawn", the plugin takes "spawn" because it is placed
         # higher than "shop"
-        'spawn':
+        'world':
           Color: BLUE
           Style: SOLID
           # 'shop':

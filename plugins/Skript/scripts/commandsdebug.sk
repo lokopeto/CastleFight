@@ -194,20 +194,31 @@ command /pocaoalqcreate <integer> <text> <text> <integer> <integer> <color> <int
         message ""
         message "Criado poção %arg-2%/%{_slot}%"
         message "Efeitos: %arg-3% / DUR: %arg-4% / AMP: %arg-5%"
-        message "Cor: %arg-6%"
-        message "Valor: %arg-7%"
+        message "Cor: %arg-6% / Valor: %arg-7%"
+
+        message "pocaoalqcreate %{pocoes::%arg-1%::1}% %{pocoes::%arg-1%::2}% %{pocoes::%arg-1%::3}% %{pocoes::%arg-1%::4}% %{pocoes::%arg-1%::5}% %{pocoes::%arg-1%::6}%"
 
 command /pocaoalqrem <integer>:
     trigger:
         message "deletado %{pocoes::%arg-1%::1}%"
         delete {pocoes::%arg-1%::*}
 
+
 command /pocaoalqverif <integer>:
     trigger:
         message ""
+        message arg-1
         message "Poção %{pocoes::%arg-1%::1}%"
         message "Efeitos: %{pocoes::%arg-1%::2}% / AMP: %{pocoes::%arg-1%::3}% / DUR: %{pocoes::%arg-1%::4}%"
-        message "Cor: %{pocoes::%arg-1%::5}%"
+        message "Cor: %{pocoes::%arg-1%::5}% / Valor: %{pocoes::%arg-1%::6}%"
+
+        message "pocaoalqcreate %{pocoes::%arg-1%::1}% %{pocoes::%arg-1%::2}% %{pocoes::%arg-1%::3}% %{pocoes::%arg-1%::4}% %{pocoes::%arg-1%::5}% %{pocoes::%arg-1%::6}%"
+
+command /pocaoalqorganize <integer> <integer>:
+    trigger:
+        message "movendo %arg-1% para %arg-2%"
+        set {pocoes::%arg-1%::*} to {pocoes::%arg-2%::*}
+        delete {pocoes::%arg-2%::*}
 
 #on gamemode change to spectator:
 #    wait 1 tick
