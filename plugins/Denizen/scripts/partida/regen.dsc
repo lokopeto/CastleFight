@@ -2,13 +2,13 @@ foodregen:
     type: world
     debug: false
     events:
-        after player changes food level:
+        on player changes food level:
             - run fastregen
-        after player heals:
+        on player heals:
             - if <player.food_level> > 7:
                 - if <player.health> not equals <player.health_max>:
                     - feed <player> amount:-1
-        after player damaged:
+        on player damaged:
             - run fastregen
 fastregen:
     type: task

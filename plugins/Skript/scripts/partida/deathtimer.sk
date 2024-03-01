@@ -15,6 +15,8 @@ on death of player:
                 message "&c&l&o%name of attacker% &fmatou &c&l&o%victim%" to loop-player
 
         set {deathloc::%name of victim%} to location of victim
+        if attacker exist:
+            set {deathattacker::%name of victim%} to attacker
         if name of attacker contains "(BOSS)":
             if attacker is npc:
                 set {deathtimer::%name of victim%} to 30
@@ -29,6 +31,7 @@ on respawn:
     {jogo::%world of player%} is 1
     set gamemode of player to spectator
     teleport player to {deathloc::%name of player%}
+    set spectator target of player to {deathattacker::%name of player%}
     play sound "fx.death" to all players in location of player
     set {_tempo} to {deathtimer::%name of player%} -1
     {deathtimer::%name of player%} <= 0:

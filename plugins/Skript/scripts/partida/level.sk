@@ -217,7 +217,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             make console execute command "ex flag server nomecastelo1%arg-2%:%{_castelo1nomereplec}%"
             make console execute command "ex flag server nomecastelo2%arg-2%:%{_castelo2nomereplec}%"
 
-            make console execute command "spawn %arg-2%"
+            respawnmobs(arg-2)
             make console execute command "npcs %arg-2%"
 
             make console execute command "desistircooldown %arg-2%"

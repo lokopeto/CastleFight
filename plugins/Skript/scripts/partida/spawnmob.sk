@@ -52,8 +52,10 @@ every 1 second:
                 make console execute command "spawnmobc 2 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}% %loop-world% %{_lorelist::13}%"
 
 
-every 5 minute:
-    make console execute command "spawn castlefight1 castlefight2 castlefight3 castlefight4 castlefight5 castlefight6"
+function respawnmobs(world: world):
+    while {jogo::%{_world}%} is 1:
+        make console execute command "spawn %{_world}%"
+        wait 5 minutes
 
 #spawnar os mobs, conjunto com drops.sk
 command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
@@ -83,7 +85,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
                         set {_levelmin} to 30  
                     set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
 
-                    set {_tipomob} to a random text out of "Skeleton_Horse", "Stray", "Spider" and "Husk"
+                    set {_tipomob} to a random text out of "Stray", "Spider" and "Husk"
 
                     loop "%{_level}%" parsed as integer times:
                         add a random number between {mobs::%{_tipomob}%::1} and {mobs::%{_tipomob}%::2} to {_health}

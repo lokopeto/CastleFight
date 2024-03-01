@@ -126,7 +126,7 @@ londama_text:
 londama_text_show:
     type: task
     definitions: reputação
-    debug: true
+    debug: false
     script:
         - define londamatext <server.flag[londamatext<[reputação]>]>
         - repeat <element[<[londamatext]>].to_list.size>:

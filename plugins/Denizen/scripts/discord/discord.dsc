@@ -3,7 +3,7 @@ discordstatustesterdev:
     debug: false
     events:
         after server start:
-            - ~discordconnect id:bot_dev token:<secret[bot_dev]>
+            - ~discordconnect id:bot_cf token:<secret[bot_dev]>
             - flag server temposerveriniciado:<util.time_now>
             - run discordmessagestatusdev def:1
 
@@ -22,6 +22,6 @@ discordmessagestatusdev:
     - define channel 1209214703838953552
 
     - if <[message]> = 1:
-        - discordmessage id:bot_dev edit:<[messageid]> channel:<[channel]> "**Status: Rodando**<n>**Jogadores: <server.players.size>**<n>**Tempo: <server.flag[temposerveriniciado].format_discord[R]>**"
+        - discordmessage id:bot_cf edit:<[messageid]> channel:<[channel]> "**Status: Rodando**<n>**Jogadores: <server.players.size>**<n>**Tempo: <server.flag[temposerveriniciado].format_discord[R]>**"
     - if <[message]> = 2:
-        - discordmessage id:bot_dev edit:<[messageid]> channel:<[channel]> "**Status: Parado**"
+        - discordmessage id:bot_cf edit:<[messageid]> channel:<[channel]> "**Status: Parado**"
