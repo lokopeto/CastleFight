@@ -5,31 +5,26 @@ cfcloneref:
     usage: /cfcloneref
     permission: clonecf.perm
     script:
-    - adjust <world[castlefight1]> destroy
-    - adjust <world[castlefight2]> destroy
-    - adjust <world[castlefight3]> destroy
-    - adjust <world[castlefight4]> destroy
-    - adjust <world[castlefight5]> destroy
-    - adjust <world[castlefight6]> destroy
+    - define orig castlefightref
+    - define clone:->:castlefight1
+    - define clone:->:castlefight2
+    - define clone:->:castlefight3
+    - define clone:->:castlefight4
+    - define clone:->:castlefight5
+    - define clone:->:castlefight6
+    - define clone:->:castlefightmenu
 
-    - adjust <world[castlefightmenu]> destroy
+    - foreach <[clone]> as:clonefe:
+        - define clonefeworld <world[<[clonefe]>]>
+        - define origfe <world[<[orig]>]>
 
+        - adjust <[clonefeworld]> destroy
+        - narrate "<gray><[clonefe]> destruido"
 
+        - ~createworld <[clonefe]> copy_from:<[orig]> generator:denizen:void save:worldfinal
 
-    - ~createworld castlefight1 copy_from:world314 generator:denizen:void:
-        - narrate castlefight1 criado
-    - ~createworld castlefight2 copy_from:world314 generator:denizen:void:
-        - narrate castlefight2 criado
-    - ~createworld castlefight3 copy_from:world314 generator:denizen:void:
-        - narrate castlefight3 criado
-    - ~createworld castlefight4 copy_from:world314 generator:denizen:void:
-        - narrate castlefight4 criado
-    - ~createworld castlefight5 copy_from:world314 generator:denizen:void:
-        - narrate castlefight5 criado
-    - ~createworld castlefight6 copy_from:world314 generator:denizen:void:
-        - narrate castlefight6 criado
-    - ~createworld castlefightmenu copy_from:world314 generator:denizen:void:
-        - narrate castlefightmenu criado
+        - narrate "<green><[clonefe]> criado"
+
 
 
 
@@ -41,8 +36,10 @@ worldteleport:
     usage: /worldteleport <&lt>world<&gt>
     aliases:
         - wtp
-    tab completions:
-        default: <server.worlds>
+    tab complete:
+        - foreach <server.worlds> as:world:
+            - define worlds:->:<[world].name>
+        - determine <[worlds]>
     permission: clonecf.worldteleport
     script:
     - teleport <player> <player.location.with_world[<context.args.get[1]>]>

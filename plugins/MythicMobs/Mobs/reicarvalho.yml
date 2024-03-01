@@ -1,0 +1,17 @@
+sapo:
+  type: zombie
+  options:
+    PreventSunburn: true
+    AlwaysShowName: true
+    Collidable: false
+    Despawn: false
+    FollowRange: 32
+    MaxCombatDistance: 80
+    MovementSpeed: 0.2
+    PreventRandomEquipment: true
+    PreventOtherDrops: true
+    RepeatAllSkills: true
+    UseThreatTable: true
+
+    PreventJockeyMounts: true
+    PreventTransformation: true

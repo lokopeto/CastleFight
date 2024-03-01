@@ -51,7 +51,7 @@ regions:
         priority: 0
     __global__:
         members: {}
-        flags: {sleep: deny, leaf-decay: deny, chest-access: allow, entity-painting-destroy: deny,
+        flags: {sleep: deny, leaf-decay: deny, entity-painting-destroy: deny, chest-access: allow,
             entity-item-frame-destroy: deny}
         owners: {}
         type: global
