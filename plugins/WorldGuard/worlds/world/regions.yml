@@ -58,8 +58,8 @@ regions:
     __global__:
         members: {}
         flags: {natural-health-regen: allow, lava-fire: deny, mycelium-spread: deny,
-            invincible: allow, feed-amount: 20, leaf-decay: deny, use-dripleaf: deny,
-            pvp: allow, fire-spread: deny, natural-hunger-drain: deny, sleep: deny,
+            invincible: deny, feed-amount: 20, leaf-decay: deny, use-dripleaf: deny,
+            pvp: deny, fire-spread: deny, natural-hunger-drain: deny, sleep: deny,
             coral-fade: deny, vine-growth: deny, copper-fade: deny, fall-damage: deny,
             item-frame-rotation: deny, entity-painting-destroy: deny, heal-amount: 20,
             entity-item-frame-destroy: deny, feed-min-hunger: 10, grass-growth: allow}

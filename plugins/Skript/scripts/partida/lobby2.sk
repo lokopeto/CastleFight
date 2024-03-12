@@ -159,7 +159,7 @@ on right click on warped sign:
 
     else:
 
-        message "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente"
+        message "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente" to player
         send action bar "&7&o&lEspere %{lobbytimer::%player%::%{_world}%}% para entrar novamente"
 
 on quit:

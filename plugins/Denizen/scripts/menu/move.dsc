@@ -167,11 +167,12 @@ fakeentity:
     script:
         - remove <server.npcs_flagged[menuinicionpc.<player>]>
 
-        - create player <player.name> <location[-25.5,175.00,114.5,0,180,castlefightmenu]> save:fakeplayer1
+        - create player <player.name> <location[-25.5,175.00,114.5,0,-180,castlefightmenu]> save:fakeplayer1
 
         - adjust <entry[fakeplayer1].created_npc> hide_from_players
         - adjust <player> show_entity:<entry[fakeplayer1].created_npc>
         - flag <entry[fakeplayer1].created_npc> menuinicionpc.<player>
+        - adjust <entry[fakeplayer1].created_npc> lookclose:true
 
         - wait 5t
 

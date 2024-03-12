@@ -5,7 +5,7 @@ cfcloneref:
     usage: /cfcloneref
     permission: clonecf.perm
     script:
-    - define orig castlefightref
+    - define orig world314
     - define clone:->:castlefight1
     - define clone:->:castlefight2
     - define clone:->:castlefight3
@@ -21,7 +21,7 @@ cfcloneref:
         - adjust <[clonefeworld]> destroy
         - narrate "<gray><[clonefe]> destruido"
 
-        - ~createworld <[clonefe]> copy_from:<[orig]> generator:denizen:void save:worldfinal
+        - ~createworld <[clonefe]> copy_from:<[orig]> generator:denizen:void
 
         - narrate "<green><[clonefe]> criado"
 

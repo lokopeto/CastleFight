@@ -56,16 +56,6 @@ generator:
         armor:
         - 20
         - 22
-    stat-modifiers:
-      iron_sword:
-        damage-types:
-          physical: 1.15
-      iron_helmet:
-        defense-types:
-          physical: 1.25
-      axe:
-        item-stats:
-          CRITICAL_DAMAGE: 1.5
   user-requirements-by-level:
     level:
       '1': '1:10'
@@ -239,6 +229,7 @@ generator:
     - ''
     - '%ITEM_STAT_DURABILITY%'
     - ''
+    - '%ITEM_STAT_ARMOR_TOUGHNESS%'
     list:
       critical_rate:
         chance: 20.0
@@ -427,6 +418,13 @@ generator:
         max: 0
         flat-range: false
         round: false
+      armor_toughness:
+        chance: 0.0
+        scale-by-level: 1.0
+        min: 0
+        max: 0
+        flat-range: false
+        round: false
   skillapi-attributes:
     minimum: 1
     maximum: 4
@@ -503,4 +501,15 @@ generator:
         max-level: 1
         lore-format:
         - '&bSample Ability: &7[&f%level%&7]'
+  bonuses:
+    material:
+      iron_sword:
+        damage-types:
+          physical: 1.15
+      iron_helmet:
+        defense-types:
+          physical: 1.25
+      axe:
+        item-stats:
+          CRITICAL_DAMAGE: 1.5
 target-requirements: {}

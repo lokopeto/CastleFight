@@ -1,9 +1,9 @@
 # These first 6 aren't configurable
 issues: "https://github.com/IntellectualSites/FastAsyncWorldEdit/issues"
 wiki: "https://intellectualsites.github.io/fastasyncworldedit-documentation/"
-date: "Thu Nov 09 00:00:00 BRT 2023"
-build: "https://ci.athion.net/job/FastAsyncWorldEdit/581"
-commit: "https://github.com/IntellectualSites/FastAsyncWorldEdit/commit/fe792db5"
+date: "Tue Apr 02 00:00:00 BRT 2024"
+build: "https://ci.athion.net/job/FastAsyncWorldEdit/666"
+commit: "https://github.com/IntellectualSites/FastAsyncWorldEdit/commit/f49296e3"
 platform: "Bukkit"
 # Set true to enable WorldEdit restrictions per region (e.g. PlotSquared or WorldGuard).
 # To be allowed to WorldEdit in a region, users need the appropriate
@@ -42,6 +42,11 @@ clipboard:
   # Allows NBT stored in a clipboard to be written to disk
   #  - Requires clipboard.use-disk to be enabled
   save-clipboard-nbt-to-disk: true
+  # Apply a file lock on the clipboard file (only relevant if clipboad.on-disk is enabled)
+  #  - Prevents other processes using the file whilst in use by FAWE
+  #  - This extends to other servers, useful if you have multiple servers using a unified clipboard folder
+  #  - May run into issues where a file lock is not correctly lifted
+  lock-clipboard-file: false
 
 lighting:
   # If packet sending should be delayed until relight is finished

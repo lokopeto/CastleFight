@@ -1,8 +1,8 @@
 command-aliases: loot,qloot
 
 general:
-  protect-drop: false
-  time-to-loot: 300
+  protect-drop: true
+  time-to-loot: 0
   entity-blacklist:
   - ARMOR_STAND
   mythic-blacklist:

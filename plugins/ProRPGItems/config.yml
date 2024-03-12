@@ -44,7 +44,7 @@ tiers:
 
 modules:
   item_hints:
-    enabled: true
+    enabled: false
     name: Item Hints
   gems:
     enabled: true
@@ -98,7 +98,7 @@ modules:
     enabled: true
     name: Party
   loot:
-    enabled: true
+    enabled: false
     name: Loot
   sell:
     enabled: true
@@ -110,7 +110,7 @@ modules:
     enabled: true
     name: Consumables
   drops:
-    enabled: true
+    enabled: false
     name: Drops
 
 item-sub-types:

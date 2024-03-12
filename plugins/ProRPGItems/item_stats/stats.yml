@@ -1,4 +1,4 @@
-#DIRECT_DAMAGE:
+# DIRECT_DAMAGE:
 #  enabled: true
 #  name: Direct Damage
 #  format: '&f▸ %name%: &f%value%'
@@ -169,3 +169,8 @@ MANA_REGEN:
   name: Regeneração de mana
   format: '&9▸ %name%: &f%value%'
   capacity: -1.0
+ARMOR_TOUGHNESS:
+  enabled: true
+  name: Armor Toughness
+  format: '&9▸ %name%: &f%value% %condition%'
+  capacity: 100.0

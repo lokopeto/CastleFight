@@ -9,7 +9,7 @@ command /partidapesquisarcancelar:
         set {psspwait::%player%} to 0
         message "&7&oPesquisa cancelada"
         set slot 0 of player to 1 recovery compass named "&bBuscar Partida"
-        set item cooldown of slot 0 of player to 3 seconds
+        set the cooldown of slot 0 of player for player to 3 seconds
         loop 5 times:
             continue
             wait 1 tick

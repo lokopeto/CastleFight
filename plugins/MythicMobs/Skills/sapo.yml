@@ -1,0 +1,16 @@
+JumpCatch_on:
+  Cooldown: 10
+  Skills:
+  - look{force=true} @target
+  - leap{velocity=-50} @target
+  - delay 5
+  - leap{velocity=200} @target
+  - jump{velocity=0.5} @self
+  - delay 2
+  - command{c=ex run jumpcatch_on def:<caster.uuid>|<target.uuid>;asOp=true}
+JumpCatch_off:
+  Cooldown: 10
+  Conditions:
+    - denizencondition{tag=<context.entity.has_flag[jumpcatch]>}
+  Skills:
+  - command{c=ex run jumpcatch_off def:<caster.uuid>|<target.uuid>;asOp=true}
