@@ -79,6 +79,12 @@ on respawn:
     make console execute command "ppo %player% remove 2"
     make console execute command "ppo %player% remove 3"
 
+on gamemode change to spectator:
+    if {deathtimer::%name of player%} >= 0:
+        while player's gamemode is spectator:
+            make console execute command "spectate %{deathplayer::%name of player%}% %name of player%"
+            wait 2 ticks
+
 on damage of player:
     damage was caused by void:
         "%team of victim%" is "castelo1%world of victim%":

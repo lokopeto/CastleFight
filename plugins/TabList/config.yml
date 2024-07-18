@@ -185,23 +185,6 @@ tablist-object-type:
   disabled-worlds:
   - testingWorld
 
-  # The format of this objective number what to display
-  number-format:
-
-    # The format type of this objective to display
-    # Can be NONE (default), FIXED, BLANK and STYLED
-    type: none
-
-    # The format of this objective, each format type is different,
-
-    # none - shows as a yellow number (default)
-    # fixed - a unique text displayed instead of number without styling
-    # blank - no text/number displayed
-    # styled - changes the coloration of the number (use full color/formatting names 'green;bold;italic' or hexadecimal '#123456')
-
-    # with 'styled' format you can specify only 1 color and each formatting names 1 time, separate with ';' character
-    format: green;bold
-
 # Checks for plugin updates after server start
 check-update: true
 

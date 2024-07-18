@@ -219,7 +219,7 @@ command /pocaoalqorganize <integer> <integer>:
         message "movendo %arg-1% para %arg-2%"
         set {pocoes::%arg-1%::*} to {pocoes::%arg-2%::*}
         delete {pocoes::%arg-2%::*}
-
+	
 #on gamemode change to spectator:
 #    wait 1 tick
 #    loop all players:

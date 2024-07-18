@@ -3,32 +3,12 @@ teamchat:
     debug: false
     events:
         on player chats:
-            - if not <player.has_flag[global]>:
+            - if <context.message.substring[0,1]> = !:
+                - if <context.message.substring[2,2]> != <element[]>:
+                    - determine <context.message.after[!]>
+                - else:
+                    - determine cancelled
+            - else:
                 - execute as_player "teammsg <context.message>"
                 - determine cancelled
-        on player join:
-            - flag player global
 
-global:
-    debug: false
-    type: command
-    name: global
-    description: Fala com o chat global.
-    usage: /global
-    script:
-    - if <player.has_flag[global]>:
-        - flag player global:!
-        - narrate "<&color[dark_gray]>Chat Global Desativado"
-    - else:
-        - flag player global
-        - narrate "<&color[dark_gray]>Chat Global Ativado"
-
-globaldesativar:
-    debug: false
-    type: command
-    name: globaldesativar
-    description: Fala com o chat global.
-    usage: /globaldesativar
-    script:
-    - if <player.is_op>:
-        - flag <world[world].players> global

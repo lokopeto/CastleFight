@@ -3,7 +3,7 @@ itemespeciais:
     debug: true
     events:
         on player right clicks block:
-            - if <player.item_in_hand.display> = "<dark_aqua>Vara Corrompida":
+            - if <player.held_item_slot.display> = "<dark_aqua>Vara Corrompida":
                 - if <player.xp_level> >= 120:
                     - if not <player.has_flag[varacorrompida]>:
                         - repeat 5:
@@ -17,7 +17,7 @@ itemespeciais:
                 - else:
                     - narrate "<&b>Xp insuficiente!"
 
-            - if <player.item_in_hand.display> = "<dark_aqua>Cordas de Choque":
+            - if <player.held_item_slot.display> = "<dark_aqua>Cordas de Choque":
                 - if <player.xp_level> >= 30:
                     - strike no_damage <player.location>
                     - experience take level 30
@@ -25,7 +25,7 @@ itemespeciais:
                     - narrate "<&b>Xp insuficiente!"
 
         on player right clicks player:
-            - if <player.item_in_hand.display> = "<dark_aqua>Maldição da Escuridão":
+            - if <player.held_item_slot.display> = "<dark_aqua>Maldição da Escuridão":
                 - if <player.xp_level> >= 80:
                     - playsound <player> <context.entity> sound:block_note_block_bell
                     - cast DARKNESS amplifier:10 duration:15 <context.entity>

@@ -1,19 +1,16 @@
 {
 	"folders": [
 		{
+			"name": "scripts",
 			"path": "plugins/Denizen/scripts"
 		},
 		{
+			"name": "scripts",
 			"path": "plugins/Skript/scripts"
 		},
 		{
+			"name": "CastleFight 1.20.1",
 			"path": "."
-		},
-		{
-			"path": "plugins/MythicMobs"
-		},
-		{
-			"path": "plugins/ProRPGItems"
 		}
 	],
 	"settings": {}

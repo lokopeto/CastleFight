@@ -3,24 +3,32 @@
 ##################################
 
 # We from SRTeam thank you for using our plugin!
-# For more information         -> https://skinsrestorer.net/docs
-# For Installation             -> https://skinsrestorer.net/docs/installation
-# For Configuration Help       -> https://skinsrestorer.net/docs/configuration
-# For Commands and Permissions -> https://skinsrestorer.net/docs/configuration/commands-permissions
-# For Locale and Translations  -> https://skinsrestorer.net/docs/configuration/locale-translations
-# Not working or get error?    -> https://skinsrestorer.net/docs/troubleshooting
-# For advanced help or other, go to our Discord: https://skinsrestorer.net/discord
 
-# (?) Step by step config guide -> https://skinsrestorer.net/docs/configuration
+# We recommend you read the official installation guide before asking for help:
+# https://skinsrestorer.net/docs/installation
 
-# (!) IF YOU ARE USING A PROXY (Bungee, Waterfall or Velocity), Check & set on every BACKEND server spigot.yml -> bungeecord: true.  (!)
-# (!) & Install Skinsrestorer.jar on ALL SERVERS!!! (BOTH Backend & Proxy).                      (!)
+# We have prepared a few resources to help you configure the plugin:
+# General help: https://skinsrestorer.net/docs/configuration
+# Commands and permissions: https://skinsrestorer.net/docs/configuration/commands-permissions
+# Translations and messages: https://skinsrestorer.net/docs/configuration/locale-translations
+
+# If you encounter issues, you can do the following:
+# Read the troubleshooting guide: https://skinsrestorer.net/docs/troubleshooting
+# For advanced help or other, go to our Discord Server: https://skinsrestorer.net/discord
+
+# (?) Step by step installation guide: https://skinsrestorer.net/docs/installation
+
+# (!) IF YOU ARE USING A PROXY (BungeeCord, Waterfall or Velocity), YOU NEED TO INSTALL SKINSRESTORER ON THE PROXY AND ALL SERVERS! (!)
+# (!) YOU ALSO NEED TO CONFIGURE YOUR SERVERS TO DETECT THE PROXY! (!)
+# (!) AND YOU ALSO NEED TO PUT THE SAME CONFIG FILE IN ALL PROXIES AND SERVERS! (!)
+# (!) You can find detailed proxy instructions here: https://skinsrestorer.net/docs/installation
 
 ##########
 # Locale #
 ##########
 
 # Translation & message options here
+# To learn more about translations and how to make custom translations, visit: https://skinsrestorer.net/docs/configuration/locale-translations
 messages:
     # A locale code for the locale you want to use by default for messages and commands.
     # Has to be a string separated by an underscore.
@@ -30,7 +38,7 @@ messages:
     # We recommend keeping this at the default value because we mostly only provide support in English.
     # Has to be a string separated by an underscore.
     consoleLocale: en
-    # Disable message prefix in SkinsRestorer messages.
+    # Disable the message prefix in SkinsRestorer messages.
     disablePrefix: false
     # Every message sent by the plugin will use the players client locale if a translation is available.
     # If disabled, the config locale will be used instead.
@@ -41,8 +49,6 @@ messages:
 ############
 
 # Settings for databases skin storage (recommended for large networks with a lot of skins)
-# [!] IF YOU USE A PROXY, DO NOT ENABLE MYSQL in the Spigot / Backend config.yml [!]
-# [!] Non-root users: MySQL 8's new default authentication is not supported, use mysql_native_password [!]
 # [!] Make sure you have the correct permissions set for your MySQL user. [!]
 # [!] Make sure to fill in database.connectionOptions if you're using certificate / ssl authentication. [!]
 # [!] If you're not using ssl, change sslMode=trust to sslMode=disable [!]
@@ -62,10 +68,13 @@ database:
 ############
 
 # Control behaviour of commands.
+# To learn more about commands and permissions, visit: https://skinsrestorer.net/docs/configuration/commands-permissions
 commands:
     # For all player commands to work by default, you need to give players the permission 'skinsrestorer.player'.
-    # This option allows you to force the default permission (skinsrestorer.player) to be given to all players if the value is not set explicitly.
+    # This option allows you to force the default permission (skinsrestorer.player) to be given to all players.
     # A value of 'false' will disable this behaviour, and players will need to be given the permission explicitly.
+    # This is because some platforms (like BungeeCord) do not have a default permission system.
+    # If your platform supports default permissions, this option is ignored.
     forceDefaultPermissions: true
     # Players cooldown in seconds when changing skins (set to 0 to disable).
     # SkinErrorCooldown is used when an error or invalid url occurs.
@@ -122,8 +131,10 @@ commands:
     # Do not disable this unless you are overriding the /skins command with a different plugin or you don't want the GUI command.
     # Requires a server restart to take effect.
     disableGUICommand: false
-# Custom list for the /skins GUI.
-# customGUI.showOnlyCustomGUI will only show customGUI.list in the GUI.
+
+# Custom skins for the /skins GUI.
+# This setting will allow custom skins to be shown in the GUI.
+# customGUI.showOnlyCustomGUI will allow only custom skins from customGUI.list to show up in the GUI.
 customGUI:
     enabled: false
     showOnlyCustomGUI: true
@@ -194,6 +205,13 @@ server:
     # Dismounts all passengers mounting a player (such as plugins that let you ride another player), preventing those players from becoming desynced.
     # File override = ./plugins/SkinsRestorer/enableDismountEntities.txt
     dismountPassengersOnSkinUpdate: false
+    sound:
+        # Play a sound when a player runs /skin to change their skin.
+        enabled: true
+        # Sound to play when a player runs /skin to change their skin.
+        # You can find the allowed format and values at
+        # https://javadoc.io/static/com.github.cryptomorin/XSeries/11.0.0/com/cryptomorin/xseries/XSound.html#parse(java.lang.String)
+        value: ENTITY_PLAYER_TELEPORT, 0.7
 login:
     # Stops the process of setting a skin if the LoginEvent was canceled by an AntiBot plugin.
     # [?] Unsure? leave this true for better performance.
@@ -259,20 +277,18 @@ dev:
 # End #
 
 # Useful tools:
-# Vectier Thailand has made some super cool "Custom Skin" tools that you can use!
 # 
 # SkinFile Generator:
 # With SkinFile Generator, you can upload your own custom skin to get a unique .skin file that you can put in your skins folder, to use with SkinsRestorer.
-# Check it out here: https://skinsrestorer.github.io/SkinFile-Generator/
+# Check it out here: https://generator.skinsrestorer.net
 # 
-# SkinSystem :
-# With SkinSystem, you, as a server owner, can connect AuthMe (and forum) with the SkinSystem website that you can host, to give your players the ability to upload custom skins.
+# SkinSystem:
+# With SkinSystem, you, as a server owner, can connect AuthMe with the SkinSystem website that you can host, to give your players the ability to upload custom skins.
 # Check it out here: https://github.com/SkinsRestorer/SkinSystem
 # 
 # Useful Links #
-# Website: https://skinsrestorer.net/
-# Download: https://github.com/SkinsRestorer/SkinsRestorerX/releases
-# Wiki https://github.com/SkinsRestorer/SkinsRestorerX/wiki/
-# Spigot: https://www.spigotmc.org/resources/skinsrestorer.2124/
-# Github: https://github.com/SkinsRestorer/SkinsRestorerX/
-# Discord: https://discord.me/SkinsRestorer/
+# Website: https://skinsrestorer.net
+# Docs: https://skinsrestorer.net/docs
+# Spigot: https://skinsrestorer.net/spigot
+# Github: https://github.com/SkinsRestorer/SkinsRestorer
+# Discord: https://skinsrestorer.net/discord

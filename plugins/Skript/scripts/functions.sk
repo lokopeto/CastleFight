@@ -1,0 +1,8 @@
+function npcname(entity: entity) :: text:
+    set {_id} to npc id of {_entity}
+    return name of npc {_id}
+
+function npcnameuncolor(entity: entity) :: text:
+    set {_id} to npc id of {_entity}
+    set {_name} to name of npc {_id}
+    return uncolored {_name}

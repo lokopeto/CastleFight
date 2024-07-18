@@ -20,7 +20,7 @@ Dialogo:
     events:
         on delta time secondly:
             - foreach <world[world].players>:
-                - if <[value].target>:
+                - if <[value].target>:'
                     - glow <[value].target> for:<[value]>
                     - flag <[value]> dialogoglow:<[value].target>
                 - else:

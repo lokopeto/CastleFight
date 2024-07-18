@@ -16,5 +16,4 @@ walkspeed:
         on player walks:
             - if <player.has_flag[pathspeed]>:
                 - if <player.visible>:
-                    - if <player.location.below[1].block.material> not equals <material[air]>:
-                        - playeffect effect:SPIT at:<player.location> offset:0.2,0,0.2
+                    - playeffect effect:SPIT at:<player.location> offset:0.3,0,0.3

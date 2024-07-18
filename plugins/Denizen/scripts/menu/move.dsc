@@ -1,6 +1,5 @@
 selecionarmenu:
     type: world
-    debug: false
     events:
         on player join:
             - team name:menu add:<player>
@@ -54,15 +53,16 @@ selecionarmenu:
 
 
         on player quits:
-            - remove <server.npcs_flagged[menuinicionpc.<player>]>
-            - flag server startmenujoin:!
+            - if <player.has_flag[tutorial]>:
+                - remove <server.npcs_flagged[menuinicionpc.<player>]>
+                - flag server startmenujoin:!
 
-            - if <world[castlefightmenu].players.size> = 1:
-                - run model_startmenu
+                - if <world[castlefightmenu].players.size> = 1:
+                    - run model_startmenu
 
-                - wait 1s
+                    - wait 1s
 
-                - execute as_server "meg npc model citizens:<server.npcs_flagged[startmenu].get[1].id> add passarin"
+                    - execute as_server "meg npc model citizens:<server.npcs_flagged[startmenu].get[1].id> add passarin"
 
 
         on player walks in:castlefightmenu:
@@ -163,16 +163,14 @@ menufade2:
 
 fakeentity:
     type: task
-    debug: false
     script:
         - remove <server.npcs_flagged[menuinicionpc.<player>]>
 
-        - create player <player.name> <location[-25.5,175.00,114.5,0,-180,castlefightmenu]> save:fakeplayer1
+        - create player <player.name> <location[-25.5,175.00,114.5,0,180,castlefightmenu]> save:fakeplayer1
 
         - adjust <entry[fakeplayer1].created_npc> hide_from_players
         - adjust <player> show_entity:<entry[fakeplayer1].created_npc>
         - flag <entry[fakeplayer1].created_npc> menuinicionpc.<player>
-        - adjust <entry[fakeplayer1].created_npc> lookclose:true
 
         - wait 5t
 
@@ -181,7 +179,6 @@ fakeentity:
 
 fakeentity_start_click:
     type: task
-    debug: false
     script:
         - execute as_server "npc stand --id <server.npcs_flagged[menuinicionpc.<player>].get[1].id>" silent
         - wait 10t
@@ -190,7 +187,6 @@ fakeentity_start_click:
 menu_teleport_jogar:
     type: task
     definitions: player
-    debug: false
     script:
         - if <[player].flag[menu]> = 2:
             - run fakeentity_start_click

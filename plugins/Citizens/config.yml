@@ -31,8 +31,6 @@ npc:
     # The distance in blocks where the NPC will switch to walking straight towards the target instead of pathfinding
     # Currently only for dynamic targets like entities
     straight-line-targeting-distance: 5
-    # The default action to perform when NPCs are unable to find a path or are stuck in the same block for too long
-    # Supported options are: 'teleport to destination' or 'none'
     default-stuck-action: none
     # Minecraft will pick a 'close-enough' location when pathfinding to a block if it can't find a direct path
     # Disabled by default
@@ -44,7 +42,7 @@ npc:
     # The default allowed maximum fall distance when pathfinding, set to -1 to use the Minecraft value
     allowed-fall-distance: -1
     # Whether to use the Citizens pathfinder instead of the Minecraft pathfinder
-    # Much more flexible, but may have different performance to Minecraft's pathfinder
+    # Much more flexible, but may have different performance characteristics
     use-new-finder: false
   default:
     # The default bossbar range, in blocks
@@ -81,8 +79,6 @@ npc:
     spawn-nodamage-duration: 1s
     # Default duration in the same location before the NPC considers itself stuck and failed pathfinding
     stationary-duration: -1
-    # Whether to reset NPC yaw on spawn
-    # Currently this is implemented by an arm swing animation due to Minecraft limitations
     reset-yaw-on-spawn: true
   chat:
     options:
@@ -113,16 +109,12 @@ npc:
     max-ground-speed: 0.5
     # Whether to change vehicle direction with movement instead of strafe controls
     use-boat-controls: true
-    # The maximum flying speed that controllable NPCs can reach, in Minecraft velocity units
-    max-flying-speed: 0.75
   hologram:
     # Default distance between hologram lines
     default-line-height: 0.4
     use-display-entities: false
     # How often to update hologram names (including placeholders)
     update-rate: 1s
-    # Whether to always update the hologram position every tick
-    always-update-position: false
   limits:
     # Default maximum number of NPCs owned by a single player (give the citizens ignore-limits permission to skip this check)
     default-limit: 10
@@ -152,8 +144,6 @@ npc:
     player-join-update-delay: 1s
     # How many times to try load NPC skins (due to Minecraft rate-limiting skin requests, should rarely be less than 5
     max-retries: -1
-    # Whether to try and look for the player skin for all new NPCs
-    # If this is set to false and you create an NPC named Dinnerbone, the NPC will have the default (steve/alex/etc) skin rather than trying to fetch the Dinnerbone skin
     try-fetch-default-skin: true
     # How long before retrying skin requests (typically due to Mojang rate limiting)
     retry-delay: 5s
@@ -217,14 +207,11 @@ general:
     message-highlight: yellow
     message: <green>
   translation:
-    # Controls translation files - defaults to your system language, set to 'en' if English required
+    # Controls translation files - defaults to your system language, set to en if English required
     locale: ''
   # The resource pack path to save resource packs to
   resource-pack-path: plugins/Citizens/resourcepack
   reload-warning-enabled: true
-  interop:
-    # Whether to hook into ProtocolLib
-    protocollib: true
 advanced:
   # Whether to check the minecraft version for compatibility (do not change)
   check-minecraft-version: true
@@ -239,5 +226,3 @@ storage:
   file: saves.yml
   # Although technically Citizens can use NBT storage, it is not well tested and YAML is recommended
   type: yaml
-  # How often to save NPCs to disk
-  save-task-frequency: 1hr

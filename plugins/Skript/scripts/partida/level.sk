@@ -187,7 +187,7 @@ every 50 seconds:
             if {level::%loop-world%} < 30:
                 add 1 to {level::%loop-world%}
                 message "level dos mobs: %{level::%loop-world%}%" to console
-                add 2 to {xpplayer::%loop-world%}
+                add 2 to {xpplayer::%loop-world%}          
 
 command /fogo <world>:
     executable by: console
@@ -196,6 +196,21 @@ command /fogo <world>:
         make console execute command "fastasyncworldedit:/pos1 -250,272,195"
         make console execute command "fastasyncworldedit:/pos2 150,115,-122"
         make console execute command "fastasyncworldedit:/replace fire air"
+
+function respawntimerandlevel(world: world, type: integer, timer: string):
+    while {jogo::%{_world}%} = 1:
+        {_type} is 1:
+            make console execute command "spawn %{_world}%"
+            wait "%{_timer}%" parsed as timespan
+        {_type} is 2:
+            wait "%{_timer}%" parsed as timespan
+            if {level::%{_world}%} < 45:
+                add 1 to {level::%{_world}%}
+                message "level dos mobs: %{level::%{_world}%}%" to console
+                add 10 to {xpplayer::%{_world}%}
+
+
+                   
 
 command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
     executable by: console
@@ -211,13 +226,15 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             set {_castelo1nomereplec} to {castelo1nome::%arg-2%}
             set {_castelo2nomereplec} to {castelo2nome::%arg-2%}
 
+            respawntimerandlevel(arg-2 , 1 , "5 minutes")
+            respawntimerandlevel(arg-2 , 2 , "130 seconds")
+
             replace " " in {_castelo1nomereplec} and {_castelo2nomereplec} with "|"
 
 
             make console execute command "ex flag server nomecastelo1%arg-2%:%{_castelo1nomereplec}%"
             make console execute command "ex flag server nomecastelo2%arg-2%:%{_castelo2nomereplec}%"
 
-            respawnmobs(arg-2)
             make console execute command "npcs %arg-2%"
 
             make console execute command "desistircooldown %arg-2%"
@@ -356,6 +373,7 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
             set {XPquant2::%arg-2%} to 0
 
             make console execute command "loopblocksreform %{_world}%"
+            make console execute command "cfcloneref %{_world}%"
 
         set {_arg3}, {_arg4}, {_arg5}, {_arg6} and {_arg7} to ""
 
@@ -378,15 +396,15 @@ command /jogo <number> [<world>] [<world>] [<world>] [<world>] [<world>] [<world
 
 
 on death:
-    victim is a citizen
-    name of victim is "%{castelo1nome::%world of victim%}%":
+    victim is a npc
+    npcname(victim) is "%{castelo1nome::%world of victim%}%":
         set {_ganhou} to {castelo2nome::%world of victim%}
         set {_ganhounumber} to 1
         set {_ganhounumberreverso} to 2
 
         set {_confimada} to 1
 
-    name of victim is "%{castelo2nome::%world of victim%}%":
+    npcname(victim) is "%{castelo2nome::%world of victim%}%":
         set {_ganhou} to {castelo1nome::%world of victim%}
         set {_ganhounumber} to 2
         set {_ganhounumberreverso} to 1
@@ -396,7 +414,7 @@ on death:
     if {_confimada} is 1:
         make console execute command "partidateminar %{_ganhounumber}% %world of victim%"
 
-    if name of victim is {castelo1nome::%world of victim%} or {castelo2nome::%world of victim%}:
+    if npcname(victim) is {castelo1nome::%world of victim%} or {castelo2nome::%world of victim%}:
 
         loop all players in world of victim:
 
@@ -428,6 +446,8 @@ on death:
             loop 6 times:
                 if {pontuaçãopartida::%loop-player%::%world of loop-player%::%loop-number%} is not set:
                     set {pontuaçãopartida::%loop-player%::%world of loop-player%::%loop-number%} to 0
+
+        loop all players in world of victim:
 
             message "&l&a=[🗡 %{_ganhou}% venceu! 🛡]=)" to loop-player
             message "" to loop-player

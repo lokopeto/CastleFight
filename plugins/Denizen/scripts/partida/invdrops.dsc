@@ -1,9 +1,14 @@
 invdrops:
     type: world
-    debug: false
+    debug: true
     events:
         on player death:
             - foreach <player.inventory.list_contents> as:invloop:
-                - if <[invloop].contains_text[spawn_egg]>:
-                    - drop <[invloop]> <player.location>
-                    - take item:<[invloop]> from:<player.inventory> quantity:999999
+
+                - narrate <[invloop].lore>
+
+                - if <[invloop].lore.get[2].contains_text[duplicado]>:
+                    - inventory adjust lore slot:<[invloop].inv>
+#<[invloop].lore.overwrite[Clique para despausar].at[2]>
+                - drop <[invloop]> <player.location>
+                - take item:<[invloop]> from:<player.inventory> quantity:999999

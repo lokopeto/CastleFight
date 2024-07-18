@@ -1,6 +1,7 @@
-#on load:
-#    set {mobs::Zombie::*} to ""
-#    set {mobs::Skeleton::*} to ""
+function mobstodsc():
+    make console execute command "ex flag server mobs:!"
+    loop {mobsnomes::*}:
+        make console execute command "ex flag server mobs:->:%loop-value%"
 
 command /statsmob <text> [<text>] [<integer>] [<integer>]:
     trigger:

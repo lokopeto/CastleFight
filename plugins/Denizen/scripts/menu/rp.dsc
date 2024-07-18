@@ -2,11 +2,10 @@ resourcepackupload:
     type: world
     events:
         on player join:
-            - define url https://download.mc-packs.net/pack/29073c269ab6211d518bb7920252dfaf6f2c4472.zip
-            - define hash 29073c269ab6211d518bb7920252dfaf6f2c4472
+            - narrate "the number value is <player.viaversion_protocol>"
 
             - wait 1t
-            - resourcepack url:<[url]> hash:<[hash]> 'prompt:Esse servidor apenas funciona com pacote de recursos, habilite para jogar' forced
+            - resourcepack url:https://download.mc-packs.net/pack/a4eae2e04ff1039657656e841a8acee638e75491.zip hash:a4eae2e04ff1039657656e841a8acee638e75491 'prompt:Esse servidor apenas funciona com pacote de recursos, habilite para jogar' forced
 #        on player clicks in resourcepackinventorymenu:
 #            - if <context.item>
 #

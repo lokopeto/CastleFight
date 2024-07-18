@@ -14,10 +14,17 @@ npccreatorinteractive:
     - repeat 2:
         - narrate " "
 
+    - define cor <element[]>
+
+    - if <context.args.get[3].contains_text[npcs1]>:
+        - define cor <&color[#7C88B7]>
+    - if <context.args.get[3].contains_text[npcs2]>:
+        - define cor <&color[#C78E81]>
+
     - if <context.args.get[3].contains_text[.]>:
         - remove <server.npcs_flagged[<context.args.get[3]>]>
 
-    - create <context.args.get[1]> <context.args.get[5].to[last].space_separated> <context.args.get[2]> save:npc
+    - create <context.args.get[1]> <[cor]><context.args.get[5].to[last].space_separated> <context.args.get[2]> save:npc
     - define npccreated <entry[npc].created_npc>
     - define npccreatedid <entry[npc].created_npc.id>
 
@@ -46,7 +53,13 @@ npccreatorking:
     - repeat 2:
         - narrate " "
 
-    - create player <context.args.get[4].to[last].space_separated> <context.args.get[1]> traits:sentinel save:npc
+
+    - if <context.args.get[2]> = rei1:
+        - define cor <&color[#7C88B7]>
+    - if <context.args.get[2]> = rei2:
+        - define cor <&color[#C78E81]>
+
+    - create player <[cor]><bold><context.args.get[4].to[last].space_separated> <context.args.get[1]> traits:sentinel save:npc
     - define npccreated <entry[npc].created_npc>
     - define npccreatedid <entry[npc].created_npc.id>
 
@@ -78,6 +91,9 @@ npccreatorking:
 
     - flag server castelo<context.args.get[2].replace[rei].with[]><location[<context.args.get[1]>].world.name>loc:<entry[npc].created_npc.location>
 
+    - equip <[npccreated]> hand:netherite_sword
+
+
 
 spawnmobc:
     type: command
@@ -102,13 +118,12 @@ spawnmobc:
         - define x <element[136.0].sub[<[plus]>]>
         - define y 152
         - define inim 2
-        - define cor <green>
+        - define cor <&color[#B5EB64]>
     - if <context.args.get[1]> = 2:
         - define x <element[-219.0].add[<[plus]>]>
         - define y 150
         - define inim 1
-        - define cor <&color[#F57F51]>
-
+        - define cor <&color[#EB785E]>
 
     - define z <util.random.decimal[25.0].to[21.0].round_to_precision[0.001]>
     - define damagediv <context.args.get[4].div[2]>
@@ -120,6 +135,7 @@ spawnmobc:
     - flag <[npccreated]> castelo<context.args.get[1]>
 
     - adjust <[npccreated]> scoreboard_tags:reimob<context.args.get[1]>
+    - adjust <[npccreated]> force_loaded:true
 
     - execute as_server "sentinel addtarget npc:<list[<server.flag[nomecastelo<[inim]><context.args.get[12]>]>].space_separated.replace[ ].with[\s*]> --id <[npccreatedid]> " silent
 

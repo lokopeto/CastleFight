@@ -1,6 +1,6 @@
 _vanilla_generic:
   priority: 50
-  name: 'Genérica'
+  name: 'Generic'
   format: '&6⚔ %name%: &f%value%'
   attached-damage-causes:
   - DROWNING
@@ -16,7 +16,7 @@ _vanilla_generic:
 
 physical:
   priority: 1000
-  name: Dano físico
+  name: Physical Damage
   format: '&6⚔ %name%: &f%value%'
   attached-damage-causes: []
   on-hit-actions: {}
@@ -29,7 +29,7 @@ physical:
 
 magical:
   priority: 10
-  name: Dano mágico
+  name: Magical Damage
   format: '&d⚡ %name%: &f%value%'
   attached-damage-causes:
   - DRAGON_BREATH
@@ -46,7 +46,7 @@ magical:
 
 fire:
   priority: 10
-  name: Dano de fogo
+  name: Fire Damage
   format: '&c☀ %name%: &f%value%'
   attached-damage-causes:
   - FIRE
@@ -64,7 +64,7 @@ fire:
 
 poison:
   priority: 10
-  name: Dano de Veneno
+  name: Poison Damage
   format: '&a☣ %name%: &f%value%'
   attached-damage-causes:
   - POISON
@@ -79,7 +79,7 @@ poison:
 
 water:
   priority: 10
-  name: Dano Aquatico
+  name: Water Damage
   format: '&9⚓ %name%: &f%value%'
   attached-damage-causes: []
   on-hit-actions: {}
@@ -93,7 +93,7 @@ water:
 
 wind:
   priority: 10
-  name: Dano de ar
+  name: Wind Damage
   format: '&7⚕ %name%: &f%value%'
   attached-damage-causes: []
   on-hit-actions: {}

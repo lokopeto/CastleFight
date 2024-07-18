@@ -26,7 +26,6 @@ worth-calculator:
     THORNMAIL: 8
     HEALTH_REGEN: 4
     MANA_REGEN: 6
-    ARMOR_TOUGHNESS: 6
   by-damage-types:
     _vanilla_generic: 8
     magical: 5

@@ -5,34 +5,19 @@ every 1 second:
         add -1 to {Padeirotimer1::%loop-world%}, {Padeirotimer2::%loop-world%} and {exiladotimer::%loop-world%}
 
 
-on npc right click:
+on rightclick on a entity:
+    entity is npc
     set {_team} to "%team of player%"
     replace "castelo" in {_team} with ""
     replace "%world of player%" in {_team} with ""
-#    broadcast "%{_team}%"
-    if npc name is "Invocador (%{castelo%{_team}%nome::%world of player%}%)":
+
+    if npcnameuncolor(entity) is "Invocador (%{castelo%{_team}%nome::%world of player%}%)":
         {invocadorabrido%{_team}%::%world of player%} is set:
 #        broadcast "aaaaaa"
             create a gui with virtual chest inventory with 1 rows named "Invocador":
                 set the lock status of the edited gui to false
 
-                loop 34 times:
-                    set {_index} to loop-integer - 1 
-                    set {_playerinvsave::%loop-integer%} to slot {_index} of player
-
-                loop {_playerinvsave::*}:
-                    if loop-variable is a spawn egg:
-                        set {_invloopegg::%loop-index%} to loop-variable
-                    else:
-                        if loop-variable is not air:
-                            set {_invloopegg::%loop-index%} to a barrier named "&c&lBloqueado"
-
-                loop 34 times:
-                    set {_index} to loop-integer - 1
-                    set slot {_index} of player to {_invloopegg::%loop-integer%}
-
-                delete {_invloopegg::*}
-
+                blockegg(player, true)
 
                 set {_slots1} to -1
                 set {_slots2} to 0
@@ -47,26 +32,13 @@ on npc right click:
                     set {invocadorabrido%{_team}%::%world of player%} to 1
                     set {Invocador%{_team}%::%world of player%::*} to items of gui
 
-                    loop 34 times:
-                        set {_index} to loop-integer - 1 
-                        set {_invloopegg::%loop-integer%} to slot {_index} of player
-
-                    remove every spawn egg item from {_playerinvsave::*}
-
-                    loop {_invloopegg::*}:
-                        if loop-variable is a spawn egg:
-                            set {_playerinvsave::%loop-index%} to loop-variable
-
-                    loop 34 times:
-                        set {_index} to loop-integer - 1
-                        set slot {_index} of player to {_playerinvsave::%loop-integer%}
-
+                    blockegg(player, false)
 
             open the created gui for player
         else:
             send action bar "&cInvocador está ocupado!"
 
-    if npc name is "Fazendeiro (%{castelo%{_team}%nome::%world of player%}%)":
+    if npcnameuncolor(entity) is "Fazendeiro (%{castelo%{_team}%nome::%world of player%}%)":
         if {Padeirotimer%{_team}%::%world of player%} <= 0:
             create a gui with virtual chest inventory with 2 rows named "Fazendeiro":
                 set the lock status of the edited gui to false
@@ -101,7 +73,7 @@ on npc right click:
             set {Padeirotimer%{_team}%::%world of player%} to 10 * {lvnpcs%{_team}%::%world of player%}
         else:
             message "&7&oespere &f&o%{Padeirotimer%{_team}%::%world of player%}%&7&o segundos.."
-    if npc name is "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
+    if npcnameuncolor(entity) is "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
         create a gui with virtual chest inventory with 1 rows named "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
             set {slots1} to -1
             loop 9 times:
@@ -113,58 +85,27 @@ on npc right click:
                 make gui slot 4 with nether star with nbt compound from "{display:{Name:'[{""text"":""O Poder dos Raios (usado)"",""italic"":false,""color"":""gray"",""bold"":true}]',Lore:['[{""text"":""Você já usou o poder dos raios"",""color"":""blue""}]','[{""text"":""Comprar?"",""italic"":true,""color"":""blue""},{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":"""",""italic"":true,""color"":""dark_purple""}]','[{""text"":""Custo: "",""italic"":false,""color"":""aqua""},{""text"":""2500"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""nem tudo na vida é de graça..."",""italic"":true,""color"":""dark_gray""}]']}}"
         open the created gui for player
 
-    if npc name is "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
+    if npcnameuncolor(entity) is "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
         create a gui with virtual chest inventory with 3 rows named "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
 
-            set {_lv} to {lvnpcs%{_team}%::%world of player%}
-            set {_lv} to {_lv} - 16
+            loop 27 times:
+                set {_slot} to loop-integer
+                set {_slot} to {_slot} - 1
 
-            set {_lvfinal} to {_lv} / 3 * 9
+                set {_pocao} to {pocoes::%{_slot} + 1%::1}
 
-            if {_lv} > 29:
-                set {_lv} to 3
+                set {_effect} to name of {_pocao}
+                replace "_" in {_effect} with " "
+                set {_effect} to "&e%{_effect}%"
 
+                set name of {_pocao} to {_effect}
 
-            loop 3 times:
-                loop 9 times:
-                    set {_slot} to loop-integer-2
-                    set {_slot} to {_slot} - 1
-                    set {_slot} to {_slot} * loop-integer-1
-
-                    set {_pocao} to {pocoes::%{_slot} + 1%::1}
-
-                    set {_effect} to name of {_pocao}
-                    replace "_" in {_effect} with " "
-                    set {_effect} to "&e%{_effect}%"
-
-                    set name of {_pocao} to {_effect}
-
-                    make gui slot {_slot} with {_pocao} with nbt compound from "{HideFlags:255}":
-                        alquimistapotio({castelo%{_team}%nome::%world of player%} , {_effect} , {pocoes::%{_slot} + 1%::3} , {pocoes::%{_slot} + 1%::4} , {pocoes::%{_slot} + 1%::5} , {pocoes::%{_slot} + 1%::6} , player , {pocoes::%{_slot} + 1%::2} , {_lvfinal})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                make gui slot {_slot} with {_pocao} with nbt compound from "{HideFlags:255}":
+                    alquimistapotio({castelo%{_team}%nome::%world of player%} , {_effect} , {pocoes::%{_slot} + 1%::3} , {pocoes::%{_slot} + 1%::4} , {pocoes::%{_slot} + 1%::5} , {pocoes::%{_slot} + 1%::6} , player , {pocoes::%{_slot} + 1%::2})
 
         open the created gui for player
     
-    if npc name is "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
+    if npcnameuncolor(entity) is "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
         if {lvnpcs%{_team}%::%world of player%} is 1:
             create a gui with virtual chest inventory with 2 rows named "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
                 set the lock status of the edited gui to false
@@ -202,7 +143,7 @@ on npc right click:
                     make gui slot 4 with iron sword with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Montante"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Afiada"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""50 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
     
-    if npc name is "Arqueiro (%{castelo%{_team}%nome::%world of player%}%)":
+    if npcnameuncolor(entity) is "Arqueiro (%{castelo%{_team}%nome::%world of player%}%)":
         if {lvnpcs%{_team}%::%world of player%} is 1:
             create a gui with virtual chest inventory with 2 rows named "Arqueiro (%{castelo%{_team}%nome::%world of player%}%)":
                 set the lock status of the edited gui to false
@@ -248,7 +189,7 @@ on npc right click:
                     make gui slot 4 with crossbow with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Besta"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""Lenta"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""50 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
 
-    if npc name is "Bordador (%{castelo%{_team}%nome::%world of player%}%)":
+    if npcnameuncolor(entity) is "Bordador (%{castelo%{_team}%nome::%world of player%}%)":
         if {lvnpcs%{_team}%::%world of player%} is 1:
             create a gui with virtual chest inventory with 2 rows named "Bordador (%{castelo%{_team}%nome::%world of player%}%)":
                 set the lock status of the edited gui to false
@@ -321,70 +262,10 @@ on npc right click:
                     make gui slot 34 with netherite boots with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""Bota de netherita"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Custo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""110 XP"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Level:"",""italic"":false,""color"":""aqua""},{""text"":"" %{lvnpcs%{_team}%::%world of player%}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},HideFlags:35}"
             open the created gui for player
 
-    if npc name is "Necromancer (%{castelo%{_team}%nome::%world of player%}%)":
-        create a gui with virtual chest inventory with 1 rows named "Necromancer (%{castelo%{_team}%nome::%world of player%}%)":
-            set the lock status of the edited gui to false
-            set {slotsnecro1} to -1
-            loop 9 times:
-                add 1 to {slotsnecro1}
-                make gui slot {slotsnecro1} with blue stained glass pane
-            
-            make gui slot 1 with air
-            wait 1 tick
-            make gui slot 6 with book with nbt compound from "{display:{Name:'[{""text"":""Evoluir"",""italic"":false,""bold"":true,""color"":""light_purple""}]',Lore:['[{""text"":""Clique para evoluir"",""italic"":false,""color"":""aqua""},{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""Gasta: "",""italic"":false,""color"":""aqua""},{""text"":""650 XP"",""color"":""yellow""}]']}}":
-                set {Necromancer%{_team}%::*} to items of gui
-                set {_lore::*} to lore of {Necromancer%{_team}%::7}
-                set {_lore::*} to uncolored {_lore::*}
-                replace all "Gasta: " and " XP" in {_lore::*} with ""
-                set {_xp} to level of player
-                set {_xpquantverify} to {_xp} - 1
-#                broadcast "%{_xp}% %{_lore::*}%"
-                if "%{_lore::3}%" parsed as integer > {_xpquantverify}:
-                    xpinsuficiente(player)
-                else:
-                    add "-%{_lore::3}%" parsed as integer to level of player
-                    if {Necromancer%{_team}%::2} is not blue stained glass pane, book or bone meal:
-                        set {_lore::*} to lore of {Necromancer%{_team}%::2}
-                        set {_lore::*} to uncolored {_lore::*}
-                        set {_loreorin::*} to lore of {Necromancer%{_team}%::2}
-                        replace all "level = ", "Vida = " and "Dano = " in {_lore::*} with ""
-                        set {_loreadd::1} to round("%{_lore::1}%" parsed as number)
-                        set {_loreadd::2} to round("%{_lore::6}%" parsed as number)
-                        set {_loreadd::3} to round("%{_lore::7}%" parsed as number)
-                        add 1 to {_loreadd::1}
-                        add {lvnpcs%{_team}%::%world of player%} to {_loreadd::2}
-                        add {lvnpcs%{_team}%::%world of player%} to {_loreadd::3}
-                        set {_loreorin::1} to "&elevel = %{_loreadd::1}%"
-                        set {_loreorin::6} to "&7&oVida = %{_loreadd::2}%"
-                        set {_loreorin::7} to "&7&oDano = %{_loreadd::3}%"
-                        make gui slot 1 to {Necromancer%{_team}%::2} with lore {_loreorin::*}
-                        set {_lore::*} to lore of {Necromancer%{_team}%::7}
-                        message "&eVocê evoluiu o nivel!"
-#                        message "%{_lore::7}% %{_loreadd::1}% %{_loreadd::2}% %{_loreadd::3}%"
-                    else:
-                        message "&cColoque um ovo para evoluir!"
-            
-            make gui slot 7 with bone meal with nbt compound from "{display:{Name:'[{""text"":""Evaporar"",""italic"":false,""bold"":true,""color"":""light_purple""}]',Lore:['[{""text"":""Clique para evaporar"",""italic"":false,""color"":""aqua""},{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":"""",""italic"":false,""color"":""dark_purple""}]','[{""text"":""Ganha: "",""italic"":false,""color"":""aqua""},{""text"":""30 XP"",""color"":""yellow""}]']}}":
-                set {Necromancer%{_team}%::*} to items of gui
-                if {Necromancer%{_team}%::2} is not blue stained glass pane, book or bone meal:
-                    if {Necromancer%{_team}%::2} is a spawn egg:
-                        make gui slot 1 to air
-                        add 30 to level of player
-                        message "&eVocê evaporou um ovo!"
-                    else:
-                        message "&cColoque um ovo para evaporar!"
+    if npcnameuncolor(entity) is "Necromancer (%{castelo%{_team}%nome::%world of player%}%)":
+        necromancemenu1(player)
 
-
-
-
-            run on gui close:
-                set {Necromancer%{_team}%::*} to items of gui
-                if {Necromancer%{_team}%::2} is not blue stained glass pane, book or bone meal:
-                    give {Necromancer%{_team}%::2} to player
-            
-        open the created gui for player
-
-    if npc name is "Exilado":
+    if npcnameuncolor(entity) is "Exilado":
         if {exiladotimer::%world of player%} <= 0:
             if {exiladoabrido::%world of player%} is not set:
                 create a gui with virtual chest inventory with 1 rows named "Exilado":
@@ -404,7 +285,7 @@ on npc right click:
         else:
             send action bar "&7&oespere &f&o%{exiladotimer::%world of player%}%&7&o segundos.."
 
-    if npc name is "Vendedor Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
+    if npcnameuncolor(entity) is "Vendedor Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
         create a gui with virtual chest inventory with 2 rows named "Vendedor Misterioso":
             set {slotsitems} to -1
             loop 18 times:
@@ -427,11 +308,200 @@ on npc right click:
 
 
 
+function blockegg(player: player ,lock: boolean):
+    {_lock} is true:
+        loop 34 times:
+            set {_index} to loop-integer - 1 
+            set {playerinvsave::%{_player}%::%loop-integer%} to slot {_index} of {_player}
+
+        loop {playerinvsave::%{_player}%::*}:
+            if loop-variable is a spawn egg:
+                set {_invloopegg::%loop-index%} to loop-variable
+            else:
+                if loop-variable is not air:
+                    set {_invloopegg::%loop-index%} to a barrier named "&c&lBloqueado"
+
+        loop 34 times:
+            set {_index} to loop-integer - 1
+            set slot {_index} of {_player} to {_invloopegg::%loop-integer%}
+
+        delete {_invloopegg::*}
+    {_lock} is false:
+        loop 34 times:
+            set {_index} to loop-integer - 1 
+            set {_invloopegg::%loop-integer%} to slot {_index} of {_player}
+
+        remove every spawn egg item from {playerinvsave::%{_player}%::*}
+
+        loop {_invloopegg::*}:
+            if loop-variable is a spawn egg:
+                set {playerinvsave::%{_player}%::%loop-index%} to loop-variable
+
+        loop 34 times:
+            set {_index} to loop-integer - 1
+            set slot {_index} of {_player} to {playerinvsave::%{_player}%::%loop-integer%}
+
+function necromancemenu2(player: player):
+    set {_team} to "%team of {_player}%"
+    replace "castelo" in {_team} with ""
+    replace "%world of {_player}%" in {_team} with ""
+
+    create a gui with virtual chest inventory with 1 rows named "Necromancer (%{castelo%{_team}%nome::%world of {_player}%}%)":
+        set the lock status of the edited gui to true
+        make gui slot 4 with bone named "Voltar":
+            necromancemenu1({_player})
+            set {necroinvmode::%{_player}%} to 0
+
+        run on gui close:
+            blockegg(player, false)
+            if {necroinvmode::%{_player}%} is not 0:
+                set {necroinvmode::%{_player}%} to 0
+                necromancer({_player} , {necroinvmode::%{_player}%})
+        run on gui open:
+            blockegg(player, true)
 
 
+    open the created gui for {_player}
+
+function necromancemenu1(player: player):
+    set {_team} to "%team of {_player}%"
+    replace "castelo" in {_team} with ""
+    replace "%world of {_player}%" in {_team} with ""
+
+    create a gui with virtual chest inventory with 1 rows named "Necromancer (%{castelo%{_team}%nome::%world of {_player}%}%)":
+        set the lock status of the edited gui to true
+
+        make gui slot 3 with glow ink sac named "<##7484FF><bold>Duplicar" with lore "<##2CB37C>Tenha cuidado,", "<##2CB37C>você não poderá" and "<##2CB37C>soltar do seu inventario!":
+            if {necroinvmode::%{_player}%} is 0:
+                set {necroinvmode::%{_player}%} to 1
+                necromancemenu2({_player})
+            else:
+                set {necroinvmode::%{_player}%} to 0
+            necromancer({_player} , {necroinvmode::%{_player}%})
+        make gui slot 5 with ink sac named "<##FFAB78>Evaporar" with lore "<##2CB37C>Ganhe alguns xp's" and "<##2CB37C>extras!":
+            if {necroinvmode::%{_player}%} is 0:
+                set {necroinvmode::%{_player}%} to 2
+                necromancemenu2({_player})
+            else:
+                set {necroinvmode::%{_player}%} to 0
+            necromancer({_player} , {necroinvmode::%{_player}%})
+
+        run on gui close:
+            blockegg(player, false)
+        run on gui open:
+            blockegg(player, true)
+
+            if {necroinvmode::%{_player}%} is not 0:
+                set {necroinvmode::%{_player}%} to 0
+                necromancer({_player} , {necroinvmode::%{_player}%})
+
+    open the created gui for {_player}
+
+function necromancer(player: player ,type: integer):
+    message {_player} and {_type} to all players
+    loop items in inventory of {_player}:
+        loop-item is a spawn egg
+        1st line of the lore of loop-item do not contain "Espere"
+
+        delete {_motivo}
+        set {_lv} to line 1 of lore of loop-item
+        set {_lv} to uncolored {_lv}
+        replace "Level = " in {_lv} with ""
+        set {_lv} to {_lv} parsed as integer
+
+        if item amount of loop-item > 1:
+            set {_motivo} to "Motivo: Apenas um item pode ser duplicado!"
+        if index of loop-item < 8:
+            set {_motivo} to "Motivo: Item na hotbar!"
+
+        if {_type} is 1:
+            if {_motivo} is set:
+                add "<##FF475A>Indisponivel" to {_lore::*}
+                add "<##FF475A>%{_motivo}%" to {_lore::*}
+            else:
+                add "<##3FFCA8>Duplique por %20 * {_lv}%" to {_lore::*}
+                set {_timeamount} to "%5 * {_lv}% seconds" parsed as timespan
+                add "<##3FFCA8>Demora %{_timeamount}%" to {_lore::*}
+        if {_type} is 2:
+            if {_motivo} is set:
+                add "<##FF475A>Indisponivel" to {_lore::*}
+                add "<##FF475A>%{_motivo}%" to {_lore::*}
+            else:
+                add "<##3FFCA8>Evaporar por %5 * {_lv}%" to {_lore::*}
+                add "<##3FFCA8>Instantaneo!" to {_lore::*}
+
+        add lore of loop-item to {_lore::*}
+
+        if {_type} is 0:
+            if 1st line of the lore of loop-item do not contain "Espere":
+                delete {_lore::1}
+            if 2st line of the lore of loop-item do not contain "Demora", "Instantaneo" and "Motivo:":
+                delete {_lore::2}
+
+        set lore of loop-item to {_lore::*}
+
+        delete {_lore::*}
+
+on player drop:
+    if event-item is a spawn egg:
+        if line 1 of lore of event-item contains "Espere":
+            cancel event
+
+on player pickup:
+    if event-item is a spawn egg:
+        if line 1 of lore of event-item contains "Espere":
+            set {_lore} to line 1 of lore of event-item
+            replace "BLOQUEADO" in {_lore} with "Espere"
+
+on inventory click:
+    if event-item is a spawn egg:
+        set {_team} to "%team of player%"
+        replace "castelo" in {_team} with ""
+        replace "%world of player%" in {_team} with ""
+        
+        if line 1 of lore of event-item contains "Espere":
+            cancel event
+        if line 1 of lore of event-item contains "Pausado":
+            cancel event
+
+        if name of event-inventory contains "Necromancer (%{castelo%{_team}%nome::%world of player%}%)":
+            set {_lv} to line 1 of lore of event-item
+            set {_lv} to uncolored {_lv}
+            set {_sec} to line 2 of lore of event-item
+            set {_sec} to uncolored {_sec}
 
 
+            replace "Duplique por ", "Evaporar por " and "Demora " in {_lv} and {_sec} with ""
 
+            set {_lv} to {_lv} parsed as integer
+            set {_sec} to {_sec} parsed as timespan
+
+            if line 1 of lore of item contains "Duplique":
+                cancel event
+
+                while line 1 of lore of item contains "Duplique":
+
+                    subtract {_lv} from player's level
+
+                    set 1st line of the lore of item to "Espere"
+                    set 2st line of the lore of item to "Item sendo duplicado"
+
+                    while {_sec} >= 0 seconds:
+                        if 1st line of the lore of item contains "Espere":
+                            subtract 1 second from {_sec}
+                            set 1st line of the lore of item to "Espere %{_sec}%"
+                        subtract 1 second from {_sec}
+                        wait 1 second
+                    
+
+            if line 1 of lore of event-item contains "Evaporar":
+                add {_lv} to player's level
+                message "<##3FFCA8><bold>%uncolored name of event-item%<##2CB37C> evaporado!"
+
+
+                subtract 1 from item amount of event-item
+
+            cancel event
 
 
 function xpinsuficiente(p: player):
@@ -439,7 +509,7 @@ function xpinsuficiente(p: player):
     message "&bXp insuficiente!" to {_p}
     play sound "fx.error" to {_p}
 
-function alquimistapotio(castelo: string, name: string, duration: number, tier: number, color: color, valor: number, p: player, effect: string, quant: number):
+function alquimistapotio(castelo: string, name: string, duration: number, tier: number, color: color, valor: number, p: player, effect: string):
     create a gui with virtual chest inventory with 3 rows named "Alquimista (%{_castelo}%)":
         if {_name} is "&eVida Instantanea" or "&eFraquesa":
             set {_div} to 6
@@ -457,7 +527,7 @@ function alquimistapotio(castelo: string, name: string, duration: number, tier: 
                 set {_type} to lingering potion named {_name} with nbt compound from "{HideFlags:255}"
                 set {_regul} to 5
 
-            loop {_quant} times:
+            loop 9 times:
                 set {_slot} to loop-integer-2
                 set {_slot} to {_slot} + {_slotrow}
                 set {_slot} to {_slot} - 1
@@ -497,12 +567,12 @@ on inventory click:
     replace "castelo" in {_team} with ""
     replace "%world of player%" in {_team} with ""
 #    if name of event-inventory is "Invocador":
-#        if clicked slot is not a spawn egg:
+#        if event-item is not a spawn egg:
 #            cancel event
     
     if name of event-inventory contains "Ferreiro (%{castelo%{_team}%nome::%world of player%}%)":
-        set {_lore::*} to lore of clicked slot
-        set {_nome} to name of clicked slot
+        set {_lore::*} to lore of event-item
+        set {_nome} to name of event-item
         set {_lore::2} to uncolored {_lore::2}
         set {_nome} to uncolored {_nome}
         {_lore::2} contains "Custo"
@@ -530,8 +600,8 @@ on inventory click:
                 make console execute command "itemgen give %event-player% espadacurta %{lvnpcs%{_team}%::%world of player%}%" 
 
     if name of event-inventory contains "Arqueiro (%{castelo%{_team}%nome::%world of player%}%)":
-        set {_lore::*} to lore of clicked slot
-        set {_nome} to name of clicked slot
+        set {_lore::*} to lore of event-item
+        set {_nome} to name of event-item
         set {_lore::2} to uncolored {_lore::2}
         set {_nome} to uncolored {_nome}
         {_lore::2} contains "Custo"
@@ -567,8 +637,8 @@ on inventory click:
                 make console execute command "give %event-player% arrow 16"
 
     if name of event-inventory contains "Mago Misterioso (%{castelo%{_team}%nome::%world of player%}%)":
-        set {_lore::*} to lore of clicked slot
-        set {_nome} to name of clicked slot
+        set {_lore::*} to lore of event-item
+        set {_nome} to name of event-item
         set {_lore::4} to uncolored {_lore::4}
         set {_nome} to uncolored {_nome}
         set {_xp} to level of player
@@ -578,7 +648,7 @@ on inventory click:
             if "%{_lore::4}%" parsed as integer > {_xpquantverify}:
                 xpinsuficiente(player)
             else:
-                if clicked slot is a nether star:
+                if event-item is a nether star:
                     add "-%{_lore::4}%" parsed as integer to level of player
                     message "&aVocê comprou ""O Poder dos Raios"""
                     set {raio%{_team}%::%world of player%} to 1
@@ -590,8 +660,8 @@ on inventory click:
             close player's inventory
 
     if name of event-inventory contains "Bordador (%{castelo%{_team}%nome::%world of player%}%)":
-        set {_lore::*} to lore of clicked slot
-        set {_nome} to name of clicked slot
+        set {_lore::*} to lore of event-item
+        set {_nome} to name of event-item
         set {_lore::1} to uncolored {_lore::1}
         set {_nome} to uncolored {_nome}
         {_lore::1} contains "Custo"
@@ -611,7 +681,7 @@ on inventory click:
             if "%{_lore::1}%" parsed as integer > {_xpquantverify}:
                 xpinsuficiente(player)
             else:
-                if clicked slot is a armor:
+                if event-item is a armor:
                     add "-%{_lore::1}%" parsed as integer to level of player
                     if {_nome} contains "diamante":
                         make console execute command "itemgen give %event-player% armaduradediamante %{lvnpcs%{_team}%::%world of player%}% 1 DIAMOND_%{_tipo}%" 
@@ -624,11 +694,11 @@ on inventory click:
                 make console execute command "itemgen give %event-player% armaduradeferro %{lvnpcs%{_team}%::%world of player%}% 1 IRON_%{_tipo}%"  
 
     if name of event-inventory contains "Alquimista (%{castelo%{_team}%nome::%world of player%}%)":
-        set {_lore::*} to lore of clicked slot
-        set {_nome} to name of clicked slot
+        set {_lore::*} to lore of event-item
+        set {_nome} to name of event-item
         set {_lore::*} to uncolored {_lore::*}
         set {_nome} to uncolored {_nome}
-        set {_color} to "CustomPotionColor" tag of nbt compound of clicked slot
+        set {_color} to "CustomPotionColor" tag of nbt compound of event-item
         {_lore::2} contains "Custo"
         set {_xp} to level of player
         set {_xpquantverify} to {_xp} - 1
@@ -692,13 +762,9 @@ on inventory click:
             add "-%{_lore::2}%" parsed as integer to level of player
             give "%{_tipo}%" parsed as item with nbt compound from "{EntityTag:{Invisible:1b},display:{Name:'[{""text"":""%{_nome}%"",""italic"":false,""bold"":true,""color"":""dark_green""}]',Lore:['[{""text"":""Tipo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_lore::1}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Tempo:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_tempo}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]','[{""text"":""Frasco:"",""italic"":false,""color"":""aqua""},{""text"":"" "",""color"":""dark_purple""},{""text"":""%{_lore::4}%"",""color"":""yellow""},{""text"":"""",""color"":""dark_purple""}]']},CustomPotionColor:%{_color}%,HideFlags:35,CustomPotionEffects:[{Id:%{_id}%,Duration:%{_ticks}%,Amplifier:%{_força}%}]}" to player 
 
-#    if name of event-inventory is "Necromancer (%{castelo%{_team}%nome::%world of player%}%)":
-#        if clicked slot is not a spawn egg:
-#            cancel event
-
     if name of event-inventory is "Exilado":
-        set {_lore::*} to lore of clicked slot
-        set {_nome} to name of clicked slot
+        set {_lore::*} to lore of event-item
+        set {_nome} to name of event-item
         set {_lore::*} to uncolored {_lore::*}
         set {_nome} to uncolored {_nome}
         {_lore::5} contains "Custo"

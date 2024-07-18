@@ -18,7 +18,7 @@ elements:
   scoreboard: false
   
   # Enable Team elements
-  team: true
+  team: false
   
   # Enable custom recipe elements
   recipe: true
@@ -66,8 +66,6 @@ elements:
   raytrace: true
   fishing: true
   display-entity: true
-  tick-manager: true
-  damage-source: true
 nbt-events:
   # Whether breaking a block should remove NBT
   block-break: true

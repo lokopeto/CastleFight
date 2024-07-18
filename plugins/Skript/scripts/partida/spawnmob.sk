@@ -5,57 +5,34 @@ every 1 second:
         loop-world is "castlefight1", "castlefight2", "castlefight3", "castlefight4", "castlefight5" or "castlefight6"
         set {_numb} to 0
         {jogo::%loop-world%} is 1
-        loop 9 times:
-            add 1 to {_numb}
-            set {_lore1} to line 8 of lore of {Invocador1::%loop-world%::%{_numb}%}
-            set {_lore2} to line 2 of lore of {Invocador1::%loop-world%::%{_numb}%}
-            replace "&6Respawn = " in {_lore2} with ""
-            replace "Respawn orig. = " in {_lore1} with ""
-            set {_lore1} to uncolored {_lore1}
-            set {_lore1} to "%{_lore1}%" parsed as integer
-            if {_lore1} is set:
-                add -1 to {_lore1}
-            set line 8 of lore of {Invocador1::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
-            if {_lore1} <= 0:
-                set line 8 of lore of {Invocador1::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
-                set {_lorelist::*} to uncolored lore of {Invocador1::%loop-world%::%{_numb}%}
-                set {_itemname} to uncolored name of {Invocador1::%loop-world%::%{_numb}%}
-                replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = ", "Distancia = " and "Skin = " in {_lorelist::*} with ""
 
-                if {_lorelist::11} or {_lorelist::12} is not set:
-                    set {_lorelist::11} and {_lorelist::12} to 0
+        loop 2 times:
+            set {_numb} to 0
+            set {_val} to loop-value-2
+            wait 1 tick
+            loop 9 times:
+                add 1 to {_numb}
+                set {_lore1} to line 8 of lore of {Invocador%{_val}%::%loop-world%::%{_numb}%}
+                set {_lore2} to line 2 of lore of {Invocador%{_val}%::%loop-world%::%{_numb}%}
+                replace "&6Respawn = " in {_lore2} with ""
+                replace "Respawn orig. = " in {_lore1} with ""
+                set {_lore1} to uncolored {_lore1}
+                set {_lore1} to "%{_lore1}%" parsed as integer
+                if {_lore1} is set:
+                    add -1 to {_lore1}
+                set line 8 of lore of {Invocador%{_val}%::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
+                if {_lore1} <= 0:
+                    set line 8 of lore of {Invocador%{_val}%::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
+                    set {_lorelist::*} to uncolored lore of {Invocador%{_val}%::%loop-world%::%{_numb}%}
+                    set {_itemname} to uncolored name of {Invocador%{_val}%::%loop-world%::%{_numb}%}
+                    replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = ", "Distancia = " and "Skin = " in {_lorelist::*} with ""
 
-                make console execute command "spawnmobc 1 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}% %loop-world% %{_lorelist::13}%"
+                    if {_lorelist::11} or {_lorelist::12} is not set:
+                        set {_lorelist::11} and {_lorelist::12} to 0
+                    
+                    loop item amount of {Invocador%{_val}%::%loop-world%::%{_numb}%} times:
+                        make console execute command "spawnmobc %{_val}% %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}% %loop-world% %{_lorelist::13}%"
     #        broadcast "%{_lore1}%"
-        set {_numb} to 0
-        wait 1 tick
-        loop 9 times:
-            add 1 to {_numb}
-            set {_lore1} to line 8 of lore of {Invocador2::%loop-world%::%{_numb}%}
-            set {_lore2} to line 2 of lore of {Invocador2::%loop-world%::%{_numb}%}
-            replace "&6Respawn = " in {_lore2} with ""
-            replace "Respawn orig. = " in {_lore1} with ""
-            set {_lore1} to uncolored {_lore1}
-            set {_lore1} to "%{_lore1}%" parsed as integer
-            if {_lore1} is set:
-                add -1 to {_lore1}
-            set line 8 of lore of {Invocador2::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore1}%"
-            if {_lore1} <= 0:
-                set line 8 of lore of {Invocador2::%loop-world%::%{_numb}%} to "&8&oRespawn orig. = %{_lore2}%"
-                set {_lorelist::*} to uncolored lore of {Invocador2::%loop-world%::%{_numb}%}
-                set {_itemname} to uncolored name of {Invocador2::%loop-world%::%{_numb}%}
-                replace all "Level = ","Respawn = ","Vida = ","Dano = ","Armadura = ", "Velocidade = ", "Mira = ", "Distancia = " and "Skin = " in {_lorelist::*} with ""
-
-                if {_lorelist::11} or {_lorelist::12} is not set:
-                    set {_lorelist::11} and {_lorelist::12} to 0
-
-                make console execute command "spawnmobc 2 %{_itemname}% %{_lorelist::7}% %{_lorelist::6}% %{_lorelist::9}% %{_lorelist::10}% %{_lorelist::11}% %{_lorelist::12}% %loop-world% %{_lorelist::13}%"
-
-
-function respawnmobs(world: world):
-    while {jogo::%{_world}%} is 1:
-        make console execute command "spawn %{_world}%"
-        wait 5 minutes
 
 #spawnar os mobs, conjunto com drops.sk
 command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
@@ -71,19 +48,16 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
 
         loop all worlds:
             {_worlds::*} contains loop-world
+
+            set {_levelmin} to max(floor({level::%loop-world%} / 10) * 10 - 10, 0)
+
             #zombiecaverna1
             loop "%30 - {quantmobs::%loop-world%}%" parsed as integer times:
                 add 1 to {_numb}
                 chance of "%{chance::%loop-world%}%" parsed as integer:
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 1 and {level::%loop-world%}
-                    set {_level} to {_levelstats}
-                    if {_levelstats} >= 20:
-                        set {_levelmin} to 20                 
-                    if {_levelstats} >= 30:
-                        set {_levelmin} to 30  
-                    set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
+                    set {_level} to a random integer between {_levelmin} and {level::%loop-world%} * 2
 
                     set {_tipomob} to a random text out of "Stray", "Spider" and "Husk"
 
@@ -108,13 +82,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
                 chance of 90%:
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 1 and {level::%loop-world%}
-                    set {_level} to {_levelstats}
-                    if {_levelstats} >= 20:
-                        set {_levelmin} to 20                 
-                    if {_levelstats} >= 30:
-                        set {_levelmin} to 30  
-                    set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
+                    set {_level} to a random integer between {_levelmin} and {level::%loop-world%} * 2
 
                     set {_tipomob} to a random text out of "Piglin_Brute", "Hoglin" and "Strider"
 
@@ -136,18 +104,12 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
             #vila1
             loop "%23 + 5 - {quantmobs::%loop-world%}%" parsed as integer times:
                 add 1 to {_numb}
-                chance of "%{chance::%loop-world%}%" parsed as integer:
+                chance of 50%:
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 1 and {level::%loop-world%}
-                    set {_level} to {_levelstats}
-                    if {_levelstats} >= 20:
-                        set {_levelmin} to 20                 
-                    if {_levelstats} >= 30:
-                        set {_levelmin} to 30  
-                    set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
+                    set {_level} to a random integer between {_levelmin} and {level::%loop-world%} * 2
 
-                    set {_tipomob} to a random text out of "Ravager", "Pillager", "Vindicator" and "Evoker"
+                    set {_tipomob} to a random text out of "Ravager", "Pillager" and "Vindicator"
 
                     {_numb} <= 2:
                         set {_tipomob} to "Pillager"
@@ -173,13 +135,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
                 chance of 90%:
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 1 and {level::%loop-world%}
-                    set {_level} to {_levelstats}
-                    if {_levelstats} >= 20:
-                        set {_levelmin} to 20
-                    if {_levelstats} >= 30:
-                        set {_levelmin} to 30  
-                    set {_levelstats} to a random integer between {_levelmin} and {level::%loop-world%}
+                    set {_level} to a random integer between {_levelmin} and {level::%loop-world%} * 2
 
                     set {_tipomob} to a random text out of "Witch" and "Frog"
 
@@ -205,16 +161,7 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
                     wait 2 ticks
                     set {_health} to 0
                     set {_damage} to 0
-                    set {_levelstats} to a random integer between 5 and {level::%loop-world%} * 2
-                    set {_level} to {_levelstats}
-                    if {_levelstats} >= 20:
-                        set {_levelmin} to 30                 
-                    else:
-                        set {_levelmin} to 10
-                    if {_levelstats} >= 30:
-                        set {_levelmin} to 45
-
-                    set {_level} to a random integer between {_levelmin} and {level::%loop-world%}
+                    set {_level} to a random integer between {_levelmin} and {level::%loop-world%} * 2
 
                     set {_tipomob} to a random text out of "Zombie", "Skeleton", "Spider", "Creeper" and "Enderman"
 
@@ -235,7 +182,6 @@ command /spawn [<world>] [<world>] [<world>] [<world>] [<world>] [<world>]:
             message "Spawns sendo feitos!"
             loop {_spawnmoblist::*}:
                 make console execute command "%loop-value-2%"
-                wait 1 tick
             message "Spawns Feitos em %loop-world%"
             delete {_spawnmoblist::*}
 

@@ -1,6 +1,6 @@
 physical:
   priority: 100
-  name: Defesa física
+  name: Physical Defense
   format: '&6▸ %name%: &f%value%'
   block-damage-types:
   - physical
@@ -8,7 +8,7 @@ physical:
 
 magical:
   priority: 10
-  name: Defesa mágica
+  name: Magical Defense
   format: '&d▸ %name%: &f%value%'
   block-damage-types:
   - magical
@@ -16,7 +16,7 @@ magical:
 
 fire:
   priority: 10
-  name: Defesa de incêndio
+  name: Fire Defense
   format: '&c▸ %name%: &f%value%'
   block-damage-types:
   - fire
@@ -24,7 +24,7 @@ fire:
 
 poison:
   priority: 10
-  name: Defesa de veneno
+  name: Poison Defense
   format: '&a▸ %name%: &f%value%'
   block-damage-types:
   - poison
@@ -32,7 +32,7 @@ poison:
 
 water:
   priority: 10
-  name: Defesa da água
+  name: Water Defense
   format: '&9▸ %name%: &f%value%'
   block-damage-types:
   - water
@@ -40,7 +40,7 @@ water:
 
 wind:
   priority: 10
-  name: Defesa do vento
+  name: Wind Defense
   format: '&7▸ %name%: &f%value%'
   block-damage-types:
   - wind

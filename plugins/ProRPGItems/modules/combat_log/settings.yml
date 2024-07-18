@@ -2,69 +2,69 @@ cfg_version: 1.0
 command-aliases: combatlog
 general:
   logging:
-    enabled: false
+    enabled: true
     max-amount: 5
     format:
       time: 'HH:mm'
       text: '&6[%time%] &r%message% %damage% %defense% %details% %weapon%'
       buttons:
         damage:
-          name: '&c&l[Damage]'
+          name: '&c&l[Dano]'
           text:
-          - '&6▸ &eAttack Power: &6%attack_power%%'
+          - '&6▸ &ePoder de ataque: &6%attack_power%%'
           - '&7'
           - '&6▸ &e%damage_type%: &6%amount% &7of &6%raw% &c(%percent%%)'
           - '&7'
-          - '&e&lTotal: &6%amount_total% &7of &6%raw_total% &c(%percent_total%%)'
+          - '&e&ltotal: &6%amount_total% &7of &6%raw_total% &c(%percent_total%%)'
         defense:
-          name: '&b&l[Defense]'
+          name: '&b&l[Defesa]'
           text:
-          - '&9&l&nDefended Damage'
+          - '&9&l&nDano defendido'
           - '&7'
           - '&3▸ &b%defense_type%: &f%amount% &7of &f%damage% &9(%percent%%)'
           - '&7'
           - '&b&lTotal: &f%amount_total% &7of &f%damage_total% &9(%percent_total%%)'
         details:
-          name: '&e&l[Details]'
+          name: '&e&l[Detalhes]'
           text:
-          - '&2▸ &aDirect Modifier: &2x%direct_modifier%'
-          - '&2▸ &aCritical Modifier: &2x%critical_modifier%'
-          - '&2▸ &aBlock Modifier: &2x%block_modifier%'
-          - '&2▸ &aDefense Penetration: &2x%penetrate_modifier%'
-          - '&2▸ &aPvE/PvP Modifier: &2x%pvpe_modifier%'
-          - '&2▸ &aEnchant Protection Factor: &2x%enchantment_protection_factor%'
+          - '&2▸ &aModificador direto: &2x%direct_modifier%'
+          - '&2▸ &aModificador crítico: &2x%critical_modifier%'
+          - '&2▸ &aModificador de bloco: &2x%block_modifier%'
+          - '&2▸ &aPenetração de defesa: &2x%penetrate_modifier%'
+          - '&2▸ &aModificador PVE/PVP: &2x%pvpe_modifier%'
+          - '&2▸ &aFator de proteção encantador: &2x%enchantment_protection_factor%'
         weapon:
-          name: '&d&l[Weapon]'
+          name: '&d&l[Arma]'
 messages:
   ignore-zero-damage: false
   types:
     NORMAL:
       enabled: true
       messages:
-        damager: '&eVocê deu &7%damage% &ede dano para &7%entity%'
-        victim: '&cVocê recebeu &7%damage% &cde &7%entity%'
+        damager: '&eVocê deu &7%damage% &ede dano a &7%entity%&e.'
+        victim: '&c&7%entity% &cdeu &7%damage% &cde dano em você.'
         indicator: ''
       sound: NONE
     CRITICAL:
       enabled: true
       messages:
-        damager: '&e*** &lCritical! &eYou dealt &7%damage% &edamage to &7%entity%&e. ***'
-        victim: '&d*** &lCritical! &7%entity% &ddealt &7%damage% &ddamage to you. ***'
-        indicator: '&8[&c&lCritical!&8]'
+        damager: '&e&lCrítico! &eVocê deu &7%damage% &ede dano a &7%entity%&e.'
+        victim: '&d&lCrítico! &7%entity% &cdeu &7%damage% &cde dano em você.'
+        indicator: '&8[&c&lCrítico!&8]'
       sound: ENTITY_GENERIC_EXPLODE
     DODGE:
       enabled: true
       messages:
-        damager: '&6*** &7%entity% &6has dodged your attack! ***'
-        victim: '&6*** You has dodged &7%entity% &6attack! ***'
-        indicator: '&8[&b&lDodge!&8]'
+        damager: '&6&7%entity% &6Desviou seu ataque! '
+        victim: '&6Você se esquivou do &7%entity%&6! '
+        indicator: '&8[&b&lDesviar!&8]'
       sound: BLOCK_SNOW_FALL
     BLOCK:
       enabled: true
       messages:
-        damager: '&6*** &7%entity% &6has blocked &7%block%% &6of your attack! Total damage: &7%damage% &6***'
-        victim: '&6*** You blocked &7%block%% &6of &7%entity% &6attack! Total damage: &7%damage% &6***'
-        indicator: '&8[&e&lBlocked!&8]'
+        damager: '&7%entity% &6bloqueou &7%block%% &6do seu ataque! Dano total: &7%damage%'
+        victim: 'Você bloqueou &7%block%% &6de &7%entity%&6! Dano total: &7%damage%'
+        indicator: '&8[&e&lBloqueado!&8]'
       sound: BLOCK_ANVIL_PLACE
 indicators:
   enabled: true
