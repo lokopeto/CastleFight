@@ -1,0 +1,11 @@
+on player world change:
+    event-world is "world":
+        past event-world is "castlefightmenu":
+            create a gui with virtual chest inventory with 1 rows named "Veja o tutorial! (Recomendado)":
+                make gui slot 4 with bookshelf named "<##3EF0FC><bold>Tutorial" with lore "<##FCD169>Clique para assistir o tutorial!", "<##FCD169>Você precisa clicar nas placas", "<##FCD169>para entrar em uma partida.", "", "<##3EF0FC>..precisa de mais de um jogador," and "<##3EF0FC>chame os seus amigos para jogar!":
+                    close player's inventory
+                
+                run on gui close:
+                    make console execute command "ex run TUTORIALURL def:%uuid of player%"
+                    
+            open the created gui for player

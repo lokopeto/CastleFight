@@ -16,7 +16,7 @@ regions:
         members: {}
         flags: {natural-health-regen: allow, invincible: allow, interact: allow, pvp: allow,
             chunk-unload: deny, natural-hunger-drain: deny, sleep: deny, item-drop: deny,
-            exp-drops: deny, fall-damage: deny, mob-damage: deny, item-pickup: deny,
+            exp-drops: deny, fall-damage: deny, item-pickup: deny, mob-damage: deny,
             grass-growth: deny}
         owners:
             unique-ids: [d09f8eb8-ae7d-3caa-bb58-e29486b30db7]

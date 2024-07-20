@@ -458,7 +458,7 @@ on inventory click:
         set {_team} to "%team of player%"
         replace "castelo" in {_team} with ""
         replace "%world of player%" in {_team} with ""
-        
+
         if line 1 of lore of event-item contains "Espere":
             cancel event
         if line 1 of lore of event-item contains "Pausado":
@@ -469,31 +469,23 @@ on inventory click:
             set {_lv} to uncolored {_lv}
             set {_sec} to line 2 of lore of event-item
             set {_sec} to uncolored {_sec}
+            set {_ovolv} to line 3 of lore of event-item
+            set {_ovolv} to uncolored {_ovolv}
 
-
-            replace "Duplique por ", "Evaporar por " and "Demora " in {_lv} and {_sec} with ""
+            replace "Duplique por ", "Evaporar por ", "Demora " and "Level = " in {_lv}, {_sec} and {_ovolv} with ""
 
             set {_lv} to {_lv} parsed as integer
             set {_sec} to {_sec} parsed as timespan
+            set {_ovolv} to {_ovolv} parsed as integer        
+
+            message {_lv} and {_sec}
+
 
             if line 1 of lore of item contains "Duplique":
+#                add nbt compound from "{custom_data:{time:}}" to event-item
+#                add set uuid tag "custom;uuid" to {eggdup::%player%::*}
                 cancel event
-
-                while line 1 of lore of item contains "Duplique":
-
-                    subtract {_lv} from player's level
-
-                    set 1st line of the lore of item to "Espere"
-                    set 2st line of the lore of item to "Item sendo duplicado"
-
-                    while {_sec} >= 0 seconds:
-                        if 1st line of the lore of item contains "Espere":
-                            subtract 1 second from {_sec}
-                            set 1st line of the lore of item to "Espere %{_sec}%"
-                        subtract 1 second from {_sec}
-                        wait 1 second
                     
-
             if line 1 of lore of event-item contains "Evaporar":
                 add {_lv} to player's level
                 message "<##3FFCA8><bold>%uncolored name of event-item%<##2CB37C> evaporado!"

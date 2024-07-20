@@ -1,6 +1,6 @@
 world_cozysmokecastle:
     type: world
-    debug: true
+    debug: false
     events:
         on time secondly:
             - define loc.1 <location[19.5, 94.50, -16.5, world]>

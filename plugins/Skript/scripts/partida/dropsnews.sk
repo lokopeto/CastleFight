@@ -28,5 +28,6 @@ on death:
                 set {_npcspeed} to a random number between {mobs::%{_nome}%::9} and {mobs::%{_nome}%::10}
                 set {_accuracy} to a random number between {mobs::%{_nome}%::11} and {mobs::%{_nome}%::12}
                 set {_range} to a random number between {mobs::%{_nome}%::13} and {mobs::%{_nome}%::14}
+                set {_uuid} to a random UUID
 
-                drop "1 %{mobs::%{_nome}%::15}% spawn egg" parsed as item named "&4&l%{_nome}% Lv.%{_level}%" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim
+                drop "1 %{mobs::%{_nome}%::15}% spawn egg" parsed as item named "&4&l%{_nome}% Lv.%{_level}%" with nbt compound from "{custom_data:{uuid:%{_uuid}%}}" with lore "&eLevel = %{_level}%","&6Respawn = 30","","&8&oStatus:","","&8&oVida = %{_health}%","&8&oDano = %{_damage}%","&8&oRespawn orig. = 0","&8&oArmadura = %{_armor}%", "&8&oVelocidade = %{_speed}% / %{_npcspeed}%", "&8&oMira = %{_accuracy}%" and "&8&oDistancia = %{_range}%" at location of victim

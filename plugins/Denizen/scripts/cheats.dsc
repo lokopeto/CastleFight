@@ -36,7 +36,7 @@ cheats_wishmeegg:
         - wait 1s
         - remove <entry[npcwish].created_npc>
 
-cheats_PLAYSKIP:
+cheats_playskip:
     type: task
     script:
         - execute as_server "!set {partidacountdown::<player.world.name>} to 1"

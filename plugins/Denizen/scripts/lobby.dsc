@@ -33,6 +33,7 @@ lobby:
 
 npcplacacreate:
     type: task
+    debug: false
     definitions: player|x|y|z|
     script:
         - create player <definition[player]> <location[<definition[x]>,<definition[y]>,<definition[z]>,world]> save:npc
@@ -40,7 +41,14 @@ npcplacacreate:
 
 npcplacarem:
     type: task
+    debug: false
     definitions: player
     script:
         - remove <server.spawned_npcs_flagged[player.<definition[player]>]>
         - flag <server.spawned_npcs_flagged[player.<definition[player]>]> player.<definition[player]>:!
+
+tutorialurl:
+    type: task
+    definitions: player
+    script:
+        - narrate "<&click[https://youtu.be/H-9QHMEMCdc?si=alRQ18pQhshCnpTz].type[OPEN_URL]><&color[#4BF6FC]><underline>Clique aqui para ver o tutorial<&end_click>" targets:<player[<[player]>]>

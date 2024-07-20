@@ -37,6 +37,7 @@ selecionarmenu:
             - while <player.flag[menu]> = 1:
                 - wait 1s
                 - run menufade1
+                - if !<player.exists>:
 
             - flag player blockmenu1
 
@@ -56,6 +57,8 @@ selecionarmenu:
             - if <player.has_flag[tutorial]>:
                 - remove <server.npcs_flagged[menuinicionpc.<player>]>
                 - flag server startmenujoin:!
+
+                - flag player menu:!
 
                 - if <world[castlefightmenu].players.size> = 1:
                     - run model_startmenu

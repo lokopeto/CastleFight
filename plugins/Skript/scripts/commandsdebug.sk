@@ -225,3 +225,13 @@ command /pocaoalqorganize <integer> <integer>:
 #    loop all players:
 #        add loop-player to {_playerlist::*}
 #    set spectator target of player to {_playerlist::1}
+
+every 1 second:
+    loop items in inventory of all players:
+        if 1st line of the lore of loop-item contains "Espere"
+
+    broadcast {_listitems::*}
+
+on rightclick on entity:
+    broadcast string tag "custom_data;uuid" of nbt of entity 
+
