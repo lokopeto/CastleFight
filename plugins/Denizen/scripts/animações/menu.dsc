@@ -1,0 +1,386 @@
+anim_menuint1:
+    debug: false
+    type: task
+    script:
+        - define world world314
+
+        - teleport <player> <location[40.621,147.4236,25.7579,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6242,147.4236,25.7586,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6274,147.4236,25.7593,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6306,147.4236,25.7601,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6338,147.4236,25.7608,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.637,147.4236,25.7615,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6402,147.4236,25.7623,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6434,147.4236,25.763,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6466,147.4236,25.7637,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6498,147.4236,25.7645,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6531,147.4236,25.7652,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6563,147.4236,25.7659,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6595,147.4236,25.7667,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6627,147.4236,25.7674,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6659,147.4236,25.7681,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6691,147.4236,25.7689,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6723,147.4236,25.7696,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6755,147.4236,25.7703,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6787,147.4236,25.7711,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6819,147.4236,25.7718,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6851,147.4236,25.7725,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6883,147.4236,25.7733,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6915,147.4236,25.774,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6947,147.4236,25.7747,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.6979,147.4236,25.7755,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7011,147.4236,25.7762,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7043,147.4236,25.7769,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7075,147.4236,25.7777,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7107,147.4236,25.7784,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7139,147.4236,25.7791,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7171,147.4236,25.7799,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7203,147.4236,25.7806,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7235,147.4236,25.7813,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7267,147.4236,25.782,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7299,147.4236,25.7828,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7331,147.4236,25.7835,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7363,147.4236,25.7842,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7395,147.4236,25.785,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7428,147.4236,25.7857,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.746,147.4236,25.7864,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7492,147.4236,25.7872,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7524,147.4236,25.7879,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7556,147.4236,25.7886,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7588,147.4236,25.7894,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.762,147.4236,25.7901,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7652,147.4236,25.7908,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7684,147.4236,25.7916,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7716,147.4236,25.7923,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7748,147.4236,25.793,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.778,147.4236,25.7938,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7812,147.4236,25.7945,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7844,147.4236,25.7952,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7876,147.4236,25.796,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7908,147.4236,25.7967,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.794,147.4236,25.7974,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.7972,147.4236,25.7982,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8004,147.4236,25.7989,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8036,147.4236,25.7996,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8068,147.4236,25.8004,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.81,147.4236,25.8011,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8132,147.4236,25.8018,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8164,147.4236,25.8026,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8196,147.4236,25.8033,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8228,147.4236,25.804,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.826,147.4236,25.8048,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8292,147.4236,25.8055,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8324,147.4236,25.8062,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8357,147.4236,25.8069,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8389,147.4236,25.8077,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8421,147.4236,25.8084,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8453,147.4236,25.8091,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8485,147.4236,25.8099,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8517,147.4236,25.8106,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8549,147.4236,25.8113,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8581,147.4236,25.8121,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8613,147.4236,25.8128,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8645,147.4236,25.8135,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8677,147.4236,25.8143,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8709,147.4236,25.815,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8741,147.4236,25.8157,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8773,147.4236,25.8165,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8805,147.4236,25.8172,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8837,147.4236,25.8179,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8869,147.4236,25.8187,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8901,147.4236,25.8194,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8933,147.4236,25.8201,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8965,147.4236,25.8209,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.8997,147.4236,25.8216,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9029,147.4236,25.8223,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9061,147.4236,25.8231,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9093,147.4236,25.8238,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9125,147.4236,25.8245,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9157,147.4236,25.8253,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9189,147.4236,25.826,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9221,147.4236,25.8267,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9253,147.4236,25.8275,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9286,147.4236,25.8282,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9318,147.4236,25.8289,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.935,147.4236,25.8297,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9382,147.4236,25.8304,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9414,147.4236,25.8311,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9446,147.4236,25.8318,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9478,147.4236,25.8326,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.951,147.4236,25.8333,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9542,147.4236,25.834,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9574,147.4236,25.8348,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9606,147.4236,25.8355,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9638,147.4236,25.8362,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.967,147.4236,25.837,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9702,147.4236,25.8377,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9734,147.4236,25.8384,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9766,147.4236,25.8392,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9798,147.4236,25.8399,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.983,147.4236,25.8406,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9862,147.4236,25.8414,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9894,147.4236,25.8421,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9926,147.4236,25.8428,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.9958,147.4236,25.8436,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[40.999,147.4236,25.8443,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0022,147.4236,25.845,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0054,147.4236,25.8458,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0086,147.4236,25.8465,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0118,147.4236,25.8472,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.015,147.4236,25.848,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0182,147.4236,25.8487,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0215,147.4236,25.8494,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0247,147.4236,25.8502,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0279,147.4236,25.8509,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0311,147.4236,25.8516,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0343,147.4236,25.8524,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0375,147.4236,25.8531,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0407,147.4236,25.8538,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0439,147.4236,25.8546,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0471,147.4236,25.8553,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0503,147.4236,25.856,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0535,147.4236,25.8567,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0567,147.4236,25.8575,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0599,147.4236,25.8582,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0631,147.4236,25.8589,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0663,147.4236,25.8597,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0695,147.4236,25.8604,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0727,147.4236,25.8611,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0759,147.4236,25.8619,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0791,147.4236,25.8626,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0823,147.4236,25.8633,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0855,147.4236,25.8641,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0887,147.4236,25.8648,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0919,147.4236,25.8655,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0951,147.4236,25.8663,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.0983,147.4236,25.867,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1015,147.4236,25.8677,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1047,147.4236,25.8685,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1079,147.4236,25.8692,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1112,147.4236,25.8699,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1144,147.4236,25.8707,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1176,147.4236,25.8714,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1208,147.4236,25.8721,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.124,147.4236,25.8729,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1272,147.4236,25.8736,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1304,147.4236,25.8743,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1336,147.4236,25.8751,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1368,147.4236,25.8758,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.14,147.4236,25.8765,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1432,147.4236,25.8773,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1464,147.4236,25.878,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1496,147.4236,25.8787,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1528,147.4236,25.8795,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.156,147.4236,25.8802,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1592,147.4236,25.8809,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1624,147.4236,25.8816,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1656,147.4236,25.8824,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1688,147.4236,25.8831,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.172,147.4236,25.8838,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1752,147.4236,25.8846,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1784,147.4236,25.8853,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1816,147.4236,25.886,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1848,147.4236,25.8868,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.188,147.4236,25.8875,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1912,147.4236,25.8882,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1944,147.4236,25.889,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.1976,147.4236,25.8897,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.2008,147.4236,25.8904,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.2041,147.4236,25.8912,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.2073,147.4236,25.8919,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.2105,147.4236,25.8926,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.2137,147.4236,25.8934,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.2169,147.4236,25.8941,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+        - teleport <player> <location[41.2201,147.4236,25.8948,192.8771,36.0292,<[world]>]>
+        - wait 0.1t
+
+
+
+

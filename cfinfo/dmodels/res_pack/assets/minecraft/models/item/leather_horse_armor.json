@@ -1,0 +1,82 @@
+{
+    "textures": {"layer0": "minecraft:item/leather_horse_armor"},
+    "parent": "minecraft:item/generated",
+    "overrides": [
+        {
+            "predicate": {"custom_model_data": 1000},
+            "model": "item/dmodels/bixo5/hitbox"
+        },
+        {
+            "predicate": {"custom_model_data": 1001},
+            "model": "item/dmodels/bixo5/pernadireita"
+        },
+        {
+            "predicate": {"custom_model_data": 1002},
+            "model": "item/dmodels/bixo5/pernadireita2"
+        },
+        {
+            "predicate": {"custom_model_data": 1003},
+            "model": "item/dmodels/bixo5/pernaesquerda"
+        },
+        {
+            "predicate": {"custom_model_data": 1004},
+            "model": "item/dmodels/bixo5/pernaesquerda2"
+        },
+        {
+            "predicate": {"custom_model_data": 1005},
+            "model": "item/dmodels/bixo5/tronco"
+        },
+        {
+            "predicate": {"custom_model_data": 1006},
+            "model": "item/dmodels/bixo5/bracoesquerdo"
+        },
+        {
+            "predicate": {"custom_model_data": 1007},
+            "model": "item/dmodels/bixo5/bracodireito"
+        },
+        {
+            "predicate": {"custom_model_data": 1008},
+            "model": "item/dmodels/bixo5/bracoaqua1"
+        },
+        {
+            "predicate": {"custom_model_data": 1009},
+            "model": "item/dmodels/bixo5/bracoaqua2"
+        },
+        {
+            "predicate": {"custom_model_data": 1010},
+            "model": "item/dmodels/bixo5/bracoaqua3"
+        },
+        {
+            "predicate": {"custom_model_data": 1011},
+            "model": "item/dmodels/bixo5/h_cabeca"
+        },
+        {
+            "predicate": {"custom_model_data": 1012},
+            "model": "item/dmodels/bixo5/h_chifreA1"
+        },
+        {
+            "predicate": {"custom_model_data": 1013},
+            "model": "item/dmodels/bixo5/h_chifreA2"
+        },
+        {
+            "predicate": {"custom_model_data": 1014},
+            "model": "item/dmodels/bixo5/h_chifreA3"
+        },
+        {
+            "predicate": {"custom_model_data": 1015},
+            "model": "item/dmodels/bixo5/h_chifreB1"
+        },
+        {
+            "predicate": {"custom_model_data": 1016},
+            "model": "item/dmodels/bixo5/h_chifreB2"
+        },
+        {
+            "predicate": {"custom_model_data": 1017},
+            "model": "item/dmodels/bixo5/h_chifreB3"
+        },
+        {
+            "predicate": {"custom_model_data": 1018},
+            "model": "item/dmodels/bixo5/roupa1"
+        }
+    ]
+}

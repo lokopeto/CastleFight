@@ -14,7 +14,7 @@ settings:
   debug: false
   timeout-time: 60
   restart-on-crash: true
-  restart-script: ./start.sh
+  restart-script: ./executar-windows.bat
   moved-too-quickly-multiplier: 10.0
   moved-wrongly-threshold: 0.0625
   save-user-cache-on-stop-only: false

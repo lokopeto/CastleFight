@@ -106,11 +106,10 @@ commands:
     # with "skinsrestorer.ownskin" players can run /skin set %playerusername%.
     # [!] Only enable if you have set up permissions properly and know what you are doing.
     perSkinPermissions: false
-    # Removes < > and [ ] encasing from command arguments.
-    # Example: /skin set <skin> will become /skin set skin if this is enabled.
-    # This is useful to prevent players from incorrectly using the command, as those brackets are not supposed to be there.
-    # This will also send a message to the player that they incorrectly use the command, but the command will still run fixed arguments.
-    removeBrackets: true
+    # How many commands to store in the player's command history.
+    # This is used for the /skin undo command.
+    # Use 0 to disable storing command history.
+    maxHistoryLength: 36
     customHelp:
         # Override the automatically generated translated help message with a custom one.
         # This is useful if you want to have a custom help message for your server.
@@ -279,17 +278,6 @@ advanced:
     # It also fixes all resource pack skin apply issues.
     # If your players are experiencing extremely long loading screens, try disabling this.
     enablePaperJoinListener: true
-    # <!! Warning !!>
-    # This enables the PaperMC async tab event integration that allows async command tab completions.
-    # It is recommended over the bukkit command system as tab completions will not lag the server using it.
-    # Only disable this if you're overriding a SkinsRestorer command like /skin with a different plugin.
-    enablePaperAsyncTabListener: true
-    # <!! Warning !!>
-    # When enabled if a skin gets applied on the proxy, the new texture will be forwarded to the backend as well.
-    # This is optional sometimes as the backend may pick up the new one of the proxy.
-    # It is recommended though to **KEEP THIS ON** because it keeps the backend data in sync.
-    # This feature is required for solutions like RedisBungee and also fixes bugs in some cases.
-    forwardTextures: true
     # <!! Warning !!>
     # When enabled SkinsRestorer will not try to connect to any web server, which means the follow things won't work:
     # Getting new skins from Mojang, looking up uuids of players, skin url, update checking and more.

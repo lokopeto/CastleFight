@@ -1,0 +1,106 @@
+{
+    "groups": [{
+        "name": "pernadireita",
+        "color": 0,
+        "children": [
+            0,
+            1
+        ],
+        "origin": [
+            1.1425,
+            6.855,
+            0
+        ]
+    }],
+    "textures": {"0": "dmodels/bixo5/texture2"},
+    "elements": [{
+        "name": "pernadireita1",
+        "from": [
+            -1.1425,
+            -6.855,
+            -1.1425
+        ],
+        "to": [
+            1.1425,
+            0,
+            1.1425
+        ],
+        "faces": {
+            "west": {
+                "uv": [
+                    6.5,
+                    5.75,
+                    7,
+                    7.25
+                ],
+                "texture": "#0"
+            },
+            "east": {
+                "uv": [
+                    5.5,
+                    5.75,
+                    6,
+                    7.25
+                ],
+                "texture": "#0"
+            },
+            "up": {
+                "uv": [
+                    6.5,
+                    5.75,
+                    6,
+                    5.25
+                ],
+                "texture": "#0"
+            },
+            "south": {
+                "uv": [
+                    7,
+                    5.75,
+                    7.5,
+                    7.25
+                ],
+                "texture": "#0"
+            },
+            "down": {
+                "uv": [
+                    7,
+                    5.25,
+                    6.5,
+                    5.75
+                ],
+                "texture": "#0"
+            },
+            "north": {
+                "uv": [
+                    6,
+                    5.75,
+                    6.5,
+                    7.25
+                ],
+                "texture": "#0"
+            }
+        },
+        "rotation": {
+            "axis": "y",
+            "angle": 0,
+            "origin": [
+                -1.1425,
+                -6.855,
+                0
+            ]
+        }
+    }],
+    "display": {"head": {
+        "translation": [
+            32,
+            25,
+            32
+        ],
+        "scale": [
+            4,
+            4,
+            4
+        ]
+    }}
+}
