@@ -1,11 +1,12 @@
 # Citizens NPC Storage
 
-last-created-npc-id: 66454
+last-created-npc-id: 2682
 npc:
-  '66438':
+  '2682':
     name: §x§C§7§8§E§8§1Bordador (Rei Barro)
-    uuid: 3271a0da-aa16-436a-87ad-06dfa8a84603
+    uuid: 57c3b154-5a01-46bd-81b4-f1c0a0290203
     traits:
+      type: VILLAGER
       lookclose:
         range: '10.0'
         disablewhilenavigating: true
@@ -24,14 +25,13 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      type: VILLAGER
       spawned: true
-      denizen_flags:
-        full_flag_data:
-          npcs2: map@[__value=map@[Bordador=map@[__value=true]]]
       hologramtrait:
         direction: BOTTOM_UP
         lineHeight: -1.0
+      denizen_flags:
+        full_flag_data:
+          npcs2: map@[__value=map@[Bordador=map@[__value=true]]]
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight6
@@ -40,28 +40,21 @@ npc:
         z: '9.5'
         yaw: '0.0'
         pitch: '0.0'
-    traitnames: lookclose,scoreboardtrait,type,spawned,denizen_flags,hologramtrait,mounttrait,location
+    traitnames: type,lookclose,spawned,hologramtrait,mounttrait,denizen_flags,location,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66437':
+  '2681':
     metadata:
       protected: false
       nameplate-visible: 'false'
     name: Boneco de Teste
-    uuid: 1b3f8ea0-f930-46ec-8d94-84c4915b1526
+    uuid: 5ca3d5a2-2982-4399-84b3-3424d5186ca5
     traits:
-      equipment:
-        hand:
-          type_key: wooden_sword
-          amount: 1
-        offhand:
-          type_key: bow
-          amount: 1
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 1
+        stats_timesSpawned: 3
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -125,6 +118,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy2castlefight6: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight6
@@ -133,22 +133,23 @@ npc:
         z: '31.5'
         yaw: '270.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
+      equipment:
+        hand:
+          type_key: wooden_sword
+          amount: 1
+        offhand:
+          type_key: bow
+          amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66436':
+  '2680':
     name: §x§C§7§8§E§8§1Arqueiro (Rei Barro)
-    uuid: d0382187-011e-4681-8408-c368e53068ef
+    uuid: 551117fe-73ad-4560-83da-e57d027d6fd5
     traits:
+      type: VILLAGER
       lookclose:
         range: '10.0'
         disablewhilenavigating: true
@@ -167,14 +168,13 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      type: VILLAGER
       spawned: true
-      denizen_flags:
-        full_flag_data:
-          npcs2: map@[__value=map@[Arqueiro=map@[__value=true]]]
       hologramtrait:
         direction: BOTTOM_UP
         lineHeight: -1.0
+      denizen_flags:
+        full_flag_data:
+          npcs2: map@[__value=map@[Arqueiro=map@[__value=true]]]
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight6
@@ -183,15 +183,16 @@ npc:
         z: '37.5'
         yaw: '180.0'
         pitch: '0.0'
-    traitnames: lookclose,scoreboardtrait,type,spawned,denizen_flags,hologramtrait,mounttrait,location
+    traitnames: type,lookclose,spawned,hologramtrait,mounttrait,denizen_flags,location,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66435':
+  '2679':
     name: §x§7§C§8§8§B§7Arqueiro (Rei Carvalho)
-    uuid: 490af6a1-20ea-4631-9da3-4e055f728bb6
+    uuid: 359a8e80-fa1e-4758-aadf-2d3e2c75b904
     traits:
+      type: VILLAGER
       lookclose:
         range: '10.0'
         disablewhilenavigating: true
@@ -210,14 +211,13 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      type: VILLAGER
       spawned: true
-      denizen_flags:
-        full_flag_data:
-          npcs1: map@[__value=map@[Arqueiro=map@[__value=true]]]
       hologramtrait:
         direction: BOTTOM_UP
         lineHeight: -1.0
+      denizen_flags:
+        full_flag_data:
+          npcs1: map@[__value=map@[Arqueiro=map@[__value=true]]]
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight6
@@ -226,15 +226,16 @@ npc:
         z: '8.5'
         yaw: '0.0'
         pitch: '0.0'
-    traitnames: lookclose,scoreboardtrait,type,spawned,denizen_flags,hologramtrait,mounttrait,location
+    traitnames: type,lookclose,spawned,hologramtrait,mounttrait,denizen_flags,location,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66434':
+  '2678':
     name: §x§C§7§8§E§8§1Ferreiro (Rei Barro)
-    uuid: c441a37f-4407-4523-83ad-b06c2efffb59
+    uuid: 2679c00d-a09a-4c26-9d13-cf132a24f103
     traits:
+      type: VILLAGER
       lookclose:
         range: '10.0'
         disablewhilenavigating: true
@@ -253,14 +254,13 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      type: VILLAGER
       spawned: true
-      denizen_flags:
-        full_flag_data:
-          npcs2: map@[__value=map@[Ferreiro=map@[__value=true]]]
       hologramtrait:
         direction: BOTTOM_UP
         lineHeight: -1.0
+      denizen_flags:
+        full_flag_data:
+          npcs2: map@[__value=map@[Ferreiro=map@[__value=true]]]
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight6
@@ -269,15 +269,16 @@ npc:
         z: '36.5'
         yaw: '180.0'
         pitch: '0.0'
-    traitnames: lookclose,scoreboardtrait,type,spawned,denizen_flags,hologramtrait,mounttrait,location
+    traitnames: type,lookclose,spawned,hologramtrait,mounttrait,denizen_flags,location,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66433':
+  '2677':
     name: §x§7§C§8§8§B§7Bordador (Rei Carvalho)
-    uuid: 743e1900-4911-4000-b4ea-57d66de16840
+    uuid: 46a62c05-0498-475d-8de5-9abf0421b239
     traits:
+      type: VILLAGER
       lookclose:
         range: '10.0'
         disablewhilenavigating: true
@@ -296,14 +297,13 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      type: VILLAGER
       spawned: true
-      denizen_flags:
-        full_flag_data:
-          npcs1: map@[__value=map@[Bordador=map@[__value=true]]]
       hologramtrait:
         direction: BOTTOM_UP
         lineHeight: -1.0
+      denizen_flags:
+        full_flag_data:
+          npcs1: map@[__value=map@[Bordador=map@[__value=true]]]
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight6
@@ -312,25 +312,18 @@ npc:
         z: '36.5'
         yaw: '180.0'
         pitch: '0.0'
-    traitnames: lookclose,scoreboardtrait,type,spawned,denizen_flags,hologramtrait,mounttrait,location
+    traitnames: type,lookclose,spawned,hologramtrait,mounttrait,denizen_flags,location,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66432':
+  '2676':
     metadata:
       protected: false
       nameplate-visible: 'false'
     name: Boneco de Teste
-    uuid: bd7235e2-0c51-457a-a54c-bc0e745162b0
+    uuid: ceb7e956-cef4-48dc-96b4-cd99bd28c409
     traits:
-      equipment:
-        hand:
-          type_key: wooden_sword
-          amount: 1
-        offhand:
-          type_key: bow
-          amount: 1
       sentinel:
         stats_ticksSpawned: 1
         stats_timesSpawned: 4
@@ -397,6 +390,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy1castlefight6: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight6
@@ -405,22 +405,23 @@ npc:
         z: '14.5'
         yaw: '90.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
+      equipment:
+        hand:
+          type_key: wooden_sword
+          amount: 1
+        offhand:
+          type_key: bow
+          amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66429':
+  '2673':
     name: §x§7§C§8§8§B§7Ferreiro (Rei Carvalho)
-    uuid: 3c0b159e-51e1-483c-aeda-4861e26ea05b
+    uuid: ab64cc62-44e9-4925-8df8-ab444fd2c524
     traits:
+      type: VILLAGER
       lookclose:
         range: '10.0'
         disablewhilenavigating: true
@@ -439,14 +440,13 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-      type: VILLAGER
       spawned: true
-      denizen_flags:
-        full_flag_data:
-          npcs1: map@[__value=map@[Ferreiro=map@[__value=true]]]
       hologramtrait:
         direction: BOTTOM_UP
         lineHeight: -1.0
+      denizen_flags:
+        full_flag_data:
+          npcs1: map@[__value=map@[Ferreiro=map@[__value=true]]]
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight6
@@ -455,28 +455,21 @@ npc:
         z: '9.5'
         yaw: '0.0'
         pitch: '0.0'
-    traitnames: lookclose,scoreboardtrait,type,spawned,denizen_flags,hologramtrait,mounttrait,location
+    traitnames: type,lookclose,spawned,hologramtrait,mounttrait,denizen_flags,location,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66427':
+  '2671':
     metadata:
       protected: false
       nameplate-visible: 'false'
     name: Boneco de Teste
-    uuid: 3bd570d7-ec4b-469f-82cd-9c2c173aba5c
+    uuid: 61a05cba-5ea4-43c8-b8c2-d5755e5c299a
     traits:
-      equipment:
-        hand:
-          type_key: wooden_sword
-          amount: 1
-        offhand:
-          type_key: bow
-          amount: 1
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 1
+        stats_timesSpawned: 3
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -540,6 +533,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy2castlefight5: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight5
@@ -548,25 +548,6 @@ npc:
         z: '31.5'
         yaw: '270.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66422':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: 5cf275f1-db52-4fbb-a11f-ada79901eb21
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -574,6 +555,18 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2666':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: 90a376cc-123f-47d2-8b86-e42256dc9162
+    traits:
       sentinel:
         stats_ticksSpawned: 1
         stats_timesSpawned: 4
@@ -640,6 +633,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy1castlefight5: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight5
@@ -648,25 +648,6 @@ npc:
         z: '14.5'
         yaw: '90.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66417':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: 697111f4-1dcc-4249-8b68-2d8bc399b1eb
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -674,9 +655,21 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2661':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: a1fcd3fe-bf0b-4674-865a-203a433e8f60
+    traits:
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 1
+        stats_timesSpawned: 3
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -740,6 +733,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy2castlefight4: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight4
@@ -748,25 +748,6 @@ npc:
         z: '31.5'
         yaw: '270.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66412':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: b64a61b0-9fd1-4645-9fb9-1a1777930028
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -774,6 +755,18 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2656':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: ff70a358-f173-4fe5-8062-7298723add5e
+    traits:
       sentinel:
         stats_ticksSpawned: 1
         stats_timesSpawned: 4
@@ -840,6 +833,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy1castlefight4: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight4
@@ -848,25 +848,6 @@ npc:
         z: '14.5'
         yaw: '90.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66407':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: 89140fd4-fe86-4cad-b39e-36101fa18c9a
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -874,9 +855,21 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2651':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: faff5ca9-6907-4753-ad7d-f6d91a7d2174
+    traits:
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 1
+        stats_timesSpawned: 3
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -940,6 +933,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy2castlefight3: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -948,25 +948,6 @@ npc:
         z: '31.5'
         yaw: '270.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66402':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: 59554b1f-153d-40e9-8b21-3c9737c09b71
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -974,6 +955,18 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2646':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: faf0bc98-2d00-452b-815d-c0857cb3ecfc
+    traits:
       sentinel:
         stats_ticksSpawned: 1
         stats_timesSpawned: 4
@@ -1040,6 +1033,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy1castlefight3: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight3
@@ -1048,25 +1048,6 @@ npc:
         z: '14.5'
         yaw: '90.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66397':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: 4b53b4f7-ca26-4a7e-82f2-28ffea671c4a
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -1074,9 +1055,21 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2641':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: d5618cc1-0287-4374-88c6-b1a70fd3e0ff
+    traits:
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 1
+        stats_timesSpawned: 3
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1140,6 +1133,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy2castlefight2: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight2
@@ -1148,25 +1148,6 @@ npc:
         z: '31.5'
         yaw: '270.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66392':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: 4783d209-2439-4b5a-8a90-6dc431f94036
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -1174,6 +1155,18 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2636':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: e89ccafc-1422-4c80-870f-ba41ae1b575f
+    traits:
       sentinel:
         stats_ticksSpawned: 1
         stats_timesSpawned: 4
@@ -1240,6 +1233,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy1castlefight2: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight2
@@ -1248,25 +1248,6 @@ npc:
         z: '14.5'
         yaw: '90.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66387':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: 5eecbb31-9ebd-408c-91ae-7f0afcd099bf
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -1274,6 +1255,18 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2631':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: b03c6153-2b94-4471-aaae-165fa5cd0a52
+    traits:
       sentinel:
         stats_ticksSpawned: 1
         stats_timesSpawned: 1
@@ -1340,6 +1333,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy2castlefight1: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight1
@@ -1348,25 +1348,6 @@ npc:
         z: '31.5'
         yaw: '270.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66382':
-    metadata:
-      protected: false
-      nameplate-visible: 'false'
-    name: Boneco de Teste
-    uuid: d96c702e-a8ee-49d4-a243-5ddcaa91f0cc
-    traits:
       equipment:
         hand:
           type_key: wooden_sword
@@ -1374,9 +1355,21 @@ npc:
         offhand:
           type_key: bow
           amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '2626':
+    metadata:
+      protected: false
+      nameplate-visible: 'false'
+    name: Boneco de Teste
+    uuid: f95955ef-01ec-4ed0-a3e2-7cc09d4998ce
+    traits:
       sentinel:
         stats_ticksSpawned: 1
-        stats_timesSpawned: 4
+        stats_timesSpawned: 5
         stats_arrowsFired: 0
         stats_potionsThrow: 0
         stats_fireballsFired: 0
@@ -1440,6 +1433,13 @@ npc:
       denizen_flags:
         full_flag_data:
           dummy1castlefight1: 'true'
+      armorstandtrait:
+        gravity: true
+        hasarms: true
+        hasbaseplate: true
+        marker: false
+        small: false
+        visible: true
       location:
         bodyYaw: !!float 'NaN'
         world: castlefight1
@@ -1448,67 +1448,36 @@ npc:
         z: '14.5'
         yaw: '90.0'
         pitch: '0.0'
-      armorstandtrait:
-        gravity: true
-        hasarms: true
-        hasbaseplate: true
-        marker: false
-        small: false
-        visible: true
-    traitnames: equipment,sentinel,scoreboardtrait,inventory,type,spawned,denizen_flags,owner,mounttrait,location,armorstandtrait
+      equipment:
+        hand:
+          type_key: wooden_sword
+          amount: 1
+        offhand:
+          type_key: bow
+          amount: 1
+    traitnames: sentinel,type,spawned,owner,mounttrait,inventory,denizen_flags,armorstandtrait,location,scoreboardtrait,equipment
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
       usedefaultstuckaction: false
-  '66448':
-    metadata:
-      flyable: true
-    name: startmenu
-    uuid: 1d8e8885-f108-4c27-b8d1-58ddcfd9fcbe
+  '2621':
+    name: Comerciante de Skins
+    uuid: 1c61d58c-9fbc-4463-8f53-c825eef253e3
     traits:
-      gravity:
-        enabled: true
-      type: PARROT
+      type: VILLAGER
       spawned: true
       denizen_flags:
         full_flag_data:
-          startmenu: 'true'
+          npcskinshop: 'true'
       location:
-        bodyYaw: 319.5
-        world: castlefightmenu
-        x: '-24.41'
-        y: '175.2'
-        z: '110.53'
-        yaw: '319.5'
+        bodyYaw: 0.0
+        world: world
+        x: '-82.96'
+        y: '65.0'
+        z: '-57.29'
+        yaw: '0.0'
         pitch: '0.0'
-    traitnames: gravity,scoreboardtrait,type,spawned,denizen_flags,meg_model,mounttrait,location
-    navigator:
-      speedmodifier: '1.0'
-      avoidwater: false
-      usedefaultstuckaction: false
-  '66447':
-    name: lokopetoo
-    uuid: f8c4699d-b356-4b83-9f94-e9534d4e8ca9
-    traits:
-      type: PLAYER
-      spawned: true
-      denizen_flags:
-        full_flag_data:
-          menuinicionpc: map@[__value=map@[p@ed5cee70-0798-3e13-b06c-47759ae5453b=map@[__value=true]]]
-      mounttrait:
-        mountedon: b5ab0a39-903f-4e8a-8b53-d91dfdb83da0
-      location:
-        bodyYaw: 213.90228
-        world: castlefightmenu
-        x: '-15.5872'
-        y: '168.0'
-        z: '102.6253'
-        yaw: '-146.0977'
-        pitch: '0.0'
-      skintrait:
-        fetchDefaultSkin: true
-        updateSkins: false
-    traitnames: scoreboardtrait,inventory,type,spawned,denizen_flags,mounttrait,location,skintrait
+    traitnames: type,spawned,mounttrait,denizen_flags,location,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false

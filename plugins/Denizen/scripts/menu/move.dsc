@@ -37,7 +37,6 @@ selecionarmenu:
             - while <player.flag[menu]> = 1:
                 - wait 1s
                 - run menufade1
-                - if !<player.exists>:
 
             - flag player blockmenu1
 
@@ -137,17 +136,9 @@ model_startmenu:
     debug: false
     type: task
     script:
-        - define id startmenu
         - define loc <location[-24.41,175.20,110.53,0,-40.5,castlefightmenu]>
 
-        - remove <server.npcs_flagged[startmenu]>
-
-        - wait 1t
-
-        - create parrot <[id]> <[loc]> traits:meg_model save:<[id]>
-        - adjust <entry[<[id]>].created_npc> gravity:false
-        - flag <entry[<[id]>].created_npc> <[id]>
-        - teleport <entry[<[id]>].created_npc> <[loc]>
+        - ~run dmodels_load_bbmodel def.model_name:goat
 
 
 menufade1:
@@ -194,6 +185,7 @@ menu_teleport_jogar:
         - if <[player].flag[menu]> = 2:
             - run fakeentity_start_click
             - wait 2s
+            #to tentando entender ;)
             - run menufade2
             - flag <[player]> teleportpausar:!
 
@@ -209,4 +201,6 @@ menu_teleport_jogar:
             - wait 2t
 
             - invisible <[player]> false
+
+
 

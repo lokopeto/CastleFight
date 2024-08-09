@@ -5,32 +5,6 @@
       "name": "lokopetoo",
       "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
     },
-    "time": 1716921102266,
-    "type": "Heap dump summary",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/dqkuSdUzeh"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
-    "time": 1716920938066,
-    "type": "Profiler (live)",
-    "data": {
-      "type": "url",
-      "value": "https://spark.lucko.me/zVN20U7gaY"
-    }
-  },
-  {
-    "user": {
-      "type": "player",
-      "name": "lokopetoo",
-      "uniqueId": "ed5cee70-0798-3e13-b06c-47759ae5453b"
-    },
     "time": 1699402119524,
     "type": "Heap dump",
     "data": {

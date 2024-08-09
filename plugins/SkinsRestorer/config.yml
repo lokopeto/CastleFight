@@ -110,6 +110,10 @@ commands:
     # This is used for the /skin undo command.
     # Use 0 to disable storing command history.
     maxHistoryLength: 36
+    # How many favourites a player may have.
+    # This is used for the /skin favourite command.
+    # Use 0 to disable storing favourites.
+    maxFavouriteLength: 180
     customHelp:
         # Override the automatically generated translated help message with a custom one.
         # This is useful if you want to have a custom help message for your server.
@@ -204,13 +208,15 @@ storage:
 # Change proxy specific settings here.
 proxy:
     # Disable all SkinsRestorer commands on specific backend servers.
-    # [!] This only works & is relevant if you're using proxies like bungee / waterfall
+    # [!] This only works & is relevant if you're using proxies like BungeeCord / Velocity
     notAllowedCommandServers:
+        # Whether to enable the backend server command blocking feature.
         enabled: true
-        # Whether ONLY servers from the list below are allowed to use SkinsRestorer commands.
-        allowList: false
-        # Block players from executing SkinsRestorer commands before having joined a server. (RECOMMENDED)
+        # Block players from executing SkinsRestorer commands before having joined a server.
         ifNoServerBlockCommand: false
+        # When false means servers in the list are NOT allowed to execute SkinsRestorer commands, true means ONLY servers in the list are allowed to execute SkinsRestorer commands.
+        allowList: false
+        # List of servers where SkinsRestorer commands are allowed/disallowed depending on the 'allowList' setting.
         list: 
         - auth
 
